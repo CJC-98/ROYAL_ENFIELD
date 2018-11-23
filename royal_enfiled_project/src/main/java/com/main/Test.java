@@ -18,7 +18,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 public class Test {    
 	public static void main(String[] args) {
 		SpringApplication.run(Test.class);
-		//#34588a 
-		System.out.println("started....");
+		System.out.println("application started....");
 	}
 } 

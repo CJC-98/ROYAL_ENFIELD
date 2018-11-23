@@ -15,7 +15,7 @@
 <link href="${pageContext.request.contextPath}/Resources/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 <link href="${pageContext.request.contextPath}/Resources/css/style.css" type="text/css" rel="stylesheet" media="all"> 
 <link href="${pageContext.request.contextPath}/Resources/css/font-awesome.css" rel="stylesheet"> <!-- font-awesome icons -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/css/lightbox.css">
+<link href="${pageContext.request.contextPath}/Resources/css/lightbox.css" rel="stylesheet">
 <!--//Custom Theme files-->
 <!-- js -->
 <script src="${pageContext.request.contextPath}/Resources/js/jquery-2.2.3.min.js"></script>  

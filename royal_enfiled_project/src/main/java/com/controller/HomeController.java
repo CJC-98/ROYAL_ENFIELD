@@ -19,13 +19,16 @@ public class HomeController {
 	public String loginPage()
 	{ 
 		System.out.println("In login controller");
-		return "login";
+
+		return "Dashbord/indivisualUserIndex";
 	} 
+	
 	@RequestMapping(value="/loginDashbord")
 	public String login()    
 	{ 
 		
 		System.out.println("In login controller");
+		
 		return "Dashbord/Dashbordhome";
 	}   
 	@RequestMapping(value="/admin")
