@@ -2,7 +2,8 @@ package com.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-  
+
+//author: pranay kohad 
 @Controller    
 public class HomeController {
 	    
