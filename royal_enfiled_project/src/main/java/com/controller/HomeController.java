@@ -20,16 +20,16 @@ public class HomeController {
 	{ 
 		System.out.println("In login controller");
 
-		return "Dashbord/indivisualUserIndex";
+		return "login";
 	} 
 	
-	@RequestMapping(value="/loginDashbord")
+	@RequestMapping(value="/Sign in")
 	public String login()    
 	{ 
 		
 		System.out.println("In login controller");
 		
-		return "Dashbord/Dashbordhome";
+		return "Dashbord/Client/indivisualUserIndex";//by default go to client index.jsp
 	}   
 	@RequestMapping(value="/admin")
 	public String admin()
