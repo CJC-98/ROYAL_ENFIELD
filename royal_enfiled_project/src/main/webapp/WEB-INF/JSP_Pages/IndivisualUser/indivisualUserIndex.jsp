@@ -136,7 +136,7 @@
                                         </li>
                                         <li> <a href="#layout"> <i class="fa fa-columns icon"> <b class="bg-warning"></b>
                                                 </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i
-                                                        class="fa fa-angle-up text-active"></i> </span> <span>Layouts</span>
+                                                        class="fa fa-angle-up text-active"></i> </span><span>Layouts</span>
                                             </a>
                                             <ul class="nav lt">
                                                 <li> <a href="layout-c.html"> <i class="fa fa-angle-right"></i> <span>Color
@@ -270,7 +270,7 @@
                 </aside> <!-- /.aside -->
                 
                 <!-- dashboard starts -->
-                	 <%@ include file="indivisualUserDashboard.jsp" %>
+                	 <jsp:include page="indivisualUserDashboard.jsp"/>
                 <!-- dashboard ends -->
                 
                 <aside class="bg-light lter b-l aside-md hide" id="notes">
@@ -293,4 +293,6 @@
     <script src="js/sortable/jquery.sortable.js"></script>
     <script src="js/app.plugin.js"></script> 
 </body>
+	
+
 </html>

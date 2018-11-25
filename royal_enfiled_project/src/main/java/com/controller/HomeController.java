@@ -1,6 +1,7 @@
 package com.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 //author: pranay kohad
@@ -30,8 +31,17 @@ public class HomeController {
 	{ 
 		
 		System.out.println("In SignIn controller");
-		return "IndivisualUser/indivisualUserIndex";//by default go to client index.jsp
+		return "IndivisualUser/indivisualUserIndex";//by default go to client index.jsp  
 	}  
+	
+	
+	@RequestMapping(value="/gotToColorOptionPage")
+	public String gotToColorOptionPage()    
+	{ 
+		
+		System.out.println("In gotToColorOptionPage controller");
+		return "IndivisualUser/indivisualUserIndex";
+	}
 	
 	@RequestMapping(value="/admin")
 	public String admin()
