@@ -26,43 +26,46 @@ public class HomeController {
 		return "login";
 	} 
 	
-	@RequestMapping(value="/Sign in")
-	public String login()    
+	@RequestMapping(value="/SignIn")
+	public String signIn()    
 	{ 
 		
-		System.out.println("In login controller");
-		
-		return "Dashbord/Client/indivisualUserIndex";//by default go to client index.jsp
-	}   
+		System.out.println("In SignIn controller");
+		return "IndivisualUser/indivisualUserIndex";//by default go to client index.jsp
+	}  
+	
 	@RequestMapping(value="/admin")
 	public String admin()
 	{  
 		System.out.println("In admin controller");
-		return "Dashbord/admin/adminHome";
+		return "";
 	} 
+	
 	@RequestMapping(value="/client")
 	public String client()
 	{  
 		System.out.println("In client controller");
-		return "Dashbord/Client/clientHome";
+		return "";
 	}
+		
 	@RequestMapping(value="/dealer")
 	public String dealer()
 	{  
 		System.out.println("In dealer controller");
-		return "Dashbord/Dealer/dealerHome";
+		return "";
 	}
+	
 	@RequestMapping(value="/sales")
 	public String sales()
 	{  
 		System.out.println("In sales controller");
-		return "Dashbord/SalesManager/salesManagerHome";
+		return "";
 	}
 	
 	@RequestMapping(value="/service")
 	public String service()
 	{  
 		System.out.println("In service controller");
-		return "Dashbord/ServiceManager/serviceManagerHome";
+		return "";
 	}
 }

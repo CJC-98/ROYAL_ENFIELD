@@ -2,7 +2,7 @@ package com.main;
 
 //import org.apache.struts.tiles.actions.TilesAction;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.SpringBootConfiguration;
+//import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 //import org.springframework.boot.test.SpringApplicationConfiguration;
