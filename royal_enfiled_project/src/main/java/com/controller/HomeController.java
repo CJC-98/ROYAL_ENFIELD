@@ -33,7 +33,7 @@ public class HomeController {
 		System.out.println("In SignIn controller");
 		return "IndivisualUser/indivisualUserIndex";//by default go to client index.jsp  
 	}  
-	
+	   
 	
 	@RequestMapping(value="/gotToColorOptionPage")
 	public String gotToColorOptionPage()    
