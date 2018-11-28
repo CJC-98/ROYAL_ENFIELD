@@ -186,9 +186,9 @@
                                             <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id
                                                 neque quam.</div>
                                         </section>
-                                    </article> <!-- .comment-reply -->
+                                    </article> .comment-reply
                                     <article id="comment-id-2" class="comment-reply">
-                                        <article class="comment-item"> <a class="pull-left thumb-sm"> <img src="${pageContext.request.contextPath}/Resources/notebook UI/images/avatar_default.jpg"
+                                        <article class="comment-item"> <a class="pull-left thumb-sm"> <img src="images/avatar_default.jpg"
                                                     class="img-circle"> </a>
                                             <section class="comment-body m-b-lg">
                                                 <header> <a href="#"><strong>John smith</strong></a> <span class="text-muted text-xs">
@@ -196,7 +196,7 @@
                                                 <div> Morbi id neque quam. Aliquam.</div>
                                             </section>
                                         </article>
-                                        <article class="comment-item"> <a class="pull-left thumb-sm"> <img src="${pageContext.request.contextPath}/Resources/notebook UI/images/avatar.jpg"
+                                        <article class="comment-item"> <a class="pull-left thumb-sm"> <img src="images/avatar.jpg"
                                                     class="img-circle"> </a>
                                             <section class="comment-body m-b-lg">
                                                 <header> <a href="#"><strong>Mike</strong></a> <span class="text-muted text-xs">
@@ -204,7 +204,7 @@
                                                 <div>Good idea.</div>
                                             </section>
                                         </article>
-                                    </article> <!-- / .comment-reply -->
+                                    </article> / .comment-reply
                                     <article id="comment-id-2" class="comment-item"> <span class="fa-stack pull-left m-l-xs">
                                             <i class="fa fa-circle text-danger fa-stack-2x"></i> <i class="fa fa-file-o text-white fa-stack-1x"></i>
                                         </span>

@@ -1,4 +1,4 @@
-package com.service;
+package com.app.extremity.iservice;
 
 public class BikeEvaluation {
 	

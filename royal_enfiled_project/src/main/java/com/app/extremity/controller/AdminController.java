@@ -1,4 +1,4 @@
-package com.controller;
+package com.app.extremity.controller;
 
 import org.springframework.stereotype.Controller;
  
