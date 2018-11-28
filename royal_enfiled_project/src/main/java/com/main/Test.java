@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 //import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.ComponentScan;
 //import org.springframework.boot.test.SpringApplicationConfiguration;
 //import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -14,10 +15,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
          
 @EntityScan("com.model")
 @EnableJpaRepositories("com.Idao") 
-          
+@ComponentScan(basePackages= {"com.controller"})          
 public class Test {    
 	public static void main(String[] args) {
 		SpringApplication.run(Test.class);
-		System.out.println("application started....on 8080");
+		System.out.println("application started............");
 	}
 } 
