@@ -25,6 +25,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 public class Test {    
 	public static void main(String[] args) {
 		SpringApplication.run(Test.class);
-		System.out.println("application started............");
+		System.out.println("application started...");
 	}
 } 
