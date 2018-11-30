@@ -14,7 +14,8 @@
 </head>
 
 <body>
- 	<section id="content">
+this is dashboard body
+ 	<%-- <section id="content">
                     <section class="vbox">
                         <section class="scrollable padder">
                             <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
@@ -229,6 +230,6 @@
                         </section>
                     </section> <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen, open"
                         data-target="#nav,html"></a>
-                </section>
+                </section> --%>
 </body>
 </html>
