@@ -188,6 +188,15 @@
                                        </li>
                                        
                                        <li> 
+                                        	<a href="goToAvailableCustomizationPage"> 
+                                        		<i class="fa fa-gavel icon"> 
+                                        			<b style="background-color: 532B72"></b>
+                                                </i> 
+                                                <span>Available Custom.</span> 
+                                            </a> 
+                                       </li>
+                                       
+                                       <li> 
                                         	<a href="goToServicesInvoicePage"> 
                                         		<i class="fa fa-file-text icon"> 
                                         			<b class="bg-info"></b>
