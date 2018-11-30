@@ -14,6 +14,6 @@
 </head>
 
 <body>
-this is service dashboard body
+this is approved customization body
 </body>
 </html>

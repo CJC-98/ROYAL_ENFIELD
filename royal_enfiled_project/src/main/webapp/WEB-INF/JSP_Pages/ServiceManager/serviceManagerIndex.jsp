@@ -125,7 +125,7 @@
                                     <ul class="nav">
                                         
                                         <li class="active"> 
-                                        	<a href="" class="active"> 
+                                        	<a href="goToServicesDashboardPage" class="active"> 
                                         		<i class="fa fa-dashboard icon">
                                             		<b class="bg-danger"></b> 
                                             	</i> 
@@ -134,7 +134,7 @@
                                         </li>
                                         
                                         <li> 
-                                        	<a href=""> 
+                                        	<a href="goToApprovedServicesPage"> 
                                         		<i class="fa fa-gear icon"> 
                                         			<b class="bg-warning"></b>
                                                 </i>  
@@ -143,25 +143,25 @@
                                         </li>
                                         
                                         <li> 
-                                        	<a href=""> 
+                                        	<a href="goToServicesInprogressPage"> 
                                         		<i class="fa fa-cog icon"> 
                                         			<b style="background-color: E6E60C"></b> 
                                                 </i> 
-                                                <span>Servicing In-Progress</span>
+                                                <span>Services In-Progress</span>
                                             </a>
                                         </li>
                                         
                                         <li> 
-                                        	<a href=""> 
+                                        	<a href="goToApprovedCustomizationPage"> 
                                         		<i class="fa fa-wrench icon"> 
                                         			<b class="bg-primary"></b>
                                                 </i> 
-                                                <span>Aprd. Custom.</span>
+                                                <span>Approved Custom.</span>
                                             </a>
                                         </li>
                                         
                                         <li> 
-                                        	<a href=""> 
+                                        	<a href="goToCustomizationInprogressPage"> 
                                         		<i class="fa fa-wrench icon">
                                                    	<b style="background-color: 09B514"></b> 
                                                 </i> 
@@ -170,7 +170,7 @@
                                         </li>
                                         
                                         <li> 
-                                        	<a href=""> 
+                                        	<a href="goToBikeServicesRecordsPage"> 
                                         		<i class="fa fa-clipboard icon"> 
                                         			<b style="background-color: 105F93"></b>
                                                 </i> 
@@ -179,7 +179,7 @@
                                        </li>
                                        
                                        <li> 
-                                        	<a href=""> 
+                                        	<a href="goToBikeCustomizationRecordsPage"> 
                                         		<i class="fa fa-clipboard icon"> 
                                         			<b style="background-color: 193A9B"></b>
                                                 </i> 
@@ -188,16 +188,16 @@
                                        </li>
                                        
                                        <li> 
-                                        	<a href=""> 
+                                        	<a href="goToServicesInvoicePage"> 
                                         		<i class="fa fa-file-text icon"> 
                                         			<b class="bg-info"></b>
                                                 </i> 
-                                                <span>Servicing Invoice</span> 
+                                                <span>Services Invoice</span> 
                                             </a> 
                                        </li>
                                        
                                        <li> 
-                                        	<a href=""> 
+                                        	<a href="goToCustomizationInvoicePage"> 
                                         		<i class="fa fa-file-text icon"> 
                                         			<b style="background-color: 00AB99"></b>  
                                                 </i> 
@@ -222,7 +222,7 @@
                 </aside> <!-- /.aside -->
                 
                 <!-- dashboard starts -->
-                	 <%@ include file="serviceManagerDashboard.jsp" %>
+                	 <jsp:include page="${link}"/>
                 <!-- dashboard ends -->
                 
                 <aside class="bg-light lter b-l aside-md hide" id="notes">

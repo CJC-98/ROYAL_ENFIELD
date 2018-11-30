@@ -14,6 +14,6 @@
 </head>
 
 <body>
-this is service dashboard body
+this is services records body
 </body>
 </html>
