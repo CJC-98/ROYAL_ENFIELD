@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 //import org.springframework.boot.test.SpringApplicationConfiguration;
 //import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
- 
+  
                  
 //@SpringBootApplication(scanBasePackages="com")
 //         
