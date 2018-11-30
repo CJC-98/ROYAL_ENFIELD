@@ -3,7 +3,7 @@ package com.app.extremity.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+  
 /* 
  * This controller helps to navigate in service manager index.jsp
  * and handle all request-response made by service manager
