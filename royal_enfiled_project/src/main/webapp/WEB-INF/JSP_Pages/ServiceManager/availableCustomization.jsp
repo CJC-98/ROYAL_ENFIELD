@@ -27,7 +27,7 @@
                      <div class="row">
                          <div class="col-sm-12">
                              <section class="panel panel-default">
-                                          <header class="panel-heading" style="font-size: 20px; font-weight: bold;">Bullet 350</header>
+                                          <header class="panel-heading" style="font-size: 20px; font-weight: bold;">Bullet 350cc</header>
                                                 
                                           <table class="table table-striped m-b-none">
                                                       
@@ -37,31 +37,27 @@
                                                          <th>Accessories</th>
                                                          <th>Cost</th>
                                                          <th>Quantity</th>
-                                                         <th width="90"></th>
                                                      </tr>
                                                 </thead>
                                                 
                                                 <tbody>
                                                         
                                                       <tr>
-                                                         <td>Silencer</td>
-                                                         <td>200</td>
-                                                         <td>60</td>
-                                                         <th width="90"></th>
+                                                         <td>Seat</td>
+                                                         <td>2500</td>
+                                                         <td>10</td>
                                                       </tr>
         
                                                       <tr>
                                                          <td>Headlight Grill</td>
                                                          <td>1100</td>
-                                                         <td>50</td>
-                                                         <th width="90"></th>
+                                                         <td>20</td>
                                                       </tr>
         
                                                       <tr>
                                                           <td>Wheel</td>
                                                           <td>7000</td>
-                                                          <td>35</td>
-                                                          <th width="90"></th>
+                                                          <td>325</td>
                                                         </tr>
                                                     </tbody>
 
@@ -75,11 +71,11 @@
                     
                <div>
                 
-               <!-- first record starts-->
+               <!-- second record starts-->
                      <div class="row">
                          <div class="col-sm-12">
                              <section class="panel panel-default">
-                                          <header class="panel-heading" style="font-size: 20px; font-weight: bold;">Bullet 350</header>
+                                          <header class="panel-heading" style="font-size: 20px; font-weight: bold;">Bullet 500cc</header>
                                                 
                                           <table class="table table-striped m-b-none">
                                                       
@@ -89,7 +85,6 @@
                                                          <th>Accessories</th>
                                                          <th>Cost</th>
                                                          <th>Quantity</th>
-                                                         <th width="90"></th>
                                                      </tr>
                                                 </thead>
                                                 
@@ -99,21 +94,18 @@
                                                          <td>Silencer</td>
                                                          <td>200</td>
                                                          <td>60</td>
-                                                         <th width="90"></th>
                                                       </tr>
         
                                                       <tr>
-                                                         <td>Headlight Grill</td>
-                                                         <td>1100</td>
-                                                         <td>50</td>
-                                                         <th width="90"></th>
+                                                         <td>tail Indicator</td>
+                                                         <td>200</td>
+                                                         <td>54</td>
                                                       </tr>
         
                                                       <tr>
-                                                          <td>Wheel</td>
-                                                          <td>7000</td>
-                                                          <td>35</td>
-                                                          <th width="90"></th>
+                                                          <td>side mirror</td>
+                                                          <td>700</td>
+                                                          <td>55</td>
                                                         </tr>
                                                     </tbody>
 
@@ -123,13 +115,14 @@
                                          
                         </div>
                     </div>
-                    <!-- first record ends-->
+                    <!-- second record ends-->
                
                </div>
            </div>       
                       
         </section>
    </section> 
+   </section>
 
 </body>
 </html>
