@@ -31,8 +31,7 @@ public class HomeController {
 	{ 
 		
 		System.out.println("In SignIn controller");
-		model.addAttribute("link","serviceManagerDashboard.jsp");
-		return "ServiceManager/serviceManagerIndex";//by default go to client index.jsp  
+		return "IndivisualUser/indivisualUserIndex";//by default go to client index.jsp  
 
 	}  
 	   
