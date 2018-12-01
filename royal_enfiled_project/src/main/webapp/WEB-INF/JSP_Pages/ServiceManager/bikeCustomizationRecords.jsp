@@ -14,6 +14,17 @@
 </head>
 
 <body>
-this is customization records body
+	<section id="content">
+	        <section class="vbox">
+	            <section class="scrollable padder">                                               
+	                                
+	                <div class="m-b-md">
+	                    <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Bike Customization Records</h3>	                </div>
+	                
+	               // Bike Customization Records body here
+	                
+	            </section>
+	        </section>
+	 </section> 
 </body>
 </html>

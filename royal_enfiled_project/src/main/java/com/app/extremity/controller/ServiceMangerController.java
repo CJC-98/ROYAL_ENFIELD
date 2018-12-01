@@ -83,4 +83,11 @@ public class ServiceMangerController {
 		return "ServiceManager/serviceManagerIndex";
 	}
 	
+	@RequestMapping(value="/goToMyNotificationsPage")
+	public String goToMyNotificationsPage(Model model){
+		
+		model.addAttribute("link","MyNotifications.jsp");
+		return "ServiceManager/serviceManagerIndex";
+	}
+	
 }

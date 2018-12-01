@@ -27,37 +27,47 @@
                      <div class="row">
                          <div class="col-sm-12">
                              <section class="panel panel-default">
-                                          <header class="panel-heading" style="font-size: 20px; font-weight: bold;">Bullet 350cc</header>
+                                          <header class="panel-heading bg-success lt" style="font-size: 20px; font-weight: bold;">Bullet 350cc</header>
                                                 
                                           <table class="table table-striped m-b-none">
                                                       
                                                 <thead>
                                                              
                                                      <tr>   
-                                                         <th>Accessories</th>
-                                                         <th>Cost</th>
-                                                         <th>Quantity</th>
+                                                         <th style="text-align: center;">Accessories</th>
+                                                         <th style="text-align: center;">Cost</th>
+                                                         <th style="text-align: center;">Quantity</th>
+                                                         <th style="text-align: center;">Notify Sales Manager</th>
                                                      </tr>
                                                 </thead>
                                                 
                                                 <tbody>
                                                         
-                                                      <tr>
+                                                      <tr style="text-align: center;">
                                                          <td>Seat</td>
                                                          <td>2500</td>
                                                          <td>10</td>
+                                                         <td style="text-align: center;">
+                                                         	<a href="" class="btn btn-s-xs btn-warning btn-rounded">Send Notification</a>
+                                                         </td>
                                                       </tr>
         
-                                                      <tr>
+                                                      <tr style="text-align: center;">
                                                          <td>Headlight Grill</td>
                                                          <td>1100</td>
                                                          <td>20</td>
+                                                         <td style="text-align: center;">
+                                                         	<a href="" class="btn btn-s-xs btn-warning btn-rounded">Send Notification</a>
+                                                         </td>
                                                       </tr>
         
-                                                      <tr>
+                                                      <tr style="text-align: center;">
                                                           <td>Wheel</td>
                                                           <td>7000</td>
                                                           <td>325</td>
+                                                          <td style="text-align: center;">
+                                                         	<a href="" class="btn btn-s-xs btn-warning btn-rounded">Send Notification</a>
+                                                         </td>
                                                         </tr>
                                                     </tbody>
 
@@ -72,40 +82,50 @@
                <div>
                 
                <!-- second record starts-->
-                     <div class="row">
+                    <div class="row">
                          <div class="col-sm-12">
                              <section class="panel panel-default">
-                                          <header class="panel-heading" style="font-size: 20px; font-weight: bold;">Bullet 500cc</header>
+                                          <header class="panel-heading  bg-success lter" style="font-size: 20px; font-weight: bold;">Bullet 350cc</header>
                                                 
                                           <table class="table table-striped m-b-none">
                                                       
                                                 <thead>
                                                              
                                                      <tr>   
-                                                         <th>Accessories</th>
-                                                         <th>Cost</th>
-                                                         <th>Quantity</th>
+                                                         <th style="text-align: center;">Accessories</th>
+                                                         <th style="text-align: center;">Cost</th>
+                                                         <th style="text-align: center;">Quantity</th>
+                                                         <th style="text-align: center;">Notify Sales Manager</th>
                                                      </tr>
                                                 </thead>
                                                 
                                                 <tbody>
                                                         
-                                                      <tr>
-                                                         <td>Silencer</td>
-                                                         <td>200</td>
-                                                         <td>60</td>
+                                                      <tr style="text-align: center;">
+                                                         <td>Tail Light</td>
+                                                         <td>250</td>
+                                                         <td>10</td>
+                                                         <td style="text-align: center;">
+                                                         	<a href="" class="btn btn-s-xs btn-warning btn-rounded">Send Notification</a>
+                                                         </td>
                                                       </tr>
         
-                                                      <tr>
-                                                         <td>tail Indicator</td>
-                                                         <td>200</td>
-                                                         <td>54</td>
+                                                      <tr style="text-align: center;">
+                                                         <td>Tail Light</td>
+                                                         <td>1120</td>
+                                                         <td>30</td>
+                                                         <td style="text-align: center;">
+                                                         	<a href="" class="btn btn-s-xs btn-warning btn-rounded">Send Notification</a>
+                                                         </td>
                                                       </tr>
         
-                                                      <tr>
-                                                          <td>side mirror</td>
-                                                          <td>700</td>
-                                                          <td>55</td>
+                                                      <tr style="text-align: center;">
+                                                          <td>Bike Cover</td>
+                                                          <td>500</td>
+                                                          <td>435</td>
+                                                          <td style="text-align: center;">
+                                                         	<a href="" class="btn btn-s-xs btn-warning btn-rounded">Send Notification</a>
+                                                         </td>
                                                         </tr>
                                                     </tbody>
 
@@ -116,6 +136,62 @@
                         </div>
                     </div>
                     <!-- second record ends-->
+                    
+                    <!-- third record starts-->
+                    <div class="row">
+                         <div class="col-sm-12">
+                             <section class="panel panel-default">
+                                          <header class="panel-heading  bg-success lter" style="font-size: 20px; font-weight: bold;">Anangers 500cc</header>
+                                                
+                                          <table class="table table-striped m-b-none">
+                                                      
+                                                <thead>
+                                                             
+                                                     <tr>   
+                                                         <th style="text-align: center;">Accessories</th>
+                                                         <th style="text-align: center;">Cost</th>
+                                                         <th style="text-align: center;">Quantity</th>
+                                                         <th style="text-align: center;">Notify Sales Manager</th>
+                                                     </tr>
+                                                </thead>
+                                                
+                                                <tbody>
+                                                        
+                                                      <tr style="text-align: center;">
+                                                         <td>Tail Light</td>
+                                                         <td>250</td>
+                                                         <td>10</td>
+                                                         <td style="text-align: center;">
+                                                         	<a href="" class="btn btn-s-xs btn-warning btn-rounded">Send Notification</a>
+                                                         </td>
+                                                      </tr>
+        
+                                                      <tr style="text-align: center;">
+                                                         <td>Tail Light</td>
+                                                         <td>1120</td>
+                                                         <td>30</td>
+                                                         <td style="text-align: center;">
+                                                         	<a href="" class="btn btn-s-xs btn-warning btn-rounded">Send Notification</a>
+                                                         </td>
+                                                      </tr>
+        
+                                                      <tr style="text-align: center;">
+                                                          <td>Bike Cover</td>
+                                                          <td>500</td>
+                                                          <td>435</td>
+                                                          <td style="text-align: center;">
+                                                         	<a href="" class="btn btn-s-xs btn-warning btn-rounded">Send Notification</a>
+                                                         </td>
+                                                        </tr>
+                                                    </tbody>
+
+                                                </table>
+   
+                             </section>
+                                         
+                        </div>
+                    </div>
+                    <!-- third record ends-->
                
                </div>
            </div>       

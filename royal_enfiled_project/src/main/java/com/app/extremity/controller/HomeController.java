@@ -31,6 +31,7 @@ public class HomeController {
 	{ 
 		
 		System.out.println("In SignIn controller");
+		model.addAttribute("active","active");
 		model.addAttribute("link","serviceManagerDashboard.jsp");
 		return "ServiceManager/serviceManagerIndex"; 
 	}  
