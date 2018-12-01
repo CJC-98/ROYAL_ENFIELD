@@ -19,113 +19,13 @@
 	            <section class="scrollable padder">                                               
 	                                
 	                <div class="m-b-md">
-	                    <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Dashboard</h3>
+	                    <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Approved Services</h3>
 	                </div>
 	                
-	               // Dashboard body here
+	               // Approved Services body here
 	                
 	            </section>
 	        </section>
-	 </section>               
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	 </section> 
 </body>
 </html>

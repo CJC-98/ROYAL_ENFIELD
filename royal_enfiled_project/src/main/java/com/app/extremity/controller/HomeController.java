@@ -27,11 +27,13 @@ public class HomeController {
 	} 
 	
 	@RequestMapping(value="/SignIn")
-	public String signIn()    
+	public String signIn(Model model)    
 	{ 
 		
 		System.out.println("In SignIn controller");
-		return "IndivisualUser/indivisualUserIndex";//by default go to client index.jsp  
+		model.addAttribute("link","serviceManagerDashboard.jsp");
+		return "ServiceManager/serviceManagerIndex";//by default go to client index.jsp  
+
 	}  
 	   
 	
