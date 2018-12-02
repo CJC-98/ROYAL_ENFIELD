@@ -207,7 +207,7 @@
 	    <div class="modal-dialog modal-md">
 	      <div class="modal-content">
 	        <div class="modal-header">
-	        	<h3 style="text-align: center">Send Notification</h3>
+	        	<h3 style="text-align: center">Notification Window</h3>
 	        	<div class="input-group"> 
 	        		<input type="text" class="form-control rounded" placeholder="Search Sales Manager"> 
 	        		<span class="input-group-btn">
