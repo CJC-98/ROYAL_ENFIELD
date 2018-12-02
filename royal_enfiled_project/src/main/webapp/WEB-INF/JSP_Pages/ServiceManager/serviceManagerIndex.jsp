@@ -83,7 +83,7 @@
                                     <ul class="nav">
                                         
                                         <li> 
-                                        	<a href="goToServicesDashboardPage"> 
+                                        	<a href="DashboardPage"> 
                                         		<i class="fa fa-dashboard icon">
                                             		<b class="bg-danger"></b> 
                                             	</i> 
@@ -92,7 +92,7 @@
                                         </li>
                                         
                                         <li> 
-                                        	<a href="goToApprovedServicesPage"> 
+                                        	<a href="ApprovedServicesPage"> 
                                         		<i class="fa fa-gear icon"> 
                                         			<b class="bg-warning dker"></b>
                                                 </i>  
@@ -101,7 +101,7 @@
                                         </li>
                                         
                                         <li> 
-                                        	<a href="goToServicesInprogressPage"> 
+                                        	<a href="ServicesInprogressPage"> 
                                         		<i class="fa fa-cog icon"> 
                                         			<b class="bg-warning"></b> 
                                                 </i> 
@@ -110,7 +110,7 @@
                                         </li>
                                         
                                         <li> 
-                                        	<a href="goToApprovedCustomizationPage"> 
+                                        	<a href="ApprovedCustomizationPage"> 
                                         		<i class="fa fa-wrench icon"> 
                                         			<b class="bg-primary dker"></b>
                                                 </i> 
@@ -119,7 +119,7 @@
                                         </li>
                                         
                                         <li> 
-                                        	<a href="goToCustomizationInprogressPage"> 
+                                        	<a href="CustomizationInprogressPage"> 
                                         		<i class="fa fa-wrench icon">
                                                    	<b class="bg-primary"></b> 
                                                 </i> 
@@ -128,7 +128,7 @@
                                         </li>
                                         
                                         <li> 
-                                        	<a href="goToBikeServicesRecordsPage"> 
+                                        	<a href="BikeServicesRecordsPage"> 
                                         		<i class="fa fa-clipboard icon"> 
                                         			<b class="bg-success dker"></b>
                                                 </i> 
@@ -137,7 +137,7 @@
                                        </li>
                                        
                                        <li> 
-                                        	<a href="goToBikeCustomizationRecordsPage"> 
+                                        	<a href="BikeCustomizationRecordsPage"> 
                                         		<i class="fa fa-clipboard icon"> 
                                         			<b class="bg-success"></b>
                                                 </i> 
@@ -146,7 +146,7 @@
                                        </li>
                                        
                                        <li> 
-                                        	<a href="goToAvailableCustomizationPage"> 
+                                        	<a href="AvailableCustomizationPage"> 
                                         		<i class="fa fa-gavel icon"> 
                                         			<b class="bg-light dk"></b>
                                                 </i> 
@@ -155,7 +155,7 @@
                                        </li>
                                        
                                        <li> 
-                                        	<a href="goToServicesInvoicePage"> 
+                                        	<a href="ServicesInvoicePage"> 
                                         		<i class="fa fa-file-text icon"> 
                                         			<b class="bg-info dker"></b>
                                                 </i> 
@@ -164,7 +164,7 @@
                                        </li>
                                        
                                        <li> 
-                                        	<a href="goToCustomizationInvoicePage"> 
+                                        	<a href="CustomizationInvoicePage"> 
                                         		<i class="fa fa-file-text icon"> 
                                         			<b class="bg-info"></b>  
                                                 </i> 
@@ -173,7 +173,7 @@
                                        </li>
                                        
                                        <li> 
-                                        	<a href="goToMyNotificationsPage"> 
+                                        	<a href="MyNotificationsPage"> 
                                         		<i class="fa fa-bell icon"> 
                                         			<b class="bg-info"></b>  
                                                 </i> 
