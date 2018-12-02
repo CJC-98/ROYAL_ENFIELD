@@ -48,7 +48,7 @@
                                                          <td>2500</td>
                                                          <td>10</td>
                                                          <td style="text-align: center;">
-                                                         	<a href="" class="btn btn-s-xs btn-warning btn-rounded" data-toggle="modal" data-target="#myModal">Send 1 Notification</a>
+                                                         	<a href="" class="btn btn-s-xs btn-warning btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
                                                          </td>
                                                       </tr>
         
@@ -216,8 +216,8 @@
                 </div>  
 	        </div>
 	        <div class="modal-body">
-	          <h5><u>Sales Manager Name Here</u></h5>
-	          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+	          <h5><u>//Sales Manager Name Here</u></h5>
+	          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="seats are getting out of stock"></textarea>
 	        </div>
 	        <div class="modal-footer">
 	          <button type="button" class="btn btn-primary" data-dismiss="modal">Send Notification</button>	
