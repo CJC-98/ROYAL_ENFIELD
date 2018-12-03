@@ -24,14 +24,14 @@ public class HomeController {
 		System.out.println("In login controller");
 
 		return "login";
-	} 
+	}    
 	
 	@RequestMapping(value="/SignIn")
 	public String signIn(Model model)    
 	{ 
 		
 		System.out.println("In SignIn controller");
-		return "ServiceManager/serviceManagerIndex";
+		return "IndivisualUser/indivisualUserIndex";
 		//return "IndivisualUser/indivisualUserIndex";//by default go to client index.jsp  
 
 	}  
