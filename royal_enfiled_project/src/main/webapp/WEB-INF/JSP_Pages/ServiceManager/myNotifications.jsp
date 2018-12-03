@@ -22,10 +22,7 @@
 	                    <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">My Notifications</h3>
 	                </div>
 	                
-	               // My Notifications body here
 	                
-	            </section>
-	        </section>
-	 </section> 
+	     
 </body>
 </html>
