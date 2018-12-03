@@ -30,7 +30,7 @@ public class HomeController {
 	public String signIn()    
 	{ 
 		
-		System.out.println("In SignIn controller");
+		System.out.println("In SignIn controller.....");
 		return "Accounts/accountsIndex";//by default go to client index.jsp  
 	}  
 	   
