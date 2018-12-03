@@ -225,7 +225,7 @@
 					  	<!-- modal ends -->
                
                </div>
-           </div>       
+          </div>      
                       
         </section>
    </section> 
