@@ -230,9 +230,7 @@
         </section>
    </section> 
    </section>
-   
-<<<<<<< HEAD
-   
+      
    <!-- modal starts-->
  
 	  <div class="modal fade" id="myModal" role="dialog">
@@ -258,9 +256,6 @@
 	      </div>
 	    </div>
   	</div>
-=======
->>>>>>> refs/heads/pranaykohad(TL)
-  
 
 </body>
 </html>
