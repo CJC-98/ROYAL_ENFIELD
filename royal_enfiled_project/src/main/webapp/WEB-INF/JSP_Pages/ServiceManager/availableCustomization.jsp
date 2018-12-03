@@ -225,14 +225,12 @@
 					  	<!-- modal ends -->
                
                </div>
-           </div>       
+          </div>      
                       
         </section>
    </section> 
    </section>
-   
 
-   
    <!-- modal starts-->
  
 	  <div class="modal fade" id="myModal" role="dialog">
@@ -257,8 +255,8 @@
 	        </div>
 	      </div>
 	    </div>
+
   	</div>
-  
 
 </body>
 </html>
