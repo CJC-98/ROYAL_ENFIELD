@@ -16,7 +16,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 //@EntityScan("com.model")
 //@EnableJpaRepositories("com.Idao") 
 //@ComponentScan(basePackages= {"com.app.extremity"})  
-  
+   
 
 @SpringBootApplication(scanBasePackages="com")
 @EntityScan("com.app.extremity.model")
