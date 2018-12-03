@@ -22,7 +22,29 @@
 	                    <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">My Notifications</h3>
 	                </div>
 	                
-	                
-	     
+	              
+	               <section class="panel panel-default">
+                                        <header class="panel-heading bg-light">
+                                            <ul class="nav nav-tabs nav-justified">
+                                                <li class="active"><a href="#Unread" data-toggle="tab">Unread</a></li>
+                                                <li><a href="#Read" data-toggle="tab">Read</a></li>
+                                                <li><a href="#Sendnotification" data-toggle="tab">Send notification</a></li>
+                                                   
+                                            </ul>
+                                        </header>
+                                        <div class="panel-body">
+                                            <div class="tab-content">
+                                                <div class="tab-pane active" id="Unread">List Of Unread Massages</div>
+                                                <div class="tab-pane" id="Read">List Of Read Massages</div>
+                                                <div class="tab-pane" id="Sendnotification">Send New Notification</div>
+                                                </div>
+                                                </div>
+                                         </section>
+                                        </header>                    
+                                        </div>
+                                        </div>
+	              	            </section>
+	        </section>
+	 </section> 
 </body>
 </html>

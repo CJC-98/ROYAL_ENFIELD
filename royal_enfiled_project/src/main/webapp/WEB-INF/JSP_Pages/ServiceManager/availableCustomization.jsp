@@ -231,7 +231,7 @@
    </section> 
    </section>
    
-<<<<<<< HEAD
+
    
    <!-- modal starts-->
  
@@ -258,8 +258,7 @@
 	      </div>
 	    </div>
   	</div>
-=======
->>>>>>> refs/heads/pranaykohad(TL)
+
   
 
 </body>
