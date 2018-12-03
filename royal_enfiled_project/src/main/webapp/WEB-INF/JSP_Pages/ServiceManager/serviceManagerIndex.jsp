@@ -4,7 +4,7 @@
 <html lang="en" class="app">
 <head>
 	<meta charset="utf-8" />
-    <title>Notebook | Web Application</title>
+    <title>Royal Enfield | Web Application</title>
     <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     
@@ -19,39 +19,9 @@
         <header class="bg-dark dk header navbar navbar-fixed-top-xs">
             <div class="navbar-header aside-md"> <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open"
                     data-target="#nav,html"> <i class="fa fa-bars"></i> </a> <a href="#" class="navbar-brand"
-                    data-toggle="fullscreen"><img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/logo.png" class="m-r-sm">Notebook</a> <a class="btn btn-link visible-xs"
+                    data-toggle="fullscreen"><img src="${pageContext.request.contextPath}/Resources/Royal Enfield images/RL_logo3.jpg" class="m-r-sm">Royal Enfield</a> <a class="btn btn-link visible-xs"
                     data-toggle="dropdown" data-target=".nav-user"> <i class="fa fa-cog"></i> </a> </div>
-            <ul class="nav navbar-nav hidden-xs">
-                <li class="dropdown"> <a href="#" class="dropdown-toggle dker" data-toggle="dropdown"> <i class="fa fa-building-o"></i>
-                        <span class="font-bold">Activity</span> </a>
-                    <section class="dropdown-menu aside-xl on animated fadeInLeft no-borders lt">
-                        <div class="wrapper lter m-t-n-xs"> <a href="#" class="thumb pull-left m-r"> <img src="images/avatar.jpg"
-                                    class="img-circle"> </a>
-                            <div class="clear"> <a href="#"><span class="text-white font-bold">@Mike Mcalidek</a></span>
-                                <small class="block">Art Director</small> <a href="#" class="btn btn-xs btn-success m-t-xs">Upgrade</a>
-                            </div>
-                        </div>
-                        <div class="row m-l-none m-r-none m-b-n-xs text-center">
-                            <div class="col-xs-4">
-                                <div class="padder-v"> <span class="m-b-xs h4 block text-white">245</span> <small class="text-muted">Followers</small>
-                                </div>
-                            </div>
-                            <div class="col-xs-4 dk">
-                                <div class="padder-v"> <span class="m-b-xs h4 block text-white">55</span> <small class="text-muted">Likes</small>
-                                </div>
-                            </div>
-                            <div class="col-xs-4">
-                                <div class="padder-v"> <span class="m-b-xs h4 block text-white">2,035</span> <small
-                                        class="text-muted">Photos</small> </div>
-                            </div>
-                        </div>
-                    </section>
-                </li>
-                <li>
-                    <div class="m-t m-l"> <a href="price.html" class="dropdown-toggle btn btn-xs btn-primary" title="Upgrade"><i
-                                class="fa fa-long-arrow-up"></i></a> </div>
-                </li>
-            </ul>
+           
             <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user">
                 <li class="hidden-xs"> <a href="#" class="dropdown-toggle dk" data-toggle="dropdown"> <i class="fa fa-bell"></i>
                         <span class="badge badge-sm up bg-danger m-l-n-sm count">2</span> </a>
@@ -104,19 +74,7 @@
                 <!-- .aside -->
                 <aside class="bg-dark lter aside-md hidden-print hidden-xs" id="nav">
                     <section class="vbox">
-                        <!-- <header class="header bg-primary lter text-center clearfix">
-                            <div class="btn-group"> <button type="button" class="btn btn-sm btn-dark btn-icon" title="New project"><i
-                                        class="fa fa-plus"></i></button>
-                                <div class="btn-group hidden-nav-xs"> <button type="button" class="btn btn-sm btn-primary dropdown-toggle"
-                                        data-toggle="dropdown"> Switch Project <span class="caret"></span> </button>
-                                    <ul class="dropdown-menu text-left">
-                                        <li><a href="#">Project</a></li>
-                                        <li><a href="#">Another Project</a></li>
-                                        <li><a href="#">More Projects</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </header> -->
+                    
                         <section class="w-f scrollable">
                             <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0"
                                 data-size="5px" data-color="#333333">
@@ -124,8 +82,8 @@
                                 <nav class="nav-primary hidden-xs">
                                     <ul class="nav">
                                         
-                                        <li class="active"> 
-                                        	<a href="goToServicesDashboardPage" class="active"> 
+                                        <li> 
+                                        	<a href="DashboardPage"> 
                                         		<i class="fa fa-dashboard icon">
                                             		<b class="bg-danger"></b> 
                                             	</i> 
@@ -134,83 +92,92 @@
                                         </li>
                                         
                                         <li> 
-                                        	<a href="goToApprovedServicesPage"> 
+                                        	<a href="ApprovedServicesPage"> 
                                         		<i class="fa fa-gear icon"> 
-                                        			<b class="bg-warning"></b>
+                                        			<b class="bg-warning dker"></b>
                                                 </i>  
                                                 <span>Approved Services</span>
                                             </a>
                                         </li>
                                         
                                         <li> 
-                                        	<a href="goToServicesInprogressPage"> 
-                                        		<i class="fa fa-cog icon"> 
-                                        			<b style="background-color: E6E60C"></b> 
+                                        	<a href="ServicesInprogressPage"> 
+                                        		<i class="fa fa-gears icon"> 
+                                        			<b class="bg-warning"></b> 
                                                 </i> 
                                                 <span>Services In-Progress</span>
                                             </a>
                                         </li>
                                         
                                         <li> 
-                                        	<a href="goToApprovedCustomizationPage"> 
+                                        	<a href="ApprovedCustomizationPage"> 
                                         		<i class="fa fa-wrench icon"> 
-                                        			<b class="bg-primary"></b>
+                                        			<b class="bg-primary dker"></b>
                                                 </i> 
                                                 <span>Approved Custom.</span>
                                             </a>
                                         </li>
                                         
                                         <li> 
-                                        	<a href="goToCustomizationInprogressPage"> 
+                                        	<a href="CustomizationInprogressPage"> 
                                         		<i class="fa fa-wrench icon">
-                                                   	<b style="background-color: 09B514"></b> 
+                                                   	<b class="bg-primary"></b> 
                                                 </i> 
                                                 <span>Custom. In-Progress</span> 
                                             </a> 
                                         </li>
                                         
                                         <li> 
-                                        	<a href="goToBikeServicesRecordsPage"> 
+                                        	<a href="BikeServicesRecordsPage"> 
                                         		<i class="fa fa-clipboard icon"> 
-                                        			<b style="background-color: 105F93"></b>
+                                        			<b class="bg-success dker"></b>
                                                 </i> 
                                                 <span>Bike Services Records</span> 
                                             </a> 
                                        </li>
                                        
                                        <li> 
-                                        	<a href="goToBikeCustomizationRecordsPage"> 
+                                        	<a href="BikeCustomizationRecordsPage"> 
                                         		<i class="fa fa-clipboard icon"> 
-                                        			<b style="background-color: 193A9B"></b>
+                                        			<b class="bg-success"></b>
                                                 </i> 
                                                 <span>Bike Custom. Records</span> 
                                             </a> 
                                        </li>
                                        
                                        <li> 
-                                        	<a href="goToAvailableCustomizationPage"> 
+                                        	<a href="AvailableCustomizationPage"> 
                                         		<i class="fa fa-gavel icon"> 
-                                        			<b style="background-color: 532B72"></b>
+                                        			<b class="bg-light dk"></b>
                                                 </i> 
                                                 <span>Available Custom.</span> 
                                             </a> 
                                        </li>
                                        
                                        <li> 
-                                        	<a href="goToServicesInvoicePage"> 
-                                        		<i class="fa fa-file-text icon"> 
-                                        			<b class="bg-info"></b>
+                                        	<a href="ServicesInvoicePage"> 
+                                        		<i class="fa fa-rupee icon"> 
+                                        			<b class="bg-info dker"></b>
                                                 </i> 
                                                 <span>Services Invoice</span> 
                                             </a> 
                                        </li>
                                        
                                        <li> 
-                                        	<a href="goToCustomizationInvoicePage"> 
-                                        		<i class="fa fa-file-text icon"> 
-                                        			<b style="background-color: 00AB99"></b>  
+                                        	<a href="CustomizationInvoicePage"> 
+                                        		<i class="fa fa-rupee icon"> 
+                                        			<b class="bg-info"></b>  
                                                 </i> 
                                                 <span>Custom. Invoice</span> 
+                                            </a> 
+                                       </li>
+                                       
+                                       <li> 
+                                        	<a href="MyNotificationsPage"> 
+                                        		<i class="fa fa-bell icon"> 
+                                        			<b class="bg-info"></b>  
+                                                </i> 
+                                                <span>My Notifications</span> 
                                             </a> 
                                        </li>
                                        

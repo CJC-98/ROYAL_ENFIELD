@@ -14,6 +14,18 @@
 </head>
 
 <body>
-this is services records body
+	<section id="content"  class="bg-light lter">
+	        <section class="vbox">
+	            <section class="scrollable padder">                                               
+	                                
+	                <div class="m-b-md">
+	                    <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Bike Services Records</h3>
+	                </div>
+	                
+	               // Bike Services Records body here
+	                
+	            </section>
+	        </section>
+	 </section> 
 </body>
 </html>

@@ -14,6 +14,18 @@
 </head>
 
 <body>
-this is service in progress body
+	<section id="content" class="bg-light lter">
+	        <section class="vbox">
+	            <section class="scrollable padder">                                               
+	                                
+	                <div class="m-b-md">
+	                    <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Services Inprogress</h3>
+	                </div>
+	                
+	               // Services Inprogress body here
+	                
+	            </section>
+	        </section>
+	 </section> 
 </body>
 </html>
