@@ -230,7 +230,13 @@
         </section>
    </section> 
    </section>
+<<<<<<< HEAD
       
+=======
+   
+
+   
+>>>>>>> branch 'serviceManagerTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
    <!-- modal starts-->
  
 	  <div class="modal fade" id="myModal" role="dialog">
@@ -256,6 +262,11 @@
 	      </div>
 	    </div>
   	</div>
+<<<<<<< HEAD
+=======
+
+  
+>>>>>>> branch 'serviceManagerTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 
 </body>
 </html>
