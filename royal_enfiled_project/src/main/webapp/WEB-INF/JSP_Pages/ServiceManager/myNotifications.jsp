@@ -61,7 +61,7 @@
 						          <button type="button" class="btn btn-primary" data-dismiss="modal">Send Notification</button>	
 						          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 						        </div>
-						      </div>
+						      </div>   
 						    </div>
 					  	</div>
 					  
