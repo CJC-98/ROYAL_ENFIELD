@@ -102,7 +102,7 @@
                                         
                                         <li> 
                                         	<a href="ServicesInprogressPage"> 
-                                        		<i class="fa fa-cog icon"> 
+                                        		<i class="fa fa-gears icon"> 
                                         			<b class="bg-warning"></b> 
                                                 </i> 
                                                 <span>Services In-Progress</span>
@@ -156,7 +156,7 @@
                                        
                                        <li> 
                                         	<a href="ServicesInvoicePage"> 
-                                        		<i class="fa fa-file-text icon"> 
+                                        		<i class="fa fa-rupee icon"> 
                                         			<b class="bg-info dker"></b>
                                                 </i> 
                                                 <span>Services Invoice</span> 
@@ -165,7 +165,7 @@
                                        
                                        <li> 
                                         	<a href="CustomizationInvoicePage"> 
-                                        		<i class="fa fa-file-text icon"> 
+                                        		<i class="fa fa-rupee icon"> 
                                         			<b class="bg-info"></b>  
                                                 </i> 
                                                 <span>Custom. Invoice</span> 

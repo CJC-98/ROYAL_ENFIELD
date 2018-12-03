@@ -14,7 +14,7 @@
 </head>
 
 <body>
-	<section id="content">
+	<section id="content"  class="bg-light lter">
 	        <section class="vbox">
 	            <section class="scrollable padder">                                               
 	                                
