@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 //author: pranay kohad
-
+    
 @Controller    
 public class HomeController {
 	    
@@ -27,11 +27,13 @@ public class HomeController {
 	} 
 	
 	@RequestMapping(value="/SignIn")
-	public String signIn()    
+	public String signIn(Model model)    
 	{ 
 		
 		System.out.println("In SignIn controller");
-		return "IndivisualUser/indivisualUserIndex";//by default go to client index.jsp  
+		return "ServiceManager/serviceManagerIndex";
+		//return "IndivisualUser/indivisualUserIndex";//by default go to client index.jsp  
+
 	}  
 	   
 	
