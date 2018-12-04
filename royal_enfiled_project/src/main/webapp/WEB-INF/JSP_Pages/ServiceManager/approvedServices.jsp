@@ -22,7 +22,23 @@
 	                    <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Approved Services</h3>
 	                </div>
 	                
-	               // Approved Services body here
+	               <section class="panel bg-light" style="border: 1px solid  grey">
+                             <div class="panel-body"> 		
+                             		//servive 1  
+                             </div>
+                   </section>
+                   
+                   <section class="panel bg-light" style="border: 1px solid  grey">
+                             <div class="panel-body"> 		
+                             		//servive 2
+                             </div>
+                   </section>
+                   
+                   <section class="panel bg-light" style="border: 1px solid  grey">
+                             <div class="panel-body"> 		
+                             		//servive 3
+                             </div>
+                   </section>
 	                
 	            </section>
 	        </section>
