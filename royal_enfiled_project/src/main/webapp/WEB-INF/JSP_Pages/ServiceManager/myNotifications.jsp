@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -38,10 +39,108 @@
 												<div class="tab-pane active bg-light dk" id="Unread">
                                                 	<span class="">List Of Unread Massages</span>                          
                                     			</div>
-                                    			
+                                   
+                                   	
                                                 <div class="tab-pane bg-light dk" id="Read">
-                                                	List Of Read Massages
-                                                </div>
+                                               
+                                                <div class="well m-t">
+                                              <!-- First read msg info start-->
+                                           <div class="row">
+                                           <div class="col-lg-12">
+                                          
+                                          <ul class="breadcrumb">
+                                                   <div class="clearfix m-b">
+                                                  <a href="#" class="pull-left thumb m-r">
+                                                  
+                                                <span class="thumb-sm avatar pull-left">
+                                                   <img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/avatar.jpg">
+                                                    </span> 
+                                                  </a>
+                      
+                                                    <div class="clear">
+                                                    <small class="text-muted">
+                                                        <i class="fa fa-map-marker"></i> London, UK</small>
+                                                    
+                                                        <div class="h5 m-t-xs m-b-xs"><strong>Name:</strong> John Smith
+                                                        <br>
+                                                        <br>
+                                                       <strong> Designation:</strong> Sales manager1
+                                                        <br>
+                                                        <br>
+                                                       <strong> Discription:</strong> //
+                                                        Description of readed messages will be here.
+                                                        //<span class="text-muted m-l-sm pull-right"> <i class="fa fa-clock-o"></i> Message Time </span> 
+                                                         <br>
+                                                         <br>
+                                                         <strong>Replied Message:</strong> //
+                                                         Description of replied message will be here.
+                                                         //                 
+                                  <span class="text-muted m-l-sm pull-right"> <i class="fa fa-clock-o"></i> Reply Time</span>
+                                 
+                                                        </div>
+                                                        </div>
+                                                        </div>
+                                                        </ul>
+                                                        </div>         
+                                                        </div>
+                                                <!-- First read msg info end -->
+                                               <!-- Second read msg info start-->
+                                         
+                                           <div class="row">
+                                           <div class="col-lg-12">
+                                          
+                                          <ul class="breadcrumb">
+                                                  <div class="clearfix m-b"> 
+                                                   <a href="#" class="pull-left thumb m-r">
+                                                  
+                                                <span class="thumb-sm avatar pull-left">
+                                                   <img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/avatar.jpg">
+                                                    </span> 
+                                                  </a>
+                    
+                                                    <div class="clear">
+                                                    <small class="text-muted">
+                                                    
+                                                         <i class="fa fa-map-marker"></i> Pune, India</small>
+                                                    
+                                                        <div class="h5 m-t-xs m-b-xs"><strong>Name:</strong>Pranay K
+                                                        <br>
+                                                        <br>
+                                                       <strong> Designation:</strong> Sales manager2
+                                                        <br>
+                                                        <br>
+                                                       <strong> Discription:</strong>//
+                                                         Description of messages will be here.
+                                                        //<span class="text-muted m-l-sm pull-right"> <i class="fa fa-clock-o"></i> Message Time
+                                                      
+                                                         </span>
+                                                        <br>
+                                                        <br>
+                                                        <strong>Replied Message:</strong> //
+                                                         Description of replied message will be here.
+                                                         // 
+                                                         <span class="text-muted m-l-sm pull-right"> <i class="fa fa-clock-o"></i> Reply Time
+                                                         </span>
+                                                
+                                                        </div>
+                                                        
+                                                        </div>
+                                                        </div>
+                                                        </ul>
+                                                        </div> 
+                                                       </div>
+                                                    
+                                                <!-- Second read msg info end -->
+                                </div>
+
+                                                
+                                                
+                                         
+                                                
+                                                
+                                                
+                                                
+                                              </div>
 
                                               
                                                 <div class="tab-pane bg-light dk" id="Sendnotification">
