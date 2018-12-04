@@ -56,8 +56,10 @@
                         </section>
                     </section>
                 </li>
-                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb-sm avatar pull-left">
-                            <img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/avatar.jpg"> </span> John.Smith <b class="caret"></b> </a>
+                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                	<span class="thumb-sm avatar pull-left">
+                            <img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/avatar.jpg"> 
+                            </span> John.Smith <b class="caret"></b> </a>
                     <ul class="dropdown-menu animated fadeInRight"> <span class="arrow top"></span>
                         <li> <a href="#">Settings</a> </li>
                         <li> <a href="profile.html">Profile</a> </li>
@@ -102,7 +104,7 @@
                                         
                                         <li> 
                                         	<a href="ServicesInprogressPage"> 
-                                        		<i class="fa fa-cog icon"> 
+                                        		<i class="fa fa-gears icon"> 
                                         			<b class="bg-warning"></b> 
                                                 </i> 
                                                 <span>Services In-Progress</span>
@@ -156,7 +158,7 @@
                                        
                                        <li> 
                                         	<a href="ServicesInvoicePage"> 
-                                        		<i class="fa fa-file-text icon"> 
+                                        		<i class="fa fa-rupee icon"> 
                                         			<b class="bg-info dker"></b>
                                                 </i> 
                                                 <span>Services Invoice</span> 
@@ -165,7 +167,7 @@
                                        
                                        <li> 
                                         	<a href="CustomizationInvoicePage"> 
-                                        		<i class="fa fa-file-text icon"> 
+                                        		<i class="fa fa-rupee icon"> 
                                         			<b class="bg-info"></b>  
                                                 </i> 
                                                 <span>Custom. Invoice</span> 
