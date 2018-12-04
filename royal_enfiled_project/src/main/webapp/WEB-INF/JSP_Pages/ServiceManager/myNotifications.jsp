@@ -35,13 +35,105 @@
                                         <div class="panel-body">
                                             <div class="tab-content">
                                                 <div class="tab-pane active" id="Unread">List Of Unread Massages
+                                              
+                                                </div>
+                                                <div class="tab-pane" id="Read">
                                                 
-                                    </div>
-                                                <div class="tab-pane" id="Read">List Of Read Massages</div>
+                                      <!-- First read msg info start-->
+                                           <div class="row">
+                                           <div class="col-lg-12">
+                                          
+                                          <ul class="breadcrumb">
+                                                  <div class="clearfix m-b"> 
+                                                  <a href="#" class="pull-left thumb m-r">
+                                                  
+                                                <span class="thumb-sm avatar pull-left">
+                                                   <img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/avatar.jpg">
+                                                    </span> 
+                                                  </a>
+                      
+                                                    <div class="clear">
+                                                    <small class="text-muted">
+                                                        <i class="fa fa-map-marker"></i> London, UK</small>
+                                                    
+                                                        <div class="h4 m-t-xs m-b-xs">Name:John Smith
+                                                        <br>
+                                                        <br>
+                                                        Designation: Sales manager1
+                                                        <br>
+                                                        <br>
+                                                        Discription: //
+                                                         Description of messages will be here.
+                                                        //
+                                                         
+                                                        </div>
+                                                        </div>
+                                                        </div>
+                                                        </ul>
+                                                        </div>         
+                                                        </div>
+                                                <!-- First read msg info end -->
+                                                <!-- Second read msg info start-->
+                                         
+                                           <div class="row">
+                                           <div class="col-lg-12">
+                                          
+                                          <ul class="breadcrumb">
+                                                  <div class="clearfix m-b"> 
+                                                   <a href="#" class="pull-left thumb m-r">
+                                                  
+                                                <span class="thumb-sm avatar pull-left">
+                                                   <img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/avatar.jpg">
+                                                    </span> 
+                                                  </a>
+                    
+                                                    <div class="clear">
+                                                    <small class="text-muted">
+                                                    
+                                                         <i class="fa fa-map-marker"></i> Pune, India</small>
+                                                    
+                                                        <div class="h4 m-t-xs m-b-xs">Name:Pranay K
+                                                        <br>
+                                                        <br>
+                                                        Designation: Sales manager2
+                                                        <br>
+                                                        <br>
+                                                        Discription: //
+                                                         Description of messages will be here.
+                                                        //
+                                                      
+                                                        </div>
+                                                        </div>
+                                                        </div>
+                                                        </ul>
+                                                        </div>   
+                                                        </div>
+                                                    
+                                                <!-- Second read msg info end -->
+                                         
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                </div>
                                               <div class="tab-pane" id="Sendnotification">
                                          
-                                               <!-- modal starts-->
-
+                                             
 						 
 						      
 						        <div class="modal-header">
@@ -65,8 +157,6 @@
 						    </div>
 					  	</div>
 					  
-					  	<!-- modal ends -->
-                        
                                               
                                             
                                             
