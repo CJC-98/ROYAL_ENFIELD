@@ -40,8 +40,7 @@
                                                 <div class="tab-pane" id="Read">List Of Read Massages</div>
                                               <div class="tab-pane" id="Sendnotification">
                                          
-                                               <!-- modal starts-->
-
+                              <!-- modal starts-->
 						 
 						      
 						        <div class="modal-header">
@@ -49,17 +48,21 @@
 						        	<div class="input-group"> 
 						        		<input type="text" class="form-control rounded" placeholder="Search Employee"> 
 						        		<span class="input-group-btn">
-					                          <button class="btn btn-success" type="button">write notificaltion</button>
+					                          <button class="btn btn-success" type="button" onclick="showBody()">write notificaltion</button>
 					                    </span> 
 					                </div>  
 						        </div>
-						        <div class="modal-body">
-						          <h5><u>Employee Name Here</u></h5>
-						          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Please write message here"></textarea>
-						        </div>
-						        <div style="margin-left:12px">
-						          <button type="button" class="btn btn-primary" data-dismiss="modal">Send Notification</button>	
-						          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+						        
+						        <div id="notificationBody">
+							        <div class="modal-body">
+							          <h5><u>Employee Name Here</u></h5>
+							          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Please write message here"></textarea>
+							        </div>
+							        
+							        <div style="margin-left:12px">
+							          <button type="button" class="btn btn-primary" data-dismiss="modal">Send Notification</button>	
+							          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+							        </div>
 						        </div>
 						      </div>   
 						    </div>
@@ -70,11 +73,20 @@
                                               
                                             
                                             
-                                         </section>
-                                                          
-                                 
-	              	            </section>
+                      </section>                                                                   
+	              </section>
 	        </section>
 	 </section> 
 </body>
+
+
+<script>
+	
+	document.getElementById("notificationBody").style.display = "none";
+	
+	function showBody(){
+		document.getElementById("notificationBody").style.display = "block";
+	}
+	 
+</script>
 </html>
