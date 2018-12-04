@@ -38,7 +38,7 @@
                                                  
                                                 </div>
                                                 <div class="tab-pane" id="Read">
-                                                
+                                                    
                                       <!-- First read msg info start-->
                                            <div class="row">
                                            <div class="col-lg-12">
