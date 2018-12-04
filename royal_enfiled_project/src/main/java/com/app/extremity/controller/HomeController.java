@@ -31,8 +31,8 @@ public class HomeController {
 	{ 
 		
 		System.out.println("In SignIn controller");
-		return "IndivisualUser/indivisualUserIndex";
-		//return "IndivisualUser/indivisualUserIndex";//by default go to client index.jsp  
+		//return "IndivisualUser/indivisualUserIndex";
+		return "IndivisualUser/indivisualUserIndex";//by default go to client index.jsp  
 
 	}  
 	   
