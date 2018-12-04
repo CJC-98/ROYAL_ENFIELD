@@ -12,7 +12,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  
                  
 //@SpringBootApplication(scanBasePackages="com")
-//         
+//DealerModule       
 //@EntityScan("com.model")
 //@EnableJpaRepositories("com.Idao") 
 //@ComponentScan(basePackages= {"com.app.extremity"})  
