@@ -40,10 +40,10 @@
                                                 	<span class="">List Of Unread Massages</span>                          
                                     			</div>
                                    
-                                   		
+                                   	
                                                 <div class="tab-pane bg-light dk" id="Read">
                                                 
-                                                     <div class="well m-t">
+                                                <div class="well m-t">
                                               <!-- First read msg info start-->
                                            <div class="row">
                                            <div class="col-lg-12">
