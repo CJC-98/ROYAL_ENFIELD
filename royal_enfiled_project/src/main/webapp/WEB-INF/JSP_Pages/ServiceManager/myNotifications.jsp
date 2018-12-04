@@ -42,7 +42,7 @@
                                    
                                    	
                                                 <div class="tab-pane bg-light dk" id="Read">
-                                                
+                                               
                                                 <div class="well m-t">
                                               <!-- First read msg info start-->
                                            <div class="row">
