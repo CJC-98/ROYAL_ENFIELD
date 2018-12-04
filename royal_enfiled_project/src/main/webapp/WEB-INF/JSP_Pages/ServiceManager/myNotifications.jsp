@@ -39,9 +39,8 @@
 												<div class="tab-pane active bg-light dk" id="Unread">
                                                 	<span class="">List Of Unread Massages</span>                          
                                     			</div>
-                                    			
-                                    			
-                                    			
+                                   
+                                   		
                                                 <div class="tab-pane bg-light dk" id="Read">
                                                 
                                                      <div class="well m-t">
