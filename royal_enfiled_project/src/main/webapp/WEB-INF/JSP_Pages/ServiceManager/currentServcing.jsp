@@ -109,7 +109,7 @@
                     </div>
                     <!-- first record ends-->
                     
-                     <a href="#" class="btn btn-md btn-primary m-r">Submit Work</a>
+                     <a href="" class="btn btn-md btn-primary m-r">Submit Work</a>
                      
                      
 	            </section>

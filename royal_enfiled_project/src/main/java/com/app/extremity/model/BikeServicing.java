@@ -26,7 +26,7 @@ public class BikeServicing {
 	@OneToOne
 	private ServcingBikeInfo servcingBikeInfo; 
 	
-	@OneToMany(cascade=CascadeType.ALL, mappedBy="bikeServicing")
+	@OneToMany(cascade=CascadeType.ALL)
 	private List<ServicingChart> servicingChart = new ArrayList();
 	
 	@OneToOne

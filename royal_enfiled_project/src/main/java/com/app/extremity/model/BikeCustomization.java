@@ -26,7 +26,7 @@ public class BikeCustomization {
 	@OneToOne
 	private CustomizationBikeInfo customizationBikeInfo; 
 	
-	@OneToMany(cascade=CascadeType.ALL, mappedBy="bikeCustomization")
+	@OneToMany(cascade=CascadeType.ALL)
 	private List<CustomizationChart> customizationChart = new ArrayList();
 	
 	@OneToOne
