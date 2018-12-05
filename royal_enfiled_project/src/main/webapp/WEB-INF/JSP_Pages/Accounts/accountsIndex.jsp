@@ -86,7 +86,7 @@
                     </section>
                 </li>
                 <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb-sm avatar pull-left">
-                            <img src="${pageContext.request.contextPath}/Resources/notebook UI/images/avatar.jpg"> </span> John.Smith <b class="caret"></b> </a>
+                            <img src="${pageContext.request.contextPath}/Resources/notebook UI/images/avatar.jpg"> </span> Nagesh Nagshakti <b class="caret"></b> </a>
                     <ul class="dropdown-menu animated fadeInRight"> <span class="arrow top"></span>
                         <li> <a href="#">Settings</a> </li>
                         <li> <a href="profile.html">Profile</a> </li>
@@ -127,10 +127,8 @@
                                                     <i class="fa fa-angle-up text-active"></i> </span> <span>Workset</span>
                                             </a>
                                             <ul class="nav lt">
-                                                <li class="active"> <a href="index.html" class="active"> <i class="fa fa-angle-right"></i>
-                                                        <span>Dashboard v1</span> </a> </li>
-                                                <li> <a href="dashboard.html"> <i class="fa fa-angle-right"></i> <span>Dashboard
-                                                            v2</span> </a> </li>
+                                                <li class="active"> <a href="SignIn" class="active"> <i class="fa fa-angle-right"></i><span>Dashboard</span> </a> </li>
+                                                <li> <a href="Invoice"> <i class="fa fa-angle-right"></i> <span> Invoice </span> </a> </li>
                                             </ul>
                                         </li>
                                         <li> <a href="#layout"> <i class="fa fa-columns icon"> <b class="bg-warning"></b>
@@ -138,16 +136,12 @@
                                                         class="fa fa-angle-up text-active"></i> </span> <span>Layouts</span>
                                             </a>
                                             <ul class="nav lt">
-                                                <li> <a href="layout-c.html"> <i class="fa fa-angle-right"></i> <span>Color
-                                                            option</span> </a> </li>
-                                                <li> <a href="layout-r.html"> <i class="fa fa-angle-right"></i> <span>Right
-                                                            nav</span> </a> </li>
-                                                <li> <a href="layout-h.html"> <i class="fa fa-angle-right"></i> <span>Hbox
-                                                            Layout</span> </a> </li>
-                                                <li> <a href="layout-boxed.html"> <i class="fa fa-angle-right"></i>
+                                                <li> <a href="#"> <i class="fa fa-angle-right"></i> <span>Color option</span> </a> </li>
+                                                <li> <a href="#"> <i class="fa fa-angle-right"></i> <span>Right nav</span> </a> </li>
+                                                <li> <a href="#"> <i class="fa fa-angle-right"></i> <span>Hbox Layout</span> </a> </li>
+                                                <li> <a href="#"> <i class="fa fa-angle-right"></i>
                                                         <span>Boxed Layout</span> </a> </li>
-                                                <li> <a href="layout-fluid.html"> <i class="fa fa-angle-right"></i>
-                                                        <span>Fluid Layout</span> </a> </li>
+                                                <li> <a href="#"> <i class="fa fa-angle-right"></i><span>Fluid Layout</span> </a> </li>
                                             </ul>
                                         </li>
                                         <li> <a href="#uikit"> <i class="fa fa-flask icon"> <b class="bg-success"></b>
@@ -155,26 +149,26 @@
                                                         class="fa fa-angle-up text-active"></i> </span> <span>UI kit</span>
                                             </a>
                                             <ul class="nav lt">
-                                                <li> <a href="buttons.html"> <i class="fa fa-angle-right"></i> <span>Buttons</span>
+                                                <li> <a href="#"> <i class="fa fa-angle-right"></i> <span>Buttons</span>
                                                     </a> </li>
-                                                <li> <a href="icons.html"> <b class="badge bg-info pull-right">369</b>
+                                                <li> <a href="#"> <b class="badge bg-info pull-right">369</b>
                                                         <i class="fa fa-angle-right"></i> <span>Icons</span> </a> </li>
-                                                <li> <a href="grid.html"> <i class="fa fa-angle-right"></i> <span>Grid</span>
+                                                <li> <a href="#"> <i class="fa fa-angle-right"></i> <span>Grid</span>
                                                     </a> </li>
-                                                <li> <a href="widgets.html"> <b class="badge pull-right">8</b> <i class="fa fa-angle-right"></i>
+                                                <li> <a href="#"> <b class="badge pull-right">8</b> <i class="fa fa-angle-right"></i>
                                                         <span>Widgets</span> </a> </li>
-                                                <li> <a href="components.html"> <i class="fa fa-angle-right"></i> <span>Components</span>
+                                                <li> <a href="#"> <i class="fa fa-angle-right"></i> <span>Components</span>
                                                     </a> </li>
-                                                <li> <a href="list.html"> <i class="fa fa-angle-right"></i> <span>List
+                                                <li> <a href="#"> <i class="fa fa-angle-right"></i> <span>List
                                                             group</span> </a> </li>
-                                                <li> <a href="#table"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i>
+                                                <li> <a href="#"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i>
                                                         <span>Table</span> </a>
                                                     <ul class="nav bg">
-                                                        <li> <a href="table-static.html"> <i class="fa fa-angle-right"></i>
+                                                        <li> <a href="#"> <i class="fa fa-angle-right"></i>
                                                                 <span>Table static</span> </a> </li>
-                                                        <li> <a href="table-datatable.html"> <i class="fa fa-angle-right"></i>
+                                                        <li> <a href="#"> <i class="fa fa-angle-right"></i>
                                                                 <span>Datatable</span> </a> </li>
-                                                        <li> <a href="table-datagrid.html"> <i class="fa fa-angle-right"></i>
+                                                        <li> <a href="#"> <i class="fa fa-angle-right"></i>
                                                                 <span>Datagrid</span> </a> </li>
                                                     </ul>
                                                 </li>
@@ -269,7 +263,7 @@
                 </aside> <!-- /.aside -->
                 
                 <!-- dashboard starts -->
-                	 <jsp:include page="accountsDashboard.jsp"/>
+                	 <jsp:include page="${link}"/>
                 <!-- dashboard ends -->
                 
                 

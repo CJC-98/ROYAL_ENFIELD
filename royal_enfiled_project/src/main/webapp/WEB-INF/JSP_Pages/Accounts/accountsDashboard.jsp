@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
-    <title>Notebook | Web Application</title>
+    <title>Account | Dashboard</title>
     <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     
@@ -22,7 +22,7 @@
                                 <li class="active">Account_Workset</li>
                             </ul>
                             <div class="m-b-md">
-                                <h3 class="m-b-none">Workset</h3> <small>Welcome back, Noteman</small>
+                                <h3 class="m-b-none">Workset</h3> <small>Welcome back, Account_Manager</small>
                             </div>
                             <section class="panel panel-default">
                                 <div class="row m-l-none m-r-none bg-light lter">
@@ -85,7 +85,7 @@
                                                     data-fill-color="" data-highlight-line-color="#fff"
                                                     data-spot-radius="3" data-resize="true" values="280,320,220,385,450,320,345,250,250,250,400,380"></div>
                                                 <div class="sparkline inline" data-type="bar" data-height="45"
-                                                    data-bar-width="6" data-bar-spacing="6" data-bar-color="#65bd77">10,9,11,10,11,10,12,10,9,10,11,9,8</div>
+                                                    data-bar-width="6" data-bar-spacing="6" data-bar-color="#65bd77">11,9,11,10,11,10,12,10,9,10,11,9,8</div>
                                             </div>
                                         </div>
                                         <div class="panel-body">
@@ -231,4 +231,6 @@
                         data-target="#nav,html"></a>
                 </section>
 </body>
+
+
 </html>
