@@ -40,7 +40,7 @@ function myFunction() {
                                                     <th style="text-align: center">Bike Released</th>
                                                 </tr>
                                             </thead>
-                                            
+                                             
                                             <tbody>
                                             
                                                 <tr style="text-align: center">
