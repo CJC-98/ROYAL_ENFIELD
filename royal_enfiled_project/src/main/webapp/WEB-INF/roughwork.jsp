@@ -25,7 +25,7 @@ roughwork
                                                 <div class="tab-pane" id="settings">settings</div>
                                             </div>
                                         </div>
-                                         </section> <!-- / .nav-justified -->
+                                         </section> <!-- /  .nav-justified -->
                                     <!-- left tab -->
                                     <section class="panel panel-default">
                                         <header class="panel-heading bg-light">
