@@ -4,8 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-//author: pranay kohad 
-    
+  //author: pranay kohad 
+   
+//controller
 @Controller    
 public class HomeController {
 	    
