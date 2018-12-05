@@ -44,7 +44,7 @@ function myFunction() {
                                                 <tr>
                                                     <th style="text-align: center">Service Id</th>
                                                     <th style="text-align: center">Appointment Date</th>
-                                                    <th style="text-align: center">plate Number</th>
+                                                    <th style="text-align: center">Plate Number</th>
                                                     <th style="text-align: center">Payment Status</th>
                                                     <th style="text-align: center">Bike Release Status</th>
                                                     <th style="text-align: center">Bike Released</th>
@@ -55,10 +55,10 @@ function myFunction() {
                                             
                                                 <tr style="text-align: center">
                                                     	 <td>1</td>
-                                                         <td>8-10-18</td>
+                                                         <td>08-10-18</td>
                                                          <td>MH12 AC 2345</td>
-                                                        <td style="color: #FF681B">Unpaid</td>
-                                                        <td style="color: #FFBE16">On-hold</td>
+                                                         <td style="color: #FF681B">Unpaid</td>
+                                                         <td style="color: #FFBE16">On-hold</td>
                                                          <td>
                                                          	 <a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
                                                          	Release
@@ -68,7 +68,7 @@ function myFunction() {
                                                 
                                                 <tr style="text-align: center">
                                                     	 <td>2</td>
-                                                         <td>5-10-18</td>
+                                                         <td>05-10-18</td>
                                                          <td>MH29 AD 1254</td>
                                                          <td style="color: #81EF19">Paid</td>
                                                          <td style="color: #81EF19">Released</td>
@@ -80,10 +80,10 @@ function myFunction() {
                                                 
                                                 <tr style="text-align: center">
                                                     	 <td>3</td>
-                                                         <td>8-9-18</td>
+                                                         <td>08-09-18</td>
                                                          <td>MH32 X 8546</td>
                                                          <td style="color: #81EF19">Paid</td>
-                                                        <td style="color: #81EF19">Released</button></td>
+                                                         <td style="color: #81EF19">Released</button></td>
                                                          <td>
                                                          	<button type="button" class="btn btn-sm btn-info btn-rounded" button id="myBtn" disabled>Release
                                                          	</button>
@@ -92,10 +92,10 @@ function myFunction() {
                                                 
                                                 <tr style="text-align: center">
                                                     	 <td>4</td>
-                                                         <td>12-8-18</td>
+                                                         <td>12-08-18</td>
                                                          <td>RJ14 FV 7842</td>
                                                          <td style="color: #FF681B">Unpaid</td>
-                                                          <td style="color: #FFBE16">On-hold</td>
+                                                         <td style="color: #FFBE16">On-hold</td>
                                                          <td>
                                                          	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
                                                          		Release
@@ -105,7 +105,7 @@ function myFunction() {
                                                 
                                                 <tr style="text-align: center">
                                                     	 <td>5</td>
-                                                         <td>9-10-18</td>
+                                                         <td>09-10-18</td>
                                                          <td>GJ02 ZV 5426</td>
                                                          <td style="color: #81EF19">Paid</td>
                                                           <td style="color: #81EF19">Released</td>
@@ -117,10 +117,10 @@ function myFunction() {
                                                 
                                                 <tr style="text-align: center">
                                                     	 <td>6</td>
-                                                         <td>2-9-18</td>
+                                                         <td>02-09-18</td>
                                                          <td>MH25 GH 4587</td>
                                                          <td style="color: #FF681B">Unpaid</td>
-                                                          <td style="color: #FFBE16">On-hold</td>
+                                                         <td style="color: #FFBE16">On-hold</td>
                                                          <td>
                                                          	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
                                                          		Release
