@@ -7,21 +7,34 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="InvoiceTable")
-public class ServiceInvoice {
+@Table(name="ServicingInvoiceTable")
+public class ServicingInvoice {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
-	private double amount;
-	private double totalAmount;
-	private String paymentStatus = "unpaid";
+	private int servicingInvoiceId;
 	
-	public int getId() {
-		return id;
+	private double amount;
+	
+	private double totalAmount;
+	
+	private double serviceGstPercent;
+	
+	private String paymentStatus = "unpaid";  //OR paid
+	
+	
+	
+	public double getServiceGstPercent() {
+		return serviceGstPercent;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setServiceGstPercent(double serviceGstPercent) {
+		this.serviceGstPercent = serviceGstPercent;
+	}
+	public int getServicingInvoiceId() {
+		return servicingInvoiceId;
+	}
+	public void setServicingInvoiceId(int servicingInvoiceId) {
+		this.servicingInvoiceId = servicingInvoiceId;
 	}
 	public double getAmount() {
 		return amount;
