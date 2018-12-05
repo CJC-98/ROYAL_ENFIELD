@@ -59,14 +59,14 @@
                                                      <div class="h5 m-t-xs m-b-xs"><strong>John Smith</strong>
                                                         <br>
                                                         <br>
-                                                        Designation:<strong>Sales manager1</strong>
+                                                        <span class="text-muted m-l-sm pull-right"> <i class="fa fa-clock-o"></i> Date</span> 
+                                                      Designation:<strong>Sales manager1</strong>
                                                         <br>
                                                         <br>
                                                        Description://
                                                        <strong>  Description of unread messages will be here.
                                                         //</strong> 
-                                                        <span class="text-muted m-l-sm pull-right"> <i class="fa fa-clock-o"></i> Date</span> 
-                                      
+                                                        
                                                         </div>
                                                         </div>
                                                         </div>
@@ -92,15 +92,15 @@
                                                     <div class="h5 m-t-xs m-b-xs"><strong>Pranay K</strong>
                                                         <br>
                                                         <br>
+                                                         <span class="text-muted m-l-sm pull-right"> <i class="fa fa-clock-o"></i> Date
+                                                         </span>
                                                        Designation:<strong> Sales manager2</strong>
                                                         <br>
                                                         <br>
                                                        Description:
                                                         <strong> // Description of unread messages will be here.
                                                         //</strong>
-                                                        <span class="text-muted m-l-sm pull-right"> <i class="fa fa-clock-o"></i> Date
-                                                      
-                                                         </span>
+                                                       
                                                       
                                                         
                                                 
@@ -142,6 +142,9 @@
                                                      <div class="h5 m-t-xs m-b-xs"><strong>John Smith</strong>
                                                         <br>
                                                         <br>
+                                                        <span class="text-muted m-l-sm pull-right"> <i class="fa fa-clock-o"></i> Date</span> 
+                                      
+                                 
                                                         Designation:<strong>Sales manager1</strong>
                                                         <br>
                                                         <br>
@@ -149,9 +152,7 @@
                                                         Discription:<strong>//
                                                         Description of readed messages will be here.
                                                       //</strong> 
-                                                        <span class="text-muted m-l-sm pull-right"> <i class="fa fa-clock-o"></i> Date</span> 
-                                      
-                                 
+                                                        
 
                                                         </div>
                                                         </div>
@@ -178,15 +179,15 @@
                                                     <div class="h5 m-t-xs m-b-xs"><strong>Pranay K</strong>
                                                         <br>
                                                         <br>
+                                                        <span class="text-muted m-l-sm pull-right"> <i class="fa fa-clock-o"></i> Date
+                                                      </span>
                                                        Designation:<strong> Sales manager2</strong>
                                                         <br>
                                                         <br>
                                                        Description:
                                                         <strong> // Description of read messages will be here.
                                                         //</strong>
-                                                        <span class="text-muted m-l-sm pull-right"> <i class="fa fa-clock-o"></i> Date
-                                                      
-                                                         </span>
+                                                        
                                                       
                                                         
                                                 
