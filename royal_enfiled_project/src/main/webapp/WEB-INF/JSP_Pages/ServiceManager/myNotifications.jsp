@@ -59,7 +59,7 @@
                                                      <div class="h5 m-t-xs m-b-xs"><strong>John Smith</strong>
                                                         <br>
                                                         <br>
-                                                        <span class="text-muted m-l-sm pull-right"> <i class="fa fa-clock-o"></i> Date</span> 
+                                                        <span class="text-muted m-l-sm pull-right"> <i class="fa fa-calendar"></i> Date</span> 
                                                       Designation:<strong>Sales manager1</strong>
                                                         <br>
                                                         <br>
@@ -92,7 +92,7 @@
                                                     <div class="h5 m-t-xs m-b-xs"><strong>Pranay K</strong>
                                                         <br>
                                                         <br>
-                                                         <span class="text-muted m-l-sm pull-right"> <i class="fa fa-clock-o"></i> Date
+                                                         <span class="text-muted m-l-sm pull-right"> <i class= "fa fa-calendar"></i> Date
                                                          </span>
                                                        Designation:<strong> Sales manager2</strong>
                                                         <br>
@@ -142,7 +142,7 @@
                                                      <div class="h5 m-t-xs m-b-xs"><strong>John Smith</strong>
                                                         <br>
                                                         <br>
-                                                        <span class="text-muted m-l-sm pull-right"> <i class="fa fa-clock-o"></i> Date</span> 
+                                                        <span class="text-muted m-l-sm pull-right"> <i class="fa fa-calendar"></i> Date</span> 
                                       
                                  
                                                         Designation:<strong>Sales manager1</strong>
@@ -179,7 +179,7 @@
                                                     <div class="h5 m-t-xs m-b-xs"><strong>Pranay K</strong>
                                                         <br>
                                                         <br>
-                                                        <span class="text-muted m-l-sm pull-right"> <i class="fa fa-clock-o"></i> Date
+                                                        <span class="text-muted m-l-sm pull-right"> <i class="fa fa-calendar"></i> Date
                                                       </span>
                                                        Designation:<strong> Sales manager2</strong>
                                                         <br>
