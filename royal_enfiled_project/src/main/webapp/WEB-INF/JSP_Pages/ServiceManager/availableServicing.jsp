@@ -25,9 +25,9 @@
                 
                 <div class="hbox" style="display: flex; flex-wrap: wrap; justify-content: center;">
                 
-                	<!-- first table starts -->
+                	<!-- table starts -->
                 	<div class="col-sm-8">
-                                    <section class="panel panel-default">
+                                    <section class="panel panel-default b-a" style="border-color: #C8C5C3">
                                         <!-- <header class="panel-heading bg-success dk" style="font-size: 25px;">Bullet 350cc</header> -->
                                         <table class="table table-striped m-b-none bg-light lt">
                                             <thead>
@@ -85,7 +85,7 @@
                                         </table>
                                     </section>
                                 </div>
-                                <!-- fisrt table ends -->
+                                <!-- table ends -->
                                 
                                 
                     

@@ -19,6 +19,16 @@ public class Notfication {
 	private String toId;
 	
 	private String message;
+	
+	private String sendDate;
+
+	public String getSendDate() {
+		return sendDate;
+	}
+
+	public void setSendDate(String sendDate) {
+		this.sendDate = sendDate;
+	}
 
 	private boolean markAsRead = false;  //OR true
 	
