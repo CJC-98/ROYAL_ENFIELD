@@ -31,7 +31,7 @@ function myFunction() {
                                         <table class="table table-striped m-b-none b-a">
                                             <thead>
                                                 <tr>
-                                                    <th style="text-align: center">Service Id</th>
+                                                    <th style="text-align: center">Customization Id</th>
                                                     <th style="text-align: center">Appointment Date</th>
                                                     <th style="text-align: center">Plate Number</th>
                                                     <th style="text-align: center">Chassis Number</th>
