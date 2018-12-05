@@ -82,7 +82,7 @@
                                           <ul class="breadcrumb">
                                                   <div class="clearfix m-b"> 
                                                    <a href="#" class="pull-left thumb m-r">
-                                                   
+                                                    
                                                 <span class="thumb-sm avatar pull-left">
                                                    <img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/avatar.jpg">
                                                     </span> 
