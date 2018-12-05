@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-<head>
+<head>  
 <meta charset="utf-8" />
     <title>Notebook | Web Application</title>
     <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
@@ -224,5 +224,35 @@
    </section>
 
  
+
+	  <div class="modal fade" id="myModal" role="dialog">
+	    <div class="modal-dialog modal-md">
+	      <div class="modal-content">
+	        <div class="modal-header">
+	        	<h3 style="text-align: center">Notification Window</h3>
+	        	<div class="input-group"> 
+	        		<input type="text" class="form-control rounded" placeholder="Search Sales Manager"> 
+	        		<span class="input-group-btn">
+                          <button class="btn btn-success" type="button">write notificaltion</button>
+                    </span> 
+                </div>  
+	        </div>
+	        <div class="modal-body">
+	          <h5><u>//Sales Manager Name Here</u></h5>
+	          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="seats are getting out of stock"></textarea>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-primary" data-dismiss="modal">Send Notification</button>	
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+	        </div>
+	      </div>
+	    </div>
+  	</div>
+
+      
+  	<!-- modal ends -->
+
+
+
 </body>
 </html>
