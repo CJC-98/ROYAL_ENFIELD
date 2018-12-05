@@ -76,7 +76,7 @@
                                                          Description of replied message will be here.
                                                          //                 
                                   <span class="text-muted m-l-sm pull-right"> <i class="fa fa-clock-o"></i> Reply Time</span>
-                                 
+                                  
                                                         </div>
                                                         </div>
                                                         </div>
