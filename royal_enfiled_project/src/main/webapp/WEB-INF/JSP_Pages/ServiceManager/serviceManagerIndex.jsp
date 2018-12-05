@@ -148,6 +148,15 @@
                                        </li>
                                        
                                        <li> 
+                                        	<a href="AvailableServicesPage"> 
+                                        		<i class="fa fa-gear icon"> 
+                                        			<b class="bg-light dk"></b>
+                                                </i> 
+                                                <span>Available Services</span> 
+                                            </a> 
+                                       </li>
+                                       
+                                       <li> 
                                         	<a href="AvailableCustomizationPage"> 
                                         		<i class="fa fa-gavel icon"> 
                                         			<b class="bg-light dk"></b>

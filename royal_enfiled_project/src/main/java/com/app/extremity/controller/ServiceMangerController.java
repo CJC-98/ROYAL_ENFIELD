@@ -63,6 +63,13 @@ public class ServiceMangerController {
 		return "ServiceManager/serviceManagerIndex";
 	}
 	
+	@RequestMapping(value="/AvailableServicesPage")
+	public String AvailableServicesPagePage(Model model){
+		
+		model.addAttribute("link","availableServicing.jsp");
+		return "ServiceManager/serviceManagerIndex";
+	}
+	
 	@RequestMapping(value="/AvailableCustomizationPage")
 	public String AvailableCustomizationPage(Model model){
 		
