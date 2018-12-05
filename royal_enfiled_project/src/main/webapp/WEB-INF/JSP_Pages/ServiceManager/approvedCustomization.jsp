@@ -29,7 +29,7 @@
                                     <section class="panel panel-default bg-light dker">
                                         <header class="panel-heading bg-primary lter" style="font-size: 18px; display: flex; flex-wrap: wrap; justify-content: space-around;">
                                         	<div><span style="font-weight: bold">Service Id:&nbsp;</span>BS0434</div>
-                                        	<div><span style="font-weight: bold">Service Status:&nbsp;</span> <span style="color: #FFC700">waiting</span></div>
+                                        	<div><span style="font-weight: bold">Service Status:&nbsp;</span> <span style="color: #FF4500">waiting</span></div>
                                         	<div><span style="font-weight: bold">Appointment Date:&nbsp;</span> 23/12/2018</div>
                                         	<div>
                                         		<a href="CustomizationInprogressPage" class="btn btn-sm btn-warning btn-rounded">Start Customization</a>
@@ -188,7 +188,7 @@
                                     <section class="panel panel-default bg-light dker">
                                         <header class="panel-heading bg-primary lter" style="font-size: 18px; display: flex; flex-wrap: wrap; justify-content: space-around;">
                                         	<div><span style="font-weight: bold">Service Id:&nbsp;</span>BS0434</div>
-                                        	<div><span style="font-weight: bold">Service Status:&nbsp;</span> <span style="color: #FFC700">waiting</span></div>
+                                        	<div><span style="font-weight: bold">Service Status:&nbsp;</span> <span style="color: #FF4500">waiting</span></div>
                                         	<div><span style="font-weight: bold">Appointment Date:&nbsp;</span> 23/12/2018</div>
                                         	<div>
                                         		<a href="CustomizationInprogressPage" class="btn btn-sm btn-warning btn-rounded">Start Customization</a>
@@ -343,11 +343,11 @@
                                 
                                 
                                 <!-- first table starts -->
-                	<div class="col-sm-12">
+                	<div class="col-sm-12">  
                                     <section class="panel panel-default bg-light dker">
                                         <header class="panel-heading bg-primary lter" style="font-size: 18px; display: flex; flex-wrap: wrap; justify-content: space-around;">
                                         	<div><span style="font-weight: bold">Service Id:&nbsp;</span>BS0434</div>
-                                        	<div><span style="font-weight: bold">Service Status:&nbsp;</span> <span style="color: #FFC700">waiting</span></div>
+                                        	<div><span style="font-weight: bold">Service Status:&nbsp;</span> <span style="color: #FF4500">waiting</span></div>
                                         	<div><span style="font-weight: bold">Appointment Date:&nbsp;</span> 23/12/2018</div>
                                         	<div>
                                         		<a href="CustomizationInprogressPage" class="btn btn-sm btn-warning btn-rounded">Start Customization</a>
