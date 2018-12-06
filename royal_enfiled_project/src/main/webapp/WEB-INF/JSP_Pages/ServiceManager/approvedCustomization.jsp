@@ -22,487 +22,238 @@
                     <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Approved Customization</h3>
                 </div>
                 
-                <div>
-                
-                	<!-- first table starts -->
-                	<div class="col-sm-12">
-                                    <section class="panel panel-default bg-light dker">
-                                        <header class="panel-heading bg-primary lter" style="font-size: 18px; display: flex; flex-wrap: wrap; justify-content: space-around;">
-                                        	<div><span style="font-weight: bold">Service Id:&nbsp;</span>BS0434</div>
-                                        	<div><span style="font-weight: bold">Service Status:&nbsp;</span> <span style="color: #FFC700">waiting</span></div>
-                                        	<div><span style="font-weight: bold">Appointment Date:&nbsp;</span> 23/12/2018</div>
-                                        	<div>
-                                        		<a href="CustomizationInprogressPage" class="btn btn-sm btn-warning btn-rounded">Start Customization</a>
-                                        	</div>
-                                        </header>
-                                        
-                                        <section class="panel panel-default">
-				                             <header class="panel-heading bg-light dker">
-				                                     <ul class="nav nav-tabs nav-justified">
-				                                           <li class="active"><a href="#BikeInfornmation" data-toggle="tab">Bike Infornmation</a></li>
-				                                           <li><a href="#CustomizationChart" data-toggle="tab">Customization Chart</a></li>
-				                                           <li><a href="#CustomerInfornmation" data-toggle="tab">Customer Infornmation</a></li>
-				                                           <li><a href="#CustomizationInvoice" data-toggle="tab">Customization Invoice</a></li>         
-				                                     </ul>
-				                             </header>
-                                        <div class="panel-body bg-light dk">
-                                            <div class="tab-content">
-
-                                               
-												<div class="tab-pane active bg-light dk" id="BikeInfornmation">
-                                                	            <div class="col-sm-12">
-								                                    
-								                                        <table class="table table-striped m-b-none">
-								                                            <thead>
-								                                                <tr>
-								                                                    <th style="text-align: center">Bike Name</th>
-								                                                    <th style="text-align: center">Chassis Number</th>
-								                                                    <th style="text-align: center">Plate Number</th>
-								                                                </tr>
-								                                            </thead>
-								                                            
-								                                            <tbody>
-								                                            
-								                                                <tr style="text-align: center">
-								                                                         <td>Bullet 350cc</td>
-								                                                         <td>5FHGSJ44456871264</td>
-								                                                         <td>MH-45-GH-6454</td>
-								                                                </tr>
-								                                                          
-								                                            </tbody>
-								                                            
-								                                        </table>
-								                                    
-								                                </div>             
-                                    			</div>
-                                   
-                                   	
-                                                <div class="tab-pane bg-light dk" id="CustomizationChart">
-																<div class="col-sm-12">
-								                                    
-								                                        <table class="table table-striped m-b-none">
-								                                            <thead>
-								                                                <tr>
-								                                                    <th style="text-align: center">Part</th>
-								                                                    <th style="text-align: center">Cost</th>
-								                                                    <th style="text-align: center">Status</th>
-								                                                </tr>
-								                                            </thead>
-								                                            
-								                                            <tbody>
-								                                            
-									                                            <tr style="text-align: center">
-							                                                    	 <td>labour cost</td>
-							                                                         <td>500</td>
-							                                                         <td style="color: #FF681B">pending</td>
-							                                                	</tr>
-								                                            
-								                                              	<tr style="text-align: center">
-							                                                    	 <td>tail light</td>
-							                                                         <td>250</td>
-							                                                         <td style="color: #FF681B">pending</td>
-							                                                	</tr>
+                <!-- fisrt table starts -->
+	                <div class="row">
+                         <div class="col-sm-12" >
+                             <section class="panel panel-default" >
+                                          <header class="panel-heading bg-warning dk" style="font-size: 20px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
+                                          	Bullet 350cc (NBFGH654351354)
+                                          </header>
                                                 
-								                                                <tr style="text-align: center">
-								                                                         <td>head light</td>
-								                                                         <td>400</td>
-								                                                         <td style="color: #FF681B">pending</td>								                                                         
-								                                                </tr>                              
-								                                                          
-								                                            </tbody>
-								                                            
-								                                        </table>
-								                                   
-								                                </div>		                                                
-                                                </div>
-
-                                              
-                                                <div class="tab-pane bg-light dk" id="CustomerInfornmation">
-																<div class="col-sm-12">
-								                                    
-								                                        <table class="table table-striped m-b-none">
-								                                            <thead>
-								                                                <tr>
-								                                                    <th style="text-align: center">Customer Name</th>
-								                                                    <th style="text-align: center">Address</th>
-								                                                    <th style="text-align: center">Phone Number</th>
-								                                                </tr>
-								                                            </thead>
-								                                            
-								                                            <tbody>
-								                                            
-								                                                <tr style="text-align: center">
-								                                                         <td>Rahul Yadav</td>
-								                                                         <td>karve nager, pune</td>
-								                                                         <td>9256324578</td>
-								                                                </tr>
-								                                                          
-								                                            </tbody>
-								                                            
-								                                        </table>
-								                                    
-								                                </div>
-						      					</div> 
-						      					
-						      					<div class="tab-pane bg-light dk" id="CustomizationInvoice">
-																<div class="col-sm-12">
-								                                    
-								                                        <table class="table table-striped m-b-none">
-								                                            <thead>
-								                                                <tr>
-								                                                    <th style="text-align: center">Amount</th>
-								                                                    <th style="text-align: center">GST(%)</th>
-								                                                    <th style="text-align: center">Total Amount</th>
-								                                                </tr>
-								                                            </thead>
-								                                            
-								                                            <tbody>
-								                                            
-									                                            <tr style="text-align: center">
-							                                                    	 <td>5000</td>
-							                                                         <td>8</td>
-							                                                         <td>5800</td>
-							                                                	</tr>
-                                 
-								                                            </tbody>
-								                                            
-								                                        </table>
-								                                   
-								                                </div>		
-                                                </div>
-						      					  
-						    			</div>
-					  			</div>
-					                           
-                      </section>
-                      
-                        
-                                        
-                                    </section>
-                                </div>
-                                <!-- fisrt table ends -->
-                                
-
-	<!-- first table starts -->
-                	<div class="col-sm-12">
-                                    <section class="panel panel-default bg-light dker">
-                                        <header class="panel-heading bg-primary lter" style="font-size: 18px; display: flex; flex-wrap: wrap; justify-content: space-around;">
-                                        	<div><span style="font-weight: bold">Service Id:&nbsp;</span>BS0434</div>
-                                        	<div><span style="font-weight: bold">Service Status:&nbsp;</span> <span style="color: #FFC700">waiting</span></div>
-                                        	<div><span style="font-weight: bold">Appointment Date:&nbsp;</span> 23/12/2018</div>
-                                        	<div>
-                                        		<a href="CustomizationInprogressPage" class="btn btn-sm btn-warning btn-rounded">Start Customization</a>
-                                        	</div>
-                                        </header>
-                                        
-                                        <section class="panel panel-default">
-				                             <header class="panel-heading bg-light dker">
-				                                     <ul class="nav nav-tabs nav-justified">
-				                                           <li class="active"><a href="#BikeInfornmation" data-toggle="tab">Bike Infornmation</a></li>
-				                                           <li><a href="#CustomizationChart" data-toggle="tab">Customization Chart</a></li>
-				                                           <li><a href="#CustomerInfornmation" data-toggle="tab">Customer Infornmation</a></li>
-				                                           <li><a href="#CustomizationInvoice" data-toggle="tab">Customization Invoice</a></li>         
-				                                     </ul>
-				                             </header>
-                                        <div class="panel-body bg-light dk">
-                                            <div class="tab-content">
-
-                                               
-												<div class="tab-pane active bg-light dk" id="BikeInfornmation">
-                                                	            <div class="col-sm-12">
-								                                    
-								                                        <table class="table table-striped m-b-none">
-								                                            <thead>
-								                                                <tr>
-								                                                    <th style="text-align: center">Bike Name</th>
-								                                                    <th style="text-align: center">Chassis Number</th>
-								                                                    <th style="text-align: center">Plate Number</th>
-								                                                </tr>
-								                                            </thead>
-								                                            
-								                                            <tbody>
-								                                            
-								                                                <tr style="text-align: center">
-								                                                         <td>Bullet 350cc</td>
-								                                                         <td>5FHGSJ44456871264</td>
-								                                                         <td>MH-45-GH-6454</td>
-								                                                </tr>
-								                                                          
-								                                            </tbody>
-								                                            
-								                                        </table>
-								                                    
-								                                </div>             
-                                    			</div>
-                                   
-                                   	
-                                                <div class="tab-pane bg-light dk" id="CustomizationChart">
-																<div class="col-sm-12">
-								                                    
-								                                        <table class="table table-striped m-b-none">
-								                                            <thead>
-								                                                <tr>
-								                                                    <th style="text-align: center">Part</th>
-								                                                    <th style="text-align: center">Cost</th>
-								                                                    <th style="text-align: center">Status</th>
-								                                                </tr>
-								                                            </thead>
-								                                            
-								                                            <tbody>
-								                                            
-									                                            <tr style="text-align: center">
-							                                                    	 <td>labour cost</td>
-							                                                         <td>500</td>
-							                                                         <td style="color: #FF681B">pending</td>
-							                                                	</tr>
-								                                            
-								                                              	<tr style="text-align: center">
-							                                                    	 <td>tail light</td>
-							                                                         <td>250</td>
-							                                                         <td style="color: #FF681B">pending</td>
-							                                                	</tr>
+                                          <table class="table table-striped m-b-none" >
+                                                      
+                                                <thead >
+                                                                
+                                                     <tr>   
+                                                         <th style="text-align: center;">Customization Id</th>
+                                                         <th style="text-align: center;">Appointment Date</th>
+                                                         <th style="text-align: center;">Customization Details</th>
+                                                         <th style="text-align: center;">Start Customization</th>
+                                                     </tr>
+                                                </thead>
                                                 
-								                                                <tr style="text-align: center">
-								                                                         <td>head light</td>
-								                                                         <td>400</td>
-								                                                         <td style="color: #FF681B">pending</td>								                                                         
-								                                                </tr>                              
-								                                                          
-								                                            </tbody>
-								                                            
-								                                        </table>
-								                                   
-								                                </div>		                                                
-                                                </div>
+                                                <tbody>
+                                                        
+                                                      <tr style="text-align: center;">
+                                                         <td>BC00565</td>
+                                                         <td>12/2/2018</td>
+                                                         <td>
+                                                         	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded">Customization Details</a>
+                                                         </td>     
+                                                         <td>
+                                                         	<a href="CustomizationInprogressPage" class="btn btn-md btn-primary m-r rounded">Start Customization</a>
+                                                         </td>                                           
+                                                      </tr>
+                                     
+                                                    </tbody>
 
-                                              
-                                                <div class="tab-pane bg-light dk" id="CustomerInfornmation">
-																<div class="col-sm-12">
-								                                    
-								                                        <table class="table table-striped m-b-none">
-								                                            <thead>
-								                                                <tr>
-								                                                    <th style="text-align: center">Customer Name</th>
-								                                                    <th style="text-align: center">Address</th>
-								                                                    <th style="text-align: center">Phone Number</th>
-								                                                </tr>
-								                                            </thead>
-								                                            
-								                                            <tbody>
-								                                            
-								                                                <tr style="text-align: center">
-								                                                         <td>Rahul Yadav</td>
-								                                                         <td>karve nager, pune</td>
-								                                                         <td>9256324578</td>
-								                                                </tr>
-								                                                          
-								                                            </tbody>
-								                                            
-								                                        </table>
-								                                    
-								                                </div>
-						      					</div> 
-						      					
-						      					<div class="tab-pane bg-light dk" id="CustomizationInvoice">
-																<div class="col-sm-12">
-								                                    
-								                                        <table class="table table-striped m-b-none">
-								                                            <thead>
-								                                                <tr>
-								                                                    <th style="text-align: center">Amount</th>
-								                                                    <th style="text-align: center">GST(%)</th>
-								                                                    <th style="text-align: center">Total Amount</th>
-								                                                </tr>
-								                                            </thead>
-								                                            
-								                                            <tbody>
-								                                            
-									                                            <tr style="text-align: center">
-							                                                    	 <td>5000</td>
-							                                                         <td>8</td>
-							                                                         <td>5800</td>
-							                                                	</tr>
-                                 
-								                                            </tbody>
-								                                            
-								                                        </table>
-								                                   
-								                                </div>		
-                                                </div>
-						      					  
-						    			</div>
-					  			</div>
-					                           
-                      </section>
-                      
-                        
-                                        
-                                    </section>
-                                </div>
-                                <!-- fisrt table ends -->
-                                
-                                
-                                <!-- first table starts -->
-                	<div class="col-sm-12">
-                                    <section class="panel panel-default bg-light dker">
-                                        <header class="panel-heading bg-primary lter" style="font-size: 18px; display: flex; flex-wrap: wrap; justify-content: space-around;">
-                                        	<div><span style="font-weight: bold">Service Id:&nbsp;</span>BS0434</div>
-                                        	<div><span style="font-weight: bold">Service Status:&nbsp;</span> <span style="color: #FFC700">waiting</span></div>
-                                        	<div><span style="font-weight: bold">Appointment Date:&nbsp;</span> 23/12/2018</div>
-                                        	<div>
-                                        		<a href="CustomizationInprogressPage" class="btn btn-sm btn-warning btn-rounded">Start Customization</a>
-                                        	</div>
-                                        </header>
-                                        
-                                        <section class="panel panel-default">
-				                             <header class="panel-heading bg-light dker">
-				                                     <ul class="nav nav-tabs nav-justified">
-				                                           <li class="active"><a href="#BikeInfornmation" data-toggle="tab">Bike Infornmation</a></li>
-				                                           <li><a href="#CustomizationChart" data-toggle="tab">Customization Chart</a></li>
-				                                           <li><a href="#CustomerInfornmation" data-toggle="tab">Customer Infornmation</a></li>
-				                                           <li><a href="#CustomizationInvoice" data-toggle="tab">Customization Invoice</a></li>         
-				                                     </ul>
-				                             </header>
-                                        <div class="panel-body bg-light dk">
-                                            <div class="tab-content">
-
-                                               
-												<div class="tab-pane active bg-light dk" id="BikeInfornmation">
-                                                	            <div class="col-sm-12">
-								                                    
-								                                        <table class="table table-striped m-b-none">
-								                                            <thead>
-								                                                <tr>
-								                                                    <th style="text-align: center">Bike Name</th>
-								                                                    <th style="text-align: center">Chassis Number</th>
-								                                                    <th style="text-align: center">Plate Number</th>
-								                                                </tr>
-								                                            </thead>
-								                                            
-								                                            <tbody>
-								                                            
-								                                                <tr style="text-align: center">
-								                                                         <td>Bullet 350cc</td>
-								                                                         <td>5FHGSJ44456871264</td>
-								                                                         <td>MH-45-GH-6454</td>
-								                                                </tr>
-								                                                          
-								                                            </tbody>
-								                                            
-								                                        </table>
-								                                    
-								                                </div>             
-                                    			</div>
-                                   
-                                   	
-                                                <div class="tab-pane bg-light dk" id="CustomizationChart">
-																<div class="col-sm-12">
-								                                    
-								                                        <table class="table table-striped m-b-none">
-								                                            <thead>
-								                                                <tr>
-								                                                    <th style="text-align: center">Part</th>
-								                                                    <th style="text-align: center">Cost</th>
-								                                                    <th style="text-align: center">Status</th>
-								                                                </tr>
-								                                            </thead>
-								                                            
-								                                            <tbody>
-								                                            
-									                                            <tr style="text-align: center">
-							                                                    	 <td>labour cost</td>
-							                                                         <td>500</td>
-							                                                         <td style="color: #FF681B">pending</td>
-							                                                	</tr>
-								                                            
-								                                              	<tr style="text-align: center">
-							                                                    	 <td>tail light</td>
-							                                                         <td>250</td>
-							                                                         <td style="color: #FF681B">pending</td>
-							                                                	</tr>
-                                                
-								                                                <tr style="text-align: center">
-								                                                         <td>head light</td>
-								                                                         <td>400</td>
-								                                                         <td style="color: #FF681B">pending</td>								                                                         
-								                                                </tr>                              
-								                                                          
-								                                            </tbody>
-								                                            
-								                                        </table>
-								                                   
-								                                </div>		                                                
-                                                </div>
-
-                                              
-                                                <div class="tab-pane bg-light dk" id="CustomerInfornmation">
-																<div class="col-sm-12">
-								                                    
-								                                        <table class="table table-striped m-b-none">
-								                                            <thead>
-								                                                <tr>
-								                                                    <th style="text-align: center">Customer Name</th>
-								                                                    <th style="text-align: center">Address</th>
-								                                                    <th style="text-align: center">Phone Number</th>
-								                                                </tr>
-								                                            </thead>
-								                                            
-								                                            <tbody>
-								                                            
-								                                                <tr style="text-align: center">
-								                                                         <td>Rahul Yadav</td>
-								                                                         <td>karve nager, pune</td>
-								                                                         <td>9256324578</td>
-								                                                </tr>
-								                                                          
-								                                            </tbody>
-								                                            
-								                                        </table>
-								                                    
-								                                </div>
-						      					</div> 
-						      					
-						      					<div class="tab-pane bg-light dk" id="CustomizationInvoice">
-																<div class="col-sm-12">
-								                                    
-								                                        <table class="table table-striped m-b-none">
-								                                            <thead>
-								                                                <tr>
-								                                                    <th style="text-align: center">Amount</th>
-								                                                    <th style="text-align: center">GST(%)</th>
-								                                                    <th style="text-align: center">Total Amount</th>
-								                                                </tr>
-								                                            </thead>
-								                                            
-								                                            <tbody>
-								                                            
-									                                            <tr style="text-align: center">
-							                                                    	 <td>5000</td>
-							                                                         <td>8</td>
-							                                                         <td>5800</td>
-							                                                	</tr>
-                                 
-								                                            </tbody>
-								                                            
-								                                        </table>
-								                                   
-								                                </div>		
-                                                </div>
-						      					  
-						    			</div>
-					  			</div>
-					                           
-                      </section>
-                      
-                        
-                                        
-                                    </section>
-                                </div>
-                                <!-- fisrt table ends -->
+                                             </table>
+                                                     
+                             </section>
+                                         
+                        </div>
+                    </div>
+                    <!-- first record ends-->
                     
+                    <!-- fisrt table starts -->
+	                <div class="row">
+                         <div class="col-sm-12">
+                             <section class="panel panel-default">
+                                          <header class="panel-heading bg-warning dk" style="font-size: 20px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
+                                          	Avenger 400cc (MH-54-FH-4343)
+                                          </header>
+                                                
+                                          <table class="table table-striped m-b-none">
+                                                      
+                                                <thead>
+                                                                
+                                                     <tr>   
+                                                         <th style="text-align: center;">Customization Id</th>
+                                                         <th style="text-align: center;">Appointment Date</th>
+                                                         <th style="text-align: center;">Customization Details</th>
+                                                         <th style="text-align: center;">Start Customization</th>
+                                                     </tr>
+                                                </thead>
+                                                
+                                                <tbody>
+                                                        
+                                                      <tr style="text-align: center;">
+                                                         <td>BC054651</td>
+                                                         <td>25/2/2018</td>
+                                                         <td>
+                                                         	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded">Customization Details</a>
+                                                         </td>  
+                                                         <td>
+                                                         	<a href="CustomizationInprogressPage" class="btn btn-md btn-primary m-r rounded">Start Customization</a>
+                                                         </td>                                              
+                                                      </tr>
+                                     
+                                                    </tbody>
+
+                                             </table>
+                                                     
+                             </section>
+                                         
+                        </div>
+                    </div>
+                    <!-- first record ends-->
                     
-               
-               </div>
+                    <!-- fisrt table starts -->
+	                <div class="row">
+                         <div class="col-sm-12">
+                             <section class="panel panel-default">
+                                          <header class="panel-heading bg-warning dk" style="font-size: 20px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
+                                          	ThunderBird 300cc (MH-54-UH-8768)
+                                          </header>
+                                                
+                                          <table class="table table-striped m-b-none">
+                                                      
+                                                <thead>
+                                                                
+                                                     <tr>   
+                                                         <th style="text-align: center;">Customization Id</th>
+                                                         <th style="text-align: center;">Appointment Date</th>
+                                                         <th style="text-align: center;">Customization Details</th>
+                                                         <th style="text-align: center;">Start Customization</th>
+                                                     </tr>
+                                                </thead>
+                                                
+                                                <tbody>
+                                                        
+                                                      <tr style="text-align: center;">
+                                                         <td>BC8452</td>
+                                                         <td>8/2/2018</td>
+                                                         <td>
+                                                         	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded">Customization Details</a>
+                                                         </td> 
+                                                         <td>
+                                                         	<a href="CustomizationInprogressPage" class="btn btn-md btn-primary m-r rounded">Start Customization</a>
+                                                         </td>                                               
+                                                      </tr>
+                                     
+                                                    </tbody>
+
+                                             </table>
+                                                     
+                             </section>
+                                         
+                        </div>
+                    </div>
+                    <!-- first record ends-->
+                    
+                    <!-- fisrt table starts -->
+	                <div class="row">
+                         <div class="col-sm-12">
+                             <section class="panel panel-default">
+                                          <header class="panel-heading bg-warning dk" style="font-size: 20px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
+                                          	Bullet 350cc (MH-12-HF-6454)
+                                          </header>
+                                                
+                                          <table class="table table-striped m-b-none">
+                                                      
+                                                <thead>
+                                                                
+                                                     <tr>   
+                                                         <th style="text-align: center;">Customization Id</th>
+                                                         <th style="text-align: center;">Appointment Date</th>
+                                                         <th style="text-align: center;">Customization Details</th>
+                                                         <th style="text-align: center;">Start Customization</th>
+                                                     </tr>
+                                                </thead>
+                                                
+                                                <tbody>
+                                                        
+                                                      <tr style="text-align: center;">
+                                                         <td>BC00565</td>
+                                                         <td>12/2/2018</td>
+                                                         <td>
+                                                         	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded">Customization Details</a>
+                                                         </td> 
+                                                         <td>
+                                                         	<a href="CustomizationInprogressPage" class="btn btn-md btn-primary m-r rounded">Start Customization</a>
+                                                         </td>                                               
+                                                      </tr>
+                                     
+                                                    </tbody>
+
+                                             </table>
+                                                     
+                             </section>
+                                         
+                        </div>
+                    </div>
+                    <!-- first record ends-->
+                    
+                    <!-- modal starts-->
+ 
+						  <div class="modal fade" id="myModal" role="dialog">
+						    <div class="modal-dialog modal-md">
+						      <div class="modal-content">
+						        <div class="modal-header">
+						        	<h3 style="text-align: center">Amount Brakedown window</h3>  
+						        </div>
+						        <div class="modal-body">
+						          		<div class="col-sm-12">
+                                    <section class="panel panel-default">
+                                        <table class="table table-striped m-b-none">
+                                            <thead>
+                                                <tr>
+                                                    <th style="text-align: center">Part</th>
+                                                    <th style="text-align: center">Cost</th>
+                                                    <th style="text-align: center">Status</th>
+                                                </tr>
+                                            </thead>
+                                            
+                                            <tbody>
+                                            
+                                            	<tr style="text-align: center">
+                                                    	 <td>labour cost</td>
+                                                         <td>500</td>
+                                                         <td style="color: #FF681B">pending</td>
+                                                </tr>
+                                            
+                                                <tr style="text-align: center">
+                                                    	 <td>brake change</td>
+                                                         <td>500</td>
+                                                         <td style="color: #FF681B">pending</td>
+                                                </tr>
+                                                
+                                                <tr style="text-align: center">
+                                                    	 <td>silencer change</td>
+                                                         <td>350</td>
+                                                         <td style="color: #FF681B">pending</td>
+                                                </tr>
+                                                
+                                                <tr style="text-align: center">
+                                                    	 <td>tail light change</td>
+                                                         <td>300</td>
+                                                         <td style="color: #FF681B">pending</td>
+                                                </tr>
+                    
+                                            </tbody>
+                                            
+                                        </table>
+                                    </section>
+                                </div>
+						        </div>
+						        <div class="modal-footer">	
+						          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						        </div>
+						      </div>
+						    </div>
+					  	</div>
+					  
+					  	<!-- modal ends -->
             
                       
         </section>

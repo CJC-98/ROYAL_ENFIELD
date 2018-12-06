@@ -12,19 +12,21 @@ public class CustomizationBikeInfo {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private int customizationBikeInfoId;
 	
+	public int getCustomizationBikeInfoId() {
+		return customizationBikeInfoId;
+	}
+	public void setCustomizationBikeInfoId(int customizationBikeInfoId) {
+		this.customizationBikeInfoId = customizationBikeInfoId;
+	}
 	private String chasisNumber;
 	private String plateNumber;
 	
 	
 	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+	
+	
 	public String getChasisNumber() {
 		return chasisNumber;
 	}

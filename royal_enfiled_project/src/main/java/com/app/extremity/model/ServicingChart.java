@@ -13,7 +13,7 @@ public class ServicingChart {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private int ServicingChartId;
 	
 	private String work;
 	
@@ -27,12 +27,14 @@ public class ServicingChart {
 	
 	
 	
-	public int getId() {
-		return id;
+	
+
+	public int getServicingChartId() {
+		return ServicingChartId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setServicingChartId(int servicingChartId) {
+		ServicingChartId = servicingChartId;
 	}
 
 	public String getWork() {

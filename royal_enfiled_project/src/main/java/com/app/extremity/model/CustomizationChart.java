@@ -13,7 +13,7 @@ public class CustomizationChart {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private int CustomizationChartId;
 	
 	private String part;
 	
@@ -34,11 +34,12 @@ public class CustomizationChart {
 	public void setBikeCustomization(BikeCustomization bikeCustomization) {
 		this.bikeCustomization = bikeCustomization;
 	}
-	public int getId() {
-		return id;
+	
+	public int getCustomizationChartId() {
+		return CustomizationChartId;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setCustomizationChartId(int customizationChartId) {
+		CustomizationChartId = customizationChartId;
 	}
 	public String getPart() {
 		return part;
