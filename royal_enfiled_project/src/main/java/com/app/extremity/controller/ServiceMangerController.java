@@ -1,8 +1,13 @@
 package com.app.extremity.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.app.extremity.model.Color;
   
 /* 
  * This controller helps to navigate in service manager index.jsp
@@ -86,6 +91,26 @@ public class ServiceMangerController {
 	
 	@RequestMapping(value="/CustomizationInvoicePage")
 	public String CustomizationInvoicePage(Model model){
+		
+	
+		Color c1 = new Color();
+		c1.setColorId("C1");
+		c1.setColorName("green");
+		
+		Color c2 = new Color();
+		c2.setColorId("C2");
+		c2.setColorName("red");
+		
+		Color c3 = new Color();
+		c3.setColorId("c3");
+		c3.setColorName("red");
+		
+		Color c4 = new Color();
+		c4.setColorId("C4");
+		c4.setColorName("red");
+		
+		List<Color> colors = new ArrayList<>();
+	
 		
 		model.addAttribute("link","customizationInvoice.jsp");
 		return "ServiceManager/serviceManagerIndex";
