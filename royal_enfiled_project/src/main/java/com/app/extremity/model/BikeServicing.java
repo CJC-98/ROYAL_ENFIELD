@@ -18,7 +18,7 @@ public class BikeServicing {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private int BikeServicingId;
 	
 	private String ServcingStatus = "waiting";
 	
@@ -35,12 +35,14 @@ public class BikeServicing {
 	@OneToOne
 	private ServiceInvoice invoice;
 
-	public int getId() {
-		return id;
+	
+
+	public int getBikeServicingId() {
+		return BikeServicingId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setBikeServicingId(int bikeServicingId) {
+		BikeServicingId = bikeServicingId;
 	}
 
 	public String getServcingStatus() {

@@ -15,7 +15,7 @@ public class DeadStock
 	//@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private String deadStockId;
 	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="bikeId")
+	@JoinColumn(name="newBikeStockId")
 	private NewBikeStock deadBikeStock;
 	public NewBikeStock getDeadBikeStock() {
 		return deadBikeStock;

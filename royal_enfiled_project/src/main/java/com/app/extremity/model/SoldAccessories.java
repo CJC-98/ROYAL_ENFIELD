@@ -15,8 +15,16 @@ import javax.persistence.OneToOne;
 public class SoldAccessories {
 	@Id
 	//@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private String partId;
+	private String soldAccessoriesId;
 	private String partName;
+	public String getSoldAccessoriesId() {
+		return soldAccessoriesId;
+	}
+
+	public void setSoldAccessoriesId(String soldAccessoriesId) {
+		this.soldAccessoriesId = soldAccessoriesId;
+	}
+
 	private String partPrice;
 	private long partQuantity;
 	@OneToOne(cascade = CascadeType.ALL)
@@ -24,14 +32,7 @@ public class SoldAccessories {
 	//@OneToMany(cascade = CascadeType.ALL)
 	//private User user;
 
-	public String getPartId() {
-		return partId;
-	}
-
-	public void setPartId(String partId) {
-		this.partId = partId;
-	}
-
+	
 	public String getPartName() {
 		return partName;
 	}
