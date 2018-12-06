@@ -13,8 +13,8 @@ import javax.persistence.OneToOne;
 @Entity
 public class OldBikeStock {
 	@Id
-	//@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private String oldBikeId;
+	// @GeneratedValue(strategy=GenerationType.IDENTITY)
+	private String OldBikeStockId;
 	private String totalKmRun;
 	private String bikeCondition;
 	private String bikeMfgYear;
@@ -35,15 +35,23 @@ public class OldBikeStock {
 	// private String
 	// bikeModel,bikeEngineType,bikeChasisNumber,bikeEngineNumber,bikeColor,bikeWheel,bikeEngineStartType;
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="bikeId")
+	@JoinColumn(name = "newBikeStockId")
 	private NewBikeStock newBikeStock;
 
-	public String getOldBikeId() {
-		return oldBikeId;
+	public String getOldBikeStockId() {
+		return OldBikeStockId;
 	}
 
-	public void setOldBikeId(String oldBikeId) {
-		this.oldBikeId = oldBikeId;
+	public void setOldBikeStockId(String oldBikeStockId) {
+		OldBikeStockId = oldBikeStockId;
+	}
+
+	public NewBikeStock getNewBikeStock() {
+		return newBikeStock;
+	}
+
+	public void setNewBikeStock(NewBikeStock newBikeStock) {
+		this.newBikeStock = newBikeStock;
 	}
 
 	public String getTotalKmRun() {

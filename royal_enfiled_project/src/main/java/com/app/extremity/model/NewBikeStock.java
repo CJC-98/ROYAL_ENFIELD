@@ -14,9 +14,9 @@ public class NewBikeStock
 {
 	@Id
 	//@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private String bikeId;
+	private String newBikeStockId;
 	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="modelId")
+	@JoinColumn(name="bikeModelId")
 	private BikeModel bikeModel;
 	private String chasisNumber;
 	private String wheelType;
@@ -24,11 +24,12 @@ public class NewBikeStock
 	private String bikePrice;
 	private String bikeMfgDate;
 	private String arrivalDate;
-	public String getBikeId() {
-		return bikeId;
+	
+	public String getNewBikeStock() {
+		return newBikeStockId;
 	}
-	public void setBikeId(String bikeId) {
-		this.bikeId = bikeId;
+	public void setNewBikeStock(String newBikeStock) {
+		this.newBikeStockId= newBikeStock;
 	}
 	public BikeModel getBikeModel() {
 		return bikeModel;

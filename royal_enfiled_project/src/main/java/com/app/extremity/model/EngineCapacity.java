@@ -10,17 +10,21 @@ public class EngineCapacity
 {
 	@Id
 	//@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private String engineId;
+	private String engineCapacityId;
 	private String engineType;
-	public String getEngineId() {
-		return engineId;
+	
+	public String getEngineCapacityId() {
+		return engineCapacityId;
 	}
-	public void setEngineId(String engineId) {
-		this.engineId = engineId;
+
+	public void setEngineCapacityId(String engineCapacityId) {
+		this.engineCapacityId = engineCapacityId;
 	}
+
 	public String getEngineType() {
 		return engineType;
 	}
+
 	public void setEngineType(String engineType) {
 		this.engineType = engineType;
 	}
