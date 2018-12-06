@@ -74,7 +74,8 @@
                                                         //</strong> 
                          <span class="text-muted m-l-sm pull-right"> 
                            <a href="#comment-form" class="btn btn-default btn-xs">
-                       <i class="text-muted"></i>Reply</a> 
+                       <i class="text-muted"></i>Reply</a>
+                       <a href="modal.html"></a>
                       <a href="#" data-toggle="class" class="btn btn-default btn-xs active">
                      <i class="fa fa-star-o text-muted text"></i> 
                      <i class="fa fa-star text-danger text-active"></i>Mark as read </a> 
