@@ -80,7 +80,7 @@ public class ServiceMangerController {
 	@RequestMapping(value="/ServicesInvoicePage")
 	public String ServicesInvoicePage(Model model){
 		
-		model.addAttribute("link","ServicesInvoice.jsp");
+		model.addAttribute("link","servicesInvoice.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
 	

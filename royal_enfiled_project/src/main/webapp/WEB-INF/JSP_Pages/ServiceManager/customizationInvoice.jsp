@@ -166,10 +166,7 @@
                                                          <td>300</td>
                                                          <td style="color: #81EF19">done</td>
                                                 </tr>
-                                                
-                                               
-
-                                               
+                    
                                             </tbody>
                                             
                                         </table>

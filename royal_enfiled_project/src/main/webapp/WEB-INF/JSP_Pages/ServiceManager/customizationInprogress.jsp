@@ -28,9 +28,9 @@
 	                <div class="row">
                          <div class="col-sm-12">
                              <section class="panel panel-default">
-                                          <header class="panel-heading bg-warning dk" style="font-size: 20px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
+                                          <header class="panel-heading bg-dark lter" style="font-size: 20px; color: white; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
                                           	Bullet 350cc (MH-12-HF-6454)
-                                          	<a href="ApprovedCustomizationPage" class="btn btn-md btn-primary m-r">Submit Work</a>
+                                          	<a href="" class="btn btn-md btn-warning rounded m-r">Submit Work</a>
                                           </header>
                                                 
                                           <table class="table table-striped m-b-none">
@@ -38,7 +38,7 @@
                                                 <thead>
                                                                 
                                                      <tr>   
-                                                         <th style="text-align: center;">Id</th>
+                                                         <th style="text-align: center;">Part Id</th>
                                                          <th style="text-align: center;">Part</th>
                                                          <th style="text-align: center;">Cost</th>
                                                          <th style="text-align: center;">Check</th>
@@ -115,9 +115,9 @@
                      <div class="row">
                          <div class="col-sm-12">
                              <section class="panel panel-default">
-                                          <header class="panel-heading bg-warning dk" style="font-size: 20px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
-                                          	Bullet 350cc (MH-12-HF-6454)
-                                          	<a href="ApprovedCustomizationPage" class="btn btn-md btn-primary m-r">Submit Work</a>
+                                          <header class="panel-heading bg-dark lter" style="color: white; font-size: 20px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
+                                          	Bullet 350cc (MH12546HF6454)
+                                          	<a href="" class="btn btn-md btn-warning rounded m-r">Submit Work</a>
                                           </header>
                                                 
                                           <table class="table table-striped m-b-none">
@@ -125,7 +125,7 @@
                                                 <thead>
                                                                 
                                                      <tr>   
-                                                         <th style="text-align: center;">Id</th>
+                                                         <th style="text-align: center;">Part Id</th>
                                                          <th style="text-align: center;">Part</th>
                                                          <th style="text-align: center;">Cost</th>
                                                          <th style="text-align: center;">Check</th>
@@ -203,8 +203,7 @@
 	            </section>
 	        </section>
 	 </section> 
-	 
-	  
+	
 	 
 </body>
 </html>
