@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 
-=======
-
->>>>>>> refs/heads/pooja
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -38,7 +34,7 @@
                              </header>
                                         <div class="panel-body bg-light dk">
                                             <div class="tab-content">
-<<<<<<< HEAD
+
                                                 <!-- Unread tab -->
 												<div class="tab-pane active bg-light dk" id="Unread">
                                                  <div class="m-t">
@@ -93,7 +89,7 @@
                                                          </span>
                                                        Designation:<strong> Sales manager2</strong>
                                                         <br>
-                                                        <br>
+                                                         <br>
                                                        Description:
                                                         <strong> // Description of unread messages will be here.
                                                         //</strong>
@@ -198,7 +194,7 @@
 
                                  </div>
 								  <div class="tab-pane bg-light dk" id="Sendnotification">	
-=======
+
 
 
 
