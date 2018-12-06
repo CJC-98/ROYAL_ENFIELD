@@ -17,7 +17,7 @@ public class CompanyOrder
 private String companyOrderId;
 private String orderDate;
 @OneToOne(cascade=CascadeType.ALL)
-@JoinColumn(name="modelId")
+@JoinColumn(name="bikeModelId")
 private BikeModel bikemodel;
 private String quantity;
 private String totalPrice;

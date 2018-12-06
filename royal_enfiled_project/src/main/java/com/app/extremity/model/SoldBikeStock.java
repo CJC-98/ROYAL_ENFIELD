@@ -24,7 +24,7 @@ public class SoldBikeStock {
 	}
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "modelId")
+	@JoinColumn(name = "bikeModelId")
 	private BikeModel bikeModel; // model name (Classic, Electra, Thunderbird,
 									// Himalyan, Continental, Interceptor)
 	@OneToOne(cascade = CascadeType.ALL)

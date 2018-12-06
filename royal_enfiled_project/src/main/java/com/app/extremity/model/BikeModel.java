@@ -16,8 +16,6 @@ public class BikeModel {
 	// @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private String bikeModelId;
 
-	
-
 	public String getBikeModelId() {
 		return bikeModelId;
 	}
@@ -28,7 +26,7 @@ public class BikeModel {
 
 	private String modelName;
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "engineid")
+	@JoinColumn(name = "engineCapacityId")
 	private EngineCapacity enginecapacity;
 	@OneToMany(cascade = CascadeType.ALL)
 	private Set<Color> colors = new HashSet<>();

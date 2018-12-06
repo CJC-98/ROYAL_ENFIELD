@@ -35,7 +35,7 @@ public class OldBikeStock {
 	// private String
 	// bikeModel,bikeEngineType,bikeChasisNumber,bikeEngineNumber,bikeColor,bikeWheel,bikeEngineStartType;
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "bikeId")
+	@JoinColumn(name = "newBikeStockId")
 	private NewBikeStock newBikeStock;
 
 	public String getOldBikeStockId() {

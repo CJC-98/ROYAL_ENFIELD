@@ -16,7 +16,7 @@ public class NewBikeStock
 	//@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private String newBikeStockId;
 	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="modelId")
+	@JoinColumn(name="bikeModelId")
 	private BikeModel bikeModel;
 	private String chasisNumber;
 	private String wheelType;

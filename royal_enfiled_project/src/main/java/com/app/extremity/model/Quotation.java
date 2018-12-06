@@ -15,7 +15,7 @@ public class Quotation
 	//@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private String quotationId;
 	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="modelId")
+	@JoinColumn(name="bikeModelId")
 	private BikeModel bikeModel;
 	//@OneToOne(cascade=CascadeType.ALL)
 	//private User user;

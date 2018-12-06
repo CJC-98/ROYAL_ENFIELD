@@ -33,7 +33,7 @@ public class BikeSaleForUser {
 	}
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "modelId")
+	@JoinColumn(name = "bikeModelId")
 	private BikeModel bikemodel;
 	private String bikewheel;
 	private String showroomPrice;
