@@ -17,6 +17,10 @@ public class AccessoriesStock {
 	// @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private String accessoriesStockId;
 	private String partName;
+	private String partPrice;
+	private long partQuantity;
+	// @OneToOne(cascade=CascadeType.ALL)
+	// private Model model;
 
 	public String getAccessoriesStockId() {
 		return accessoriesStockId;
@@ -25,11 +29,6 @@ public class AccessoriesStock {
 	public void setAccessoriesStockId(String accessoriesStockId) {
 		this.accessoriesStockId = accessoriesStockId;
 	}
-
-	private String partPrice;
-	private long partQuantity;
-	// @OneToOne(cascade=CascadeType.ALL)
-	// private Model model;
 
 	public String getPartName() {
 		return partName;
