@@ -28,8 +28,10 @@ public class BikeModel {
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "engineCapacityId")
 	private EngineCapacity enginecapacity;
+
 	@OneToMany(cascade = CascadeType.ALL)
-	private Set<Color> colors = new HashSet<>();
+	private Set<Color> color = new HashSet();
+
 	private String image;
 
 	public String getImage() {
@@ -57,11 +59,7 @@ public class BikeModel {
 	}
 
 	public Set<Color> getColors() {
-		return colors;
-	}
-
-	public void setColors(Set<Color> colors) {
-		this.colors = colors;
+		return getColors();
 	}
 
 }

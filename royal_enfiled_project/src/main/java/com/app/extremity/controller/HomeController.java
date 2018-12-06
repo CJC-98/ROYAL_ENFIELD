@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 	    
 	// All site actions are go through this method
-	//This is our landing page
+	    //This is our landing page
 	@RequestMapping(value="/")
 	public String homePage()
 	{ 
@@ -32,8 +32,8 @@ public class HomeController {
 	{ 
 		
 		System.out.println("In SignIn controller");
-		return "IndivisualUser/indivisualUserIndex";
-		//return "IndivisualUser/indivisualUserIndex";//by default go to client index.jsp  
+		//return "IndivisualUser/indivisualUserIndex";
+		return "IndivisualUser/indivisualUserIndex";//by default go to client index.jsp  
 
 	}  
 	   
