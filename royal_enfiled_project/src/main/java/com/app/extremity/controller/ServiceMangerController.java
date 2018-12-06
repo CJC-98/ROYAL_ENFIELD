@@ -3,6 +3,8 @@ package com.app.extremity.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,10 +20,12 @@ import com.app.extremity.model.Color;
 @Controller
 public class ServiceMangerController {
 	
+	static Logger logger = LogManager.getLogger(ServiceMangerController.class);
+	
 	@RequestMapping(value="/DashboardPage")
 	public String ServicesDashboardPage(Model model){
 		
-		System.out.println("dashboard hits...........");
+		logger.info("dashboard hits........... log");
 		model.addAttribute("link","serviceManagerDashboard.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
@@ -29,6 +33,8 @@ public class ServiceMangerController {
 	@RequestMapping(value="/ApprovedServicesPage")
 	public String ApprovedServicesgPage(Model model){
 		
+		
+		System.out.println("approved service htis..................");
 		model.addAttribute("link","approvedServices.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
@@ -103,16 +109,20 @@ public class ServiceMangerController {
 		
 		Color c3 = new Color();
 		c3.setColorId("c3");
-		c3.setColorName("red");
+		c3.setColorName("black");
 		
 		Color c4 = new Color();
 		c4.setColorId("C4");
-		c4.setColorName("red");
+		c4.setColorName("blue");
 		
-		List<Color> colors = new ArrayList<>();
-	
+		List<String> colors = new ArrayList<>();
+		colors.add("A");
+		colors.add("B");
+		colors.add("C");
+		colors.add("D");
 		
 		model.addAttribute("link","customizationInvoice.jsp");
+		model.addAttribute("colors",colors);
 		return "ServiceManager/serviceManagerIndex";
 	}
 	
