@@ -133,7 +133,7 @@
                                                         <br>
                                                         <br>
                                                         <span class="text-muted m-l-sm pull-right"> <i class="fa fa-calendar"></i> Date</span> 
-                                      
+                                       
                                  
                                                         Designation:<strong>Sales manager1</strong>
                                                         <br>
