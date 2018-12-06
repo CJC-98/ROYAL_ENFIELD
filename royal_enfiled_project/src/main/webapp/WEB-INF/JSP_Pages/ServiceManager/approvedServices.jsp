@@ -22,6 +22,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
 	<section id="content" class="bg-light lter">
 		<section class="vbox">
 			<section class="scrollable padder">
@@ -262,5 +263,36 @@ h3, .h3 {
 			</section>
 		</section>
 	</section>
+=======
+	<section id="content"  class="bg-light lter">
+	        <section class="vbox">
+	            <section class="scrollable padder">                                               
+	                                    
+	                <div class="m-b-md">
+	                    <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Approved Services</h3>
+	                </div>
+	                
+	               <section class="panel bg-light b-a">
+                             <div class="panel-body"> 		
+                             		//servive 1  
+                             </div>
+                   </section>
+                   
+                   <section class="panel bg-light b-a">
+                             <div class="panel-body"> 		
+                             		//servive 2
+                             </div>
+                   </section>
+                   
+                   <section class="panel bg-light b-a">
+                             <div class="panel-body"> 		
+                             		//servive 3
+                             </div>
+                   </section>
+	                
+	            </section>
+	        </section>
+	 </section> 
+>>>>>>> branch 'pranaykohad(TL)' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 </body>
 </html>

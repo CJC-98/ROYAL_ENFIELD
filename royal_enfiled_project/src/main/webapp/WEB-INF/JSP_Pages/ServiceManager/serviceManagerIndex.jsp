@@ -56,8 +56,10 @@
                         </section>
                     </section>
                 </li>
-                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb-sm avatar pull-left">
-                            <img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/avatar.jpg"> </span> John.Smith <b class="caret"></b> </a>
+                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                	<span class="thumb-sm avatar pull-left">
+                            <img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/avatar.jpg"> 
+                            </span> John.Smith <b class="caret"></b> </a>
                     <ul class="dropdown-menu animated fadeInRight"> <span class="arrow top"></span>
                         <li> <a href="#">Settings</a> </li>
                         <li> <a href="profile.html">Profile</a> </li>
@@ -92,90 +94,144 @@
                                         </li>
                                         
                                         <li> 
-                                        	<a href="ApprovedServicesPage"> 
-                                        		<i class="fa fa-gear icon"> 
-                                        			<b class="bg-warning dker"></b>
-                                                </i>  
-                                                <span>Approved Services</span>
+											
+											<a href=""> 
+												<i class="fa fa-gear icon"> 
+													<b class="bg-warning dker"></b>
+                                                </i> 
+                                                <span class="pull-right"> 
+                                                	<i class="fa fa-angle-down text"></i> 
+                                                	<i class="fa fa-angle-up text-active"></i> 
+                                                </span> 
+                                                <span>Services</span>
                                             </a>
+                                            
+                                            
+                                            
+                                            <ul class="nav lt">
+                                                <li> 
+                                                	<a href="ApprovedServicesPage"> 
+                                                		<i class="fa fa-angle-right"></i> 
+                                                		<span>Approved Services</span> 
+                                                	</a> 
+                                                </li> 
+                                            </ul>
+                                            
+                                            <ul class="nav lt">
+                                                <li> 
+                                                	<a href="ServicesInprogressPage"> 
+                                                		<i class="fa fa-angle-right"></i> 
+                                                		<span>In-progress Services</span> 
+                                                	</a> 
+                                                </li> 
+                                            </ul>
+                                            
+                                            <ul class="nav lt">
+                                                <li> 
+                                                	<a href="BikeServicesRecordsPage"> 
+                                                		<i class="fa fa-angle-right"></i> 
+                                                		<span>Services Records</span> 
+                                                	</a> 
+                                                </li> 
+                                            </ul>
+                                            
+                                            <ul class="nav lt">
+                                                <li> 
+                                                	<a href="AvailableServicesPage"> 
+                                                		<i class="fa fa-angle-right"></i> 
+                                                		<span>Available Services</span> 
+                                                	</a> 
+                                                </li> 
+                                            </ul>    
+                                            
                                         </li>
                                         
                                         <li> 
-                                        	<a href="ServicesInprogressPage"> 
-                                        		<i class="fa fa-gears icon"> 
-                                        			<b class="bg-warning"></b> 
+                                        	<a href=""> 
+												<i class="fa fa-wrench icon"> 
+													<b class="bg-success dker"></b>
                                                 </i> 
-                                                <span>Services In-Progress</span>
+                                                <span class="pull-right"> 
+                                                	<i class="fa fa-angle-down text"></i> 
+                                                	<i class="fa fa-angle-up text-active"></i> 
+                                                </span> 
+                                                <span>Customization</span>
                                             </a>
+                                            
+                                            <ul class="nav lt">
+                                                <li> 
+                                                	<a href="ApprovedCustomizationPage"> 
+                                                		<i class="fa fa-angle-right"></i> 
+                                                		<span>Approved Customization</span> 
+                                                	</a> 
+                                                </li> 
+                                            </ul>
+                                            
+                                            <ul class="nav lt">
+                                                <li> 
+                                                	<a href="CustomizationInprogressPage"> 
+                                                		<i class="fa fa-angle-right"></i> 
+                                                		<span>In-progress Customization</span> 
+                                                	</a> 
+                                                </li> 
+                                            </ul>
+                                            
+                                            <ul class="nav lt">
+                                                <li> 
+                                                	<a href="BikeCustomizationRecordsPage"> 
+                                                		<i class="fa fa-angle-right"></i> 
+                                                		<span>Customization Records</span> 
+                                                	</a> 
+                                                </li> 
+                                            </ul>
+                                            
+                                            <ul class="nav lt">
+                                                <li> 
+                                                	<a href="AvailableCustomizationPage"> 
+                                                		<i class="fa fa-angle-right"></i> 
+                                                		<span>Available Customization</span> 
+                                                	</a> 
+                                                </li> 
+                                            </ul> 
                                         </li>
                                         
-                                        <li> 
-                                        	<a href="ApprovedCustomizationPage"> 
-                                        		<i class="fa fa-wrench icon"> 
-                                        			<b class="bg-primary dker"></b>
-                                                </i> 
-                                                <span>Approved Custom.</span>
-                                            </a>
-                                        </li>
-                                        
-                                        <li> 
-                                        	<a href="CustomizationInprogressPage"> 
-                                        		<i class="fa fa-wrench icon">
-                                                   	<b class="bg-primary"></b> 
-                                                </i> 
-                                                <span>Custom. In-Progress</span> 
-                                            </a> 
-                                        </li>
-                                        
-                                        <li> 
-                                        	<a href="BikeServicesRecordsPage"> 
-                                        		<i class="fa fa-clipboard icon"> 
-                                        			<b class="bg-success dker"></b>
-                                                </i> 
-                                                <span>Bike Services Records</span> 
-                                            </a> 
-                                       </li>
+   
                                        
                                        <li> 
-                                        	<a href="BikeCustomizationRecordsPage"> 
-                                        		<i class="fa fa-clipboard icon"> 
-                                        			<b class="bg-success"></b>
+                                        	<a href=""> 
+												<i class="fa fa-rupee icon"> 
+													<b class="bg-info dker"></b>
                                                 </i> 
-                                                <span>Bike Custom. Records</span> 
+                                                <span class="pull-right"> 
+                                                	<i class="fa fa-angle-down text"></i> 
+                                                	<i class="fa fa-angle-up text-active"></i> 
+                                                </span> 
+                                                <span>Invoice</span>
                                             </a> 
-                                       </li>
-                                       
-                                       <li> 
-                                        	<a href="AvailableCustomizationPage"> 
-                                        		<i class="fa fa-gavel icon"> 
-                                        			<b class="bg-light dk"></b>
-                                                </i> 
-                                                <span>Available Custom.</span> 
-                                            </a> 
-                                       </li>
-                                       
-                                       <li> 
-                                        	<a href="ServicesInvoicePage"> 
-                                        		<i class="fa fa-rupee icon"> 
-                                        			<b class="bg-info dker"></b>
-                                                </i> 
-                                                <span>Services Invoice</span> 
-                                            </a> 
-                                       </li>
-                                       
-                                       <li> 
-                                        	<a href="CustomizationInvoicePage"> 
-                                        		<i class="fa fa-rupee icon"> 
-                                        			<b class="bg-info"></b>  
-                                                </i> 
-                                                <span>Custom. Invoice</span> 
-                                            </a> 
+                                            
+                                            <ul class="nav lt">
+                                                <li> 
+                                                	<a href="ServicesInvoicePage"> 
+                                                		<i class="fa fa-angle-right"></i> 
+                                                		<span>Servicing Invoice</span> 
+                                                	</a> 
+                                                </li> 
+                                            </ul>
+                                            
+                                            <ul class="nav lt">
+                                                <li> 
+                                                	<a href="CustomizationInvoicePage"> 
+                                                		<i class="fa fa-angle-right"></i> 
+                                                		<span>Customization Invoice</span> 
+                                                	</a> 
+                                                </li> 
+                                            </ul>
                                        </li>
                                        
                                        <li> 
                                         	<a href="MyNotificationsPage"> 
                                         		<i class="fa fa-bell icon"> 
-                                        			<b class="bg-info"></b>  
+                                        			<b class="bg-info lt"></b>  
                                                 </i> 
                                                 <span>My Notifications</span> 
                                             </a> 
@@ -196,7 +252,7 @@
                         </footer>
                     </section>
                 </aside> <!-- /.aside -->
-                
+                  
                 <!-- dashboard starts -->
                 	 <jsp:include page="${link}"/>
                 <!-- dashboard ends -->

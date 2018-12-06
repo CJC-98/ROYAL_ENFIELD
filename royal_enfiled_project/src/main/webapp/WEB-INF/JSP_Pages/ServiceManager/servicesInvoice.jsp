@@ -19,7 +19,7 @@
 	            <section class="scrollable padder">                                               
 	                                
 	                <div class="m-b-md">
-	                    <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Customization Invoice</h3>
+	                    <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Services Invoice</h3>
 	                </div>
 	                
 	               <!-- first table starts -->
@@ -141,7 +141,7 @@
                                         <table class="table table-striped m-b-none">
                                             <thead>
                                                 <tr>
-                                                    <th style="text-align: center">Part</th>
+                                                    <th style="text-align: center">Work</th>
                                                     <th style="text-align: center">Cost</th>
                                                     <th style="text-align: center">Status</th>
                                                 </tr>
@@ -150,23 +150,38 @@
                                             <tbody>
                                             
                                                 <tr style="text-align: center">
-                                                    	 <td>brake change</td>
+                                                    	 <td>labour cost</td>
                                                          <td>500</td>
                                                          <td style="color: #81EF19">done</td>
                                                 </tr>
                                                 
                                                 <tr style="text-align: center">
-                                                    	 <td>silencer change</td>
+                                                    	 <td>engine oil change</td>
                                                          <td>350</td>
                                                          <td style="color: #81EF19">done</td>
                                                 </tr>
                                                 
                                                 <tr style="text-align: center">
-                                                    	 <td>tail light change</td>
-                                                         <td>300</td>
+                                                    	 <td>brake oil change</td>
+                                                         <td>30</td>
                                                          <td style="color: #81EF19">done</td>
                                                 </tr>
-                    
+                                                
+                                                <tr style="text-align: center">
+                                                    	 <td>engine tuning</td>
+                                                         <td>500</td>
+                                                         <td style="color: #81EF19">done</td>
+                                                </tr>
+                                                
+                                                <tr style="text-align: center">
+                                                    	 <td>horn tuning</td>
+                                                         <td>200</td>
+                                                         <td style="color: #81EF19">done</td>
+                                                </tr>
+                                                
+                                                
+    
+                                               
                                             </tbody>
                                             
                                         </table>
