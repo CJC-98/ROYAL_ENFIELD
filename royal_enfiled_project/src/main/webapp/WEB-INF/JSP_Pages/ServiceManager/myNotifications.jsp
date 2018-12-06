@@ -38,171 +38,7 @@
                                                 <!-- Unread tab -->
 												<div class="tab-pane active bg-light dk" id="Unread">
                                                  <div class="m-t">
-                                              <!-- First unread msg info start-->
-                                                  <div class="row">
-                                                    <div class="col-lg-12">
-                                                     <ul class="breadcrumb">
-                                                      <div class="clearfix m-b">
-                                                       <a href="#" class="pull-left thumb m-r">
-                                                        <span class="thumb-sm avatar pull-left">
-                                                         <img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/avatar.jpg">
-                                                        </span> 
-                                                       </a>
-                                                        <div class="clear">
-                                                         <div class="h5 m-t-xs m-b-xs"><strong>John Smith</strong>
-                                                          <br>
-                                                           <br>
-                                                            <span class="text-muted m-l-sm pull-right"> <i class="fa fa-calendar"></i> Date</span> 
-                                                             Designation:<strong>Sales manager1</strong>
-                                                             <br>
-                                                              <br>
-                                                             Description://
-                                                              <strong>  Description of unread messages will be here.
-                                                        //</strong> 
-                                                        
-                                                        </div>
-                                                        </div>
-                                                        </div>
-                                                        </ul>
-                                                        </div>         
-                                                        </div>
-                                                <!-- First unread msg info end -->
-                                               <!-- Second unread msg info start-->
-                                         
-                                           <div class="row">
-                                           <div class="col-lg-12">
-                                          
-                                          <ul class="breadcrumb">
-                                                  <div class="clearfix m-b"> 
-                                                   <a href="#" class="pull-left thumb m-r">
-                                                    
-                                                <span class="thumb-sm avatar pull-left">
-                                                   <img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/avatar.jpg">
-                                                    </span> 
-                                                  </a>
-                    
-                                                    <div class="clear">
-                                                    <div class="h5 m-t-xs m-b-xs"><strong>Pranay K</strong>
-                                                        <br>
-                                                        <br>
-                                                         <span class="text-muted m-l-sm pull-right"> <i class= "fa fa-calendar"></i> Date
-                                                         </span>
-                                                       Designation:<strong> Sales manager2</strong>
-                                                        <br>
-                                                         <br>
-                                                       Description:
-                                                        <strong> // Description of unread messages will be here.
-                                                        //</strong>
-                                                       
-                                                        </div>
-                                                        
-                                                        </div>
-                                                        </div>
-                                                        </ul>
-                                                        </div> 
-                                                       </div>
-                                                    
-                                                <!-- Second unread msg info end -->
-                                </div>
-
-                                 </div>
-                                                
-                                                
-                                                
-                                                                         
-                                    		
-                                   	<!-- Read tab -->
-                                                <div class="tab-pane bg-light dk" id="Read">
-                                               
-                                                <div class="m-t">
-                                              <!-- First read msg info start-->
-                                           <div class="row">
-                                           <div class="col-lg-12">
-                                          
-                                          <ul class="breadcrumb">
-                                                   <div class="clearfix m-b">
-                                                  <a href="#" class="pull-left thumb m-r">
-                                                  
-                                                <span class="thumb-sm avatar pull-left">
-                                                   <img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/avatar.jpg">
-                                                    </span> 
-                                                  </a>
-                      
-                                                    <div class="clear">
-                                                     <div class="h5 m-t-xs m-b-xs"><strong>John Smith</strong>
-                                                        <br>
-                                                        <br>
-                                                        <span class="text-muted m-l-sm pull-right"> <i class="fa fa-calendar"></i> Date</span> 
-                                       
-                                 
-                                                        Designation:<strong>Sales manager1</strong>
-                                                        <br>
-                                                        <br>
-
-                                                        Discription:<strong>//
-                                                        Description of readed messages will be here.
-                                                      //</strong> 
-                                                        
-
-                                                        </div>
-                                                        </div>
-                                                        </div>
-                                                        </ul>
-                                                        </div>         
-                                                        </div>
-                                                <!-- First read msg info end -->
-                                               <!-- Second read msg info start-->
-                                         
-                                           <div class="row">
-                                           <div class="col-lg-12">
-                                          
-                                          <ul class="breadcrumb">
-                                                  <div class="clearfix m-b"> 
-                                                   <a href="#" class="pull-left thumb m-r">
-                                                  
-                                                <span class="thumb-sm avatar pull-left">
-                                                   <img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/avatar.jpg">
-                                                    </span> 
-                                                  </a>
-                    
-                                                    <div class="clear">
-                                                    <div class="h5 m-t-xs m-b-xs"><strong>Pranay K</strong>
-                                                        <br>
-                                                        <br>
-                                                        <span class="text-muted m-l-sm pull-right"> <i class="fa fa-calendar"></i> Date
-                                                      </span>
-                                                       Designation:<strong> Sales manager2</strong>
-                                                        <br>
-                                                        <br>
-                                                       Description:
-                                                        <strong> // Description of read messages will be here.
-                                                        //</strong>
-                                                        
-                                                      
-                                                        
-                                                
-                                                        </div>
-                                                        
-                                                        </div>
-                                                        </div>
-                                                        </ul>
-                                                        </div> 
-                                                       </div>
-                                                    
-                                                <!-- Second read msg info end -->
-                                </div>
-
-                                 </div>
-								  <div class="tab-pane bg-light dk" id="Sendnotification">	
-
-
-
-
-
-                                               <!-- Unread tab -->
-												<div class="tab-pane active bg-light dk" id="Unread">
-                                                
-                                                <div class="m-t">
+                                              
                                               <!-- First unread msg info start-->
                                            <div class="row">
                                            <div class="col-lg-12">
@@ -395,7 +231,7 @@
 
                                  </div>
 								  <div class="tab-pane bg-light dk" id="Sendnotification">	
->>>>>>> refs/heads/pooja
+
 								   <div class="modal-header">
 									<h3 style="text-align: center">Send Notification</h3>
 									 <div class="input-group"> 
@@ -425,7 +261,7 @@
 	              </section>
 	        </section>
 	 </section> 
-</body>
+
 
 
 <script>
@@ -446,8 +282,7 @@
 	}
 	 
 </script>
-<<<<<<< HEAD
+</body>
+
 </html>
-=======
-</html>
->>>>>>> refs/heads/pooja
+
