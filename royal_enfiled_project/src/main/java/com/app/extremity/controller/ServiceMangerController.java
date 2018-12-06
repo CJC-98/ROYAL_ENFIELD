@@ -63,6 +63,13 @@ public class ServiceMangerController {
 		return "ServiceManager/serviceManagerIndex";
 	}
 	
+	@RequestMapping(value="/AvailableServicesPage")
+	public String AvailableServicesPagePage(Model model){
+		
+		model.addAttribute("link","availableServicing.jsp");
+		return "ServiceManager/serviceManagerIndex";
+	}
+	
 	@RequestMapping(value="/AvailableCustomizationPage")
 	public String AvailableCustomizationPage(Model model){
 		
@@ -73,7 +80,7 @@ public class ServiceMangerController {
 	@RequestMapping(value="/ServicesInvoicePage")
 	public String ServicesInvoicePage(Model model){
 		
-		model.addAttribute("link","ServicesInvoice.jsp");
+		model.addAttribute("link","servicesInvoice.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
 	
@@ -91,5 +98,9 @@ public class ServiceMangerController {
 		model.addAttribute("link","myNotifications.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
+	
+	
+	
+	
 	
 }

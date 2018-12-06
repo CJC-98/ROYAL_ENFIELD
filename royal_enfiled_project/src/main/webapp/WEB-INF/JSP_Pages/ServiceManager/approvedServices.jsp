@@ -15,6 +15,7 @@
 
 <body>
 
+
 	<section id="content" class="bg-light lter">
 		<section class="vbox">
 			<section class="scrollable padder">
@@ -90,7 +91,7 @@ h3, .h3 {
 				</head>
 				<body>
 
-					<button class="tablink" onclick="openPage('BikeInformation', this, 'black')">Bike Information</button>
+<!-- 					<button class="tablink" onclick="openPage('BikeInformation', this, 'black')">Bike Information</button>
 					<button class="tablink" onclick="openPage('ServiceChart', this, 'black')"id="defaultOpen">Service Chart</button>
 					<button class="tablink" onclick="openPage('CustomerDetail', this, 'black')">Customer Detail</button>
 					<button class="tablink" onclick="openPage('Invoice', this, 'black')">Invoice</button>
@@ -255,6 +256,8 @@ h3, .h3 {
 			</section>
 		</section>
 	</section>
+ -->
+
 
 </body>
 </html>
