@@ -247,17 +247,15 @@
 	        </div>
 	      </div>
 	    </div>
-<<<<<<< HEAD
 
-  	</div>
-=======
+
   	</div>
 
       
   	<!-- modal ends -->
 
 
->>>>>>> branch 'pranaykohad(TL)' of https://github.com/CJC-98/ROYAL_ENFIELD.git
+
 
 </body>
 </html>

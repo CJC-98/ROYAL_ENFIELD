@@ -22,277 +22,253 @@
 </head>
 
 <body>
-<<<<<<< HEAD
+
 	<section id="content" class="bg-light lter">
-		<section class="vbox">
-			<section class="scrollable padder">
+        <section class="vbox">
+            <section class="scrollable padder">                                               
+                                
+                <div class="m-b-md">
+                    <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Approved Services</h3>
+                </div>
+                
+                <!-- fisrt table starts -->
+	                <div class="row">
+                         <div class="col-sm-12" >
+                             <section class="panel panel-default" >
+                                          <header class="panel-heading bg-warning dk" style="font-size: 20px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
+                                          	Bullet 350cc (NBFGH654351354)
+                                          </header>
+                                                
+                                          <table class="table table-striped m-b-none" >
+                                                      
+                                                <thead >
+                                                                
+                                                     <tr>   
+                                                         <th style="text-align: center;">Servicing Id</th>
+                                                         <th style="text-align: center;">Appointment Date</th>
+                                                         <th style="text-align: center;">Servicing Details</th>
+                                                         <th style="text-align: center;">Start Servicing</th>
+                                                     </tr>
+                                                </thead>
+                                                
+                                                <tbody>
+                                                        
+                                                      <tr style="text-align: center;">
+                                                         <td>BC00565</td>
+                                                         <td>12/2/2018</td>
+                                                         <td>
+                                                         	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded">Servicing Details</a>
+                                                         </td>     
+                                                         <td>
+                                                         	<a href="ServicesInprogressPage" class="btn btn-md btn-primary m-r rounded">Start Servicing</a>
+                                                         </td>                                           
+                                                      </tr>
+                                     
+                                                    </tbody>
 
-				<div class="m-b-md">
-					<h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Approved
-						Services</h3>
-				</div>
+                                             </table>
+                                                     
+                             </section>
+                                         
+                        </div>
+                    </div>
+                    <!-- first record ends-->
+                    
+                    <!-- fisrt table starts -->
+	                <div class="row">
+                         <div class="col-sm-12">
+                             <section class="panel panel-default">
+                                          <header class="panel-heading bg-warning dk" style="font-size: 20px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
+                                          	Avenger 400cc (MH-54-FH-4343)
+                                          </header>
+                                                
+                                          <table class="table table-striped m-b-none">
+                                                      
+                                                <thead>
+                                                                
+                                                     <tr>   
+                                                         <th style="text-align: center;">Servicing Id</th>
+                                                         <th style="text-align: center;">Appointment Date</th>
+                                                         <th style="text-align: center;">Servicing Details</th>
+                                                         <th style="text-align: center;">Start Servicing</th>
+                                                     </tr>
+                                                </thead>
+                                                
+                                                <tbody>
+                                                        
+                                                      <tr style="text-align: center;">
+                                                         <td>BC054651</td>
+                                                         <td>25/2/2018</td>
+                                                         <td>
+                                                         	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded">Servicing Details</a>
+                                                         </td>  
+                                                         <td>
+                                                         	<a href="ServicesInprogressPage" class="btn btn-md btn-primary m-r rounded">Start Servicing</a>
+                                                         </td>                                              
+                                                      </tr>
+                                     
+                                                    </tbody>
+
+                                             </table>
+                                                     
+                             </section>
+                                         
+                        </div>
+                    </div>
+                    <!-- first record ends-->
+                    
+                    <!-- fisrt table starts -->
+	                <div class="row">
+                         <div class="col-sm-12">
+                             <section class="panel panel-default">
+                                          <header class="panel-heading bg-warning dk" style="font-size: 20px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
+                                          	ThunderBird 300cc (MH-54-UH-8768)
+                                          </header>
+                                                
+                                          <table class="table table-striped m-b-none">
+                                                      
+                                                <thead>
+                                                                
+                                                     <tr>   
+                                                         <th style="text-align: center;">Servicing Id</th>
+                                                         <th style="text-align: center;">Appointment Date</th>
+                                                         <th style="text-align: center;">Servicing Details</th>
+                                                         <th style="text-align: center;">Start Servicing</th>
+                                                     </tr>
+                                                </thead>
+                                                
+                                                <tbody>
+                                                        
+                                                      <tr style="text-align: center;">
+                                                         <td>BC8452</td>
+                                                         <td>8/2/2018</td>
+                                                         <td>
+                                                         	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded">Servicing Details</a>
+                                                         </td> 
+                                                         <td>
+                                                         	<a href="ServicesInprogressPage" class="btn btn-md btn-primary m-r rounded">Start Servicing</a>
+                                                         </td>                                               
+                                                      </tr>
+                                     
+                                                    </tbody>
+
+                                             </table>
+                                                     
+                             </section>
+                                         
+                        </div>
+                    </div>
+                    <!-- first record ends-->
+                    
+                    <!-- fisrt table starts -->
+	                <div class="row">
+                         <div class="col-sm-12">
+                             <section class="panel panel-default">
+                                          <header class="panel-heading bg-warning dk" style="font-size: 20px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
+                                          	Bullet 350cc (MH-12-HF-6454)
+                                          </header>
+                                                
+                                          <table class="table table-striped m-b-none">
+                                                      
+                                                <thead>
+                                                                
+                                                     <tr>   
+                                                         <th style="text-align: center;">Servicing Id</th>
+                                                         <th style="text-align: center;">Appointment Date</th>
+                                                         <th style="text-align: center;">Servicing Details</th>
+                                                         <th style="text-align: center;">Start Servicing</th>
+                                                     </tr>
+                                                </thead>
+                                                
+                                                <tbody>
+                                                        
+                                                      <tr style="text-align: center;">
+                                                         <td>BC00565</td>
+                                                         <td>12/2/2018</td>
+                                                         <td>
+                                                         	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded">Servicing Details</a>
+                                                         </td> 
+                                                         <td>
+                                                         	<a href="ServicesInprogressPage" class="btn btn-md btn-primary m-r rounded">Start Servicing</a>
+                                                         </td>                                               
+                                                      </tr>
+                                     
+                                                    </tbody>
+
+                                             </table>
+                                                     
+                             </section>
+                                         
+                        </div>
+                    </div>
+                    <!-- first record ends-->
+                    
+                    <!-- modal starts-->
+ 
+						  <div class="modal fade" id="myModal" role="dialog">
+						    <div class="modal-dialog modal-md">
+						      <div class="modal-content">
+						        <div class="modal-header">
+						        	<h3 style="text-align: center">Amount Brakedown window</h3>  
+						        </div>
+						        <div class="modal-body">
+						          		<div class="col-sm-12">
+                                    <section class="panel panel-default">
+                                        <table class="table table-striped m-b-none">
+                                            <thead>
+                                                <tr>
+                                                    <th style="text-align: center">Work</th>
+                                                    <th style="text-align: center">Cost</th>
+                                                    <th style="text-align: center">Status</th>
+                                                </tr>
+                                            </thead>
+                                            
+                                            <tbody>
+                                            
+                                            	<tr style="text-align: center">
+                                                    	 <td>labour cost</td>
+                                                         <td>500</td>
+                                                         <td style="color: #FF681B">pending</td>
+                                                </tr>
+                                            
+                                                <tr style="text-align: center">
+                                                    	 <td>brake change</td>
+                                                         <td>700</td>
+                                                         <td style="color: #FF681B">pending</td>
+                                                </tr>
+                                                
+                                                <tr style="text-align: center">
+                                                    	 <td>silencer change</td>
+                                                         <td>350</td>
+                                                         <td style="color: #FF681B">pending</td>
+                                                </tr>
+                                                
+                                                <tr style="text-align: center">
+                                                    	 <td>tail light change</td>
+                                                         <td>300</td>
+                                                         <td style="color: #FF681B">pending</td>
+                                                </tr>
+                    
+                                            </tbody>
+                                            
+                                        </table>
+                                    </section>
+                                </div>
+						        </div>
+						        <div class="modal-footer">	
+						          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						        </div>
+						      </div>
+						    </div>
+					  	</div>
+					  
+					  	<!-- modal ends -->
+            
+                      
+        </section>
+   </section> 
+   </section>
 
 
-
-
-				<style>
-* {
-	box-sizing: border-box
-}
-
-/* Set height of body and the document to 100% */
-body, html {
-	height: 100%;
-	margin: 0;
-	font-family: Arial;
-}
-
-/* Style tab links */
-.tablink {
-	background-color: #555;
-	color: white;
-	float: left;
-	border: none;
-	outline: none;
-	cursor: pointer;
-	padding: 14px 16px;
-	font-size: 17px;
-	width: 25%;
-}
-
-.tablink:hover {
-	background-color:#777 ;
-}
-
-/* Style the tab content (and add height:100% for full page content) */
-.tabcontent {
-	color: white;
-	display: none;
-	padding: 100px 20px;
-	height: 100%;
-}
-
-#BikeInformation {
-	background-color: LightGray;
-}
-
-#ServiceChart {
-	background-color: LightGray;
-}
-
-#CustomerDetail {
-	background-color: LightGray;
-}
-.table{
-background-color: LightGray;
-	}
-
-#Invoice {
-	background-color: LightGray;
-}
-
-h3, .h3 {
-    color: black;
-}
-</style>
-				</head>
-				<body>
-
-					<button class="tablink" onclick="openPage('BikeInformation', this, 'black')">Bike Information</button>
-					<button class="tablink" onclick="openPage('ServiceChart', this, 'black')"id="defaultOpen">Service Chart</button>
-					<button class="tablink" onclick="openPage('CustomerDetail', this, 'black')">Customer Detail</button>
-					<button class="tablink" onclick="openPage('Invoice', this, 'black')">Invoice</button>
-
-					<div id="BikeInformation" class="tabcontent">
-						<h3>Bike Information</h3>
-						
-
-						<div class="container-fluid" >
-							
-							
-							<table class="table table-striped m-b-none"  border="2" >
-								<thead>
-									<tr class="panel-heading bg-success dk">
-										<th>Id</th>
-										<th>Bike Name</th>
-										<th>Bike Chassis</th>
-										
-									</tr>
-								</thead>
-								<tbody>
-									
-									<tr>
-										<td>B101</td>
-										<td>Pulsar</td>
-										<td>Bno1000</td>
-									</tr>
-									
-									
-								</tbody>
-							</table>
-						</div>
-
-
-					</div>
-
-					<div id="ServiceChart" class="tabcontent">
-						<h3>Service Chart</h3>
-						
-						<table class="table" border="2">
-								<thead>
-									<tr>
-										<th>Id</th>
-										<th>Work</th>
-										<th>Cost</th>
-										<th>Status</th>
-										
-									</tr>
-								</thead>
-								<tbody>
-									
-									<tr  bgcolor="#DC143C">
-										<td>B101</td>
-										<td>Labour charge</td>
-										<td>100</td>
-										<td>pending</td>
-									</tr>
-									
-									<tr  bgcolor="#FFD700">
-										<td>B102</td>
-										<td>Oil change</td>
-										<td>350</td>
-										<td>In-Progress</td>
-									</tr>
-									
-									<tr  bgcolor="#32CD32">
-										<td>B103</td>
-										<td>Oil change</td>
-										<td>350</td>
-										<td>Completed</td>
-									</tr>
-								</tbody>
-							</table>
-						
-					</div>
-
-					<div id="CustomerDetail" class="tabcontent">
-						<h3>Customer Detail</h3>
-						
-						<div class="container-fluid" >
-							
-							
-							<table class="table table-striped m-b-none"  border="2" >
-								<thead>
-									<tr class="panel-heading bg-success dk">
-										<th>Id</th>
-										<th>Name</th>
-										<th>Address</th>
-										
-									</tr>
-								</thead>
-								<tbody>
-									
-									<tr>
-										<td>B101</td>
-										<td>Sandip</td>
-										<td>Pune</td>
-									</tr>
-									
-									
-								</tbody>
-							</table>
-						</div>
-					</div>
-
-					<div id="Invoice" class="tabcontent">
-						<h3>Invoice</h3>
-						<div class="container-fluid" >
-							
-							
-							<table class="table table-striped m-b-none"  border="2" >
-								<thead>
-									<tr class="panel-heading bg-success dk">
-										<th>Id</th>
-										<th>Amount</th>
-										<th>GST</th>
-										<th>Total Amount</th>
-										
-									</tr>
-								</thead>
-								<tbody>
-									
-									<tr>
-										<td>B101</td>
-										<td>100</td>
-										<td>12%</td>
-										<td>150</td>
-									</tr>
-									
-									
-									
-								</tbody>
-								
-							</table>
-							
-							<button class="btn btn-info" >Details</button>
-						</div>
-					</div>
-
-					<script>
-						function openPage(pageName, elmnt, color) {
-							var i, tabcontent, tablinks;
-							tabcontent = document
-									.getElementsByClassName("tabcontent");
-							for (i = 0; i < tabcontent.length; i++) {
-								tabcontent[i].style.display = "none";
-							}
-							tablinks = document
-									.getElementsByClassName("tablink");
-							for (i = 0; i < tablinks.length; i++) {
-								tablinks[i].style.backgroundColor = "";
-							}
-							document.getElementById(pageName).style.display = "block";
-							elmnt.style.backgroundColor = color;
-
-						}
-						// Get the element with id="defaultOpen" and click on it
-						document.getElementById("defaultOpen").click();
-					</script>
-
-					    
-			</section>
-		</section>
-	</section>
-=======
-	<section id="content"  class="bg-light lter">
-	        <section class="vbox">
-	            <section class="scrollable padder">                                               
-	                                    
-	                <div class="m-b-md">
-	                    <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Approved Services</h3>
-	                </div>
-	                
-	               <section class="panel bg-light b-a">
-                             <div class="panel-body"> 		
-                             		//servive 1  
-                             </div>
-                   </section>
-                   
-                   <section class="panel bg-light b-a">
-                             <div class="panel-body"> 		
-                             		//servive 2
-                             </div>
-                   </section>
-                   
-                   <section class="panel bg-light b-a">
-                             <div class="panel-body"> 		
-                             		//servive 3
-                             </div>
-                   </section>
-	                
-	            </section>
-	        </section>
-	 </section> 
->>>>>>> branch 'pranaykohad(TL)' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 </body>
 </html>
