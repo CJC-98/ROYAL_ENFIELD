@@ -10,17 +10,19 @@ public class BikeOffer
 {
 @Id
 //@GeneratedValue(strategy=GenerationType.IDENTITY)
-private String offerId;
+private String bikeOfferId;
+
+public String getBikeOfferId() {
+	return bikeOfferId;
+}
+public void setBikeOfferId(String bikeOfferId) {
+	this.bikeOfferId = bikeOfferId;
+}
 private String offerName;
 private String startDate;
 private String endDate;
 private float discountInPercentage;
-public String getOfferId() {
-	return offerId;
-}
-public void setOfferId(String offerId) {
-	this.offerId = offerId;
-}
+
 public String getOfferName() {
 	return offerName;
 }
