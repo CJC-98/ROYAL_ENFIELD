@@ -35,7 +35,7 @@
                     		<small>Forgot password?</small>
                     	</a> 
                     
-                        <a href="SignIn">
+                        <a href="sales">
                         	<button type="button" class="btn btn-primary">Sign in</button>
                         </a>
                     

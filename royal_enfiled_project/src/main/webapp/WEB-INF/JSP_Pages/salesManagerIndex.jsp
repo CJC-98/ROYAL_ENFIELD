@@ -269,7 +269,7 @@
                 </aside> <!-- /.aside -->
                 
                 <!-- dashboard starts -->
-                	 <jsp:include page="${link}"/>
+                	 <jsp:include page="home.jsp"/>
                 <!-- dashboard ends -->
                 
                 

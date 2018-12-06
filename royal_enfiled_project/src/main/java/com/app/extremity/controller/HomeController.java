@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 //author: pranay kohad 
     
-@Controller    
+   @Controller
 public class HomeController {
 	    
 	// All site actions are go through this method
@@ -29,11 +29,11 @@ public class HomeController {
 	@RequestMapping(value="/SignIn")
 	public String signIn(Model model)    
 	{ 
-		
 		System.out.println("In SignIn controller");
-		return "IndivisualUser/indivisualUserIndex";
+		//return "IndivisualUser/indivisualUserIndex";
 		//return "IndivisualUser/indivisualUserIndex";//by default go to client index.jsp  
-
+	//	model.addAttribute("link","salesManagerDashboard.jsp");
+		return "IndivisualUser/indivisualUserIndex";
 	}  
 	   
 	
@@ -67,10 +67,12 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="/sales")
-	public String sales()
-	{  
-		System.out.println("In sales controller");
-		return "";
+	public String sales(Model model)
+	{ 
+		model.addAttribute("link","salesManagerDashboard.jsp");
+	return "SalesManager/salesManagerIndex";
+	//	System.out.println("In sales controller");
+	
 	}
 	
 	@RequestMapping(value="/service")
