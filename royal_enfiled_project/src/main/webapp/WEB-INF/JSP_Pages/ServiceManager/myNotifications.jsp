@@ -162,29 +162,24 @@
                                                   </a>
                       
                                                     <div class="clear">
-                                                     <div class="h5 m-t-xs m-b-xs"><strong>Pooja</strong>
-                                                       <span class="text-muted m-l-sm pull-right"> 
+                                                    <div class="h5 m-t-xs m-b-xs"><strong>Pooja</strong>
+                                                     <br>
+                                                      <br>
+                                                      <span class="text-muted m-l-sm pull-right"> 
+                                  <strong class="h6">17</strong> <small class="text-muted">feb</small> <small class="text-muted">2018</small>
+                                                  <br>
                                <strong class="h6">12:18</strong> <small class="text-muted">pm</small>
                                 <br>
-                                <strong class="h6">17</strong> <small class="text-muted">feb</small> <small class="text-muted">2018</small>
-                              </span> 
+                               </span> 
+                                                       Designation:<strong> Service manager2</strong>
                                                         <br>
                                                         <br>
-                                                                                Designation:<strong>Service manager1</strong>
-                                                        <br>
-                                                        <br>
-
-                                                        Discription:<strong>//
-                                                        Description of readed messages will be here.
-                                                      //</strong> 
-                                                       <span class="text-muted m-l-sm pull-right"> 
-                                                         <a href="#comment-form" class="btn btn-default btn-xs">
-                       <i class="text-muted"></i>Reply</a>   
-                      <a href="#" data-toggle="class" class="btn btn-default btn-xs active">
-                     <i class="fa fa-star-o text-muted text"></i> 
-                     <i class="fa fa-star text-danger text-active"></i>Mark as read </a> 
-                    
-
+                                                       Description:
+                                                        <strong> // Description of read messages will be here.
+                                                        //</strong>
+                                                        
+                                                       
+                                                
                                                         </div>
                                                         </div>
                                                         </div>
@@ -208,13 +203,14 @@
                     
                                                     <div class="clear">
                                                     <div class="h5 m-t-xs m-b-xs"><strong>Chaitali</strong>
+                                                     <br>
+                                                      <br>
                                                       <span class="text-muted m-l-sm pull-right"> 
+                                  <strong class="h6">17</strong> <small class="text-muted">feb</small> <small class="text-muted">2018</small>
+                                                  <br>
                                <strong class="h6">12:18</strong> <small class="text-muted">pm</small>
                                 <br>
-                                <strong class="h6">17</strong> <small class="text-muted">feb</small> <small class="text-muted">2018</small>
-                              </span> 
-                                                        <br>
-                                                        <br>
+                               </span> 
                                                         
                                                        Designation:<strong> Service manager2</strong>
                                                         <br>
@@ -223,14 +219,7 @@
                                                         <strong> // Description of read messages will be here.
                                                         //</strong>
                                                         
-                                                       <span class="text-muted m-l-sm pull-right"> 
-                                                        <a href="#comment-form" class="btn btn-default btn-xs">
-                       <i class="text-muted"></i>Reply</a> 
-                      <a href="#" data-toggle="class" class="btn btn-default btn-xs active">
-                     <i class="fa fa-star-o text-muted text"></i> 
-                     <i class="fa fa-star text-danger text-active"></i>Mark as read </a> 
-                     
-                                                        
+                                                       
                                                 
                                                         </div>
                                                         
