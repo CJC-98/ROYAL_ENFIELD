@@ -286,7 +286,7 @@
                      <i class="fa fa-star-o text-muted text"></i> 
                      <i class="fa fa-star text-danger text-active"></i>Mark as read </a> 
                                                  
-                                                        
+                                                         
                                                 
                                                         </div>
                                                         
