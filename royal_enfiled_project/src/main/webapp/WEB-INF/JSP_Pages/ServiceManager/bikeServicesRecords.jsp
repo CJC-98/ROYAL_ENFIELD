@@ -13,10 +13,20 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/css/app.v1.css" type="text/css" />
 </head>
 <script>
-function myFunction() {
-    document.getElementById("myBtn").disabled = true;
-}
-</script>
+		function releaseBike() {
+			
+			//change button text, color, and disable it
+			document.getElementById("myBtn").value = "Bike Released";
+			document.getElementById("myBtn").setAttribute("class","btn btn-md btn-danger btn-rounded");
+		    document.getElementById("myBtn").setAttribute("disabled",true);
+		    
+		    //change text and color 
+		    document.getElementById("releaseStatus").innerText = "bike released";
+		    document.getElementById("releaseStatus").style.color = "#FF681B";
+		    
+		}
+	</script>
+	
 
 <body>
 	<section id="content"  class="bg-light lter">
@@ -24,8 +34,10 @@ function myFunction() {
 	            <section class="scrollable padder">                                               
 	                                
 	                <div class="m-b-md">
-	                    <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Bike Services Records</h3>	                </div>
-	                      <!-- first table starts -->
+	                    <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Bike Service Records</h3>	               
+	                </div>
+	             
+	              <!-- first table starts -->
                 	<div class="col-sm-12">
                                     <section class="panel panel-default">
                                         <table class="table table-striped m-b-none b-a">
@@ -47,10 +59,8 @@ function myFunction() {
                                                          <td>08-10-18</td>
                                                          <td>MH12 AC 2345</td>
                                                          <td style="color: #FF681B">unpaid</td>
-                                                         <td>
-                                                         	<button type="button" class="btn btn-md btn-success btn-rounded" id="myBtn" disabled>
-                                                         	 	Release Bike
-                                                            </button> 
+                                                         <td> 
+                                                            <input type="button" class="btn btn-md btn-success btn-rounded" id="myBtn1" onclick="releaseBike()" value="Release Bike" disabled/>
                                                          </td>
                                                          <td style="color: #81EF19">on-hold</td>
                                                 </tr>
@@ -61,11 +71,9 @@ function myFunction() {
                                                          <td>MH29 AD 1254</td>
                                                          <td style="color: #81EF19">paid</td>                           
                                                          <td>
-                                                         	<button type="button" class="btn btn-md btn-success btn-rounded" id="myBtn" >
-                                                         	 	Release Bike
-                                                            </button>
+                                                         	<input type="button" class="btn btn-md btn-success btn-rounded" id="myBtn" onclick="releaseBike()" value="Release Bike" />
                                                         </td>
-                                                        <td style="color: #81EF19">on-hold</td>
+                                                        <td style="color: #81EF19"  id="releaseStatus">on-hold</td>
                                                 </tr>
                                                 
                                                 <tr style="text-align: center">
@@ -74,11 +82,9 @@ function myFunction() {
                                                          <td>MH32 X 8546</td>
                                                          <td style="color: #81EF19">paid</td>
                                                          <td>
-                                                         	<button type="button" class="btn btn-md btn-danger btn-rounded" id="myBtn" disabled>
-                                                         	 	Bike Released
-                                                            </button>
+                                                         	<input type="button" class="btn btn-md btn-danger btn-rounded" id="myBtn4" onclick="releaseBike()" value="Bike Released" disabled/>
                                                         </td>
-                                                        <td style="color: #FF681B">Bike Released</button></td>
+                                                        <td style="color: #FF681B">bike released</button></td>
                                                 </tr>
                                                 
                                                 <tr style="text-align: center">
@@ -87,9 +93,7 @@ function myFunction() {
                                                          <td>RJ14 FV 7842</td>
                                                          <td style="color: #FF681B">unpaid</td>
                                                          <td>
-                                                         	<button type="button" class="btn btn-md btn-success btn-rounded" id="myBtn" disabled>
-                                                         	 	Release Bike
-                                                            </button>
+                                                         	<input type="button" class="btn btn-md btn-success btn-rounded" id="myBtn2" onclick="releaseBike()" value="Release Bike" disabled/>
                                                          </td>
                                                          <td style="color: #81EF19">On-hold</td>
                                                 </tr>
@@ -100,12 +104,11 @@ function myFunction() {
                                                          <td>GJ02 ZV 5426</td>
                                                          <td style="color: #81EF19">paid</td>
                                                          <td>
-                                                          <button type="button" class="btn btn-md btn-success btn-rounded" id="myBtn" >
-                                                         	 Release Bike
-                                                          </button>
-                                                     </td>
-                                                     <td style="color: #81EF19">on-hold</td>
+                                                         	<input type="button" class="btn btn-md btn-danger btn-rounded" id="myBtn4" onclick="releaseBike()" value="Bike Released" disabled/>
+                                                        </td>
+                                                        <td style="color: #FF681B">bike released</button></td>
                                                 </tr>
+                                                
                                                 
                                                 <tr style="text-align: center">
                                                     	 <td>BC6876</td>
@@ -113,7 +116,7 @@ function myFunction() {
                                                          <td>MH25 GH 4587</td>
                                                          <td style="color: #FF681B">unpaid</td>
                                                          <td>
-                                                         	<button type="button" class="btn btn-md btn-success btn-rounded" id="myBtn" disabled>
+                                                         	<button type="button" class="btn btn-md btn-success btn-rounded"  disabled>
                                                          	 	Release Bike
                                                             </button>
                                                         </td>
@@ -154,6 +157,7 @@ function myFunction() {
 	                
 	            </section>
 	        </section>
-	 </section> 
+	 </section>
+	          
 </body>
 </html>
