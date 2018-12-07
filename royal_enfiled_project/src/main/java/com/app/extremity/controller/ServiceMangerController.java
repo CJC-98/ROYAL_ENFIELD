@@ -115,7 +115,7 @@ public class ServiceMangerController {
 		c4.setColorId("C4");
 		c4.setColorName("blue");
 		
-		List<String> colors = new ArrayList();
+		List<String> colors = new ArrayList();  
 		colors.add("A");
 		colors.add("B");
 		colors.add("C");
