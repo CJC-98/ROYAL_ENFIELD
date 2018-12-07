@@ -23,177 +23,169 @@
                 </div>
                 
                 <div>
-                	<!-- first record starts-->
-                     <div class="row">
-                         <div class="col-sm-12">
-                             <section class="panel panel-default">
-                                          <header class="panel-heading bg-success dk" style="font-size: 20px; font-weight: bold;">Bullet 350cc</header>
-                                                
-                                          <table class="table table-striped m-b-none">
-                                                      
-                                                <thead>
-                                                                
-                                                     <tr>   
-                                                         <th style="text-align: center;">Accessories</th>
-                                                         <th style="text-align: center;">Cost</th>
-                                                         <th style="text-align: center;">Quantity</th>
-                                                         <th style="text-align: center;">Notify Sales Manager</th>
-                                                     </tr>
-                                                </thead>
-                                                
-                                                <tbody>
-                                                        
-                                                      <tr style="text-align: center;">
-                                                         <td>Seat</td>
+                
+                	<!-- first table starts -->
+                	<div class="col-sm-12">
+                                    <section class="panel panel-default">
+                                        <header class="panel-heading bg-success dk" style="font-size: 25px;">Bullet 350cc</header>
+                                        <table class="table table-striped m-b-none">
+                                            <thead>
+                                                <tr>
+                                                    <th style="text-align: center">Accessories</th>
+                                                    <th style="text-align: center">Cost</th>
+                                                    <th style="text-align: center">Quantity</th>
+                                                    <th style="text-align: center">Notify Sales Manager</th>
+                                                </tr>
+                                            </thead>
+                                            
+                                            <tbody>
+                                            
+                                                <tr style="text-align: center">
+                                                    <td>Seat</td>
                                                          <td>2500</td>
                                                          <td>10</td>
-                                                         <td style="text-align: center;">
+                                                         <td>
 
-                                                         	<a href="" class="btn btn-s-xs btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
+                                                         	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
 
-                                                         </td>
-                                                      </tr>
-        
-                                                      <tr style="text-align: center;">
-                                                         <td>Headlight Grill</td>
-                                                         <td>1100</td>
-                                                         <td>20</td>
-                                                         <td style="text-align: center;">
-                                                         	<a href="" class="btn btn-s-xs btn-info btn-rounded">Send Notification</a>
-                                                         </td>
-                                                      </tr>
-        
-                                                      <tr style="text-align: center;">
-                                                          <td>Wheel</td>
-                                                          <td>7000</td>
-                                                          <td>325</td>
-                                                          <td style="text-align: center;">
-                                                         	<a href="" class="btn btn-s-xs btn-info btn-rounded">Send Notification</a>
-                                                         </td>
-                                                        </tr>
-                                                    </tbody>
+                                                     </td>
+                                                </tr>
+                                                
+                                                <tr style="text-align: center">
+                                                    <td>Seat</td>
+                                                         <td>2500</td>
+                                                         <td>10</td>
+                                                         <td>
 
-                                                </table>
-   
-                             </section>
-                                         
-                        </div>
-                    </div>
-                    <!-- first record ends-->
+                                                         	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
 
-               <div>
+                                                     </td>
+                                                </tr>
+                                                
+                                                <tr style="text-align: center">
+                                                    <td>Seat</td>
+                                                         <td>2500</td>
+                                                         <td>10</td>
+                                                         <td>
+
+                                                         	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
+
+                                                     </td>
+                                                </tr>
+                                                
+                                                <tr style="text-align: center">
+                                                    <td>Seat</td>
+                                                         <td>2500</td>
+                                                         <td>10</td>
+                                                         <td>
+
+                                                         	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
+
+                                                     </td>
+                                                </tr>
+                                                
+                                                <tr style="text-align: center">
+                                                    <td>Seat</td>
+                                                         <td>2500</td>
+                                                         <td>10</td>
+                                                         <td>
+
+                                                         	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
+
+                                                     </td>
+                                                </tr>
+                                                
+                                                
+                                               
+                                            </tbody>
+                                            
+                                        </table>
+                                    </section>
+                                </div>
+                                <!-- fisrt table ends -->
+                                
+                                <!-- 2nd table starts -->
+                                	<div class="col-sm-12">
+                                    <section class="panel panel-default">
+                                        <header class="panel-heading bg-success dk" style="font-size: 25px;">Bullet 350cc</header>
+                                        <table class="table table-striped m-b-none">
+                                            <thead>
+                                                <tr>
+                                                    <th style="text-align: center">Accessories</th>
+                                                    <th style="text-align: center">Cost</th>
+                                                    <th style="text-align: center">Quantity</th>
+                                                    <th style="text-align: center">Notify Sales Manager</th>
+                                                </tr>
+                                            </thead>
+                                            
+                                            <tbody>
+                                            
+                                                <tr style="text-align: center">
+                                                    <td>Seat</td>
+                                                         <td>2500</td>
+                                                         <td>10</td>
+                                                         <td>
+
+                                                         	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
+
+                                                     </td>
+                                                </tr>
+                                                
+                                                <tr style="text-align: center">
+                                                    <td>Seat</td>
+                                                         <td>2500</td>
+                                                         <td>10</td>
+                                                         <td>
+
+                                                         	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
+
+                                                     </td>
+                                                </tr>
+                                                
+                                                <tr style="text-align: center">
+                                                    <td>Seat</td>
+                                                         <td>2500</td>
+                                                         <td>10</td>
+                                                         <td>
+
+                                                         	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
+
+                                                     </td>
+                                                </tr>
+                                                
+                                                <tr style="text-align: center">
+                                                    <td>Seat</td>
+                                                         <td>2500</td>
+                                                         <td>10</td>
+                                                         <td>
+
+                                                         	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
+
+                                                     </td>
+                                                </tr>
+                                                
+                                                <tr style="text-align: center">
+                                                    <td>Seat</td>
+                                                         <td>2500</td>
+                                                         <td>10</td>
+                                                         <td>
+
+                                                         	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
+
+                                                     </td>
+                                                </tr>
+                                                
+                                                
+                                               
+                                            </tbody>
+                                            
+                                        </table>
+                                    </section>
+                                </div>
+                                
+                                <!-- 2nd table ends -->
                 
-               <!-- second record starts-->
-                    <div class="row">
-                         <div class="col-sm-12">
-                             <section class="panel panel-default">
-                                          <header class="panel-heading bg-success dk" style="font-size: 20px; font-weight: bold;">Bullet 350cc</header>
-                                                
-                                          <table class="table table-striped m-b-none">
-                                                      
-                                                <thead>
-                                                             
-                                                     <tr>   
-                                                         <th style="text-align: center;">Accessories</th>
-                                                         <th style="text-align: center;">Cost</th>
-                                                         <th style="text-align: center;">Quantity</th>
-                                                         <th style="text-align: center;">Notify Sales Manager</th>
-                                                     </tr>
-                                                </thead>
-                                                
-                                                <tbody>
-                                                        
-                                                      <tr style="text-align: center;">
-                                                         <td>Tail Light</td>
-                                                         <td>250</td>
-                                                         <td>10</td>
-                                                         <td style="text-align: center;">
-                                                         	<a href="" class="btn btn-s-xs btn-info btn-rounded">Send Notification</a>
-                                                         </td>
-                                                      </tr>
-        
-                                                      <tr style="text-align: center;">
-                                                         <td>Tail Light</td>
-                                                         <td>1120</td>
-                                                         <td>30</td>
-                                                         <td style="text-align: center;">
-                                                         	<a href="" class="btn btn-s-xs btn-info btn-rounded">Send Notification</a>
-                                                         </td>
-                                                      </tr>
-        
-                                                      <tr style="text-align: center;">
-                                                          <td>Bike Cover</td>
-                                                          <td>500</td>
-                                                          <td>435</td>
-                                                          <td style="text-align: center;">
-                                                         	<a href="" class="btn btn-s-xs btn-info btn-rounded">Send Notification</a>
-                                                         </td>
-                                                        </tr>
-                                                    </tbody>
-
-                                                </table>
-   
-                             </section>
-                                         
-                        </div>
-                    </div>
-                    <!-- second record ends-->
-                    
-                    <!-- third record starts-->
-                    <div class="row">
-                         <div class="col-sm-12">
-                             <section class="panel panel-default">
-                                          <header class="panel-heading bg-success dk" style="font-size: 20px; font-weight: bold;">Anangers 500cc</header>
-                                                
-                                          <table class="table table-striped m-b-none">
-                                                      
-                                                <thead>
-                                                             
-                                                     <tr>   
-                                                         <th style="text-align: center;">Accessories</th>
-                                                         <th style="text-align: center;">Cost</th>
-                                                         <th style="text-align: center;">Quantity</th>
-                                                         <th style="text-align: center;">Notify Sales Manager</th>
-                                                     </tr>
-                                                </thead>
-                                                
-                                                <tbody>
-                                                        
-                                                      <tr style="text-align: center;">
-                                                         <td>Tail Light</td>
-                                                         <td>250</td>
-                                                         <td>10</td>
-                                                         <td style="text-align: center;">
-                                                         	<a href="" class="btn btn-s-xs btn-info btn-rounded">Send Notification</a>
-                                                         </td>
-                                                      </tr>
-        
-                                                      <tr style="text-align: center;">
-                                                         <td>Tail Light</td>
-                                                         <td>1120</td>
-                                                         <td>30</td>
-                                                         <td style="text-align: center;">
-                                                         	<a href="" class="btn btn-s-xs btn-info btn-rounded">Send Notification</a>
-                                                         </td>
-                                                      </tr>
-        
-                                                      <tr style="text-align: center;">
-                                                          <td>Bike Cover</td>
-                                                          <td>500</td>
-                                                          <td>435</td>
-                                                          <td style="text-align: center;">
-                                                         	<a href="" class="btn btn-s-xs btn-info btn-rounded">Send Notification</a>
-                                                         </td>
-                                                        </tr>
-                                                    </tbody>
-
-                                                </table>
-   
-                             </section>
-                                         
-                        </div>
-                    </div>
-                    <!-- third record ends-->
+                	
                     
                     
                     <!-- modal starts-->
@@ -225,14 +217,14 @@
 					  	<!-- modal ends -->
                
                </div>
-          </div>      
+            
                       
         </section>
    </section> 
    </section>
 
-   <!-- modal starts-->
  
+
 	  <div class="modal fade" id="myModal" role="dialog">
 	    <div class="modal-dialog modal-md">
 	      <div class="modal-content">
@@ -259,6 +251,7 @@
 
       
   	<!-- modal ends -->
+
 
 
 </body>

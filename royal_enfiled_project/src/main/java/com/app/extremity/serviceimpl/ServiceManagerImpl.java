@@ -5,11 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.app.extremity.iservice.BikeServicingInterface;
+import com.app.extremity.iservice.ServiceManagerInterface;
 
 
 @Service
-public class BikeServicingImpl implements BikeServicingInterface{
+public class ServiceManagerImpl implements ServiceManagerInterface{
 	
 //	@Autowired
 //	DaoInterface daoInterface;
