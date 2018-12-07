@@ -1,8 +1,8 @@
- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-<head>  
+<head>
 <meta charset="utf-8" />
     <title>Notebook | Web Application</title>
     <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
@@ -14,7 +14,7 @@
 </head>
 
 <body>
-	<section id="content" class="bg-light lter">
+	<section id="content">
         <section class="vbox">
             <section class="scrollable padder">                                               
                                 
@@ -27,12 +27,12 @@
                      <div class="row">
                          <div class="col-sm-12">
                              <section class="panel panel-default">
-                                          <header class="panel-heading bg-success dk" style="font-size: 20px; font-weight: bold;">Bullet 350cc</header>
+                                          <header class="panel-heading bg-success lt" style="font-size: 20px; font-weight: bold;">Bullet 350cc</header>
                                                 
                                           <table class="table table-striped m-b-none">
                                                       
                                                 <thead>
-                                                                
+                                                             
                                                      <tr>   
                                                          <th style="text-align: center;">Accessories</th>
                                                          <th style="text-align: center;">Cost</th>
@@ -48,9 +48,7 @@
                                                          <td>2500</td>
                                                          <td>10</td>
                                                          <td style="text-align: center;">
-
-                                                         	<a href="" class="btn btn-s-xs btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
-
+                                                         	<a href="" class="btn btn-s-xs btn-warning btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
                                                          </td>
                                                       </tr>
         
@@ -59,7 +57,7 @@
                                                          <td>1100</td>
                                                          <td>20</td>
                                                          <td style="text-align: center;">
-                                                         	<a href="" class="btn btn-s-xs btn-info btn-rounded">Send Notification</a>
+                                                         	<a href="" class="btn btn-s-xs btn-warning btn-rounded">Send Notification</a>
                                                          </td>
                                                       </tr>
         
@@ -68,7 +66,7 @@
                                                           <td>7000</td>
                                                           <td>325</td>
                                                           <td style="text-align: center;">
-                                                         	<a href="" class="btn btn-s-xs btn-info btn-rounded">Send Notification</a>
+                                                         	<a href="" class="btn btn-s-xs btn-warning btn-rounded">Send Notification</a>
                                                          </td>
                                                         </tr>
                                                     </tbody>
@@ -87,7 +85,7 @@
                     <div class="row">
                          <div class="col-sm-12">
                              <section class="panel panel-default">
-                                          <header class="panel-heading bg-success dk" style="font-size: 20px; font-weight: bold;">Bullet 350cc</header>
+                                          <header class="panel-heading  bg-success lter" style="font-size: 20px; font-weight: bold;">Bullet 350cc</header>
                                                 
                                           <table class="table table-striped m-b-none">
                                                       
@@ -108,7 +106,7 @@
                                                          <td>250</td>
                                                          <td>10</td>
                                                          <td style="text-align: center;">
-                                                         	<a href="" class="btn btn-s-xs btn-info btn-rounded">Send Notification</a>
+                                                         	<a href="" class="btn btn-s-xs btn-warning btn-rounded">Send Notification</a>
                                                          </td>
                                                       </tr>
         
@@ -117,7 +115,7 @@
                                                          <td>1120</td>
                                                          <td>30</td>
                                                          <td style="text-align: center;">
-                                                         	<a href="" class="btn btn-s-xs btn-info btn-rounded">Send Notification</a>
+                                                         	<a href="" class="btn btn-s-xs btn-warning btn-rounded">Send Notification</a>
                                                          </td>
                                                       </tr>
         
@@ -126,7 +124,7 @@
                                                           <td>500</td>
                                                           <td>435</td>
                                                           <td style="text-align: center;">
-                                                         	<a href="" class="btn btn-s-xs btn-info btn-rounded">Send Notification</a>
+                                                         	<a href="" class="btn btn-s-xs btn-warning btn-rounded">Send Notification</a>
                                                          </td>
                                                         </tr>
                                                     </tbody>
@@ -143,7 +141,7 @@
                     <div class="row">
                          <div class="col-sm-12">
                              <section class="panel panel-default">
-                                          <header class="panel-heading bg-success dk" style="font-size: 20px; font-weight: bold;">Anangers 500cc</header>
+                                          <header class="panel-heading  bg-success lter" style="font-size: 20px; font-weight: bold;">Anangers 500cc</header>
                                                 
                                           <table class="table table-striped m-b-none">
                                                       
@@ -164,7 +162,7 @@
                                                          <td>250</td>
                                                          <td>10</td>
                                                          <td style="text-align: center;">
-                                                         	<a href="" class="btn btn-s-xs btn-info btn-rounded">Send Notification</a>
+                                                         	<a href="" class="btn btn-s-xs btn-warning btn-rounded">Send Notification</a>
                                                          </td>
                                                       </tr>
         
@@ -173,7 +171,7 @@
                                                          <td>1120</td>
                                                          <td>30</td>
                                                          <td style="text-align: center;">
-                                                         	<a href="" class="btn btn-s-xs btn-info btn-rounded">Send Notification</a>
+                                                         	<a href="" class="btn btn-s-xs btn-warning btn-rounded">Send Notification</a>
                                                          </td>
                                                       </tr>
         
@@ -182,7 +180,7 @@
                                                           <td>500</td>
                                                           <td>435</td>
                                                           <td style="text-align: center;">
-                                                         	<a href="" class="btn btn-s-xs btn-info btn-rounded">Send Notification</a>
+                                                         	<a href="" class="btn btn-s-xs btn-warning btn-rounded">Send Notification</a>
                                                          </td>
                                                         </tr>
                                                     </tbody>
@@ -194,43 +192,15 @@
                         </div>
                     </div>
                     <!-- third record ends-->
-                    
-                    
-                    <!-- modal starts-->
- 
-						  <div class="modal fade" id="myModal" role="dialog">
-						    <div class="modal-dialog modal-md">
-						      <div class="modal-content">
-						        <div class="modal-header">
-						        	<h3 style="text-align: center">Send Notification</h3>
-						        	<div class="input-group"> 
-						        		<input type="text" class="form-control rounded" placeholder="Search Sales Manager"> 
-						        		<span class="input-group-btn">
-					                          <button class="btn btn-success" type="button">write notificaltion</button>
-					                    </span> 
-					                </div>  
-						        </div>
-						        <div class="modal-body">
-						          <h5><u>Sales Manager Name Here</u></h5>
-						          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Please buy bullet 350 cc seats"></textarea>
-						        </div>
-						        <div class="modal-footer">
-						          <button type="button" class="btn btn-primary" data-dismiss="modal">Send Notification</button>	
-						          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-						        </div>
-						      </div>
-						    </div>
-					  	</div>
-					  
-					  	<!-- modal ends -->
                
                </div>
-          </div>      
+           </div>       
                       
         </section>
    </section> 
    </section>
-
+   
+   
    <!-- modal starts-->
  
 	  <div class="modal fade" id="myModal" role="dialog">
@@ -256,10 +226,8 @@
 	      </div>
 	    </div>
   	</div>
-
       
   	<!-- modal ends -->
-
 
 </body>
 </html>

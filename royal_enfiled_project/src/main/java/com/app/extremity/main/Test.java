@@ -8,11 +8,12 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication(scanBasePackages="com")
 @EntityScan("com.app.extremity.model")
-@EnableJpaRepositories("com.app.extremity.idao")
-   
+@EnableJpaRepositories("com.app.extremity.idao") 
+            
 public class Test {    
 	public static void main(String[] args) {
+		System.out.println("in main");
 		SpringApplication.run(Test.class);
 		System.out.println("application started............");
 	}
-}   
+} 

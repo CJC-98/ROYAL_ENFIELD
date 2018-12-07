@@ -1,234 +1,215 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en" class="app">
+<!-- Mirrored from flatfull.com/themes/note/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Oct 2018 11:16:42 GMT -->
+
 <head>
-<meta charset="utf-8" />
+    <meta charset="utf-8" />
     <title>Notebook | Web Application</title>
     <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/font.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/app.v1.css" type="text/css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/bike.css" type="text/css" />
+    <!--[if lt IE 9]> <script src="js/ie/html5shiv.js"></script> <script src="js/ie/respond.min.js"></script> <script src="js/ie/excanvas.js"></script> <![endif]-->
 </head>
 
-<body>
- 	<section id="content">
+<body class="">
+    <section class="vbox">
+        <header class="bg-dark dk header navbar navbar-fixed-top-xs">
+            
+                
+               
+            </ul>
+        </header>
+        
+                        
+                </aside> <!-- /.aside -->
+                <section id="content">
                     <section class="vbox">
                         <section class="scrollable padder">
-                            <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
-                                <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
-                                <li class="active">Workset</li>
-                            </ul>
-                            <div class="m-b-md">
-                                <h3 class="m-b-none">Workset</h3> <small>Welcome back, Noteman</small>
-                            </div>
-                            <section class="panel panel-default">
-                                <div class="row m-l-none m-r-none bg-light lter">
-                                    <div class="col-sm-6 col-md-3 padder-v b-r b-light"> <span class="fa-stack fa-2x pull-left m-r-sm">
-                                            <i class="fa fa-circle fa-stack-2x text-info"></i> <i class="fa fa-male fa-stack-1x text-white"></i>
-                                        </span> <a class="clear" href="#"> <span class="h3 block m-t-xs"><strong>52,000</strong></span>
-                                            <small class="text-muted text-uc">New robots</small> </a> </div>
-                                    <div class="col-sm-6 col-md-3 padder-v b-r b-light lt"> <span class="fa-stack fa-2x pull-left m-r-sm">
-                                            <i class="fa fa-circle fa-stack-2x text-warning"></i> <i class="fa fa-bug fa-stack-1x text-white"></i>
-                                            <span class="easypiechart pos-abt" data-percent="100" data-line-width="4"
-                                                data-track-Color="#fff" data-scale-Color="false" data-size="50"
-                                                data-line-cap='butt' data-animate="2000" data-target="#bugs"
-                                                data-update="3000"></span> </span> <a class="clear" href="#"> <span
-                                                class="h3 block m-t-xs"><strong id="bugs">468</strong></span> <small
-                                                class="text-muted text-uc">Bugs intruded</small> </a> </div>
-                                    <div class="col-sm-6 col-md-3 padder-v b-r b-light"> <span class="fa-stack fa-2x pull-left m-r-sm">
-                                            <i class="fa fa-circle fa-stack-2x text-danger"></i> <i class="fa fa-fire-extinguisher fa-stack-1x text-white"></i>
-                                            <span class="easypiechart pos-abt" data-percent="100" data-line-width="4"
-                                                data-track-Color="#f5f5f5" data-scale-Color="false" data-size="50"
-                                                data-line-cap='butt' data-animate="3000" data-target="#firers"
-                                                data-update="5000"></span> </span> <a class="clear" href="#"> <span
-                                                class="h3 block m-t-xs"><strong id="firers">359</strong></span> <small
-                                                class="text-muted text-uc">Extinguishers ready</small> </a> </div>
-                                    <div class="col-sm-6 col-md-3 padder-v b-r b-light lt"> <span class="fa-stack fa-2x pull-left m-r-sm">
-                                            <i class="fa fa-circle fa-stack-2x icon-muted"></i> <i class="fa fa-clock-o fa-stack-1x text-white"></i>
-                                        </span> <a class="clear" href="#"> <span class="h3 block m-t-xs"><strong>31:50</strong></span>
-                                            <small class="text-muted text-uc">Left to exit</small> </a> </div>
+                           
+                           
+                            
+                                
+                                   
+
+
+
+                                              
+                                                  <%--   <div class="image" style="width:; height: auto;">
+                                                        <img src="${pageContext.request.contextPath}/Resources/images/bike1.jpg">
+                                                        <h2><span>Selling Bikes:<span class='spacer'></span><br /><span class='spacer'></span>Since 2001</span></h2>
+                                                           <p class="sp-layer sp-white sp-padding sub-txt1 for-480-sub-txt" data-horizontal="50%" data-vertical="210" data-show-transition="left" data-show-delay="800" data-hide-transition="left" data-hide-delay="100">
+        India's First Bike Portal
+      </p>  
+                                                        </div> --%>
+
+   <!-- --image below -->
+   
+   
+    <!-- .crousel fade -->
+                            <section class="panel bg-dark">
+                                <div class="carousel slide carousel-fade panel-body" id="c-fade">
+                                    <ol class="carousel-indicators out">
+                                        <li data-target="#c-fade" data-slide-to="0" class=""></li>
+                                        <li data-target="#c-fade" data-slide-to="1" class="active"></li>
+                                        <li data-target="#c-fade" data-slide-to="2" class=""></li>
+                                        <li data-target="#c-fade" data-slide-to="3" class=""></li>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <div class="item active">
+                                            <p class="text-center"><img src="${pageContext.request.contextPath}/Resources/images/bike1.jpg"
+                                                    alt="" /><br>
+                                                <small class="text-muted">Bike1</small> </p>
+                                        </div>
+                                        <div class="item">
+                                            <p class="text-center"> <img src="${pageContext.request.contextPath}/Resources/images/g1.jpg"
+                                                    alt="" /><br>
+                                                <small class="text-muted">Bike2</small>
+                                            </p>
+                                        </div>
+                                        <div class="item">
+                                            <p class="text-center"> <img src="${pageContext.request.contextPath}/Resources/images/bike4.jpg"
+                                                    alt="" /><br>
+                                                <small class="text-muted">Bike3</small>
+                                            </p>
+
+                                        </div>
+                                        <div class="item">
+                                            <p class="text-center"> <img src="${pageContext.request.contextPath}/Resources/images/bike6.jpg"
+                                                    alt="" /><br>
+                                                <small class="text-muted">Bike4</small>
+                                            </p>
+
+                                        </div>
+                                    </div> <a class="left carousel-control" href="#c-fade" data-slide="prev">
+                                        <i class="fa fa-angle-left"></i> </a> <a class="right carousel-control" href="#c-fade"
+                                        data-slide="next"> <i class="fa fa-angle-right"></i> </a>
                                 </div>
+                            </section> <!-- / .carousel fade -->
+
+
+
+
+                                                    <!-- <div class="sp-layer sp-black sp-padding head-title1"
+                                                        data-horizontal="100%" data-vertical="100%" data-hide-delay="100"
+                                                        data-show-delay="400" data-show-transition="right"
+                                                        data-hide-transition="right" data-layer-init="true" style="visibility: visible; left: 15%; top: 50px; transform-origin: left top 0px; transform: scale(1) translate3d(0px, 0px, 0px); opacity: 1;">
+                                                        Selling Bikes<br>Since 2007
+                                                    </div>
+                                                    <p class="sp-layer sp-white sp-padding sub-txt1 for-480-sub-txt"
+                                                        data-horizontal="15%" data-vertical="210" data-show-transition="left"
+                                                        data-show-delay="800" data-hide-transition="left"
+                                                        data-hide-delay="100" data-layer-init="true" style="visibility: visible; left: 15%; top: 210px; transform-origin: left top 0px; transform: scale(1) translate3d(0px, 0px, 0px); opacity: 1;">
+                                                        India's First Bike Portal
+                                                    </p>
+                                                    <p style="width: auto; visibility: visible; left: 15%; top: 260px; transform-origin: left top 0px; transform: scale(1) translate3d(0px, 0px, 0px); opacity: 1;"
+                                                        href="" class="sp-layer sp-white sp-padding sub-btn1"
+                                                        data-horizontal="15%" data-vertical="260" data-show-transition="up"
+                                                        data-show-delay="1000" data-hide-transition="down"
+                                                        data-hide-delay="100" data-layer-init="true">
+                                                        <a href="/sell.php">Sell Your Bike</a>
+                                                        <a href="/used/buy/">Buy Used Bike</a>
+                                                        <a href="/new/">Buy New Bike</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+ -->
                             </section>
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <section class="panel panel-default">
-                                        <header class="panel-heading font-bold">Statistics</header>
-                                        <div class="panel-body">
-                                            <div id="flot-1ine" style="height:210px"></div>
+                            <!-- <section>
+                                <div>
+                                    <div>
+                                        <div class="title-box">Sell Used Bike</div>
+                                    </div>
+                                    <div class="search-out-box">
+                                        <div class="budget">
+                                            <select id="usedbudgetD">
+                                                <option value="">Budget</option>
+                                                <option value="1000-20000">Rs.1000 - Rs.20,000</option>
+                                                <option value="20000-40000">Rs.20,000 - Rs.40,000</option>
+                                                <option value="40000-60000">Rs.40,000 - Rs.60,000</option>
+                                                <option value="60000-80000">Rs.60,000 - Rs.80,000</option>
+                                                <option value="80000-100000">Rs.80,000 - Rs.1 Lakh</option>
+                                                <option value="100000-200000">Rs.1 Lakh - Rs.2 Lakh</option>
+                                                <option value="200000-9999999">Above Rs. 2 Lakh</option>
+                                            </select>
                                         </div>
-                                        <footer class="panel-footer bg-white no-padder">
-                                            <div class="row text-center no-gutter">
-                                                <div class="col-xs-3 b-r b-light"> <span class="h4 font-bold m-t block">5,860</span>
-                                                    <small class="text-muted m-b block">Orders</small> </div>
-                                                <div class="col-xs-3 b-r b-light"> <span class="h4 font-bold m-t block">10,450</span>
-                                                    <small class="text-muted m-b block">Sellings</small> </div>
-                                                <div class="col-xs-3 b-r b-light"> <span class="h4 font-bold m-t block">21,230</span>
-                                                    <small class="text-muted m-b block">Items</small> </div>
-                                                <div class="col-xs-3"> <span class="h4 font-bold m-t block">7,230</span>
-                                                    <small class="text-muted m-b block">Customers</small> </div>
-                                            </div>
-                                        </footer>
-                                    </section>
+                                        <div class="state"><select id="usedstateD">
+                                                <option value="">Select State</option>
+                                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                                <option value="Andaman Nicobar">Andaman Nicobar</option>
+                                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                                <option value="Assam">Assam</option>
+                                                <option value="Bihar">Bihar</option>
+                                                <option value="Chandigarh">Chandigarh</option>
+                                                <option value="Chhattisgarh">Chhattisgarh</option>
+                                                <option value="Dadra Nagar Haveli">Dadra Nagar Haveli</option>
+                                                <option value="Daman n Diu">Daman n Diu</option>
+                                                <option value="Delhi">Delhi</option>
+                                                <option value="Goa">Goa</option>
+                                                <option value="Gujarat">Gujarat</option>
+                                                <option value="Haryana">Haryana</option>
+                                                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                                <option value="Jammu Kashmir">Jammu Kashmir</option>
+                                                <option value="Jharkhand">Jharkhand</option>
+                                                <option value="Karnataka">Karnataka</option>
+                                                <option value="Kerala">Kerala</option>
+                                                <option value="Lakshadweep">Lakshadweep</option>
+                                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                                <option value="Maharashtra">Maharashtra</option>
+                                                <option value="Manipur">Manipur</option>
+                                                <option value="Meghalaya">Meghalaya</option>
+                                                <option value="Mizoram">Mizoram</option>
+                                                <option value="Nagaland">Nagaland</option>
+                                                <option value="Orissa">Orissa</option>
+                                                <option value="Pondicherry">Pondicherry</option>
+                                                <option value="Punjab">Punjab</option>
+                                                <option value="Rajasthan">Rajasthan</option>
+                                                <option value="Sikkim">Sikkim</option>
+                                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                                <option value="Telangana">Telangana</option>
+                                                <option value="Tripura">Tripura</option>
+                                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                                <option value="Utarakhand">Utarakhand</option>
+                                                <option value="West Bengal">West Bengal</option>
+                                            </select></div>
+                                        <div class="go"><a onclick="usedadvSearch('#usedstateD','#usedbudgetD');">Go</a></div>
+                                    </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <section class="panel panel-default">
-                                        <header class="panel-heading font-bold">Data graph</header>
-                                        <div class="bg-light dk wrapper"> <span class="pull-right">Friday</span> <span
-                                                class="h4">$540<br> <small class="text-muted">+1.05(2.15%)</small>
-                                            </span>
-                                            <div class="text-center m-b-n m-t-sm">
-                                                <div class="sparkline" data-type="line" data-height="65" data-width="100%"
-                                                    data-line-width="2" data-line-color="#dddddd" data-spot-color="#bbbbbb"
-                                                    data-fill-color="" data-highlight-line-color="#fff"
-                                                    data-spot-radius="3" data-resize="true" values="280,320,220,385,450,320,345,250,250,250,400,380"></div>
-                                                <div class="sparkline inline" data-type="bar" data-height="45"
-                                                    data-bar-width="6" data-bar-spacing="6" data-bar-color="#65bd77">10,9,11,10,11,10,12,10,9,10,11,9,8</div>
-                                            </div>
-                                        </div>
-                                        <div class="panel-body">
-                                            <div> <span class="text-muted">Total:</span> <span class="h3 block">$2500.00</span>
-                                            </div>
-                                            <div class="line pull-in"></div>
-                                            <div class="row m-t-sm">
-                                                <div class="col-xs-4"> <small class="text-muted block">Market</small>
-                                                    <span>$1500.00</span> </div>
-                                                <div class="col-xs-4"> <small class="text-muted block">Referal</small>
-                                                    <span>$600.00</span> </div>
-                                                <div class="col-xs-4"> <small class="text-muted block">Affiliate</small>
-                                                    <span>$400.00</span> </div>
-                                            </div>
-                                        </div>
-                                    </section>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <h4 class="m-t-none">Todos</h4>
-                                    <ul class="list-group gutter list-group-lg list-group-sp sortable">
-                                        <li class="list-group-item box-shadow"> <a href="#" class="pull-right"
-                                                data-dismiss="alert"> <i class="fa fa-times icon-muted"></i> </a> <span
-                                                class="pull-left media-xs"> <i class="fa fa-sort icon-muted fa m-r-sm"></i>
-                                                <a href="#todo-1" data-toggle="class:text-lt text-success" class="active">
-                                                    <i class="fa fa-square-o fa-fw text"></i> <i class="fa fa-check-square-o fa-fw text-active text-success"></i>
-                                                </a> </span>
-                                            <div class="clear text-success text-lt" id="todo-1"> Browser compatibility
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item box-shadow"> <a href="#" class="pull-right"
-                                                data-dismiss="alert"> <i class="fa fa-times icon-muted"></i> </a> <span
-                                                class="pull-left media-xs"> <i class="fa fa-sort icon-muted fa m-r-sm"></i>
-                                                <a href="#todo-2" data-toggle="class:text-lt text-danger"> <i class="fa fa-square-o fa-fw text"></i>
-                                                    <i class="fa fa-check-square-o fa-fw text-active text-danger"></i>
-                                                </a> </span>
-                                            <div class="clear" id="todo-2"> Looking for more example templates </div>
-                                        </li>
-                                        <li class="list-group-item box-shadow"> <a href="#" class="pull-right"
-                                                data-dismiss="alert"> <i class="fa fa-times icon-muted"></i> </a> <span
-                                                class="pull-left media-xs"> <i class="fa fa-sort icon-muted fa m-r-sm"></i>
-                                                <a href="#todo-3" data-toggle="class:text-lt"> <i class="fa fa-square-o fa-fw text"></i>
-                                                    <i class="fa fa-check-square-o fa-fw text-active text-success"></i>
-                                                </a> </span>
-                                            <div class="clear" id="todo-3"> Customizing components </div>
-                                        </li>
-                                        <li class="list-group-item box-shadow"> <a href="#" class="pull-right"
-                                                data-dismiss="alert"> <i class="fa fa-times icon-muted"></i> </a> <span
-                                                class="pull-left media-xs"> <i class="fa fa-sort icon-muted fa m-r-sm"></i>
-                                                <a href="#todo-4" data-toggle="class:text-lt"> <i class="fa fa-square-o fa-fw text"></i>
-                                                    <i class="fa fa-check-square-o fa-fw text-active text-success"></i>
-                                                </a> </span>
-                                            <div class="clear" id="todo-4"> The fastest way to get started </div>
-                                        </li>
-                                        <li class="list-group-item box-shadow"> <a href="#" class="pull-right"
-                                                data-dismiss="alert"> <i class="fa fa-times icon-muted"></i> </a> <span
-                                                class="pull-left media-xs"> <i class="fa fa-sort icon-muted fa m-r-sm"></i>
-                                                <a href="#todo-5" data-toggle="class:text-lt"> <i class="fa fa-square-o fa-fw text"></i>
-                                                    <i class="fa fa-check-square-o fa-fw text-active text-success"></i>
-                                                </a> </span>
-                                            <div class="clear" id="todo-5"> HTML5 doctype required </div>
-                                        </li>
-                                        <li class="list-group-item box-shadow"> <a href="#" class="pull-right"
-                                                data-dismiss="alert"> <i class="fa fa-times icon-muted"></i> </a> <span
-                                                class="pull-left media-xs"> <i class="fa fa-sort icon-muted fa m-r-sm"></i>
-                                                <a href="#todo-6" data-toggle="class:text-lt"> <i class="fa fa-square-o fa-fw text"></i>
-                                                    <i class="fa fa-check-square-o fa-fw text-active text-success"></i>
-                                                </a> </span>
-                                            <div class="clear" id="todo-6"> LessCSS compiling </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-4">
-                                    <section class="panel b-light">
-                                        <header class="panel-heading bg-primary dker no-border"><strong>Calendar</strong></header>
-                                        <div id="calendar" class="bg-primary m-l-n-xxs m-r-n-xxs"></div>
-                                        <div class="list-group"> <a href="#" class="list-group-item text-ellipsis">
-                                                <span class="badge bg-danger">7:30</span> Meet a friend </a> <a href="#"
-                                                class="list-group-item text-ellipsis"> <span class="badge bg-success">9:30</span>
-                                                Have a kick off meeting with .inc company </a> <a href="#" class="list-group-item text-ellipsis">
-                                                <span class="badge bg-light">19:30</span> Milestone release </a> </div>
-                                    </section>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="btn-group m-b" data-toggle="buttons"> <label class="btn btn-sm btn-default active">
-                                        <input type="radio" name="options" id="option1"> Timeline </label> <label class="btn btn-sm btn-default">
-                                        <input type="radio" name="options" id="option2"> Activity </label> </div>
-                                <section class="comment-list block">
-                                    <article id="comment-id-1" class="comment-item"> <span class="fa-stack pull-left m-l-xs">
-                                            <i class="fa fa-circle text-info fa-stack-2x"></i> <i class="fa fa-play-circle text-white fa-stack-1x"></i>
-                                        </span>
-                                        <section class="comment-body m-b-lg">
-                                            <header> <a href="#"><strong>John smith</strong></a> shared a <a href="#"
-                                                    class="text-info">video</a> to you <span class="text-muted text-xs">
-                                                    24 minutes ago </span> </header>
-                                            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id
-                                                neque quam.</div>
-                                        </section>
-                                    </article> .comment-reply
-                                    <article id="comment-id-2" class="comment-reply">
-                                        <article class="comment-item"> <a class="pull-left thumb-sm"> <img src="images/avatar_default.jpg"
-                                                    class="img-circle"> </a>
-                                            <section class="comment-body m-b-lg">
-                                                <header> <a href="#"><strong>John smith</strong></a> <span class="text-muted text-xs">
-                                                        26 minutes ago </span> </header>
-                                                <div> Morbi id neque quam. Aliquam.</div>
-                                            </section>
-                                        </article>
-                                        <article class="comment-item"> <a class="pull-left thumb-sm"> <img src="images/avatar.jpg"
-                                                    class="img-circle"> </a>
-                                            <section class="comment-body m-b-lg">
-                                                <header> <a href="#"><strong>Mike</strong></a> <span class="text-muted text-xs">
-                                                        26 minutes ago </span> </header>
-                                                <div>Good idea.</div>
-                                            </section>
-                                        </article>
-                                    </article> / .comment-reply
-                                    <article id="comment-id-2" class="comment-item"> <span class="fa-stack pull-left m-l-xs">
-                                            <i class="fa fa-circle text-danger fa-stack-2x"></i> <i class="fa fa-file-o text-white fa-stack-1x"></i>
-                                        </span>
-                                        <section class="comment-body m-b-lg">
-                                            <header> <a href="#"><strong>John Doe</strong></a> <span class="text-muted text-xs">
-                                                    1 hour ago </span> </header>
-                                            <div>Lorem ipsum dolor sit amet, consecteter adipiscing elit.</div>
-                                        </section>
-                                    </article>
-                                    <article id="comment-id-2" class="comment-item"> <span class="fa-stack pull-left m-l-xs">
-                                            <i class="fa fa-circle text-success fa-stack-2x"></i> <i class="fa fa-check text-white fa-stack-1x"></i>
-                                        </span>
-                                        <section class="comment-body m-b-lg">
-                                            <header> <a href="#"><strong>Jonathan</strong></a> completed a task <span
-                                                    class="text-muted text-xs"> 1 hour ago </span> </header>
-                                            <div>Consecteter adipiscing elit.</div>
-                                        </section>
-                                    </article>
-                                </section> <a href="#" class="btn btn-default btn-sm m-b"><i class="fa fa-plus icon-muted"></i>
-                                    more</a>
-                            </div>
-                        </section>
-                    </section> <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen, open"
-                        data-target="#nav,html"></a>
-                </section>
+
+                            </section>
+ -->
+
+
+
+                            <!-- Bootstrap -->
+                            <!-- App -->
+                            <script src="js/app.v1.js"></script>
+                            <script src="js/charts/easypiechart/jquery.easy-pie-chart.js"></script>
+                            <script src="js/charts/sparkline/jquery.sparkline.min.js"></script>
+                            <script src="js/charts/flot/jquery.flot.min.js"></script>
+                            <script src="js/charts/flot/jquery.flot.tooltip.min.js"></script>
+                            <script src="js/charts/flot/jquery.flot.resize.js"></script>
+                            <script src="js/charts/flot/jquery.flot.grow.js"></script>
+                            <script src="js/charts/flot/demo.js"></script>
+                            <script src="js/calendar/bootstrap_calendar.js"></script>
+                            <script src="js/calendar/demo.js"></script>
+                            <script src="js/sortable/jquery.sortable.js"></script>
+                            <script src="js/app.plugin.js"></script>
+                           <!--  <script type="text/javascript" src="/scripts/assets/slider-pro/jquery.sliderPro.min.js"></script>
+                            <script type="text/javascript" src="/scripts/assets/owl-carousel/2.2.1/owl.carousel.min.js"></script>
+                            <script type="text/javascript" src="/scripts/buy-new-v1.2.js"></script>
+                            <script type="text/javascript" src="/scripts/price-widget-v1.3.js"></script>
+                            <script type="text/javascript" src="/scripts/home-footer-v1.3.js"></script>
+                            <script type="text/javascript" src="/scripts/compare/compare-v1-5bf285ac87cd4.js"></script>
+                            <script type="text/javascript" src="/scripts/com-foot-v1.2.js"></script> -->
 </body>
+<!-- Mirrored from flatfull.com/themes/note/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Oct 2018 11:16:42 GMT -->
+
 </html>

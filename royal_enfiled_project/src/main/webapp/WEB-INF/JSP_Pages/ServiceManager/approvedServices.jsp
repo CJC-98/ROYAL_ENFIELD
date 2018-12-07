@@ -14,31 +14,15 @@
 </head>
 
 <body>
-	<section id="content"  class="bg-light lter">
+	<section id="content">
 	        <section class="vbox">
 	            <section class="scrollable padder">                                               
-	                                    
+	                                
 	                <div class="m-b-md">
 	                    <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Approved Services</h3>
 	                </div>
 	                
-	               <section class="panel bg-light b-a">
-                             <div class="panel-body"> 		
-                             		//servive 1  
-                             </div>
-                   </section>
-                   
-                   <section class="panel bg-light b-a">
-                             <div class="panel-body"> 		
-                             		//servive 2
-                             </div>
-                   </section>
-                   
-                   <section class="panel bg-light b-a">
-                             <div class="panel-body"> 		
-                             		//servive 3
-                             </div>
-                   </section>
+	               // Approved Services body here
 	                
 	            </section>
 	        </section>

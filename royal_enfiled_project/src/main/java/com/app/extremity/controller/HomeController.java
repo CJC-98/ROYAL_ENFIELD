@@ -4,14 +4,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-  //author: pranay kohad 
-   
-//controller
-@Controller    
+//author: pranay kohad 
+    
+   @Controller
 public class HomeController {
-	    
+	                          
 	// All site actions are go through this method
-	    //This is our landing page
+	//This is our landing page
 	@RequestMapping(value="/")
 	public String homePage()
 	{ 
@@ -30,11 +29,11 @@ public class HomeController {
 	@RequestMapping(value="/SignIn")
 	public String signIn(Model model)    
 	{ 
-		
 		System.out.println("In SignIn controller");
 		//return "IndivisualUser/indivisualUserIndex";
-		return "IndivisualUser/indivisualUserIndex";//by default go to client index.jsp  
-
+		//return "IndivisualUser/indivisualUserIndex";//by default go to client index.jsp  
+	//	model.addAttribute("link","salesManagerDashboard.jsp");
+		return "IndivisualUser/indivisualUserIndex";
 	}  
 	   
 	
@@ -66,13 +65,17 @@ public class HomeController {
 		System.out.println("In dealer controller");
 		return "";
 	}
-	
+	         
 	@RequestMapping(value="/sales")
-	public String sales()
-	{  
+	public String sales(Model model)
+	{ 
 		System.out.println("In sales controller");
-		return "";
-	}
+		model.addAttribute("link","salesManagerDashboard.jsp");
+		//model.addAttribute("link","newdash.jsp");
+	return "SalesManager/salesManagerIndex";
+	
+	
+	}    
 	
 	@RequestMapping(value="/service")
 	public String service()

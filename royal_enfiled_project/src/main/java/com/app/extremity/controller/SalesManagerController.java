@@ -4,18 +4,63 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-/* 
- * This controller helps to navigate in sale manager index.jsp
- * and handle all request-response made by sale manager
- *  */
-
 @Controller
 public class SalesManagerController {
-	@RequestMapping(value="/DashboardPageSale")
-	public String ServicesDashboardPage(Model model){
+	
+	
+	@RequestMapping(value="/AddNewBike")
+	public String AddNewBikeForm(Model model)
+	{ 
+		System.out.println("in new bike form");
+		model.addAttribute("link","AddNewBike.jsp");
+	return "SalesManager/salesManagerIndex";
+	//	System.out.println("In sales controller");
+	
+	}    
+	
+	@RequestMapping(value="/AddForm")
+    public String AddNewAccessoriesForm(Model model)
+    {
 		
-		System.out.println("dashboard hits...........");
-		model.addAttribute("link","SaleManager/saleManagerDashboard.jsp");
-		return "SaleManager/saleManagerIndex";
+		System.out.println("in new accessories form");
+		model.addAttribute("link","AddAccessoriesForm.jsp");
+	return "SalesManager/salesManagerIndex";
+		
+		
+    }
+	
+	@RequestMapping(value="/OrderToCompanyForNewBike")
+    public String OrderToCompany(Model model)
+    {
+		
+		System.out.println("in new Bike form to company ");
+		model.addAttribute("link","OrderToCompanyForNewBike.jsp");
+	return "SalesManager/salesManagerIndex";
+		
+		
+    }
+	
+	
+	
+	@RequestMapping(value="/OrderToCompanyForNewAccessories")
+    public String OrderToCompanyForAccessories(Model model)
+    {
+		
+		System.out.println("in new Accessories form to company ");
+		model.addAttribute("link","OrderToCompanyForNewAccessories.jsp");
+	return "SalesManager/salesManagerIndex";
+		
+		
+    }
+	
+	@RequestMapping(value="/order")
+	public String Order(Model model)
+	{
+		
+		System.out.println("in order");
+		return "SalesManager/salesManagerIndex";
+		
 	}
+	
+	
 }
