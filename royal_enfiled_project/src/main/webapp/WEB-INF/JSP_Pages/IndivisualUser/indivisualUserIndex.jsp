@@ -129,8 +129,8 @@
                                             <ul class="nav lt">
                                                 <li class="active"> <a href="index.html" class="active"> <i class="fa fa-angle-right"></i>
                                                         <span>Dashboard v1</span> </a> </li>
-                                                <li> <a href="dashboard.html"> <i class="fa fa-angle-right"></i> <span>Dashboard
-                                                            v2</span> </a> </li>
+                                                <li> <a href="saleBike"> <i class="fa fa-angle-right"></i> <span>SaleUsedBike
+                                                            </span> </a> </li>
                                             </ul>
                                         </li>
                                         <li> <a href="#layout"> <i class="fa fa-columns icon"> <b class="bg-warning"></b>
