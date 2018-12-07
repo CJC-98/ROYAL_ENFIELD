@@ -1,5 +1,6 @@
 package com.app.extremity.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,7 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller    
 public class HomeController {
-	    
+	@Autowired
+	
 	// All site actions are go through this method
 	//This is our landing page
 	@RequestMapping(value="/")
