@@ -176,7 +176,7 @@
                                                 </li> 
                                             </ul>
                                             
-                                            <ul class="nav lt">
+                                            <ul class="nav lt">  
                                                 <li> 
                                                 	<a href="BikeCustomizationRecordsPage"> 
                                                 		<i class="fa fa-angle-right"></i> 

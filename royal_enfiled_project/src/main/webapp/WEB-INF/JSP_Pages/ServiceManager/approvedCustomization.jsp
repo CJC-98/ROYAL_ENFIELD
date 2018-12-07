@@ -200,10 +200,10 @@
 						    <div class="modal-dialog modal-md">
 						      <div class="modal-content">
 						        <div class="modal-header">
-						        	<h3 style="text-align: center">Amount Brakedown window</h3>  
+						        	<h3 style="text-align: center">Customization Details</h3>  
 						        </div>
 						        <div class="modal-body">
-						          		<div class="col-sm-12">
+						          		
                                     <section class="panel panel-default">
                                         <table class="table table-striped m-b-none">
                                             <thead>
@@ -244,7 +244,7 @@
                                             
                                         </table>
                                     </section>
-                                </div>
+                               
 						        </div>
 						        <div class="modal-footer">	
 						          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

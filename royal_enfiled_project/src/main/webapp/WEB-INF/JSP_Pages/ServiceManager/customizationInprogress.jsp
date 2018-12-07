@@ -14,6 +14,13 @@
 </head>
 
 <body>
+	
+	<script>
+		function submitWork(){
+			alert("your work is submitted");
+		}
+	</script>
+
 	<section id="content"  class="bg-light lter">
 	        <section class="vbox">
 	            <section class="scrollable padder">                                               
@@ -30,7 +37,7 @@
                              <section class="panel panel-default">
                                           <header class="panel-heading bg-dark lter" style="font-size: 20px; color: white; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
                                           	Bullet 350cc (MH-12-HF-6454)
-                                          	<a href="" class="btn btn-md btn-warning rounded m-r">Submit Work</a>
+                                          	<a class="btn btn-md btn-warning rounded m-r" onclick="submitWork()">Submit Work</a>
                                           </header>
                                                 
                                           <table class="table table-striped m-b-none">
@@ -117,7 +124,7 @@
                              <section class="panel panel-default">
                                           <header class="panel-heading bg-dark lter" style="color: white; font-size: 20px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
                                           	Bullet 350cc (MH12546HF6454)
-                                          	<a href="" class="btn btn-md btn-warning rounded m-r">Submit Work</a>
+                                          	<a class="btn btn-md btn-warning rounded m-r" onclick="submitWork()">Submit Work</a>
                                           </header>
                                                 
                                           <table class="table table-striped m-b-none">
