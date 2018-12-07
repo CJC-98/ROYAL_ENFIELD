@@ -21,6 +21,18 @@ public class Notfication {
 	private String message;
 	
 	private String sendDate;
+	
+	private String sendTime;
+
+	
+	
+	public String getSendTime() {
+		return sendTime;
+	}
+
+	public void setSendTime(String sendTime) {
+		this.sendTime = sendTime;
+	}
 
 	public String getSendDate() {
 		return sendDate;
