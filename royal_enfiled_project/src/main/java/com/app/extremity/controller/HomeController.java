@@ -4,8 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-//author: pranay kohad
-    
+  
 @Controller    
 public class HomeController {
 	    
@@ -24,7 +23,7 @@ public class HomeController {
 		System.out.println("In login controller");
 
 		return "login";
-	} 
+	}    
 	
 	@RequestMapping(value="/SignIn")
 	public String signIn(Model model)    
@@ -32,6 +31,7 @@ public class HomeController {
 		System.out.println("In SignIn controller......");
 		model.addAttribute("link", "accountsDashboard.jsp");
 		return "Accounts/accountsIndex";//by default go to client index.jsp  
+
 	}  
 	   
 	

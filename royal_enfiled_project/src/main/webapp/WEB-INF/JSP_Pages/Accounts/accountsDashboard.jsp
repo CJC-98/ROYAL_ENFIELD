@@ -26,32 +26,117 @@
                             </div>
                             <section class="panel panel-default">
                                 <div class="row m-l-none m-r-none bg-light lter">
-                                    <div class="col-sm-6 col-md-3 padder-v b-r b-light"> <span class="fa-stack fa-2x pull-left m-r-sm">
+                                    <div class="col-sm-6 col-md-3 padder-v b-r b-light"> 
+                                    	<span class="fa-stack fa-2x pull-left m-r-sm">
                                             <i class="fa fa-circle fa-stack-2x text-info"></i> <i class="fa fa-male fa-stack-1x text-white"></i>
-                                        </span> <a class="clear" href="#"> <span class="h3 block m-t-xs"><strong>52,000</strong></span>
-                                            <small class="text-muted text-uc">New robots</small> </a> </div>
-                                    <div class="col-sm-6 col-md-3 padder-v b-r b-light lt"> <span class="fa-stack fa-2x pull-left m-r-sm">
+                                        </span> <a class="clear" href="#"> 
+                                        <span class="h3 block m-t-xs"><strong>52,000</strong></span>
+                                        <small class="text-muted text-uc">New robots</small> </a> 
+                                   </div>
+                                    <div class="col-sm-6 col-md-3 padder-v b-r b-light lt"> 
+                                    	<span class="fa-stack fa-2x pull-left m-r-sm">
                                             <i class="fa fa-circle fa-stack-2x text-warning"></i> <i class="fa fa-bug fa-stack-1x text-white"></i>
                                             <span class="easypiechart pos-abt" data-percent="100" data-line-width="4"
                                                 data-track-Color="#fff" data-scale-Color="false" data-size="50"
                                                 data-line-cap='butt' data-animate="2000" data-target="#bugs"
-                                                data-update="3000"></span> </span> <a class="clear" href="#"> <span
-                                                class="h3 block m-t-xs"><strong id="bugs">468</strong></span> <small
-                                                class="text-muted text-uc">Bugs intruded</small> </a> </div>
-                                    <div class="col-sm-6 col-md-3 padder-v b-r b-light"> <span class="fa-stack fa-2x pull-left m-r-sm">
-                                            <i class="fa fa-circle fa-stack-2x text-danger"></i> <i class="fa fa-fire-extinguisher fa-stack-1x text-white"></i>
+                                                data-update="3000">
+                                            </span> 
+                                        </span> 
+                                        <a class="clear" href="#"> 
+	                                        <span class="h3 block m-t-xs"><strong id="bugs">468</strong></span> 
+	                                        <small class="text-muted text-uc">Bugs intruded</small> 
+                                        </a> 
+                                    </div>
+                                    <div class="col-sm-6 col-md-3 padder-v b-r b-light"> 
+                                    	<span class="fa-stack fa-2x pull-left m-r-sm">
+                                            <i class="fa fa-circle fa-stack-2x text-danger"></i> 
+                                            <i class="fa fa-fire-extinguisher fa-stack-1x text-white"></i>
                                             <span class="easypiechart pos-abt" data-percent="100" data-line-width="4"
                                                 data-track-Color="#f5f5f5" data-scale-Color="false" data-size="50"
                                                 data-line-cap='butt' data-animate="3000" data-target="#firers"
-                                                data-update="5000"></span> </span> <a class="clear" href="#"> <span
-                                                class="h3 block m-t-xs"><strong id="firers">359</strong></span> <small
-                                                class="text-muted text-uc">Extinguishers ready</small> </a> </div>
-                                    <div class="col-sm-6 col-md-3 padder-v b-r b-light lt"> <span class="fa-stack fa-2x pull-left m-r-sm">
+                                                data-update="5000">
+                                            </span> 
+                                        </span> 
+                                        <a class="clear" href="#"> 
+	                                        <span class="h3 block m-t-xs"><strong id="firers">359</strong></span> 
+	                                        <small class="text-muted text-uc">Extinguishers ready</small> 
+                                        </a> 
+                                    </div>
+                                    <div class="col-sm-6 col-md-3 padder-v b-r b-light lt"> 
+                                    	<span class="fa-stack fa-2x pull-left m-r-sm">
                                             <i class="fa fa-circle fa-stack-2x icon-muted"></i> <i class="fa fa-clock-o fa-stack-1x text-white"></i>
-                                        </span> <a class="clear" href="#"> <span class="h3 block m-t-xs"><strong>31:50</strong></span>
-                                            <small class="text-muted text-uc">Left to exit</small> </a> </div>
+                                        </span> 
+                                        <a class="clear" href="#"> 
+                                        	<span class="h3 block m-t-xs"><strong>31:50</strong></span>
+                                            <small class="text-muted text-uc">Left to exit</small> 
+                                        </a> 
+                                    </div>
                                 </div>
-                            </section>
+                            </section>      
+                            
+                            
+                            
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <section class="panel panel-default">
+                                        <header class="panel-heading"> Conversion </header>
+                                        <div class="panel-body text-center">
+                                            <h4>62.5<small> hrs</small></h4> <small class="text-muted block">Updated at
+                                                2 minutes ago</small>
+                                            <div class="inline">
+                                                <div class="easypiechart" data-percent="75" data-line-width="16"
+	                                                 data-rotate="0" 
+	                                                 data-scale-Color="false" data-animate="2000"
+                                                     data-loop="false" data-size="188"> <span class="h2 step"></span>%
+                                                    <div class="easypie-text">New</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel-footer"><small>% of avarage rate of the Conversion</small></div>
+                                    </section>
+                                </div>
+                                <div class="col-lg-4">
+                                    <section class="panel panel-default">
+                                        <header class="panel-heading"> Bounce rate </header>
+                                        <div class="panel-body text-center">
+                                            <h4><small>last </small>12<small> hrs</small></h4> <small class="text-muted block">yesterday:
+                                                20%</small>
+                                            <div class="inline">
+                                                <div class="easypiechart" data-percent="25" data-line-width="6"
+                                                	data-animate="2000"
+                                                    data-loop="false" data-size="188"> <span class="h2 step">25</span>%
+                                                    <div class="easypie-text">Today</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel-footer"><small>% of change</small></div>
+                                    </section>
+                                </div>
+                                <div class="col-lg-4">
+                                    <section class="panel panel-default">
+                                        <header class="panel-heading"> New visitors </header>
+                                        <div class="panel-body text-center">
+                                            <h4>3,450</h4> <small class="text-muted block">Worldwide visitors</small>
+                                            <div class="inline">
+                                                <div class="easypiechart" data-percent="60" data-line-width="30"
+                                                	data-animate="2000"
+                                                    data-track-color="#eee" data-bar-color="#afcf6f" data-scale-color="#fff"
+                                                    data-size="188" data-line-cap='butt'> <span class="h2 step">60</span>%
+                                                    <div class="easypie-text">new visits</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel-footer"><small>% of avarage rate of the visits</small></div>
+                                    </section>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            
+                            
+                            
+                            
                             <div class="row">
                                 <div class="col-md-8">
                                     <section class="panel panel-default">
