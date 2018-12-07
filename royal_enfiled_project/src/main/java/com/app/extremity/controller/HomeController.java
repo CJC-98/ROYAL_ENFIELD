@@ -4,13 +4,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-//author: pranay kohad
-    
+  //author: pranay kohad 
+   
+//controller
 @Controller    
 public class HomeController {
 	    
 	// All site actions are go through this method
-	//This is our landing page
+	    //This is our landing page
 	@RequestMapping(value="/")
 	public String homePage()
 	{ 
@@ -24,14 +25,15 @@ public class HomeController {
 		System.out.println("In login controller");
 
 		return "login";
-	} 
+	}    
 	
 	@RequestMapping(value="/SignIn")
-	public String signIn()    
+	public String signIn(Model model)    
 	{ 
 		
 		System.out.println("In SignIn controller......");
 		return "Accounts/accountsIndex";//by default go to client index.jsp  
+
 	}  
 	   
 	
