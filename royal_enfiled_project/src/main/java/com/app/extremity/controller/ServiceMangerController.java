@@ -120,7 +120,7 @@ public class ServiceMangerController {
 		colors.add("B");
 		colors.add("C");
 		colors.add("D");
-		
+		 
 		model.addAttribute("link","customizationInvoice.jsp");
 		model.addAttribute("colors",colors);
 		return "ServiceManager/serviceManagerIndex";
