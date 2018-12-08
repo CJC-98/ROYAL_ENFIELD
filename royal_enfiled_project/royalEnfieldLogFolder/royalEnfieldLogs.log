@@ -1952,3 +1952,12 @@ Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException:
 [INFO] 2018-12-08 19:31:10.390 fn=>restartedMain     pack.cls=>com.app.extremity.main.Test - Started Test in 10.327 seconds (JVM running for 278.15)
 [INFO] 2018-12-08 19:31:10.396 fn=>restartedMain     pack.cls=>org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
 [WARN] 2018-12-08 19:31:10.397 fn=>restartedMain     pack.cls=>com.app.extremity.main.Test - application started............
+[INFO] 2018-12-08 19:32:18.494 fn=>Thread-10     pack.cls=>org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@51ef8f32: startup date [Sat Dec 08 19:31:00 IST 2018]; root of context hierarchy
+[INFO] 2018-12-08 19:32:18.501 fn=>Thread-10     pack.cls=>org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+[INFO] 2018-12-08 19:32:18.501 fn=>Thread-10     pack.cls=>org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+[INFO] 2018-12-08 19:32:18.507 fn=>Thread-10     pack.cls=>org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO] 2018-12-08 19:32:18.510 fn=>Thread-10     pack.cls=>com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+[INFO] 2018-12-08 19:32:18.611 fn=>Thread-10     pack.cls=>com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+[INFO] 2018-12-08 19:32:20.147 fn=>restartedMain     pack.cls=>com.app.extremity.main.Test - Starting Test on DESKTOP-PV9NO3F with PID 12276 (F:\springclone\springBootTeamProject\ROYAL_ENFIELD\royal_enfiled_project\target\classes started by pranaykohad in F:\springclone\springBootTeamProject\ROYAL_ENFIELD\royal_enfiled_project)
+[INFO] 2018-12-08 19:32:20.149 fn=>restartedMain     pack.cls=>com.app.extremity.main.Test - No active profile set, falling back to default profiles: default
+[INFO] 2018-12-08 19:32:20.156 fn=>restartedMain     pack.cls=>org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@76657aee: startup date [Sat Dec 08 19:32:20 IST 2018]; root of context hierarchy

@@ -12,26 +12,25 @@ public class ServcingBikeInfo {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int servcingBikeInfoId;
+	private int ServcingBikeInfoId;
 	
-	private String chassisNumber;
+	private String chasisNumber;
 	private String plateNumber;
 	
 	
 	
 	
-	
 	public int getServcingBikeInfoId() {
-		return servcingBikeInfoId;
+		return ServcingBikeInfoId;
 	}
 	public void setServcingBikeInfoId(int servcingBikeInfoId) {
-		this.servcingBikeInfoId = servcingBikeInfoId;
+		ServcingBikeInfoId = servcingBikeInfoId;
 	}
-	public String getChassisNumber() {
-		return chassisNumber;
+	public String getChasisNumber() {
+		return chasisNumber;
 	}
-	public void setChassisNumber(String chassisNumber) {
-		this.chassisNumber = chassisNumber;
+	public void setChasisNumber(String chasisNumber) {
+		this.chasisNumber = chasisNumber;
 	}
 	public String getPlateNumber() {
 		return plateNumber;
