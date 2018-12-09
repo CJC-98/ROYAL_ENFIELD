@@ -5,10 +5,13 @@ import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.app.extremity.idao.BikeServicingIDao;
+import com.app.extremity.iservice.ServiceManagerInterface;
 import com.app.extremity.model.BikeServicing;
 import com.app.extremity.model.Color;
 import com.app.extremity.model.ServcingBikeInfo;
@@ -25,21 +28,13 @@ public class ServiceMangerController {
 	
 	static Logger logger = LogManager.getLogger(ServiceMangerController.class);
 	
+	@Autowired
+	ServiceManagerInterface serviceManagerInterface;
+	
 	@RequestMapping(value="/DashboardPage")
 	public String ServicesDashboardPage(Model model){
 		
-		
-		/*ServcingBikeInfo bi=new ServcingBikeInfo();
-		
-		BikeServicing bs=new BikeServicing();
-	    bs.setBikeServicingId("BS001");
-	    bs.setBikeReleaseStatus("waiting");
-		bs.setAppointmentDate("02/08/2018");
-		bs.setBikeReleaseStatus("on-hold");
-		bs.setServcingBikeInfo(bi);
-		
-		//List<ServicingChart> sc = new ArrayList();
-		*/
+		serviceManagerInterface.getAllServiceCount();
 		
 		logger.info("dashboard hits........... log");
 		model.addAttribute("link","serviceManagerDashboard.jsp");
@@ -113,7 +108,6 @@ public class ServiceMangerController {
 	
 	@RequestMapping(value="/CustomizationInvoicePage")
 	public String CustomizationInvoicePage(Model model){
-<<<<<<< HEAD
 		
 	
 		Color c1 = new Color();
