@@ -39,14 +39,12 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	
 	@Override
 	public long getAllServiceCount() {
-		System.out.println(bikeServicingIDao.count());
-		return 0;
+		return bikeServicingIDao.count();
 	}
 
 	@Override
-	public long getAllServiceCountByServiceStatus() {
-		System.out.println(bikeServicingIDao.countByservcingStatus("waiting"));
-		return 0;
+	public long getAllServiceCountByServiceStatus(String serviceStatus) {
+		return bikeServicingIDao.countByservcingStatus(serviceStatus);
 	}
 
 	@Override
@@ -57,13 +55,19 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 
 	@Override
 	public String getNextBikeServicingId() {
-		// TODO Auto-generated method stub
-		return null;
+		long totalCount = getAllServiceCount();
+		return "BS"+(totalCount+1);
 	}
 
 	@Override
 	public BikeServicing saveBikeServicing(BikeServicing bikeServicing) {
 		return bikeServicingIDao.save(bikeServicing);
+	}
+
+	@Override
+	public long getAllCustomizationCount() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	 
 

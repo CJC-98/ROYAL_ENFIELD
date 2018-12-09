@@ -64,7 +64,7 @@ public class ServiceMangerController {
 	
 		
 		BikeServicing bs1 = new BikeServicing();
-		bs1.setBikeServicingId("BS3");
+		
 		bs1.setAppointmentDate("02/18/2018");
 		bs1.setServcingBikeInfo(sbi);
 		
@@ -81,9 +81,16 @@ public class ServiceMangerController {
 		
 		bs1.setServicingInvoice(si);
 		
+		String nextServiceId = serviceManagerInterface.getNextBikeServicingId();
+		
+		bs1.setBikeServicingId(nextServiceId);
+		
 		serviceManagerInterface.saveBikeServicing(bs1);
 		
-		//serviceManagerInterface.getAllServiceCount();
+
+		
+		
+		
 		
 		logger.info("dashboard hits........... log");
 		model.addAttribute("link","serviceManagerDashboard.jsp");
