@@ -22,7 +22,7 @@ import com.app.extremity.model.ServicingInvoice;
  * This controller helps to navigate in service manager index.jsp
  * and handle all request-response made by service manager
  *  */
-
+ 
     
 @Controller
 public class ServiceMangerController {
@@ -34,7 +34,7 @@ public class ServiceMangerController {
 	
 	@RequestMapping(value="/DashboardPage")
 	public String ServicesDashboardPage(Model model){
-		
+		 
 		ServcingBikeInfo sbi = new ServcingBikeInfo();
 		sbi.setChasisNumber("AJD7945954");
 		sbi.setPlateNumber("MH-14-HF-7456");
@@ -44,11 +44,11 @@ public class ServiceMangerController {
 		si.setServiceCGstPercent(4);
 		si.setServiceSGstPercent(4);
 		si.setTotalAmount(11500);
-		
+		 
 		ServicingChart sc1 = new ServicingChart();
 		sc1.setWork("engine change");
 		sc1.setCost(150);
-		
+		   
 		ServicingChart sc2 = new ServicingChart();
 		sc2.setWork("brake change");
 		sc2.setCost(1500);
