@@ -34,7 +34,7 @@ public class ServiceMangerController {
 	
 	@RequestMapping(value="/DashboardPage")
 	public String ServicesDashboardPage(Model model){
-		
+		 
 		ServcingBikeInfo sbi = new ServcingBikeInfo();
 		sbi.setChasisNumber("AJD7945954");
 		sbi.setPlateNumber("MH-14-HF-7456");
