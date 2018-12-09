@@ -30,6 +30,18 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 		System.out.println(bikeServicingIDao.countByservcingStatus("waiting"));
 		return 0;
 	}
+
+	@Override
+	public String getNextBikeCustomizationId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getNextBikeServicingId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	 
 
 	
