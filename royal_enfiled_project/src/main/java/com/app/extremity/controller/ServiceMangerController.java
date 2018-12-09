@@ -48,7 +48,7 @@ public class ServiceMangerController {
 		ServicingChart sc1 = new ServicingChart();
 		sc1.setWork("engine change");
 		sc1.setCost(150);
-		
+		   
 		ServicingChart sc2 = new ServicingChart();
 		sc2.setWork("brake change");
 		sc2.setCost(1500);
