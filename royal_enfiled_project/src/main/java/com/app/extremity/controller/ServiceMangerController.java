@@ -44,7 +44,7 @@ public class ServiceMangerController {
 		si.setServiceCGstPercent(4);
 		si.setServiceSGstPercent(4);
 		si.setTotalAmount(11500);
-		
+		 
 		ServicingChart sc1 = new ServicingChart();
 		sc1.setWork("engine change");
 		sc1.setCost(150);
