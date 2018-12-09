@@ -9,7 +9,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.app.extremity.model.BikeServicing;
 import com.app.extremity.model.Color;
+import com.app.extremity.model.ServcingBikeInfo;
+import com.app.extremity.model.ServicingChart;
   
 /* 
  * This controller helps to navigate in service manager index.jsp
@@ -24,6 +27,19 @@ public class ServiceMangerController {
 	
 	@RequestMapping(value="/DashboardPage")
 	public String ServicesDashboardPage(Model model){
+		
+		
+		/*ServcingBikeInfo bi=new ServcingBikeInfo();
+		
+		BikeServicing bs=new BikeServicing();
+	    bs.setBikeServicingId("BS001");
+	    bs.setBikeReleaseStatus("waiting");
+		bs.setAppointmentDate("02/08/2018");
+		bs.setBikeReleaseStatus("on-hold");
+		bs.setServcingBikeInfo(bi);
+		
+		//List<ServicingChart> sc = new ArrayList();
+		*/
 		
 		logger.info("dashboard hits........... log");
 		model.addAttribute("link","serviceManagerDashboard.jsp");
@@ -97,6 +113,7 @@ public class ServiceMangerController {
 	
 	@RequestMapping(value="/CustomizationInvoicePage")
 	public String CustomizationInvoicePage(Model model){
+<<<<<<< HEAD
 		
 	
 		Color c1 = new Color();
@@ -121,8 +138,8 @@ public class ServiceMangerController {
 		colors.add("C");
 		colors.add("D");
 		
+
 		model.addAttribute("link","customizationInvoice.jsp");
-		model.addAttribute("colors",colors);
 		return "ServiceManager/serviceManagerIndex";
 	}
 	
