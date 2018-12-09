@@ -117,7 +117,7 @@ public class ServiceMangerController {
 	public String ApprovedCustomizationPage(Model model){
 		
 		model.addAttribute("link","approvedCustomization.jsp");
-		return "ServiceManager/serviceManagerIndex";
+		return "ServiceManager/serviceManagerIndex";  
 	}
 	
 	@RequestMapping(value="/CustomizationInprogressPage")
