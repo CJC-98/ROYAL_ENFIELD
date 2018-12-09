@@ -10,7 +10,7 @@ import javax.persistence.OneToOne;
 
 @Entity
 public class AccessoriesDeadStock
-{
+{  
 	@Id
 	//@GeneratedValue(strategy=GenerationType.IDENTITY)
 private String accessoriesDeadStockID;
@@ -19,7 +19,7 @@ private String accessoriesDeadStockID;
     private AccessoriesStock acd;
 	public String getAccessoriesDeadStockID() {
 		return accessoriesDeadStockID;
-	}
+	} 
 	public void setAccessoriesDeadStockID(String accessoriesDeadStockID) {
 		this.accessoriesDeadStockID = accessoriesDeadStockID;
 	}
