@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="BikeCustomizationTable")
 public class BikeCustomization {
-	
+	   
 	@Id
 	private String bikeCustomizationId;
 	
