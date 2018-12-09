@@ -23,13 +23,13 @@ public class BikeCustomization {
 	
 	private String bikeReleaseStatus = "on-hold";   //OR released
 	
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
 	private CustomizationBikeInfo customizationBikeInfo; 
 	
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<CustomizationChart> customizationChart = new ArrayList();
 	
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
 	private CustomizationInvoice customizationInvoice;
 	
 	//FK of customer @OneToOne

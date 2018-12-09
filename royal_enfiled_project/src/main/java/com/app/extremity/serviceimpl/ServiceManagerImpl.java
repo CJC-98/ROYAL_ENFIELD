@@ -7,7 +7,14 @@ import org.springframework.stereotype.Service;
 
 import com.app.extremity.idao.BikeCustomizationIDao;
 import com.app.extremity.idao.BikeServicingIDao;
+import com.app.extremity.idao.ServcingBikeInfoIDao;
+import com.app.extremity.idao.ServiceInvoiceIDao;
+import com.app.extremity.idao.ServicingChartIDao;
 import com.app.extremity.iservice.ServiceManagerInterface;
+import com.app.extremity.model.BikeServicing;
+import com.app.extremity.model.ServcingBikeInfo;
+import com.app.extremity.model.ServicingChart;
+import com.app.extremity.model.ServicingInvoice;
 
 
 @Service
@@ -15,10 +22,21 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	
 	@Autowired
 	BikeServicingIDao bikeServicingIDao;
+
+	@Autowired
+	ServiceInvoiceIDao serviceInvoiceIDao;
 	
 	@Autowired
-	BikeCustomizationIDao bikeCustomizationIDao;
+	ServcingBikeInfoIDao servcingBikeInfoIDao;
+	
+	@Autowired
+	ServicingChartIDao servicingChartIDao;
+	
+	
+	
 
+	
+	
 	@Override
 	public long getAllServiceCount() {
 		System.out.println(bikeServicingIDao.count());
@@ -41,6 +59,11 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	public String getNextBikeServicingId() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public BikeServicing saveBikeServicing(BikeServicing bikeServicing) {
+		return bikeServicingIDao.save(bikeServicing);
 	}
 	 
 
