@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="app">
 <!-- Mirrored from flatfull.com/themes/note/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Oct 2018 11:16:42 GMT -->
-
+    
 <head>
     <meta charset="utf-8" />
     <title>Notebook | Web Application</title>
