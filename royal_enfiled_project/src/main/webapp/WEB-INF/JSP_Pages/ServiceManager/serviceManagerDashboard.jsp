@@ -14,7 +14,7 @@
 </head>
 
 <body>
-	<section id="content">
+	<section id="content" class="bg-light lter">
 	        <section class="vbox">
 	            <section class="scrollable padder">                                               
 	                                
@@ -22,110 +22,157 @@
 	                    <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Dashboard</h3>
 	                </div>
 	                
-	               // Dashboard body here
-	                
+	               
+	               <div class="hbox b-a bg-light" style="border-radius: 3px">
+	               		
+	               		<h3 class="m-l-xs" style="text-align: center">Services Graph</h3>
+	               		
+	               		<a  href="ApprovedServicesPage">
+	               		<div class="col-lg-4">
+                                    <section class="panel panel-default">
+                                        <header class="panel-heading bg-danger lt" style="font-size: 15px">Approved Services</header>
+                                        <div class="panel-body text-center">
+                                            <h4>8</h4>
+                                            <div class="inline">
+                                                <div class="easypiechart text-danger" data-percent="5.33"
+                                                    data-line-width="5" data-track-Color="#f0f0f0" data-bar-color="#FF5F4A"
+                                                    data-rotate="0" data-scale-Color="false" data-size="150"
+                                                    data-animate="2000"> <span class="h2 step font-bold">5.3</span>%
+                                                    <div class="easypie-text text-muted">Waiting</div>
+                                                </div>      
+                                            </div>
+                                        </div>
+
+                                        <div class="panel-footer bg-danger lt" style="font-size: 15px">Total Services 150</div>
+
+                                    </section>    
+                             </div>
+                    		</a>
+							
+						   <a  href="ServicesInprogressPage">	
+                           <div class="col-lg-4">
+                                    <section class="panel panel-default">
+                                        <header class="panel-heading bg-warning lt" style="font-size: 15px">In-Progress Services</header>
+                                        <div class="panel-body text-center">
+                                            <h4>108</h4>
+                                            <div class="inline">
+                                                <div class="easypiechart text-warning" data-percent="72"
+                                                    data-line-width="5" data-track-Color="#f0f0f0" data-bar-color="#FFD300"
+                                                    data-rotate="0" data-scale-Color="false" data-size="150"
+                                                    data-animate="2000"> <span class="h2 step font-bold">72</span>%
+                                                    <div class="easypie-text text-muted">In-progress</div>
+                                                </div>      
+                                            </div>
+                                        </div>
+
+                                        <div class="panel-footer bg-warning lt" style="font-size: 15px">Total Services 150</div>
+
+                                    </section>    
+                            </div>
+                            </a>
+                            
+                            <a href="BikeServicesRecordsPage">
+                            <div class="col-lg-4">
+                                    <section class="panel panel-default">
+                                        <header class="panel-heading bg-success lt" style="font-size: 15px">Completed Services</header>
+                                        <div class="panel-body text-center">
+                                            <h4>34</h4>
+                                            <div class="inline">
+                                                <div class="easypiechart text-success" data-percent="22.66"
+                                                    data-line-width="5" data-track-Color="#f0f0f0" data-bar-color="#8ec165"
+                                                    data-rotate="0" data-scale-Color="false" data-size="150"
+                                                    data-animate="2000"> <span class="h2 step font-bold">22.66</span>%
+                                                    <div class="easypie-text text-muted">Done</div>
+                                                </div>      
+                                            </div>
+                                        </div>
+
+                                        <div class="panel-footer bg-success lt" style="font-size: 15px">Total Services 150</div>
+
+                                    </section>    
+                           </div>
+						   </a>
+                            
+	               		
+	               </div>
+	               
+	               
+	               <div class="hbox b-a bg-light" style="margin-top: 20px; margin-bottom: 20px; border-radius: 3px">
+	               
+	               		<h3 class="m-l-xs" style="text-align: center">Customization  Graph</h3>
+	               		
+	               		<a href="ApprovedCustomizationPage">
+	               			<div class="col-lg-4">
+                                    <section class="panel panel-default">
+                                        <header class="panel-heading bg-danger lt" style="font-size: 15px">Approved Customization</header>
+                                        <div class="panel-body text-center">
+                                            <h4>8</h4>
+                                            <div class="inline">
+                                                <div class="easypiechart text-danger" data-percent="5.33"
+                                                    data-line-width="5" data-track-Color="#f0f0f0" data-bar-color="#FF5F4A"
+                                                    data-rotate="0" data-scale-Color="false" data-size="150"
+                                                    data-animate="2000"> <span class="h2 step font-bold">5.3</span>%
+                                                    <div class="easypie-text text-muted">Waiting</div>
+                                                </div>      
+                                            </div>
+                                        </div>
+
+                                        <div class="panel-footer bg-danger lt" style="font-size: 15px">Total Customization 20</div>
+
+                                    </section>    
+                                </div>
+							</a>
+							
+							<a href="CustomizationInprogressPage">
+                                <div class="col-lg-4">
+                                    <section class="panel panel-default">
+                                        <header class="panel-heading bg-warning lt" style="font-size: 15px">In-Progress Customization</header>
+                                        <div class="panel-body text-center">
+                                            <h4>14</h4>
+                                            <div class="inline">
+                                                <div class="easypiechart text-warning" data-percent="70"
+                                                    data-line-width="5" data-track-Color="#f0f0f0" data-bar-color="#FFD300"
+                                                    data-rotate="0" data-scale-Color="false" data-size="150"
+                                                    data-animate="2000"> <span class="h2 step font-bold">70</span>%
+                                                    <div class="easypie-text text-muted">In-progress</div>
+                                                </div>      
+                                            </div>
+                                        </div>
+
+                                        <div class="panel-footer bg-warning lt" style="font-size: 15px">Total Customization 20</div>
+
+                                    </section>    
+                                </div>
+                              </a>
+                              
+                              <a href="BikeCustomizationRecordsPage">  
+                                <div class="col-lg-4">
+                                    <section class="panel panel-default">
+                                        <header class="panel-heading bg-success lt" style="font-size: 15px">Completed Customization</header>
+                                        <div class="panel-body text-center">
+                                            <h4>4</h4>
+                                            <div class="inline">
+                                                <div class="easypiechart text-success" data-percent="20"
+                                                    data-line-width="5" data-track-Color="#f0f0f0" data-bar-color="#8ec165"
+                                                    data-rotate="0" data-scale-Color="false" data-size="150"
+                                                    data-animate="2000"> <span class="h2 step font-bold">20</span>%
+                                                    <div class="easypie-text text-muted">Done</div>
+                                                </div>      
+                                            </div>
+                                        </div>
+
+                                        <div class="panel-footer bg-success lt" style="font-size: 15px">Total Customization 20</div>
+
+                                    </section>    
+                                </div>
+							</a>
+                                
+	               </div>
+	               
+
 	            </section>
 	        </section>
 	 </section>               
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </body>
 </html>

@@ -4,13 +4,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
 //author: pranay kohad 
          
-   @Controller
+ 
+  //author: pranay kohad 
+   
+@Controller    
+
 public class HomeController {
 	    
 	// All site actions are go through this method
-	//This is our landing page
+	    //This is our landing page
 	@RequestMapping(value="/")
 	public String homePage()
 	{ 
@@ -31,9 +36,14 @@ public class HomeController {
 	{ 
 		System.out.println("In SignIn controller");
 		//return "IndivisualUser/indivisualUserIndex";
+
 		//return "IndivisualUser/indivisualUserIndex";//by default go to client index.jsp  
 	//	model.addAttribute("link","salesManagerDashboard.jsp");
 		return "IndivisualUser/indivisualUserIndex";
+
+	
+
+
 	}  
 	   
 	
