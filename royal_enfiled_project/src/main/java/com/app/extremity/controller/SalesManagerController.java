@@ -13,7 +13,7 @@ public class SalesManagerController {
 		System.out.println("dashboard hits...........");
 		model.addAttribute("link", "salesManagerDashboard.jsp");
 		return "SalesManager/salesManagerIndex";
-	  }  
+	   }  
 
 	@RequestMapping(value = "/AddnewBike")
 	public String AddNewBikeForm(Model model) {
