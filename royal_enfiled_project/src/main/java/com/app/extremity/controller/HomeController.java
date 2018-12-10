@@ -68,6 +68,7 @@ public class HomeController {
 	@RequestMapping(value="/sales")
 	public String sales(Model model)
 	{ 
+		
 		System.out.println("In sales controller");
 		model.addAttribute("link","salesManagerDashboard.jsp");
 		//model.addAttribute("link","newdash.jsp");
