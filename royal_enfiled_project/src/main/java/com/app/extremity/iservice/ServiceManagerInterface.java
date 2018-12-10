@@ -4,7 +4,7 @@ import java.util.List;
 
 
 
-public interface BikeServicingInterface {
+public interface ServiceManagerInterface {
 
 		
 }
