@@ -15,7 +15,7 @@ public class SalesManagerController {
 		return "SalesManager/salesManagerIndex";
 	}
 
-	@RequestMapping(value = "/AddNewBike")
+	@RequestMapping(value="/AddnewBike")
 	public String AddNewBikeForm(Model model) {
 		System.out.println("in new bike form");
 		model.addAttribute("link", "AddNewBike.jsp");
