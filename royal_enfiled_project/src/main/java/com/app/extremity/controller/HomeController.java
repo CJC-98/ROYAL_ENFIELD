@@ -30,8 +30,7 @@ public class HomeController {
 	public String signIn(Model model)    
 	{ 
 		System.out.println("In SignIn controller");
-		//return "IndivisualUser/indivisualUserIndex";
-		//return "IndivisualUser/indivisualUserIndex";//by default go to client index.jsp  
+		  
 	//	model.addAttribute("link","salesManagerDashboard.jsp");
 		return "IndivisualUser/indivisualUserIndex";
 	}  
