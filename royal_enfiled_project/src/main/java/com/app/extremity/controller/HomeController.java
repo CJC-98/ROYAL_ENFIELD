@@ -1,28 +1,34 @@
 package com.app.extremity.controller;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+
 
   //author: pranay kohad 
    
 //controller
 @Controller    
 public class HomeController {
+	
+	static Logger logger = LogManager.getLogger(HomeController.class);
 	    
 	// All site actions are go through this method
 	    //This is our landing page
 	@RequestMapping(value="/")
 	public String homePage()
 	{ 
-		System.out.println("In home controller");
-		return "home";
+		logger.info("In home controller log");
+		return "Admin/employeeRegistration";
 	}  
 	 
-	@RequestMapping(value="/loginPage")
+	@RequestMapping(value="")
 	public String loginPage()
 	{ 
-		System.out.println("In login controller");
+		logger.info("In login controller log");
 
 		return "login";
 	}    
@@ -31,9 +37,10 @@ public class HomeController {
 	public String signIn(Model model)    
 	{ 
 		
-		System.out.println("In SignIn controller");
-		//return "IndivisualUser/indivisualUserIndex";
-		return "IndivisualUser/indivisualUserIndex";//by default go to client index.jsp  
+		logger.info("In SignIn controller log");
+		model.addAttribute("link", "serviceManagerDashboard.jsp");
+		return "ServiceManager/serviceManagerIndex";
+		//return "IndivisualUser/indivisualUserIndex";//by default go to client index.jsp  
 
 	}  
 	   
