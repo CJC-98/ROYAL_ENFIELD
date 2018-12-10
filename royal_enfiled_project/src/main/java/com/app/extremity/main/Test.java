@@ -12,7 +12,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories("com.app.extremity.idao")
      
 public class Test {    
-	  
+	   
 	static Logger logger = LogManager.getLogger(Test.class);
 	
 	public static void main(String[] args) {
