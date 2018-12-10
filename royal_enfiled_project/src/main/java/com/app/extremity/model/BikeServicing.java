@@ -23,14 +23,16 @@ public class BikeServicing {
 	
 	private String bikeReleaseStatus = "on-hold";  //OR released
 	
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
 	private ServcingBikeInfo servcingBikeInfo; 
+	
+	@OneToOne(cascade=CascadeType.ALL)
+	private ServicingInvoice servicingInvoice;
 	
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<ServicingChart> servicingChart = new ArrayList();
 	
-	@OneToOne
-	private ServicingInvoice servicingInvoice;
+	
 	
 	
 	//FK of customer @OneToOne

@@ -13,7 +13,9 @@ public class CustomizationInvoice {
 	
 	private double amount;
 	
-	private double customizationGstPercent;
+	private double customizationCGstPercent;
+	
+	private double customizationsGstPercent;
 	
 	private double totalAmount;
 	
@@ -21,13 +23,20 @@ public class CustomizationInvoice {
 	
 	
 	
-	public double getCustomizationGstPercent() {
-		return customizationGstPercent;
-	}
-	public void setCustomizationGstPercent(double customizationGstPercent) {
-		this.customizationGstPercent = customizationGstPercent;
-	}
+	
 
+	public double getCustomizationCGstPercent() {
+		return customizationCGstPercent;
+	}
+	public void setCustomizationCGstPercent(double customizationCGstPercent) {
+		this.customizationCGstPercent = customizationCGstPercent;
+	}
+	public double getCustomizationsGstPercent() {
+		return customizationsGstPercent;
+	}
+	public void setCustomizationsGstPercent(double customizationsGstPercent) {
+		this.customizationsGstPercent = customizationsGstPercent;
+	}
 	public int getCustomizationInvoiceId() {
 		return customizationInvoiceId;
 	}
