@@ -17,15 +17,15 @@
 
 <body class="">
     <section id="content" class="m-t-lg wrapper-md animated fadeInDown">
-        <div class="container aside-xxl"> <a class="navbar-brand block" href="index.html">Order Bike Form</a>
+        <div class="container aside-xxl"> <a class="navbar-brand block" href="index.html">Dead Bike Form</a>
             <section class="panel panel-default m-t-lg bg-white">
-                <header class="panel-heading text-center"> <strong>Order To Company</strong> </header>
+                <header class="panel-heading text-center"> <strong>BikeDeadStock</strong> </header>
                 
-                    <div class="form-group"> <label class="col-sm-3 control-label">OrderDate</label>
+                   <!--  <div class="form-group"> <label class="col-sm-3 control-label">OrderDate</label>
                         <div class="col-sm-3"> <input class="input-sm input-s datepicker-input form-control"
                                 size="16" type="date" value="12-02-2013" data-date-format="dd-mm-yyyy">
                         </div>
-                    </div>
+                    </div> -->
                     <form action="http://flatfull.com/themes/note/index.html" class="panel-body wrapper-lg">
                         <div class="form-group"> <label class="col-sm-3 control-label">BikeModel</label>
                             <select data-required="true" class="form-control m-t">
