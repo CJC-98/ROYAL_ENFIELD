@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class SalesManagerController {
 
-	@RequestMapping(value = "/DashboardPage")
+	@RequestMapping(value = "/DashboardPages")
 	public String SaleDashboardPage(Model model) {
 
 		System.out.println("dashboard hits...........");
