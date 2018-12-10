@@ -22,8 +22,7 @@
                     data-toggle="fullscreen"><img src="${pageContext.request.contextPath}/Resources/Royal Enfield images/RL_logo3.png class="m-r-sm">Royal Enfield</a> <a class="btn btn-link visible-xs"
                     data-toggle="dropdown" data-target=".nav-user"> <i class="fa fa-cog"></i> </a> </div>
             <ul class="nav navbar-nav hidden-xs">
-                <li class="dropdown"> <a href="#" class="dropdown-toggle dker" data-toggle="dropdown"> <i class="fa fa-building-o"></i>
-                        <span class="font-bold">Activity</span> </a>
+                <li class="dropdown"> 
                     <section class="dropdown-menu aside-xl on animated fadeInLeft no-borders lt">
                         <div class="wrapper lter m-t-n-xs"> <a href="#" class="thumb pull-left m-r"> <img src="images/avatar.jpg"
                                     class="img-circle"> </a>
@@ -117,7 +116,7 @@
                                                 <i class="fa fa-dashboard icon">
                                                     <b class="bg-danger"></b> 
                                                 </i> 
-                                                <span>SalesManager Dashboard</span>
+                                                <span>Dashboard</span>
                                             </a>
                                         </li>
                                             
