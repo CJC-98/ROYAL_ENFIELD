@@ -70,9 +70,7 @@
                              <strong>  Description of unread messages will be here.
                                                         //</strong> 
                          <span class="text-muted m-l-sm pull-right"> 
-                           <a href="#comment-form" class="btn btn-default btn-xs">
-                       <i class="text-muted"></i>Reply</a>
-                       <a href="modal.html"></a>
+                           <a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Reply</a>
                       <a href="#" data-toggle="class" class="btn btn-default btn-xs active">
                      <i class="fa fa-star-o text-muted text"></i> 
                      <i class="fa fa-star text-danger text-active"></i>Mark as read </a> 
@@ -282,6 +280,31 @@
 	}
 	 
 </script>
+      <!-- modal starts-->
+ 
+						  <div class="modal fade" id="myModal" role="dialog">
+						    <div class="modal-dialog modal-md">
+						      <div class="modal-content">
+						        <div class="modal-header">
+						        	
+                <header class="panel-heading text-center"> <strong>Reply window</strong> </header>
+                <form action="http://flatfull.com/themes/note/index.html" class="panel-body wrapper-lg">
+                    <div class="form-group"> <label class="control-label">To:</label> <textarea="email" placeholder="Welcome to Reply Window"
+                            class="form-control input-lg"> </div>
+                   <button type="submit" class="btn btn-primary">Send</button>
+                    <button type="submit" class="btn btn-primary">Cancel</button>
+                   
+                </form>
+            </section>
+                                </div>
+						        </div>
+						        
+						      </div>
+						    </div>
+					  	</div>
+					  
+					  	<!-- modal ends -->
+	                
 </body>
 
 </html>
