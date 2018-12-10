@@ -69,7 +69,7 @@ public class HomeController {
 	public String sales(Model model)
 	{ 
 		
-		System.out.println("In sales controller");
+		System.out.println("In sales controller...");
 		model.addAttribute("link","salesManagerDashboard.jsp");
 		//model.addAttribute("link","newdash.jsp");
 	return "SalesManager/salesManagerIndex";
