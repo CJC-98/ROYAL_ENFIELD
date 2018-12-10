@@ -2,9 +2,14 @@ package com.app.extremity.controller;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.app.extremity.iservice.IAdminService;
+import com.app.extremity.iservice.IHomeService;
 
 
 
@@ -14,7 +19,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller    
 public class HomeController {
 	
+	@Autowired
+	IHomeService homeService;
+	
 	static Logger logger = LogManager.getLogger(HomeController.class);
+	@Autowired
+	IAdminService adminService;
+
 	    
 	// All site actions are go through this method
 	    //This is our landing page
@@ -22,27 +33,48 @@ public class HomeController {
 	public String homePage()
 	{ 
 		logger.info("In home controller log");
-		return "Admin/employeeRegistration";
+		return "home";
 	}  
 	 
-	@RequestMapping(value="")
+	@RequestMapping(value="/loginPage")
 	public String loginPage()
 	{ 
 		logger.info("In login controller log");
-
+		
 		return "login";
 	}    
 	
+	/*this method will check login credentials 
+	 * 
+	 * Author: Nilesh Tammewar
+	 * */ 
+	
 	@RequestMapping(value="/SignIn")
-	public String signIn(Model model)    
+	public String signIn(Model model, @RequestParam String email,@RequestParam String password)    
 	{ 
 		
 		logger.info("In SignIn controller log");
-		model.addAttribute("link", "serviceManagerDashboard.jsp");
-		return "ServiceManager/serviceManagerIndex";
+		int i=homeService.checkLoginCredentials(email,password);
+		switch (i) {
+		case 1:
+			model.addAttribute("link", "adminDashboard.jsp");
+			return "Admin/adminIndex";
+			
+		case 2:
+			model.addAttribute("link", "salesManagerDashboard.jsp");
+			return "SalesManager/salesManagerIndex";
+		case 3:
+			model.addAttribute("link", "serviceManagerDashboard.jsp");
+			return "ServiceManager/serviceManagerIndex";
+		default:
+			model.addAttribute("msg", "Wrong Credentials");
+			return "login";
+		}
+		
 		//return "IndivisualUser/indivisualUserIndex";//by default go to client index.jsp  
 
 	}  
+	
 	   
 	
 	@RequestMapping(value="/gotToColorOptionPage")
