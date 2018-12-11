@@ -131,7 +131,7 @@
 								   <div class="modal-header">
 									<h3 style="text-align: center">Compose Notification</h3>
 									 <div class="input-group"> 
-									  <input type="text" class="form-control rounded" placeholder="Search Employee"> 
+									  <input type="text" class="form-control rounded" placeholder="Search Employee" name="empName"> 
 									   <span class="input-group-btn">
 										<button class="btn btn-success" type="button" onclick="showBody()">Search</button>
 										</span> 
