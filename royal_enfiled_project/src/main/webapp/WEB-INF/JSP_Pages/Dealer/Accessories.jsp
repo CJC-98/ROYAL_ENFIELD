@@ -39,7 +39,7 @@
 					</div> 
 					<br class="clr">
 				</div>
-			  </div>
+			   </div>
 			</li>
 			<li class="span3">
 			  <div class="thumbnail">
