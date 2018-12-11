@@ -135,7 +135,7 @@ public class ServiceMangerController {
 		model.addAttribute("outboxList",outboxList);
 		
 		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication("pranay kohad");
-		model.addAttribute("inboxList",inboxList);
+		model.addAttribute("inboxList",inboxList);   
 		
 	
 		model.addAttribute("link","myNotifications.jsp");	
