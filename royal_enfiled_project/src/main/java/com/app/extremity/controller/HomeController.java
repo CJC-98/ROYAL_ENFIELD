@@ -16,7 +16,8 @@ import com.app.extremity.iservice.IHomeService;
   //author: pranay kohad 
    
 //controller
-@Controller    
+@Controller
+@RequestMapping("/")
 public class HomeController {
 	
 	@Autowired

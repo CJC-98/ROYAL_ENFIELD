@@ -29,7 +29,7 @@
 				</header>
 				<div class="row">
 					<div class="col-md-offset-4">
-						<small>${msg}</small>
+						<small class="alert-danger">${msg}</small>
 					</div>
 				</div>
 

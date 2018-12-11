@@ -36,6 +36,16 @@ public class AdminController {
 		return null;
 	}
 	
+	/*this method is used for Employee Registration Page
+	 * 
+	 *  author: Nilesh Tammewar
+	 * */
+	
+	@RequestMapping(value="/employeeRegistration")
+	public String toEmployeeRegistrationPage() {
+		return "Admin/employeeRegistration";
+	}
+	
 	/*this method is used to save Employee Details
 	 * 
 	 *  author: Nilesh Tammewar
@@ -45,7 +55,10 @@ public class AdminController {
 	public String createEmployee(@ModelAttribute EmployeeDetails employeeDetails,@RequestParam("profilePic") MultipartFile profilePic,Model model) {
 		
 		adminService.saveEmployee(employeeDetails,profilePic);
-		return "login";
+		return "redirect:/loginPage";
 	}
+	
+	
+	
 	
 }
