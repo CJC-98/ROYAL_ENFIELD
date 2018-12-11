@@ -29,9 +29,11 @@ public class HomeController {
 	} 
 	
 	@RequestMapping(value="/SignIn")
-	public String signIn()    
+	public String signIn(Model model)    
 	{ 
-		
+		System.out.println("dashboard hits...........");
+		model.addAttribute("link","dealerDashboard.jsp");
+	
 		System.out.println("In SignIn controller");
 		return "Dealer/dealerIndex";//by default go to client index.jsp  
 	}  

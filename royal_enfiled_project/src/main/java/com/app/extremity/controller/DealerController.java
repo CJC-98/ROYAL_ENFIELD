@@ -31,13 +31,7 @@ import servicei.Servicei;*/
 public class DealerController {
 	
 	
-	@RequestMapping(value="/DealerDashboardPage")
-	public String ServicesDashboardPage(Model model){
-		
-		System.out.println("dashboard hits...........");
-		model.addAttribute("link","dealerDashboard.jsp");
-		return "Dealer/dealerIndex";
-	}
+	
 	
 	@RequestMapping(value="/NewBike1")
 	public String NewBike(Model model){
