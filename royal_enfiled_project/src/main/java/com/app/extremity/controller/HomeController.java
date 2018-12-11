@@ -1,10 +1,17 @@
 package com.app.extremity.controller;
 
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.app.extremity.iservice.IDealerService;
+import com.app.extremity.model.Country;
 
 
 
@@ -13,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 //controller
 @Controller    
 public class HomeController {
+	@Autowired IDealerService service;
 	
 	static Logger logger = LogManager.getLogger(HomeController.class);
 	    
@@ -25,13 +33,25 @@ public class HomeController {
 		return "home";
 	}  
 	 
-	@RequestMapping(value="")
+	
+	@RequestMapping(value="/loginPage")
 	public String loginPage()
 	{ 
-		logger.info("In login controller log");
+		System.out.println("In login controller");
 
 		return "login";
-	}    
+	} 
+	@RequestMapping("/signup")
+	public String reg(ModelMap map)
+	{
+		System.out.println("in registration");
+		List<Country>list= service.getAllcountry();
+	    map.put("data", list);
+
+		return "signup";
+	}
+	
+	
 	
 	@RequestMapping(value="/SignIn")
 	public String signIn(Model model)    
@@ -43,7 +63,8 @@ public class HomeController {
 		return "IndivisualUser/indivisualUserIndex";//by default go to client index.jsp  
 
 	}  
-	   
+	
+	
 	
 	@RequestMapping(value="/gotToColorOptionPage")
 	public String gotToColorOptionPage()    
