@@ -7,25 +7,26 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="ServcingBikeInfoTable")
-public class ServcingBikeInfo {
+@Table(name="CustomizationBikeInfoTable")
+public class CustomizationBikeInfo {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int ServcingBikeInfoId;
+	private int customizationBikeInfoId;
 	
+	public int getCustomizationBikeInfoId() {
+		return customizationBikeInfoId;
+	}
+	public void setCustomizationBikeInfoId(int customizationBikeInfoId) {
+		this.customizationBikeInfoId = customizationBikeInfoId;
+	}
 	private String chasisNumber;
 	private String plateNumber;
 	
 	
 	
 	
-	public int getServcingBikeInfoId() {
-		return ServcingBikeInfoId;
-	}
-	public void setServcingBikeInfoId(int servcingBikeInfoId) {
-		ServcingBikeInfoId = servcingBikeInfoId;
-	}
+	
 	public String getChasisNumber() {
 		return chasisNumber;
 	}

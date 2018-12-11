@@ -49,7 +49,8 @@
 								</tr>
 							</thead>
 
-							<tbody></table>
+							<tbody>
+						</table>
 					</section>
 				</div>
 			</section>
