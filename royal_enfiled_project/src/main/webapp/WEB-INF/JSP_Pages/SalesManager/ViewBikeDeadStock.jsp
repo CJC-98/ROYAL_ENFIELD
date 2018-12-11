@@ -28,7 +28,7 @@
 				<div class="m-b-md">
 					<h3 class="m-b-none"
 						style="text-align: center; font-size: 30pxl; font-weight: bold;">View
-						ViewSoldAccessories</h3>
+						BikeDeadStock</h3>
 				</div>
 
 				<!-- first table starts -->
@@ -37,24 +37,19 @@
 						<table class="table table-striped m-b-none b-a">
 							<thead>
 								<tr>
-									<th style="text-align: center">VSAId</th>
-									<th style="text-align: center">AddingDate</th>
-									<th style="text-align: center">BikeModel</th>
+									<th style="text-align: center">VBDSId</th>
+									<th style="text-align: center">Adding Date</th>
+									<th style="text-align: center">ModelName</th>
 									<th style="text-align: center">EngineType</th>
 									<th style="text-align: center">BikeColor</th>
-									<th style="text-align: center">PartName</th>
-									<th style="text-align: center">PartPrices</th>
-									<th style="text-align: center">WithGstPartPrices</th>
-									<th style="text-align: center">PartQuantitys</th>
-									<th style="text-align: center"></th>
+									<th style="text-align: center">BikeWheel</th>
+									<th style="text-align: center">ShowroomPrice</th>
+									<th style="text-align: center">OnRoadPrice</th>
+									<th style="text-align: center">EngineStartingType</th>
 								</tr>
 							</thead>
 
-							<tbody>
-
-							</tbody>
-
-						</table>
+							<tbody></table>
 					</section>
 				</div>
 			</section>

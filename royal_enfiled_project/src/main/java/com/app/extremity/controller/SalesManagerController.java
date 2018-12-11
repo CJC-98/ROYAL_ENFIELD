@@ -166,7 +166,7 @@ public class SalesManagerController {
 	public String ViewDeadStockAccessories(Model model) {
 
 		System.out.println("in order");
-		model.addAttribute("link", "ViewDeadStockAccessories.jsp");
+		model.addAttribute("link", "ViewAccessoriesDeadStock.jsp");
 		return "SalesManager/salesManagerIndex";
 
 	}
@@ -175,7 +175,7 @@ public class SalesManagerController {
 	public String ViewDeadStockBike(Model model) {
 
 		System.out.println("in order");
-		model.addAttribute("link", "ViewDeadStockBike.jsp");
+		model.addAttribute("link", "ViewBikeDeadStock.jsp");
 		return "SalesManager/salesManagerIndex";
 
 	}
