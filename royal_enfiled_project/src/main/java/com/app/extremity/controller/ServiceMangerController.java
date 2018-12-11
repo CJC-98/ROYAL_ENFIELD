@@ -1,7 +1,12 @@
 package com.app.extremity.controller;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.management.Notification;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -11,9 +16,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.app.extremity.idao.BikeServicingIDao;
+import com.app.extremity.iservice.NotificationInterface;
 import com.app.extremity.iservice.ServiceManagerInterface;
 import com.app.extremity.model.BikeServicing;
 import com.app.extremity.model.Color;
+import com.app.extremity.model.Notfication;
 import com.app.extremity.model.ServcingBikeInfo;
 import com.app.extremity.model.ServicingChart;
 import com.app.extremity.model.ServicingInvoice;
@@ -32,13 +39,12 @@ public class ServiceMangerController {
 	@Autowired
 	ServiceManagerInterface serviceManagerInterface;
 	
+	@Autowired
+	NotificationInterface notificationInterface;
+	
+	
 	@RequestMapping(value="/DashboardPage")
 	public String ServicesDashboardPage(Model model){
-		 
-		
-		  
-		  
-		 
 		
 		
 		logger.info("dashboard hits........... log");
@@ -114,31 +120,6 @@ public class ServiceMangerController {
 	@RequestMapping(value="/CustomizationInvoicePage")
 	public String CustomizationInvoicePage(Model model){
 
-		
-	
-		Color c1 = new Color();
-		c1.setColorId("C1");
-		c1.setColorName("green");
-		
-		Color c2 = new Color();
-		c2.setColorId("C2");
-		c2.setColorName("red");
-		
-		Color c3 = new Color();
-		c3.setColorId("c3");
-		c3.setColorName("black");
-		
-		Color c4 = new Color();
-		c4.setColorId("C4");
-		c4.setColorName("blue");
-		
-		List<String> colors = new ArrayList();  
-		colors.add("A");
-		colors.add("B");
-		colors.add("C");
-		colors.add("D");
-		
-
 		model.addAttribute("link","customizationInvoice.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
@@ -147,11 +128,21 @@ public class ServiceMangerController {
 	public String MyNotificationsPage(Model model){
 		
 		System.out.println("go to notification page...............");
-		model.addAttribute("link","myNotifications.jsp");
+		
+//		notificationInterface.saveNotfication(null);  
+		
+		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("pranay kohad");
+		model.addAttribute("outboxList",outboxList);
+		
+		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication("pranay kohad");
+		model.addAttribute("inboxList",inboxList);
+		
+	
+		model.addAttribute("link","myNotifications.jsp");	
 		return "ServiceManager/serviceManagerIndex";
 	}
 	
-	
+
 	
 	
 	
