@@ -2,6 +2,9 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
+
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <head>
 <meta charset="utf-8" />
     <title>Account | Dashboard</title>
@@ -31,7 +34,8 @@
                                             <i class="fa fa-circle fa-stack-2x text-info"></i> <i class="fa fa-male fa-stack-1x text-white"></i>
                                         </span> <a class="clear" href="#"> 
                                         <span class="h3 block m-t-xs"><strong>52,000</strong></span>
-                                        <small class="text-muted text-uc">New robots</small> </a> 
+                                        <small class="text-muted text-uc">New robots</small> </a>
+                                         
                                    </div>
                                     <div class="col-sm-6 col-md-3 padder-v b-r b-light lt"> 
                                     	<span class="fa-stack fa-2x pull-left m-r-sm">
@@ -75,16 +79,20 @@
                             </section>      
                             
                             
+                            <c:set var="lg" value="${lg}" />
+                            <c:set var="lg1" value="${lg1}" />
+                            <c:set var="per" value="${100}" />
+                            <c:set var="Avg" value="${(lg1/lg)*per}" />
                             
                             <div class="row">
                                 <div class="col-lg-4">
                                     <section class="panel panel-default">
-                                        <header class="panel-heading"> Conversion </header>
+                                        <header class="panel-heading"> Sold Bike </header>
                                         <div class="panel-body text-center">
-                                            <h4>62.5<small> hrs</small></h4> <small class="text-muted block">Updated at
-                                                2 minutes ago</small>
+                                            <h4>${Avg} % <small>Bikes are Sold..</small></h4> <small class="text-muted block">
+                                                 </small>
                                             <div class="inline">
-                                                <div class="easypiechart" data-percent="75" data-line-width="16"
+                                                <div class="easypiechart" data-percent=${Avg} data-line-width="16"
 	                                                 data-rotate="0" 
 	                                                 data-scale-Color="false" data-animate="2000"
                                                      data-loop="false" data-size="188"> <span class="h2 step"></span>%

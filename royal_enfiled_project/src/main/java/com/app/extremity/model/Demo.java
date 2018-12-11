@@ -102,14 +102,7 @@ public class Demo {
 		this.invoiceTotal = invoiceTotal;
 	}
 
-	public Address getAddress() {
-		return address;
-	}
-
-	public void setAddress(Address address) {
-		this.address = address;
-	}
-
+	
 	private Date date;
 	private Double unitCost;
 	private int qty;
@@ -120,9 +113,7 @@ public class Demo {
 	private Double amountdue;
 	private Double invoiceTotal;
 	
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="addrId")
-	private Address address;
+	
 
 	
 	

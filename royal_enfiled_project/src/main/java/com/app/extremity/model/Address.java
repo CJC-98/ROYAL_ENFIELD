@@ -19,9 +19,7 @@ public class Address {
 	private String Country;
 	private int pinCode;
 	
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="id")
-	private Demo demo;
+	
 
 	public int getAddrId() {
 		return addrId;
@@ -63,13 +61,6 @@ public class Address {
 		this.pinCode = pinCode;
 	}
 
-	public Demo getDemo() {
-		return demo;
-	}
-
-	public void setDemo(Demo demo) {
-		this.demo = demo;
-	}
 	
 	
 	

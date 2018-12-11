@@ -37,7 +37,7 @@ public class AccountController {
 		for(Demo d : list) {
 			System.out.println("in for loop");
 			System.out.println(d.getName());
-			System.out.println("City--" + d.getAddress().getCity() + " State--" + d.getAddress().getState());
+			//System.out.println("City--" + d.getAddress().getCity() + " State--" + d.getAddress().getState());
 			System.out.println(d.getId()+"   qty-"+d.getQty()+"  unitcost-"+d.getUnitCost()+"  total-"+d.getTotal());
 		}
 		
@@ -47,7 +47,6 @@ public class AccountController {
 	} 
 	
 	
-	
-	
+
 	
 }
