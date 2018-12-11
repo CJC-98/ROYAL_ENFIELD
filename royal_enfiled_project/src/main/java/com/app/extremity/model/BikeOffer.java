@@ -10,12 +10,12 @@ public class BikeOffer
 {
 @Id
 //@GeneratedValue(strategy=GenerationType.IDENTITY)
-private String bikeOfferId;
+private int bikeOfferId;
 
-public String getBikeOfferId() {
+public int getBikeOfferId() {
 	return bikeOfferId;
 }
-public void setBikeOfferId(String bikeOfferId) {
+public void setBikeOfferId(int bikeOfferId) {
 	this.bikeOfferId = bikeOfferId;
 }
 private String offerName;
