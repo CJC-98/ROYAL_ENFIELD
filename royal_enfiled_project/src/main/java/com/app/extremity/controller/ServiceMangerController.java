@@ -66,6 +66,7 @@ public class ServiceMangerController {
 	@RequestMapping(value="/AvailableServicesPage")
 	public String AvailableServicesPagePage(Model model){
 		
+		System.out.println("In AvailableServices controller");
 		model.addAttribute("link","availableServicing.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
