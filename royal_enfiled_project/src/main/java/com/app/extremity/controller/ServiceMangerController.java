@@ -1,4 +1,4 @@
-package com.app.extremity.controller;
+ package com.app.extremity.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -99,7 +99,7 @@ public class ServiceMangerController {
 
 	@RequestMapping(value="/ApprovedServicesPage")
 	public String ApprovedServicesgPage(Model model){
-		
+		 
 		
 		System.out.println("approved service htis..................");
 		model.addAttribute("link","approvedServices.jsp");
