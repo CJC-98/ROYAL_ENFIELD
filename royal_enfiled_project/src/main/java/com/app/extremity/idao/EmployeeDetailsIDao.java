@@ -6,4 +6,6 @@ import com.app.extremity.model.EmployeeDetails;
 
 public interface EmployeeDetailsIDao extends CrudRepository<EmployeeDetails	, String>{
 
+	EmployeeDetails findOneByEmployeeEmailAndEmployeePassword(String email, String password);
+
 }
