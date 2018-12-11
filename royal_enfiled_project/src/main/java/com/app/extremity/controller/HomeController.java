@@ -71,8 +71,6 @@ public class HomeController {
 			model.addAttribute("msg", "Wrong Credentials");
 			return "login";
 		}
-		
-		//return "IndivisualUser/indivisualUserIndex";//by default go to client index.jsp  
 
 	}  
 	
