@@ -22,7 +22,7 @@ public class HomeController {
 	public String homePage()
 	{ 
 		logger.info("In home controller log");
-		return "Admin/employeeRegistration";
+		return "home";
 	}  
 	 
 	@RequestMapping(value="")
