@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/css/font.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/css/app.v1.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--[if lt IE 9]> <script src="js/ie/html5shiv.js"></script> <script src="js/ie/respond.min.js"></script> <script src="js/ie/excanvas.js"></script> <![endif]-->
 </head>
 
@@ -18,7 +19,7 @@
         <header class="bg-dark dk header navbar navbar-fixed-top-xs">
             <div class="navbar-header aside-md"> <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open"
                     data-target="#nav,html"> <i class="fa fa-bars"></i> </a> <a href="#" class="navbar-brand"
-                    data-toggle="fullscreen"><img src="${pageContext.request.contextPath}/Resources/notebook UI/images/logo.png" class="m-r-sm">Notebook</a> <a class="btn btn-link visible-xs"
+                    data-toggle="fullscreen"><img src="${pageContext.request.contextPath}/Resources/Royal Enfield images/RL_logo3.png class="m-r-sm">Royal Enfield</a> <a class="btn btn-link visible-xs"
                     data-toggle="dropdown" data-target=".nav-user"> <i class="fa fa-cog"></i> </a> </div>
             <ul class="nav navbar-nav hidden-xs">
                 <li class="dropdown"> <a href="#" class="dropdown-toggle dker" data-toggle="dropdown"> <i class="fa fa-building-o"></i>
@@ -101,137 +102,73 @@
         <section>
             <section class="hbox stretch">
                 <!-- .aside -->
-                <aside class="bg-dark lter aside-md hidden-print hidden-xs" id="nav">
+                 <aside class="bg-dark lter aside-md hidden-print hidden-xs" id="nav">
                     <section class="vbox">
-                        <header class="header bg-primary lter text-center clearfix">
-                            <div class="btn-group"> <button type="button" class="btn btn-sm btn-dark btn-icon" title="New project"><i
-                                        class="fa fa-plus"></i></button>
-                                <div class="btn-group hidden-nav-xs"> <button type="button" class="btn btn-sm btn-primary dropdown-toggle"
-                                        data-toggle="dropdown"> Switch Project <span class="caret"></span> </button>
-                                    <ul class="dropdown-menu text-left">
-                                        <li><a href="#">Project</a></li>
-                                        <li><a href="#">Another Project</a></li>
-                                        <li><a href="#">More Projects</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </header>
+                        
                         <section class="w-f scrollable">
                             <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0"
                                 data-size="5px" data-color="#333333">
                                 <!-- nav -->
                                 <nav class="nav-primary hidden-xs">
                                     <ul class="nav">
-                                        <li class="active"> <a href="index.html" class="active"> <i class="fa fa-dashboard icon">
-                                                    <b class="bg-danger"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i>
-                                                    <i class="fa fa-angle-up text-active"></i> </span> <span>Workset</span>
+                                        
+                                        <li> 
+                                            <a href="DealerDashboardPage"> 
+                                                <i class="fa fa-dashboard icon">
+                                                    <b class="bg-danger"></b> 
+                                                </i> 
+                                                <span>Dealer Dashboard</span>
                                             </a>
-                                            <ul class="nav lt">
-                                                <li class="active"> <a href="index.html" class="active"> <i class="fa fa-angle-right"></i>
-                                                        <span>Dashboard v1</span> </a> </li>
-                                                <li> <a href="dashboard.html"> <i class="fa fa-angle-right"></i> <span>Dashboard
-                                                            v2</span> </a> </li>
-                                            </ul>
                                         </li>
-                                        <li> <a href="#layout"> <i class="fa fa-columns icon"> <b class="bg-warning"></b>
-                                                </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i
-                                                        class="fa fa-angle-up text-active"></i> </span> <span>Layouts</span>
+                                        
+                                        <li> 
+                                            <a href="NewBike1"> 
+                                                <i class="fa fa-motorcycle"> 
+                                                    <b class="bg-warning dker"></b>
+                                                </i>  
+                                                <span>New Bike</span>
                                             </a>
-                                            <ul class="nav lt">
-                                                <li> <a href="layout-c.html"> <i class="fa fa-angle-right"></i> <span>Color
-                                                            option</span> </a> </li>
-                                                <li> <a href="layout-r.html"> <i class="fa fa-angle-right"></i> <span>Right
-                                                            nav</span> </a> </li>
-                                                <li> <a href="layout-h.html"> <i class="fa fa-angle-right"></i> <span>Hbox
-                                                            Layout</span> </a> </li>
-                                                <li> <a href="layout-boxed.html"> <i class="fa fa-angle-right"></i>
-                                                        <span>Boxed Layout</span> </a> </li>
-                                                <li> <a href="layout-fluid.html"> <i class="fa fa-angle-right"></i>
-                                                        <span>Fluid Layout</span> </a> </li>
-                                            </ul>
                                         </li>
-                                        <li> <a href="#uikit"> <i class="fa fa-flask icon"> <b class="bg-success"></b>
-                                                </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i
-                                                        class="fa fa-angle-up text-active"></i> </span> <span>UI kit</span>
+                                        
+                                        <li> 
+                                            <a href="OldBike"> 
+                                                <i class="fa fa-motorcycle"> 
+                                                    <b class="bg-warning"></b> 
+                                                </i> 
+                                                <span>Old Bike</span>
                                             </a>
-                                            <ul class="nav lt">
-                                                <li> <a href="buttons.html"> <i class="fa fa-angle-right"></i> <span>Buttons</span>
-                                                    </a> </li>
-                                                <li> <a href="icons.html"> <b class="badge bg-info pull-right">369</b>
-                                                        <i class="fa fa-angle-right"></i> <span>Icons</span> </a> </li>
-                                                <li> <a href="grid.html"> <i class="fa fa-angle-right"></i> <span>Grid</span>
-                                                    </a> </li>
-                                                <li> <a href="widgets.html"> <b class="badge pull-right">8</b> <i class="fa fa-angle-right"></i>
-                                                        <span>Widgets</span> </a> </li>
-                                                <li> <a href="components.html"> <i class="fa fa-angle-right"></i> <span>Components</span>
-                                                    </a> </li>
-                                                <li> <a href="list.html"> <i class="fa fa-angle-right"></i> <span>List
-                                                            group</span> </a> </li>
-                                                <li> <a href="#table"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i>
-                                                        <span>Table</span> </a>
-                                                    <ul class="nav bg">
-                                                        <li> <a href="table-static.html"> <i class="fa fa-angle-right"></i>
-                                                                <span>Table static</span> </a> </li>
-                                                        <li> <a href="table-datatable.html"> <i class="fa fa-angle-right"></i>
-                                                                <span>Datatable</span> </a> </li>
-                                                        <li> <a href="table-datagrid.html"> <i class="fa fa-angle-right"></i>
-                                                                <span>Datagrid</span> </a> </li>
-                                                    </ul>
-                                                </li>
-                                                <li> <a href="#form"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i>
-                                                        <span>Form</span> </a>
-                                                    <ul class="nav bg">
-                                                        <li> <a href="form-elements.html"> <i class="fa fa-angle-right"></i>
-                                                                <span>Form elements</span> </a> </li>
-                                                        <li> <a href="form-validation.html"> <i class="fa fa-angle-right"></i>
-                                                                <span>Form validation</span> </a> </li>
-                                                        <li> <a href="form-wizard.html"> <i class="fa fa-angle-right"></i>
-                                                                <span>Form wizard</span> </a> </li>
-                                                    </ul>
-                                                </li>
-                                                <li> <a href="chart.html"> <i class="fa fa-angle-right"></i> <span>Chart</span>
-                                                    </a> </li>
-                                                <li> <a href="fullcalendar.html"> <i class="fa fa-angle-right"></i>
-                                                        <span>Fullcalendar</span> </a> </li>
-                                                <li> <a href="portlet.html"> <i class="fa fa-angle-right"></i> <span>Portlet</span>
-                                                    </a> </li>
-                                                <li> <a href="timeline.html"> <i class="fa fa-angle-right"></i> <span>Timeline</span>
-                                                    </a> </li>
-                                            </ul>
                                         </li>
-                                        <li> <a href="#pages"> <i class="fa fa-file-text icon"> <b class="bg-primary"></b>
-                                                </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i
-                                                        class="fa fa-angle-up text-active"></i> </span> <span>Pages</span>
+                                        
+                                        <li> 
+                                            <a href="CustmizeBike"> 
+                                                <i class="fa fa-wrench icon"> 
+                                                    <b class="bg-primary dker"></b>
+                                                </i> 
+                                                <span>Custmize Bike</span>
                                             </a>
-                                            <ul class="nav lt">
-                                                <li> <a href="gallery.html"> <i class="fa fa-angle-right"></i> <span>Gallery</span>
-                                                    </a> </li>
-                                                <li> <a href="profile.html"> <i class="fa fa-angle-right"></i> <span>Profile</span>
-                                                    </a> </li>
-                                                <li> <a href="invoice.html"> <i class="fa fa-angle-right"></i> <span>Invoice</span>
-                                                    </a> </li>
-                                                <li> <a href="intro.html"> <i class="fa fa-angle-right"></i> <span>Intro</span>
-                                                    </a> </li>
-                                                <li> <a href="master.html"> <i class="fa fa-angle-right"></i> <span>Master</span>
-                                                    </a> </li>
-                                                <li> <a href="gmap.html"> <i class="fa fa-angle-right"></i> <span>Google
-                                                            Map</span> </a> </li>
-                                                <li> <a href="jvectormap.html"> <i class="fa fa-angle-right"></i> <span>Vector
-                                                            Map</span> </a> </li>
-                                                <li> <a href="signin.html"> <i class="fa fa-angle-right"></i> <span>Signin</span>
-                                                    </a> </li>
-                                                <li> <a href="signup.html"> <i class="fa fa-angle-right"></i> <span>Signup</span>
-                                                    </a> </li>
-                                                <li> <a href="404.html"> <i class="fa fa-angle-right"></i> <span>404</span>
-                                                    </a> </li>
-                                            </ul>
                                         </li>
-                                        <li> <a href="mail.html"> <b class="badge bg-danger pull-right">3</b> <i class="fa fa-envelope-o icon">
-                                                    <b class="bg-primary dker"></b> </i> <span>Message</span> </a> </li>
-                                        <li> <a href="notebook.html"> <i class="fa fa-pencil icon"> <b class="bg-info"></b>
-                                                </i> <span>Notes</span> </a> </li>
+                                        
+                                        <li> 
+                                            <a href="Accessories"> 
+                                                <i class="fa fa-wrench icon">
+                                                    <b class="bg-primary"></b> 
+                                                </i> 
+                                                <span>Accessories</span> 
+                                            </a> 
+                                        </li>
+                                        
+                                        <li> 
+                                            <a href="Print"> 
+                                                <i class="fa fa-print"> 
+                                                    <b class="bg-success dker"></b>
+                                                </i> 
+                                                <span>Print</span> 
+                                            </a> 
+                                       </li>
+                                       
+                                       
                                     </ul>
-                                </nav> <!-- / nav -->
+                                </nav><!-- / nav -->
                             </div>
                         </section>
                         <footer class="footer lt hidden-xs b-t b-dark">
@@ -269,7 +206,7 @@
                 </aside> <!-- /.aside -->
                 
                 <!-- dashboard starts -->
-                	 <jsp:include page="dealerDashboard.jsp"/>
+                	 <jsp:include page="${link}"/>
                 <!-- dashboard ends -->
                 
                 
