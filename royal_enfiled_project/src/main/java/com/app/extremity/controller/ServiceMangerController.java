@@ -12,8 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.app.extremity.idao.BikeServicingIDao;
 import com.app.extremity.iservice.ServiceManagerInterface;
+import com.app.extremity.model.BikeCustomization;
 import com.app.extremity.model.BikeServicing;
 import com.app.extremity.model.Color;
+import com.app.extremity.model.CustomizationBikeInfo;
+import com.app.extremity.model.CustomizationChart;
+import com.app.extremity.model.CustomizationInvoice;
 import com.app.extremity.model.ServcingBikeInfo;
 import com.app.extremity.model.ServicingChart;
 import com.app.extremity.model.ServicingInvoice;
@@ -87,15 +91,72 @@ public class ServiceMangerController {
 		
 		serviceManagerInterface.saveBikeServicing(bs1);
 		
-
-		
-		
-		
-		
-		logger.info("dashboard hits........... log");
+      /*  logger.info("dashboard hits........... log");
 		model.addAttribute("link","serviceManagerDashboard.jsp");
 		return "ServiceManager/serviceManagerIndex";
+	}*/
+		/*@RequestMapping(value="/DashboardPage")
+		public String CustomizationDashboardPage(Model model)
+		{
+			 */
+		
+		CustomizationBikeInfo cbi = new CustomizationBikeInfo();
+		cbi.setChasisNumber("AJD7945954");
+		cbi.setPlateNumber("MH-14-HF-7456");
+		
+		CustomizationInvoice ci = new CustomizationInvoice();
+		ci.setAmount(8500);
+		ci.setCustomizationCGstPercent(4);
+		ci.setCustomizationsGstPercent(4);
+		ci.setTotalAmount(11500);
+		 
+		CustomizationChart cc1 = new CustomizationChart();
+		cc1.setPart("Engine");
+		cc1.setCost(150);
+		   
+		CustomizationChart cc2 = new CustomizationChart();
+		cc2.setPart("Brake");
+		cc2.setCost(1500);
+		
+		CustomizationChart cc3 = new CustomizationChart();
+		cc2.setPart("Seat");
+		cc2.setCost(500);
+		
+		CustomizationChart cc4 = new CustomizationChart();
+		cc2.setPart("Headlight");
+		cc2.setCost(2500);
+		
+	
+		
+		BikeCustomization bc1 = new BikeCustomization();
+		
+		bc1.setAppointmentDate("02/18/2018");
+		bc1.setCustomizationBikeInfo(cbi);
+		
+		bc1.getCustomizationChart().add(cc1);
+		bc1.getCustomizationChart().add(cc2);
+		bc1.getCustomizationChart().add(cc3);
+		bc1.getCustomizationChart().add(cc4);	
+		
+		
+		cc1.setBikeCustomization(bc1);
+		cc1.setBikeCustomization(bc1);
+		cc1.setBikeCustomization(bc1);
+		cc1.setBikeCustomization(bc1);
+		
+		bc1.setCustomizationInvoice(ci);
+		
+		String nextCustomizeId = serviceManagerInterface.getNextBikeCustomizationId();
+		
+		bc1.setBikeCustomizationId(nextCustomizeId);
+		
+		serviceManagerInterface.saveBikeCustomization(bc1);
+		
+		 logger.info("dashboard hits........... log");
+			model.addAttribute("link","serviceManagerDashboard.jsp");
+			return "ServiceManager/serviceManagerIndex";
 	}
+
 
 	@RequestMapping(value="/ApprovedServicesPage")
 	public String ApprovedServicesgPage(Model model){
