@@ -37,10 +37,10 @@ public class HomeController {
 	public String signIn(Model model)    
 	{ 
 		
-		logger.info("In SignIn controller log");
-		model.addAttribute("link", "serviceManagerDashboard.jsp");
-		return "ServiceManager/serviceManagerIndex";
-		//return "IndivisualUser/indivisualUserIndex";//by default go to client index.jsp  
+//		logger.info("In SignIn controller log");
+//		model.addAttribute("link", "serviceManagerDashboard.jsp");
+//		return "ServiceManager/serviceManagerIndex";
+		return "IndivisualUser/indivisualUserIndex";//by default go to client index.jsp  
 
 	}  
 	   
