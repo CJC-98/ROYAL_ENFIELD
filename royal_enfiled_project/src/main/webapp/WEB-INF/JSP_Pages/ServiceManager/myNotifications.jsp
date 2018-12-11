@@ -17,6 +17,24 @@
 
 <body>
 
+	<script>
+		function searchEmployee(){
+			
+			var empName = document.getElementById("empName").value;
+			
+			if(empName==""){
+				alert("Please enter employee name!!!");
+			}else{
+				var req = new XMLHttpRequest();
+				
+				req.open("GET","searchEmployee?empName="+empName,true);
+				req.send();
+			
+			}
+			
+			}
+	</script>
+
 	<section id="content"  class="bg-light lter">
 	        <section class="vbox">
 	            <section class="scrollable padder">                                               
@@ -131,9 +149,9 @@
 								   <div class="modal-header">
 									<h3 style="text-align: center">Compose Notification</h3>
 									 <div class="input-group"> 
-									  <input type="text" class="form-control rounded" placeholder="Search Employee" name="empName"> 
+									  <input type="text" class="form-control rounded" placeholder="Search Employee" id="empName"> 
 									   <span class="input-group-btn">
-										<button class="btn btn-success" type="button" onclick="showBody()">Search</button>
+										<button class="btn btn-success" type="button" onclick="searchEmployee()">Search</button>
 										</span> 
 									 </div>  
 									</div>

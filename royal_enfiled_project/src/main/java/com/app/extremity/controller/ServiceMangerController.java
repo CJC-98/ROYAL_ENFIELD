@@ -1,5 +1,6 @@
  package com.app.extremity.controller;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -7,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.management.Notification;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -14,6 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.app.extremity.idao.BikeServicingIDao;
 import com.app.extremity.iservice.NotificationInterface;
@@ -143,7 +147,13 @@ public class ServiceMangerController {
 	}
 	
 
-	
+	@RequestMapping(value="/searchEmployee")    
+	public @ResponseBody  String serachEmployee(@RequestParam String empName,HttpServletResponse response) throws IOException {
+		System.out.println("in employee controller");
+		
+		
+		return  null;		
+	}
 	
 	
 }
