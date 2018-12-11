@@ -35,61 +35,10 @@ public class ServiceMangerController {
 	@RequestMapping(value="/DashboardPage")
 	public String ServicesDashboardPage(Model model){
 		 
-		ServcingBikeInfo sbi = new ServcingBikeInfo();
-		sbi.setChasisNumber("AJD7945954");
-		sbi.setPlateNumber("MH-14-HF-7456");
 		
-		ServicingInvoice si = new ServicingInvoice();
-		si.setAmount(8500);
-		si.setServiceCGstPercent(4);
-		si.setServiceSGstPercent(4);
-		si.setTotalAmount(11500);
+		  
+		  
 		 
-		ServicingChart sc1 = new ServicingChart();
-		sc1.setWork("engine change");
-		sc1.setCost(150);
-		   
-		ServicingChart sc2 = new ServicingChart();
-		sc2.setWork("brake change");
-		sc2.setCost(1500);
-		
-		ServicingChart sc3 = new ServicingChart();
-		sc3.setWork("brake oil change");
-		sc3.setCost(2000);
-		
-		ServicingChart sc4 = new ServicingChart();
-		sc4.setWork("engine tuning");
-		sc4.setCost(4500);
-		
-	
-		
-		BikeServicing bs1 = new BikeServicing();
-		
-		bs1.setAppointmentDate("02/18/2018");
-		bs1.setServcingBikeInfo(sbi);
-		
-		bs1.getServicingChart().add(sc1);
-		bs1.getServicingChart().add(sc2);
-		bs1.getServicingChart().add(sc3);
-		bs1.getServicingChart().add(sc4);	
-		
-		
-		sc1.setBikeServicing(bs1);
-		sc2.setBikeServicing(bs1);
-		sc3.setBikeServicing(bs1);
-		sc4.setBikeServicing(bs1);
-		
-		bs1.setServicingInvoice(si);
-		
-		String nextServiceId = serviceManagerInterface.getNextBikeServicingId();
-		
-		bs1.setBikeServicingId(nextServiceId);
-		
-		serviceManagerInterface.saveBikeServicing(bs1);
-		
-
-		
-		
 		
 		
 		logger.info("dashboard hits........... log");
