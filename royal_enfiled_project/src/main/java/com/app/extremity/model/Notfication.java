@@ -14,16 +14,29 @@ public class Notfication {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int notficationId;
 	
-	private String fromId;
+	private String senderName;
 	
-	private String toId;
+	private String senderImg;
+	
+	private String senderPost;
+	
+	private String reciverName;
+	
+	private String reciverImg;
+	
+	private String reciverPost;
 	
 	private String message;
 	
 	private String sendDate;
 	
 	private String sendTime;
-
+	
+	private boolean markAsRead = false;  //OR true
+	
+	
+	
+	
 	
 	
 	public String getSendTime() {
@@ -32,6 +45,54 @@ public class Notfication {
 
 	public void setSendTime(String sendTime) {
 		this.sendTime = sendTime;
+	}
+	
+	public String getSenderName() {
+		return senderName;
+	}
+
+	public void setSenderName(String senderName) {
+		this.senderName = senderName;
+	}
+
+	public String getSenderImg() {
+		return senderImg;
+	}
+
+	public void setSenderImg(String senderImg) {
+		this.senderImg = senderImg;
+	}
+
+	public String getSenderPost() {
+		return senderPost;
+	}
+
+	public void setSenderPost(String senderPost) {
+		this.senderPost = senderPost;
+	}
+
+	public String getReciverName() {
+		return reciverName;
+	}
+
+	public void setReciverName(String reciverName) {
+		this.reciverName = reciverName;
+	}
+
+	public String getReciverImg() {
+		return reciverImg;
+	}
+
+	public void setReciverImg(String reciverImg) {
+		this.reciverImg = reciverImg;
+	}
+
+	public String getReciverPost() {
+		return reciverPost;
+	}
+
+	public void setReciverPost(String reciverPost) {
+		this.reciverPost = reciverPost;
 	}
 
 	public String getSendDate() {
@@ -42,26 +103,12 @@ public class Notfication {
 		this.sendDate = sendDate;
 	}
 
-	private boolean markAsRead = false;  //OR true
-	
-	
-	
-	
-
 	public boolean isMarkAsRead() {
 		return markAsRead;
 	}
 
 	public void setMarkAsRead(boolean markAsRead) {
 		this.markAsRead = markAsRead;
-	}
-
-	public String getMessage() {
-		return message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public int getNotficationId() {
@@ -72,22 +119,14 @@ public class Notfication {
 		this.notficationId = notficationId;
 	}
 
-	public String getFromId() {
-		return fromId;
+	public String getMessage() {
+		return message;
 	}
 
-	public void setFromId(String fromId) {
-		this.fromId = fromId;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
-	public String getToId() {
-		return toId;
-	}
-
-	public void setToId(String toId) {
-		this.toId = toId;
-	}
-	
 
 	
 	

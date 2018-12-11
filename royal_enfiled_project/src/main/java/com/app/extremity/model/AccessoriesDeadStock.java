@@ -20,7 +20,7 @@ public class AccessoriesDeadStock
 	
 	public String getAccessoriesDeadStockID() {
 		return accessoriesDeadStockID;
-	}
+	} 
 	public void setAccessoriesDeadStockID(String accessoriesDeadStockID) {
 		this.accessoriesDeadStockID = accessoriesDeadStockID;
 	}
