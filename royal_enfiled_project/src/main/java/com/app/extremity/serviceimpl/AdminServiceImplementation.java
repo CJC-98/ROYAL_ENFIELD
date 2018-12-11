@@ -56,7 +56,7 @@ public class AdminServiceImplementation implements IAdminService {
 
 		logger.info("In AdminServiceImplementation  save method");
 		try {
-
+			
 			byte[] bytes = profilePic.getBytes();
 			Path path = Paths.get(UPLOADED_FOLDER + profilePic.getOriginalFilename());
 			Files.write(path, bytes);
@@ -134,4 +134,5 @@ public class AdminServiceImplementation implements IAdminService {
 		}
 
 	}
+	
 }

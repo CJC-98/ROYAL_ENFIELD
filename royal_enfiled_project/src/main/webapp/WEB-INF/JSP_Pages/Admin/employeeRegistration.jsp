@@ -45,22 +45,62 @@ h2 {
 }
 </style>
 <script>
+	function createXmlHttpRequestObject() {
+	var xmlHttp;
+	if (window.ActiveXObject) {
+		try {
+			xmlHttp = new ActiveXObject(Microsoft.XMLHTTP);
+		} catch (e) {
+			xmlHttp = false;
+		}
+	} else {
+		try {
+			xmlHttp = new XMLHttpRequest();
+		} catch (e) {
+			xmlHttp = false;
+		}
+	}
+	if (!xmlHttp)
+		alert("cant create xmlHttp object");
+	else
+		return xmlHttp;
+	}
+		
 	function showForm() {
 		document.getElementById("panel").style.opacity = "1";
 	}
+	
 	function openFile() {
-		var fileReader= new FileReader();
+		var fileReader = new FileReader();
 		fileReader.readAsDataURL(document.getElementById("file").files[0]);
-		fileReader.onload = function (oFREvent) {
-            document.getElementById("uploadPreview").src = oFREvent.target.result;
-        };
+		fileReader.onload = function(oFREvent) {
+			document.getElementById("uploadPreview").src = oFREvent.target.result;
+		};
 	}
+	
+	function checkPassword() {
+		var password = document.getElementById("password").value;
+		console.log(password);
+		var confirmPassword = document.getElementById("confirmPassword").value;
+		console.log(confirmPassword);
+		var passwordMessage = document.getElementById("passwordMessage");
+		console.log(passwordMessage);
+		if ((password == null && confirmPassword == null)
+				|| (password == confirmPassword)) {
+
+			passwordMessage.style.display = "none";
+		} else {
+			passwordMessage.innerHTML = "password must be same";
+			passwordMessage.style.display = "initial";
+		}
+	}
+	
 </script>
 
 </head>
 <body>
 	<div class="container-fluid">
-		<div class="col-md-4 col-md-offset-4">
+		<div class="col-md-5 col-md-offset-3">
 			<div class="panel panel-success" onmouseover="showForm()" id="panel">
 				<div class="panel-heading">
 					<h2>Registration Form</h2>
@@ -100,7 +140,8 @@ h2 {
 						<!-- file tag -->
 						<div class="row">
 							<div class="col-md-offset-1">
-								<input type='file' accept='image/*' onchange='openFile()' name="profilePic" id="file">
+								<input type='file' accept='image/*' onchange='openFile()'
+									name="profilePic" id="file" required="required">
 							</div>
 						</div>
 						<!-- address -->
@@ -127,9 +168,9 @@ h2 {
 											required>
 									</div>
 									<div class="col-md-6">
-										<input type="text" class="form-control" id="employeeCountryName"
-											placeholder="Enter countryname" name="employeeCountryName"
-											required>
+										<input type="text" class="form-control"
+											id="employeeCountryName" placeholder="Enter countryname"
+											name="employeeCountryName" required>
 									</div>
 								</div>
 							</div>
@@ -150,23 +191,10 @@ h2 {
 								<div class="form-group">
 									<label>Mobile no:</label> <input type="text"
 										class="form-control" data-type="phone"
-										placeholder="(XXX) XXXX XXX" data-required="true" name="employeeMobileNumber">
+										placeholder="(XXX) XXXX XXX" data-required="true"
+										name="employeeMobileNumber">
 								</div>
 							</div>
-							<div class="col-md-6">
-								<!-- designation -->
-								<div class="form-group">
-									<label for="designation">Designation</label> <input type="text"
-										class="form-control" placeholder="Enter Designation"
-										name="employeeDesignation" data-required="true">
-								</div>
-							</div>
-						</div>
-
-
-
-						
-						<div class="row">
 							<div class="col-md-6">
 
 								<!-- date of birth -->
@@ -174,17 +202,28 @@ h2 {
 									<label for="employeeDateOfBirth">Date Of Birth:</label> <input
 										type="date" name="employeeDateOfBirth" required>
 								</div>
+
+								<!-- designation -->
+								<!-- <div class="form-group">
+									<label for="designation">Designation</label> <input type="text"
+										class="form-control" placeholder="Enter Designation"
+										name="employeeDesignation" data-required="true">
+								</div> -->
 							</div>
-							<!-- date of joining -->
+						</div>
+
+
+
+
+						<div class="row">
 							<div class="col-md-6">
+								<!-- date of joining -->
 								<div class="form-group">
 									<label for="employeeJoiningDate">Date Of Joining </label> <input
 										type="date" name="employeeJoiningDate" required>
 								</div>
 							</div>
 
-						</div>
-						<div class="row">
 							<div class="col-md-6">
 								<!-- email -->
 								<div class="form-group">
@@ -197,9 +236,12 @@ h2 {
 											name="employeeEmail" placeholder="Email" data-type="email"
 											data-required="true">
 									</div>
-
+									<div class="emailMessage"></div>
 								</div>
 							</div>
+
+						</div>
+						<div class="row">
 							<div class="col-md-6">
 								<!-- password -->
 								<div class="form-group">
@@ -212,6 +254,22 @@ h2 {
 											placeholder="Password">
 									</div>
 
+								</div>
+
+							</div>
+							<div class="col-md-6">
+								<!--Confirm password -->
+								<div class="form-group">
+
+									<label for="employeePassword">Confirm Password:</label>
+									<div class="input-group">
+										<span class="input-group-addon"><i
+											class="glyphicon glyphicon-lock"></i></span> <input
+											id="confirmPassword" type="password" class="form-control"
+											name="employeePassword" placeholder="Password"
+											onchange="checkPassword()">
+									</div>
+									<small id="passwordMessage" class="alert-danger"></small>
 								</div>
 							</div>
 						</div>
