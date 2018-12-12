@@ -53,10 +53,10 @@ public class ServiceMangerController {
 	public String ServicesDashboardPage(Model model){
 
 	
-        //sscount => aproved service count
-		long sscount=serviceManagerInterface.getApprovedServiceCount();
-		System.out.println("Approved services are:"+sscount);
-		model.addAttribute("approvedServiceCount",sscount);
+        //ascount => aproved service count
+		long ascount=serviceManagerInterface.getApprovedServiceCount();
+		System.out.println("Approved services are:"+ascount);
+		model.addAttribute("approvedServiceCount",ascount);
 		
 		//ts => total service count
 	    long tscount=serviceManagerInterface.getAllServiceCount();
@@ -68,13 +68,26 @@ public class ServiceMangerController {
 		System.out.println("In progerss services are:"+ipcount);
 		model.addAttribute("inProgerssServices", ipcount);
 		
-		//dscount => completed service count
+		//cscount => completed service count
 		long cscount=serviceManagerInterface.getCompletedServiceCount();
 		System.out.println("Completed services are:"+cscount);
 		model.addAttribute("completedservices", cscount);
 				
+		long a=ascount;
+		long b=tscount;
+		long asresult= (a* 100)/b;
+		System.out.println(asresult);
+		model.addAttribute("aspercentage", asresult);
 		
+		long c=ipcount;
+		long ipresult=(c*100)/b;
+		System.out.println(ipresult);
+		model.addAttribute("ippercentage", ipresult);
 		
+		long d=cscount;
+		long csresult=(d*100)/b;
+		System.out.println(csresult);
+		model.addAttribute("cspercentage", csresult);
 
 		logger.info("dashboard hits........... log");
 		model.addAttribute("link","serviceManagerDashboard.jsp");
