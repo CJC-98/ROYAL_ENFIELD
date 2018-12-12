@@ -1,7 +1,8 @@
 package com.app.extremity.controller;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +23,7 @@ public class HomeController {
 	public String homePage()
 	{ 
 		logger.info("In home controller log");
-		return "home";
+		return "Admin/composeMail";
 	}  
 	 
 	@RequestMapping(value="/loginPage")
