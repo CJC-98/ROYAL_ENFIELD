@@ -25,7 +25,7 @@ public class HomeController {
 		return "home";
 	}  
 	 
-	@RequestMapping(value="")
+	@RequestMapping(value="/loginPage")
 	public String loginPage()
 	{ 
 		logger.info("In login controller log");
