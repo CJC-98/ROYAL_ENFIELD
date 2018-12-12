@@ -51,7 +51,6 @@ public class ServiceMangerController {
 	
 	@RequestMapping(value="/DashboardPage")
 	public String ServicesDashboardPage(Model model){
-
 	
         //ascount => aproved service count
 		long ascount=serviceManagerInterface.getApprovedServiceCount();
