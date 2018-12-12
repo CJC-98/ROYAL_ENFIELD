@@ -1,8 +1,8 @@
- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-<head>  
+<head>
 <meta charset="utf-8" />
     <title>Notebook | Web Application</title>
     <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
@@ -14,7 +14,7 @@
 </head>
 
 <body>
-	<section id="content" class="bg-light lter">
+	<section id="content">
         <section class="vbox">
             <section class="scrollable padder">                                               
                                 
@@ -23,16 +23,17 @@
                 </div>
                 
                 <div>
+<<<<<<< HEAD
                 	<!-- first record starts-->
                      <div class="row">
                          <div class="col-sm-12">
                              <section class="panel panel-default">
-                                          <header class="panel-heading bg-success dk" style="font-size: 20px; font-weight: bold;">Bullet 350cc</header>
+                                          <header class="panel-heading bg-success lt" style="font-size: 20px; font-weight: bold;">Bullet 350cc</header>
                                                 
                                           <table class="table table-striped m-b-none">
                                                       
                                                 <thead>
-                                                                
+                                                             
                                                      <tr>   
                                                          <th style="text-align: center;">Accessories</th>
                                                          <th style="text-align: center;">Cost</th>
@@ -45,12 +46,32 @@
                                                         
                                                       <tr style="text-align: center;">
                                                          <td>Seat</td>
+=======
+                
+                	<!-- first table starts -->
+                	<div class="col-sm-12">
+                                    <section class="panel panel-default">
+                                        <header class="panel-heading bg-success dk" style="font-size: 25px;">Bullet 350cc</header>
+                                        <table class="table table-striped m-b-none">
+                                            <thead>
+                                                <tr>
+                                                    <th style="text-align: center">Accessories</th>
+                                                    <th style="text-align: center">Cost</th>
+                                                    <th style="text-align: center">Quantity</th>
+                                                    <th style="text-align: center">Notify Sales Manager</th>
+                                                </tr>
+                                            </thead>
+                                            
+                                            <tbody>
+                                            
+                                                <tr style="text-align: center">
+                                                    <td>Seat</td>
+>>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
                                                          <td>2500</td>
                                                          <td>10</td>
+<<<<<<< HEAD
                                                          <td style="text-align: center;">
-
-                                                         	<a href="" class="btn btn-s-xs btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
-
+                                                         	<a href="" class="btn btn-s-xs btn-warning btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
                                                          </td>
                                                       </tr>
         
@@ -59,7 +80,7 @@
                                                          <td>1100</td>
                                                          <td>20</td>
                                                          <td style="text-align: center;">
-                                                         	<a href="" class="btn btn-s-xs btn-info btn-rounded">Send Notification</a>
+                                                         	<a href="" class="btn btn-s-xs btn-warning btn-rounded">Send Notification</a>
                                                          </td>
                                                       </tr>
         
@@ -68,26 +89,159 @@
                                                           <td>7000</td>
                                                           <td>325</td>
                                                           <td style="text-align: center;">
-                                                         	<a href="" class="btn btn-s-xs btn-info btn-rounded">Send Notification</a>
+                                                         	<a href="" class="btn btn-s-xs btn-warning btn-rounded">Send Notification</a>
                                                          </td>
                                                         </tr>
                                                     </tbody>
+=======
+                                                         <td>
+>>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 
-                                                </table>
-   
-                             </section>
-                                         
-                        </div>
-                    </div>
-                    <!-- first record ends-->
+                                                         	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
 
-               <div>
+                                                     </td>
+                                                </tr>
+                                                
+                                                <tr style="text-align: center">
+                                                    <td>Seat</td>
+                                                         <td>2500</td>
+                                                         <td>10</td>
+                                                         <td>
+
+                                                         	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
+
+                                                     </td>
+                                                </tr>
+                                                
+                                                <tr style="text-align: center">
+                                                    <td>Seat</td>
+                                                         <td>2500</td>
+                                                         <td>10</td>
+                                                         <td>
+
+                                                         	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
+
+                                                     </td>
+                                                </tr>
+                                                
+                                                <tr style="text-align: center">
+                                                    <td>Seat</td>
+                                                         <td>2500</td>
+                                                         <td>10</td>
+                                                         <td>
+
+                                                         	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
+
+                                                     </td>
+                                                </tr>
+                                                
+                                                <tr style="text-align: center">
+                                                    <td>Seat</td>
+                                                         <td>2500</td>
+                                                         <td>10</td>
+                                                         <td>
+
+                                                         	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
+
+                                                     </td>
+                                                </tr>
+                                                
+                                                
+                                               
+                                            </tbody>
+                                            
+                                        </table>
+                                    </section>
+                                </div>
+                                <!-- fisrt table ends -->
+                                
+                                <!-- 2nd table starts -->
+                                	<div class="col-sm-12">
+                                    <section class="panel panel-default">
+                                        <header class="panel-heading bg-success dk" style="font-size: 25px;">Bullet 350cc</header>
+                                        <table class="table table-striped m-b-none">
+                                            <thead>
+                                                <tr>
+                                                    <th style="text-align: center">Accessories</th>
+                                                    <th style="text-align: center">Cost</th>
+                                                    <th style="text-align: center">Quantity</th>
+                                                    <th style="text-align: center">Notify Sales Manager</th>
+                                                </tr>
+                                            </thead>
+                                            
+                                            <tbody>
+                                            
+                                                <tr style="text-align: center">
+                                                    <td>Seat</td>
+                                                         <td>2500</td>
+                                                         <td>10</td>
+                                                         <td>
+
+                                                         	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
+
+                                                     </td>
+                                                </tr>
+                                                
+                                                <tr style="text-align: center">
+                                                    <td>Seat</td>
+                                                         <td>2500</td>
+                                                         <td>10</td>
+                                                         <td>
+
+                                                         	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
+
+                                                     </td>
+                                                </tr>
+                                                
+                                                <tr style="text-align: center">
+                                                    <td>Seat</td>
+                                                         <td>2500</td>
+                                                         <td>10</td>
+                                                         <td>
+
+                                                         	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
+
+                                                     </td>
+                                                </tr>
+                                                
+                                                <tr style="text-align: center">
+                                                    <td>Seat</td>
+                                                         <td>2500</td>
+                                                         <td>10</td>
+                                                         <td>
+
+                                                         	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
+
+                                                     </td>
+                                                </tr>
+                                                
+                                                <tr style="text-align: center">
+                                                    <td>Seat</td>
+                                                         <td>2500</td>
+                                                         <td>10</td>
+                                                         <td>
+
+                                                         	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
+
+                                                     </td>
+                                                </tr>
+                                                
+                                                
+                                               
+                                            </tbody>
+                                            
+                                        </table>
+                                    </section>
+                                </div>
+                                
+                                <!-- 2nd table ends -->
                 
+<<<<<<< HEAD
                <!-- second record starts-->
                     <div class="row">
                          <div class="col-sm-12">
                              <section class="panel panel-default">
-                                          <header class="panel-heading bg-success dk" style="font-size: 20px; font-weight: bold;">Bullet 350cc</header>
+                                          <header class="panel-heading  bg-success lter" style="font-size: 20px; font-weight: bold;">Bullet 350cc</header>
                                                 
                                           <table class="table table-striped m-b-none">
                                                       
@@ -108,7 +262,7 @@
                                                          <td>250</td>
                                                          <td>10</td>
                                                          <td style="text-align: center;">
-                                                         	<a href="" class="btn btn-s-xs btn-info btn-rounded">Send Notification</a>
+                                                         	<a href="" class="btn btn-s-xs btn-warning btn-rounded">Send Notification</a>
                                                          </td>
                                                       </tr>
         
@@ -117,7 +271,7 @@
                                                          <td>1120</td>
                                                          <td>30</td>
                                                          <td style="text-align: center;">
-                                                         	<a href="" class="btn btn-s-xs btn-info btn-rounded">Send Notification</a>
+                                                         	<a href="" class="btn btn-s-xs btn-warning btn-rounded">Send Notification</a>
                                                          </td>
                                                       </tr>
         
@@ -126,7 +280,7 @@
                                                           <td>500</td>
                                                           <td>435</td>
                                                           <td style="text-align: center;">
-                                                         	<a href="" class="btn btn-s-xs btn-info btn-rounded">Send Notification</a>
+                                                         	<a href="" class="btn btn-s-xs btn-warning btn-rounded">Send Notification</a>
                                                          </td>
                                                         </tr>
                                                     </tbody>
@@ -143,7 +297,7 @@
                     <div class="row">
                          <div class="col-sm-12">
                              <section class="panel panel-default">
-                                          <header class="panel-heading bg-success dk" style="font-size: 20px; font-weight: bold;">Anangers 500cc</header>
+                                          <header class="panel-heading  bg-success lter" style="font-size: 20px; font-weight: bold;">Anangers 500cc</header>
                                                 
                                           <table class="table table-striped m-b-none">
                                                       
@@ -164,7 +318,7 @@
                                                          <td>250</td>
                                                          <td>10</td>
                                                          <td style="text-align: center;">
-                                                         	<a href="" class="btn btn-s-xs btn-info btn-rounded">Send Notification</a>
+                                                         	<a href="" class="btn btn-s-xs btn-warning btn-rounded">Send Notification</a>
                                                          </td>
                                                       </tr>
         
@@ -173,7 +327,7 @@
                                                          <td>1120</td>
                                                          <td>30</td>
                                                          <td style="text-align: center;">
-                                                         	<a href="" class="btn btn-s-xs btn-info btn-rounded">Send Notification</a>
+                                                         	<a href="" class="btn btn-s-xs btn-warning btn-rounded">Send Notification</a>
                                                          </td>
                                                       </tr>
         
@@ -182,7 +336,7 @@
                                                           <td>500</td>
                                                           <td>435</td>
                                                           <td style="text-align: center;">
-                                                         	<a href="" class="btn btn-s-xs btn-info btn-rounded">Send Notification</a>
+                                                         	<a href="" class="btn btn-s-xs btn-warning btn-rounded">Send Notification</a>
                                                          </td>
                                                         </tr>
                                                     </tbody>
@@ -194,6 +348,8 @@
                         </div>
                     </div>
                     <!-- third record ends-->
+=======
+                	
                     
                     
                     <!-- modal starts-->
@@ -223,16 +379,27 @@
 					  	</div>
 					  
 					  	<!-- modal ends -->
+>>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
                
                </div>
-          </div>      
+<<<<<<< HEAD
+           </div>       
+=======
+            
+>>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
                       
         </section>
    </section> 
    </section>
-
+<<<<<<< HEAD
+   
+   
    <!-- modal starts-->
+=======
+
+>>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
  
+
 	  <div class="modal fade" id="myModal" role="dialog">
 	    <div class="modal-dialog modal-md">
 	      <div class="modal-content">
@@ -256,10 +423,13 @@
 	      </div>
 	    </div>
   	</div>
-
       
   	<!-- modal ends -->
 
+<<<<<<< HEAD
+=======
 
+
+>>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 </body>
 </html>

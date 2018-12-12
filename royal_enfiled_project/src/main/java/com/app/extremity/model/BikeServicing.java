@@ -5,8 +5,6 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -15,43 +13,58 @@ import javax.persistence.Table;
 @Entity
 @Table(name="BikeServicingTable")
 public class BikeServicing {
-	
+	      
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int BikeServicingId;
+	private String bikeServicingId;
 	
-	private String ServcingStatus = "waiting";
+	private String servcingStatus = "waiting";   //OR in-progress  OR  done
 	
 	private String appointmentDate;
 	
-	private String releaseStatus = "on-hold";
+	private String bikeReleaseStatus = "on-hold";  //OR released
 	
 	@OneToOne
 	private ServcingBikeInfo servcingBikeInfo; 
 	
+
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="bikeServicing")
-	private List<ServicingChart> servicingChart = new ArrayList();
+	private List<ServicingChart> servicingChart = new ArrayList<ServicingChart>();
+
 	
 	@OneToOne
-	private ServiceInvoice invoice;
-
+	private ServicingInvoice servicingInvoice;
 	
+	
+	//FK of customer @OneToOne
 
-	public int getBikeServicingId() {
-		return BikeServicingId;
+
+
+
+
+
+
+	public void setBikeServicingId(String bikeServicingId) {
+		this.bikeServicingId = bikeServicingId;
 	}
 
-	public void setBikeServicingId(int bikeServicingId) {
-		BikeServicingId = bikeServicingId;
+
+
+	public String getBikeServicingId() {
+		return bikeServicingId;
 	}
+
+
 
 	public String getServcingStatus() {
-		return ServcingStatus;
+		return servcingStatus;
 	}
 
+
 	public void setServcingStatus(String servcingStatus) {
-		ServcingStatus = servcingStatus;
+		this.servcingStatus = servcingStatus;
 	}
+
+
 
 	public String getAppointmentDate() {
 		return appointmentDate;
@@ -61,13 +74,19 @@ public class BikeServicing {
 		this.appointmentDate = appointmentDate;
 	}
 
-	public String getReleaseStatus() {
-		return releaseStatus;
+	
+
+	public String getBikeReleaseStatus() {
+		return bikeReleaseStatus;
 	}
 
-	public void setReleaseStatus(String releaseStatus) {
-		this.releaseStatus = releaseStatus;
+
+
+	public void setBikeReleaseStatus(String bikeReleaseStatus) {
+		this.bikeReleaseStatus = bikeReleaseStatus;
 	}
+
+
 
 	public ServcingBikeInfo getServcingBikeInfo() {
 		return servcingBikeInfo;
@@ -85,13 +104,21 @@ public class BikeServicing {
 		this.servicingChart = servicingChart;
 	}
 
-	public ServiceInvoice getInvoice() {
-		return invoice;
+
+
+	public ServicingInvoice getServicingInvoice() {
+		return servicingInvoice;
 	}
 
-	public void setInvoice(ServiceInvoice invoice) {
-		this.invoice = invoice;
+
+
+	public void setServicingInvoice(ServicingInvoice servicingInvoice) {
+		this.servicingInvoice = servicingInvoice;
 	}
+
+	
+
+	
 	
 	
 }
