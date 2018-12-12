@@ -32,13 +32,11 @@
                                             </ol>
                                             <div class="carousel-inner">
                                                 <div class="item">
-<<<<<<< HEAD
+
                                                     <p class="text-center"> <em class="h4 text-mute"><img src="${pageContext.request.contextPath}/Resources/images/bike1.jpg" class="m-r-sm" width="750" height="500"></em><br>
-=======
 
-                                                    <p class="text-center"> <em class="h4 text-mute"><img src="${pageContext.request.contextPath}/Resources/images/bike7.jpg" class="m-r-sm" width="750" height="500"></em><br>
 
->>>>>>> branch 'SaleManagerTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
+
                                                         <small class="text-muted"><h3>Continental GT</h3></small> </p>
                                                 </div>
                                                  <div class="item">

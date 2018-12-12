@@ -1,11 +1,23 @@
 package com.app.extremity.controller;
 
+import org.apache.catalina.connector.Request;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.app.extremity.iservice.BikeSaleServiceI;
+import com.app.extremity.model.BikeModel;
+import com.app.extremity.model.Color;
+import com.app.extremity.model.EngineCapacity;
 
 @Controller
 public class SalesManagerController {
+	
+	@Autowired
+	BikeSaleServiceI bikeService;
 	
 	
 	@RequestMapping(value="/addnew")
@@ -185,5 +197,42 @@ public class SalesManagerController {
 		return "SalesManager/salesManagerIndex";
 
 	}
+	
+	@RequestMapping(value="/add")
+	public String SaveNewBike(@RequestParam String bikeModel,@ModelAttribute Color color,@RequestParam String bikeColor, @ModelAttribute BikeModel bk,@RequestParam String bikeEngine,@ModelAttribute EngineCapacity ec)
+	{
+		int ucount=bikeService.getbikeCount();
+		System.out.println("fetching getCount()---"+ucount);
+		ucount++;
+		String user="BMID00";
+		user=user+Integer.toString(ucount);
+		
+		System.out.println("registration id of user is"+user);
+		
+		//Count of bikeEngine
+		int ecount=bikeService.getbikeCount();
+		System.out.println("fetching getCount()---"+ecount);
+		ecount++;
+		String ecs="BEC00";
+		ecs=ecs+Integer.toString(ecount);
+		bk.setModelName(bikeModel);
+		ec.setEngineCapacityId(ecs);
+		ec.setEngineType(bikeEngine);
+		bk.setEnginecapacity(ec);
+		bk.setBikeModelId(user);
+		
+		//count of color
+		
+	     String bikecolor=bikeService.getBikecolor();
+		System.out.println(bikecolor);
+		color.setColorName(bikeColor);
+		color.setColorId(bikecolor);
+		bk.getColor().add(color);
+		bikeService.saveDataBike(bk);
+		 return "SalesManager/salesManagerIndex";
+		
+		
+	}
+
 
 }

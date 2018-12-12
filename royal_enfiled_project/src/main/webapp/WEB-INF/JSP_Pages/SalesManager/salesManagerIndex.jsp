@@ -296,136 +296,8 @@
 																class="fa fa-angle-right"></i> <span>Bike</span>
 														</a></li>
 
-                            <li> <a href="#uikit"> <i class="fa fa-flask icon"> <b class="bg-success"></b>
-                                                </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i
-                                                        class="fa fa-angle-up text-active"></i> </span> <span>ORDER</span>
-                                            </a>
-                                            <ul class="nav lt">
-                                                <li> <a href="AddnewBike"> <i class="fa fa-angle-right"></i> <span>Order For Bike</span>
-                                                    </a> </li></ul>
-                                                    
-                                                    <ul class="nav lt">
-                                                <li> <a href="AddnewBike"> <i class="fa fa-angle-right"></i> <span>Order For Accessories</span>
-                                                    </a> </li></ul></li>
-                                                    
-                                                    
-                                                    </li>
 
 													</ul></li>
-
-
-                                            	 <li> <a href="#table"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i>
-                                                        <span>View Bike</span> </a>
-                                                    <ul class="nav bg">
-                                                        <li> <a href="table-static.html"> <i class="fa fa-angle-right"></i>
-                                                                <span>Old</span> </a> </li>
-                                                        <li> <a href="table-datatable.html"> <i class="fa fa-angle-right"></i>
-                                                                <span>New</span> </a> </li>
-                                                        
-                                                    </ul>
-                                                </li>
-                                                <li> <a href="deadBikeStock"> <i class="fa fa-angle-right"></i> <span>View Accessories</span>
-                                                    </a> </li>
-                                               
-                                                <li> <a href="grid.html"> <i class="fa fa-angle-right"></i> <span>View Invoice</span>
-                                                    </a> </li>
-                                                
-                                                <li> <a href="components.html"> <i class="fa fa-angle-right"></i> <span>View Offer</span>
-                                                    </a> </li>
-                                                
-                                                <li> <a href="#table"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i>
-                                                        <span>View Sold</span> </a>
-                                                    <ul class="nav bg">
-                                                        <li> <a href="table-static.html"> <i class="fa fa-angle-right"></i>
-                                                                <span>Accessories</span> </a> </li>
-                                                        <li> <a href="table-datatable.html"> <i class="fa fa-angle-right"></i>
-                                                                <span>Old Bike</span> </a> </li>
-                                                                <li> <a href="table-datatable.html"> <i class="fa fa-angle-right"></i>
-                                                                <span>New Bike</span> </a> </li>
-                                                        
-                                                    </ul>
-                                                </li>
-                                                <li> <a href="#table"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i>
-                                                        <span>View DeadStock</span> </a>
-                                                    <ul class="nav bg">
-                                                        <li> <a href="table-static.html"> <i class="fa fa-angle-right"></i>
-                                                                <span>Accessories</span> </a> </li>
-                                                        <li> <a href="table-datatable.html"> <i class="fa fa-angle-right"></i>
-                                                                <span>Bike</span> </a> </li>
-                                                                
-                                                        
-                                                    </ul>
-                                                </li>
-                                                
-                                            </ul>
-                                        </li>
-                                </nav><!-- / nav -->
-                                
-                                
-                                
-                                
-                            </div>
-                            
-                            
-                        </section>
-                        <footer class="footer lt hidden-xs b-t b-dark">
-                            <div id="chat" class="dropup">
-                                <section class="dropdown-menu on aside-md m-l-n">
-                                    <section class="panel bg-white">
-                                        <header class="panel-heading b-b b-light">Active chats</header>
-                                        <div class="panel-body animated fadeInRight">
-                                            <p class="text-sm">No active chats.</p>
-                                            <p><a href="#" class="btn btn-sm btn-default">Start a chat</a></p>
-                                        </div>
-                                    </section>
-                                </section>
-                            </div>
-                            <div id="invite" class="dropup">
-                                <section class="dropdown-menu on aside-md m-l-n">
-                                    <section class="panel bg-white">
-                                        <header class="panel-heading b-b b-light"> John <i class="fa fa-circle text-success"></i>
-                                        </header>
-                                        <div class="panel-body animated fadeInRight">
-                                            <p class="text-sm">No contacts in your lists.</p>
-                                            <p><a href="#" class="btn btn-sm btn-facebook"><i class="fa fa-fw fa-facebook"></i>
-                                                    Invite from Facebook</a></p>
-                                        </div>
-                                    </section>
-                                </section>
-                            </div> <a href="#nav" data-toggle="class:nav-xs" class="pull-right btn btn-sm btn-dark btn-icon">
-                                <i class="fa fa-angle-left text"></i> <i class="fa fa-angle-right text-active"></i> </a>
-                            <div class="btn-group hidden-nav-xs"> <button type="button" title="Chats" class="btn btn-icon btn-sm btn-dark"
-                                    data-toggle="dropdown" data-target="#chat"><i class="fa fa-comment-o"></i></button>
-                                <button type="button" title="Contacts" class="btn btn-icon btn-sm btn-dark" data-toggle="dropdown"
-                                    data-target="#invite"><i class="fa fa-facebook"></i></button> </div>
-                        </footer>
-                    </section>
-                </aside> <!-- /.aside -->
-                
-                <!-- dashboard starts -->
-                	 <jsp:include page="${link}"/>
-                <!-- dashboard ends -->
-                
-                
-                <aside class="bg-light lter b-l aside-md hide" id="notes">
-                    <div class="wrapper">Notification</div>
-                </aside>
-            </section>
-        </section>
-    </section> <!-- Bootstrap -->
-    <!-- App -->
-    <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/app.v1.js"></script>
-    <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/easypiechart/jquery.easy-pie-chart.js"></script>
-    <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/sparkline/jquery.sparkline.min.js"></script>
-    <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/flot/jquery.flot.min.js"></script>
-    <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/flot/jquery.flot.tooltip.min.js"></script>
-    <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/flot/jquery.flot.resize.js"></script>
-    <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/flot/jquery.flot.grow.js"></script>
-    <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/flot/demo.js"></script>
-    <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/bootstrap_calendar.js"></script>
-    <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/demo.js"></script>
-    <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/sortable/jquery.sortable.js"></script>
-    <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/app.plugin.js"></script>
 
 											</ul></li>
 								</nav>
@@ -522,7 +394,6 @@
 		src="${pageContext.request.contextPath}/Resources/notebook UI/js/sortable/jquery.sortable.js"></script>
 	<script
 		src="${pageContext.request.contextPath}/Resources/notebook UI/js/app.plugin.js"></script>
-
 </body>
 <!-- Mirrored from flatfull.com/themes/note/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Oct 2018 11:16:42 GMT -->
 

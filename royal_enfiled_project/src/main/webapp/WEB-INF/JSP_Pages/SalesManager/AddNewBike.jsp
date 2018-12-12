@@ -19,7 +19,7 @@
         <div class="container aside-xxl"> <a class="navbar-brand block" href="index.html">Add Bike Form</a>
             <section class="panel panel-default m-t-lg bg-white">
                 <header class="panel-heading text-center"> <strong>Add Bike</strong> </header>
-                <form action="http://flatfull.com/themes/note/index.html" class="panel-body wrapper-lg">
+                <form action="add" class="panel-body wrapper-lg">
                     <div class="form-group"> <label class="control-label">Bike Model</label> <input type="text" name="bikeModel" placeholder="Enter Bike Model"
                             class="form-control input-lg"> </div>
                     <div class="form-group"> <label class="control-label">Bike Color</label> <input type="text" name="bikeColor" placeholder="Enter Bike Color"
@@ -34,11 +34,7 @@
             </section>
         </div>
     </section> <!-- footer -->
-    <footer id="footer">
-        <div class="text-center padder clearfix">
-            <p> <small>Web app framework base on Bootstrap<br>&copy; 2013</small> </p>
-        </div>
-    </footer> <!-- / footer -->
+    <!-- / footer -->
 
     <!-- Bootstrap -->
     <!-- App -->

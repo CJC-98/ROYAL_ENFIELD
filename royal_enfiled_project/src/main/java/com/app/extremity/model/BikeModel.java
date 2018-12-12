@@ -58,8 +58,14 @@ public class BikeModel {
 		this.enginecapacity = enginecapacity;
 	}
 
-	public Set<Color> getColors() {
-		return getColors();
+	public Set<Color> getColor() {
+		return color;
 	}
+
+	public void setColor(Set<Color> color) {
+		this.color = color;
+	}
+
+	
 
 }
