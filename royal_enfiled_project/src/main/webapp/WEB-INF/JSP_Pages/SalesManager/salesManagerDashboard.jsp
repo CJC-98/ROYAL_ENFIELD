@@ -32,23 +32,39 @@
                                             </ol>
                                             <div class="carousel-inner">
                                                 <div class="item">
-                                                    <p class="text-center"> <em class="h4 text-mute"><img src="${pageContext.request.contextPath}/Resources/images/bike1.jpg" class="m-r-sm" width="750" height="500"></em><br>
-                                                        <small class="text-muted"><h3>Continental GT</h3></small> </p>
+
+                                                        <small class="text-muted"><h3>Continental GT</h3></small> 
                                                 </div>
                                                  <div class="item">
+
+                                                    <p class="text-center"> <em class="h4 text-mute"><img src="${pageContext.request.contextPath}/Resources/images/bike1.jpg" class="m-r-sm" width="750" height="500"></em><br> <small class="text-muted"><h3>Classic</h3></small>
+
+
                                                     <p class="text-center"> <em class="h4 text-mute"><img src="${pageContext.request.contextPath}/Resources/images/bike2.jpg" class="m-r-sm" width="750" height="500"></em><br> <small class="text-muted"><h3>Classic</h3></small>
+
+
                                                     </p>
                                                 </div>
                                                 <div class="item active">
+
                                                     <p class="text-center"> <em class="h4 text-mute"><img src="${pageContext.request.contextPath}/Resources/images/bike4.jpg" class="m-r-sm" width="750" height="500"></em><br> <small class="text-muted"><h3>Himalayan</h3></small>
+
                                                     </p>
                                                 </div>
                                                 <div class="item">
+
+
                                                     <p class="text-center"> <em class="h4 text-mute"><img src="${pageContext.request.contextPath}/Resources/images/bike6.jpg" class="m-r-sm" width="750" height="500"></em><br> <small class="text-muted"><h3>Thunderbird</h3></small>
+
+
                                                     </p>
                                                 </div>
                                                 <div class="item">
-                                                    <p class="text-center"> <em class="h4 text-mute"><img src="${pageContext.request.contextPath}/Resources/images/bike1.jpg" class="m-r-sm" width="750" height="500"></em><br> <small class="text-muted"><h3>Interceptor</h3></small>
+
+
+                                                    <p class="text-center"> <em class="h4 text-mute"><img src="${pageContext.request.contextPath}/Resources/images/bike1.jpg" class="m-r-sm" width="750" height="500"></em><br> <small class="text-muted"><h3>Thunderbird</h3></small>
+
+
                                                     </p>
                                                 </div>
                                             </div> <a class="left carousel-control" href="#c-fade" data-slide="prev">
