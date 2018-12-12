@@ -34,7 +34,7 @@ public class HomeController {
 	}    
 	
 	@RequestMapping(value="/SignIn")
-	public String signIn(Model model)    
+	public String signIn(Model model)      
 	{ 
 		
 		logger.info("In SignIn controller log");
