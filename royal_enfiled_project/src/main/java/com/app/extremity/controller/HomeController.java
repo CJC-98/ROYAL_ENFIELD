@@ -23,7 +23,7 @@ public class HomeController {
 	public String homePage()
 	{ 
 		logger.info("In home controller log");
-		return "Admin/newBikeStock";
+		return "Admin/accessoriesStock";
 	}  
 	 
 	@RequestMapping(value="/loginPage")

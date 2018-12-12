@@ -172,8 +172,11 @@
                                             </a>
                                             <ul class="nav lt">
                                                 <li> <a href="">
-                                                          <i class="fa fa-angle-right"><b class="bg-danger"></b></i><span class="pull-right">
-                                                            <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> 
+                                                          <i class="fa fa-angle-right"><b class="bg-danger"></b>
+                                                          </i><span class="pull-right">
+                                                            <i class="fa fa-angle-down text"></i>
+                                                             </span> 
+                                                             
                                                          <span>Bike</span> </a>
                                                      <!-- this for sublist of Bike -->
                                                          <ul class="nav lt">
@@ -345,43 +348,24 @@
                                       <th class="sorting_asc" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-sort="ascending" 
                                             aria-label="Rendering engine: activate to sort column descending"
-                                            style="width: 125px;">Bike_id
+                                            style="width: 125px;">Part_id
                                       </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-label="Browser: 
                                             activate to sort column ascending" 
-                                            style="width: 125px;">Bike_Model
+                                            style="width: 125px;">Part_Name
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-label="Platform(s): 
                                             activate to sort column ascending" 
-                                            style="width: 125px;">Chasis_Number
+                                            style="width: 125px;">Part_Price
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                              rowspan="1" colspan="1" 
                                             aria-label="Engine version: activate to sort column ascending" 
-                                            style="width: 125px;">WheelType
+                                            style="width: 125px;">Part_Quantity
                                         </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" 
-                                            aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;">Engine_Starting_Type
-                                        </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" 
-                                            aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;">Bike_Price
-                                        </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" 
-                                            aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;">Bike_Mfg_Date
-                                        </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" 
-                                            aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;">Arrival_Date
-                                        </th>
+                                        
                                     </tr>
                                   </thead>
                                   <tbody>
@@ -390,21 +374,15 @@
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                   
                                   </tr>
                                   </tbody>
                                   <tfoot>
-                                  <tr><th rowspan="1" colspan="1">Bike_Id</th>
-                                    <th rowspan="1" colspan="1">Bike_Model</th>
-                                    <th rowspan="1" colspan="1">Chasis_Number</th>
-                                    <th rowspan="1" colspan="1">Wheel_Type</th>
-                                    <th rowspan="1" colspan="1">Engine_Starting_Type</th>
-                                    <th rowspan="1" colspan="1">Bike_Price</th>
-                                    <th rowspan="1" colspan="1">Bike_Mfg_Date</th>
-                                    <th rowspan="1" colspan="1">Arrival_Date</th>
+                                  <tr><th rowspan="1" colspan="1">Part_Id</th>
+                                    <th rowspan="1" colspan="1">Part_Name</th>
+                                    <th rowspan="1" colspan="1">Part_Price</th>
+                                    <th rowspan="1" colspan="1">Part_Quantity</th>
+                                    
                                     </tr>
                                   </tfoot>
                                 </table>

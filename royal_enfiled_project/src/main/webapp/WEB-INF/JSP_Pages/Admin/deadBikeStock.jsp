@@ -342,10 +342,15 @@
                                             role="grid" aria-describedby="example1_info">
                                   <thead>
                                   <tr role="row">
+                                  	  <th class="sorting_asc" tabindex="0" aria-controls="example1" 
+                                            rowspan="1" colspan="1" aria-sort="ascending" 
+                                            aria-label="Rendering engine: activate to sort column descending"
+                                            style="width: 125px;">Dead_Stock_Id
+                                      </th>
                                       <th class="sorting_asc" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-sort="ascending" 
                                             aria-label="Rendering engine: activate to sort column descending"
-                                            style="width: 125px;">Bike_id
+                                            style="width: 125px;">Bike_Id
                                       </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-label="Browser: 
@@ -394,10 +399,13 @@
                                     <td></td>
                                     <td></td>
                                     <td></td>
+                                    <td></td>
                                   </tr>
                                   </tbody>
                                   <tfoot>
-                                  <tr><th rowspan="1" colspan="1">Bike_Id</th>
+                                  <tr>
+                                  	<th rowspan="1" colspan="1">Dead_Stock_Id</th>
+                                  	<th rowspan="1" colspan="1">Bike_Id</th>
                                     <th rowspan="1" colspan="1">Bike_Model</th>
                                     <th rowspan="1" colspan="1">Chasis_Number</th>
                                     <th rowspan="1" colspan="1">Wheel_Type</th>
