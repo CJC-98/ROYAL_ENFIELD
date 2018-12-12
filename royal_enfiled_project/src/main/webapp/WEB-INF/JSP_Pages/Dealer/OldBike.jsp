@@ -3,20 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/font.css" type="text/css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/app.v1.css" type="text/css" />
+</head>
 <title>Old Bike</title>
 
-<meta name="description"
-	content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1" />
-<link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/css/font.css" type="text/css" />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/css/app.v1.css" type="text/css" />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/css/bootstrap.min.css" type="text/css" />
-      <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/css/bootstrap-responsive.css" type="text/css">
-      <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/css/bootstrap.min.css" type="text/css" />
-<link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-responsive.min.css">
-</head>
 <body>
 <section id="content">
                     <section class="vbox">

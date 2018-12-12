@@ -28,6 +28,9 @@ public class DealerController {
 		System.out.println("final");
 		return "Dealer/dealerIndex";
 	}
+	
+	
+	
 	@RequestMapping(value="/OldBike")
 	public String OldBike(Model model){
 		
