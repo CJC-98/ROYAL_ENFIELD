@@ -1,11 +1,18 @@
 package com.app.extremity.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.app.extremity.iservice.BikeSaleServiceI;
+import com.app.extremity.model.BikeOffer;
 
 @Controller
 public class SalesManagerController {
+	@Autowired
+    BikeSaleServiceI   bikesaleservicei;
 
 	@RequestMapping(value = "/DashboardPages")
 	public String SaleDashboardPage(Model model) {
@@ -33,14 +40,20 @@ public class SalesManagerController {
 
 	}
 
-	@RequestMapping(value = "/Offers")
-	public String Order(Model model) {
-
-		System.out.println("in order");
+	@RequestMapping("/Offers")
+	public String Offer(@ModelAttribute BikeOffer bikeoffer,Model model) {
+        System.out.println(bikeoffer.getEndDate());
+        System.out.println(bikeoffer.getStartDate());
+        System.out.println(bikeoffer.getOfferName());
+        System.out.println("aaaa");
+		System.out.println("in offer");
+		BikeOffer bf=bikesaleservicei.SaveOffer(bikeoffer);
 		model.addAttribute("link", "Offers.jsp");
+		System.out.println("In THe Offer.....");
 		return "SalesManager/salesManagerIndex";
 
 	}
+
 
 	@RequestMapping(value = "/DeadAccessories")
 	public String DeadAccessories(Model model) {

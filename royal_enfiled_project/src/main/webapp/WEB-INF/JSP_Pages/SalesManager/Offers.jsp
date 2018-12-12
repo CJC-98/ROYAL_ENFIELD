@@ -16,7 +16,9 @@
 </head>
 
 <body class="">
+
     <section id="content" class="m-t-lg wrapper-md animated fadeInDown">
+    <form action="Offers">
         <div class="container aside-xxl"> <a class="navbar-brand block" href="index.html">AddBikeOffer</a>
             <section class="panel panel-default m-t-lg bg-white">
                 <header class="panel-heading text-center"> <strong>Offer On Bike</strong> </header>
@@ -28,19 +30,20 @@
                 </div>
                 <div class="form-group"> <label class="col-sm-2 control-label">StartDate</label>
                     <div class="col-sm-10"> <input class="input-sm input-s datepicker-input form-control" size="20"
-                            type="date" value="12-02-2013" data-date-format="dd-mm-yyyy">
+                            type="date" name="startDate" value="12-02-2013" data-date-format="dd-mm-yyyy">
                     </div>
                 </div>
                 <div class="form-group"> <label class="col-sm-2 control-label">EndDate</label>
                     <div class="col-sm-10"> <input class="input-sm input-s datepicker-input form-control" size="20"
-                            type="date" value="12-02-2013" data-date-format="dd-mm-yyyy">
+                            type="date" name="endDate" value="12-02-2013" data-date-format="dd-mm-yyyy">
                     </div>
                 </div>
 
-                <form action="http://flatfull.com/themes/note/index.html" class="panel-body wrapper-lg">
+                <!-- <form action="http://flatfull.com/themes/note/index.html" class="panel-body wrapper-lg"> -->
 
 
-                    <center> <a class="btn btn-s-md btn-success btn-rounded" href="#">Add Offer</a> </center>
+                   <!--  <center> <a class="btn btn-s-md btn-success btn-rounded" href="#">Add Offer</a> </center> -->
+                   <input type="submit" value="addoffer">
                 </form>
             </section>
         </div>
