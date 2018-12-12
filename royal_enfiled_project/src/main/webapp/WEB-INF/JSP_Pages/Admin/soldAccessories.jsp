@@ -365,6 +365,7 @@
                                             aria-label="Engine version: activate to sort column ascending" 
                                             style="width: 125px;">Part_Quantity
                                         </th>
+                       
                                          <th class="sorting" tabindex="0" aria-controls="example1" 
                                              rowspan="1" colspan="1" 
                                             aria-label="Engine version: activate to sort column ascending" 

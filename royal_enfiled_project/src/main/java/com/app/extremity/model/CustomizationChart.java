@@ -2,7 +2,7 @@ package com.app.extremity.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.GenerationType;  
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -13,13 +13,13 @@ public class CustomizationChart {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int CustomizationChartId;
+	private int customizationChartId;
 	
 	private String part;
 	
 	private long cost;
 	
-	private String Status = "pending";  //OR in-progress OR done
+	private String status = "pending";  //OR in-progress OR done
 	
 	@ManyToOne
 	private BikeCustomization bikeCustomization;
@@ -36,10 +36,10 @@ public class CustomizationChart {
 	}
 	
 	public int getCustomizationChartId() {
-		return CustomizationChartId;
+		return customizationChartId;
 	}
 	public void setCustomizationChartId(int customizationChartId) {
-		CustomizationChartId = customizationChartId;
+		this.customizationChartId = customizationChartId;
 	}
 	public String getPart() {
 		return part;
@@ -54,10 +54,10 @@ public class CustomizationChart {
 		this.cost = cost;
 	}
 	public String getStatus() {
-		return Status;
+		return status;
 	}
 	public void setStatus(String status) {
-		Status = status;
+		this.status = status;
 	}
 	
 	
