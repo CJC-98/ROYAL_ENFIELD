@@ -61,7 +61,7 @@
                             </form>
                         </section>
                     </section>
-                </li>
+                </li>  
                 <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 	<span class="thumb-sm avatar pull-left">
                             <img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/avatar.jpg"> 
