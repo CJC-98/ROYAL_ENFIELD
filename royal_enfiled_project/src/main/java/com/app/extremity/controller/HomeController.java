@@ -51,7 +51,7 @@ public class HomeController {
 		return "IndivisualUser/indivisualUserIndex";
 
 		
-		logger.info("In SignIn controller log");
+		/*logger.info("In SignIn controller log");
 		int i=homeService.checkLoginCredentials(email,password);
 		switch (i) {
 		case 1:
@@ -68,7 +68,7 @@ public class HomeController {
 			model.addAttribute("msg", "Wrong Credentials");
 			return "login";
 		}
-
+*/
 
 	}
 
