@@ -69,20 +69,20 @@ public class SalesManagerController {
 
 	}
 
-	@RequestMapping(value = "/ViewNewBike")
+	@RequestMapping(value = "/ViewOrderBike")
 	public String ViewNewBike(Model model) {
 
 		System.out.println("in order");
-		model.addAttribute("link", "ViewOldBike.jsp");
+		model.addAttribute("link", "ViewOrderBike.jsp");
 		return "SalesManager/salesManagerIndex";
 
 	}
 
-	@RequestMapping(value = "/ViewAccessories")
+	@RequestMapping(value = "/ViewOrderAccessories")
 	public String ViewAccessories(Model model) {
 
 		System.out.println("in order");
-		model.addAttribute("link", "ViewAccessories.jsp");
+		model.addAttribute("link", "ViewOrderAccessories.jsp");
 		return "SalesManager/salesManagerIndex";
 
 	}

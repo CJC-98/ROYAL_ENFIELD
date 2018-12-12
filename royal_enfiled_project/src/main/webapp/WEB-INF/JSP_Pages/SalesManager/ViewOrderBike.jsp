@@ -27,7 +27,7 @@
 
 				<div class="m-b-md">
 					<h3 class="m-b-none" style="text-align: center; font-size: 30pxl; font-weight: bold;">View
-						Offers</h3>
+						OrderBike</h3>
 				</div>
 
 				<!-- first table starts -->
@@ -36,23 +36,18 @@
 						<table class="table table-striped m-b-none b-a">
 							<thead>
 								<tr>
-									<th style="text-align: center">OId</th>
-									<th style="text-align: center">OfferName</th>
-									<th style="text-align: center">DiscountInPercentage</th>
-									<th style="text-align: center">StartDate</th>
-									<th style="text-align: center">EndDate</th>
+									<th style="text-align: center">VOBId</th>
+									<th style="text-align: center">OrderDate</th>
+									<th style="text-align: center">BikeModel</th>
+									<th style="text-align: center">BikeEngineType</th>
+									<th style="text-align: center">BikeColor</th>
+									<th style="text-align: center">Quantity</th>
 								</tr>
 							</thead>
 
 							<tbody>
 
-								<tr style="text-align: center">
-									<td>O001</td>
-									<td style="color: #FF681B">DiwaliOffer</td>
-									<td style="color: #81EF19">10%</td>
-									<td style="color: #81EF19">10-10-10</td>
-									<td style="color: #81EF19">12-12-12</td>
-								</tr></tbody>
+								
 
 						</table>
 					</section>

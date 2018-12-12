@@ -255,20 +255,20 @@
 												<li><a href="#table"> <i
 														class="fa fa-angle-down text"></i> <i
 														class="fa fa-angle-up text-active"></i> <span>View
-															Bike</span>
+															Order</span>
 												</a>
 													<ul class="nav bg">
-														<li><a href="ViewOldBike"> <i
-																class="fa fa-angle-right"></i> <span>Old</span>
+														<li><a href="ViewOrderBike"> <i
+																class="fa fa-angle-right"></i> <span>Bike</span>
 														</a></li>
-														<li><a href="ViewNewBike"> <i
-																class="fa fa-angle-right"></i> <span>New</span>
+														<li><a href="ViewOrderAccessories"> <i
+																class="fa fa-angle-right"></i> <span>Accessories</span>
 														</a></li>
 
 													</ul></li>
-												<li><a href="ViewAccessories"> <i
-														class="fa fa-angle-right"></i> <span>View
-															Accessories</span>
+												<li><a href="ViewOldBike"> <i
+														class="fa fa-angle-right"></i> <span>
+															ViewOldBike</span>
 												</a></li>
 
 												<li><a href="ViewInvoice"> <i
