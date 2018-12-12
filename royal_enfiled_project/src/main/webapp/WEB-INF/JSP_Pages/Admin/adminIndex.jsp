@@ -127,6 +127,7 @@
                                             </a>
                                              <!-- This for sublist of Add -->
                                             <ul class="nav lt">
+
                                                 <li> <a href="#manager">
                                                           <i class="fa fa-angle-right"><b class="bg-danger"></b></i><span class="pull-right">
                                                             <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> 
@@ -152,6 +153,7 @@
 											</ul>
                                            
                                              <!-- end of sublist of Add -->
+
                                         </li>
 									
 										

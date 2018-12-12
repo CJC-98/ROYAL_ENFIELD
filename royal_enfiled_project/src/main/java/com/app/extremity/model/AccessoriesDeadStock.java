@@ -10,13 +10,14 @@ import javax.persistence.OneToOne;
 
 @Entity
 public class AccessoriesDeadStock
-{
+{  
 	@Id
 	//@GeneratedValue(strategy=GenerationType.IDENTITY)
-private String accessoriesDeadStockID;
+	private String accessoriesDeadStockID;
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="partId")
     private AccessoriesStock acd;
+	
 	public String getAccessoriesDeadStockID() {
 		return accessoriesDeadStockID;
 	}

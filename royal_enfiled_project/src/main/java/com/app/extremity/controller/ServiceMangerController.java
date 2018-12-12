@@ -113,32 +113,8 @@ public class ServiceMangerController {
 	
 	@RequestMapping(value="/CustomizationInvoicePage")
 	public String CustomizationInvoicePage(Model model){
-		
-	
-		Color c1 = new Color();
-		c1.setColorId("C1");
-		c1.setColorName("green");
-		
-		Color c2 = new Color();
-		c2.setColorId("C2");
-		c2.setColorName("red");
-		
-		Color c3 = new Color();
-		c3.setColorId("c3");
-		c3.setColorName("black");
-		
-		Color c4 = new Color();
-		c4.setColorId("C4");
-		c4.setColorName("blue");
-		
-		List<String> colors = new ArrayList();
-		colors.add("A");
-		colors.add("B");
-		colors.add("C");
-		colors.add("D");
 		 
 		model.addAttribute("link","customizationInvoice.jsp");
-		model.addAttribute("colors",colors);
 		return "ServiceManager/serviceManagerIndex";
 	}
 	
