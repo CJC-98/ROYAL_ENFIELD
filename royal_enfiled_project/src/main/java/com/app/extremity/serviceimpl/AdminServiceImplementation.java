@@ -18,12 +18,16 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
+
+
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+
 import com.app.extremity.idao.EmployeeDetailsIDao;
 import com.app.extremity.iservice.IAdminService;
 import com.app.extremity.model.EmailMessage;
@@ -67,7 +71,7 @@ public class AdminServiceImplementation implements IAdminService {
 		}
 
 		employeeDetailsDao.save(employeeDetails);
-		logger.info("employee Saved", employeeDetails);
+		logger.info("employee Saved");
 	}
 
 	/*
@@ -121,7 +125,7 @@ public class AdminServiceImplementation implements IAdminService {
 
 			Transport.send(msg);
 
-			logger.info("Email has been send to the employee", emailmessage);
+			logger.info("Email has been send to the employee");
 
 		} catch (MessagingException e) {
 			
