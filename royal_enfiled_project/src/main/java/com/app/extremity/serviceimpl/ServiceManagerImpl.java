@@ -1,7 +1,5 @@
 package com.app.extremity.serviceimpl;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +12,6 @@ import com.app.extremity.idao.ServiceInvoiceIDao;
 import com.app.extremity.idao.ServicingChartIDao;
 import com.app.extremity.iservice.ServiceManagerInterface;
 import com.app.extremity.model.BikeServicing;
-import com.app.extremity.model.Notfication;
 import com.app.extremity.model.ServcingBikeInfo;
 import com.app.extremity.model.ServicingChart;
 import com.app.extremity.model.ServicingInvoice;
@@ -34,6 +31,8 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	
 	@Autowired
 	ServicingChartIDao servicingChartIDao;
+	
+	
 	
 
 	
@@ -72,10 +71,25 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	
 	}
 	@Override
-	public int getServicingCount() {
+	public long getApprovedServiceCount() {
 		// TODO Auto-generated method stub
-		return (int) bikeServicingIDao.getServicingCount();
+		return bikeServicingIDao.getApprovedServiceCount();
 	}
+
+	@Override
+	public long getInProgressCount() {
+		// TODO Auto-generated method stub
+		return bikeServicingIDao.getInProgressCount();
+	}
+
+	@Override
+	public long getCompletedServiceCount() {
+		// TODO Auto-generated method stub
+		return bikeServicingIDao.getCompletedServiceCount();
+	}
+	 
+
+
 	
 
 }
