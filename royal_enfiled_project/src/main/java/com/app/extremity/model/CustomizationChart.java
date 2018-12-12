@@ -8,65 +8,56 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="ServicingChartTable")
-public class ServicingChart {
-	
+@Table(name="CustomizationChartTable")
+public class CustomizationChart {
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int ServicingChartId;
+	private int CustomizationChartId;
 	
-	private String work;
+	private String part;
 	
 	private long cost;
 	
 	private String Status = "pending";  //OR in-progress OR done
 	
 	@ManyToOne
-	private BikeServicing bikeServicing;
-
+	private BikeCustomization bikeCustomization;
 	
 	
 	
 	
-
-	public int getServicingChartId() {
-		return ServicingChartId;
+	
+	public BikeCustomization getBikeCustomization() {
+		return bikeCustomization;
 	}
-
-	public void setServicingChartId(int servicingChartId) {
-		ServicingChartId = servicingChartId;
+	public void setBikeCustomization(BikeCustomization bikeCustomization) {
+		this.bikeCustomization = bikeCustomization;
 	}
-
-	public String getWork() {
-		return work;
+	
+	public int getCustomizationChartId() {
+		return CustomizationChartId;
 	}
-
-	public void setWork(String work) {
-		this.work = work;
+	public void setCustomizationChartId(int customizationChartId) {
+		CustomizationChartId = customizationChartId;
 	}
-
+	public String getPart() {
+		return part;
+	}
+	public void setPart(String part) {
+		this.part = part;
+	}
 	public long getCost() {
 		return cost;
 	}
-
 	public void setCost(long cost) {
 		this.cost = cost;
 	}
-
 	public String getStatus() {
 		return Status;
 	}
-
 	public void setStatus(String status) {
 		Status = status;
-	}
-
-	public BikeServicing getBikeServicing() {
-		return bikeServicing;
-	}
-
-	public void setBikeServicing(BikeServicing bikeServicing) {
-		this.bikeServicing = bikeServicing;
 	}
 	
 	
