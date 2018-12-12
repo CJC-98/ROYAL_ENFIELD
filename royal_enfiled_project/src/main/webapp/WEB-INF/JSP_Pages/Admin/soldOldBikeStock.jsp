@@ -274,7 +274,7 @@
                         <!-- Table  -->
                         <div class="row text-center m-b-md">
                                 <section class="scrollable padder">
-                                <h3><b>Old_Bike</b></h3>
+                                <h3><b>Sold_Old_Bike_Stock</b></h3>
                                 </section>
                         </div>
                         <div class="row ">
@@ -308,6 +308,7 @@
                                         <div class="col-sm-12">
                                             <table id="example1" class="table table-bordered table-striped dataTable" 
                                             role="grid" aria-describedby="example1_info">
+     
                                             
      
                                             

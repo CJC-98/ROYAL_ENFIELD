@@ -308,76 +308,40 @@
                                         <div class="col-sm-12">
                                             <table id="example1" class="table table-bordered table-striped dataTable" 
                                             role="grid" aria-describedby="example1_info">
-                                            
-     
-                                            
+                                          
+                                          
+                                          
+                                          
+	                              
                                   <thead>
                                   <tr role="row">
                                   <th class="sorting_asc" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-sort="ascending" 
                                             aria-label="Rendering engine: activate to sort column descending"
-                                            style="width: 125px;">Old_Bike_Id
+                                            style="width: 125px;">Accessories_Dead_Stock_ID
                                       </th>
                                       <th class="sorting_asc" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-sort="ascending" 
                                             aria-label="Rendering engine: activate to sort column descending"
-                                            style="width: 125px;">Total_Km_Run
+                                            style="width: 125px;">Part_Id
                                       </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" aria-label="Browser: 
-                                            activate to sort column ascending" 
-                                            style="width: 125px;">Bike_Condition
-                                        </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" aria-label="Platform(s): 
-                                            activate to sort column ascending" 
-                                            style="width: 125px;">Bike_Mfg_Year
-                                        </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" 
-                                             rowspan="1" colspan="1" 
-                                            aria-label="Engine version: activate to sort column ascending" 
-                                            style="width: 125px;">Bike_Purchase_Year
-                                        </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" 
-                                            aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;">Bike_Service_Status
-                                        </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" 
-                                            aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;">Mobile_Number
-                                        </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" 
-                                            aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;">Registration_Number
-                                        </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" 
-                                            aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;">Tax_Paid_Details
-                                        </th>
-                                         <th class="sorting" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" 
-                                            aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;">Tax_Remaining
-                                        </th>
-                                         <th class="sorting" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" 
-                                            aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;">Seller_Details
-                                        </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" 
-                                            aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;">Bike_Mileage
-                                        </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" 
-                                            aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;">Bike_Image
-                                        </th>
+                                       <th class="sorting_asc" tabindex="0" aria-controls="example1" 
+                                            rowspan="1" colspan="1" aria-sort="ascending" 
+                                            aria-label="Rendering engine: activate to sort column descending"
+                                            style="width: 125px;">Part_Name
+                                      </th>
+                                        
+                                        <th class="sorting_asc" tabindex="0" aria-controls="example1" 
+                                            rowspan="1" colspan="1" aria-sort="ascending" 
+                                            aria-label="Rendering engine: activate to sort column descending"
+                                            style="width: 125px;">Part_Price
+                                      </th>
+                                      <th class="sorting_asc" tabindex="0" aria-controls="example1" 
+                                            rowspan="1" colspan="1" aria-sort="ascending" 
+                                            aria-label="Rendering engine: activate to sort column descending"
+                                            style="width: 125px;">Part_Quantity
+                                      </th>
+                                       
                                        
                                     </tr>
                                   </thead>
@@ -386,34 +350,19 @@
                                     <td class="sorting"></td>
                                     <td></td>
                                     <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
                                     
-                                  </tr>
+                                 </tr>
                                   </tbody>
                                   <tfoot>
                                   <tr>
-                                  <th rowspan="1" colspan="1">Old_Bike_Id</th>
-                                  <th rowspan="1" colspan="1">Total_Km_Run</th>
-                                    <th rowspan="1" colspan="1">Bike_Condition</th>
-                                    <th rowspan="1" colspan="1">Bike_Mfg_Year</th>
-                                    <th rowspan="1" colspan="1">Bike_Purchase_Year</th>
-                                    <th rowspan="1" colspan="1">Bike_Service_Status</th>
-                                    <th rowspan="1" colspan="1">Mobile_Number</th>
-                                    <th rowspan="1" colspan="1">Registration_Number</th>
-                                    <th rowspan="1" colspan="1">Tax_Paid_Details</th>
-                                    <th rowspan="1" colspan="1">Tax_Remaining</th>
-                                    <th rowspan="1" colspan="1">Seller_Details</th>
-                                    <th rowspan="1" colspan="1">Bike_Mileage</th>
-                                      <th rowspan="1" colspan="1">Bike_Image</th>
+                                  <th rowspan="1" colspan="1">Accessories_Dead_Stock_ID</th>
+                                  <th rowspan="1" colspan="1">Part_Id</th>
+                                  <th rowspan="1" colspan="1">Part_Name</th>
+                                  <th rowspan="1" colspan="1">Part_Price</th>
+                                  <th rowspan="1" colspan="1">Part_Quantity</th>
+                                  
+                                   
+                                
                                         
                                     </tr>
                                   </tfoot>
