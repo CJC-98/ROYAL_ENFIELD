@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class DealerController {
-  
+  //Buy new Bike Page
 	@RequestMapping(value="/NewBike1")
 	public String NewBike(Model model){
 		
