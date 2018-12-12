@@ -10,7 +10,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication(scanBasePackages="com")
 @EntityScan("com.app.extremity.model")
 @EnableJpaRepositories("com.app.extremity.idao")
-     
 public class Test {    
 	   
 	static Logger logger = LogManager.getLogger(Test.class);

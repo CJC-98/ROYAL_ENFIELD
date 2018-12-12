@@ -22,10 +22,10 @@ public class HomeController {
 	public String homePage()
 	{ 
 		logger.info("In home controller log");
-		return "home";
+		return "Admin/employeeRegistration";
 	}  
 	 
-	@RequestMapping(value="/loginPage")
+	@RequestMapping(value="")
 	public String loginPage()
 	{ 
 		logger.info("In login controller log");
@@ -37,10 +37,10 @@ public class HomeController {
 	public String signIn(Model model)    
 	{ 
 		
-		logger.info("In SignIn controller log");
-		model.addAttribute("link", "serviceManagerDashboard.jsp");
-		return "ServiceManager/serviceManagerIndex";
-		//return "IndivisualUser/indivisualUserIndex";//by default go to client index.jsp  
+//		logger.info("In SignIn controller log");
+//		model.addAttribute("link", "serviceManagerDashboard.jsp");
+//		return "ServiceManager/serviceManagerIndex";
+		return "IndivisualUser/indivisualUserIndex";//by default go to client index.jsp  
 
 	}  
 	   
