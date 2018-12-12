@@ -68,6 +68,12 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	public long getAllCustomizationCount() {
 		// TODO Auto-generated method stub
 		return 0;
+	
+	}
+	@Override
+	public int getServicingCount() {
+		// TODO Auto-generated method stub
+		return (int) bikeServicingIDao.getServicingCount();
 	}
 	 
 
