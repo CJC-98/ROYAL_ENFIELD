@@ -27,6 +27,8 @@ import com.app.extremity.model.ServicingInvoice;
 @Controller
 public class ServiceMangerController {
 	
+
+
 	static Logger logger = LogManager.getLogger(ServiceMangerController.class);
 	
 	@Autowired
@@ -34,8 +36,12 @@ public class ServiceMangerController {
 	
 	@RequestMapping(value="/DashboardPage")
 	public String ServicesDashboardPage(Model model){
-		 
 		
+		//sscount => service count
+		
+		int sscount=serviceManagerInterface.getServicingCount();
+		 
+		System.out.println("Approved services are:"+sscount);
 		
 		  
 		
