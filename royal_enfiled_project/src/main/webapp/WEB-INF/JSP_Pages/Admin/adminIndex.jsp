@@ -134,15 +134,15 @@
 
                                                          <!-- this for sublist of Manager -->
                                                          <ul class="nav lt">
-                                                        <li class="active"> <a href="salemanager.html" class="active">
+                                                        <li class="active"> <a href="composeMail" class="active">
                                                             <span>SalesManager</span> </a> </li>
-                                                        <li class="active"> <a href="servicemanager.html" class="active">
+                                                        <li class="active"> <a href="composeMail" class="active">
                                                             <span>ServiceManager</span> </a> </li>
                                                         </ul>
                                                          <!-- end of sublist of Manager -->
                                                 </li>
                                                 
-												<li> <a href="#accountant"> <i class="fa fa-angle-right"><b class="bg-danger"></b></i>
+												<li> <a href="composeMail"> <i class="fa fa-angle-right"><b class="bg-danger"></b></i>
                                                     
                                                     <span>Accountant</span> </a> 
 
@@ -172,7 +172,16 @@
                                         </a>
                                         <ul class="nav lt">
                                             <li> <a href="bike.html"> <i class="fa fa-angle-right"></i> <span>Bike</span>
-                                                </a> </li>
+                                                </a> 
+                                                         <!-- this for sublist of Bike -->
+                                                         <ul class="nav lt">
+                                                        <li> <a href="composeMail" class="active">
+                                                            <span>NewBike</span> </a> </li>
+                                                        <li> <a href="composeMail" class="active">
+                                                            <span>OldBike</span> </a> </li>
+                                                        </ul>
+                                                         <!-- end of sublist of Bike -->
+                                                </li>
                                             <li> <a href="accessories.html"> <b class="badge bg-info pull-right"></b>
                                                     <i class="fa fa-angle-right"></i> <span>Accesories</span> </a> </li>
                                             

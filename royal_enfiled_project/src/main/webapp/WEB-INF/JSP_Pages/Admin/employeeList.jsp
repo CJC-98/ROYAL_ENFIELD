@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+
 <head>
     <meta charset="utf-8" />
     <title>Notebook | Web Application</title>
@@ -135,9 +136,9 @@
 
                                                     <!-- this for sublist of Manager -->
                                                     <ul class="nav lt">
-                                                        <li> <a href="saleManager.html" class="active">
+                                                        <li> <a href="salesmanager.html" class="active">
                                                                 <span>SalesManager</span> </a> </li>
-                                                        <li> <a href="ServiceManager.html" class="active">
+                                                        <li> <a href="servicemanager.html" class="active">
                                                                 <span>ServiceManager</span> </a> </li>
                                                     </ul>
                                                     <!-- end of sublist of Manager -->
@@ -169,8 +170,8 @@
                                                         class="fa fa-angle-up text-active"></i> </span> <span>Stock</span>
                                             </a>
                                             <ul class="nav lt">
-                                                <li> <a href=""> <i class="fa fa-angle-right"></i> <span>Bike</span>
-                                                    </a>
+                                                <li> <a href="bike.html"> <i class="fa fa-angle-right"></i> <span>Bike</span>
+                                                    </a> 
                                                      <!-- this for sublist of Bike -->
                                                          <ul class="nav lt">
                                                         <li> <a href="composeMail" class="active">
@@ -178,7 +179,7 @@
                                                         <li> <a href="composeMail" class="active">
                                                             <span>Old_Bike</span> </a> </li>
                                                         </ul>
-                                                         <!-- end of sublist of Bike --> 
+                                                         <!-- end of sublist of Bike -->
                                                     </li>
                                                 <li> <a href="accessories.html"> 
                                                         <i class="fa fa-angle-right"></i> <span>Accesories</span> </a>
@@ -202,7 +203,7 @@
                                                         class="fa fa-angle-up text-active"></i> </span> <span>View</span>
                                             </a>
                                             <ul class="nav lt">
-                                                <li> <a href="salemanagerlist.html" class="active">
+                                                <li> <a href="salesmanagerlist.html" class="active">
                                                         <i class="fa fa-angle-right"></i> 
                                                         <span>SalesManager</span> </a> </li>
                                                 <li> <a href="servicemanagerlist.html" class="active">
@@ -260,82 +261,153 @@
                 </aside> <!-- /.aside -->
                 <section id="content">
                     <section class="vbox">
-                        <!-- <section class="scrollable padder">
-
-                            <div class="content-header">
-                            <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
-                                <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
-                            </ul>
-                            <div class="m-b-md">
-                                <h3 class="m-b-none">Workset</h3> <small>Welcome back,Royal_Enfield</small>
+                        <div class="row">
+                            <section class="scrollable padder">
+                                    <section class="scrollable padder">
+                                        <div class="content-header">
+                                            <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
+                                                <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                                            </ul>
+                                            <div class="m-b-md">
+                                                <h3 class="m-b-none">Workset</h3>
+                                                <small>Welcome back,Royal_Enfield</small>
+                                            </div>
+                                        </div>
+                                     </section>
+                                    </section>
+                        </div>
+                        <!-- Table  -->
+                        <div class="row text-center m-b-md">
+                                <section class="scrollable padder">
+                                <h3><b>Employee_List</b></h3>
+                                </section>
+                        </div>
+                        <div class="row ">
+                        <section class="scrollable padder">
+                        <div class="container">
+                                <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-6">
+                                            <div class="dataTables_length" id="example1_length">
+                                                <label>Show 
+                                                    <select name="example1_length" aria-controls="example1" 
+                                                    class="custom-select custom-select-sm form-control form-control-sm">
+                                                        <option value="10">10</option>
+                                                        <option value="25">25</option>
+                                                        <option value="50">50</option>
+                                                        <option value="100">100</option>
+                                                    </select> entries
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-6">
+                                            <div id="example1_filter" class="dataTables_filter">
+                                                <label>Search:
+                                                    <input type="search" class="form-control form-control-sm" 
+                                                    placeholder="" aria-controls="example1">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <table id="example1" class="table table-bordered table-striped dataTable" 
+                                            role="grid" aria-describedby="example1_info">
+                                  <thead>
+                                  <tr role="row">
+                                      <th class="sorting_asc" tabindex="0" aria-controls="example1" 
+                                            rowspan="1" colspan="1" aria-sort="ascending" 
+                                            aria-label="Rendering engine: activate to sort column descending"
+                                            style="width: 125px;">Employee_id
+                                      </th>
+                                        <th class="sorting" tabindex="0" aria-controls="example1" 
+                                            rowspan="1" colspan="1" aria-label="Browser: 
+                                            activate to sort column ascending" 
+                                            style="width: 125px;">Name
+                                        </th>
+                                        <th class="sorting" tabindex="0" aria-controls="example1" 
+                                            rowspan="1" colspan="1" aria-label="Platform(s): 
+                                            activate to sort column ascending" 
+                                            style="width: 125px;">City
+                                        </th>
+                                        <th class="sorting" tabindex="0" aria-controls="example1" 
+                                             rowspan="1" colspan="1" 
+                                            aria-label="Engine version: activate to sort column ascending" 
+                                            style="width: 125px;">Contact
+                                        </th>
+                                        <th class="sorting" tabindex="0" aria-controls="example1" 
+                                            rowspan="1" colspan="1" 
+                                            aria-label="CSS grade: activate to sort column ascending" 
+                                            style="width: 125px;">Email
+                                        </th>
+                                        <th class="sorting" tabindex="0" aria-controls="example1" 
+                                            rowspan="1" colspan="1" 
+                                            aria-label="CSS grade: activate to sort column ascending" 
+                                            style="width: 125px;">Username
+                                        </th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr role="row" class="odd">
+                                    <td class="sorting">1</td>
+                                    <td>Nikita</td>
+                                    <td>Pune</td>
+                                    <td>9975588575</td>
+                                    <td>njpise18@gmail.com</td>
+                                    <td >nikita123</td>
+                                  
+                                  </tbody>
+                                  <tfoot>
+                                  <tr><th rowspan="1" colspan="1">Employee_Id</th>
+                                    <th rowspan="1" colspan="1">Name</th>
+                                    <th rowspan="1" colspan="1">City</th>
+                                    <th rowspan="1" colspan="1">Contact</th>
+                                    <th rowspan="1" colspan="1">Email</th>
+                                    <th rowspan="1" colspan="1">Username</th></tr>
+                                  </tfoot>
+                                </table>
                             </div>
                         </div>
-                        </section> -->
-                        <!-- Compose mail -->
-                        <div class="container">
-                                <div class="card card-primary card-outline">
-                                    <div class="card-header">
-                                        <h3 class="card-title">Compose New Message</h3>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-5">
+                                <div class="dataTables_info" id="example1_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div>
+                            </div>
+                            <div class="col-sm-12 col-md-7">
+                                <div class="dataTables_paginate paging_simple_numbers" id="example1_paginate">
+                                    <ul class="pagination">
+                                    <li class="paginate_button page-item previous disabled" id="example1_previous">
+                                        <a href="#" aria-controls="example1" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
+                                    </li>
+                                    <li class="paginate_button page-item active">
+                                        <a href="#" aria-controls="example1" data-dt-idx="1" tabindex="0" class="page-link">1</a>
+                                    </li>
+                                    <li class="paginate_button page-item ">
+                                        <a href="#" aria-controls="example1" data-dt-idx="2" tabindex="0" class="page-link">2</a>
+                                    </li>
+                                    <li class="paginate_button page-item ">
+                                        <a href="#" aria-controls="example1" data-dt-idx="3" tabindex="0" class="page-link">3</a>
+                                    </li>
+                                    <li class="paginate_button page-item ">
+                                        <a href="#" aria-controls="example1" data-dt-idx="4" tabindex="0" class="page-link">4</a>
+                                    </li>
+                                    <li class="paginate_button page-item ">
+                                        <a href="#" aria-controls="example1" data-dt-idx="5" tabindex="0" class="page-link">5</a>
+                                    </li>
+                                    <li class="paginate_button page-item ">
+                                        <a href="#" aria-controls="example1" data-dt-idx="6" tabindex="0" class="page-link">6</a>
+                                    </li>
+                                    <li class="paginate_button page-item next" id="example1_next">
+                                        <a href="#" aria-controls="example1" data-dt-idx="7" tabindex="0" class="page-link">Next</a>
+                                    </li>
+                                    </ul>
                                     </div>
-                                    <!-- /.card-header -->
-                                    <div class="card-body">
-                                        <div class="form-group">
-                                            <input class="form-control" placeholder="To:">
-                                        </div>
-                                        <div class="form-group">
-                                            <input class="form-control" placeholder="Subject:">
-                                        </div>
-                                        <div class="form-group">
-                                            <textarea id="compose-textarea" class="form-control" style="height: 300px">                      &lt;h1&gt;&lt;u&gt;Heading Of Message&lt;/u&gt;&lt;/h1&gt;
-                                          &lt;h4&gt;Subheading&lt;/h4&gt;
-                                          &lt;p&gt;But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain
-                                            was born and I will give you a complete account of the system, and expound the actual teachings
-                                            of the great explorer of the truth, the master-builder of human happiness. No one rejects,
-                                            dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know
-                                            how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again
-                                            is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain,
-                                            but because occasionally circumstances occur in which toil and pain can procure him some great
-                                            pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise,
-                                            except to obtain some advantage from it? But who has any right to find fault with a man who
-                                            chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that
-                                            produces no resultant pleasure? On the other hand, we denounce with righteous indignation and
-                                            dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so
-                                            blinded by desire, that they cannot foresee&lt;/p&gt;
-                                          &lt;ul&gt;
-                                            &lt;li&gt;List item one&lt;/li&gt;
-                                            &lt;li&gt;List item two&lt;/li&gt;
-                                            &lt;li&gt;List item three&lt;/li&gt;
-                                            &lt;li&gt;List item four&lt;/li&gt;
-                                          &lt;/ul&gt;
-                                          &lt;p&gt;Thank you,&lt;/p&gt;
-                                          &lt;p&gt;John Doe&lt;/p&gt;
-                                        </textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="btn btn-default btn-file">
-                                                <i class="fa fa-paperclip"></i> Attachment
-                                                <input type="file" name="attachment">
-                                            </div>
-                                            <p class="help-block">Max. 32MB</p>
-                                        </div>
-                                    </div>
-                                    <!-- /.card-body -->
-                                    <div class="card-footer">
-                                        <div class="float-right">
-                                            <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i>
-                                                Draft</button>
-                                            <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i>
-                                                Send</button>
-                                        </div>
-                                        <button type="reset" class="btn btn-default"><i class="fa fa-times"></i>
-                                            Discard</button>
-                                    </div>
-                                    <!-- /.card-footer -->
                                 </div>
-                                <!-- /. box -->
+                            </div>
                         </div>
-
-                            <!-- End compose -->
+                        </div>
+                         </section>
+                        </div>
+                         <!-- End table -->
 
                             <aside class="bg-light lter b-l aside-md hide" id="notes">
                                 <div class="wrapper">Notification</div>
@@ -343,7 +415,8 @@
                     </section>
                 </section>
             </section> <!-- Bootstrap -->
-             <!-- App -->
+            
+			<!-- App -->
    			 <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/app.v1.js"></script>
    			 <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/easypiechart/jquery.easy-pie-chart.js"></script>
     		 <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/sparkline/jquery.sparkline.min.js"></script>
