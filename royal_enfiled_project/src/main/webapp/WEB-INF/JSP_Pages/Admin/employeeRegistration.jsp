@@ -105,7 +105,7 @@ h2 {
 				<div class="panel-heading">
 					<h2>Registration Form</h2>
 				</div>
-				<form action="admin/saveEmployee" data-validate="parsley"
+				<form action="saveEmployee" data-validate="parsley"
 					enctype="multipart/form-data" method="post">
 					<div class="panel-body">
 						<!-- name -->
@@ -251,7 +251,7 @@ h2 {
 										<span class="input-group-addon"><i
 											class="glyphicon glyphicon-lock"></i></span> <input id="password"
 											type="password" class="form-control" name="employeePassword"
-											placeholder="Password">
+											placeholder="Password" required="required">
 									</div>
 
 								</div>
@@ -267,7 +267,7 @@ h2 {
 											class="glyphicon glyphicon-lock"></i></span> <input
 											id="confirmPassword" type="password" class="form-control"
 											name="employeePassword" placeholder="Password"
-											onchange="checkPassword()">
+											onchange="checkPassword()" required="required">
 									</div>
 									<small id="passwordMessage" class="alert-danger"></small>
 								</div>

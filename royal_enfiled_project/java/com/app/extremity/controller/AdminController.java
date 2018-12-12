@@ -15,7 +15,6 @@ import com.app.extremity.model.EmployeeDetails;
 
 
 
-
 @Controller
 @RequestMapping(value="/admin")
 public class AdminController {
