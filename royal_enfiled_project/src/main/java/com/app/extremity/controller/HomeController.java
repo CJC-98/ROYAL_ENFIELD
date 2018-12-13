@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.app.extremity.iservice.IAdminService;
 import com.app.extremity.iservice.IHomeService;
 
-import com.app.extremity.iservice.Account_ServiceInterface;
-
 
 
   //author: pranay kohad 
@@ -27,9 +25,6 @@ import com.app.extremity.iservice.Account_ServiceInterface;
 public class HomeController {
 	@Autowired
 	IHomeService homeService;
-	
-	@Autowired
-	Account_ServiceInterface AService;
 	
 	static Logger logger = LogManager.getLogger(HomeController.class);
 	@Autowired
@@ -65,10 +60,8 @@ public class HomeController {
 		int i=homeService.checkLoginCredentials(email,password);
 		switch (i) {
 		case 1:
-			model.addAttribute("link", "adminDashboard.jsp");
-			
-			return "Admin/adminIndex";
-			
+			model.addAttribute("link", "adminDashboard.jsp");			
+			return "Admin/adminIndex";			
 		case 2:
 			model.addAttribute("link", "salesManagerDashboard.jsp");
 			return "SalesManager/salesManagerIndex";
