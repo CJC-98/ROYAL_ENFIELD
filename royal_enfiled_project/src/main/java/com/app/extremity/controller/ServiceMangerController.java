@@ -1,7 +1,14 @@
-package com.app.extremity.controller;
+ package com.app.extremity.controller;
 
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.management.Notification;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -9,15 +16,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.app.extremity.idao.BikeServicingIDao;
+import com.app.extremity.iservice.NotificationInterface;
 import com.app.extremity.iservice.ServiceManagerInterface;
 import com.app.extremity.model.BikeCustomization;
 import com.app.extremity.model.BikeServicing;
 import com.app.extremity.model.Color;
+
 import com.app.extremity.model.CustomizationBikeInfo;
 import com.app.extremity.model.CustomizationChart;
 import com.app.extremity.model.CustomizationInvoice;
+
+import com.app.extremity.model.Notfication;
+
 import com.app.extremity.model.ServcingBikeInfo;
 import com.app.extremity.model.ServicingChart;
 import com.app.extremity.model.ServicingInvoice;
@@ -31,13 +45,20 @@ import com.app.extremity.model.ServicingInvoice;
 @Controller
 public class ServiceMangerController {
 	
+
+
 	static Logger logger = LogManager.getLogger(ServiceMangerController.class);
 	
 	@Autowired
 	ServiceManagerInterface serviceManagerInterface;
 	
+	@Autowired
+	NotificationInterface notificationInterface;
+	
+	
 	@RequestMapping(value="/DashboardPage")
 	public String ServicesDashboardPage(Model model){
+
 		 
 		/*ServcingBikeInfo sbi = new ServcingBikeInfo();
 		sbi.setChasisNumber("AJD7945954");
@@ -65,18 +86,30 @@ public class ServiceMangerController {
 		sc4.setWork("engine tuning");
 		sc4.setCost(4500);
 		
+
 	
+        //sscount => aproved service count
+		long sscount=serviceManagerInterface.getApprovedServiceCount();
+		System.out.println("Approved services are:"+sscount);
+		model.addAttribute("approvedServiceCount",sscount);
 		
-		BikeServicing bs1 = new BikeServicing();
+		//ts => total service count
+	    long tscount=serviceManagerInterface.getAllServiceCount();
+		System.out.println("Total Services are:"+tscount);
+		model.addAttribute("totalServiceCount", tscount);
 		
-		bs1.setAppointmentDate("02/18/2018");
-		bs1.setServcingBikeInfo(sbi);
+		//ipcount => in progress count
+		long ipcount=serviceManagerInterface.getInProgressCount();
+		System.out.println("In progerss services are:"+ipcount);
+		model.addAttribute("inProgerssServices", ipcount);
 		
-		bs1.getServicingChart().add(sc1);
-		bs1.getServicingChart().add(sc2);
-		bs1.getServicingChart().add(sc3);
-		bs1.getServicingChart().add(sc4);	
+		//dscount => completed service count
+		long cscount=serviceManagerInterface.getCompletedServiceCount();
+		System.out.println("Completed services are:"+cscount);
+		model.addAttribute("completedservices", cscount);
+				
 		
+
 		
 		sc1.setBikeServicing(bs1);
 		sc2.setBikeServicing(bs1);
@@ -148,21 +181,22 @@ public class ServiceMangerController {
 		serviceManagerInterface.saveBikeCustomization(bc1);
 		
 		
-		
 
-		
 		*/
 		 logger.info("dashboard hits........... log");
 			model.addAttribute("link","serviceManagerDashboard.jsp");
 			return "ServiceManager/serviceManagerIndex";
+
 	}
 
 
 	@RequestMapping(value="/ApprovedServicesPage")
 	public String ApprovedServicesgPage(Model model){
-		
+		 
 		
 		System.out.println("approved service htis..................");
+	
+		
 		model.addAttribute("link","approvedServices.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
@@ -226,31 +260,6 @@ public class ServiceMangerController {
 	@RequestMapping(value="/CustomizationInvoicePage")
 	public String CustomizationInvoicePage(Model model){
 
-		
-	
-		Color c1 = new Color();
-		c1.setColorId("C1");
-		c1.setColorName("green");
-		
-		Color c2 = new Color();
-		c2.setColorId("C2");
-		c2.setColorName("red");
-		
-		Color c3 = new Color();
-		c3.setColorId("c3");
-		c3.setColorName("black");
-		
-		Color c4 = new Color();
-		c4.setColorId("C4");
-		c4.setColorName("blue");
-		
-		List<String> colors = new ArrayList();  
-		colors.add("A");
-		colors.add("B");
-		colors.add("C");
-		colors.add("D");
-		
-
 		model.addAttribute("link","customizationInvoice.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
@@ -259,8 +268,29 @@ public class ServiceMangerController {
 	public String MyNotificationsPage(Model model){
 		
 		System.out.println("go to notification page...............");
-		model.addAttribute("link","myNotifications.jsp");
+		
+//		notificationInterface.saveNotfication(null);  
+		
+		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("pranay kohad");
+		model.addAttribute("outboxList",outboxList);
+		
+		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication("pranay kohad");
+		model.addAttribute("inboxList",inboxList);   
+		
+	
+		model.addAttribute("link","myNotifications.jsp");	
 		return "ServiceManager/serviceManagerIndex";
 	}
 	
+
+
+	@RequestMapping(value="/searchEmployee")    
+	public @ResponseBody  String serachEmployee(@RequestParam String empName,HttpServletResponse response) throws IOException {
+		System.out.println("in employee controller");
+		
+		
+		return  null;		
 	}
+	
+	
+}
