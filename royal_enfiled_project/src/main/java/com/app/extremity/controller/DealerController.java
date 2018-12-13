@@ -210,8 +210,6 @@ public class DealerController {
 			c.setAddress(a);
 			System.out.println("fetching mob--"+r.getContact().getMobile());
 			r.setContact(c);
-
-			
 			service.saveData(r);
 			String msg="data saved successfully";
 			model.addAttribute("msg", msg);
