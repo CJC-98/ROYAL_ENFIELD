@@ -46,30 +46,30 @@ h2 {
 </style>
 <script>
 	function createXmlHttpRequestObject() {
-	var xmlHttp;
-	if (window.ActiveXObject) {
-		try {
-			xmlHttp = new ActiveXObject(Microsoft.XMLHTTP);
-		} catch (e) {
-			xmlHttp = false;
+		var xmlHttp;
+		if (window.ActiveXObject) {
+			try {
+				xmlHttp = new ActiveXObject(Microsoft.XMLHTTP);
+			} catch (e) {
+				xmlHttp = false;
+			}
+		} else {
+			try {
+				xmlHttp = new XMLHttpRequest();
+			} catch (e) {
+				xmlHttp = false;
+			}
 		}
-	} else {
-		try {
-			xmlHttp = new XMLHttpRequest();
-		} catch (e) {
-			xmlHttp = false;
-		}
+		if (!xmlHttp)
+			alert("cant create xmlHttp object");
+		else
+			return xmlHttp;
 	}
-	if (!xmlHttp)
-		alert("cant create xmlHttp object");
-	else
-		return xmlHttp;
-	}
-		
+
 	function showForm() {
 		document.getElementById("panel").style.opacity = "1";
 	}
-	
+
 	function openFile() {
 		var fileReader = new FileReader();
 		fileReader.readAsDataURL(document.getElementById("file").files[0]);
@@ -77,7 +77,7 @@ h2 {
 			document.getElementById("uploadPreview").src = oFREvent.target.result;
 		};
 	}
-	
+
 	function checkPassword() {
 		var password = document.getElementById("password").value;
 		console.log(password);
@@ -94,7 +94,6 @@ h2 {
 			passwordMessage.style.display = "initial";
 		}
 	}
-	
 </script>
 
 </head>
@@ -266,8 +265,8 @@ h2 {
 										<span class="input-group-addon"><i
 											class="glyphicon glyphicon-lock"></i></span> <input
 											id="confirmPassword" type="password" class="form-control"
-											name="employeePassword" placeholder="Password"
-											onchange="checkPassword()" required="required">
+											placeholder="Password" onchange="checkPassword()"
+											required="required">
 									</div>
 									<small id="passwordMessage" class="alert-danger"></small>
 								</div>
