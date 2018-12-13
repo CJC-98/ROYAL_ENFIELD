@@ -218,6 +218,7 @@ public class DealerController {
 			return "signup";
 			}
 		    return "home";
+	
 		}
 			
 }
