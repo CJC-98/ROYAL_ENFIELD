@@ -92,7 +92,7 @@ public class ServiceMangerController {
 		model.addAttribute("link","serviceManagerDashboard.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
-
+  
 	@RequestMapping(value="/ApprovedServicesPage")
 	public String ApprovedServicesgPage(Model model){
 		 
