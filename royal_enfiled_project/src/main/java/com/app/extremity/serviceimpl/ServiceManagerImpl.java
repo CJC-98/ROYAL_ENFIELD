@@ -73,12 +73,14 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	@Override
 	public long getApprovedServiceCount() {
 		// TODO Auto-generated method stub
+		
 		return bikeServicingIDao.getApprovedServiceCount();
 	}
 
 	@Override
 	public long getInProgressCount() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stubgr
+		
 		return bikeServicingIDao.getInProgressCount();
 	}
 

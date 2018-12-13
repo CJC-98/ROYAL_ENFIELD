@@ -12,6 +12,7 @@ public interface BikeServicingIDao extends CrudRepository<BikeServicing, String>
 	
 	public long countByservcingStatus(String servcingStatus); 
 	
+	
 	// Counting Approved Services i.e. service status=waiting
 	@Query("Select COUNT(ss) from BikeServicing ss where ss.servcingStatus='waiting'")
 

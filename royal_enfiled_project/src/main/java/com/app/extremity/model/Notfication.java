@@ -1,5 +1,7 @@
 package com.app.extremity.model;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -33,20 +35,15 @@ public class Notfication {
 	private String sendTime;
 	
 	private boolean markAsRead = false;  //OR true
-	
-	
-	
-	
-	
-	
-	public String getSendTime() {
-		return sendTime;
+
+	public int getNotficationId() {
+		return notficationId;
 	}
 
-	public void setSendTime(String sendTime) {
-		this.sendTime = sendTime;
+	public void setNotficationId(int notficationId) {
+		this.notficationId = notficationId;
 	}
-	
+
 	public String getSenderName() {
 		return senderName;
 	}
@@ -95,12 +92,28 @@ public class Notfication {
 		this.reciverPost = reciverPost;
 	}
 
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public String getSendDate() {
 		return sendDate;
 	}
 
 	public void setSendDate(String sendDate) {
 		this.sendDate = sendDate;
+	}
+
+	public String getSendTime() {
+		return sendTime;
+	}
+
+	public void setSendTime(String sendTime) {
+		this.sendTime = sendTime;
 	}
 
 	public boolean isMarkAsRead() {
@@ -111,26 +124,14 @@ public class Notfication {
 		this.markAsRead = markAsRead;
 	}
 
-	public int getNotficationId() {
-		return notficationId;
-	}
-
-	public void setNotficationId(int notficationId) {
-		this.notficationId = notficationId;
-	}
-
-	public String getMessage() {
-		return message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
+	
 
 	
 	
-
+	
+	
+	
+	
 	
 	
 }
