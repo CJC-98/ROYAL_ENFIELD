@@ -14,6 +14,7 @@
 </head>
 
 <body>
+
 	<section id="content" class="bg-light lter">
         <section class="vbox">
             <section class="scrollable padder">                                               
@@ -35,6 +36,7 @@
                                                 <thead >
                                                                 
                                                      <tr>   
+
                                                          <th style="text-align: center;">Service Id</th>
                                                          <th style="text-align: center;">Appointment Date</th>
                                                          <th style="text-align: center;">Services Details</th>
@@ -52,6 +54,7 @@
                                                          </td>     
                                                          <td>
                                                          	<a href="ServicesInprogressPage" class="btn btn-md btn-primary m-r rounded">Start Services</a>
+
                                                          </td>                                           
                                                       </tr>
                                      
@@ -78,6 +81,7 @@
                                                 <thead>
                                                                 
                                                      <tr>   
+
                                                          <th style="text-align: center;">Services Id</th>
                                                          <th style="text-align: center;">Appointment Date</th>
                                                          <th style="text-align: center;">Services Details</th>
@@ -95,6 +99,7 @@
                                                          </td>  
                                                          <td>
                                                          	<a href="ServicesInprogressPage" class="btn btn-md btn-primary m-r rounded">Start Services</a>
+
                                                          </td>                                              
                                                       </tr>
                                      
@@ -121,6 +126,7 @@
                                                 <thead>
                                                                 
                                                      <tr>   
+
                                                          <th style="text-align: center;">Services Id</th>
                                                          <th style="text-align: center;">Appointment Date</th>
                                                          <th style="text-align: center;">Services Details</th>
@@ -138,6 +144,7 @@
                                                          </td> 
                                                          <td>
                                                          	<a href="ServicesInprogressPage" class="btn btn-md btn-primary m-r rounded">Start Services</a>
+
                                                          </td>                                               
                                                       </tr>
                                      
@@ -164,6 +171,7 @@
                                                 <thead>
                                                                 
                                                      <tr>   
+                                                     
                                                          <th style="text-align: center;">Services Id</th>
                                                          <th style="text-align: center;">Appointment Date</th>
                                                          <th style="text-align: center;">Services Details</th>
@@ -181,6 +189,7 @@
                                                          </td> 
                                                          <td>
                                                          	<a href="ServicesInprogressPage" class="btn btn-md btn-primary m-r rounded">Start Services</a>
+
                                                          </td>                                               
                                                       </tr>
                                      
@@ -200,6 +209,7 @@
 						    <div class="modal-dialog modal-md">
 						      <div class="modal-content">
 						        <div class="modal-header">
+
 						        	<h3 style="text-align: center">Service Details</h3>  
 						        </div>
 						        <div class="modal-body">
@@ -245,6 +255,7 @@
                                         </table>
                                     </section>
                                 
+
 						        </div>
 						        <div class="modal-footer">	
 						          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -260,6 +271,6 @@
    </section> 
    </section>
 
- 
+
 </body>
 </html>

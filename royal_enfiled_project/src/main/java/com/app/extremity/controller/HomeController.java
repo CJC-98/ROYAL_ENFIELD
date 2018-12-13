@@ -88,7 +88,7 @@ public class HomeController {
 	
 	@RequestMapping(value="/admin")
 	public String admin()
-	{  
+	{      
 		System.out.println("In admin controller");
 		return "";
 	} 
