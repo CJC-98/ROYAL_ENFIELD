@@ -19,15 +19,9 @@ public class ServicingChart {
 	
 	private long cost;
 	
-	private String Status = "pending";  //OR in-progress OR done
+	private String Status = "pending";  //OR done
 	
-	@ManyToOne
-	private BikeServicing bikeServicing;
 
-	
-	
-	
-	
 
 	
 
@@ -63,14 +57,6 @@ public class ServicingChart {
 		Status = status;
 	}
 
-	public BikeServicing getBikeServicing() {
-		return bikeServicing;
-	}
-
-	public void setBikeServicing(BikeServicing bikeServicing) {
-		this.bikeServicing = bikeServicing;
-	}
-	
 	
 	
 }
