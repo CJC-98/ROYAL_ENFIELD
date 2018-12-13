@@ -60,21 +60,18 @@ public class BikeModel {
 		this.enginecapacity = enginecapacity;
 	}
 
-	public Set<Color> getColor() {
-<<<<<<< HEAD
+	public Set<Color> getColors() {
 		return colors;
-=======
-		return color;
 	}
 
-	public void setColor(Set<Color> color) {
-		this.color = color;
->>>>>>> branch 'SaleManagerTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
+	public void setColors(Set<Color> colors) {
+		this.colors = colors;
 	}
 
-	public void setColor(Set<Color> color) {
-		this.colors = color;
-	}
+
+	
+
+	
 
 	
 

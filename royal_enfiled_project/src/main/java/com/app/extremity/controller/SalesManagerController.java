@@ -260,7 +260,7 @@ public class SalesManagerController
 		System.out.println(bkClr);
 		color.setColorName(bikeColor);
 		color.setColorId(bkClr);
-		bikeModel1.getColor().add(color);
+		bikeModel1.getColors().add(color);
 		
 		
 		
