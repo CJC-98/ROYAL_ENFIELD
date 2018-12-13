@@ -133,15 +133,15 @@ public class ServiceMangerController {
 		{
 			 */
 		
-		/*CustomizationBikeInfo cbi = new CustomizationBikeInfo();
-		cbi.setChasisNumber("BPA7945921");
-		cbi.setPlateNumber("MH-34-HF-4795");
+		CustomizationBikeInfo cbi = new CustomizationBikeInfo();
+		cbi.setChasisNumber("ST795921");
+		cbi.setPlateNumber("MH-24-F-1895");
 		
 		CustomizationInvoice ci = new CustomizationInvoice();
-		ci.setAmount(8500);
+		ci.setAmount(8000);
 		ci.setCustomizationCGstPercent(4);
 		ci.setCustomizationsGstPercent(4);
-		ci.setTotalAmount(11500);
+		ci.setTotalAmount(11200);
 		 
 		CustomizationChart cc1 = new CustomizationChart();
 		cc1.setPart("Engine");
@@ -155,12 +155,14 @@ public class ServiceMangerController {
 		cc3.setPart("Seat");
 		cc3.setCost(500);
 		
+		CustomizationChart cc4 = new CustomizationChart();
+		cc3.setPart("Headlight");
+		cc3.setCost(2500);
 		
-	
 		
-		BikeCustomization bc1 = new BikeCustomization();
+	   BikeCustomization bc1 = new BikeCustomization();
 		
-		bc1.setAppointmentDate("10/12/2018");
+	    bc1.setAppointmentDate("14-12-2018");
 		bc1.setCustomizationBikeInfo(cbi);
 		
 		bc1.getCustomizationChart().add(cc1);
@@ -182,7 +184,7 @@ public class ServiceMangerController {
 		
 		
 
-		*/
+		
 		 logger.info("dashboard hits........... log");
 			model.addAttribute("link","serviceManagerDashboard.jsp");
 			return "ServiceManager/serviceManagerIndex";
@@ -282,12 +284,9 @@ public class ServiceMangerController {
 		return "ServiceManager/serviceManagerIndex";
 	}
 	
-
-
 	@RequestMapping(value="/searchEmployee")    
 	public @ResponseBody  String serachEmployee(@RequestParam String empName,HttpServletResponse response) throws IOException {
 		System.out.println("in employee controller");
-		
 		
 		return  null;		
 	}

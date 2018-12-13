@@ -1,5 +1,6 @@
 package com.app.extremity.serviceimpl;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -11,12 +12,9 @@ import com.app.extremity.idao.NotficationIDao;
 import com.app.extremity.iservice.NotificationInterface;
 import com.app.extremity.model.Notfication;
 
-
-
 @Service
 public class NotificationImpl implements NotificationInterface{
 
-	
 	@Autowired
 	NotficationIDao notficationIDao;
 
@@ -38,7 +36,7 @@ public class NotificationImpl implements NotificationInterface{
 		notify.setReciverPost("sales manager");//get data from DB
 		
 		notify.setMessage("project is ready for sales");
-		notify.setSendDate(LocalDateTime.now().format(dateFormat));
+		notify.setSendDate(LocalDate.now().format(dateFormat));
 		notify.setSendTime(LocalDateTime.now().format(timeFormat));
 		
 		System.out.println("data saved");
@@ -56,8 +54,4 @@ public class NotificationImpl implements NotificationInterface{
 		return notficationIDao.findAllByReciverName(reciverName);
 	}
 	 
-
-
-	
-
 }
