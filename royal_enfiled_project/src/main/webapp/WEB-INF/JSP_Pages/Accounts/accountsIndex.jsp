@@ -123,7 +123,7 @@
                                 <nav class="nav-primary hidden-xs">
                                     <ul class="nav">
                                         
-                                        <li> <a href="SignIn" class="active"> <i class="fa fa-dashboard"> 
+                                        <li> <a href="Dashboard" class="active"> <i class="fa fa-dashboard"> 
                                         		<b class="bg-warning"></b>
                                                 </i> </span> <span>Dashboard</span>
                                              </a>

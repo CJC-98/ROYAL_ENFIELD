@@ -51,5 +51,12 @@ public class AccountController {
 	}
 	
 
+	@RequestMapping(value="/Dashboard")
+	public String Dashboard(Model model) {
+		System.out.println("In Dashboard Controll..");
+		model.addAttribute("link", "accountsDashboard.jsp");
+		return "Accounts/accountsIndex";
+	}
 	
+
 }

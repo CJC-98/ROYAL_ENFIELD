@@ -369,8 +369,7 @@
                                                
 
 
-
-<!--   
+ 
 <script>
 	
 	document.getElementById("notificationBody").style.display = "none";
@@ -388,7 +387,7 @@
 		document.getElementById("notificationBody").style.display = "none";
 	}
 	 
-</script>			-->
+</script>		
 
 
 </body>

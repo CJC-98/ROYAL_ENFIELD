@@ -69,7 +69,7 @@ public class HomeController {
 			model.addAttribute("link", "serviceManagerDashboard.jsp");
 			return "ServiceManager/serviceManagerIndex";
 		case 4:
-			model.addAttribute("link", "accountsIndex.jsp");
+			model.addAttribute("link", "accountsDashboard.jsp");
 			return "Accounts/accountsIndex";
 		default:
 			model.addAttribute("msg", "Wrong Credentials");
