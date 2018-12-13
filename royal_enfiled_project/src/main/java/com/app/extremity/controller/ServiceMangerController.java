@@ -191,17 +191,18 @@ public class ServiceMangerController {
 	}
 	
 	@RequestMapping(value="/markIt")    
-	public @ResponseBody String udpateNotification(@RequestParam String notficationId,Model model)throws IOException {
+	public @ResponseBody String udpateNotification(@RequestParam int notficationId,Model model)throws IOException {
 		System.out.println("in markit controller and list is update "+notficationId);
 		
+		notificationInterface.markAsRead(notificationInterface.getNotficationById(notficationId));
 		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("pranay kohad");
 		model.addAttribute("outboxList",outboxList);  
 		
 		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication("pranay kohad");
 		model.addAttribute("inboxList",inboxList);   
-	
+		
 		model.addAttribute("link","myNotifications.jsp");	
-		return "ServiceManager/serviceManagerIndex";		
+		return "ServiceManager/serviceManagerIndex";
 
 	}
 	

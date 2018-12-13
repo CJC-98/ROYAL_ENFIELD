@@ -30,6 +30,8 @@ public class HomeServiceImplementation implements IHomeService {
 				return 2;
 			}else if(employeeDetails.getEmployeeDesignation().equals("ServiceManager")) {
 				return 3;
+			}else if(employeeDetails.getEmployeeDesignation().equals("AccountManager")) {
+				return 4;
 			}
 		}
 		return 0;
