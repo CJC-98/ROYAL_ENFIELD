@@ -1,6 +1,8 @@
 package com.app.extremity.controller;
 
-import org.apache.catalina.connector.Request;
+
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,29 +15,21 @@ import com.app.extremity.model.BikeModel;
 import com.app.extremity.model.Color;
 import com.app.extremity.model.EngineCapacity;
 
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import org.springframework.web.multipart.MultipartFile;
+
+
+
+//author anuja...
+
+
 @Controller
-public class SalesManagerController {
-	
+public class SalesManagerController
+{
 	@Autowired
-	BikeSaleServiceI bikeService;
-	
-	
-	@RequestMapping(value="/addnew")
-	public String signIn(Model model)    
-	{ 
-		
-		System.out.println("In SignIn controller");
-		//return "IndivisualUser/indivisualUserIndex";
-		//return "IndivisualUser/indivisualUserIndex";//by default go to client index.jsp  
-		model.addAttribute("link","SalesManager/AddNewBike.jsp");
-		return "SalesManager/salesManagerDashboard";
+	BikeSaleServiceI bikeSaleService;
 
-
-	}  
-	
-	
-
-	
 
 	@RequestMapping(value = "/DashboardPages")
 	public String SaleDashboardPage(Model model) {
@@ -47,7 +41,7 @@ public class SalesManagerController {
 
 	@RequestMapping(value = "/AddnewBike")
 	public String AddNewBikeForm(Model model) {
-		System.out.println("in new bike form");
+		System.out.println("in new bike formxzcxgh");
 		model.addAttribute("link", "AddNewBike.jsp");
 		return "SalesManager/salesManagerIndex";
 		// System.out.println("In sales controller");
@@ -228,41 +222,50 @@ public class SalesManagerController {
 
 	}
 	
-	@RequestMapping(value="/add")
-	public String SaveNewBike(@RequestParam String bikeModel,@ModelAttribute Color color,@RequestParam String bikeColor, @ModelAttribute BikeModel bk,@RequestParam String bikeEngine,@ModelAttribute EngineCapacity ec)
-	{
-		int ucount=bikeService.getbikeCount();
-		System.out.println("fetching getCount()---"+ucount);
-		ucount++;
-		String user="BMID00";
-		user=user+Integer.toString(ucount);
-		
-		System.out.println("registration id of user is"+user);
-		
-		//Count of bikeEngine
-		int ecount=bikeService.getbikeCount();
-		System.out.println("fetching getCount()---"+ecount);
-		ecount++;
-		String ecs="BEC00";
-		ecs=ecs+Integer.toString(ecount);
-		bk.setModelName(bikeModel);
-		ec.setEngineCapacityId(ecs);
-		ec.setEngineType(bikeEngine);
-		bk.setEnginecapacity(ec);
-		bk.setBikeModelId(user);
-		
-		//count of color
-		
-	     String bikecolor=bikeService.getBikecolor();
-		System.out.println(bikecolor);
-		color.setColorName(bikeColor);
-		color.setColorId(bikecolor);
-		bk.getColor().add(color);
-		bikeService.saveDataBike(bk);
-		 return "SalesManager/salesManagerIndex";
-		
-		
-	}
 
+
+
+	//this method is used to add new bike model details with image in table bike_model
+	@RequestMapping(value="/saveNewBikeModel",method=RequestMethod.POST)
+	public String addNewBikeModel(@ModelAttribute BikeModel bikeModel1,@ModelAttribute Color color,@ModelAttribute EngineCapacity engCap,@RequestParam String bikeModel,@RequestParam String bikeColor,@RequestParam String bikeEngine,@RequestParam("profilePic") MultipartFile profilePic,Model model) {
+		System.out.println("In add new bike...");
+		//for autogenerate string id
+		int bmcount=bikeSaleService.getBikeModelCount();
+		
+		System.out.println("result from getBikeModelCount()"+bmcount);
+		String bikeModelCnt="BMID00";
+		bmcount++;
+		bikeModelCnt=bikeModelCnt+Integer.toString(bmcount);
+		System.out.println("generated bikemodel id"+bikeModelCnt);
+		
+		
+		
+		//for engine cap
+		
+		int eccount=bikeSaleService.getEngineCapacityCount();
+		System.out.println("Result from Engine Capacity Count"+eccount);
+		String engCnt="BECID00";
+		eccount++;
+		engCnt=engCnt+Integer.toString(eccount);
+		System.out.println("generated EngineCap id"+engCnt);
+		
+		bikeModel1.setBikeModelId(bikeModelCnt);
+		engCap.setEngineCapacityId(engCnt);
+		
+		engCap.setEngineType(bikeEngine);
+		bikeModel1.setEnginecapacity(engCap);
+		bikeModel1.setModelName(bikeModel);
+		
+		String bkClr=bikeSaleService.getBikeColor();
+		System.out.println(bkClr);
+		color.setColorName(bikeColor);
+		color.setColorId(bkClr);
+		bikeModel1.getColor().add(color);
+		
+		
+		
+		bikeSaleService.addNewBikeModel(bikeModel1,color,engCap,profilePic);
+		return "SalesManager/salesManagerIndex";
+	}
 
 }

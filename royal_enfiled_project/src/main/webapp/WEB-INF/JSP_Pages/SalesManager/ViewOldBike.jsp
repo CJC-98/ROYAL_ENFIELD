@@ -1,4 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<<<<<<< HEAD
+    pageEncoding="ISO-8859-1"%>
+    <h3>Welcome.....</h3>
+=======
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
@@ -60,3 +64,4 @@
 
 </body>
 </html>
+>>>>>>> branch 'SaleManagerTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
