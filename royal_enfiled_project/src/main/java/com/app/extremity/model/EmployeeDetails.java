@@ -1,3 +1,4 @@
+
 package com.app.extremity.model;
 
 import javax.persistence.Entity;
@@ -120,7 +121,9 @@ public class EmployeeDetails
 	}
 	public void setPincode(String pincode) {
 		this.pincode = pincode;
+
 	}
 	
 	
 }
+

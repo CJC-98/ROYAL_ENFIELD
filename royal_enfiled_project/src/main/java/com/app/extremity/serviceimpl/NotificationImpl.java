@@ -23,6 +23,7 @@ public class NotificationImpl implements NotificationInterface{
 
 	@Override
 	public Notfication saveNotfication(Notfication notfication) {
+
 		System.out.println("saved service..........");
 		
 		//mock data
@@ -40,6 +41,7 @@ public class NotificationImpl implements NotificationInterface{
 		notify.setMessage("hiiiiiiiiiiii");
 		
 		notify.setMarkAsRead(true);
+
 		notify.setSendDate(LocalDateTime.now().format(dateFormat));
 		notify.setSendTime(LocalDateTime.now().format(timeFormat));
 		
