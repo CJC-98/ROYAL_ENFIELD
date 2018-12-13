@@ -23,7 +23,7 @@ public class NotificationImpl implements NotificationInterface{
 
 	@Override
 	public Notfication saveNotfication(Notfication notfication) {
-		
+		System.out.println("saved service..........");
 		
 		//mock data
 		DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy"); 
@@ -31,13 +31,15 @@ public class NotificationImpl implements NotificationInterface{
 		
 		Notfication notify = new Notfication();
 		
-		notify.setSenderName("pranay kohad");  //get data from DB.employee table
-		notify.setSenderPost("service manager");              //get data from DB.employee table  
+		notify.setSenderName("akash");  //get data from DB.employee table
+		notify.setSenderPost("accountant");              //get data from DB.employee table  
 		
-		notify.setReciverName("manoj");   //get data from DB.employee table
-		notify.setReciverPost("sales manager");//get data from DB
+		notify.setReciverName("pranay kohad");   //get data from DB.employee table
+		notify.setReciverPost("service manager");//get data from DB
 		
-		notify.setMessage("project is ready for sales");
+		notify.setMessage("hiiiiiiiiiiii");
+		
+		notify.setMarkAsRead(true);
 		notify.setSendDate(LocalDateTime.now().format(dateFormat));
 		notify.setSendTime(LocalDateTime.now().format(timeFormat));
 		

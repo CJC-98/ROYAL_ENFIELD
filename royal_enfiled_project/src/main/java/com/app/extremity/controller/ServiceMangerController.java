@@ -160,14 +160,13 @@ public class ServiceMangerController {
 		
 		System.out.println("go to notification page...............");
 		
-//		notificationInterface.saveNotfication(null);  
+		//notificationInterface.saveNotfication(null);  
 		
 		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("pranay kohad");
 		model.addAttribute("outboxList",outboxList);
 		
 		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication("pranay kohad");
 		model.addAttribute("inboxList",inboxList);   
-		
 	
 		model.addAttribute("link","myNotifications.jsp");	
 		return "ServiceManager/serviceManagerIndex";
@@ -180,6 +179,19 @@ public class ServiceMangerController {
 		
 		
 		return  null;		
+	}
+	
+	@RequestMapping(value="/markIt")    
+	public @ResponseBody String udpateNotification(@RequestParam String notficationId,Model model)throws IOException {
+		System.out.println("in markit controller "+notficationId);
+		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("pranay kohad");
+		model.addAttribute("outboxList",outboxList);
+		
+		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication("pranay kohad");
+		model.addAttribute("inboxList",inboxList);   
+	
+		model.addAttribute("link","myNotifications.jsp");	
+		return "ServiceManager/serviceManagerIndex";		
 	}
 	
 	
