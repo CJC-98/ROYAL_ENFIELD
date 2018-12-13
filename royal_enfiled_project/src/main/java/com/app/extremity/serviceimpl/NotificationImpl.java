@@ -8,7 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.app.extremity.idao.NotficationIDao;
+
 import com.app.extremity.iservice.NotificationInterface;
+
+import com.app.extremity.model.EmployeeDetails;
 import com.app.extremity.model.Notfication;
 
 
@@ -23,7 +26,8 @@ public class NotificationImpl implements NotificationInterface{
 
 	@Override
 	public Notfication saveNotfication(Notfication notfication) {
-		
+
+		System.out.println("saved service..........");
 		
 		//mock data
 		DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy"); 
@@ -31,13 +35,16 @@ public class NotificationImpl implements NotificationInterface{
 		
 		Notfication notify = new Notfication();
 		
-		notify.setSenderName("pranay kohad");  //get data from DB.employee table
-		notify.setSenderPost("service manager");              //get data from DB.employee table  
+		notify.setSenderName("ram");  //get data from DB.employee table
+		notify.setSenderPost("sales managar");              //get data from DB.employee table  
 		
-		notify.setReciverName("manoj");   //get data from DB.employee table
-		notify.setReciverPost("sales manager");//get data from DB
+		notify.setReciverName("pranay kohad");   //get data from DB.employee table
+		notify.setReciverPost("accountant manager");//get data from DB
 		
-		notify.setMessage("project is ready for sales");
+		notify.setMessage("yes");
+		
+		notify.setMarkAsRead(false);
+
 		notify.setSendDate(LocalDateTime.now().format(dateFormat));
 		notify.setSendTime(LocalDateTime.now().format(timeFormat));
 		
@@ -55,6 +62,20 @@ public class NotificationImpl implements NotificationInterface{
 	public List<Notfication> getMyInboxNotfication(String reciverName) {
 		return notficationIDao.findAllByReciverName(reciverName);
 	}
+
+	@Override
+	public Notfication getNotficationById(int id) {
+		return notficationIDao.findAllByNotficationId(id);
+	}
+
+	@Override
+	public boolean markAsRead(Notfication notify) {	
+		notify.setMarkAsRead(true);
+		notficationIDao.save(notify);
+		return true;
+	}
+
+
 	 
 
 

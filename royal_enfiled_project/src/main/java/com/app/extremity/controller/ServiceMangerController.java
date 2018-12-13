@@ -2,6 +2,15 @@
 
 
 import java.io.IOException;
+
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+
+import java.io.IOException;
+
+
 import java.util.List;
 
 import javax.management.Notification;
@@ -37,6 +46,8 @@ import com.app.extremity.model.ServicingInvoice;
 @Controller
 public class ServiceMangerController {
 	
+
+
 	static Logger logger = LogManager.getLogger(ServiceMangerController.class);
 	
 	@Autowired
@@ -48,8 +59,30 @@ public class ServiceMangerController {
 	
 	@RequestMapping(value="/DashboardPage")
 	public String ServicesDashboardPage(Model model){
+
+	
+        //sscount => aproved service count
+		long sscount=serviceManagerInterface.getAllServiceCountByServiceStatus("waiting");
+		System.out.println("Approved services are:"+sscount);
+		model.addAttribute("approvedServiceCount",sscount);
 		
+		//ts => total service count
+	    long tscount=serviceManagerInterface.getAllServiceCount();
+		System.out.println("Total Services are:"+tscount);
+		model.addAttribute("totalServiceCount", tscount);
 		
+		//ipcount => in progress count
+		long ipcount=serviceManagerInterface.getAllServiceCountByServiceStatus("waiting");
+		System.out.println("In progerss services are:"+ipcount);
+		model.addAttribute("inProgerssServices", ipcount);
+		
+		//dscount => completed service count
+		long cscount=serviceManagerInterface.getAllServiceCountByServiceStatus("waiting");
+		System.out.println("Completed services are:"+cscount);
+		model.addAttribute("completedservices", cscount);
+				
+		
+
 		logger.info("dashboard hits........... log");
 		model.addAttribute("link","serviceManagerDashboard.jsp");
 		return "ServiceManager/serviceManagerIndex";
@@ -60,6 +93,8 @@ public class ServiceMangerController {
 		 
 		
 		System.out.println("approved service htis..................");
+	
+		
 		model.addAttribute("link","approvedServices.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
@@ -132,14 +167,17 @@ public class ServiceMangerController {
 		
 		System.out.println("go to notification page...............");
 		
-//		notificationInterface.saveNotfication(null);  
+
+
+		//notificationInterface.saveNotfication(null);  
 		
 		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("pranay kohad");
 		model.addAttribute("outboxList",outboxList);
 		
 		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication("pranay kohad");
 		model.addAttribute("inboxList",inboxList);   
-		
+
+
 	
 		model.addAttribute("link","myNotifications.jsp");	
 		return "ServiceManager/serviceManagerIndex";
@@ -147,11 +185,28 @@ public class ServiceMangerController {
 	
 
 	@RequestMapping(value="/searchEmployee")    
-	public @ResponseBody  String serachEmployee(@RequestParam String empName,HttpServletResponse response) throws IOException {
+	public @ResponseBody String serachEmployee(@RequestParam String empName,HttpServletResponse response,Model model) throws IOException {
 		System.out.println("in employee controller");
 		
 		
-		return  null;		
+		model.addAttribute("link","myNotifications.jsp");	
+		return "ServiceManager/serviceManagerIndex";		
+	}
+	
+	@RequestMapping(value="/markIt")    
+	public @ResponseBody String udpateNotification(@RequestParam int notficationId,Model model)throws IOException {
+		System.out.println("in markit controller and list is update "+notficationId);
+		
+		notificationInterface.markAsRead(notificationInterface.getNotficationById(notficationId));
+		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("pranay kohad");
+		model.addAttribute("outboxList",outboxList);  
+		
+		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication("pranay kohad");
+		model.addAttribute("inboxList",inboxList);   
+		
+		model.addAttribute("link","myNotifications.jsp");	
+		return "ServiceManager/serviceManagerIndex";
+
 	}
 	
 	

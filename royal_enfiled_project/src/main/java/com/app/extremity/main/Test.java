@@ -10,7 +10,11 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication(scanBasePackages="com")
 @EntityScan("com.app.extremity.model")
 @EnableJpaRepositories("com.app.extremity.idao")
+
 public class Test {    
+
+    
+
 
 	static Logger logger = LogManager.getLogger(Test.class);
 	
@@ -18,5 +22,6 @@ public class Test {
 		SpringApplication.run(Test.class);    
 		logger.warn("application started............");
 		System.out.println("application started..........."); 
+
 	}
 }   

@@ -33,13 +33,6 @@ public class BikeServicing {
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<ServicingChart> servicingChart = new ArrayList();
 
-	
-	
-	
-	//FK of customer @OneToOne
-	
-
-
 
 
 

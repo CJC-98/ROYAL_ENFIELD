@@ -13,4 +13,6 @@ public interface NotficationIDao extends CrudRepository<Notfication, Integer>{
 
 	public List<Notfication> findAllByReciverName(String reciverName);
 	public List<Notfication> findAllBySenderName(String senderName);
+	public Notfication findAllByNotficationId(int id);
+
 }
