@@ -170,13 +170,15 @@
                                                         class="fa fa-angle-up text-active"></i> </span> <span>Stock</span>
                                             </a>
                                             <ul class="nav lt">
-                                                <li> <a href="bike.html"> <i class="fa fa-angle-right"></i> <span>Bike</span>
-                                                    </a> 
+                                                <li> <a href="">
+                                                          <i class="fa fa-angle-right"><b class="bg-danger"></b></i><span class="pull-right">
+                                                            <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> 
+                                                         <span>Bike</span> </a> 
                                                      <!-- this for sublist of Bike -->
                                                          <ul class="nav lt">
-                                                        <li> <a href="composeMail" class="active">
+                                                        <li> <a href="" class="active">
                                                             <span>New_Bike</span> </a> </li>
-                                                        <li> <a href="composeMail" class="active">
+                                                        <li> <a href="" class="active">
                                                             <span>Old_Bike</span> </a> </li>
                                                         </ul>
                                                          <!-- end of sublist of Bike -->
@@ -197,6 +199,33 @@
 
                                             </ul>
                                         </li>
+                                        <!-- This for Sales -->
+                                       
+                                          <li> <a href="#stock"> <i class="fa fa-flask icon"> <b class="bg-success"></b>
+                                            </i> <span class="pull-right">  <i class="fa fa-angle-up text-active"></i> 
+                                            <i class="fa fa-angle-down text"></i></span> <span>Sale</span>
+                                        </a>
+                                        <ul class="nav lt">
+                                            <li> <a href="">
+                                                          <i class="fa fa-angle-right"><b class="bg-danger"></b></i><span class="pull-right">
+                                                            <i class="fa fa-angle-up text-active"></i> <i class="fa fa-angle-down text"></i> </span> 
+                                                         <span>Bike</span> </a> 
+                                                         <!-- this for sublist of Bike -->
+                                                         <ul class="nav lt">
+                                                        <li> <a href="" class="active">
+                                                            <span>New_Bike</span> </a> </li>
+                                                        <li> <a href="" class="active">
+                                                            <span>Old_Bike</span> </a> </li>
+                                                        </ul>
+                                                         <!-- end of sublist of Bike -->
+                                                </li>
+                                            <li> <a href="accessories.html"> <b class="badge bg-info pull-right"></b>
+                                                    <i class="fa fa-angle-right"></i> <span>Accesories</span> </a>
+                                             </li>
+                       
+                                        </ul>
+										</li>
+										<!--End Sales -->
 												<!-- This for View -->
                                         <li> <a href="#view"> <i class="fa fa-user icon"> <b class="bg-warning"></b>
                                                 </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i

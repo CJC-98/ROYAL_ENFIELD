@@ -1,12 +1,8 @@
 package com.app.extremity.controller;
 
-
-
-
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,7 +19,6 @@ import com.app.extremity.iservice.IHomeService;
 @Controller
 @RequestMapping("/")
 public class HomeController {
-	
 	@Autowired
 	IHomeService homeService;
 	
@@ -38,7 +33,9 @@ public class HomeController {
 	public String homePage()
 	{ 
 		logger.info("In home controller log");
-		return "Admin/soldOldBikeStock";
+
+		return "home";
+
 	}  
 	 
 	@RequestMapping(value="/loginPage")
@@ -63,6 +60,7 @@ public class HomeController {
 		switch (i) {
 		case 1:
 			model.addAttribute("link", "adminDashboard.jsp");
+			
 			return "Admin/adminIndex";
 			
 		case 2:
@@ -75,6 +73,8 @@ public class HomeController {
 			model.addAttribute("msg", "Wrong Credentials");
 			return "login";
 		}
+		
+		//return "IndivisualUser/indivisualUserIndex";//by default go to client index.jsp  
 
 	}  
 	
@@ -90,7 +90,7 @@ public class HomeController {
 	
 	@RequestMapping(value="/admin")
 	public String admin()
-	{  
+	{      
 		System.out.println("In admin controller");
 		return "";
 	} 

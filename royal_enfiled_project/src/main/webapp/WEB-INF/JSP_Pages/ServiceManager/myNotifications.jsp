@@ -1,6 +1,7 @@
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="a" uri="http://java.sun.com/jsp/jstl/core"%>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +16,25 @@
 </head>
 
 <body>
+
+	<script>
+		function searchEmployee(){
+			
+			var empName = document.getElementById("empName").value;
+			
+			if(empName==""){
+				alert("Please enter employee name!!!");
+			}else{
+				var req = new XMLHttpRequest();
+				
+				req.open("GET","searchEmployee?empName="+empName,true);
+				req.send();
+			
+			}
+			
+			}
+	</script>
+
 	<section id="content"  class="bg-light lter">
 	        <section class="vbox">
 	            <section class="scrollable padder">                                               
@@ -27,9 +47,9 @@
 	               <section class="panel panel-default">
                              <header class="panel-heading bg-light dker">
                                      <ul class="nav nav-tabs nav-justified">
-                                           <li class="active"><a href="#Unread" data-toggle="tab">Unread</a></li>
-                                           <li><a href="#Read" data-toggle="tab">Read</a></li>
-                                           <li><a href="#Sendnotification" data-toggle="tab">Send Notification</a></li>         
+                                           <li class="active"><a href="#Inbox" data-toggle="tab">Inbox</a></li>
+                                           <li><a href="#Outbox" data-toggle="tab">Outbox</a></li>
+                                           <li><a href="#ComposeNotification" data-toggle="tab">Compose Notification</a></li>         
                                      </ul>
                              </header>
                                
@@ -37,337 +57,156 @@
                                       <div class="tab-content">
 
                                        
-								      <div class="tab-pane active bg-light dker" id="Unread">  
+                                       <!-- inbox started -->
+								      <div class="tab-pane active bg-light dker" id="Inbox">  
 								      		
 								      	<aside class="bg-light dk b-l" id="email-list">
                             			<section class="vbox">	
 								      		<section class="scrollable hover">
 			                                    <ul class="list-group no-radius m-b-none m-t-n-xxs list-group-alt list-group-lg">
-			                                        <li class="list-group-item"> 
+			                                        
+			                                        <a:set var="sendToName" value="${null}"/>
+			                                        
+			                                        <a:forEach var="data" items="${inboxList}">
+				                                		<li class="list-group-item"> 
 			                                        		<a href="#" class="thumb-sm pull-left m-r-sm">
 			                                                	<img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/avatar.jpg" class="img-circle"> 
 			                                                </a> 
 			                                                <a href="#" class="clear"> 
 			                                                	<small class="pull-right text-muted" style="display: flex; flex-flow: column wrap; align-items: center; margin-top: 20px">
-			                                                		<strong style="font-size: 15px">12/08/2018</strong> 
-			                                                		<span>12:45 AM</span>
+			                                                		<strong style="font-size: 15px">${data.sendDate}</strong> 
+			                                                		<span>${data.sendTime}</span>
 			                                                	</small>
-			                                                	<strong style="font-size: 15px">Drew Wllon</strong><br>
-			                                                	<span style="font-size: 15px">Sales Manager</span><br>
-			                                                	<span>Message : Wellcome and play this web application template</span> 
+			                                                	<strong style="font-size: 15px">FROM: ${data.senderName}</strong><br>
+			                                                	<span style="font-size: 15px">${data.senderPost}</span><br>
+			                                                	<span>${data.message}</span>     	
 			                                                </a>
+			                                                
 			                                                <div class="comment-action m-t-sm"> 
-			                                                	<a href="#" data-toggle="class" class="btn btn-default btn-xs active"> 
+			                                                	<a href="#" data-toggle="class" class="btn btn-default btn-xs"> 
 			                                                		<i class="fa fa-star-o text-muted text"></i>
 			                                                        <i class="fa fa-star text-danger text-active"></i> Mark as read 
 			                                                    </a>
-			                                                    <a data-toggle="modal" data-target="#myModal" class="btn btn-default btn-xs"> 
+			                                                    <a data-toggle="modal" 
+			                                                       data-target="#myModal" 
+			                                                       class="btn btn-default btn-xs"    
+			                                                       onclick="">
 			                                                        <i class="fa fa-mail-reply text-muted"></i> Reply
 			                                                    </a>
 			                                                </div>
-			                                        </li>
+			                                           </li>
+			          			                                                         
+				                                	</a:forEach>
 			                                        
-			                                        <li class="list-group-item"> 
-			                                        		<a href="#" class="thumb-sm pull-left m-r-sm">
-			                                                	<img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/avatar.jpg" class="img-circle"> 
-			                                                </a> 
-			                                                <a href="#" class="clear"> 
-			                                                	<small class="pull-right text-muted" style="display: flex; flex-flow: column wrap; align-items: center; margin-top: 20px">
-			                                                		<strong style="font-size: 15px">12/08/2018</strong> 
-			                                                		<span>12:45 AM</span>
-			                                                	</small>
-			                                                	<strong style="font-size: 15px">Drew Wllon</strong><br>
-			                                                	<span style="font-size: 15px">Sales Manager</span><br>
-			                                                	<span>Message : Wellcome and play this web application template</span> 
-			                                                </a>
-			                                                <div class="comment-action m-t-sm"> 
-			                                                	<a href="#" data-toggle="class" class="btn btn-default btn-xs active"> 
-			                                                		<i class="fa fa-star-o text-muted text"></i>
-			                                                        <i class="fa fa-star text-danger text-active"></i> Mark as read </a>
-			                                                        <a href="#comment-form" class="btn btn-default btn-xs"> 
-			                                                        <i class="fa fa-mail-reply text-muted"></i> Reply </a>
-			                                                </div>
-			                                        </li>
 			                                        
-			                                        <li class="list-group-item"> 
-			                                        		<a href="#" class="thumb-sm pull-left m-r-sm">
-			                                                	<img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/avatar.jpg" class="img-circle"> 
-			                                                </a> 
-			                                                <a href="#" class="clear"> 
-			                                                	<small class="pull-right text-muted" style="display: flex; flex-flow: column wrap; align-items: center; margin-top: 20px">
-			                                                		<strong style="font-size: 15px">12/08/2018</strong> 
-			                                                		<span>12:45 AM</span>
-			                                                	</small>
-			                                                	<strong style="font-size: 15px">Drew Wllon</strong><br>
-			                                                	<span style="font-size: 15px">Sales Manager</span><br>
-			                                                	<span>Message : Wellcome and play this web application template</span> 
-			                                                </a>
-			                                                <div class="comment-action m-t-sm"> 
-			                                                	<a href="#" data-toggle="class" class="btn btn-default btn-xs active"> 
-			                                                		<i class="fa fa-star-o text-muted text"></i>
-			                                                        <i class="fa fa-star text-danger text-active"></i> Mark as read </a>
-			                                                        <a href="#comment-form" class="btn btn-default btn-xs"> 
-			                                                        <i class="fa fa-mail-reply text-muted"></i> Reply </a>
-			                                                </div>
-			                                        </li>
-			                                        
-			                                        <li class="list-group-item"> 
-			                                        		<a href="#" class="thumb-sm pull-left m-r-sm">
-			                                                	<img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/avatar.jpg" class="img-circle"> 
-			                                                </a> 
-			                                                <a href="#" class="clear"> 
-			                                                	<small class="pull-right text-muted" style="display: flex; flex-flow: column wrap; align-items: center; margin-top: 20px">
-			                                                		<strong style="font-size: 15px">12/08/2018</strong> 
-			                                                		<span>12:45 AM</span>
-			                                                	</small>
-			                                                	<strong style="font-size: 15px">Drew Wllon</strong><br>
-			                                                	<span style="font-size: 15px">Sales Manager</span><br>
-			                                                	<span>Message : Wellcome and play this web application template</span> 
-			                                                </a>
-			                                                <div class="comment-action m-t-sm"> 
-			                                                	<a href="#" data-toggle="class" class="btn btn-default btn-xs active"> 
-			                                                		<i class="fa fa-star-o text-muted text"></i>
-			                                                        <i class="fa fa-star text-danger text-active"></i> Mark as read </a>
-			                                                        <a href="#comment-form" class="btn btn-default btn-xs"> 
-			                                                        <i class="fa fa-mail-reply text-muted"></i> Reply </a>
-			                                                </div>
-			                                        </li>
-			                                        
-			                                        <li class="list-group-item"> 
-			                                        		<a href="#" class="thumb-sm pull-left m-r-sm">
-			                                                	<img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/avatar.jpg" class="img-circle"> 
-			                                                </a> 
-			                                                <a href="#" class="clear"> 
-			                                                	<small class="pull-right text-muted" style="display: flex; flex-flow: column wrap; align-items: center; margin-top: 20px">
-			                                                		<strong style="font-size: 15px">12/08/2018</strong> 
-			                                                		<span>12:45 AM</span>
-			                                                	</small>
-			                                                	<strong style="font-size: 15px">Drew Wllon</strong><br>
-			                                                	<span style="font-size: 15px">Sales Manager</span><br>
-			                                                	<span>Message : Wellcome and play this web application template</span> 
-			                                                </a>
-			                                                <div class="comment-action m-t-sm"> 
-			                                                	<a href="#" data-toggle="class" class="btn btn-default btn-xs active"> 
-			                                                		<i class="fa fa-star-o text-muted text"></i>
-			                                                        <i class="fa fa-star text-danger text-active"></i> Mark as read </a>
-			                                                        <a href="#comment-form" class="btn btn-default btn-xs"> 
-			                                                        <i class="fa fa-mail-reply text-muted"></i> Reply </a>
-			                                                </div>
-			                                        </li>
-			                                        
-			                                        <li class="list-group-item"> 
-			                                        		<a href="#" class="thumb-sm pull-left m-r-sm">
-			                                                	<img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/avatar.jpg" class="img-circle"> 
-			                                                </a> 
-			                                                <a href="#" class="clear"> 
-			                                                	<small class="pull-right text-muted" style="display: flex; flex-flow: column wrap; align-items: center; margin-top: 20px">
-			                                                		<strong style="font-size: 15px">12/08/2018</strong> 
-			                                                		<span>12:45 AM</span>
-			                                                	</small>
-			                                                	<strong style="font-size: 15px">Drew Wllon</strong><br>
-			                                                	<span style="font-size: 15px">Sales Manager</span><br>
-			                                                	<span>Message : Wellcome and play this web application template</span> 
-			                                                </a>
-			                                                <div class="comment-action m-t-sm"> 
-			                                                	<a href="#" data-toggle="class" class="btn btn-default btn-xs active"> 
-			                                                		<i class="fa fa-star-o text-muted text"></i>
-			                                                        <i class="fa fa-star text-danger text-active"></i> Mark as read </a>
-			                                                        <a href="#comment-form" class="btn btn-default btn-xs"> 
-			                                                        <i class="fa fa-mail-reply text-muted"></i> Reply </a>
-			                                                </div>
-			                                        </li>
-			                                        
-			                                        <li class="list-group-item"> 
-			                                        		<a href="#" class="thumb-sm pull-left m-r-sm">
-			                                                	<img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/avatar.jpg" class="img-circle"> 
-			                                                </a> 
-			                                                <a href="#" class="clear"> 
-			                                                	<small class="pull-right text-muted" style="display: flex; flex-flow: column wrap; align-items: center; margin-top: 20px">
-			                                                		<strong style="font-size: 15px">12/08/2018</strong> 
-			                                                		<span>12:45 AM</span>
-			                                                	</small>
-			                                                	<strong style="font-size: 15px">Drew Wllon</strong><br>
-			                                                	<span style="font-size: 15px">Sales Manager</span><br>
-			                                                	<span>Message : Wellcome and play this web application template</span> 
-			                                                </a>
-			                                                <div class="comment-action m-t-sm"> 
-			                                                	<a href="#" data-toggle="class" class="btn btn-default btn-xs active"> 
-			                                                		<i class="fa fa-star-o text-muted text"></i>
-			                                                        <i class="fa fa-star text-danger text-active"></i> Mark as read </a>
-			                                                        <a href="#comment-form" class="btn btn-default btn-xs"> 
-			                                                        <i class="fa fa-mail-reply text-muted"></i> Reply </a>
-			                                                </div>
-			                                        </li>
-			                                        
-			                                        <li class="list-group-item"> 
-			                                        		<a href="#" class="thumb-sm pull-left m-r-sm">
-			                                                	<img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/avatar.jpg" class="img-circle"> 
-			                                                </a> 
-			                                                <a href="#" class="clear"> 
-			                                                	<small class="pull-right text-muted" style="display: flex; flex-flow: column wrap; align-items: center; margin-top: 20px">
-			                                                		<strong style="font-size: 15px">12/08/2018</strong> 
-			                                                		<span>12:45 AM</span>
-			                                                	</small>
-			                                                	<strong style="font-size: 15px">Drew Wllon</strong><br>
-			                                                	<span style="font-size: 15px">Sales Manager</span><br>
-			                                                	<span>Message : Wellcome and play this web application template</span> 
-			                                                </a>
-			                                                <div class="comment-action m-t-sm"> 
-			                                                	<a href="#" data-toggle="class" class="btn btn-default btn-xs active"> 
-			                                                		<i class="fa fa-star-o text-muted text"></i>
-			                                                        <i class="fa fa-star text-danger text-active"></i> Mark as read </a>
-			                                                        <a href="#comment-form" class="btn btn-default btn-xs"> 
-			                                                        <i class="fa fa-mail-reply text-muted"></i> Reply </a>
-			                                                </div>
-			                                        </li>
 			                                        
 												 </ul>
                               			  </section>  
                               			  </section>
                               			  </aside>             
                               		  </div>
-                                              
+                                       <!-- inbox ends -->       
                                         
                                                                          
                                     		
-                                   	<!-- Read tab -->
-                                    <div class="tab-pane bg-light dker" id="Read">
+                                   	<!-- outbox starts -->
+                                    <div class="tab-pane bg-light dker" id="Outbox">
                                       <aside class="bg-light dk b-l" id="email-list">
                             			<section class="vbox">  
                                         <section class="scrollable hover">
 			                                    <ul class="list-group no-radius m-b-none m-t-n-xxs list-group-alt list-group-lg">
-			                                        <li class="list-group-item"> 
-			                                        		<a href="#" class="thumb-sm pull-left m-r-sm">
+			                                        
+			                                        
+			                                        <a:forEach var="data" items="${outboxList}">
+				                                		<li class="list-group-item"> 
+			                                        		<a class="thumb-sm pull-left m-r-sm">
 			                                                	<img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/avatar.jpg" class="img-circle"> 
 			                                                </a> 
-			                                                <a href="#" class="clear"> 
+			                                                <a class="clear"> 
 			                                                	<small class="pull-right text-muted" style="display: flex; flex-flow: column wrap; align-items: center; margin-top: 20px">
-			                                                		<strong style="font-size: 15px">21/5/2018</strong> 
-			                                                		<span>12:45 AM</span>
+			                                                		<strong style="font-size: 15px">${data.sendDate}</strong> 
+			                                                		<span>${data.sendTime}</span>
 			                                                	</small>
-			                                                	<strong style="font-size: 15px">Pranay kohad</strong><br>
-			                                                	<span style="font-size: 15px">Service Manager</span><br>
-			                                                	<span>Message : Welcome to this company</span> 
+			                                                	<strong style="font-size: 15px">${data.reciverName}</strong><br>
+			                                                	<span style="font-size: 15px">${data.reciverPost}</span><br>
+			                                                	<span>${data.message}</span> 
 			                                                </a>
-			                                        </li>
+			                                        	</li>
+				                                	</a:forEach>
 			                                        
-			                                        
-			                                        <li class="list-group-item"> 
-			                                        		<a href="#" class="thumb-sm pull-left m-r-sm">
-			                                                	<img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/avatar.jpg" class="img-circle"> 
-			                                                </a> 
-			                                                <a href="#" class="clear"> 
-			                                                	<small class="pull-right text-muted" style="display: flex; flex-flow: column wrap; align-items: center; margin-top: 20px">
-			                                                		<strong style="font-size: 15px">21/5/2018</strong> 
-			                                                		<span>12:45 AM</span>
-			                                                	</small>
-			                                                	<strong style="font-size: 15px">Pranay kohad</strong><br>
-			                                                	<span style="font-size: 15px">Service Manager</span><br>
-			                                                	<span>Message : Welcome to this company</span> 
-			                                                </a>
-			                                        </li>
-			                                        
-			                                        <li class="list-group-item"> 
-			                                        		<a href="#" class="thumb-sm pull-left m-r-sm">
-			                                                	<img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/avatar.jpg" class="img-circle"> 
-			                                                </a> 
-			                                                <a href="#" class="clear"> 
-			                                                	<small class="pull-right text-muted" style="display: flex; flex-flow: column wrap; align-items: center; margin-top: 20px">
-			                                                		<strong style="font-size: 15px">21/5/2018</strong> 
-			                                                		<span>12:45 AM</span>
-			                                                	</small>
-			                                                	<strong style="font-size: 15px">Pranay kohad</strong><br>
-			                                                	<span style="font-size: 15px">Service Manager</span><br>
-			                                                	<span>Message : Welcome to this company</span> 
-			                                                </a>
-			                                        </li>
-			                                        
-			                                        <li class="list-group-item"> 
-			                                        		<a href="#" class="thumb-sm pull-left m-r-sm">
-			                                                	<img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/avatar.jpg" class="img-circle"> 
-			                                                </a> 
-			                                                <a href="#" class="clear"> 
-			                                                	<small class="pull-right text-muted" style="display: flex; flex-flow: column wrap; align-items: center; margin-top: 20px">
-			                                                		<strong style="font-size: 15px">21/5/2018</strong> 
-			                                                		<span>12:45 AM</span>
-			                                                	</small>
-			                                                	<strong style="font-size: 15px">Pranay kohad</strong><br>
-			                                                	<span style="font-size: 15px">Service Manager</span><br>
-			                                                	<span>Message : Welcome to this company</span> 
-			                                                </a>
-			                                        </li>
-			                                        
-			                                       
-			                                        
-			                                        
-			                                        
+			                           
 												 </ul>
                               			  </section> 
                               			  </section>
                               			  </aside>          
 
                                    </div>
+                                  <!-- outbox ends -->
                                   
-                                  
-								  <div class="tab-pane bg-light dk" id="Sendnotification">	
+                                  <!-- ComposeNotification starts -->
+								  <div class="tab-pane bg-light dk" id="ComposeNotification">	
 
 								   <div class="modal-header">
-									<h3 style="text-align: center">Send Notification</h3>
+									<h3 style="text-align: center">Compose Notification</h3>
 									 <div class="input-group"> 
-									  <input type="text" class="form-control rounded" placeholder="Search Employee"> 
+									  <input type="text" class="form-control rounded" placeholder="Search Employee" id="empName"> 
 									   <span class="input-group-btn">
-										<button class="btn btn-success" type="button" onclick="showBody()">write notificaltion</button>
-										 </span> 
-										  </div>  
-										   </div>
+										<button class="btn btn-success" type="button" onclick="searchEmployee()">Search</button>
+										</span> 
+									 </div>  
+									</div>
 						        
-												        <div id="notificationBody">
-													        <div class="modal-body">
-													          <h4>Employee Name Here</h4>
-													          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Please write message here"></textarea>
-													        </div>
+									<div id="notificationBody">
+											<div class="modal-body">
+												<h4>Employee Name Here</h4>
+												<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Please write message here"></textarea>
+											 </div>
 													        
-													        <div style="margin-left:12px">
-													          <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="sendNotification()">Send Notification</button>	
-													          <button type="button" class="btn btn-default" data-dismiss="modal" onclick="cancel()">Cancel</button>
-													        </div>
-												        </div>
-						      					</div>   
-						    			</div>
-					  			</div>
+											<div style="margin-left:12px">
+												<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="sendNotification()">Send Notification</button>	
+												<button type="button" class="btn btn-default" data-dismiss="modal" onclick="cancel()">Cancel</button>
+									</div>
+									</div>
+						      	 </div>  
+						      				
+						      				
+						      							                                        	        <!-- modal starts-->
+ 
+																	<div class="modal fade" id="myModal" role="dialog">
+																		    <div class="modal-dialog modal-md">
+																		      <div class="modal-content">
+																		        <div class="modal-header">
+																		        	<h3 style="text-align: center">Your Reply</h3>  
+																		        </div>
+																		        <div class="modal-body">
+																		          <div class="form-group"> 
+																		          	<label style="font-size: 20px"><strong>To : </strong>${sendToName}</label> 
+																		          </div>
+												                                  <div class="form-group"> 
+												                                  	<label>Message</label> 
+												                                  	<textarea class="form-control" rows="5" placeholder="your message"></textarea>
+												                                  </div>
+																		        </div>
+																		        <div class="modal-footer">
+																		          <button type="button" class="btn btn-primary" data-dismiss="modal">Send</button>	
+																		          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+																		        </div>
+																		      </div>
+																		    </div>
+																	  	</div>
+																	  
+																	  
+															<!-- modal ends -->	
+						      					
+						      					 
+						    	</div>
+					  		</div>
 					                           
                       </section>                                                                   
 	              </section>
 	        </section>
 	        
-	        
-	        <!-- modal starts-->
- 
-					<div class="modal fade" id="myModal" role="dialog">
-						    <div class="modal-dialog modal-md">
-						      <div class="modal-content">
-						        <div class="modal-header">
-						        	<h3 style="text-align: center">Your Reply</h3>  
-						        </div>
-						        <div class="modal-body">
-						          <div class="form-group"> 
-						          	<label style="font-size: 20px"><strong>To : </strong>Drew Willon </label> 
-						          </div>
-                                  <div class="form-group"> 
-                                  	<label>Message</label> 
-                                  	<textarea class="form-control" rows="5" placeholder="your message"></textarea>
-                                  </div>
-						        </div>
-						        <div class="modal-footer">
-						          <button type="button" class="btn btn-primary" data-dismiss="modal">Send</button>	
-						          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-						        </div>
-						      </div>
-						    </div>
-					  	</div>
-					  
-					  
-					  	<!-- modal ends -->  
+	         
 	        
 	 </section> 
 	 
