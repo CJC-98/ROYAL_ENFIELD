@@ -48,11 +48,11 @@
             </section>
         </div>
     </section> <!-- footer -->
-    <footer id="footer">
+  <!--   <footer id="footer">
         <div class="text-center padder clearfix">
             <p> <small>Web app framework base on Bootstrap<br>&copy; 2013</small> </p>
         </div>
-    </footer> <!-- / footer -->
+    </footer> --> <!-- / footer -->
     <!-- Bootstrap -->
     <!-- App -->
     <!-- <script src="js/app.v1.js"></script>-->

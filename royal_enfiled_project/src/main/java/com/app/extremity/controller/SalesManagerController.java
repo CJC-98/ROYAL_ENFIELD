@@ -6,8 +6,20 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
 import com.app.extremity.iservice.BikeSaleServiceI;
 import com.app.extremity.model.BikeOffer;
+
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.app.extremity.iservice.BikeSaleServiceI;
+import com.app.extremity.model.BikeModel;
+import com.app.extremity.model.Color;
+import com.app.extremity.model.EngineCapacity;
+
+
 
 @Controller
 public class SalesManagerController {
@@ -24,7 +36,7 @@ public class SalesManagerController {
 
 	@RequestMapping(value = "/AddnewBike")
 	public String AddNewBikeForm(Model model) {
-		System.out.println("in new bike form");
+		System.out.println("in new bike formxzcxgh");
 		model.addAttribute("link", "AddNewBike.jsp");
 		return "SalesManager/salesManagerIndex";
 		// System.out.println("In sales controller");
@@ -40,6 +52,7 @@ public class SalesManagerController {
 
 	}
 
+
 	@RequestMapping("/Offers")
 	public String Offer(@ModelAttribute BikeOffer bikeoffer,Model model) {
         System.out.println(bikeoffer.getEndDate());
@@ -50,7 +63,7 @@ public class SalesManagerController {
 		BikeOffer bf=bikesaleservicei.SaveOffer(bikeoffer);
   	       model.addAttribute("link", "Offers.jsp");
 		System.out.println("In THe Offer.....");
-		return "SalesManager/salesManagerIndex";
+        return "SalesManager/salesManagerIndex";
 
 	}
 
@@ -82,20 +95,20 @@ public class SalesManagerController {
 
 	}
 
-	@RequestMapping(value = "/ViewNewBike")
+	@RequestMapping(value = "/ViewOrderBike")
 	public String ViewNewBike(Model model) {
 
 		System.out.println("in order");
-		model.addAttribute("link", "ViewOldBike.jsp");
+		model.addAttribute("link", "ViewOrderBike.jsp");
 		return "SalesManager/salesManagerIndex";
 
 	}
 
-	@RequestMapping(value = "/ViewAccessories")
+	@RequestMapping(value = "/ViewOrderAccessories")
 	public String ViewAccessories(Model model) {
 
 		System.out.println("in order");
-		model.addAttribute("link", "ViewAccessories.jsp");
+		model.addAttribute("link", "ViewOrderAccessories.jsp");
 		return "SalesManager/salesManagerIndex";
 
 	}
@@ -108,7 +121,22 @@ public class SalesManagerController {
 		return "SalesManager/salesManagerIndex";
 
 	}
+	@RequestMapping(value = "/ViewBikeSaleForUser")
+	public String ViewBikeSaleForUser(Model model) {
 
+		System.out.println("in order");
+		model.addAttribute("link", "ViewBikeSaleForUser.jsp");
+		return "SalesManager/salesManagerIndex";
+
+	}
+	@RequestMapping(value = "/ViewAccessoriesSaleForUser")
+	public String ViewAccessoriesSaleForUser(Model model) {
+
+		System.out.println("in order");
+		model.addAttribute("link", "ViewAccessoriesSaleForUser.jsp");
+		return "SalesManager/salesManagerIndex";
+
+	}
 	@RequestMapping(value = "/ViewOffer")
 	public String ViewOffer(Model model) {
 
@@ -117,7 +145,22 @@ public class SalesManagerController {
 		return "SalesManager/salesManagerIndex";
 
 	}
+	@RequestMapping(value = "/BikeSaleForUser")
+	public String BikesaleForUser(Model model) {
 
+		System.out.println("in order");
+		model.addAttribute("link", "BikeSaleForUser.jsp");
+		return "SalesManager/salesManagerIndex";
+
+	}
+	@RequestMapping(value = "/AccessoriesSaleForUser")
+	public String AccessoriesSaleForUser(Model model) {
+
+		System.out.println("in order");
+		model.addAttribute("link", "AccessoriesSaleForUser.jsp");
+		return "SalesManager/salesManagerIndex";
+
+	}
 	@RequestMapping(value = "/ViewSoldAccessories")
 	public String ViewSoldAccessories(Model model) {
 
@@ -149,7 +192,7 @@ public class SalesManagerController {
 	public String ViewDeadStockAccessories(Model model) {
 
 		System.out.println("in order");
-		model.addAttribute("link", "ViewDeadStockAccessories.jsp");
+		model.addAttribute("link", "ViewAccessoriesDeadStock.jsp");
 		return "SalesManager/salesManagerIndex";
 
 	}
@@ -158,7 +201,7 @@ public class SalesManagerController {
 	public String ViewDeadStockBike(Model model) {
 
 		System.out.println("in order");
-		model.addAttribute("link", "ViewDeadStockBike.jsp");
+		model.addAttribute("link", "ViewBikeDeadStock.jsp");
 		return "SalesManager/salesManagerIndex";
 
 	}
@@ -180,4 +223,48 @@ public class SalesManagerController {
 		return "SalesManager/salesManagerIndex";
 
 	}
+	
+	//this method is used to add new bike model details with image in table bike_model
+	@RequestMapping(value="/saveNewBikeModel",method=RequestMethod.POST)
+	public String addNewBikeModel(@ModelAttribute BikeModel bikeModel1,@ModelAttribute Color color,@ModelAttribute EngineCapacity engCap,@RequestParam String bikeModel,@RequestParam String bikeColor,@RequestParam String bikeEngine,@RequestParam("profilePic") MultipartFile profilePic,Model model) {
+		System.out.println("In add new bike...");
+		//for autogenerate string id
+		int bmcount=bikeSaleService.getBikeModelCount();
+		
+		System.out.println("result from getBikeModelCount()"+bmcount);
+		String bikeModelCnt="BMID00";
+		bmcount++;
+		bikeModelCnt=bikeModelCnt+Integer.toString(bmcount);
+		System.out.println("generated bikemodel id"+bikeModelCnt);
+		
+		
+		
+		//for engine cap
+		
+		int eccount=bikeSaleService.getEngineCapacityCount();
+		System.out.println("Result from Engine Capacity Count"+eccount);
+		String engCnt="BECID00";
+		eccount++;
+		engCnt=engCnt+Integer.toString(eccount);
+		System.out.println("generated EngineCap id"+engCnt);
+		
+		bikeModel1.setBikeModelId(bikeModelCnt);
+		engCap.setEngineCapacityId(engCnt);
+		
+		engCap.setEngineType(bikeEngine);
+		bikeModel1.setEnginecapacity(engCap);
+		bikeModel1.setModelName(bikeModel);
+		
+		String bkClr=bikeSaleService.getBikeColor();
+		System.out.println(bkClr);
+		color.setColorName(bikeColor);
+		color.setColorId(bkClr);
+		bikeModel1.getColor().add(color);
+		
+		
+		
+		bikeSaleService.addNewBikeModel(bikeModel1,color,engCap,profilePic);
+		return "SalesManager/salesManagerIndex";
+	}
+	
 }

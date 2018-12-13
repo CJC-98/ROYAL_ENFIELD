@@ -51,7 +51,7 @@
                         <input type='button' name='subtract' onclick='javascript: document.getElementById("qty").value--;'
                             value='-' />
                     </div>
-                    <center> <a class="btn btn-s-md btn-success btn-rounded" href="#">OrderBike</a> </center>
+                    <center> <a class="btn btn-s-md btn-success btn-rounded" href="#">OrderAccessories</a> </center>
                 </form>
             </section>
         </div>
