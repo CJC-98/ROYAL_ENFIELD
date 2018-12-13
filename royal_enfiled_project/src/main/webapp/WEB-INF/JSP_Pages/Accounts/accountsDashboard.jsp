@@ -66,12 +66,7 @@
 	                                        <span class="h3 block m-t-xs"><strong id="firers">359</strong></span> 
 	                                        <small class="text-muted text-uc">Extinguishers ready</small> 
                                         </a> 
-                                    </div>
-                                    
-                                    
-                                    
-                                    
-                                    
+                                    </div>  
                                     
                                     <div class="col-sm-6 col-md-3 padder-v b-r b-light lt"> 
                                     	<span class="fa-stack fa-2x pull-left m-r-sm">
@@ -94,53 +89,53 @@
                             <div class="row">
                                 <div class="col-lg-4">
                                     <section class="panel panel-default">
-                                        <header class="panel-heading"> Sold Bike </header>
+                                        <header class="panel-heading"> New Bikes </header>
                                         <div class="panel-body text-center">
-                                            <h4>${Avg} % <small>Bikes are Sold..</small></h4> <small class="text-muted block">
+                                            <h4><small>New Bike</small></h4> <small class="text-muted block">
                                                  </small>
                                             <div class="inline">
-                                                <div class="easypiechart" data-percent=${Avg} data-line-width="16"
+                                                <div class="easypiechart" data-percent=${lg} data-line-width="16"
 	                                                 data-rotate="0" 
 	                                                 data-scale-Color="false" data-animate="2000"
-                                                     data-loop="false" data-size="188"> <span class="h2 step"></span>%
+                                                     data-loop="false" data-size="188"> <span class="h2 step"></span>
                                                     <div class="easypie-text">New</div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="panel-footer"><small>% of avarage rate of the Conversion</small></div>
+                                        <div class="panel-footer"><small>Count Of New Bikes..</small></div>
                                     </section>
                                 </div>
                                 <div class="col-lg-4">
                                     <section class="panel panel-default">
-                                        <header class="panel-heading"> Bounce rate </header>
+                                        <header class="panel-heading"> New Solded Bikes</header>
                                         <div class="panel-body text-center">
                                             <h4><small>last </small>12<small> hrs</small></h4> <small class="text-muted block">   </small>
                                             <div class="inline">
-                                                <div class="easypiechart" data-percent="25" data-line-width="6"
+                                                <div class="easypiechart" data-percent="${lg1}" data-line-width="6"
                                                 	data-animate="2000"
-                                                    data-loop="false" data-size="188"> <span class="h2 step">25</span>%
+                                                    data-loop="false" data-size="188"> <span class="h2 step">25</span>
                                                     <div class="easypie-text">Today</div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="panel-footer"><small>% of change</small></div>
+                                        <div class="panel-footer"><small>Count Of Solded New Bikes..</small></div>
                                     </section>
                                 </div>
                                 <div class="col-lg-4">
                                     <section class="panel panel-default">
-                                        <header class="panel-heading"> New visitors </header>
+                                        <header class="panel-heading"> Average of Sold Bikes </header>
                                         <div class="panel-body text-center">
                                             <h4>3,450</h4> <small class="text-muted block">     </small>
                                             <div class="inline">
-                                                <div class="easypiechart" data-percent="60" data-line-width="30"
+                                                <div class="easypiechart" data-percent="${Avg}" data-line-width="16"
                                                 	data-animate="2000"
-                                                    data-track-color="#eee" data-bar-color="#afcf6f" data-scale-color="#fff"
+                                                    data-scale-color="false"
                                                     data-size="188" data-line-cap='butt'> <span class="h2 step">60</span>%
                                                     <div class="easypie-text">new visits</div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="panel-footer"><small>% of avarage rate of the visits</small></div>
+                                        <div class="panel-footer"><small>% of Sold Bikes..</small></div>
                                     </section>
                                 </div>
                             </div>

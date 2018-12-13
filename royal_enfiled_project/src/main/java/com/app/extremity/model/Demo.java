@@ -14,6 +14,17 @@ public class Demo {
 	@Id
 	private int id;
 	private String name;
+	private Date date;
+	private Double unitCost;
+	private int qty;
+	private Double amount;
+	private Double subTotal;
+	private Double tax;
+	private Double total;
+	private Double amountdue;
+	private Double invoiceTotal;
+	
+	
 	public int getId() {
 		return id;
 	}
@@ -103,15 +114,6 @@ public class Demo {
 	}
 
 	
-	private Date date;
-	private Double unitCost;
-	private int qty;
-	private Double amount;
-	private Double subTotal;
-	private Double tax;
-	private Double total;
-	private Double amountdue;
-	private Double invoiceTotal;
 	
 	
 

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.app.extremity.iservice.IAdminService;
 import com.app.extremity.iservice.IHomeService;
+import com.app.extremity.serviceimpl.Account_ServiceImpl;
 
 
 
@@ -25,6 +26,9 @@ import com.app.extremity.iservice.IHomeService;
 public class HomeController {
 	@Autowired
 	IHomeService homeService;
+	
+	@Autowired
+	Account_ServiceImpl AService;
 	
 	static Logger logger = LogManager.getLogger(HomeController.class);
 	@Autowired
@@ -69,6 +73,26 @@ public class HomeController {
 			model.addAttribute("link", "serviceManagerDashboard.jsp");
 			return "ServiceManager/serviceManagerIndex";
 		case 4:
+			Date fd = null;
+			Date ld = null;
+			Date fds = null;
+			Date lds = null;
+			try {
+				fd = new SimpleDateFormat("yyyy-MM-dd").parse("2018-01-01");
+				ld = new SimpleDateFormat("yyyy-MM-dd").parse("2018-12-31");
+				fds = new SimpleDateFormat("yyyy-MM-dd").parse("2018-01-01");
+				lds = new SimpleDateFormat("yyyy-MM-dd").parse("2018-12-31");
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			long lg = AService.NewBikeCount(fd,ld);
+				System.out.println("Home Controll.. New Bike Count is.. "+lg);
+			model.addAttribute("lg", lg);			
+			long lg1 = AService.SoldBikeCount(fds, lds);
+				System.out.println("Home Controll.. Sold Bike Count is.. " + lg1);
+			model.addAttribute("lg1", lg1);
 			model.addAttribute("link", "accountsDashboard.jsp");
 			return "Accounts/accountsIndex";
 		default:
@@ -87,38 +111,5 @@ public class HomeController {
 		return "IndivisualUser/indivisualUserIndex";
 	}
 	
-	@RequestMapping(value="/admin")
-	public String admin()
-	{      
-		System.out.println("In admin controller");
-		return "";
-	} 
 	
-	@RequestMapping(value="/client")
-	public String client()
-	{  
-		System.out.println("In client controller");
-		return "";
-	}
-		
-	@RequestMapping(value="/dealer")
-	public String dealer()
-	{  
-		System.out.println("In dealer controller");
-		return "";
-	}
-	
-	@RequestMapping(value="/sales")
-	public String sales()
-	{  
-		System.out.println("In sales controller");
-		return "";
-	}
-	
-	@RequestMapping(value="/service")
-	public String service()
-	{  
-		System.out.println("In service controller");
-		return "";
-	}
 }
