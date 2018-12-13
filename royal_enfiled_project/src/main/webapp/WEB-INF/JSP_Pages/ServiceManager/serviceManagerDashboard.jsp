@@ -71,7 +71,7 @@
                                     </section>    
                             </div>
                             </a>
-                            
+                               
                             <a href="BikeServicesRecordsPage">
                             <div class="col-lg-4">
                                     <section class="panel panel-default">
