@@ -127,7 +127,7 @@
                                                     <i class="fa fa-angle-up text-active"></i> </span> <span>Workset</span>
                                             </a>
                                             <ul class="nav lt">
-                                                <li class="active"> <a href="index.html" class="active"> <i class="fa fa-angle-right"></i>
+                                                <li class="active"> <a href="/admin/employeeRegistration" class="active"> <i class="fa fa-angle-right"></i>
                                                         <span>Dashboard v1</span> </a> </li>
                                                 <li> <a href="dashboard.html"> <i class="fa fa-angle-right"></i> <span>Dashboard
                                                             v2</span> </a> </li>
