@@ -1,67 +1,62 @@
 package com.app.extremity.model;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 
+
+
+/**
+ * @author Individual User & Dealer;
+ * This pojo class is used for address save purpose;
+ * This pojo  reference is given to contact pojo;
+ */
 @Entity
-public class Address {
-
+public class Address 
+{	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int addrId;
-	private String City;
-	private String State;
-	private String Country;
-	private int pinCode;
+	private int addressId;
+	
+	private String country;
+	
+	private String state;
+	
+	private String city;
+	
+	private String pincode;
 	
 	
-
-	public int getAddrId() {
-		return addrId;
+	
+	public int getAddressId() {
+		return addressId;
 	}
-
-	public void setAddrId(int addrId) {
-		this.addrId = addrId;
+	public void setAddressId(int addressId) {
+		this.addressId = addressId;
 	}
-
-	public String getCity() {
-		return City;
-	}
-
-	public void setCity(String city) {
-		City = city;
-	}
-
-	public String getState() {
-		return State;
-	}
-
-	public void setState(String state) {
-		State = state;
-	}
-
 	public String getCountry() {
-		return Country;
+		return country;
 	}
-
 	public void setCountry(String country) {
-		Country = country;
+		this.country = country;
 	}
-
-	public int getPinCode() {
-		return pinCode;
+	public String getCity() {
+		return city;
 	}
-
-	public void setPinCode(int pinCode) {
-		this.pinCode = pinCode;
+	public void setCity(String city) {
+		this.city = city;
 	}
-
-	
-	
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
+	public String getPincode() {
+		return pincode;
+	}
+	public void setPincode(String pincode) {
+		this.pincode = pincode;
+	}
 	
 }

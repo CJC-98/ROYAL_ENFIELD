@@ -12,4 +12,5 @@ public interface Account_ServiceInterface {
 	public Long NewBikeCount(Date fd, Date ld);
 	
 	public Long SoldBikeCount(Date fds, Date lds);
+	
 }

@@ -15,28 +15,9 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/app.v1.css" type="text/css" />
 
-	<script type="text/javascript">
-	     function display_c(){
-			 var refresh=1000; // Refresh rate in milli seconds
-			 mytime=setTimeout('display_ct()',refresh)
-	     }
-	                                    	
-	     var m=0;
-	
-	     function display_ct() {
-			  var x = new Date()
-			  var s = x.getSeconds();	                            	
-			  if(s===59){
-			  m++;
-			  }
-			  document.getElementById('ct').innerHTML = s;
-			  document.getElementById('ct1').innerHTML = m;
-			  display_c();
-	     }
-     </script>
 </head>
 
-<body onload=display_ct();>
+<body>
  	<section id="content">
                     <section class="vbox">
                         <section class="scrollable padder">
@@ -97,7 +78,7 @@
                                             <i class="fa fa-circle fa-stack-2x icon-muted"></i> <i class="fa fa-clock-o fa-stack-1x text-white"></i>
                                         </span> 
                                         <a class="clear" href="#"> 
-                                        	<span class="h3 block m-t-xs"><strong><b id="ct1"></b>:<b id="ct"></b> &nbsp&nbsp </strong></span>
+                                        	<span class="h3 block m-t-xs"><strong> &nbsp&nbsp </strong></span>
                                             <small class="text-muted text-uc">your login time..</small>                                          
                                         </a> 
                                     </div>

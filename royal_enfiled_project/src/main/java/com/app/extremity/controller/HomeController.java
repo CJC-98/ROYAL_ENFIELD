@@ -10,18 +10,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.app.extremity.iservice.IAdminService;
+import com.app.extremity.iservice.IHomeService;
 
 import com.app.extremity.iservice.Account_ServiceInterface;
 
 
 
-@Controller    
+  //author: pranay kohad 
+   
+//controller
+@Controller
+@RequestMapping("/")
 public class HomeController {
+	@Autowired
+	IHomeService homeService;
 	
 	@Autowired
 	Account_ServiceInterface AService;
 	
 	static Logger logger = LogManager.getLogger(HomeController.class);
+	@Autowired
+	IAdminService adminService;
+
 	    
 	// All site actions are go through this method
 	    //This is our landing page
@@ -36,40 +49,42 @@ public class HomeController {
 	public String loginPage()
 	{ 
 		logger.info("In login controller log");
-
+		
 		return "login";
 	}    
 	
+	/*this method will check login credentials 
+	 * 
+	 * Author: Nilesh Tammewar
+	 * */ 
+	
 	@RequestMapping(value="/SignIn")
-	public String signIn(Model model)    
+	public String signIn(Model model, @RequestParam String email,@RequestParam String password)    
 	{ 
-		System.out.println("In SignIn controller......");
-		model.addAttribute("link", "accountsDashboard.jsp");
-		
-		Date fd = null;
-		Date ld = null;
-		Date fds = null;
-		Date lds = null;
-		try {
-			fd = new SimpleDateFormat("yyyy-MM-dd").parse("2018-01-01");
-			ld = new SimpleDateFormat("yyyy-MM-dd").parse("2018-12-31");
-			fds = new SimpleDateFormat("yyyy-MM-dd").parse("2018-01-01");
-			lds = new SimpleDateFormat("yyyy-MM-dd").parse("2018-12-31");
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		logger.info("In SignIn controller log");
+		int i=homeService.checkLoginCredentials(email,password);
+		switch (i) {
+		case 1:
+			model.addAttribute("link", "adminDashboard.jsp");
+			
+			return "Admin/adminIndex";
+			
+		case 2:
+			model.addAttribute("link", "salesManagerDashboard.jsp");
+			return "SalesManager/salesManagerIndex";
+		case 3:
+			model.addAttribute("link", "serviceManagerDashboard.jsp");
+			return "ServiceManager/serviceManagerIndex";
+		case 4:
+			model.addAttribute("link", "accountsIndex.jsp");
+			return "Accounts/accountsIndex";
+		default:
+			model.addAttribute("msg", "Wrong Credentials");
+			return "login";
 		}
 		
-		long lg = AService.NewBikeCount(fd,ld);
-			System.out.println("Home Controll.. New Bike Count is.. "+lg);
-		model.addAttribute("lg", lg);
-		
-		long lg1 = AService.SoldBikeCount(fds, lds);
-			System.out.println("Home Controll.. Sold Bike Count is.. " + lg1);
-		model.addAttribute("lg1", lg1);
-			
-		return "Accounts/accountsIndex";//by default go to client index.jsp  
 	}  
+	
 	   
 	
 	@RequestMapping(value="/gotToColorOptionPage")
@@ -81,7 +96,7 @@ public class HomeController {
 	
 	@RequestMapping(value="/admin")
 	public String admin()
-	{  
+	{      
 		System.out.println("In admin controller");
 		return "";
 	} 
