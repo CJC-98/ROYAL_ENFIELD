@@ -17,9 +17,7 @@ public interface ServiceManagerInterface {
 	public String getNextBikeCustomizationId();
 	public String getNextBikeServicingId();
 	
-	public long getAllServiceCount();
-	public long getAllCustomizationCount();
-	
+
 	public long getAllServiceCountByServiceStatus(String serviceStatus);
 	public long getAllCustomizationCountByCustomizationStatus(String customizationStatus);
 	
@@ -30,6 +28,7 @@ public interface ServiceManagerInterface {
 	public long getApprovedServiceCount();
 	public long getInProgressCount();
 	public long getCompletedServiceCount();
+	long getAllServiceCount();
+	long getAllCustomizationCount();
 
-		
 }
