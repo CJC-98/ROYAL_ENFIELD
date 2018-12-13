@@ -169,7 +169,7 @@ public class ServiceMangerController {
 		
 
 
-		//notificationInterface.saveNotfication(null);  
+		notificationInterface.saveNotfication(null);  
 		
 		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("pranay kohad");
 		model.addAttribute("outboxList",outboxList);
