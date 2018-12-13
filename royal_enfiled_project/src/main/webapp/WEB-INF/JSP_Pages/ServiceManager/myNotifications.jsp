@@ -21,6 +21,8 @@
 
 	<script>
 	
+		
+	
 		function markIt(id){
 			var req = new XMLHttpRequest();		
 			req.open("GET","markIt?notficationId="+id,true);
@@ -42,7 +44,7 @@
 				
 				req.onreadystatechange=function(){
 					if(req.readyState==4 && req.status==200){
-						
+						document.getElementById("notificationBody").style.display = "block";
 					}
 				}
 			
@@ -204,7 +206,7 @@
 											<div style="margin-left:12px">
 												<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="sendNotification()">Send Notification</button>	
 												<button type="button" class="btn btn-default" data-dismiss="modal" onclick="cancel()">Cancel</button>
-									</div>
+											</div>
 									</div>
 						      	 </div>  
 						      				
@@ -240,50 +242,27 @@
 						      					 
 						    	</div>
 					  		</div>
+					  	</section>
+				</section>
+			</section>
+		</section>
+		
+		<script>
+			document.getElementById("notificationBody").style.display = "none";
+
+			
+			function sendNotification(){
+				alert("notification is send successfully");
+				document.getElementById("notificationBody").style.display = "none";
+			}
+			
+			function cancel(){
+				document.getElementById("notificationBody").style.display = "none";
+			}
+		</script>
+					  		
 					                           
-                      </section>                                                                   
-	              </section>
-	        </section>
-	        
-	         
-	        
-	 </section> 
-	 
-	        
-                                               
-
-
-
-<script>
-
-	
-	
-	document.getElementById("notificationBody").style.display = "none";
-	
-	function showBody(){
-		document.getElementById("notificationBody").style.display = "block";
-	}
-	
-	function sendNotification(){
-		alert("notification is send successfully");
-		document.getElementById("notificationBody").style.display = "none";
-	}
-	
-	function cancel(){
-		document.getElementById("notificationBody").style.display = "none";
-	}
-	
-	
-	
-	 
-</script>
-
-	<script src="js/app.v1.js"></script>
-    <script src="js/charts/easypiechart/jquery.easy-pie-chart.js"></script>
-    <script src="js/charts/sparkline/jquery.sparkline.min.js"></script>
-    <script src="js/app.plugin.js"></script>
 
 </body>
 
 </html>
-
