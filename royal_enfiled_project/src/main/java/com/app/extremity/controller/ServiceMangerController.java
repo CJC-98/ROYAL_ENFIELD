@@ -72,7 +72,7 @@ public class ServiceMangerController {
 		System.out.println("Completed services are:"+cscount);
 		model.addAttribute("completedservices", cscount);
 				
-		long a=ascount;
+		/*long a=ascount;
 		long b=tscount;
 		long asresult= (a* 100)/b;
 		System.out.println(asresult);
@@ -87,7 +87,7 @@ public class ServiceMangerController {
 		long csresult=(d*100)/b;
 		System.out.println(csresult);
 		model.addAttribute("cspercentage", csresult);
-
+*/
 		logger.info("dashboard hits........... log");
 		model.addAttribute("link","serviceManagerDashboard.jsp");
 		return "ServiceManager/serviceManagerIndex";

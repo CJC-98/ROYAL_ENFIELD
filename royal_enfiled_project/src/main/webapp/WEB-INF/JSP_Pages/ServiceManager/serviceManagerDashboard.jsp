@@ -35,7 +35,7 @@
                                         <div class="panel-body text-center">
                                             <h4>${approvedServiceCount} </h4>
                                             <div class="inline">
-                                                <div class="easypiechart text-danger" data-percent="${aspercentage}"
+                                                <div class="easypiechart text-danger" data-percent="${approvedServiceCount *100/totalServiceCount }"
                                                     data-line-width="5" data-track-Color="#f0f0f0" data-bar-color="#FF5F4A"
                                                     data-rotate="0" data-scale-Color="false" data-size="150"
                                                     data-animate="2000"> <span class="h2 step font-bold"></span>%
@@ -57,7 +57,7 @@
                                         <div class="panel-body text-center">
                                             <h4>${inProgerssServices}</h4>
                                             <div class="inline">
-                                                <div class="easypiechart text-warning" data-percent="${ippercentage}"
+                                                <div class="easypiechart text-warning" data-percent="${inProgerssServices *100/totalServiceCount }"
                                                     data-line-width="5" data-track-Color="#f0f0f0" data-bar-color="#FFD300"
                                                     data-rotate="0" data-scale-Color="false" data-size="150"
                                                     data-animate="2000"> <span class="h2 step font-bold">72</span>%
@@ -79,7 +79,7 @@
                                         <div class="panel-body text-center">
                                             <h4>${completedservices}</h4>
                                             <div class="inline">
-                                                <div class="easypiechart text-success" data-percent="${cspercentage}"
+                                                <div class="easypiechart text-success" data-percent="${completedservices *100/totalServiceCount }"
                                                     data-line-width="5" data-track-Color="#f0f0f0" data-bar-color="#8ec165"
                                                     data-rotate="0" data-scale-Color="false" data-size="150"
                                                     data-animate="2000"> <span class="h2 step font-bold">22.66</span>%
