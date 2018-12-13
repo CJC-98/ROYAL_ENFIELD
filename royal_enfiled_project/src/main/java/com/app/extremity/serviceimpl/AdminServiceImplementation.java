@@ -63,7 +63,8 @@ public class AdminServiceImplementation implements IAdminService {
 			logger.error("error creating upload directory");
 		}
 
-	}
+	}	
+	
 	/*
 	 * this method is used to save Employee Details
 	 * 
@@ -79,7 +80,7 @@ public class AdminServiceImplementation implements IAdminService {
 			byte[] bytes = profilePic.getBytes();
 			Path path = Paths.get(UPLOADED_FOLDER + profilePic.getOriginalFilename());
 			Files.write(path, bytes);
-			employeeDetails.setProfilePictureUrl(UPLOADED_FOLDER + profilePic.getOriginalFilename());
+			employeeDetails.setProfilePictureUrl(profilePic.getOriginalFilename());
 		} catch (IOException e) {
 			logger.error("while saving profile picture", e);
 			e.printStackTrace();
@@ -133,8 +134,8 @@ public class AdminServiceImplementation implements IAdminService {
 				Multipart multipart = new MimeMultipart();
 				multipart.addBodyPart(messageBodyPart);
 				MimeBodyPart attachPart = new MimeBodyPart();
-				attachPart.attachFile(UPLOADED_FOLDER + file.getOriginalFilename());
-				String html = "<a href='http://localhost:8080/'>Register here</a>";
+				attachPart.attachFile((File) file);
+				String html = "<a href='http://localhost:8080/employeeRegistration'>Register here</a>";
 				messageBodyPart.setText(html, "UTF-8", "html");
 				multipart.addBodyPart(attachPart);
 				msg.setContent(multipart);

@@ -11,7 +11,7 @@ import org.hibernate.annotations.GenericGenerator;
 public class EmployeeDetails 
 {
 	@Id
-	@Column(length = 32)
+	@Column(length = 5)
 	@GeneratedValue(generator = "system-uuid")
 	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	private String employeeId;
