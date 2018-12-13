@@ -51,7 +51,7 @@ public class DealerController {
 	@RequestMapping(value="/OldBike")
 	public String OldBike(Model model){
 		
-		System.out.println("newbike hits...........");   
+		System.out.println("newbike hit count...........");   
 		model.addAttribute("link","OldBike.jsp");
 		System.out.println("final");
 		return "Dealer/dealerIndex";
