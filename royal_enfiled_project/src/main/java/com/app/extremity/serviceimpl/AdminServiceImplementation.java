@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Date;
+import java.util.List;
 import java.util.Properties;
 
 import javax.mail.Message;
@@ -24,13 +25,41 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.app.extremity.idao.AvailableServicingIDao;
+import com.app.extremity.idao.BikeModelDao;
+import com.app.extremity.idao.BikeOfferIDao;
+import com.app.extremity.idao.BikeServicingIDao;
+import com.app.extremity.idao.ColorDaoI;
 import com.app.extremity.idao.EmployeeDetailsIDao;
+import com.app.extremity.idao.NewBikeStockIDao;
+import com.app.extremity.idao.NotficationIDao;
+import com.app.extremity.idao.QuotationIDao;
+import com.app.extremity.idao.ServcingBikeInfoIDao;
+import com.app.extremity.idao.ServiceInvoiceIDao;
+import com.app.extremity.idao.ServicingChartIDao;
+import com.app.extremity.idao.SoldOldBikeStockIDao;
+import com.app.extremity.idao.TestDriveCustomerIDao;
 import com.app.extremity.iservice.IAdminService;
+import com.app.extremity.model.AccessoriesStock;
+import com.app.extremity.model.AvailableServicing;
+import com.app.extremity.model.BikeModel;
+import com.app.extremity.model.BikeOffer;
+import com.app.extremity.model.BikeServicing;
+import com.app.extremity.model.Color;
 import com.app.extremity.model.EmailMessage;
 import com.app.extremity.model.EmployeeDetails;
+import com.app.extremity.model.NewBikeStock;
+import com.app.extremity.model.Notfication;
+import com.app.extremity.model.Quotation;
+import com.app.extremity.model.ServcingBikeInfo;
+import com.app.extremity.model.ServicingChart;
+import com.app.extremity.model.ServicingInvoice;
+import com.app.extremity.model.SoldOldBikeStock;
+import com.app.extremity.model.TestDriveCustomer;
 
 @Service
-public class AdminServiceImplementation implements IAdminService {
+public  class AdminServiceImplementation implements IAdminService {
 
 	@Value("${gmail.username}")
 	private String username;
@@ -40,7 +69,47 @@ public class AdminServiceImplementation implements IAdminService {
 
 	@Autowired
 	EmployeeDetailsIDao employeeDetailsDao;
-
+	
+	@Autowired
+	AvailableServicingIDao AvailableServicingIDao;
+	
+	@Autowired
+	ColorDaoI bikecolorDao;
+	
+	@Autowired
+	BikeServicingIDao bikeservicing;
+	
+	@Autowired
+	NewBikeStockIDao newBikeStockIDao;
+	
+	@Autowired
+	BikeModelDao bikeModelIDao;
+	
+	@Autowired
+	 BikeOfferIDao bikeOfferIDao;
+	
+	@Autowired
+	TestDriveCustomerIDao testDriveCustomerIDao;
+	
+	@Autowired
+    SoldOldBikeStockIDao soldOldBikeStockIDao;
+	
+	@Autowired
+	ServiceInvoiceIDao serviceInvoiceIDao;
+	
+	@Autowired
+	ServicingChartIDao servicingChartIDao;
+	
+	@Autowired
+	ServcingBikeInfoIDao servcingBikeInfoIDao;
+	
+	@Autowired
+	QuotationIDao quotationIDao;
+	
+	@Autowired
+	NotficationIDao notficationIDao;
+	
+	
 	static Logger logger = LogManager.getLogger(AdminServiceImplementation.class);
 
 	/* this is path where profile picture will be stored */
@@ -134,5 +203,87 @@ public class AdminServiceImplementation implements IAdminService {
 		}
 
 	}
+
+	
+	@Override
+	public List<Color> getcolor() {
+		// TODO Auto-generated method stub
+		
+		return (List<Color>) bikecolorDao.findAll() ;
+	}
+
+	@Override
+	public List<AvailableServicing> getAvailableServicing() {
+		// TODO Auto-generated method stub
+		return (List<AvailableServicing>) AvailableServicingIDao.findAll();
+	}
+
+	@Override
+	public List<BikeServicing> getBikeServicing() {
+		// TODO Auto-generated method stub
+		return (List<BikeServicing>) bikeservicing.findAll() ;
+	}
+
+	@Override
+	public List<NewBikeStock> getNewBikeStock() {
+	
+		return (List<NewBikeStock>) newBikeStockIDao.findAll();
+	}
+
+	@Override
+	public List<BikeModel> getBikeModel() {
+		
+		return (List<BikeModel>) bikeModelIDao.findAll();
+	}
+
+	@Override
+	public List<BikeOffer> getBikeOffer() {
+		
+		return (List<BikeOffer>) bikeOfferIDao.findAll();
+	}
+
+	@Override
+	public List<TestDriveCustomer> getTestDriveCustomer() {
+	
+		return (List<TestDriveCustomer>) testDriveCustomerIDao.findAll();
+	}
+
+	@Override
+	public List<SoldOldBikeStock> getSoldOldBikeStock() {
+		// TODO Auto-generated method stub
+		return (List<SoldOldBikeStock>) soldOldBikeStockIDao.findAll();
+	}
+
+	@Override
+	public List<ServicingInvoice> getServicingInvoice() {
+		// TODO Auto-generated method stub
+		return (List<ServicingInvoice>) serviceInvoiceIDao.findAll();
+	}
+
+	@Override
+	public List<ServicingChart> getServicingChart() {
+		// TODO Auto-generated method stub
+		return (List<ServicingChart>) servicingChartIDao.findAll();
+	}
+
+	@Override
+	public List<ServcingBikeInfo> getServcingBikeInfo() {
+		
+		return (List<ServcingBikeInfo>) servcingBikeInfoIDao.findAll();
+	}
+
+	@Override
+	public List<Quotation> getQuotation() {
+		
+		return (List<Quotation>) quotationIDao.findAll();
+	}
+
+	@Override
+	public List<Notfication> getNotfication() {
+        
+		return (List<Notfication>) notficationIDao.findAll();
+	}
+
+	
 	
 }

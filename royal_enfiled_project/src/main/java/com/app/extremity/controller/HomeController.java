@@ -29,7 +29,7 @@ public class HomeController {
 	    
 	// All site actions are go through this method
 	    //This is our landing page
-	@RequestMapping(value="/")
+	//@RequestMapping(value="/")
 	public String homePage()
 	{ 
 		logger.info("In home controller log");
