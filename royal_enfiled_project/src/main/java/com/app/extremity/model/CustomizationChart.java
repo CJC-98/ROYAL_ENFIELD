@@ -19,21 +19,13 @@ public class CustomizationChart {
 	
 	private long cost;
 	
-	private String status = "pending";  //OR in-progress OR done
-	
-	@ManyToOne
-	private BikeCustomization bikeCustomization;
+	private String status = "pending";  //OR done
+
 	
 	
 	
 	
-	
-	public BikeCustomization getBikeCustomization() {
-		return bikeCustomization;
-	}
-	public void setBikeCustomization(BikeCustomization bikeCustomization) {
-		this.bikeCustomization = bikeCustomization;
-	}
+
 	
 	public int getCustomizationChartId() {
 		return customizationChartId;
