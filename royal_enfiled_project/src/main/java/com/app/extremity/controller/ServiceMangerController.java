@@ -192,7 +192,7 @@ public class ServiceMangerController {
 		model.addAttribute("link","myNotifications.jsp");	
 		return "ServiceManager/serviceManagerIndex";		
 	}
-	
+	  
 	@RequestMapping(value="/markIt")    
 	public @ResponseBody String udpateNotification(@RequestParam int notficationId,Model model)throws IOException {
 		System.out.println("in markit controller and list is update "+notficationId);
