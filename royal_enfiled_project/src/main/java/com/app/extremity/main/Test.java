@@ -17,8 +17,14 @@ public class Test {
 	static Logger logger = LogManager.getLogger(Test.class);
 	
 	public static void main(String[] args) {
+<<<<<<< HEAD
 		SpringApplication.run(Test.class);    
 		logger.warn("application started............");
 		System.out.println("application started..........."); 
+=======
+		SpringApplication.run(Test.class);
+		System.out.println("application started..............");
+
+>>>>>>> refs/remotes/origin/accountsTeamBranch
 	}
 }   
