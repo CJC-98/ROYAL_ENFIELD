@@ -25,27 +25,30 @@ public class AccountController {
 	public String Invoice(Model model)
 	{ 
 		System.out.println("In Invoice controller");
-		
 		LocalDate date = LocalDate.now();
 		System.out.println("date.." + date);
-				
 		model.addAttribute("link", "Invoice.jsp");
 		model.addAttribute("date",date);
 		
 		List<Demo> list = Service.getAllDemo();	
-
 		for(Demo d : list) {
 			System.out.println("in for loop");
 			System.out.println(d.getName());
 			//System.out.println("City--" + d.getAddress().getCity() + " State--" + d.getAddress().getState());
 			System.out.println(d.getId()+"   qty-"+d.getQty()+"  unitcost-"+d.getUnitCost()+"  total-"+d.getTotal());
-		}
-		
+		}		
 		model.addAttribute("list", list);
 		
 		return "Accounts/accountsIndex";
 	} 
 	
+	
+	@RequestMapping(value="/Notification")
+	public String Notification(Model model) {
+		System.out.println("In Notification Controll..");
+		model.addAttribute("link", "Notification.jsp");
+		return "Accounts/accountsIndex";
+	}
 	
 
 	

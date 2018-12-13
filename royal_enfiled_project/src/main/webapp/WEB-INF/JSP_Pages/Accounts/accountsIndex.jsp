@@ -132,7 +132,7 @@
                                                 </span> <span>Invoice</span>
                                             </a>
                                         </li>
-                                        <li> <a href="#pages"> <i class="fa fa-bell"> <b class="bg-danger"></b></i>
+                                        <li> <a href="Notification"> <i class="fa fa-bell"> <b class="bg-danger"></b></i>
                                         	 	</span> <span>Notifications</span>
                                             </a>
                                         </li>
