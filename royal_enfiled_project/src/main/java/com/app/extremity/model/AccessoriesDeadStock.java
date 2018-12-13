@@ -9,22 +9,20 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
-public class AccessoriesDeadStock 
-{
+public class AccessoriesDeadStock {
 	@Id
-	// @GeneratedValue(strategy=GenerationType.IDENTITY)
-	private String accessoriesDeadStockID;
-
+// @GeneratedValue(strategy=GenerationType.IDENTITY)
+	private String accessoriesDeadStockId;
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "accessoriesStockId")
+	@JoinColumn(name = "partId")
 	private AccessoriesStock acd;
 
 	public String getAccessoriesDeadStockID() {
-		return accessoriesDeadStockID;
+		return accessoriesDeadStockId;
 	}
 
 	public void setAccessoriesDeadStockID(String accessoriesDeadStockID) {
-		this.accessoriesDeadStockID = accessoriesDeadStockID;
+		this.accessoriesDeadStockId = accessoriesDeadStockID;
 	}
 
 	public AccessoriesStock getAcd() {

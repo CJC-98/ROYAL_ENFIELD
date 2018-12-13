@@ -229,7 +229,20 @@
                                                     
                                                     </li>
 											
-										
+										<li> <a href="#uikit"> <i class="fa fa-flask icon"> <b class="bg-success"></b>
+                                                </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i
+                                                        class="fa fa-angle-up text-active"></i> </span> <span>SaleForUser</span>
+                                            </a>
+                                            <ul class="nav lt">
+                                                <li> <a href="BikeSaleForUser"> <i class="fa fa-angle-right"></i> <span>BikesaleForUser</span>
+                                                    </a> </li></ul>
+                                                    
+                                                    <ul class="nav lt">
+                                                <li> <a href="AccessoriesSaleForUser"> <i class="fa fa-angle-right"></i> <span>AccessoriesSaleForUser</span>
+                                                    </a> </li></ul></li>
+                                             	</li>
+                                             	
+                                             	
 										<li><a href="#uikit"> <i class="fa fa-flask icon">
 													<b class="bg-success"></b>
 											</i> <span class="pull-right"> <i
@@ -242,20 +255,20 @@
 												<li><a href="#table"> <i
 														class="fa fa-angle-down text"></i> <i
 														class="fa fa-angle-up text-active"></i> <span>View
-															Bike</span>
+															Order</span>
 												</a>
 													<ul class="nav bg">
-														<li><a href="ViewOldBike"> <i
-																class="fa fa-angle-right"></i> <span>Old</span>
+														<li><a href="ViewOrderBike"> <i
+																class="fa fa-angle-right"></i> <span>Bike</span>
 														</a></li>
-														<li><a href="ViewNewBike"> <i
-																class="fa fa-angle-right"></i> <span>New</span>
+														<li><a href="ViewOrderAccessories"> <i
+																class="fa fa-angle-right"></i> <span>Accessories</span>
 														</a></li>
 
 													</ul></li>
-												<li><a href="ViewAccessories"> <i
-														class="fa fa-angle-right"></i> <span>View
-															Accessories</span>
+												<li><a href="ViewOldBike"> <i
+														class="fa fa-angle-right"></i> <span>
+															ViewOldBike</span>
 												</a></li>
 
 												<li><a href="ViewInvoice"> <i
@@ -265,7 +278,12 @@
 												<li><a href="ViewOffer"> <i
 														class="fa fa-angle-right"></i> <span>View Offer</span>
 												</a></li>
-
+												<li><a href="ViewBikeSaleForUser"> <i
+														class="fa fa-angle-right"></i> <span>ViewBikeSaleForUser</span>
+												</a></li>
+												<li><a href="ViewAccessoriesSaleForUser"> <i
+														class="fa fa-angle-right"></i> <span>ViewAccessoriesSaleForUser</span>
+												</a></li>
 												<li><a href="#table"> <i
 														class="fa fa-angle-down text"></i> <i
 														class="fa fa-angle-up text-active"></i> <span>View

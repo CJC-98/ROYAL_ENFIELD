@@ -64,7 +64,7 @@ public class SalesManagerController {
 	}
 
 	@RequestMapping(value = "/Offers")
-	public String Order(Model model) {
+	public String Offer(Model model) {
 
 		System.out.println("in order");
 		model.addAttribute("link", "Offers.jsp");
@@ -99,20 +99,20 @@ public class SalesManagerController {
 
 	}
 
-	@RequestMapping(value = "/ViewNewBike")
+	@RequestMapping(value = "/ViewOrderBike")
 	public String ViewNewBike(Model model) {
 
 		System.out.println("in order");
-		model.addAttribute("link", "ViewOldBike.jsp");
+		model.addAttribute("link", "ViewOrderBike.jsp");
 		return "SalesManager/salesManagerIndex";
 
 	}
 
-	@RequestMapping(value = "/ViewAccessories")
+	@RequestMapping(value = "/ViewOrderAccessories")
 	public String ViewAccessories(Model model) {
 
 		System.out.println("in order");
-		model.addAttribute("link", "ViewAccessories.jsp");
+		model.addAttribute("link", "ViewOrderAccessories.jsp");
 		return "SalesManager/salesManagerIndex";
 
 	}
@@ -125,7 +125,22 @@ public class SalesManagerController {
 		return "SalesManager/salesManagerIndex";
 
 	}
+	@RequestMapping(value = "/ViewBikeSaleForUser")
+	public String ViewBikeSaleForUser(Model model) {
 
+		System.out.println("in order");
+		model.addAttribute("link", "ViewBikeSaleForUser.jsp");
+		return "SalesManager/salesManagerIndex";
+
+	}
+	@RequestMapping(value = "/ViewAccessoriesSaleForUser")
+	public String ViewAccessoriesSaleForUser(Model model) {
+
+		System.out.println("in order");
+		model.addAttribute("link", "ViewAccessoriesSaleForUser.jsp");
+		return "SalesManager/salesManagerIndex";
+
+	}
 	@RequestMapping(value = "/ViewOffer")
 	public String ViewOffer(Model model) {
 
@@ -134,7 +149,22 @@ public class SalesManagerController {
 		return "SalesManager/salesManagerIndex";
 
 	}
+	@RequestMapping(value = "/BikeSaleForUser")
+	public String BikesaleForUser(Model model) {
 
+		System.out.println("in order");
+		model.addAttribute("link", "BikeSaleForUser.jsp");
+		return "SalesManager/salesManagerIndex";
+
+	}
+	@RequestMapping(value = "/AccessoriesSaleForUser")
+	public String AccessoriesSaleForUser(Model model) {
+
+		System.out.println("in order");
+		model.addAttribute("link", "AccessoriesSaleForUser.jsp");
+		return "SalesManager/salesManagerIndex";
+
+	}
 	@RequestMapping(value = "/ViewSoldAccessories")
 	public String ViewSoldAccessories(Model model) {
 
@@ -166,7 +196,7 @@ public class SalesManagerController {
 	public String ViewDeadStockAccessories(Model model) {
 
 		System.out.println("in order");
-		model.addAttribute("link", "ViewDeadStockAccessories.jsp");
+		model.addAttribute("link", "ViewAccessoriesDeadStock.jsp");
 		return "SalesManager/salesManagerIndex";
 
 	}
@@ -175,7 +205,7 @@ public class SalesManagerController {
 	public String ViewDeadStockBike(Model model) {
 
 		System.out.println("in order");
-		model.addAttribute("link", "ViewDeadStockBike.jsp");
+		model.addAttribute("link", "ViewBikeDeadStock.jsp");
 		return "SalesManager/salesManagerIndex";
 
 	}
