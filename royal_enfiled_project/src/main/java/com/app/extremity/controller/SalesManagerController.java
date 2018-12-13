@@ -48,7 +48,7 @@ public class SalesManagerController {
         System.out.println("aaaa");
 	  	System.out.println("in offer");
 		BikeOffer bf=bikesaleservicei.SaveOffer(bikeoffer);
-		model.addAttribute("link", "Offers.jsp");
+  	        	model.addAttribute("link", "Offers.jsp");
 		System.out.println("In THe Offer.....");
 		return "SalesManager/salesManagerIndex";
 
