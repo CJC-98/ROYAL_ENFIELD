@@ -23,7 +23,7 @@ public class ServicingChart {
 	
 
 
-	
+	   
 
 	public int getServicingChartId() {
 		return servicingChartId;
