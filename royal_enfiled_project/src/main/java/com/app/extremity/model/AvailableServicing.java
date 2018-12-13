@@ -46,13 +46,5 @@ public class AvailableServicing {
 	public void setCost(long cost) {
 		this.cost = cost;
 	}
-	
-	
-	
-
-
-	
-	
-	
-	
+		
 }

@@ -39,7 +39,7 @@ public class ServiceMangerController {
 	@RequestMapping(value="/DashboardPage")
 	public String ServicesDashboardPage(Model model){
 		 
-		ServcingBikeInfo sbi = new ServcingBikeInfo();
+		/*ServcingBikeInfo sbi = new ServcingBikeInfo();
 		sbi.setChasisNumber("AJD7945954");
 		sbi.setPlateNumber("MH-14-HF-7456");
 		
@@ -90,7 +90,7 @@ public class ServiceMangerController {
 		bs1.setBikeServicingId(nextServiceId);
 		
 		serviceManagerInterface.saveBikeServicing(bs1);
-		
+		*/
       /*  logger.info("dashboard hits........... log");
 		model.addAttribute("link","serviceManagerDashboard.jsp");
 		return "ServiceManager/serviceManagerIndex";
@@ -100,9 +100,9 @@ public class ServiceMangerController {
 		{
 			 */
 		
-		CustomizationBikeInfo cbi = new CustomizationBikeInfo();
-		cbi.setChasisNumber("AJD7945954");
-		cbi.setPlateNumber("MH-14-HF-7456");
+		/*CustomizationBikeInfo cbi = new CustomizationBikeInfo();
+		cbi.setChasisNumber("BPA7945921");
+		cbi.setPlateNumber("MH-34-HF-4795");
 		
 		CustomizationInvoice ci = new CustomizationInvoice();
 		ci.setAmount(8500);
@@ -119,30 +119,25 @@ public class ServiceMangerController {
 		cc2.setCost(1500);
 		
 		CustomizationChart cc3 = new CustomizationChart();
-		cc2.setPart("Seat");
-		cc2.setCost(500);
+		cc3.setPart("Seat");
+		cc3.setCost(500);
 		
-		CustomizationChart cc4 = new CustomizationChart();
-		cc2.setPart("Headlight");
-		cc2.setCost(2500);
 		
 	
 		
 		BikeCustomization bc1 = new BikeCustomization();
 		
-		bc1.setAppointmentDate("02/18/2018");
+		bc1.setAppointmentDate("10/12/2018");
 		bc1.setCustomizationBikeInfo(cbi);
 		
 		bc1.getCustomizationChart().add(cc1);
 		bc1.getCustomizationChart().add(cc2);
 		bc1.getCustomizationChart().add(cc3);
-		bc1.getCustomizationChart().add(cc4);	
 		
-		
+	
 		cc1.setBikeCustomization(bc1);
-		cc1.setBikeCustomization(bc1);
-		cc1.setBikeCustomization(bc1);
-		cc1.setBikeCustomization(bc1);
+		cc2.setBikeCustomization(bc1);
+		cc3.setBikeCustomization(bc1);
 		
 		bc1.setCustomizationInvoice(ci);
 		
@@ -152,6 +147,11 @@ public class ServiceMangerController {
 		
 		serviceManagerInterface.saveBikeCustomization(bc1);
 		
+		
+		
+
+		
+		*/
 		 logger.info("dashboard hits........... log");
 			model.addAttribute("link","serviceManagerDashboard.jsp");
 			return "ServiceManager/serviceManagerIndex";
@@ -263,8 +263,4 @@ public class ServiceMangerController {
 		return "ServiceManager/serviceManagerIndex";
 	}
 	
-	
-	
-	
-	
-}
+	}

@@ -64,8 +64,8 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 
 	@Override
 	public String getNextBikeCustomizationId() {
-		// TODO Auto-generated method stub
-		return null;
+		long totalCount = getAllCustomizationCount();
+		return "BC"+(totalCount+1);
 	}
 
 	@Override
@@ -82,19 +82,19 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	@Override
 	public long getAllCustomizationCount() {
 		// TODO Auto-generated method stub
-		return 0;
+		return bikeCustomizationIDao.count();
 	}
 
 	@Override
 	public BikeCustomization saveBikeCustomization(BikeCustomization bikeCustomization) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return bikeCustomizationIDao.save(bikeCustomization);
 	}
 
 	@Override
 	public long getAllCustomizationCountByCustomizationStatus(String customizationStatus) {
 		// TODO Auto-generated method stub
-		return 0;
+		return bikeCustomizationIDao.countBycustomizationStatus(customizationStatus);
 	}
 	 
 
