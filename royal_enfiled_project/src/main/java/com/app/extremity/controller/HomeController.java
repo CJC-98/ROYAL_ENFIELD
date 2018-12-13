@@ -19,7 +19,6 @@ import com.app.extremity.iservice.IHomeService;
 @Controller
 @RequestMapping("/")
 public class HomeController {
-	
 	@Autowired
 	IHomeService homeService;
 	
@@ -59,6 +58,7 @@ public class HomeController {
 		switch (i) {
 		case 1:
 			model.addAttribute("link", "adminDashboard.jsp");
+			
 			return "Admin/adminIndex";
 			
 		case 2:
@@ -71,6 +71,8 @@ public class HomeController {
 			model.addAttribute("msg", "Wrong Credentials");
 			return "login";
 		}
+		
+		//return "IndivisualUser/indivisualUserIndex";//by default go to client index.jsp  
 
 	}  
 	
