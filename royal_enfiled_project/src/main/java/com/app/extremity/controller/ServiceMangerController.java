@@ -174,18 +174,20 @@ public class ServiceMangerController {
 	
 
 	@RequestMapping(value="/searchEmployee")    
-	public @ResponseBody  String serachEmployee(@RequestParam String empName,HttpServletResponse response) throws IOException {
+	public @ResponseBody String serachEmployee(@RequestParam String empName,HttpServletResponse response,Model model) throws IOException {
 		System.out.println("in employee controller");
 		
 		
-		return  null;		
+		model.addAttribute("link","myNotifications.jsp");	
+		return "ServiceManager/serviceManagerIndex";		
 	}
 	
 	@RequestMapping(value="/markIt")    
 	public @ResponseBody String udpateNotification(@RequestParam String notficationId,Model model)throws IOException {
-		System.out.println("in markit controller "+notficationId);
+		System.out.println("in markit controller and list is update "+notficationId);
+		
 		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("pranay kohad");
-		model.addAttribute("outboxList",outboxList);
+		model.addAttribute("outboxList",outboxList);  
 		
 		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication("pranay kohad");
 		model.addAttribute("inboxList",inboxList);   

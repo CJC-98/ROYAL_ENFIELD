@@ -124,7 +124,7 @@
 																	  <a:otherwise>
 																	    	<a href="#" data-toggle="class" class="btn btn-default btn-xs"> 
 			                                                					<i class="fa fa-star-o text-muted text"></i>
-																	    			 <i class="fa fa-star text-danger text-active"></i> <a href="markIt?notficationId="+${data.notficationId}>Mark As Read</a>
+																	    			 <i class="fa fa-star text-danger text-active"></i> <span onclick="markIt(${data.notficationId})">Mark As Read</span>
 
 																	        </a>
 																	  </a:otherwise>
