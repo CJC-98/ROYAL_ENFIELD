@@ -1,5 +1,6 @@
 package com.app.extremity.serviceimpl;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -22,7 +23,6 @@ import javax.mail.internet.MimeMultipart;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -61,11 +61,9 @@ import com.app.extremity.model.TestDriveCustomer;
 @Service
 public  class AdminServiceImplementation implements IAdminService {
 
-	@Value("${gmail.username}")
-	private String username;
-	
-	@Value("${gmail.password}")
-	private String password;
+	private String adminEmailUsername;
+
+	private String adminEmailPassword;
 
 	@Autowired
 	EmployeeDetailsIDao employeeDetailsDao;
@@ -113,7 +111,29 @@ public  class AdminServiceImplementation implements IAdminService {
 	static Logger logger = LogManager.getLogger(AdminServiceImplementation.class);
 
 	/* this is path where profile picture will be stored */
-	private String UPLOADED_FOLDER = "D:\\Upload\\";
+	protected static String UPLOADED_FOLDER;
+
+	/*
+	 * static block to create EmployeeProfilePicture
+	 * 
+	 * Author: Nilesh Tammewar
+	 * 
+	 */
+
+	static {
+		UPLOADED_FOLDER = System.getProperty("user.dir") + "\\src\\main\\webapp\\Resources\\images\\";
+		File dir = new File(UPLOADED_FOLDER + File.separatorChar + "EmployeeProfilePicture");
+		try {
+			if (!dir.isDirectory()) {
+				dir.mkdirs();
+			}
+			UPLOADED_FOLDER = UPLOADED_FOLDER + File.separatorChar + dir.getName() + File.separatorChar;
+		} catch (Exception e) {
+			logger.error("error creating upload directory");
+		}
+
+	}	
+	
 	/*
 	 * this method is used to save Employee Details
 	 * 
@@ -129,7 +149,7 @@ public  class AdminServiceImplementation implements IAdminService {
 			byte[] bytes = profilePic.getBytes();
 			Path path = Paths.get(UPLOADED_FOLDER + profilePic.getOriginalFilename());
 			Files.write(path, bytes);
-			employeeDetails.setProfilePictureUrl(UPLOADED_FOLDER + profilePic.getOriginalFilename());
+			employeeDetails.setProfilePictureUrl(profilePic.getOriginalFilename());
 		} catch (IOException e) {
 			logger.error("while saving profile picture", e);
 			e.printStackTrace();
@@ -137,6 +157,8 @@ public  class AdminServiceImplementation implements IAdminService {
 
 		employeeDetailsDao.save(employeeDetails);
 		logger.info("employee Saved", employeeDetails);
+		logger.info(UPLOADED_FOLDER.toString());
+		logger.info("message", UPLOADED_FOLDER);
 	}
 
 	/*
@@ -156,13 +178,14 @@ public  class AdminServiceImplementation implements IAdminService {
 
 		Session session = Session.getInstance(props, new javax.mail.Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication(username, password);
+				return new PasswordAuthentication(adminEmailUsername, adminEmailPassword);
 			}
 		});
 
 		Message msg = new MimeMessage(session);
 		try {
-			msg.setFrom(new InternetAddress(username, false));
+			getAdminCredentials();
+			msg.setFrom(new InternetAddress(adminEmailUsername, false));
 
 			msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(emailmessage.getTo_address()));
 
@@ -180,8 +203,8 @@ public  class AdminServiceImplementation implements IAdminService {
 				Multipart multipart = new MimeMultipart();
 				multipart.addBodyPart(messageBodyPart);
 				MimeBodyPart attachPart = new MimeBodyPart();
-				attachPart.attachFile(UPLOADED_FOLDER + file.getOriginalFilename());
-				String html = "<a href='http://localhost:8080/'>Register here</a>";
+				attachPart.attachFile((File) file);
+				String html = "<a href='http://localhost:8080/employeeRegistration'>Register here</a>";
 				messageBodyPart.setText(html, "UTF-8", "html");
 				multipart.addBodyPart(attachPart);
 				msg.setContent(multipart);
@@ -193,17 +216,18 @@ public  class AdminServiceImplementation implements IAdminService {
 			logger.info("Email has been send to the employee", emailmessage);
 
 		} catch (MessagingException e) {
-			
-			logger.error("exception While sending Email",e);
+
+			logger.error("exception While sending Email", e);
 			e.printStackTrace();
 		} catch (IOException e) {
-			
-			logger.error("file not found exception",e);
+
+			logger.error("file not found exception", e);
 			e.printStackTrace();
 		}
 
 	}
 
+<<<<<<< HEAD
 	
 	@Override
 	public List<Color> getcolor() {
@@ -284,6 +308,19 @@ public  class AdminServiceImplementation implements IAdminService {
 		return (List<Notfication>) notficationIDao.findAll();
 	}
 
-	
-	
+	private void getAdminCredentials() {
+		try {
+
+			EmployeeDetails employeeDetails = employeeDetailsDao.findOneByEmployeeDesignation("Admin");
+			adminEmailUsername = employeeDetails.getEmployeeEmail();
+			adminEmailPassword = employeeDetails.getEmployeePassword();
+		} catch (Exception e) {
+			logger.info("exception while getting user creadentials");
+			logger.error("admin Credentials", e);
+			logger.info(adminEmailPassword.toString());
+			logger.info(adminEmailUsername.toString());
+		}
+	}
+
+
 }

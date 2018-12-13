@@ -35,7 +35,6 @@ import com.app.extremity.model.TestDriveCustomer;
 
 
 
-
 @Controller
 /*@RequestMapping(value="/admin")*/
 public class AdminController {
@@ -44,6 +43,10 @@ public class AdminController {
 	IAdminService adminService;
 	
 
+	@RequestMapping(value="/composeMail")
+	public String toComposeMailPage() {
+		return "Admin/composeMail";
+	}
 	/*this method is used to send Email to employee With Registration Link
 	 * 
 	 *  author: Nilesh Tammewar
@@ -51,9 +54,21 @@ public class AdminController {
 	
 	@RequestMapping(value="/sendEmail",method=RequestMethod.POST)
 	public String sendEmail(@ModelAttribute EmailMessage  emailmessage,@RequestParam("file") MultipartFile file) {
-		
+		System.out.println(emailmessage.getTo_address());
+		System.out.println(emailmessage.getSubject());
+		System.out.println(emailmessage.getBody());
 		adminService.sendEmail(emailmessage,file);
-		return null;
+		return "Admin/adminIndex";
+	}
+	
+	/*this method is used for Employee Registration Page
+	 * 
+	 *  author: Nilesh Tammewar
+	 * */
+	
+	@RequestMapping(value="/employeeRegistration")
+	public String toEmployeeRegistrationPage() {
+		return "Admin/employeeRegistration";
 	}
 	
 	/*this method is used to save Employee Details
@@ -62,6 +77,7 @@ public class AdminController {
 	 * */
 	
 	
+<<<<<<< HEAD
 	/*@RequestMapping(value="/")
 	public String getBikeModel() {
 		
@@ -324,3 +340,8 @@ public class AdminController {
 		
 	}
 	}
+	
+	
+	
+
+

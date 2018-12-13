@@ -246,11 +246,12 @@
 	          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 	        </div>
 	      </div>
-	    </div>
+
   	</div>
 
       
   	<!-- modal ends -->
+
 
 
 
