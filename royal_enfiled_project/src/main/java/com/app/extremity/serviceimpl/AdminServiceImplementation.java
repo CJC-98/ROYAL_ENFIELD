@@ -174,4 +174,9 @@ public class AdminServiceImplementation implements IAdminService {
 		}
 	}
 
+	@Override
+	public EmployeeDetails getEmployeeDetailsByName(String employeeName) {
+		return employeeDetailsDao.findOneByEmployeeName(employeeName);
+	}
+
 }

@@ -21,6 +21,7 @@ import com.app.extremity.model.Demo;
 @Controller
 public class AccountController {
 
+	
 	@Autowired
 	Account_ServiceInterface Service;
 
