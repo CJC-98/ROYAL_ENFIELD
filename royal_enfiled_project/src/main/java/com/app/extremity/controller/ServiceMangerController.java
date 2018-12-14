@@ -53,41 +53,31 @@ public class ServiceMangerController {
 	@Autowired
 	ServiceManagerInterface serviceManagerInterface;
 	
-	@Autowired
-	NotificationInterface notificationInterface;
+	
 	
 	
 	@RequestMapping(value="/DashboardPage")
 	public String ServicesDashboardPage(Model model){
 
-	
-        //sscount => aproved service count
 		long sscount=serviceManagerInterface.getAllServiceCountByServiceStatus("waiting");
-		System.out.println("Approved services are:"+sscount);
 		model.addAttribute("approvedServiceCount",sscount);
-		
-		//ts => total service count
+
 	    long tscount=serviceManagerInterface.getAllServiceCount();
-		System.out.println("Total Services are:"+tscount);
 		model.addAttribute("totalServiceCount", tscount);
-		
-		//ipcount => in progress count
-		long ipcount=serviceManagerInterface.getAllServiceCountByServiceStatus("waiting");
-		System.out.println("In progerss services are:"+ipcount);
+
+		long ipcount=serviceManagerInterface.getAllServiceCountByServiceStatus("in-progress");
 		model.addAttribute("inProgerssServices", ipcount);
-		
-		//dscount => completed service count
-		long cscount=serviceManagerInterface.getAllServiceCountByServiceStatus("waiting");
-		System.out.println("Completed services are:"+cscount);
+
+	
+		long cscount=serviceManagerInterface.getAllServiceCountByServiceStatus("done");
 		model.addAttribute("completedservices", cscount);
-				
-		
+
 
 		logger.info("dashboard hits........... log");
 		model.addAttribute("link","serviceManagerDashboard.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
-
+  
 	@RequestMapping(value="/ApprovedServicesPage")
 	public String ApprovedServicesgPage(Model model){
 		 
@@ -161,53 +151,12 @@ public class ServiceMangerController {
 		model.addAttribute("link","customizationInvoice.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
-	
-	@RequestMapping(value="/MyNotificationsPage")
-	public String MyNotificationsPage(Model model){
-		
-		System.out.println("go to notification page...............");
-		
-
-
-		notificationInterface.saveNotfication(null);  
-		
-		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("pranay kohad");
-		model.addAttribute("outboxList",outboxList);
-		
-		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication("pranay kohad");
-		model.addAttribute("inboxList",inboxList);   
-
 
 	
-		model.addAttribute("link","myNotifications.jsp");	
-		return "ServiceManager/serviceManagerIndex";
-	}
-	
 
-	@RequestMapping(value="/searchEmployee")    
-	public @ResponseBody String serachEmployee(@RequestParam String empName,HttpServletResponse response,Model model) throws IOException {
-		System.out.println("in employee controller");
-		
-		
-		model.addAttribute("link","myNotifications.jsp");	
-		return "ServiceManager/serviceManagerIndex";		
-	}
+
 	  
-	@RequestMapping(value="/markIt")    
-	public @ResponseBody String udpateNotification(@RequestParam int notficationId,Model model)throws IOException {
-		System.out.println("in markit controller and list is update "+notficationId);
-		
-		notificationInterface.markAsRead(notificationInterface.getNotficationById(notficationId));
-		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("pranay kohad");
-		model.addAttribute("outboxList",outboxList);  
-		
-		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication("pranay kohad");
-		model.addAttribute("inboxList",inboxList);   
-		
-		model.addAttribute("link","myNotifications.jsp");	
-		return "ServiceManager/serviceManagerIndex";
 
-	}
 	
 	
 }
