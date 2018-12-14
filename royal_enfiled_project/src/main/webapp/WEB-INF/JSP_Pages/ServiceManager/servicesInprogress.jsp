@@ -14,18 +14,207 @@
 </head>
 
 <body>
-	<section id="content" class="bg-light lter">
+
+
+	<script>
+		function submitWork(){
+			alert("your work is submitted");
+		}
+	</script>
+	
+
+	<section id="content"  class="bg-light lter">
 	        <section class="vbox">
 	            <section class="scrollable padder">                                               
 	                                
-	                <div class="m-b-md">
-	                    <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Services Inprogress</h3>
-	                </div>
-	                
-	               // Services Inprogress body here
-	                
+	                <div class="m-b-md hbox" style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
+                    	<h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">
+                    		Current Services
+                    	</h3>
+                	</div>     
+	               
+	                <!-- fisrt table starts -->
+	                <div class="row">
+                         <div class="col-sm-12">
+                             <section class="panel panel-default">
+                                          <header class="panel-heading bg-dark lter" style="font-size: 20px; color: white; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
+                                          	Bullet 350cc (MH-12-HF-6454)
+
+                                          	<a class="btn btn-md btn-warning rounded m-r" onclick="submitWork()">Submit Work</a>
+                                          </header>
+                                                
+                                          <table class="table table-striped m-b-none">
+                                                      
+                                                <thead>
+                                                                
+                                                     <tr>   
+                                                         <th style="text-align: center;">Part Id</th>
+                                                         <th style="text-align: center;">Work</th>
+                                                         <th style="text-align: center;">Cost</th>
+                                                         <th style="text-align: center;">Check</th>
+                                                     </tr>
+                                                </thead>
+                                                
+                                                <tbody>
+                                                        
+                                                      <tr style="text-align: center;">
+                                                         <td>1</td>
+                                                         <td>labour cost</td>
+                                                         <td>500</td>
+                                                         <td>
+                                                         	<div class="checkbox"> 
+                                                         		<label style="color: #88C800">
+                                                         			work done
+                                                    			</label> 
+                                                    		</div>
+                                                         </td>
+                                                      </tr>
+                                                      
+                                                      <tr style="text-align: center;">
+                                                         <td>2</td>
+                                                         <td>tail light clean</td>
+                                                         <td>2020</td>
+                                                         <td>
+                                                         	<div class="checkbox"> 
+                                                         		<label> 
+                                                         			<input type="checkbox">
+                                                    			</label> 
+                                                    		</div>
+                                                         </td>
+                                                      </tr>
+                                                      
+                                                      
+                                                      
+                                                      <tr style="text-align: center;">
+                                                         <td>4</td>
+                                                         <td>brake clean</td>
+                                                         <td>500</td>
+                                                         <td>
+                                                         	<div class="checkbox"> 
+                                                         		<label> 
+                                                         			<input type="checkbox">
+                                                    			</label> 
+                                                    		</div>
+                                                         </td>
+                                                      </tr>
+                                                      
+                                                      <tr style="text-align: center;">
+                                                         <td>5</td>
+                                                         <td>silence clean</td>
+                                                         <td>150</td>
+                                                         <td>
+                                                         	<div class="checkbox"> 
+                                                         		<label> 
+                                                         			<input type="checkbox">
+                                                    			</label> 
+                                                    		</div>
+                                                         </td>
+                                                      </tr>
+        
+                                                      
+                                                    </tbody>
+
+                                             </table>
+                                                     
+                             </section>
+                                         
+                        </div>
+                    </div>
+                    <!-- first record ends-->
+                    
+                     <div class="row">
+                         <div class="col-sm-12">
+                             <section class="panel panel-default">
+                                          <header class="panel-heading bg-dark lter" style="color: white; font-size: 20px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
+                                          	Bullet 350cc (MH12546HF6454)
+                                          	<a class="btn btn-md btn-warning rounded m-r" onclick="submitWork()">Submit Work</a>
+                                          </header>
+                                                
+                                          <table class="table table-striped m-b-none">
+                                                      
+                                                <thead>
+                                                                
+                                                     <tr>   
+                                                         <th style="text-align: center;">Part Id</th>
+                                                         <th style="text-align: center;">Work</th>
+                                                         <th style="text-align: center;">Cost</th>
+                                                         <th style="text-align: center;">Check</th>
+                                                     </tr>
+                                                </thead>
+                                                
+                                                <tbody>
+                                                        
+                                                      <tr style="text-align: center;">
+                                                         <td>1</td>
+                                                         <td>labour cost</td>
+                                                         <td>500</td>
+                                                         <td>
+                                                         	<div class="checkbox"> 
+                                                         		<label style="color: #88C800">
+                                                         			work done
+                                                    			</label> 
+                                                    		</div>
+                                                         </td>
+                                                      </tr>
+                                                      
+                                                      <tr style="text-align: center;">
+                                                         <td>2</td>
+                                                         <td>tail light clean</td>
+                                                         <td>2020</td>
+                                                         <td>
+                                                         	<div class="checkbox"> 
+                                                         		<label> 
+                                                         			<input type="checkbox">
+                                                    			</label> 
+                                                    		</div>
+                                                         </td>
+                                                      </tr>
+                                                      
+                                                      
+                                                      
+                                                      <tr style="text-align: center;">
+                                                         <td>4</td>
+                                                         <td>brake clean</td>
+                                                         <td>500</td>
+                                                         <td>
+                                                         	<div class="checkbox"> 
+                                                         		<label> 
+                                                         			<input type="checkbox">
+                                                    			</label> 
+                                                    		</div>
+                                                         </td>
+                                                      </tr>
+                                                      
+                                                      <tr style="text-align: center;">
+                                                         <td>5</td>
+                                                         <td>silence clean</td>
+
+                                                         <td>150</td>
+                                                         <td>
+                                                         	<div class="checkbox"> 
+                                                         		<label> 
+                                                         			<input type="checkbox">
+                                                    			</label> 
+                                                    		</div>
+                                                         </td>
+                                                      </tr>
+        
+                                                      
+                                                    </tbody>
+
+                                             </table>
+                                                     
+                             </section>
+                                         
+                        </div>
+                    </div>
+                    <!-- first record ends-->
+                  
+                     
 	            </section>
 	        </section>
 	 </section> 
+	
+
 </body>
 </html>

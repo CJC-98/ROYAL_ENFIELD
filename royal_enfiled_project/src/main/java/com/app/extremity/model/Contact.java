@@ -1,4 +1,9 @@
 package com.app.extremity.model;
+
+
+
+
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,7 +15,7 @@ import javax.persistence.OneToOne;
  * This pojo class is used for contactDetails save purpose;
  * this pojo reference is given to registration  pojo
  */
-
+  
 
 @Entity
 public class Contact 
@@ -18,25 +23,32 @@ public class Contact
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int contactId;
+	
 	private String name;
+	
 	private String mobile;
+	
 	private String showroomName;
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	private Address address;
 	
-
-	public int getContactId() {
-		return contactId;
-	}
-	public void setContactId(int contactId) {
-		this.contactId = contactId;
-	}
+	
+	
+	
+	
 	public String getShowroomName() {
 		return showroomName;
 	}
 	public void setShowroomName(String showroomName) {
 		this.showroomName = showroomName;
+	}
+	
+	public int getContactId() {
+		return contactId;
+	}
+	public void setContactId(int contactId) {
+		this.contactId = contactId;
 	}
 
 	public String getMobile() {

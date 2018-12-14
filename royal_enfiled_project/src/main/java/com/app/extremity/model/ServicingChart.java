@@ -13,20 +13,24 @@ public class ServicingChart {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
-	private String work;
-	private long cost;
-	private String Status = "pending";
+	private int servicingChartId;
 	
-	@ManyToOne
-	private BikeServicing bikeServicing;
+	private String work;
+	
+	private long cost;
+	
+	private String Status = "pending";  //OR done
+	
 
-	public int getId() {
-		return id;
+
+	   
+
+	public int getServicingChartId() {
+		return servicingChartId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setServicingChartId(int servicingChartId) {
+		this.servicingChartId = servicingChartId;
 	}
 
 	public String getWork() {
@@ -53,14 +57,6 @@ public class ServicingChart {
 		Status = status;
 	}
 
-	public BikeServicing getBikeServicing() {
-		return bikeServicing;
-	}
-
-	public void setBikeServicing(BikeServicing bikeServicing) {
-		this.bikeServicing = bikeServicing;
-	}
-	
 	
 	
 }

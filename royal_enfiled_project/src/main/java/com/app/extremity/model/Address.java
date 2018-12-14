@@ -5,8 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
-
 /**
  * @author Individual User & Dealer;
  * This pojo class is used for address save purpose;
@@ -18,10 +16,15 @@ public class Address
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int addressId;
+	
 	private String country;
+	
 	private String state;
+	
 	private String city;
+	
 	private String pincode;
+	
 	
 	
 

@@ -1,4 +1,7 @@
 package com.app.extremity.model;
+
+
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,13 +23,18 @@ public class Login
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int loginId;
+	
 	private String email;
+	
 	private String password;
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	private Role role;
 	
-
+	
+	
+	
+	
 	public int getLoginId() {
 		return loginId;
 	}
