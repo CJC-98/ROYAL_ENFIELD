@@ -1,8 +1,17 @@
 package com.app.extremity.controller;
 
+import java.util.List;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.app.extremity.iservice.ServiceManagerInterface;
+import com.app.extremity.model.AvailableServicing;
   
 /* 
  * This controller helps to navigate in service manager index.jsp
@@ -12,6 +21,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
     
 @Controller
 public class ServiceMangerController {
+	
+	@Autowired
+	ServiceManagerInterface service;
 	
 	@RequestMapping(value="/DashboardPage")
 	public String ServicesDashboardPage(Model model){
@@ -62,13 +74,29 @@ public class ServiceMangerController {
 		model.addAttribute("link","bikeCustomizationRecords.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
+
+	
+	
+	@RequestMapping(value="/addNewService")
+	public String saveServices(Model model,@ModelAttribute AvailableServicing saveService )
+	{
+		System.out.println("in addnewservice controller");
+	
+		
+		service.saveNewServices(saveService);
+		AvailableServicesPagePage(model);
+		return "ServiceManager/serviceManagerIndex";
+	}
 	
 	@RequestMapping(value="/AvailableServicesPage")
-	public String AvailableServicesPagePage(Model model){
+	public String AvailableServicesPagePage( Model model){
 		
-		System.out.println("In AvailableServices controller");
+		List<AvailableServicing> list=service.getAllServices();
+		System.out.println(list);
+		model.addAttribute("list", list);
 		model.addAttribute("link","availableServicing.jsp");
 		return "ServiceManager/serviceManagerIndex";
+		
 	}
 	
 	@RequestMapping(value="/AvailableCustomizationPage")
@@ -99,9 +127,6 @@ public class ServiceMangerController {
 		model.addAttribute("link","myNotifications.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
+
+}	
 	
-	
-	
-	
-	
-}
