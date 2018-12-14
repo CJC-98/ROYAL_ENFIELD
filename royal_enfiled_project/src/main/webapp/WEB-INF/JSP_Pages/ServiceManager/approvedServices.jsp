@@ -14,7 +14,12 @@
 </head>
 
 <body>
+<<<<<<< HEAD
 <section id="content" class="bg-light lter">
+=======
+
+	<section id="content" class="bg-light lter">
+>>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
         <section class="vbox">
             <section class="scrollable padder">                                               
                                 

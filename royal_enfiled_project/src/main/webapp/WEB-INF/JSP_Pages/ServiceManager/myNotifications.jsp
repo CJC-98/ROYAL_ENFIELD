@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="a" uri="http://java.sun.com/jsp/jstl/core"%>  
@@ -17,6 +16,53 @@
 
 <body>
 
+<<<<<<< HEAD
+	
+
+	<script>
+	
+		function markIt(id){
+			alert("ok "+id);
+			
+			var req = new XMLHttpRequest();
+			
+			req.open("GET","markIt?notficationId="+id,true);
+			req.send();
+			
+			req.onreadystatechange=function(){
+				if(req.readyState==4 && req.status==200){
+					
+					console.log(req.responseText);
+					
+				}
+				else{
+					console.log("error");
+				}
+			}
+		}
+	
+		function searchEmployee(){
+			
+			var empName = document.getElementById("empName").value;
+			
+			if(empName==""){
+				alert("Please enter employee name!!!");
+			}else{
+				var req = new XMLHttpRequest();
+				
+				req.open("GET","searchEmployee?empName="+empName,true);
+				req.send();
+				
+				req.onreadystatechange=function(){
+					if(req.readyState==4 && req.status==200){
+						
+					}
+				}
+			
+			}
+			
+		}
+=======
 	<script>
 		function searchEmployee(){
 			
@@ -33,6 +79,7 @@
 			}
 			
 			}
+>>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 	</script>
 
 	<section id="content"  class="bg-light lter">
@@ -57,7 +104,11 @@
                                       <div class="tab-content">
 
                                        
+<<<<<<< HEAD
+                                      <!-- inbox started -->
+=======
                                        <!-- inbox started -->
+>>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 								      <div class="tab-pane active bg-light dker" id="Inbox">  
 								      		
 								      	<aside class="bg-light dk b-l" id="email-list">
@@ -73,7 +124,12 @@
 			                                                	<img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/avatar.jpg" class="img-circle"> 
 			                                                </a> 
 			                                                <a href="#" class="clear"> 
+<<<<<<< HEAD
+			                                                	<small class="pull-right text-muted" 
+			                                                		   style="display: flex; flex-flow: column wrap; align-items: center; margin-top: 20px">
+=======
 			                                                	<small class="pull-right text-muted" style="display: flex; flex-flow: column wrap; align-items: center; margin-top: 20px">
+>>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 			                                                		<strong style="font-size: 15px">${data.sendDate}</strong> 
 			                                                		<span>${data.sendTime}</span>
 			                                                	</small>
@@ -83,10 +139,32 @@
 			                                                </a>
 			                                                
 			                                                <div class="comment-action m-t-sm"> 
+<<<<<<< HEAD
+			                                                	
+			                                                		
+			                                               		<a:choose>
+																	  <a:when test="${data.markAsRead}">
+																	  	<a href="#" data-toggle="class" class="btn btn-default btn-xs active" disabled=true> 
+			                                                				<i class="fa fa-star-o text-muted text"></i>
+																	    		<i class="fa fa-star text-danger text-active"></i> Mark As Read
+																	    </a>		 
+																	  </a:when>
+																	  <a:otherwise>
+																	    	<a href="#" data-toggle="class" class="btn btn-default btn-xs"> 
+			                                                					<i class="fa fa-star-o text-muted text"></i>
+																	    			 <i class="fa fa-star text-danger text-active"></i> <span onclick="markIt(${data.notficationId})">Mark As Read</span>
+
+																	        </a>
+																	  </a:otherwise>
+																	</a:choose>
+			                         
+			                                                
+=======
 			                                                	<a href="#" data-toggle="class" class="btn btn-default btn-xs"> 
 			                                                		<i class="fa fa-star-o text-muted text"></i>
 			                                                        <i class="fa fa-star text-danger text-active"></i> Mark as read 
 			                                                    </a>
+>>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 			                                                    <a data-toggle="modal" 
 			                                                       data-target="#myModal" 
 			                                                       class="btn btn-default btn-xs"    
@@ -216,6 +294,8 @@
 
 
 <script>
+
+	
 	
 	document.getElementById("notificationBody").style.display = "none";
 	
@@ -231,8 +311,17 @@
 	function cancel(){
 		document.getElementById("notificationBody").style.display = "none";
 	}
+	
+	
+	
 	 
 </script>
+
+	<script src="js/app.v1.js"></script>
+    <script src="js/charts/easypiechart/jquery.easy-pie-chart.js"></script>
+    <script src="js/charts/sparkline/jquery.sparkline.min.js"></script>
+    <script src="js/app.plugin.js"></script>
+
 </body>
 
 </html>
