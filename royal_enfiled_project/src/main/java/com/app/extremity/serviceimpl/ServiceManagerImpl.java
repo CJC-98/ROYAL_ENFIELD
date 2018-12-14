@@ -22,17 +22,6 @@ import com.app.extremity.model.BikeServicing;
 @Service
 public class ServiceManagerImpl implements ServiceManagerInterface{
 
-	@Autowired
-	BikeServicingIDao bikeServicingIDao;
-
-	@Autowired
-	ServiceInvoiceIDao serviceInvoiceIDao;
-	
-	@Autowired
-	ServcingBikeInfoIDao servcingBikeInfoIDao;
-	
-	@Autowired
-	ServicingChartIDao servicingChartIDao;
 	
 	@Autowired
 	BikeCustomizationIDao bikeCustomizationIDao;
@@ -47,37 +36,16 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	CustomizationChartIDao customizationChartIDao;
 	
 	
-	@Override
-	public long getAllServiceCount() {
-		return bikeServicingIDao.count();
-	}
 
-	@Override
-	public long getAllServiceCountByServiceStatus(String serviceStatus) {
-		return bikeServicingIDao.countByservcingStatus(serviceStatus);
-	}
 
 	@Override
 	public String getNextBikeCustomizationId() {
 		long totalCount = getAllCustomizationCount();
 		return "BC"+(totalCount+1);
 	}
-
-	@Override
-	public String getNextBikeServicingId() {
-		long totalCount = getAllServiceCount();
-		return "BS"+(totalCount+1);
-	}
-
-	@Override
-	public BikeServicing saveBikeServicing(BikeServicing bikeServicing) {
-		return bikeServicingIDao.save(bikeServicing);
-	}
-
-
+	
 	@Override
 	public long getAllCustomizationCount() {
-		// TODO Auto-generated method stub
 
 		return bikeCustomizationIDao.count();
 	}
@@ -89,25 +57,11 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	}
 
 	@Override
-	public long getAllCustomizationCountByCustomizationStatus(String customizationStatus) {
-		// TODO Auto-generated method stub
+	public long getAllCustomizationCountByCustomizationStatus(String customizationStatus) 
+	{
 		return bikeCustomizationIDao.countBycustomizationStatus(customizationStatus);
 	
 	}
-	@Override
-	public long getApprovedServiceCount() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public long getCompletedServiceCount() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-    @Override
-    public long getInProgressCount() {
-	// TODO Auto-generated method stub
-	return 0;
-}
+	
+    
 }

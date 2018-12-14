@@ -61,87 +61,36 @@ public class ServiceMangerController {
 	@Autowired
 	NotificationInterface notificationInterface;
 	
-	
 	@RequestMapping(value="/DashboardPage")
 	public String ServicesDashboardPage(Model model){
 
-		 
-		/*ServcingBikeInfo sbi = new ServcingBikeInfo();
-		sbi.setChasisNumber("AJD7945954");
-		sbi.setPlateNumber("MH-14-HF-7456");
-		
-		ServicingInvoice si = new ServicingInvoice();
-		si.setAmount(8500);
-		si.setServiceCGstPercent(4);
-		si.setServiceSGstPercent(4);
-		si.setTotalAmount(11500);
-		 
-		ServicingChart sc1 = new ServicingChart();
-		sc1.setWork("engine change");
-		sc1.setCost(150);
-		   
-		ServicingChart sc2 = new ServicingChart();
-		sc2.setWork("brake change");
-		sc2.setCost(1500);
-		
-		ServicingChart sc3 = new ServicingChart();
-		sc3.setWork("brake oil change");
-		sc3.setCost(2000);
-		
-		ServicingChart sc4 = new ServicingChart();
-		sc4.setWork("engine tuning");
-		sc4.setCost(4500);
-		
 
 	
-        //sscount => aproved service count
-		long sscount=serviceManagerInterface.getAllServiceCountByServiceStatus("waiting");
-		System.out.println("Approved services are:"+sscount);
-		model.addAttribute("approvedServiceCount",sscount);
+	//account => approved customization count
+			long account=serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("Waiting");
+			System.out.println("Approved Customization are:"+account);
+			model.addAttribute("approvedCustomizationCount",account);
+			
+			//tc => total customization count
+		    long tccount=serviceManagerInterface.getAllCustomizationCount();
+			System.out.println("Total Customization are:"+tccount);
+			model.addAttribute("totalCustomizationCount",tccount);
+			
+			//ipcount => in progress count
+			long ipcount=serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("In Progress");
+			System.out.println("In progerss Customization are:"+ipcount);
+			model.addAttribute("inProgerssCustomization", ipcount);
+			
+			//cccount => completed customization count
+			long cccount=serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("Waiting");
+			System.out.println("Completed Customization are:"+cccount);
+			model.addAttribute("completedCustomization", cccount);
+					
+	
 		
-		//ts => total service count
-	    long tscount=serviceManagerInterface.getAllServiceCount();
-		System.out.println("Total Services are:"+tscount);
-		model.addAttribute("totalServiceCount", tscount);
-		
-		//ipcount => in progress count
-		long ipcount=serviceManagerInterface.getAllServiceCountByServiceStatus("waiting");
-		System.out.println("In progerss services are:"+ipcount);
-		model.addAttribute("inProgerssServices", ipcount);
-		
-		//dscount => completed service count
-		long cscount=serviceManagerInterface.getAllServiceCountByServiceStatus("waiting");
-		System.out.println("Completed services are:"+cscount);
-		model.addAttribute("completedservices", cscount);
-				
-		
-
-		
-		sc1.setBikeServicing(bs1);
-		sc2.setBikeServicing(bs1);
-		sc3.setBikeServicing(bs1);
-		sc4.setBikeServicing(bs1);
-		
-		bs1.setServicingInvoice(si);
-		
-		String nextServiceId = serviceManagerInterface.getNextBikeServicingId();
-		
-		bs1.setBikeServicingId(nextServiceId);
-		
-		serviceManagerInterface.saveBikeServicing(bs1);
-		*/
-      /*  logger.info("dashboard hits........... log");
-		model.addAttribute("link","serviceManagerDashboard.jsp");
-		return "ServiceManager/serviceManagerIndex";
-	}*/
-		/*@RequestMapping(value="/DashboardPage")
-		public String CustomizationDashboardPage(Model model)
-		{
-			 */
-		
-		CustomizationBikeInfo cbi = new CustomizationBikeInfo();
-		cbi.setChasisNumber("ST795921");
-		cbi.setPlateNumber("MH-24-F-1895");
+	/*	CustomizationBikeInfo cbi = new CustomizationBikeInfo();
+		cbi.setChasisNumber("PTP59841");
+		cbi.setPlateNumber("MH-17-SP-4170");
 		
 		CustomizationInvoice ci = new CustomizationInvoice();
 		ci.setAmount(8000);
@@ -162,31 +111,32 @@ public class ServiceMangerController {
 		cc3.setCost(500);
 		
 		CustomizationChart cc4 = new CustomizationChart();
-		cc3.setPart("Headlight");
-		cc3.setCost(2500);
+		cc4.setPart("Headlight");
+		cc4.setCost(2500);
 		
 		
 	   BikeCustomization bc1 = new BikeCustomization();
 		
-	    bc1.setAppointmentDate("14-12-2018");
+	    bc1.setAppointmentDate("17-12-2018");
 		bc1.setCustomizationBikeInfo(cbi);
 		
 		bc1.getCustomizationChart().add(cc1);
 		bc1.getCustomizationChart().add(cc2);
 		bc1.getCustomizationChart().add(cc3);
+		bc1.getCustomizationChart().add(cc4);
 		
 	
 		cc1.setBikeCustomization(bc1);
 		cc2.setBikeCustomization(bc1);
 		cc3.setBikeCustomization(bc1);
-		
+		cc4.setBikeCustomization(bc1);
 		bc1.setCustomizationInvoice(ci);
 		
 		String nextCustomizeId = serviceManagerInterface.getNextBikeCustomizationId();
 		
 		bc1.setBikeCustomizationId(nextCustomizeId);
 		
-		serviceManagerInterface.saveBikeCustomization(bc1);
+		serviceManagerInterface.saveBikeCustomization(bc1);*/
 		
 		
 

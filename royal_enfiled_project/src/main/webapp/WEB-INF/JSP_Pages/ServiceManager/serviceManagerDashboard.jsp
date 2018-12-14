@@ -28,8 +28,8 @@
 	               		
 	               		<h3 class="m-l-xs" style="text-align: center">Services Graph</h3>
 	               		
-	               		<a  href="ApprovedServicesPage">
-	               		<div class="col-lg-4">
+	         <a  href="ApprovedServicesPage">
+	        		<div class="col-lg-4">
                                     <section class="panel panel-default">
                                         <header class="panel-heading bg-danger lt" style="font-size: 15px">Approved Services</header>
                                         <div class="panel-body text-center">
@@ -109,7 +109,7 @@
                                         <div class="panel-body text-center">
                                             <h4>8</h4>
                                             <div class="inline">
-                                                <div class="easypiechart text-danger" data-percent="5.33"
+                                                <div class="easypiechart text-danger" data-percent="${Approved CustomizationCount *100/TotalCustomizationCount }"
                                                     data-line-width="5" data-track-Color="#f0f0f0" data-bar-color="#FF5F4A"
                                                     data-rotate="0" data-scale-Color="false" data-size="150"
                                                     data-animate="2000"> <span class="h2 step font-bold">5.3</span>%
@@ -118,7 +118,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="panel-footer bg-danger lt" style="font-size: 15px">Total Customization 20</div>
+                                        <div class="panel-footer bg-danger lt" style="font-size: 15px">${TotalCustomizationCount}</div>
 
                                     </section>    
                                 </div>
@@ -131,7 +131,7 @@
                                         <div class="panel-body text-center">
                                             <h4>14</h4>
                                             <div class="inline">
-                                                <div class="easypiechart text-warning" data-percent="70"
+                                                <div class="easypiechart text-warning" data-percent="${In-ProgressCustomizationCount *100/totalCustomizationCount }"
                                                     data-line-width="5" data-track-Color="#f0f0f0" data-bar-color="#FFD300"
                                                     data-rotate="0" data-scale-Color="false" data-size="150"
                                                     data-animate="2000"> <span class="h2 step font-bold">70</span>%
@@ -140,7 +140,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="panel-footer bg-warning lt" style="font-size: 15px">Total Customization 20</div>
+                                        <div class="panel-footer bg-warning lt" style="font-size: 15px">${TotalCustomizationCount}</div>
 
                                     </section>    
                                 </div>
@@ -153,7 +153,7 @@
                                         <div class="panel-body text-center">
                                             <h4>4</h4>
                                             <div class="inline">
-                                                <div class="easypiechart text-success" data-percent="20"
+                                                <div class="easypiechart text-success" data-percent="${Completed CustomizationCount *100/totalCustomizationCount }"
                                                     data-line-width="5" data-track-Color="#f0f0f0" data-bar-color="#8ec165"
                                                     data-rotate="0" data-scale-Color="false" data-size="150"
                                                     data-animate="2000"> <span class="h2 step font-bold">20</span>%
@@ -162,7 +162,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="panel-footer bg-success lt" style="font-size: 15px">Total Customization 20</div>
+                                        <div class="panel-footer bg-success lt" style="font-size: 15px">${TotalCustomizationCount}</div>
 
                                     </section>    
                                 </div>

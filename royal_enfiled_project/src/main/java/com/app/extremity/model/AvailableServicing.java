@@ -19,10 +19,6 @@ public class AvailableServicing {
 	
 	private long cost;
 	
-	
-
-	
-
 	public int getAvailableServicingId() {
 		return availableServicingId;
 	}
