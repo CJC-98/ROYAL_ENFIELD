@@ -57,9 +57,9 @@ public class ServiceMangerController {
 	
 	@RequestMapping(value="/DashboardPage")
 	public String ServicesDashboardPage(Model model){
-
 	
-        //sscount => aproved service count
+
+        //ascount => aproved service count
 		long sscount=serviceManagerInterface.getAllServiceCountByServiceStatus("waiting");
 		System.out.println("Approved services are:"+sscount);
 		model.addAttribute("approvedServiceCount",sscount);
@@ -70,23 +70,24 @@ public class ServiceMangerController {
 		model.addAttribute("totalServiceCount", tscount);
 		
 		//ipcount => in progress count
-		long ipcount=serviceManagerInterface.getAllServiceCountByServiceStatus("waiting");
+		long ipcount=serviceManagerInterface.getAllServiceCountByServiceStatus("in-progress");
 		System.out.println("In progerss services are:"+ipcount);
 		model.addAttribute("inProgerssServices", ipcount);
 		
-		//dscount => completed service count
-		long cscount=serviceManagerInterface.getAllServiceCountByServiceStatus("waiting");
-		System.out.println("Completed services are:"+cscount);
+
+		//cscount => completed service count
+		long cscount=serviceManagerInterface.getAllServiceCountByServiceStatus("done");
+        System.out.println("Completed services are:"+cscount);
 		model.addAttribute("completedservices", cscount);
 				
 		
+	
 		
-
 		logger.info("dashboard hits........... log");
 		model.addAttribute("link","serviceManagerDashboard.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
-
+  
 	@RequestMapping(value="/ApprovedServicesPage")
 	public String ApprovedServicesgPage(Model model){
 		 

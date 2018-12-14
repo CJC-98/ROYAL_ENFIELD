@@ -39,7 +39,7 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	@Autowired
 	ServicingChartIDao servicingChartIDao;
 	
-	
+	  
 	
 
 	
@@ -71,12 +71,5 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 		return bikeServicingIDao.save(bikeServicing);
 	}
 
-
-
-
-
-
-
-	
 
 }
