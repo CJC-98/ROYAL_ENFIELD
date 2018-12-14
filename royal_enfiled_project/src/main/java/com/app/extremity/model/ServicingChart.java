@@ -57,6 +57,12 @@ public class ServicingChart {
 		Status = status;
 	}
 
+	public void setBikeServicing(BikeServicing bs1) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
 	
 	
 }
