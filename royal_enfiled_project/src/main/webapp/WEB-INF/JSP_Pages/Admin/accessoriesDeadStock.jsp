@@ -2,7 +2,6 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-
 <head>
     <meta charset="utf-8" />
     <title>Notebook | Web Application</title>
@@ -18,25 +17,21 @@
        
                 <section id="content">
                     <section class="vbox">
-                        <div class="row">
-                            <section class="scrollable padder">
-                                    <section class="scrollable padder">
-                                        <div class="content-header">
-                                            <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
-                                                <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
-                                            </ul>
-                                            <div class="m-b-md">
-                                                <h3 class="m-b-none">Workset</h3>
-                                                <small>Welcome back,Royal_Enfield</small>
-                                            </div>
-                                        </div>
-                                     </section>
-                                    </section>
+                        <section class="scrollable padder">
+
+                            <div class="content-header">
+                            <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
+                                <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                            </ul>
+                            <div class="m-b-md">
+                                <h3 class="m-b-none">Workset</h3> <small>Welcome back,Royal_Enfield</small>
+                            </div>
                         </div>
+                        </section>
                         <!-- Table  -->
                         <div class="row text-center m-b-md">
                                 <section class="scrollable padder">
-                                <h3><b>Employee_List</b></h3>
+                                <h3><b>Old_Bike</b></h3>
                                 </section>
                         </div>
                         <div class="row ">
@@ -70,57 +65,63 @@
                                         <div class="col-sm-12">
                                             <table id="example1" class="table table-bordered table-striped dataTable" 
                                             role="grid" aria-describedby="example1_info">
+                                          
+                                          
+                                          
+                                          
+	                              
                                   <thead>
                                   <tr role="row">
+                                  <th class="sorting_asc" tabindex="0" aria-controls="example1" 
+                                            rowspan="1" colspan="1" aria-sort="ascending" 
+                                            aria-label="Rendering engine: activate to sort column descending"
+                                            style="width: 125px;">Accessories_Dead_Stock_ID
+                                      </th>
                                       <th class="sorting_asc" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-sort="ascending" 
                                             aria-label="Rendering engine: activate to sort column descending"
-                                            style="width: 125px;">Employee_id
+                                            style="width: 125px;">Part_Id
                                       </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" aria-label="Browser: 
-                                            activate to sort column ascending" 
-                                            style="width: 125px;">Name
-                                        </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" aria-label="Platform(s): 
-                                            activate to sort column ascending" 
-                                            style="width: 125px;">City
-                                        </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" 
-                                             rowspan="1" colspan="1" 
-                                            aria-label="Engine version: activate to sort column ascending" 
-                                            style="width: 125px;">Contact
-                                        </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" 
-                                            aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;">Email
-                                        </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" 
-                                            aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;">Username
-                                        </th>
+                                       <th class="sorting_asc" tabindex="0" aria-controls="example1" 
+                                            rowspan="1" colspan="1" aria-sort="ascending" 
+                                            aria-label="Rendering engine: activate to sort column descending"
+                                            style="width: 125px;">Part_Name
+                                      </th>
+                                        
+                                        <th class="sorting_asc" tabindex="0" aria-controls="example1" 
+                                            rowspan="1" colspan="1" aria-sort="ascending" 
+                                            aria-label="Rendering engine: activate to sort column descending"
+                                            style="width: 125px;">Part_Price
+                                      </th>
+                                      <th class="sorting_asc" tabindex="0" aria-controls="example1" 
+                                            rowspan="1" colspan="1" aria-sort="ascending" 
+                                            aria-label="Rendering engine: activate to sort column descending"
+                                            style="width: 125px;">Part_Quantity
+                                      </th>
+                                       
+                                       
                                     </tr>
                                   </thead>
                                   <tbody>
                                     <tr role="row" class="odd">
-                                    <td class="sorting">1</td>
-                                    <td>Nikita</td>
-                                    <td>Pune</td>
-                                    <td>9975588575</td>
-                                    <td>njpise18@gmail.com</td>
-                                    <td >nikita123</td>
-                                  
+                                    <td class="sorting"></td>
+                                    <td></td>
+                                    <td></td>
+                                    
+                                 </tr>
                                   </tbody>
                                   <tfoot>
-                                  <tr><th rowspan="1" colspan="1">Employee_Id</th>
-                                    <th rowspan="1" colspan="1">Name</th>
-                                    <th rowspan="1" colspan="1">City</th>
-                                    <th rowspan="1" colspan="1">Contact</th>
-                                    <th rowspan="1" colspan="1">Email</th>
-                                    <th rowspan="1" colspan="1">Username</th></tr>
+                                  <tr>
+                                  <th rowspan="1" colspan="1">Accessories_Dead_Stock_ID</th>
+                                  <th rowspan="1" colspan="1">Part_Id</th>
+                                  <th rowspan="1" colspan="1">Part_Name</th>
+                                  <th rowspan="1" colspan="1">Part_Price</th>
+                                  <th rowspan="1" colspan="1">Part_Quantity</th>
+                                  
+                                   
+                                
+                                        
+                                    </tr>
                                   </tfoot>
                                 </table>
                             </div>
@@ -165,6 +166,8 @@
                          </section>
                         </div>
                          <!-- End table -->
+                        
+                        
 
                             <aside class="bg-light lter b-l aside-md hide" id="notes">
                                 <div class="wrapper">Notification</div>
@@ -172,8 +175,7 @@
                     </section>
                 </section>
             </section> <!-- Bootstrap -->
-            
-			<!-- App -->
+            <!-- App -->
    			 <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/app.v1.js"></script>
    			 <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/easypiechart/jquery.easy-pie-chart.js"></script>
     		 <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/sparkline/jquery.sparkline.min.js"></script>
@@ -186,6 +188,7 @@
    			 <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/demo.js"></script>
    			 <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/sortable/jquery.sortable.js"></script>
    			 <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/app.plugin.js"></script>
+            
             
 
 

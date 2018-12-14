@@ -1,7 +1,9 @@
 package com.app.extremity.controller;
 
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
@@ -35,9 +37,16 @@ public class HomeController {
 	public String homePage()
 	{ 
 		logger.info("In home controller log");
-		return "Admin/accessoriesStock";
-	}  
-	 
+		return "home";
+	} 
+	
+	/*@RequestMapping(value="/")
+	public String homePage()
+	{ 
+		logger.info("In home controller log");
+		return "ServiceManager/serviceManagerIndex";
+	}
+	 */
 	@RequestMapping(value="/loginPage")
 	public String loginPage()
 	{ 

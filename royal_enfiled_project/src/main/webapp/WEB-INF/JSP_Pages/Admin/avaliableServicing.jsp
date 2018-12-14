@@ -14,8 +14,7 @@
     <!--[if lt IE 9]> <script src="js/ie/html5shiv.js"></script> <script src="js/ie/respond.min.js"></script> <script src="js/ie/excanvas.js"></script> <![endif]-->
 </head>
 <body class="">
-    <section class="vbox">
-       
+    
                 <section id="content">
                     <section class="vbox">
                         <div class="row">
@@ -36,7 +35,7 @@
                         <!-- Table  -->
                         <div class="row text-center m-b-md">
                                 <section class="scrollable padder">
-                                <h3><b>Employee_List</b></h3>
+                                <h3><b>Available_Service</b></h3>
                                 </section>
                         </div>
                         <div class="row ">
@@ -75,52 +74,29 @@
                                       <th class="sorting_asc" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-sort="ascending" 
                                             aria-label="Rendering engine: activate to sort column descending"
-                                            style="width: 125px;">Employee_id
+                                            style="width: 125px;">Service_Name
                                       </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-label="Browser: 
                                             activate to sort column ascending" 
-                                            style="width: 125px;">Name
+                                            style="width: 125px;">Cost
                                         </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" aria-label="Platform(s): 
-                                            activate to sort column ascending" 
-                                            style="width: 125px;">City
-                                        </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" 
-                                             rowspan="1" colspan="1" 
-                                            aria-label="Engine version: activate to sort column ascending" 
-                                            style="width: 125px;">Contact
-                                        </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" 
-                                            aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;">Email
-                                        </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" 
-                                            aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;">Username
-                                        </th>
+                                        
                                     </tr>
                                   </thead>
                                   <tbody>
                                     <tr role="row" class="odd">
-                                    <td class="sorting">1</td>
-                                    <td>Nikita</td>
-                                    <td>Pune</td>
-                                    <td>9975588575</td>
-                                    <td>njpise18@gmail.com</td>
-                                    <td >nikita123</td>
+                                    <td></td>
+                                    <td></td>
+                                    
                                   
                                   </tbody>
                                   <tfoot>
-                                  <tr><th rowspan="1" colspan="1">Employee_Id</th>
-                                    <th rowspan="1" colspan="1">Name</th>
-                                    <th rowspan="1" colspan="1">City</th>
-                                    <th rowspan="1" colspan="1">Contact</th>
-                                    <th rowspan="1" colspan="1">Email</th>
-                                    <th rowspan="1" colspan="1">Username</th></tr>
+                                  <tr>
+                                  	<th rowspan="1" colspan="1">Service_Name</th>
+                                    <th rowspan="1" colspan="1">Cost</th>
+                                  
+                                    </tr>
                                   </tfoot>
                                 </table>
                             </div>
