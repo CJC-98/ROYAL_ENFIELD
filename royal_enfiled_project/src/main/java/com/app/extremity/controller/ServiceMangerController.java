@@ -37,11 +37,11 @@ public class ServiceMangerController {
 	@Autowired
 	ServiceManagerInterface serviceManagerInterface;
 	
-	@Autowired
-	NotificationInterface notificationInterface;
+	
 	
 	@RequestMapping(value="/DashboardPage")
 	public String ServicesDashboardPage(Model model){
+
 
 	//account => approved customization count
 			long account=serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("Waiting");
@@ -65,7 +65,6 @@ public class ServiceMangerController {
 					
 	
 
-		
 	/*	CustomizationBikeInfo cbi = new CustomizationBikeInfo();
 		cbi.setChasisNumber("PTP59841");
 		cbi.setPlateNumber("MH-17-SP-4170");
@@ -90,6 +89,9 @@ public class ServiceMangerController {
 		System.out.println("In progerss services are:"+ipcount);
 		model.addAttribute("inProgerssServices", ipcount);
 
+		long sscount=serviceManagerInterface.getAllServiceCountByServiceStatus("waiting");
+		model.addAttribute("approvedServiceCount",sscount);
+ 
 		CustomizationChart cc3 = new CustomizationChart();
 		cc3.setPart("Seat");
 		cc3.setCost(500);
@@ -109,7 +111,16 @@ public class ServiceMangerController {
 		bc1.getCustomizationChart().add(cc3);
 		bc1.getCustomizationChart().add(cc4);
 		
+
+	    long tscount=serviceManagerInterface.getAllServiceCount();
+		model.addAttribute("totalServiceCount", tscount);
+
+		long ipcount=serviceManagerInterface.getAllServiceCountByServiceStatus("in-progress");
+		model.addAttribute("inProgerssServices", ipcount);
+
+
 	
+
 		cc1.setBikeCustomization(bc1);
 		cc2.setBikeCustomization(bc1);
 		cc3.setBikeCustomization(bc1);
@@ -128,6 +139,8 @@ public class ServiceMangerController {
 			model.addAttribute("link","serviceManagerDashboard.jsp");
 			return "ServiceManager/serviceManagerIndex";
 
+
+	
 	}
 	@RequestMapping(value="/ApprovedServicesPage")
 	public String ApprovedServicesgPage(Model model){
@@ -203,24 +216,8 @@ public class ServiceMangerController {
 		return "ServiceManager/serviceManagerIndex";
 	}
 	
-	@RequestMapping(value="/MyNotificationsPage")
-	public String MyNotificationsPage(Model model){
-		
-		System.out.println("go to notification page...............");
-		
-
-		//notificationInterface.saveNotfication(null);  
-		
-		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("pranay kohad");
-		model.addAttribute("outboxList",outboxList);
-		
-		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication("pranay kohad");
-		model.addAttribute("inboxList",inboxList);   
-
 	
-		model.addAttribute("link","myNotifications.jsp");	
-		return "ServiceManager/serviceManagerIndex";
-	}
+		
 	
 	@RequestMapping(value="/searchEmployee")    
 	public @ResponseBody String serachEmployee(@RequestParam String empName,HttpServletResponse response,Model model) throws IOException {
@@ -230,21 +227,6 @@ public class ServiceMangerController {
 		return "ServiceManager/serviceManagerIndex";		
 	}
 	
-	@RequestMapping(value="/markIt")    
-	public @ResponseBody String udpateNotification(@RequestParam int notficationId,Model model)throws IOException {
-		System.out.println("in markit controller and list is update "+notficationId);
-		
-		notificationInterface.markAsRead(notificationInterface.getNotficationById(notficationId));
-		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("pranay kohad");
-		model.addAttribute("outboxList",outboxList);  
-		
-		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication("pranay kohad");
-		model.addAttribute("inboxList",inboxList);   
-		
-		model.addAttribute("link","myNotifications.jsp");	
-		return "ServiceManager/serviceManagerIndex";
+	
 
-	}
-	
-	
 }

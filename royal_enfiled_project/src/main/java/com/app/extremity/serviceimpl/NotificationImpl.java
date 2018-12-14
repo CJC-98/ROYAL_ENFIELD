@@ -22,6 +22,7 @@ public class NotificationImpl implements NotificationInterface{
 
 	@Override
 	public Notfication saveNotfication(Notfication notfication) {
+<<<<<<< HEAD
 
 		System.out.println("saved service..........");
 		
@@ -53,6 +54,9 @@ public class NotificationImpl implements NotificationInterface{
 		System.out.println("data saved");
 		
 		return notficationIDao.save(notify);
+=======
+		return notficationIDao.save(notfication);
+>>>>>>> branch 'serviceManagerTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 	}
    
 	@Override
