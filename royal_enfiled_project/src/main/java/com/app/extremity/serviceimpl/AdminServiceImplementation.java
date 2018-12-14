@@ -26,12 +26,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.app.extremity.idao.AccessoriesStockIDao;
 import com.app.extremity.idao.AvailableServicingIDao;
 import com.app.extremity.idao.BikeModelDao;
 import com.app.extremity.idao.BikeOfferIDao;
 import com.app.extremity.idao.BikeServicingIDao;
 import com.app.extremity.idao.ColorDaoI;
+import com.app.extremity.idao.DeadStockIDao;
 import com.app.extremity.idao.EmployeeDetailsIDao;
+import com.app.extremity.idao.EngineCapacityIDao;
+import com.app.extremity.idao.FreeServicingCountIDao;
 import com.app.extremity.idao.NewBikeStockIDao;
 import com.app.extremity.idao.NotficationIDao;
 import com.app.extremity.idao.QuotationIDao;
@@ -39,6 +43,7 @@ import com.app.extremity.idao.ServcingBikeInfoIDao;
 import com.app.extremity.idao.ServiceInvoiceIDao;
 import com.app.extremity.idao.ServicingChartIDao;
 import com.app.extremity.idao.SoldOldBikeStockIDao;
+import com.app.extremity.idao.StateIDao;
 import com.app.extremity.idao.TestDriveCustomerIDao;
 import com.app.extremity.iservice.IAdminService;
 import com.app.extremity.model.AccessoriesStock;
@@ -47,15 +52,20 @@ import com.app.extremity.model.BikeModel;
 import com.app.extremity.model.BikeOffer;
 import com.app.extremity.model.BikeServicing;
 import com.app.extremity.model.Color;
+import com.app.extremity.model.DeadStock;
 import com.app.extremity.model.EmailMessage;
 import com.app.extremity.model.EmployeeDetails;
+import com.app.extremity.model.EngineCapacity;
+import com.app.extremity.model.FreeServicingCount;
 import com.app.extremity.model.NewBikeStock;
 import com.app.extremity.model.Notfication;
 import com.app.extremity.model.Quotation;
 import com.app.extremity.model.ServcingBikeInfo;
 import com.app.extremity.model.ServicingChart;
 import com.app.extremity.model.ServicingInvoice;
+import com.app.extremity.model.SoldBikeStock;
 import com.app.extremity.model.SoldOldBikeStock;
+import com.app.extremity.model.State;
 import com.app.extremity.model.TestDriveCustomer;
 
 @Service
@@ -106,7 +116,21 @@ public  class AdminServiceImplementation implements IAdminService {
 	
 	@Autowired
 	NotficationIDao notficationIDao;
+
+	@Autowired
+	StateIDao stateIDao;
+
+	@Autowired
+	FreeServicingCountIDao freeServicingCountIDao;
 	
+	@Autowired
+	EngineCapacityIDao engineCapacityIDao;
+	
+	@Autowired
+	AccessoriesStockIDao accessoriesStockIDao;
+	
+	@Autowired
+	DeadStockIDao deadStockIDao;
 	
 	static Logger logger = LogManager.getLogger(AdminServiceImplementation.class);
 
@@ -227,7 +251,6 @@ public  class AdminServiceImplementation implements IAdminService {
 
 	}
 
-<<<<<<< HEAD
 	
 	@Override
 	public List<Color> getcolor() {
@@ -322,5 +345,42 @@ public  class AdminServiceImplementation implements IAdminService {
 		}
 	}
 
+	@Override
+	public List<State> getState() {
+		
+		return (List<State>) stateIDao.findAll();
+	}
+
+	@Override
+	public List<FreeServicingCount> getFreeServicing() {
+		
+		return (List<FreeServicingCount>) freeServicingCountIDao.findAll();
+	}
+
+	@Override
+	public List<EngineCapacity> getEngineCapacity() {
+		
+		return (List<EngineCapacity>) engineCapacityIDao.findAll();
+	}
+
+	@Override
+	public List<AccessoriesStock> getAccessoriesStock() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<DeadStock> getDeadStock() {
+		
+		return (List<DeadStock>) deadStockIDao.findAll();
+	}
+
+	/*@Override
+	public List<AccessoriesStock> getAccessoriesStock() {
+
+		return (List<AccessoriesStock>) accessoriesStockIDao.findAll();
+	}*/
+
+	
 
 }

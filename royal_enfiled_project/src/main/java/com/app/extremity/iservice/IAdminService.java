@@ -10,15 +10,20 @@ import com.app.extremity.model.BikeModel;
 import com.app.extremity.model.BikeOffer;
 import com.app.extremity.model.BikeServicing;
 import com.app.extremity.model.Color;
+import com.app.extremity.model.DeadStock;
 import com.app.extremity.model.EmailMessage;
 import com.app.extremity.model.EmployeeDetails;
+import com.app.extremity.model.EngineCapacity;
+import com.app.extremity.model.FreeServicingCount;
 import com.app.extremity.model.NewBikeStock;
 import com.app.extremity.model.Notfication;
 import com.app.extremity.model.Quotation;
 import com.app.extremity.model.ServcingBikeInfo;
 import com.app.extremity.model.ServicingChart;
 import com.app.extremity.model.ServicingInvoice;
+import com.app.extremity.model.SoldBikeStock;
 import com.app.extremity.model.SoldOldBikeStock;
+import com.app.extremity.model.State;
 import com.app.extremity.model.TestDriveCustomer;
 
 public interface IAdminService {
@@ -52,6 +57,16 @@ public interface IAdminService {
 	public List<Quotation> getQuotation();
 
 	public List<Notfication> getNotfication();
+
+	public List<State> getState();
+
+	public List<FreeServicingCount> getFreeServicing();
+
+	public List<EngineCapacity> getEngineCapacity();
+
+	public List<AccessoriesStock> getAccessoriesStock();
+
+	public List<DeadStock> getDeadStock();
 
 	
 

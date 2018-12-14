@@ -177,20 +177,20 @@
                                                 </a> 
                                                          <!-- this for sublist of Bike -->
                                                          <ul class="nav lt">
-                                                        <li> <a href="composeMail" class="active">
+                                                        <li> <a href="newBikeStock" class="active">
                                                             <span>NewBike</span> </a> </li>
                                                         <li> <a href="composeMail" class="active">
                                                             <span>OldBike</span> </a> </li>
                                                         </ul>
                                                          <!-- end of sublist of Bike -->
                                                 </li>
-                                            <li> <a href="accessories.html"> <b class="badge bg-info pull-right"></b>
+                                            <li> <a href="accessoriesStock"> <b class="badge bg-info pull-right"></b>
                                                     <i class="fa fa-angle-right"></i> <span>Accesories</span> </a> </li>
                                             
                                             <li> <a href=""> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i>
                                                     <span>Dead_stock</span> </a>
                                                 <ul class="nav bg">
-                                                    <li> <a href="deadbike.html"> <i class="fa fa-angle-right"></i>
+                                                    <li> <a href="deadBikeStock"> <i class="fa fa-angle-right"></i>
                                                             <span>Dead_Bike</span> </a> </li>
                                                     <li> <a href="deadaccessories.html"> <i class="fa fa-angle-right"></i>
                                                             <span>Dead_Accessories</span> </a> </li>

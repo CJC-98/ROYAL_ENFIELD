@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -122,10 +121,8 @@
                                 <nav class="nav-primary hidden-xs">
                                     <ul class="nav">
                                         <li> <a href="index.html" class="active"> <i class="fa fa-dashboard icon">
-                                                    <b class="bg-danger"></b> </i> <span class="pull-right">
-                                                    <i class="fa fa-angle-down text"></i>
-                                                    <i class="fa fa-angle-up text-active"></i>
-                                                     </span> <span>Add</span>
+                                                    <b class="bg-danger"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i>
+                                                    <i class="fa fa-angle-up text-active"></i> </span> <span>Add</span>
                                             </a>
                                             <!-- This for sublist of Add -->
                                             <ul class="nav lt">
@@ -172,23 +169,18 @@
                                                         class="fa fa-angle-up text-active"></i> </span> <span>Stock</span>
                                             </a>
                                             <ul class="nav lt">
-                                                <li> <a href="">
-                                                          <i class="fa fa-angle-right"><b class="bg-danger"></b>
-                                                          </i><span class="pull-right">
-                                                            <i class="fa fa-angle-down text"></i>
-                                                             </span> 
-                                                             
-                                                         <span>Bike</span> </a>
+                                                <li> <a href=""> <i class="fa fa-angle-right"></i> <span>Bike</span>
+                                                    </a> 
                                                      <!-- this for sublist of Bike -->
                                                          <ul class="nav lt">
-                                                        <li> <a href="" class="active">
+                                                        <li> <a href="composeMail" class="active">
                                                             <span>New_Bike</span> </a> </li>
-                                                        <li> <a href="" class="active">
+                                                        <li> <a href="composeMail" class="active">
                                                             <span>Old_Bike</span> </a> </li>
                                                         </ul>
                                                          <!-- end of sublist of Bike -->
                                                     </li>
-                                                <li> <a href="accessoriesStock"> 
+                                                <li> <a href="accessories.html"> 
                                                         <i class="fa fa-angle-right"></i> <span>Accesories</span> </a>
                                                 </li>
 
@@ -204,34 +196,6 @@
 
                                             </ul>
                                         </li>
-                                        <!-- End Stock -->
-                                        <!-- This for Sales -->
-                                       
-                                          <li> <a href="#stock"> <i class="fa fa-flask icon"> <b class="bg-success"></b>
-                                            </i> <span class="pull-right">  <i class="fa fa-angle-up text-active"></i> 
-                                            <i class="fa fa-angle-down text"></i></span> <span>Sale</span>
-                                        </a>
-                                        <ul class="nav lt">
-                                            <li> <a href="">
-                                                          <i class="fa fa-angle-right"><b class="bg-danger"></b></i><span class="pull-right">
-                                                            <i class="fa fa-angle-up text"></i> <i class="fa fa-angle-down text"></i> </span> 
-                                                         <span>Bike</span> </a> 
-                                                         <!-- this for sublist of Bike -->
-                                                         <ul class="nav lt">
-                                                        <li> <a href="" class="active">
-                                                            <span>New_Bike</span> </a> </li>
-                                                        <li> <a href="" class="active">
-                                                            <span>Old_Bike</span> </a> </li>
-                                                        </ul>
-                                                         <!-- end of sublist of Bike -->
-                                                </li>
-                                            <li> <a href="accessoriesStock"> <b class="badge bg-info pull-right"></b>
-                                                    <i class="fa fa-angle-right"></i> <span>Accesories</span> </a>
-                                             </li>
-                       
-                                        </ul>
-										</li>
-										<!--End Sales -->
 												<!-- This for View -->
                                         <li> <a href="#view"> <i class="fa fa-user icon"> <b class="bg-warning"></b>
                                                 </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i
@@ -310,7 +274,7 @@
                         <!-- Table  -->
                         <div class="row text-center m-b-md">
                                 <section class="scrollable padder">
-                                <h3><b>New_Bike</b></h3>
+                                <h3><b>Quotation</b></h3>
                                 </section>
                         </div>
                         <div class="row ">
@@ -344,49 +308,43 @@
                                         <div class="col-sm-12">
                                             <table id="example1" class="table table-bordered table-striped dataTable" 
                                             role="grid" aria-describedby="example1_info">
+                                            
+     
+                                            
                                   <thead>
                                   <tr role="row">
+                                  <th class="sorting_asc" tabindex="0" aria-controls="example1" 
+                                            rowspan="1" colspan="1" aria-sort="ascending" 
+                                            aria-label="Rendering engine: activate to sort column descending"
+                                            style="width: 125px;">Bike_Name
+                                      </th>
                                       <th class="sorting_asc" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-sort="ascending" 
                                             aria-label="Rendering engine: activate to sort column descending"
-                                            style="width: 125px;">Part_id
+                                            style="width: 125px;">Bike_Price
                                       </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" aria-label="Browser: 
-                                            activate to sort column ascending" 
-                                            style="width: 125px;">Part_Name
-                                        </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" aria-label="Platform(s): 
-                                            activate to sort column ascending" 
-                                            style="width: 125px;">Part_Price
-                                        </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" 
-                                             rowspan="1" colspan="1" 
-                                            aria-label="Engine version: activate to sort column ascending" 
-                                            style="width: 125px;">Part_Quantity
-                                        </th>
                                         
+                                        
+                                       
+                                      
+                                       
                                     </tr>
                                   </thead>
                                   <tbody>
-                                  <c:forEach items="${ accessoriesStockList}" var="accessoriesStock">
                                     <tr role="row" class="odd">
                                     <td class="sorting"></td>
+                                    <td></td>
                                    
-                                    <td>${accessoriesStock.partName}</td>
-                                    <td>${accessoriesStock.partPrice}</td>
-                                    <td>${accessoriesStock.partQuantity}</td>
-                                   
+                                    
+                                    
                                   </tr>
-                                  </c:forEach>
                                   </tbody>
                                   <tfoot>
-                                  <tr><th rowspan="1" colspan="1">Part_Id</th>
-                                    <th rowspan="1" colspan="1">Part_Name</th>
-                                    <th rowspan="1" colspan="1">Part_Price</th>
-                                    <th rowspan="1" colspan="1">Part_Quantity</th>
+                                  <tr>
+                                  <th rowspan="1" colspan="1">BikeName</th>
+                                  <th rowspan="1" colspan="1">BikePrice</th>
                                     
+                                        
                                     </tr>
                                   </tfoot>
                                 </table>

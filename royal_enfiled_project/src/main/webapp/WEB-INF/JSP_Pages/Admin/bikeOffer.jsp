@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+
 <head>
     <meta charset="utf-8" />
     <title>Notebook | Web Application</title>
@@ -122,10 +122,8 @@
                                 <nav class="nav-primary hidden-xs">
                                     <ul class="nav">
                                         <li> <a href="index.html" class="active"> <i class="fa fa-dashboard icon">
-                                                    <b class="bg-danger"></b> </i> <span class="pull-right">
-                                                    <i class="fa fa-angle-down text"></i>
-                                                    <i class="fa fa-angle-up text-active"></i>
-                                                     </span> <span>Add</span>
+                                                    <b class="bg-danger"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i>
+                                                    <i class="fa fa-angle-up text-active"></i> </span> <span>Add</span>
                                             </a>
                                             <!-- This for sublist of Add -->
                                             <ul class="nav lt">
@@ -138,9 +136,9 @@
 
                                                     <!-- this for sublist of Manager -->
                                                     <ul class="nav lt">
-                                                        <li> <a href="saleManager.html" class="active">
+                                                        <li> <a href="salesmanager.html" class="active">
                                                                 <span>SalesManager</span> </a> </li>
-                                                        <li> <a href="ServiceManager.html" class="active">
+                                                        <li> <a href="servicemanager.html" class="active">
                                                                 <span>ServiceManager</span> </a> </li>
                                                     </ul>
                                                     <!-- end of sublist of Manager -->
@@ -173,12 +171,9 @@
                                             </a>
                                             <ul class="nav lt">
                                                 <li> <a href="">
-                                                          <i class="fa fa-angle-right"><b class="bg-danger"></b>
-                                                          </i><span class="pull-right">
-                                                            <i class="fa fa-angle-down text"></i>
-                                                             </span> 
-                                                             
-                                                         <span>Bike</span> </a>
+                                                          <i class="fa fa-angle-right"><b class="bg-danger"></b></i><span class="pull-right">
+                                                            <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span> 
+                                                         <span>Bike</span> </a> 
                                                      <!-- this for sublist of Bike -->
                                                          <ul class="nav lt">
                                                         <li> <a href="" class="active">
@@ -188,7 +183,7 @@
                                                         </ul>
                                                          <!-- end of sublist of Bike -->
                                                     </li>
-                                                <li> <a href="accessoriesStock"> 
+                                                <li> <a href="accessories.html"> 
                                                         <i class="fa fa-angle-right"></i> <span>Accesories</span> </a>
                                                 </li>
 
@@ -204,7 +199,6 @@
 
                                             </ul>
                                         </li>
-                                        <!-- End Stock -->
                                         <!-- This for Sales -->
                                        
                                           <li> <a href="#stock"> <i class="fa fa-flask icon"> <b class="bg-success"></b>
@@ -214,7 +208,7 @@
                                         <ul class="nav lt">
                                             <li> <a href="">
                                                           <i class="fa fa-angle-right"><b class="bg-danger"></b></i><span class="pull-right">
-                                                            <i class="fa fa-angle-up text"></i> <i class="fa fa-angle-down text"></i> </span> 
+                                                            <i class="fa fa-angle-up text-active"></i> <i class="fa fa-angle-down text"></i> </span> 
                                                          <span>Bike</span> </a> 
                                                          <!-- this for sublist of Bike -->
                                                          <ul class="nav lt">
@@ -225,7 +219,7 @@
                                                         </ul>
                                                          <!-- end of sublist of Bike -->
                                                 </li>
-                                            <li> <a href="accessoriesStock"> <b class="badge bg-info pull-right"></b>
+                                            <li> <a href="accessories.html"> <b class="badge bg-info pull-right"></b>
                                                     <i class="fa fa-angle-right"></i> <span>Accesories</span> </a>
                                              </li>
                        
@@ -238,7 +232,7 @@
                                                         class="fa fa-angle-up text-active"></i> </span> <span>View</span>
                                             </a>
                                             <ul class="nav lt">
-                                                <li> <a href="salemanagerlist.html" class="active">
+                                                <li> <a href="salesmanagerlist.html" class="active">
                                                         <i class="fa fa-angle-right"></i> 
                                                         <span>SalesManager</span> </a> </li>
                                                 <li> <a href="servicemanagerlist.html" class="active">
@@ -296,21 +290,25 @@
                 </aside> <!-- /.aside -->
                 <section id="content">
                     <section class="vbox">
-                        <section class="scrollable padder">
-
-                            <div class="content-header">
-                            <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
-                                <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
-                            </ul>
-                            <div class="m-b-md">
-                                <h3 class="m-b-none">Workset</h3> <small>Welcome back,Royal_Enfield</small>
-                            </div>
+                        <div class="row">
+                            <section class="scrollable padder">
+                                    <section class="scrollable padder">
+                                        <div class="content-header">
+                                            <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
+                                                <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                                            </ul>
+                                            <div class="m-b-md">
+                                                <h3 class="m-b-none">Workset</h3>
+                                                <small>Welcome back,Royal_Enfield</small>
+                                            </div>
+                                        </div>
+                                     </section>
+                                    </section>
                         </div>
-                        </section>
                         <!-- Table  -->
                         <div class="row text-center m-b-md">
                                 <section class="scrollable padder">
-                                <h3><b>New_Bike</b></h3>
+                                <h3><b>Bike_Offer</b></h3>
                                 </section>
                         </div>
                         <div class="row ">
@@ -349,44 +347,41 @@
                                       <th class="sorting_asc" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-sort="ascending" 
                                             aria-label="Rendering engine: activate to sort column descending"
-                                            style="width: 125px;">Part_id
+                                            style="width: 125px;">Offer_Name
                                       </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-label="Browser: 
                                             activate to sort column ascending" 
-                                            style="width: 125px;">Part_Name
+                                            style="width: 125px;">Start_Date
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-label="Platform(s): 
                                             activate to sort column ascending" 
-                                            style="width: 125px;">Part_Price
+                                            style="width: 125px;">End_Date
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                              rowspan="1" colspan="1" 
                                             aria-label="Engine version: activate to sort column ascending" 
-                                            style="width: 125px;">Part_Quantity
+                                            style="width: 125px;">DiscountInPercentage
                                         </th>
                                         
                                     </tr>
                                   </thead>
                                   <tbody>
-                                  <c:forEach items="${ accessoriesStockList}" var="accessoriesStock">
                                     <tr role="row" class="odd">
                                     <td class="sorting"></td>
-                                   
-                                    <td>${accessoriesStock.partName}</td>
-                                    <td>${accessoriesStock.partPrice}</td>
-                                    <td>${accessoriesStock.partQuantity}</td>
-                                   
-                                  </tr>
-                                  </c:forEach>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    
+                                  
                                   </tbody>
                                   <tfoot>
-                                  <tr><th rowspan="1" colspan="1">Part_Id</th>
-                                    <th rowspan="1" colspan="1">Part_Name</th>
-                                    <th rowspan="1" colspan="1">Part_Price</th>
-                                    <th rowspan="1" colspan="1">Part_Quantity</th>
-                                    
+                                  <tr>
+                                 	 <th rowspan="1" colspan="1">Offer_Name</th>
+                                    <th rowspan="1" colspan="1">Start_Date</th>
+                                    <th rowspan="1" colspan="1">End_Date</th>
+                                    <th rowspan="1" colspan="1">DiscountInPercentage</th>
                                     </tr>
                                   </tfoot>
                                 </table>
@@ -432,8 +427,6 @@
                          </section>
                         </div>
                          <!-- End table -->
-                        
-                        
 
                             <aside class="bg-light lter b-l aside-md hide" id="notes">
                                 <div class="wrapper">Notification</div>
@@ -441,7 +434,8 @@
                     </section>
                 </section>
             </section> <!-- Bootstrap -->
-            <!-- App -->
+            
+			<!-- App -->
    			 <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/app.v1.js"></script>
    			 <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/easypiechart/jquery.easy-pie-chart.js"></script>
     		 <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/sparkline/jquery.sparkline.min.js"></script>
@@ -454,7 +448,6 @@
    			 <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/demo.js"></script>
    			 <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/sortable/jquery.sortable.js"></script>
    			 <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/app.plugin.js"></script>
-            
             
 
 

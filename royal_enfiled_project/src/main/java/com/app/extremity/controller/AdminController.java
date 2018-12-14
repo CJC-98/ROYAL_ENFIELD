@@ -21,15 +21,20 @@ import com.app.extremity.model.BikeModel;
 import com.app.extremity.model.BikeOffer;
 import com.app.extremity.model.BikeServicing;
 import com.app.extremity.model.Color;
+import com.app.extremity.model.DeadStock;
 import com.app.extremity.model.EmailMessage;
 import com.app.extremity.model.EmployeeDetails;
+import com.app.extremity.model.EngineCapacity;
+import com.app.extremity.model.FreeServicingCount;
 import com.app.extremity.model.NewBikeStock;
-import com.app.extremity.model.Notfication;
+import com.app.extremity.model.Notfication;import com.app.extremity.model.OldBikeStock;
 import com.app.extremity.model.Quotation;
 import com.app.extremity.model.ServcingBikeInfo;
 import com.app.extremity.model.ServicingChart;
 import com.app.extremity.model.ServicingInvoice;
+import com.app.extremity.model.SoldBikeStock;
 import com.app.extremity.model.SoldOldBikeStock;
+import com.app.extremity.model.State;
 import com.app.extremity.model.TestDriveCustomer;
 
 
@@ -47,6 +52,13 @@ public class AdminController {
 	public String toComposeMailPage() {
 		return "Admin/composeMail";
 	}
+	
+	
+	/*@RequestMapping("/accessoriesStock")
+	public String toAccessoriesStockPage() {
+		return "Admin/accessoriesStock";
+	}*/
+	
 	/*this method is used to send Email to employee With Registration Link
 	 * 
 	 *  author: Nilesh Tammewar
@@ -68,6 +80,7 @@ public class AdminController {
 	
 	@RequestMapping(value="/employeeRegistration")
 	public String toEmployeeRegistrationPage() {
+	
 		return "Admin/employeeRegistration";
 	}
 	
@@ -77,7 +90,7 @@ public class AdminController {
 	 * */
 	
 	
-<<<<<<< HEAD
+
 	/*@RequestMapping(value="/")
 	public String getBikeModel() {
 		
@@ -130,18 +143,14 @@ public class AdminController {
 	 * 
 	 *  author: omprakash nagolkar
 	 * */
-	/*@RequestMapping(value="/")
-	public String getAvailableServicing()
+	@RequestMapping(value="/avaliableServicing")
+	public String getAvailableServicing(Model model)
 	{
-		List<AvailableServicing> ListofAvailableServicing=adminService.getAvailableServicing();
-		for(AvailableServicing Servicing:ListofAvailableServicing)
-	    {
-	    	System.out.println(Servicing.getAvailableServicingId());
-	    	System.out.println(Servicing.getServiceName());
-	    }
-		return null;
+		List<AvailableServicing> availableServicingList=adminService.getAvailableServicing();
+		model.addAttribute("availableServicingList", availableServicingList);
+		return "Admin/avaliableServicing";
 		
-	}*/
+	}
 	
  /*@RequestMapping(value="/")
 	public String bikeServicing()
@@ -159,40 +168,30 @@ public class AdminController {
 		return null;
 	}
 	*/
-	/*@RequestMapping(value="/")
-	public String getNewBikeStock()
+	@RequestMapping(value="/newBikeStock")
+	public String getNewBikeStock(Model model)
 	{
-		List<NewBikeStock> NewBikeStockList=adminService.getNewBikeStock();
-		
-		for(NewBikeStock newBikeStock:NewBikeStockList)
-		{
-			System.out.println(newBikeStock.getBikeId());
-			System.out.println(newBikeStock.getArrivalDate());
-			System.out.println(newBikeStock.getBikeMfgDate());
-			System.out.println(newBikeStock.getChasisNumber());
-			System.out.println(newBikeStock.getEngineStartingType());
-			System.out.println(newBikeStock.getWheelType());
-			System.out.println(newBikeStock.getBikeModel().getModelId());
-			System.out.println(newBikeStock.getBikePrice());
-		}
-		return null;
+		List<NewBikeStock> newBikeStockList=adminService.getNewBikeStock();
+		model.addAttribute("newBikeStockList",newBikeStockList);
+		return "Admin/newBikeStock";
 		
 	}
-*/   /* @RequestMapping(value="/")
-	 public String getBikeOffer()
+	
+	@RequestMapping(value="/accessoriesStock")
+	public String getAccessoriesStock(Model model)
+	{
+		List<AccessoriesStock> accessoriesStockList=adminService.getAccessoriesStock();
+		model.addAttribute("accessoriesStockList", accessoriesStockList);
+		return "Admin/accessoriesStock";
+		
+	}
+	
+   /* @RequestMapping(value="/bikeOffer")
+	 public String getBikeOffer(Model model)
 	 {
 		 List<BikeOffer> bikeOfferList=adminService.getBikeOffer();
-		 System.out.println(bikeOfferList);
-		 
-		 for(BikeOffer bikeOffer:bikeOfferList)
-		 {
-			 System.out.println(bikeOffer.getDiscountInPercentage());
-			 System.out.println(bikeOffer.getStartDate());
-			 System.out.println(bikeOffer.getEndDate());
-			 System.out.println(bikeOffer.getOfferId());
-			 System.out.println(bikeOffer.getOfferName());
-		 }
-		return null;
+		model.addAttribute("bikeOfferList", bikeOfferList);
+		 return "Admin/bikeOffer";
 		 
 	 }*/
 	/*@RequestMapping(value="/")
@@ -320,7 +319,7 @@ public class AdminController {
 		return null;
 		
 	}*/
-	@RequestMapping("/")
+	/*@RequestMapping("/")
 	public String getNotfication()
 	{
 		List<Notfication> notficationList=adminService.getNotfication();
@@ -328,20 +327,94 @@ public class AdminController {
 		
 		for(Notfication notification:notficationList )
 		{
-			System.out.println("Fromid :"+ notification.getFromId());
-			System.out.println("Toid   :"+ notification.getToId());
+			System.out.println("ReciverImg :"+ notification.getReciverImg());
+			System.out.println("ReciverName   :"+ notification.getReciverName());
+			System.out.println("ReciverPost :"+ notification.getReciverPost());
 			System.out.println("Message :"+ notification.getMessage());
 			System.out.println("MarkasRead:"+ notification.isMarkAsRead());
 			System.out.println("Notifiactionid :"+ notification.getNotficationId());
 			System.out.println("Senddate :"+ notification.getSendDate());
 			System.out.println("SendTime :"+ notification.getSendTime());
+			System.out.println("SenderImg :"+ notification.getSenderImg());
+			System.out.println("SenderName :"+ notification.getSenderName());
+			System.out.println("SenderPost :"+ notification.getSenderPost());
+
 		}
 		return null;
 		
 	}
+*/
+/*	@RequestMapping("/")
+	public String getState()
+	{
+		List<State> stateList=adminService.getState();
+		System.out.println(stateList);
+		for(State state:stateList)
+		{
+			
+			System.out.println("Country: " +state.getCountry().getId());
+			System.out.println("CountryName:"+state.getCountry().getCountryName());
+			System.out.println("Stateid: " +state.getId());
+			System.out.println("Statename: " +state.getSname());
+		}
+		return null;
+		
 	}
+*/
+	/*@RequestMapping("/")
+	public String getFreeServicing()
+	{
+		List<FreeServicingCount> freeServicingCountList=adminService.getFreeServicing();
+		for(FreeServicingCount freeServicingCount:freeServicingCountList )
+		{
+			System.out.println("FreeServicingCountId: "+freeServicingCount.getFreeServicingCountId());
+			System.out.println("FreeServicingCount:  "+freeServicingCount.getFreeServicingCount());
+			System.out.println("ChassisNumber:   "+freeServicingCount.getChassisNumber());
+		}
+		return null;
+		
+	}*/
+	/*@RequestMapping("/")
+	public String getEngineCapacity()
+	{
+		List<EngineCapacity> engineCapacityList=adminService.getEngineCapacity();
+		for(EngineCapacity engineCapacity:engineCapacityList)
+		{
+			System.out.println("EngineId : "+ engineCapacity.getEngineId());
+			System.out.println("EngineType: "+engineCapacity.getEngineType());
+			
+		}
+		return null;
+		
+	}*/
+	@RequestMapping(value="/deadBikeStock")
+	//@RequestMapping("/")
+	public String getDeadStock(Model model)
+	{
+		System.out.println("in controller");
+		List<DeadStock> deadStockList=adminService.getDeadStock();
+		for(DeadStock deadStock:deadStockList )
+		{
+			System.out.println(deadStock.getDeadStockId());
+			System.out.println(deadStock.getDeadBikeStock().getBikeId());
+			System.out.println(deadStock.getDeadBikeStock().getArrivalDate());
+			System.out.println(deadStock.getDeadBikeStock().getBikeMfgDate());
+			System.out.println(deadStock.getDeadBikeStock().getBikePrice());
+			System.out.println(deadStock.getDeadBikeStock().getChasisNumber());
+			System.out.println(deadStock.getDeadBikeStock().getEngineStartingType());
+			System.out.println(deadStock.getDeadBikeStock().getWheelType());
+		}
+		model.addAttribute("deadStockList", deadStockList);
+		return "Admin/deadBikeStock";
+		
+	}
+}
 	
+
+
+
 	
+
 	
 
 
