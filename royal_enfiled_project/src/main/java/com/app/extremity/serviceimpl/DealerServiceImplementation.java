@@ -60,7 +60,7 @@ public Login findEmail(String email) {
 	System.out.println("in serviceimpl find email method"+lg);
 	return lg;
 }
-
+  
 //@Author Sonika Takalkar
 //this method to get  list of countries 
 @Override

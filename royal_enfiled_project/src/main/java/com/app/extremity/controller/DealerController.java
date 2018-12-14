@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,8 +28,10 @@ import com.app.extremity.model.State;
 import com.app.extremity.iservice.IDealerService;
 import com.google.gson.Gson;
 
+
 @Controller
 public class DealerController {
+
 	@Autowired
 	IDealerService service;
 	
@@ -210,13 +214,15 @@ public class DealerController {
 			c.setAddress(a);
 			System.out.println("fetching mob--"+r.getContact().getMobile());
 			r.setContact(c);
+
+			
 			service.saveData(r);
 			String msg="data saved successfully";
 			model.addAttribute("msg", msg);
 			return "signup";
 			}
 		    return "home";
-	
 		}
 			
+
 }
