@@ -51,11 +51,37 @@ public class ServiceMangerController {
 	@Autowired
 	ServiceManagerInterface serviceManagerInterface;
 	
+	@Autowired
+	NotificationInterface notificationInterface;
 	
+	long inboxCount;
+	List<Notfication> inboxList;
 	
 	
 	@RequestMapping(value="/DashboardPage")
 	public String ServicesDashboardPage(Model model){
+		
+		
+		//test data for notification
+		Notfication notify = new Notfication();
+		
+		notify.setSenderName("kuma");
+		notify.setSenderImg("person2.png");
+		notify.setSenderPost("admin");
+		
+		notify.setReciverName("pranay kohad");
+		notify.setReciverImg("person1.png");
+		notify.setReciverPost("service manger");
+		
+		notify.setMessage("welcome to our company");
+		
+		DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy"); 
+		DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("hh:mm:ss a"); 
+		
+		notify.setSendDate(LocalDateTime.now().format(dateFormat));
+		notify.setSendTime(LocalDateTime.now().format(timeFormat));
+		
+		//notificationInterface.saveNotfication(notify);
 
 		long sscount=serviceManagerInterface.getAllServiceCountByServiceStatus("waiting");
 		model.addAttribute("approvedServiceCount",sscount);
@@ -69,6 +95,13 @@ public class ServiceMangerController {
 	
 		long cscount=serviceManagerInterface.getAllServiceCountByServiceStatus("done");
 		model.addAttribute("completedservices", cscount);
+		
+		inboxCount = notificationInterface.getInboxCount("pranay kohad", false);
+		model.addAttribute("inboxCount", inboxCount);
+		
+		//TODO: get login user details from session
+		inboxList = notificationInterface.getMyNotReadedInboxNotfication("pranay kohad", false);
+		model.addAttribute("inboxList", inboxList);
 
 		logger.info("dashboard hits........... log");
 		model.addAttribute("link","serviceManagerDashboard.jsp");
@@ -81,7 +114,8 @@ public class ServiceMangerController {
 		
 		System.out.println("approved service htis..................");
 	
-		
+		model.addAttribute("inboxCount", inboxCount);
+		model.addAttribute("inboxList", inboxList);
 		model.addAttribute("link","approvedServices.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
@@ -89,6 +123,8 @@ public class ServiceMangerController {
 	@RequestMapping(value="/ServicesInprogressPage")
 	public String ServicesInprogressPage(Model model){
 		
+		model.addAttribute("inboxCount", inboxCount);
+		model.addAttribute("inboxList", inboxList);
 		model.addAttribute("link","servicesInprogress.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
@@ -96,6 +132,8 @@ public class ServiceMangerController {
 	@RequestMapping(value="/ApprovedCustomizationPage")
 	public String ApprovedCustomizationPage(Model model){
 		
+		model.addAttribute("inboxCount", inboxCount);
+		model.addAttribute("inboxList", inboxList);
 		model.addAttribute("link","approvedCustomization.jsp");
 		return "ServiceManager/serviceManagerIndex";  
 	}
@@ -103,6 +141,8 @@ public class ServiceMangerController {
 	@RequestMapping(value="/CustomizationInprogressPage")
 	public String CustomizationInprogressPage(Model model){
 		
+		model.addAttribute("inboxCount", inboxCount);
+		model.addAttribute("inboxList", inboxList);
 		model.addAttribute("link","customizationInprogress.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
@@ -110,6 +150,8 @@ public class ServiceMangerController {
 	@RequestMapping(value="/BikeServicesRecordsPage")
 	public String BikeServicesRecordsPage(Model model){
 		
+		model.addAttribute("inboxCount", inboxCount);
+		model.addAttribute("inboxList", inboxList);
 		model.addAttribute("link","bikeServicesRecords.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
@@ -117,6 +159,8 @@ public class ServiceMangerController {
 	@RequestMapping(value="/BikeCustomizationRecordsPage")
 	public String BikeCustomizationRecordsPage(Model model){
 		
+		model.addAttribute("inboxCount", inboxCount);
+		model.addAttribute("inboxList", inboxList);
 		model.addAttribute("link","bikeCustomizationRecords.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
@@ -124,6 +168,8 @@ public class ServiceMangerController {
 	@RequestMapping(value="/AvailableServicesPage")
 	public String AvailableServicesPagePage(Model model){
 		
+		model.addAttribute("inboxCount", inboxCount);
+		model.addAttribute("inboxList", inboxList);
 		model.addAttribute("link","availableServicing.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
@@ -131,6 +177,8 @@ public class ServiceMangerController {
 	@RequestMapping(value="/AvailableCustomizationPage")
 	public String AvailableCustomizationPage(Model model){
 		
+		model.addAttribute("inboxCount", inboxCount);
+		model.addAttribute("inboxList", inboxList);
 		model.addAttribute("link","availableCustomization.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
@@ -138,6 +186,8 @@ public class ServiceMangerController {
 	@RequestMapping(value="/ServicesInvoicePage")
 	public String ServicesInvoicePage(Model model){
 		
+		model.addAttribute("inboxCount", inboxCount);
+		model.addAttribute("inboxList", inboxList);
 		model.addAttribute("link","servicesInvoice.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
@@ -145,6 +195,8 @@ public class ServiceMangerController {
 	@RequestMapping(value="/CustomizationInvoicePage")
 	public String CustomizationInvoicePage(Model model){
 
+		model.addAttribute("inboxCount", inboxCount);
+		model.addAttribute("inboxList", inboxList);
 		model.addAttribute("link","customizationInvoice.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
