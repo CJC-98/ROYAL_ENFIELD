@@ -13,5 +13,4 @@ public interface BikeServicingIDao extends CrudRepository<BikeServicing, String>
 
 	public long countByservcingStatus(String servcingStatus);  
 
-
 }
