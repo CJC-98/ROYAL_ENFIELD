@@ -1,6 +1,7 @@
 package com.app.extremity.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -25,28 +26,14 @@ public class BikeServicing {
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	private ServcingBikeInfo servcingBikeInfo; 
-	
+
 	@OneToOne(cascade=CascadeType.ALL)
 	private ServicingInvoice servicingInvoice;
 	
+
+	
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<ServicingChart> servicingChart = new ArrayList();
-	
-	
-	
-	
-	//FK of customer @OneToOne
-	
-
-
-
-
-
-
-
-	public void setBikeServicingId(String bikeServicingId) {
-		this.bikeServicingId = bikeServicingId;
-	}
 
 
 
@@ -56,9 +43,16 @@ public class BikeServicing {
 
 
 
+	public void setBikeServicingId(String bikeServicingId) {
+		this.bikeServicingId = bikeServicingId;
+	}
+
+
+
 	public String getServcingStatus() {
 		return servcingStatus;
 	}
+
 
 
 	public void setServcingStatus(String servcingStatus) {
@@ -71,11 +65,13 @@ public class BikeServicing {
 		return appointmentDate;
 	}
 
+
+
 	public void setAppointmentDate(String appointmentDate) {
 		this.appointmentDate = appointmentDate;
 	}
 
-	
+
 
 	public String getBikeReleaseStatus() {
 		return bikeReleaseStatus;
@@ -93,16 +89,10 @@ public class BikeServicing {
 		return servcingBikeInfo;
 	}
 
+
+
 	public void setServcingBikeInfo(ServcingBikeInfo servcingBikeInfo) {
 		this.servcingBikeInfo = servcingBikeInfo;
-	}
-
-	public List<ServicingChart> getServicingChart() {
-		return servicingChart;
-	}
-
-	public void setServicingChart(List<ServicingChart> servicingChart) {
-		this.servicingChart = servicingChart;
 	}
 
 
@@ -117,9 +107,25 @@ public class BikeServicing {
 		this.servicingInvoice = servicingInvoice;
 	}
 
-	
+
+
+	public List<ServicingChart> getServicingChart() {
+		return servicingChart;
+	}
+
+
+
+	public void setServicingChart(List<ServicingChart> servicingChart) {
+		this.servicingChart = servicingChart;
+	}
+
+
 
 	
-	
-	
+
+
+
+
+
+
 }

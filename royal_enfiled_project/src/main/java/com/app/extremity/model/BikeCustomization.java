@@ -1,6 +1,7 @@
 package com.app.extremity.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -19,7 +20,7 @@ public class BikeCustomization {
 	
 	private String customizationStatus = "waiting";  //OR in-progress  OR  done
 	
-	private String appointmentDate;
+	private Date appointmentDate;
 	
 	private String bikeReleaseStatus = "on-hold";   //OR released
 	
@@ -27,7 +28,7 @@ public class BikeCustomization {
 	private CustomizationBikeInfo customizationBikeInfo; 
 	
 	@OneToMany(cascade=CascadeType.ALL)
-	private List<CustomizationChart> customizationChart = new ArrayList();
+	private List<CustomizationChart> customizationChart = new ArrayList<CustomizationChart>();
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	private CustomizationInvoice customizationInvoice;
@@ -53,15 +54,14 @@ public class BikeCustomization {
 		this.customizationStatus = customizationStatus;
 	}
 
-	public String getAppointmentDate() {
+
+	public Date getAppointmentDate() {
 		return appointmentDate;
 	}
 
-	public void setAppointmentDate(String appointmentDate) {
+	public void setAppointmentDate(Date appointmentDate) {
 		this.appointmentDate = appointmentDate;
 	}
-
-	
 
 	public String getBikeReleaseStatus() {
 		return bikeReleaseStatus;

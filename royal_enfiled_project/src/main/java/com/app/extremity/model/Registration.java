@@ -2,6 +2,8 @@ package com.app.extremity.model;
 
 
 
+import java.util.Date;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,7 +23,7 @@ public class Registration {
 	@Id
 	private String registrationId;
 	
-	private String date;
+	private Date registrationDate;;
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	private Role role;
@@ -43,11 +45,12 @@ public class Registration {
 	public String getRegistrationId() {
 		return registrationId;
 	}
-	public String getDate() {
-		return date;
+	
+	public Date getRegistrationDate() {
+		return registrationDate;
 	}
-	public void setDate(String date) {
-		this.date = date;
+	public void setRegistrationDate(Date registrationDate) {
+		this.registrationDate = registrationDate;
 	}
 	public void setRegistrationId(String registrationId) {
 		this.registrationId = registrationId;
