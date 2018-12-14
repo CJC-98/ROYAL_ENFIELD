@@ -32,9 +32,9 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	@Autowired
 	CustomizationBikeInfoIDao customizationBikeInfoIDao;
 	
+
 	@Autowired
 	CustomizationChartIDao customizationChartIDao;
-	
 	
 
 
@@ -45,6 +45,7 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	}
 	
 	@Override
+
 	public long getAllCustomizationCount() {
 
 		return bikeCustomizationIDao.count();
@@ -63,5 +64,5 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	
 	}
 	
-    
 }
+

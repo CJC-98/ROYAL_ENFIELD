@@ -64,8 +64,6 @@ public class ServiceMangerController {
 	@RequestMapping(value="/DashboardPage")
 	public String ServicesDashboardPage(Model model){
 
-
-	
 	//account => approved customization count
 			long account=serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("Waiting");
 			System.out.println("Approved Customization are:"+account);
@@ -87,11 +85,13 @@ public class ServiceMangerController {
 			model.addAttribute("completedCustomization", cccount);
 					
 	
+
 		
 	/*	CustomizationBikeInfo cbi = new CustomizationBikeInfo();
 		cbi.setChasisNumber("PTP59841");
 		cbi.setPlateNumber("MH-17-SP-4170");
 		
+
 		CustomizationInvoice ci = new CustomizationInvoice();
 		ci.setAmount(8000);
 		ci.setCustomizationCGstPercent(4);
@@ -105,7 +105,12 @@ public class ServiceMangerController {
 		CustomizationChart cc2 = new CustomizationChart();
 		cc2.setPart("Brake");
 		cc2.setCost(1500);
-		
+
+		//ipcount => in progress count
+		long ipcount=serviceManagerInterface.getAllServiceCountByServiceStatus("in-progress");
+		System.out.println("In progerss services are:"+ipcount);
+		model.addAttribute("inProgerssServices", ipcount);
+
 		CustomizationChart cc3 = new CustomizationChart();
 		cc3.setPart("Seat");
 		cc3.setCost(500);
@@ -137,8 +142,7 @@ public class ServiceMangerController {
 		bc1.setBikeCustomizationId(nextCustomizeId);
 		
 		serviceManagerInterface.saveBikeCustomization(bc1);*/
-		
-		
+
 
 		
 		 logger.info("dashboard hits........... log");
@@ -146,8 +150,6 @@ public class ServiceMangerController {
 			return "ServiceManager/serviceManagerIndex";
 
 	}
-
-
 	@RequestMapping(value="/ApprovedServicesPage")
 	public String ApprovedServicesgPage(Model model){
 		 
@@ -250,17 +252,18 @@ public class ServiceMangerController {
 	}
 	
 	@RequestMapping(value="/markIt")    
-	public @ResponseBody String udpateNotification(@RequestParam String notficationId,Model model)throws IOException {
+	public @ResponseBody String udpateNotification(@RequestParam int notficationId,Model model)throws IOException {
 		System.out.println("in markit controller and list is update "+notficationId);
 		
+		notificationInterface.markAsRead(notificationInterface.getNotficationById(notficationId));
 		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("pranay kohad");
 		model.addAttribute("outboxList",outboxList);  
 		
 		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication("pranay kohad");
 		model.addAttribute("inboxList",inboxList);   
-	
+		
 		model.addAttribute("link","myNotifications.jsp");	
-		return "ServiceManager/serviceManagerIndex";		
+		return "ServiceManager/serviceManagerIndex";
 
 	}
 	

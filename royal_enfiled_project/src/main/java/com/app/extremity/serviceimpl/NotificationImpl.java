@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.app.extremity.idao.NotficationIDao;
 import com.app.extremity.iservice.NotificationInterface;
+import com.app.extremity.model.EmployeeDetails;
 import com.app.extremity.model.Notfication;
 
 @Service
@@ -30,18 +31,20 @@ public class NotificationImpl implements NotificationInterface{
 		
 		Notfication notify = new Notfication();
 		
-		notify.setSenderName("akash");  //get data from DB.employee table
-		notify.setSenderPost("accountant");              //get data from DB.employee table  
+		notify.setSenderName("ram");  //get data from DB.employee table
+		notify.setSenderPost("sales managar");              //get data from DB.employee table  
 		
 		notify.setReciverName("pranay kohad");   //get data from DB.employee table
-		notify.setReciverPost("service manager");//get data from DB
+		notify.setReciverPost("accountant manager");//get data from DB
 		
+
 
 		notify.setMessage("project is ready for sales");
 		notify.setSendDate(LocalDate.now().format(dateFormat));
 		notify.setMessage("hiiiiiiiiiiii");
-		
-		notify.setMarkAsRead(true);
+	    notify.setMessage("yes");
+
+		notify.setMarkAsRead(false);
 
 		notify.setSendDate(LocalDateTime.now().format(dateFormat));
 
@@ -61,5 +64,19 @@ public class NotificationImpl implements NotificationInterface{
 	public List<Notfication> getMyInboxNotfication(String reciverName) {
 		return notficationIDao.findAllByReciverName(reciverName);
 	}
+
+	@Override
+	public Notfication getNotficationById(int id) {
+		return notficationIDao.findAllByNotficationId(id);
+	}
+
+	@Override
+	public boolean markAsRead(Notfication notify) {	
+		notify.setMarkAsRead(true);
+		notficationIDao.save(notify);
+		return true;
+	}
+
+
 	 
 }
