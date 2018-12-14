@@ -18,11 +18,7 @@ public class Test {
 	public static void main(String[] args) {
 		SpringApplication.run(Test.class);
 		logger.warn("application started............");
-<<<<<<< HEAD
-		 System.out.println("application started..........."); 
-=======
-		System.out.println("application started...........!!");
->>>>>>> branch 'serviceManagerTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 
+		 System.out.println("application started..........."); 
 	}
 }
