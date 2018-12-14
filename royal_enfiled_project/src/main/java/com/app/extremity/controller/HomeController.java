@@ -32,7 +32,6 @@ public class HomeController {
 		logger.info("In home controller log");
 		return "home";
 	}  
-	 
 	
 	@RequestMapping(value="/loginPage")
 	public String loginPage()
@@ -57,10 +56,11 @@ public class HomeController {
 	public String signIn(Model model)    
 	{ 
 		
-//		logger.info("In SignIn controller log");
-//		model.addAttribute("link", "serviceManagerDashboard.jsp");
-//		return "ServiceManager/serviceManagerIndex";
-		return "IndivisualUser/indivisualUserIndex";//by default go to client index.jsp  
+		System.out.println("dashboard hits...........");
+		model.addAttribute("link","dealerDashboard.jsp");
+	
+		System.out.println("In SignIn controller");
+		return "Dealer/dealerIndex";//by default go to client index.jsp  
 
 	}  
 	
