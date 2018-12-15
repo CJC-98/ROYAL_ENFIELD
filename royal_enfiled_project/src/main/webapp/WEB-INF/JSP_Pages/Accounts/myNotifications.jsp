@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="a"%>
+<%@ taglib prefix="a" uri="http://java.sun.com/jsp/jstl/core"%>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -64,6 +64,7 @@
 							document.getElementById("notificationBody").style.display = "block";	
 							document.getElementById("senderName").innerHTML = empDetails.employeeName;
 							document.getElementById("senderImg").src = "${pageContext.request.contextPath}/Resources/images/EmployeeProfilePicture/"+empDetails.profilePictureUrl;
+							
 							document.getElementById("senderPost").innerHTML = empDetails.employeeDesignation;
 							
 						}
@@ -71,7 +72,9 @@
 							alert("Employee not exist!!!")
 							document.getElementById("notificationBody").style.display = "none";
 						}
+
 					}
+
 				}
 			
 			}
@@ -80,6 +83,7 @@
 		
 		function sendNotification(){
 			var msg = document.getElementById("message").value;
+
 			if(msg!=""){
 				var req = new XMLHttpRequest();
 				req.open("GET","sendNotification?reciverName="+reciverName+
@@ -104,11 +108,12 @@
 			document.getElementById("notificationBody").style.display = "none";
 			document.getElementById("empName").value = "";
 		}
+
+
+
 	</script>
 	
 	<a:set var="ReciverName" value="hello"/>
-
-
 	<section id="content"  class="bg-light lter">
 	        <section class="vbox">
 	            <section class="scrollable padder">                                               
@@ -137,15 +142,15 @@
 								      <div class="tab-pane active bg-light dker" id="Inbox">  
 								      		
 								      	<aside class="bg-light dk b-l" id="email-list">
-                            			<section class="vbox">	
-								      		<section class="scrollable hover">
-			                                    <ul class="list-group no-radius m-b-none m-t-n-xxs list-group-alt list-group-lg">			                                    
-			                                        <a:forEach var="data" items="${inboxList}">			                                        			                                       
-				                                	  	<li class="list-group-item"> 
+                            			<section class="vbox">				    		
+			                                    <ul class="list-group no-radius m-b-none m-t-n-xxs list-group-alt list-group-lg">      
+			                                        <a:forEach var="data" items="${inboxList}">
+				                                		<li class="list-group-item"> 
 			                                        		<a class="thumb-sm pull-left m-r-sm">
 			                                                	<img src="${pageContext.request.contextPath}/Resources/images/EmployeeProfilePicture/${data.senderImg}" class="img-circle"> 
 			                                                </a> 
 			                                                <a  class="clear"> 
+
 			                                                	<small class="pull-right text-muted" style="display: flex; flex-flow: column wrap; align-items: center; margin-top: 20px">
 
 			                                                		<strong style="font-size: 15px">${data.sendDate}</strong> 
@@ -154,8 +159,9 @@
 			                                                	<strong style="font-size: 15px">FROM: ${data.senderName}</strong><br>
 			                                                	<span style="font-size: 15px">${data.senderPost}</span><br>
 			                                                	<span>${data.message}</span>     	
-			                                                </a>			                                                
-			                                                <div class="comment-action m-t-sm"> 
+			                                                </a>
+			                                                
+			                                                <div class="comment-action m-t-sm"> 		                                                				                                                		
 			                                               		<a:choose>
 																	  <a:when test="${data.markAsRead}">
 																	  	<a data-toggle="class" class="btn btn-default btn-xs active" disabled=true> 
@@ -170,10 +176,8 @@
 													     			    			 <span onclick="markIt(${data.notficationId})">Mark As Read</span>
 																	        </a>
 																	  </a:otherwise>
-																	</a:choose>
-			                         
-			                                                
-
+																	</a:choose>			                         
+																				                                              
 			                                                   <%--  <a data-toggle="modal" 
 			                                                       data-target="#myModal" 
 			                                                       class="btn btn-default btn-xs">
@@ -181,14 +185,10 @@
 			                                                        <span onclick="">Reply</span>
 			                                                    </a> --%>
 			                                                </div>
-			                                           </li>  
-			          			                                                         
-				                                	</a:forEach>  
-			                                        
-			                                        
-			                                        
+			                                           </li>			          			                                                         
+				                                	</a:forEach>		                                        
 												 </ul>
-                              			  </section>  
+                              			  
                               			  </section>
                               			  </aside>             
                               		  </div>
@@ -196,12 +196,10 @@
                                         
                                                                          
                                     		
-                                   	<!-- outbox starts -->
-                                   	
+                                   	<!-- outbox starts -->                                   	
                                     <div class="tab-pane bg-light dker" id="Outbox">
                                       <aside class="bg-light dk b-l" id="email-list">
-                            			<section class="vbox">  
-                                        <section class="scrollable hover">
+                            			<section class="vbox">                                        
 			                                    <ul class="list-group no-radius m-b-none m-t-n-xxs list-group-alt list-group-lg">
 			                                        
 			                                        
@@ -222,8 +220,7 @@
 			                                        	</li>
 				                                	</a:forEach>    
 			                           
-												 </ul>
-                              			  </section> 
+												 </ul>                              			  
                               			</section>
                               		 </aside>          
                                    </div>
@@ -274,7 +271,9 @@
 	        
 		
 		<script>
+
 			document.getElementById("notificationBody").style.display = "none";	
+
 		</script>
 					  		
 					                           
