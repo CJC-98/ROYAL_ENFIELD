@@ -1,6 +1,7 @@
 package com.app.extremity.serviceimpl;
 
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,15 +20,12 @@ import com.app.extremity.idao.ServicingChartIDao;
 import com.app.extremity.iservice.ServiceManagerInterface;
 import com.app.extremity.model.BikeCustomization;
 import com.app.extremity.model.BikeServicing;
-<<<<<<< HEAD
 
 import com.app.extremity.model.Notfication;
 
 import com.app.extremity.model.ServcingBikeInfo;
 import com.app.extremity.model.ServicingChart;
 import com.app.extremity.model.ServicingInvoice;
-=======
->>>>>>> refs/heads/pooja
 
 
 @Service
@@ -47,8 +45,9 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	@Autowired
 	CustomizationChartIDao customizationChartIDao;
 	
+   @Autowired
+   BikeServicingIDao bikeServicingIDao;
 
-<<<<<<< HEAD
 	@Autowired
 	ServiceInvoiceIDao serviceInvoiceIDao;
 	
@@ -58,9 +57,7 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	@Autowired
 	ServicingChartIDao servicingChartIDao;
 	
-	  
 	
-  
 	
 	
 	@Override
@@ -72,8 +69,7 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	public long getAllServiceCountByServiceStatus(String serviceStatus) {
 		return bikeServicingIDao.countByservcingStatus(serviceStatus);
 	}
-=======
->>>>>>> refs/heads/pooja
+
 
 	@Override
 	public String getNextBikeCustomizationId() {
@@ -100,20 +96,16 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 		return bikeCustomizationIDao.countBycustomizationStatus(customizationStatus);
 	
 	}
-	
-}
-
-<<<<<<< HEAD
-
 
 	@Override
-	public long getAllCustomizationCount() {
+	public BikeServicing saveBikeServicing(BikeServicing bikeServicing) {
 		// TODO Auto-generated method stub
-		return 0;
+		return bikeServicingIDao.save(bikeServicing);
 	}
+}	
+
+
+
+
+
 	
-
-
-}
-=======
->>>>>>> refs/heads/pooja
