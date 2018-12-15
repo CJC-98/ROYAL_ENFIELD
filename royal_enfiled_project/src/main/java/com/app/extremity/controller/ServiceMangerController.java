@@ -3,17 +3,20 @@
 
 import java.io.IOException;
 
+
 import java.text.SimpleDateFormat;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+
 import java.util.ArrayList;
 
 import java.io.IOException;
 
 
+
 import java.util.List;
 
-import javax.management.Notification;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -28,17 +31,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 
+
 import com.app.extremity.idao.BikeServicingIDao;
 import com.app.extremity.iservice.IAdminService;
+
 import com.app.extremity.iservice.NotificationInterface;
 import com.app.extremity.iservice.ServiceManagerInterface;
+
 import com.app.extremity.model.BikeServicing;
 import com.app.extremity.model.Color;
 import com.app.extremity.model.EmployeeDetails;
+
 import com.app.extremity.model.Notfication;
-import com.app.extremity.model.ServcingBikeInfo;
-import com.app.extremity.model.ServicingChart;
-import com.app.extremity.model.ServicingInvoice;
 
   
 /* 
@@ -66,7 +70,6 @@ public class ServiceMangerController {
 	
 	HttpSession session;
 	
-	
 	@RequestMapping(value="/DashboardPage")
 	public String ServicesDashboardPage(Model model,HttpServletRequest request){
 		
@@ -91,7 +94,34 @@ public class ServiceMangerController {
 		notify.setSendTime(LocalDateTime.now().format(timeFormat));
 		
 		//notificationInterface.saveNotfication(notify);
+
+
+
+	//account => approved customization count
+			long account=serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("Waiting");
+			System.out.println("Approved Customization are:"+account);
+			model.addAttribute("approvedCustomizationCount",account);
+			
+			//tc => total customization count
+		    long tccount=serviceManagerInterface.getAllCustomizationCount();
+			System.out.println("Total Customization are:"+tccount);
+			model.addAttribute("totalCustomizationCount",tccount);
+			
+			//ipcount => in progress count
+			long ipcount=serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("InProgress");
+			System.out.println("In progerss Customization are:"+ipcount);
+			model.addAttribute("inProgerssCustomizationCount", ipcount);
+			
+			//cccount => completed customization count
+			long cccount=serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("Completed");
+			System.out.println("Completed Customization are:"+cccount);
+			model.addAttribute("completedCustomizationCount", cccount);
+					
+	
+
+	
 		
+
 		
 		session = request.getSession();
 		
@@ -103,15 +133,18 @@ public class ServiceMangerController {
 		
 		long sscount=serviceManagerInterface.getAllServiceCountByServiceStatus("waiting");
 		model.addAttribute("approvedServiceCount",sscount);
+		 
+		
+		long ipcount1=serviceManagerInterface.getAllServiceCountByServiceStatus("in-progress");
+		model.addAttribute("inProgerssServices", ipcount1);
 
-	    long tscount=serviceManagerInterface.getAllServiceCount();
-		model.addAttribute("totalServiceCount", tscount);
-
-		long ipcount=serviceManagerInterface.getAllServiceCountByServiceStatus("in-progress");
-		model.addAttribute("inProgerssServices", ipcount);
 	
 		long cscount=serviceManagerInterface.getAllServiceCountByServiceStatus("done");
 		model.addAttribute("completedservices", cscount);
+		
+		  long tscount=serviceManagerInterface.getAllServiceCount();
+			model.addAttribute("totalServiceCount", tscount);
+
 		
 		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
 		model.addAttribute("inboxCount", inboxCount);
@@ -120,11 +153,19 @@ public class ServiceMangerController {
 		model.addAttribute("shortInboxList", shortInboxList);
 
 
-		logger.info("dashboard hits........... log");
-		model.addAttribute("link","serviceManagerDashboard.jsp");
-		return "ServiceManager/serviceManagerIndex";
+	
+
+		
+
+
+		
+		 logger.info("dashboard hits........... log");
+			model.addAttribute("link","serviceManagerDashboard.jsp");
+			return "ServiceManager/serviceManagerIndex";
+
+
+	
 	}
-  
 	@RequestMapping(value="/ApprovedServicesPage")
 	public String ApprovedServicesgPage(Model model,HttpServletRequest request){
 		 
@@ -312,6 +353,7 @@ public class ServiceMangerController {
 	}
 	
 
+
 	
 	
 	@RequestMapping(value="/markIt")    
@@ -391,4 +433,5 @@ public class ServiceMangerController {
 		
 	}
 	
+
 }
