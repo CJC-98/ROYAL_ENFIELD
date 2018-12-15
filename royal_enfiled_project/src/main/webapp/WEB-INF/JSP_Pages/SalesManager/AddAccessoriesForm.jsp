@@ -20,7 +20,7 @@
         <div class="container aside-xxl"> <a class="navbar-brand block" href="index.html">Add Accessories Form</a>
             <section class="panel panel-default m-t-lg bg-white">
                 <header class="panel-heading text-center"> <strong>Add Accessories</strong> </header>
-                <form action="http://flatfull.com/themes/note/index.html" class="panel-body wrapper-lg">
+                <form action="addAccessories" class="panel-body wrapper-lg" method="post">
                     <div class="form-group"> <label class="control-label">Bike Model</label> <input type="text" name="bikeModel" placeholder="Enter Bike Model"
                             class="form-control input-lg"> </div>
                     <div class="form-group"> <label class="control-label">Accessories type</label> <input type="text" name="accessoriesType" placeholder="Enter Accessories Type"

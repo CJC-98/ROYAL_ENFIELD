@@ -12,9 +12,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.app.extremity.idao.BikeSaleIDao;
+import com.app.extremity.idao.BikeSaleIDaoAddAccessories;
 import com.app.extremity.idao.BikeSaleIDaoColor;
 import com.app.extremity.idao.BikeSaleIDaoEngineCapacity;
 import com.app.extremity.iservice.BikeSaleServiceI;
+import com.app.extremity.model.AddAccessories;
 import com.app.extremity.model.BikeModel;
 import com.app.extremity.model.Color;
 import com.app.extremity.model.EngineCapacity;
@@ -33,6 +35,9 @@ public class BikeSaleServiceImpl implements BikeSaleServiceI
 	//for color
 	@Autowired
 	BikeSaleIDaoColor bkClr;
+	
+	@Autowired
+	BikeSaleIDaoAddAccessories bkAcc;
 	
 	
 	static Logger logger=LogManager.getLogger(BikeSaleServiceImpl.class);
@@ -100,7 +105,7 @@ public class BikeSaleServiceImpl implements BikeSaleServiceI
 	public void addNewBikeModel(BikeModel bikeModel, Color color, EngineCapacity engineCap, MultipartFile profilePic) {
 		// TODO Auto-generated method stub
 		
-		logger.info("In AdminServiceImplementation  save method");
+		logger.info("In SaleServiceImplementation  save method");
 		try {
 
 			byte[] bytes = profilePic.getBytes();
@@ -120,6 +125,26 @@ public class BikeSaleServiceImpl implements BikeSaleServiceI
 		
 	}
 
+	//logic for autoIncrement of String ID
+	@Override
+	public String getAddAccessoriesId() {
+		// TODO Auto-generated method stub
+		long result=bkAcc.count();
+		String prefix="BACCID";
+		
+		return prefix+(result+1);
+	}
+
+	//to save for accessories in addAccessories table
+	@Override
+	public void addAccessories(AddAccessories addAccessories) 
+	{
+		// TODO Auto-generated method stub
+		bkAcc.save(addAccessories);
+		
+	}
+
+	
 	
 	
 

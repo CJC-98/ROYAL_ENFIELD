@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.app.extremity.iservice.BikeSaleServiceI;
+import com.app.extremity.model.AddAccessories;
 import com.app.extremity.model.BikeModel;
 import com.app.extremity.model.Color;
 import com.app.extremity.model.EngineCapacity;
@@ -19,7 +20,7 @@ import com.app.extremity.model.EngineCapacity;
 public class SalesManagerController
 {
 	@Autowired
-	BikeSaleServiceI bikeSaleService;
+	BikeSaleServiceI  bikeSaleService;
 
 	@RequestMapping(value = "/DashboardPages")
 	public String SaleDashboardPage(Model model) {
@@ -222,6 +223,21 @@ public class SalesManagerController
 		
 		bikeSaleService.addNewBikeModel(bikeModel1,color,engCap,profilePic);
 		return "SalesManager/salesManagerIndex";
+	}
+	
+	//For Adding Accessories...
+	
+	@RequestMapping(value="/addAccessories",method=RequestMethod.POST)
+	public String addAccessories(AddAccessories addAccessories,@RequestParam String bikeModel,@RequestParam String accessoriesType )
+	{
+		String accID=bikeSaleService.getAddAccessoriesId();
+		System.out.println(accID);
+		addAccessories.setAccId(accID);
+		addAccessories.setBikeModelName(bikeModel);
+		addAccessories.setAccType(accessoriesType);
+		bikeSaleService.addAccessories(addAccessories);
+		return "SalesManager/salesManagerIndex";
+		
 	}
 	
 }

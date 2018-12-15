@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * and handle all request-response made by service manager
  *  */
 
-    
+    //controller
 @Controller
 public class ServiceMangerController {
 	
