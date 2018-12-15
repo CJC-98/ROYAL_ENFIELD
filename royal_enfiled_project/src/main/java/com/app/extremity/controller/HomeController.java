@@ -1,4 +1,4 @@
-package com.app.extremity.controller;
+ package com.app.extremity.controller;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
