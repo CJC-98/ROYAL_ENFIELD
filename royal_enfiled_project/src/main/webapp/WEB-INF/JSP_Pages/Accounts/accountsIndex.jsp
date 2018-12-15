@@ -23,7 +23,7 @@
           
             <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user">
                 <li class="hidden-xs"> <a href="#" class="dropdown-toggle dk" data-toggle="dropdown"> <i class="fa fa-bell"></i>
-                        <span class="badge badge-sm up bg-danger m-l-n-sm count">${inboxCount}</span> </a>
+                        <span class="badge badge-sm up bg-danger m-l-n-sm">${inboxCount}</span> </a>
                     <section class="dropdown-menu aside-xl">
                         <section class="panel bg-white">
                             <header class="panel-heading b-light bg-light"> 
@@ -47,7 +47,8 @@
                 </li>
                 
                 <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb-sm avatar pull-left">
-                            <img src="${pageContext.request.contextPath}/Resources/notebook UI/images/avatar.jpg"> </span> Nagesh Nagshakti <b class="caret"></b> </a>
+                            <img src="${pageContext.request.contextPath}/Resources/images/EmployeeProfilePicture/${currentUserImg}"> 
+                            </span> ${currentUserName} <b class="caret"></b> </a>
                     <ul class="dropdown-menu animated fadeInRight"> <span class="arrow top"></span>
                         <li> <a href="#">Settings</a> </li>
                         <li> <a href="profile.html">Profile</a> </li>
@@ -94,13 +95,14 @@
                                             </a>
                                         </li>
                                         <li> <a href="MyNotificationsPageAccount"> <i class="fa fa-bell"> <b class="bg-danger"></b></i>
-                                        	 	</span> <span>Notifications</span>
+                                        	 	</span> <span>Notifications</span> 
+                                        	 	<span class="badge badge-sm up bg-danger">${inboxCount}</span>                                       	 	
                                             </a>
                                         </li>
-                                        <li> <a href="mail.html"> <b class="badge bg-danger pull-right">3</b> <i class="fa fa-envelope-o icon">
-                                                    <b class="bg-primary dker"></b> </i> <span>Message</span> </a> </li>
                                         <li> <a href="notebook.html"> <i class="fa fa-pencil icon"> <b class="bg-info"></b>
-                                                </i> <span>Notes</span> </a> </li>
+                                                </i> <span>Notes</span> 
+                                             </a> 
+                                        </li>
                                     </ul>
                                 </nav> <!-- / nav -->
                             </div>

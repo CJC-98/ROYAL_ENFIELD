@@ -12,7 +12,9 @@ import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,6 +39,8 @@ public class AccountController {
 	NotificationInterface notificationInterface;
 	@Autowired
 	IAdminService adminService;
+	
+	HttpSession session;
 	
 	@Autowired
 	Account_ServiceInterface Service;
@@ -72,7 +76,20 @@ public class AccountController {
 	
 
 	@RequestMapping(value="/Dashboard")
-	public String Dashboard(Model model) {
+	public String Dashboard(Model model,HttpServletRequest request) {
+		
+		session = request.getSession();
+		System.out.println("name "+session.getAttribute("currentUserName"));
+		System.out.println("name "+session.getAttribute("currentUserPost"));
+		System.out.println("name "+session.getAttribute("currentUserImg"));
+		
+		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
+		model.addAttribute("inboxCount", inboxCount);
+		
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
+		model.addAttribute("shortInboxList", shortInboxList);
+		
+		
 		System.out.println("In Dashboard Controll..");
 		Date fd = null;
 		Date ld = null;
@@ -100,23 +117,25 @@ public class AccountController {
 	
 
 	@RequestMapping(value="/MyNotificationsPageAccount")
-	public String MyNotificationsPage(Model model){
+	public String MyNotificationsPage(Model model, HttpServletRequest request){
 		System.out.println("in myNotificationAccount controller..");
 		
+		session = request.getSession();
+		
 		//TODO: get login user name from session 
-		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("akash");
+		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication(session.getAttribute("currentUserName").toString());
 		model.addAttribute("outboxList",outboxList);
 			
 		//TODO: get login user name from session 
-		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication("akash");
+		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication(session.getAttribute("currentUserName").toString());
 		model.addAttribute("inboxList",inboxList);   
 
 		//TODO: get login user details from session
-		long inboxCount = notificationInterface.getInboxCount("akash", false);
+		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
 		model.addAttribute("inboxCount", inboxCount);
 		
 		//TODO: get login user details from session
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("akash", true);
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("akash", false);
 		for(Notfication n : shortInboxList) {
 			System.out.println("notify id.."+n.getNotficationId());
 			System.out.println("notify msg.." + n.getMessage() + n.getSenderName());
@@ -131,24 +150,26 @@ public class AccountController {
 	
 	
 	@RequestMapping(value="/markItAccount")    
-	public @ResponseBody String udpateNotification(@RequestParam int notficationId,Model model)throws IOException {
+	public @ResponseBody String udpateNotification(@RequestParam int notficationId,Model model, 
+													HttpServletRequest request)throws IOException {
+		session = request.getSession();
 		
 		notificationInterface.markAsRead(notificationInterface.getNotficationById(notficationId));
 		
 		//TODO: get login user name from session 
-		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("akash");
+		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication(session.getAttribute("currentUserName").toString());
 		model.addAttribute("outboxList",outboxList);  
 		
 		//TODO: get login user name from session
-		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication("akash");
+		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication(session.getAttribute("currentUserName").toString());
 		model.addAttribute("inboxList",inboxList);   
 		
 		//TODO: get login user details from session
-		long inboxCount = notificationInterface.getInboxCount("akash", false);
+		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
 		model.addAttribute("inboxCount", inboxCount);
 		
 		//TODO: get login user details from session
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("akash", false);
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
 		model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","myNotifications.jsp");	
@@ -173,15 +194,16 @@ public class AccountController {
 												 @RequestParam String reciverImg,
 												 @RequestParam String message,
 												 HttpServletResponse response, 
+												 HttpServletRequest request,
 												 Model model) {
 	
-		
+		session = request.getSession();
 		
 		Notfication notify = new Notfication();
 		
 		
 		//TODO: get login user details from session
-		notify.setSenderName("akash"); 
+		notify.setSenderName(session.getAttribute("currentUserName").toString()); 
 		notify.setSenderImg("person4.jpg");
 		notify.setSenderPost("account manager");
 		
