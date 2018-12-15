@@ -54,14 +54,14 @@ public class ServiceMangerController {
 			model.addAttribute("totalCustomizationCount",tccount);
 			
 			//ipcount => in progress count
-			long ipcount=serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("In Progress");
+			long ipcount=serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("InProgress");
 			System.out.println("In progerss Customization are:"+ipcount);
-			model.addAttribute("inProgerssCustomization", ipcount);
+			model.addAttribute("inProgerssCustomizationCount", ipcount);
 			
 			//cccount => completed customization count
-			long cccount=serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("Waiting");
+			long cccount=serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("Completed");
 			System.out.println("Completed Customization are:"+cccount);
-			model.addAttribute("completedCustomization", cccount);
+			model.addAttribute("completedCustomizationCount", cccount);
 					
 	
 
@@ -216,16 +216,6 @@ public class ServiceMangerController {
 		return "ServiceManager/serviceManagerIndex";
 	}
 	
-	
-		
-	
-	@RequestMapping(value="/searchEmployee")    
-	public @ResponseBody String serachEmployee(@RequestParam String empName,HttpServletResponse response,Model model) throws IOException {
-		System.out.println("in employee controller");
-		
-		model.addAttribute("link","myNotifications.jsp");	
-		return "ServiceManager/serviceManagerIndex";		
-	}
 	
 	
 
