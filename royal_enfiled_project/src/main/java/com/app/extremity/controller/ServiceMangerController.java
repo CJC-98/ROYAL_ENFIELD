@@ -300,6 +300,8 @@ public class ServiceMangerController {
 	@RequestMapping(value="/MyNotificationsPage")
 	public String MyNotificationsPage(Model model){
 		
+	
+		
 		//TODO: get login user name from session 
 		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("pranay");
 		model.addAttribute("outboxList",outboxList);
@@ -313,7 +315,7 @@ public class ServiceMangerController {
 		model.addAttribute("inboxCount", inboxCount);
 		
 		//TODO: get login user details from session
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("pranay", false);
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("pandurang", false);
 		model.addAttribute("shortInboxList", shortInboxList);	
 		
 		model.addAttribute("link","myNotifications.jsp");	
