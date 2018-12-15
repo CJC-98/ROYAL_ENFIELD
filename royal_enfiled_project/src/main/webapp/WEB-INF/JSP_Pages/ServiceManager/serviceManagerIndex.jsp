@@ -29,11 +29,11 @@
                     <section class="dropdown-menu aside-xl">
                         <section class="panel bg-white">
                             <header class="panel-heading b-light bg-light"> 
-                            	<strong>You have <span class="count">${inboxCount}</span>&nbsp;notifications</strong> 
+                            	<strong>You have <span class="">${inboxCount}</span>&nbsp;notifications</strong> 
                             </header>
                            <div class=" list-group-alt animated fadeInRight"> 
                            
-                           	<a:forEach var="data" items="${inboxList}">
+                           	<a:forEach var="data" items="${shortInboxList}">
                             	<a href="MyNotificationsPage" class="media list-group-item">
                                     <span class="pull-left thumb-sm"> 
                                     	<img src="${pageContext.request.contextPath}/Resources/images/EmployeeProfilePicture/${data.senderImg}" alt="John said" class="img-circle"> 
