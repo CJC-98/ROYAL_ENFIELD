@@ -70,7 +70,7 @@ public class ServiceMangerController {
 	@RequestMapping(value="/DashboardPage")
 	public String ServicesDashboardPage(Model model,HttpServletRequest request){
 		
-		
+		session = request.getSession();
 		//test data for notification
 		Notfication notify = new Notfication();
 		
@@ -93,7 +93,7 @@ public class ServiceMangerController {
 		//notificationInterface.saveNotfication(notify);
 		
 		
-		session = request.getSession();
+		
 		
 		System.out.println("name "+session.getAttribute("currentUserName"));
 		System.out.println("name "+session.getAttribute("currentUserPost"));
