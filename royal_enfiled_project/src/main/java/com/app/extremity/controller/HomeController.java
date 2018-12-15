@@ -47,8 +47,7 @@ public class HomeController {
 	@Autowired
 	IAdminService adminService;
 	
-	@Autowired
-	NotificationInterface notificationInterface;
+	
 
 	    
 	// All site actions are go through this method
@@ -157,8 +156,7 @@ public class HomeController {
 		return "";
 	}
 	
-	
-	
+
 
 
 }
