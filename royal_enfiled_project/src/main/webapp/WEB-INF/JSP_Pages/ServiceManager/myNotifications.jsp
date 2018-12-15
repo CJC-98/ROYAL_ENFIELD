@@ -15,10 +15,7 @@
 </head>
 
 <body>
-
-
-	
-
+  
 	<script>
 		
 		var reciverName;
@@ -112,9 +109,11 @@
 		}
 
 
+
 	</script>
 	
 	<a:set var="ReciverName" value="hello"/>
+
 
 	<section id="content"  class="bg-light lter">
 	        <section class="vbox">
@@ -139,13 +138,13 @@
 
                                        
 
-                                      <!-- inbox started -->
+                                       <!-- inbox started -->
 
 								      <div class="tab-pane active bg-light dker" id="Inbox">  
 								      		
 								      	<aside class="bg-light dk b-l" id="email-list">
                             			<section class="vbox">	
-								      		<section class="scrollable hover">
+								      		
 			                                    <ul class="list-group no-radius m-b-none m-t-n-xxs list-group-alt list-group-lg">
 			                                        
 			                                        
@@ -157,8 +156,7 @@
 			                                                </a> 
 			                                                <a  class="clear"> 
 
-			                                                	<small class="pull-right text-muted" 
-			                                                		   style="display: flex; flex-flow: column wrap; align-items: center; margin-top: 20px">
+			                                                	<small class="pull-right text-muted" style="display: flex; flex-flow: column wrap; align-items: center; margin-top: 20px">
 
 			                                                		<strong style="font-size: 15px">${data.sendDate}</strong> 
 			                                                		<span>${data.sendTime}</span>
@@ -169,6 +167,7 @@
 			                                                </a>
 			                                                
 			                                                <div class="comment-action m-t-sm"> 
+
 
 			                                                	
 			                                                		
@@ -204,7 +203,7 @@
 			                                        
 			                                        
 												 </ul>
-                              			  </section>  
+                              			 
                               			  </section>
                               			  </aside>             
                               		  </div>
@@ -279,18 +278,23 @@
 											<div style="margin-left:12px">
 												<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="sendNotification()">Send Notification</button>	
 												<button type="button" class="btn btn-default" data-dismiss="modal" onclick="cancel()">Cancel</button>
-											</div>
+
+									</div>
 									</div>
 						      	 </div>  
 				 
 						    	</div>
 					  		</div>
-					  	</section>
-				</section>
-			</section>
-		</section>
+					                           
+                      </section>                                                                   
+	              </section>
+	        </section>    	        
+	 	</section> 
+	 
+	        
 		
 		<script>
+<<<<<<< HEAD
 <<<<<<< HEAD
 			document.getElementById("notificationBody").style.display = "none";
 
@@ -363,7 +367,14 @@
 				document.getElementById("notificationBody").style.display = "none";
 			}
 =======
+=======
+
+>>>>>>> branch 'serviceManagerTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 			document.getElementById("notificationBody").style.display = "none";	
+<<<<<<< HEAD
+>>>>>>> branch 'serviceManagerTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
+=======
+
 >>>>>>> branch 'serviceManagerTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 		</script>
 					  		

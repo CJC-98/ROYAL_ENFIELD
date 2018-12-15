@@ -16,14 +16,17 @@ public interface ServiceManagerInterface {
 
 	public String getNextBikeCustomizationId();
 	
-	
 
-	public long getAllCustomizationCountByCustomizationStatus(String customizationStatus);
-	public BikeCustomization saveBikeCustomization(BikeCustomization bikeCustomization);
-
-	long getAllCustomizationCount();
-
+	public long getAllServiceCount();
+	public long getAllCustomizationCount();
+	public long getAllServiceCountByServiceStatus(String serviceStatus);
+	public BikeServicing saveBikeServicing(BikeServicing bikeServicing);
 
 
+	public long getAllCustomizationCountByCustomizationStatus(String Waiting);
 
+
+	BikeCustomization saveBikeCustomization(BikeCustomization bikeCustomization);
+
+		
 }

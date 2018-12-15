@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.app.extremity.idao.NotficationIDao;
+
 import com.app.extremity.iservice.NotificationInterface;
+
 import com.app.extremity.model.EmployeeDetails;
 import com.app.extremity.model.Notfication;
 
@@ -77,6 +79,7 @@ public class NotificationImpl implements NotificationInterface{
 		return true;
 	}
 
+
 	@Override
 	public long getInboxCount(String reciverName, boolean markAsRead) {
 		return notficationIDao.countByReciverNameAndMarkAsRead(reciverName, markAsRead);
@@ -86,6 +89,7 @@ public class NotificationImpl implements NotificationInterface{
 	public List<Notfication> getMyNotReadedInboxNotfication(String reciverName, boolean markAsRead) {
 		return notficationIDao.findAllByReciverNameAndMarkAsRead(reciverName, markAsRead);
 	}
+
 
 
 	 

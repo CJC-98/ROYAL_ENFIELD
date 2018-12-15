@@ -1,4 +1,3 @@
-
 package com.app.extremity.model;
 
 import javax.persistence.Entity;
