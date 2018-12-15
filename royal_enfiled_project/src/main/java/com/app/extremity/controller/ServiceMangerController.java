@@ -72,12 +72,12 @@ public class ServiceMangerController {
 		//test data for notification
 		Notfication notify = new Notfication();
 		
-		notify.setSenderName("samir");
-		notify.setSenderImg("person2.png");
+		notify.setSenderName("Siddhi");
+		notify.setSenderImg("person2.jpg");
 		notify.setSenderPost("accounts manager");
 		
-		notify.setReciverName("pranay");
-		notify.setReciverImg("person1.png");
+		notify.setReciverName("Chaitali");
+		notify.setReciverImg("person1.jpg");
 		notify.setReciverPost("service manger");
 		
 		notify.setMessage("I am leaving");
@@ -105,11 +105,11 @@ public class ServiceMangerController {
 		model.addAttribute("completedservices", cscount);
 		
 		//TODO: get login user details from session
-		long inboxCount = notificationInterface.getInboxCount("pranay", false);
+		long inboxCount = notificationInterface.getInboxCount("Chaitali", false);
 		model.addAttribute("inboxCount", inboxCount);
 		
 		//TODO: get login user details from session
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("pranay", false);
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("Chaitali", false);
 		model.addAttribute("shortInboxList", shortInboxList);
 
 		logger.info("dashboard hits........... log");
@@ -124,11 +124,11 @@ public class ServiceMangerController {
 		System.out.println("approved service htis..................");
 	
 		//TODO: get login user details from session
-		long inboxCount = notificationInterface.getInboxCount("pranay", false);
+		long inboxCount = notificationInterface.getInboxCount("Chaitali", false);
 		model.addAttribute("inboxCount", inboxCount);
 		
 		//TODO: get login user details from session
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("pranay", false);
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("Chaitali", false);
 		model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","approvedServices.jsp");
@@ -139,11 +139,11 @@ public class ServiceMangerController {
 	public String ServicesInprogressPage(Model model){
 		
 		//TODO: get login user details from session
-		long inboxCount = notificationInterface.getInboxCount("pranay", false);
+		long inboxCount = notificationInterface.getInboxCount("Chaitali", false);
 		model.addAttribute("inboxCount", inboxCount);
 		
 		//TODO: get login user details from session
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("pranay", false);
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("Chaitali", false);
 		model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","servicesInprogress.jsp");
@@ -154,11 +154,11 @@ public class ServiceMangerController {
 	public String ApprovedCustomizationPage(Model model){
 		
 		//TODO: get login user details from session
-		long inboxCount = notificationInterface.getInboxCount("pranay", false);
+		long inboxCount = notificationInterface.getInboxCount("Chaitali", false);
 		model.addAttribute("inboxCount", inboxCount);
 		
 		//TODO: get login user details from session
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("pranay", false);
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("Chaitali", false);
 		model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","approvedCustomization.jsp");
@@ -169,11 +169,11 @@ public class ServiceMangerController {
 	public String CustomizationInprogressPage(Model model){
 		
 		//TODO: get login user details from session
-		long inboxCount = notificationInterface.getInboxCount("pranay", false);
+		long inboxCount = notificationInterface.getInboxCount("Chaitali", false);
 		model.addAttribute("inboxCount", inboxCount);
 		
 		//TODO: get login user details from session
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("pranay", false);
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("Chaitali", false);
 		model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","customizationInprogress.jsp");
@@ -184,11 +184,11 @@ public class ServiceMangerController {
 	public String BikeServicesRecordsPage(Model model){
 		
 		//TODO: get login user details from session
-		long inboxCount = notificationInterface.getInboxCount("pranay", false);
+		long inboxCount = notificationInterface.getInboxCount("Chaitali", false);
 		model.addAttribute("inboxCount", inboxCount);
 		
 		//TODO: get login user details from session
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("pranay", false);
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("Chaitali", false);
 		model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","bikeServicesRecords.jsp");
@@ -199,11 +199,11 @@ public class ServiceMangerController {
 	public String BikeCustomizationRecordsPage(Model model){
 		
 		//TODO: get login user details from session
-		long inboxCount = notificationInterface.getInboxCount("pranay", false);
+		long inboxCount = notificationInterface.getInboxCount("Chaitali", false);
 		model.addAttribute("inboxCount", inboxCount);
 		
 		//TODO: get login user details from session
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("pranay", false);
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("Chaitali", false);
 		model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","bikeCustomizationRecords.jsp");
@@ -214,11 +214,11 @@ public class ServiceMangerController {
 	public String AvailableServicesPagePage(Model model){
 		
 		//TODO: get login user details from session
-		long inboxCount = notificationInterface.getInboxCount("pranay", false);
+		long inboxCount = notificationInterface.getInboxCount("Chaitali", false);
 		model.addAttribute("inboxCount", inboxCount);
 		
 		//TODO: get login user details from session
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("pranay", false);
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("Chaitali", false);
 		model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","availableServicing.jsp");
@@ -229,11 +229,11 @@ public class ServiceMangerController {
 	public String AvailableCustomizationPage(Model model){
 		
 		//TODO: get login user details from session
-		long inboxCount = notificationInterface.getInboxCount("pranay", false);
+		long inboxCount = notificationInterface.getInboxCount("Chaitali", false);
 		model.addAttribute("inboxCount", inboxCount);
 		
 		//TODO: get login user details from session
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("pranay", false);
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("Chaitali", false);
 		model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","availableCustomization.jsp");
@@ -244,11 +244,11 @@ public class ServiceMangerController {
 	public String ServicesInvoicePage(Model model){
 		
 		//TODO: get login user details from session
-		long inboxCount = notificationInterface.getInboxCount("pranay", false);
+		long inboxCount = notificationInterface.getInboxCount("Chaitali", false);
 		model.addAttribute("inboxCount", inboxCount);
 		
 		//TODO: get login user details from session
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("pranay", false);
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("Chaitali", false);
 		model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","servicesInvoice.jsp");
@@ -259,11 +259,11 @@ public class ServiceMangerController {
 	public String CustomizationInvoicePage(Model model){
 
 		//TODO: get login user details from session
-		long inboxCount = notificationInterface.getInboxCount("pranay", false);
+		long inboxCount = notificationInterface.getInboxCount("Chaitali", false);
 		model.addAttribute("inboxCount", inboxCount);
 		
 		//TODO: get login user details from session
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("pranay", false);
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("Chaitali", false);
 		model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","customizationInvoice.jsp");
@@ -275,19 +275,19 @@ public class ServiceMangerController {
 	public String MyNotificationsPage(Model model){
 		
 		//TODO: get login user name from session 
-		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("pranay");
+		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("Chaitali");
 		model.addAttribute("outboxList",outboxList);
 			
 		//TODO: get login user name from session 
-		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication("pranay");
+		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication("Chaitali");
 		model.addAttribute("inboxList",inboxList);   
 
 		//TODO: get login user details from session
-		long inboxCount = notificationInterface.getInboxCount("pranay", false);
+		long inboxCount = notificationInterface.getInboxCount("Chaitali", false);
 		model.addAttribute("inboxCount", inboxCount);
 		
 		//TODO: get login user details from session
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("pranay", false);
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("Chaitali", false);
 		model.addAttribute("shortInboxList", shortInboxList);	
 		
 		model.addAttribute("link","myNotifications.jsp");	
@@ -303,19 +303,19 @@ public class ServiceMangerController {
 		notificationInterface.markAsRead(notificationInterface.getNotficationById(notficationId));
 		
 		//TODO: get login user name from session 
-		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("pranay");
+		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("Chaitali");
 		model.addAttribute("outboxList",outboxList);  
 		
 		//TODO: get login user name from session
-		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication("pranay");
+		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication("Chaitali");
 		model.addAttribute("inboxList",inboxList);   
 		
 		//TODO: get login user details from session
-		long inboxCount = notificationInterface.getInboxCount("pranay", false);
+		long inboxCount = notificationInterface.getInboxCount("Chaitali", false);
 		model.addAttribute("inboxCount", inboxCount);
 		
 		//TODO: get login user details from session
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("pranay", false);
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("Chaitali", false);
 		model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","myNotifications.jsp");	
@@ -348,7 +348,7 @@ public class ServiceMangerController {
 		
 		
 		//TODO: get login user details from session
-		notify.setSenderName("pranay"); 
+		notify.setSenderName("Chaitali"); 
 		notify.setSenderImg("person1.jpg");
 		notify.setSenderPost("Service Manager");
 		
