@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+import javax.management.Notification;
 import javax.servlet.http.HttpServletResponse;
 
 import java.text.ParseException;
@@ -157,23 +158,27 @@ public class HomeController {
 	}
 	
 	
-	@RequestMapping(value="/MyNotificationsPage")
+	@RequestMapping(value="/MyNotificationsPage1")
 	public String MyNotificationsPage(Model model){
 
 		//notificationInterface.saveNotfication(null);  
 		
 		//TODO: get login user name from session 
-		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("pranay");
+		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("akash");
 		model.addAttribute("outboxList",outboxList);
 		
 		
 		//TODO: get login user name from session 
-		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication("pranay kohad");
+		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication("akash");
+		for(Notfication n : inboxList) {
+			System.out.println("name.." + n.getReciverName());
+		}
 		model.addAttribute("inboxList",inboxList);   
 
+		model.addAttribute("a","10100");
 	
 		model.addAttribute("link","myNotifications.jsp");	
-		return "ServiceManager/serviceManagerIndex";
+		return "Accounts/accountsIndex";
 	}
 	
 
@@ -184,15 +189,15 @@ public class HomeController {
 		
 		notificationInterface.markAsRead(notificationInterface.getNotficationById(notficationId));
 		//TODO: get login user name from session 
-		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("pranay kohad");
+		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("akash");
 		model.addAttribute("outboxList",outboxList);  
 		
 		//TODO: get login user name from session
-		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication("pranay kohad");
+		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication("akash");
 		model.addAttribute("inboxList",inboxList);   
 		
 		model.addAttribute("link","myNotifications.jsp");	
-		return "ServiceManager/serviceManagerIndex";
+		return "Accounts/accountsIndex";
 
 	}
 	
@@ -221,9 +226,9 @@ public class HomeController {
 		
 		
 		//TODO: get login user details from session
-		notify.setSenderName("pranay"); 
+		notify.setSenderName("akash"); 
 		notify.setSenderImg("person1.jpg");
-		notify.setSenderPost("Service Manager");
+		notify.setSenderPost("account manager");
 		
 		notify.setReciverName(reciverName);
 		notify.setReciverPost(reciverPost);

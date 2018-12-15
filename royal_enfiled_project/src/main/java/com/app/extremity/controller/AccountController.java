@@ -50,7 +50,7 @@ public class AccountController {
 	@RequestMapping(value="/Notification")
 	public String Notification(Model model) {
 		System.out.println("In Notification Controll..");
-		model.addAttribute("link", "Notification.jsp");
+		model.addAttribute("link", "myNotification.jsp");
 		return "Accounts/accountsIndex";
 	}
 	
