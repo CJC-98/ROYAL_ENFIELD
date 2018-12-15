@@ -1,9 +1,6 @@
 package com.app.extremity.iservice;
 
 import java.util.List;
-
-import org.hibernate.annotations.Sort;
-
 import com.app.extremity.model.EmployeeDetails;
 import com.app.extremity.model.Notfication;
 
@@ -20,6 +17,7 @@ public interface NotificationInterface {
 	public Notfication getNotficationById(int id);
 	public boolean markAsRead(Notfication notify);
 	public long getInboxCount(String reciverName,boolean markAsRead);
+
 	
 	
 	

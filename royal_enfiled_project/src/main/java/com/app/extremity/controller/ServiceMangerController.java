@@ -2,6 +2,7 @@
 
 
 import java.io.IOException;
+
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -13,7 +14,9 @@ import java.util.List;
 
 import javax.management.Notification;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +50,6 @@ import com.app.extremity.model.ServicingInvoice;
 public class ServiceMangerController {
 	
 
-
 	static Logger logger = LogManager.getLogger(ServiceMangerController.class);
 	
 	@Autowired
@@ -59,23 +61,23 @@ public class ServiceMangerController {
 	@Autowired
 	IAdminService adminService;
 	
-//	public long inboxCount;
-//	public List<Notfication> inboxList;
-//	public List<Notfication> outboxList;
-//	public List<Notfication> shortInboxList;
+	
+	HttpSession session;
 	
 	
 	@RequestMapping(value="/DashboardPage")
-	public String ServicesDashboardPage(Model model){
+	public String ServicesDashboardPage(Model model,HttpServletRequest request){
 		
 		
 		//test data for notification
 		Notfication notify = new Notfication();
 		
+
 		notify.setSenderName("Siddhi");
 		notify.setSenderImg("person2.jpg");
 		notify.setSenderPost("accounts manager");
 		
+
 		notify.setReciverName("Chaitali");
 		notify.setReciverImg("person1.jpg");
 		notify.setReciverPost("service manger");
@@ -89,8 +91,15 @@ public class ServiceMangerController {
 		notify.setSendTime(LocalDateTime.now().format(timeFormat));
 		
 		//notificationInterface.saveNotfication(notify);
-
 		
+		
+		session = request.getSession();
+		
+		System.out.println("name "+session.getAttribute("currentUserName"));
+		System.out.println("name "+session.getAttribute("currentUserPost"));
+		System.out.println("name "+session.getAttribute("currentUserImg"));
+
+		   
 		
 		long sscount=serviceManagerInterface.getAllServiceCountByServiceStatus("waiting");
 		model.addAttribute("approvedServiceCount",sscount);
@@ -103,14 +112,16 @@ public class ServiceMangerController {
 	
 		long cscount=serviceManagerInterface.getAllServiceCountByServiceStatus("done");
 		model.addAttribute("completedservices", cscount);
-		
-		//TODO: get login user details from session
-		long inboxCount = notificationInterface.getInboxCount("Chaitali", false);
+
+		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
+
 		model.addAttribute("inboxCount", inboxCount);
 		
-		//TODO: get login user details from session
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("Chaitali", false);
+
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
+
 		model.addAttribute("shortInboxList", shortInboxList);
+
 
 		logger.info("dashboard hits........... log");
 		model.addAttribute("link","serviceManagerDashboard.jsp");
@@ -118,17 +129,22 @@ public class ServiceMangerController {
 	}
   
 	@RequestMapping(value="/ApprovedServicesPage")
-	public String ApprovedServicesgPage(Model model){
+	public String ApprovedServicesgPage(Model model,HttpServletRequest request){
 		 
 		
 		System.out.println("approved service htis..................");
+		session = request.getSession();
 	
-		//TODO: get login user details from session
-		long inboxCount = notificationInterface.getInboxCount("Chaitali", false);
+
+
+		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
+
 		model.addAttribute("inboxCount", inboxCount);
 		
-		//TODO: get login user details from session
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("Chaitali", false);
+
+		
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
+
 		model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","approvedServices.jsp");
@@ -136,14 +152,17 @@ public class ServiceMangerController {
 	}
 	
 	@RequestMapping(value="/ServicesInprogressPage")
-	public String ServicesInprogressPage(Model model){
+	public String ServicesInprogressPage(Model model,HttpServletRequest request){
 		
-		//TODO: get login user details from session
-		long inboxCount = notificationInterface.getInboxCount("Chaitali", false);
-		model.addAttribute("inboxCount", inboxCount);
+
+		session = request.getSession();
+		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
+     	model.addAttribute("inboxCount", inboxCount);
 		
-		//TODO: get login user details from session
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("Chaitali", false);
+
+	
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
+
 		model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","servicesInprogress.jsp");
@@ -151,29 +170,34 @@ public class ServiceMangerController {
 	}
 	
 	@RequestMapping(value="/ApprovedCustomizationPage")
-	public String ApprovedCustomizationPage(Model model){
-		
-		//TODO: get login user details from session
-		long inboxCount = notificationInterface.getInboxCount("Chaitali", false);
+	public String ApprovedCustomizationPage(Model model,HttpServletRequest request){
+
+		session = request.getSession();
+
+		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
+
 		model.addAttribute("inboxCount", inboxCount);
 		
-		//TODO: get login user details from session
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("Chaitali", false);
-		model.addAttribute("shortInboxList", shortInboxList);
+
+		
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
+    	model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","approvedCustomization.jsp");
 		return "ServiceManager/serviceManagerIndex";  
 	}
 	
 	@RequestMapping(value="/CustomizationInprogressPage")
-	public String CustomizationInprogressPage(Model model){
+	public String CustomizationInprogressPage(Model model,HttpServletRequest request){
 		
-		//TODO: get login user details from session
-		long inboxCount = notificationInterface.getInboxCount("Chaitali", false);
+
+		session = request.getSession();
+
+		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
 		model.addAttribute("inboxCount", inboxCount);
 		
-		//TODO: get login user details from session
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("Chaitali", false);
+
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
 		model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","customizationInprogress.jsp");
@@ -181,114 +205,139 @@ public class ServiceMangerController {
 	}
 	
 	@RequestMapping(value="/BikeServicesRecordsPage")
-	public String BikeServicesRecordsPage(Model model){
+	public String BikeServicesRecordsPage(Model model,HttpServletRequest request){
 		
-		//TODO: get login user details from session
-		long inboxCount = notificationInterface.getInboxCount("Chaitali", false);
-		model.addAttribute("inboxCount", inboxCount);
+
+		session = request.getSession();
 		
-		//TODO: get login user details from session
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("Chaitali", false);
-		model.addAttribute("shortInboxList", shortInboxList);
+		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
+	model.addAttribute("inboxCount", inboxCount);
+		
+
+		
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
+        model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","bikeServicesRecords.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
 	
 	@RequestMapping(value="/BikeCustomizationRecordsPage")
-	public String BikeCustomizationRecordsPage(Model model){
+	public String BikeCustomizationRecordsPage(Model model,HttpServletRequest request){
 		
-		//TODO: get login user details from session
-		long inboxCount = notificationInterface.getInboxCount("Chaitali", false);
-		model.addAttribute("inboxCount", inboxCount);
+
+		session = request.getSession();
 		
-		//TODO: get login user details from session
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("Chaitali", false);
-		model.addAttribute("shortInboxList", shortInboxList);
+		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
+	model.addAttribute("inboxCount", inboxCount);
+
+	
+	
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
+        model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","bikeCustomizationRecords.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
 	
 	@RequestMapping(value="/AvailableServicesPage")
-	public String AvailableServicesPagePage(Model model){
+	public String AvailableServicesPagePage(Model model,HttpServletRequest request){
 		
-		//TODO: get login user details from session
-		long inboxCount = notificationInterface.getInboxCount("Chaitali", false);
-		model.addAttribute("inboxCount", inboxCount);
+
+		session = request.getSession();
+	
+		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
+	model.addAttribute("inboxCount", inboxCount);
 		
-		//TODO: get login user details from session
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("Chaitali", false);
-		model.addAttribute("shortInboxList", shortInboxList);
+
+		
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
+    	model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","availableServicing.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
 	
 	@RequestMapping(value="/AvailableCustomizationPage")
-	public String AvailableCustomizationPage(Model model){
+	public String AvailableCustomizationPage(Model model,HttpServletRequest request){
 		
-		//TODO: get login user details from session
-		long inboxCount = notificationInterface.getInboxCount("Chaitali", false);
-		model.addAttribute("inboxCount", inboxCount);
+
+		session = request.getSession();
 		
-		//TODO: get login user details from session
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("Chaitali", false);
-		model.addAttribute("shortInboxList", shortInboxList);
+		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
+ 	   model.addAttribute("inboxCount", inboxCount);
+	 	
+
+		
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
+    	model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","availableCustomization.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
 	
 	@RequestMapping(value="/ServicesInvoicePage")
-	public String ServicesInvoicePage(Model model){
+	public String ServicesInvoicePage(Model model,HttpServletRequest request){
 		
-		//TODO: get login user details from session
-		long inboxCount = notificationInterface.getInboxCount("Chaitali", false);
-		model.addAttribute("inboxCount", inboxCount);
+
+		session = request.getSession();
 		
-		//TODO: get login user details from session
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("Chaitali", false);
-		model.addAttribute("shortInboxList", shortInboxList);
+		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
+     	model.addAttribute("inboxCount", inboxCount);
+
+
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
+    	model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","servicesInvoice.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
 	
 	@RequestMapping(value="/CustomizationInvoicePage")
-	public String CustomizationInvoicePage(Model model){
+	public String CustomizationInvoicePage(Model model,HttpServletRequest request){
 
-		//TODO: get login user details from session
-		long inboxCount = notificationInterface.getInboxCount("Chaitali", false);
+
+		
+		session = request.getSession();	
+
+		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
 		model.addAttribute("inboxCount", inboxCount);
 		
-		//TODO: get login user details from session
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("Chaitali", false);
-		model.addAttribute("shortInboxList", shortInboxList);
+	
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
+	model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","customizationInvoice.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
+
 	
+
 	
 	@RequestMapping(value="/MyNotificationsPage")
-	public String MyNotificationsPage(Model model){
+	public String MyNotificationsPage(Model model,HttpServletRequest request){
 		
-		//TODO: get login user name from session 
-		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("Chaitali");
+
+		session = request.getSession();
+		
+		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication(session.getAttribute("currentUserName").toString());
+
 		model.addAttribute("outboxList",outboxList);
 			
-		//TODO: get login user name from session 
-		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication("Chaitali");
+
+		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication(session.getAttribute("currentUserName").toString());
+
 		model.addAttribute("inboxList",inboxList);   
 
-		//TODO: get login user details from session
-		long inboxCount = notificationInterface.getInboxCount("Chaitali", false);
+
+		
+		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
+
 		model.addAttribute("inboxCount", inboxCount);
 		
-		//TODO: get login user details from session
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("Chaitali", false);
-		model.addAttribute("shortInboxList", shortInboxList);	
+		List<Notfication>shortInboxList=notificationInterface.getMyNotReadedInboxNotfication("chaitali", false);
+		
+    	model.addAttribute("shortInboxList", shortInboxList);	
 		
 		model.addAttribute("link","myNotifications.jsp");	
 		return "ServiceManager/serviceManagerIndex";
@@ -298,25 +347,32 @@ public class ServiceMangerController {
 	
 	
 	@RequestMapping(value="/markIt")    
-	public @ResponseBody String udpateNotification(@RequestParam int notficationId,Model model)throws IOException {
+	public @ResponseBody String udpateNotification(@RequestParam int notficationId,Model model,HttpServletRequest request){
+		
+		session = request.getSession();
 		
 		notificationInterface.markAsRead(notificationInterface.getNotficationById(notficationId));
-		
-		//TODO: get login user name from session 
-		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("Chaitali");
+
+
+		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication(session.getAttribute("currentUserName").toString());
+
 		model.addAttribute("outboxList",outboxList);  
 		
-		//TODO: get login user name from session
-		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication("Chaitali");
+
+
+
+		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication(session.getAttribute("currentUserName").toString());
 		model.addAttribute("inboxList",inboxList);   
 		
-		//TODO: get login user details from session
-		long inboxCount = notificationInterface.getInboxCount("Chaitali", false);
+
+	
+		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
+
 		model.addAttribute("inboxCount", inboxCount);
 		
-		//TODO: get login user details from session
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("Chaitali", false);
-		model.addAttribute("shortInboxList", shortInboxList);
+
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
+     	model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","myNotifications.jsp");	
 		return "ServiceManager/serviceManagerIndex";
@@ -325,7 +381,7 @@ public class ServiceMangerController {
 	
 	
 	@RequestMapping(value="/searchEmployee")    
-	public @ResponseBody EmployeeDetails searchEmployee(@RequestParam String empName) {
+	public @ResponseBody EmployeeDetails searchEmployee(@RequestParam String empName,HttpServletRequest request) {
 		
 		if(adminService.getEmployeeDetailsByName(empName)!=null) 
 			return adminService.getEmployeeDetailsByName(empName);
@@ -340,18 +396,17 @@ public class ServiceMangerController {
 												 @RequestParam String reciverImg,
 												 @RequestParam String message,
 												 HttpServletResponse response, 
+												 HttpServletRequest request,
 												 Model model) {
 	
-		
+		session = request.getSession();
 		
 		Notfication notify = new Notfication();
-		
-		
-		//TODO: get login user details from session
-		notify.setSenderName("Chaitali"); 
-		notify.setSenderImg("person1.jpg");
-		notify.setSenderPost("Service Manager");
-		
+	
+		notify.setSenderName(session.getAttribute("currentUserName").toString()); 
+		notify.setSenderImg(session.getAttribute("currentUserImg").toString());
+		notify.setSenderPost(session.getAttribute("currentUserPost").toString());
+
 		notify.setReciverName(reciverName);
 		notify.setReciverPost(reciverPost);
 		notify.setReciverImg(reciverImg);

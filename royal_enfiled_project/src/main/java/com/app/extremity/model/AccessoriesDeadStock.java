@@ -13,6 +13,7 @@ import javax.persistence.OneToOne;
 public class AccessoriesDeadStock
 {     
 
+
 	@Id
 	//@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private String accessoriesDeadStockID;

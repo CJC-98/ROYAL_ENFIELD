@@ -15,10 +15,7 @@
 </head>
 
 <body>
-
-
-	
-
+  
 	<script>
 		
 		var reciverName;
@@ -112,9 +109,11 @@
 		}
 
 
+
 	</script>
 	
 	<a:set var="ReciverName" value="hello"/>
+
 
 	<section id="content"  class="bg-light lter">
 	        <section class="vbox">
@@ -139,7 +138,7 @@
 
                                        
 
-                                      <!-- inbox started -->
+                                       <!-- inbox started -->
 
 								      <div class="tab-pane active bg-light dker" id="Inbox">  
 								      		
@@ -157,8 +156,7 @@
 			                                                </a> 
 			                                                <a  class="clear"> 
 
-			                                                	<small class="pull-right text-muted" 
-			                                                		   style="display: flex; flex-flow: column wrap; align-items: center; margin-top: 20px">
+			                                                	<small class="pull-right text-muted" style="display: flex; flex-flow: column wrap; align-items: center; margin-top: 20px">
 
 			                                                		<strong style="font-size: 15px">${data.sendDate}</strong> 
 			                                                		<span>${data.sendTime}</span>
@@ -169,6 +167,7 @@
 			                                                </a>
 			                                                
 			                                                <div class="comment-action m-t-sm"> 
+
 
 			                                                	
 			                                                		
@@ -274,19 +273,25 @@
 											<div style="margin-left:12px">
 												<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="sendNotification()">Send Notification</button>	
 												<button type="button" class="btn btn-default" data-dismiss="modal" onclick="cancel()">Cancel</button>
-											</div>
+
+									</div>
 									</div>
 						      	 </div>  
 				 
 						    	</div>
 					  		</div>
-					  	</section>
-				</section>
-			</section>
-		</section>
+					                           
+                      </section>                                                                   
+	              </section>
+	        </section>    	        
+	 	</section> 
+	 
+	        
 		
 		<script>
+
 			document.getElementById("notificationBody").style.display = "none";	
+
 		</script>
 					  		
 					                           
