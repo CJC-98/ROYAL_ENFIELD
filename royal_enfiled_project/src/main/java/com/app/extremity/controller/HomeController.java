@@ -37,8 +37,7 @@ public class HomeController {
 	@Autowired
 	IAdminService adminService;
 	
-	@Autowired
-	NotificationInterface notificationInterface;
+	
 
 	    
 	// All site actions are go through this method
@@ -139,95 +138,6 @@ public class HomeController {
 	}
 	
 	
-	@RequestMapping(value="/MyNotificationsPage")
-	public String MyNotificationsPage(Model model){
-
-		//notificationInterface.saveNotfication(null);  
-		
-		//TODO: get login user name from session 
-		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("pranay");
-		model.addAttribute("outboxList",outboxList);
-		
-		
-		//TODO: get login user name from session 
-		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication("pranay kohad");
-		model.addAttribute("inboxList",inboxList);   
-
-	
-		model.addAttribute("link","myNotifications.jsp");	
-		return "ServiceManager/serviceManagerIndex";
-	}
-	
-
-	
-	
-	@RequestMapping(value="/markIt")    
-	public @ResponseBody String udpateNotification(@RequestParam int notficationId,Model model)throws IOException {
-		
-		notificationInterface.markAsRead(notificationInterface.getNotficationById(notficationId));
-		//TODO: get login user name from session 
-		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("pranay kohad");
-		model.addAttribute("outboxList",outboxList);  
-		
-		//TODO: get login user name from session
-		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication("pranay kohad");
-		model.addAttribute("inboxList",inboxList);   
-		
-		model.addAttribute("link","myNotifications.jsp");	
-		return "ServiceManager/serviceManagerIndex";
-
-	}
-	
-	
-	@RequestMapping(value="/searchEmployee")    
-	public @ResponseBody EmployeeDetails searchEmployee(@RequestParam String empName) {
-		
-		if(adminService.getEmployeeDetailsByName(empName)!=null) 
-			return adminService.getEmployeeDetailsByName(empName);
-
-		return null;
-
-	}
-	
-	@RequestMapping(value="/sendNotification")    
-	public @ResponseBody String sendNotification(@RequestParam String reciverName, 
-												 @RequestParam String reciverPost,
-												 @RequestParam String reciverImg,
-												 @RequestParam String message,
-												 HttpServletResponse response, 
-												 Model model) {
-	
-		
-		
-		Notfication notify = new Notfication();
-		
-		
-		//TODO: get login user details from session
-		notify.setSenderName("pranay"); 
-		notify.setSenderImg("person1.jpg");
-		notify.setSenderPost("Service Manager");
-		
-		notify.setReciverName(reciverName);
-		notify.setReciverPost(reciverPost);
-		notify.setReciverImg(reciverImg);
-		
-		DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy"); 
-		DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("hh:mm:ss a"); 
-		
-		notify.setSendDate(LocalDateTime.now().format(dateFormat));
-		notify.setSendTime(LocalDateTime.now().format(timeFormat));
-		
-		notify.setMessage(message);
-		
-		Notfication n = notificationInterface.saveNotfication(notify);
-		
-		if(n!=null) {
-			return "done";
-		}
-		
-		return null;
-		
-	}
 
 
 }
