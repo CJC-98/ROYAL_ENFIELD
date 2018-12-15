@@ -23,9 +23,9 @@
 		var reciverImg;
 	
 	
-		function markIt(id){
+		function markItAccount(id){
 			var req = new XMLHttpRequest();		
-			req.open("GET","markIt?notficationId="+id,true);
+			req.open("GET","markItAccount?notficationId="+id,true);
 			req.send();
 			
 		}
@@ -41,13 +41,13 @@
 				alert("Please enter employee name!!!");
 			}
 			//TODO: get login user name from session
-			else if(empName == "pranay"){
+			else if(empName == "akash"){
 				alert("You can't send notification to yourself!!!");
 			}
 			else{
 				var req = new XMLHttpRequest();
 				
-				req.open("GET","searchEmployee?empName="+empName,true);
+				req.open("GET","searchEmployeeAccount?empName="+empName,true);
 				req.send();
 				
 				req.onreadystatechange=function(){
@@ -86,7 +86,7 @@
 
 			if(msg!=""){
 				var req = new XMLHttpRequest();
-				req.open("GET","sendNotification?reciverName="+reciverName+
+				req.open("GET","sendNotificationAccount?reciverName="+reciverName+
 											  "&&reciverPost="+reciverPost+
 											  "&&reciverImg="+reciverImg+
 											  "&&message="+msg, true);
@@ -173,7 +173,7 @@
 																	    	<a data-toggle="class" class="btn btn-default btn-xs"> 
 			                                                					<i class="fa fa-star-o text-muted text"></i>
 																	    			 <i class="fa fa-star text-danger text-active"></i> 
-													     			    			 <span onclick="markIt(${data.notficationId})">Mark As Read</span>
+													     			    			 <span onclick="markItAccount(${data.notficationId})">Mark As Read</span>
 																	        </a>
 																	  </a:otherwise>
 																	</a:choose>			                         

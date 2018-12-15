@@ -98,33 +98,42 @@ public class AccountController {
 	}
 	
 
-	@RequestMapping(value="/MyNotificationsPage1")
+	@RequestMapping(value="/MyNotificationsPageAccount")
 	public String MyNotificationsPage(Model model){
-
-		//notificationInterface.saveNotfication(null);  
+		System.out.println("in myNotificationAccount controller..");
 		
 		//TODO: get login user name from session 
 		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("akash");
 		model.addAttribute("outboxList",outboxList);
-		
-		
+			
 		//TODO: get login user name from session 
 		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication("akash");
-		for(Notfication n : inboxList) {
-			System.out.println("name.." + n.getReciverName());
-		}
 		model.addAttribute("inboxList",inboxList);   
+
+		//TODO: get login user details from session
+		long inboxCount = notificationInterface.getInboxCount("akash", false);
+		model.addAttribute("inboxCount", inboxCount);
+		
+		//TODO: get login user details from session
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("akash", true);
+		for(Notfication n : shortInboxList) {
+			System.out.println("notify id.."+n.getNotficationId());
+			System.out.println("notify msg.." + n.getMessage() + n.getSenderName());
+		}
+		model.addAttribute("shortInboxList", shortInboxList);	
+		
 		model.addAttribute("link","myNotifications.jsp");	
 		return "Accounts/accountsIndex";
 	}
 	
 
 	
-	//Akash Code start here..
-	@RequestMapping(value="/markIt")    
+	
+	@RequestMapping(value="/markItAccount")    
 	public @ResponseBody String udpateNotification(@RequestParam int notficationId,Model model)throws IOException {
 		
 		notificationInterface.markAsRead(notificationInterface.getNotficationById(notficationId));
+		
 		//TODO: get login user name from session 
 		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("akash");
 		model.addAttribute("outboxList",outboxList);  
@@ -133,13 +142,21 @@ public class AccountController {
 		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication("akash");
 		model.addAttribute("inboxList",inboxList);   
 		
+		//TODO: get login user details from session
+		long inboxCount = notificationInterface.getInboxCount("akash", false);
+		model.addAttribute("inboxCount", inboxCount);
+		
+		//TODO: get login user details from session
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("akash", false);
+		model.addAttribute("shortInboxList", shortInboxList);
+		
 		model.addAttribute("link","myNotifications.jsp");	
 		return "Accounts/accountsIndex";
 
 	}
 	
 	
-	@RequestMapping(value="/searchEmployee")    
+	@RequestMapping(value="/searchEmployeeAccount")    
 	public @ResponseBody EmployeeDetails searchEmployee(@RequestParam String empName) {
 		
 		if(adminService.getEmployeeDetailsByName(empName)!=null) 
@@ -149,16 +166,19 @@ public class AccountController {
 
 	}
 	
-	@RequestMapping(value="/sendNotification")    
+	@RequestMapping(value="/sendNotificationAccount")    
 	public @ResponseBody String sendNotification(@RequestParam String reciverName, 
 												 @RequestParam String reciverPost,
 												 @RequestParam String reciverImg,
 												 @RequestParam String message,
 												 HttpServletResponse response, 
-												 Model model
-												 ) 
-	{	
-		Notfication notify = new Notfication();	
+												 Model model) {
+	
+		
+		
+		Notfication notify = new Notfication();
+		
+		
 		//TODO: get login user details from session
 		notify.setSenderName("akash"); 
 		notify.setSenderImg("person4.jpg");
