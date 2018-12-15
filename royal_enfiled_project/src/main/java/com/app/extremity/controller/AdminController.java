@@ -181,10 +181,15 @@ public class AdminController {
 	public String getAccessoriesStock(Model model)
 	{
 		List<AccessoriesStock> accessoriesStockList=adminService.getAccessoriesStock();
+		System.out.println(accessoriesStockList.get(0).getPartName());
 		model.addAttribute("accessoriesStockList", accessoriesStockList);
 		return "Admin/accessoriesStock";
 		
 	}
+	/*this method is used to getAccessoriesStock Details
+	 * 
+	 *  author: omprakash nagolkar 
+	 * */
 	
    /* @RequestMapping(value="/bikeOffer")
 	 public String getBikeOffer(Model model)
@@ -393,7 +398,7 @@ public class AdminController {
 	{
 		System.out.println("in controller");
 		List<DeadStock> deadStockList=adminService.getDeadStock();
-		for(DeadStock deadStock:deadStockList )
+		/*for(DeadStock deadStock:deadStockList )
 		{
 			System.out.println(deadStock.getDeadStockId());
 			System.out.println(deadStock.getDeadBikeStock().getBikeId());
@@ -403,7 +408,7 @@ public class AdminController {
 			System.out.println(deadStock.getDeadBikeStock().getChasisNumber());
 			System.out.println(deadStock.getDeadBikeStock().getEngineStartingType());
 			System.out.println(deadStock.getDeadBikeStock().getWheelType());
-		}
+		}*/
 		model.addAttribute("deadStockList", deadStockList);
 		return "Admin/deadBikeStock";
 		

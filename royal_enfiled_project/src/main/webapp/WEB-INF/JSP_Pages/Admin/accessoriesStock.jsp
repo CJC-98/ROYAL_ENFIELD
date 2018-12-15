@@ -370,15 +370,13 @@
                                     </tr>
                                   </thead>
                                   <tbody>
-                                  <c:forEach items="${ accessoriesStockList}" var="accessoriesStock">
+                                  <c:forEach items="${accessoriesStockList}" var="accessoriesStock">
                                     <tr role="row" class="odd">
                                     <td class="sorting"></td>
-                                   
                                     <td>${accessoriesStock.partName}</td>
                                     <td>${accessoriesStock.partPrice}</td>
                                     <td>${accessoriesStock.partQuantity}</td>
-                                   
-                                  </tr>
+                                    </tr>
                                   </c:forEach>
                                   </tbody>
                                   <tfoot>

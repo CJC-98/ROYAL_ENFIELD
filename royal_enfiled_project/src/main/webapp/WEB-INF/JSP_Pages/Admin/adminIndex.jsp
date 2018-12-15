@@ -220,6 +220,9 @@
                                                     <li> <a href="userlist.html" class="active">
                                                             <i class="fa fa-angle-right"></i> 
                                                              <span>User</span> </a> </li>
+                                                    <li> <a href="offerlist.html" class="active">
+                                                            <i class="fa fa-angle-right"></i> 
+                                                             <span>Offer</span> </a> </li>
                                                 </ul>
                                             
                                         </li>

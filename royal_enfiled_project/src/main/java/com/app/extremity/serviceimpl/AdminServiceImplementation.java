@@ -366,7 +366,7 @@ public  class AdminServiceImplementation implements IAdminService {
 	@Override
 	public List<AccessoriesStock> getAccessoriesStock() {
 		// TODO Auto-generated method stub
-		return null;
+		return (List<AccessoriesStock>) accessoriesStockIDao.findAll();
 	}
 
 	@Override
