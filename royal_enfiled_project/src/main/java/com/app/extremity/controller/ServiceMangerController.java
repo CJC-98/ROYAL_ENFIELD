@@ -419,6 +419,11 @@ public class ServiceMangerController {
 		
 		notify.setMessage(message);
 		
+		System.out.println(session.getAttribute("currentUserName").toString());
+		System.out.println(session.getAttribute("currentUserImg").toString());
+		System.out.println(session.getAttribute("currentUserPost").toString());
+		System.out.println(reciverName);
+		
 		Notfication n = notificationInterface.saveNotfication(notify);
 		
 		if(n!=null) {
