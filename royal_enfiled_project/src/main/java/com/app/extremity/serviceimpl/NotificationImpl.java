@@ -77,6 +77,16 @@ public class NotificationImpl implements NotificationInterface{
 		return true;
 	}
 
+	@Override
+	public long getInboxCount(String reciverName, boolean markAsRead) {
+		return notficationIDao.countByReciverNameAndMarkAsRead(reciverName, markAsRead);
+	}
+
+	@Override
+	public List<Notfication> getMyNotReadedInboxNotfication(String reciverName, boolean markAsRead) {
+		return notficationIDao.findAllByReciverNameAndMarkAsRead(reciverName, markAsRead);
+	}
+
 
 	 
 }
