@@ -99,7 +99,7 @@ public class ServiceMangerController {
 		System.out.println("name "+session.getAttribute("currentUserPost"));
 		System.out.println("name "+session.getAttribute("currentUserImg"));
 
-		
+		   
 		
 		long sscount=serviceManagerInterface.getAllServiceCountByServiceStatus("waiting");
 		model.addAttribute("approvedServiceCount",sscount);
