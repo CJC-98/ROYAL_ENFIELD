@@ -95,11 +95,11 @@ public class ServiceMangerController {
 		
 		session = request.getSession();
 		
-		System.out.println("name "+session.getAttribute("currentUserName"));
+		/*System.out.println("name "+session.getAttribute("currentUserName"));
 		System.out.println("name "+session.getAttribute("currentUserPost"));
 		System.out.println("name "+session.getAttribute("currentUserImg"));
 
-		   
+		   */
 		
 		long sscount=serviceManagerInterface.getAllServiceCountByServiceStatus("waiting");
 		model.addAttribute("approvedServiceCount",sscount);
@@ -321,25 +321,21 @@ public class ServiceMangerController {
 		session = request.getSession();
 		
 		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication(session.getAttribute("currentUserName").toString());
-
-		model.addAttribute("outboxList",outboxList);
-			
-
+      model.addAttribute("outboxList",outboxList);
+	
 		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication(session.getAttribute("currentUserName").toString());
-
-		model.addAttribute("inboxList",inboxList);   
+ 	   model.addAttribute("inboxList",inboxList);   
 
 
 		
 		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
-
-		model.addAttribute("inboxCount", inboxCount);
+     	model.addAttribute("inboxCount", inboxCount);
 		
-		List<Notfication>shortInboxList=notificationInterface.getMyNotReadedInboxNotfication("chaitali", false);
+		List<Notfication>shortInboxList=notificationInterface.getMyNotReadedInboxNotfication("currentUserName", false);
+		System.out.println(session.getAttribute("currentUserName").toString());
 		
     	model.addAttribute("shortInboxList", shortInboxList);	
-		
-		model.addAttribute("link","myNotifications.jsp");	
+			model.addAttribute("link","myNotifications.jsp");	
 		return "ServiceManager/serviceManagerIndex";
 	}
 	
@@ -372,7 +368,9 @@ public class ServiceMangerController {
 		
 
 		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
-     	model.addAttribute("shortInboxList", shortInboxList);
+     	
+		
+		model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","myNotifications.jsp");	
 		return "ServiceManager/serviceManagerIndex";
