@@ -1,5 +1,7 @@
 package com.app.extremity.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.app.extremity.iservice.IAdminService;
 import com.app.extremity.model.EmailMessage;
 import com.app.extremity.model.EmployeeDetails;
+import com.app.extremity.model.SoldOldBikeStock;
 
 
 
@@ -62,6 +65,8 @@ public class AdminController {
 		adminService.saveEmployee(employeeDetails,profilePic);
 		return "login";
 	}
+	
+	
 	
 	
 	
