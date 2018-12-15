@@ -11,7 +11,6 @@ import com.app.extremity.model.BikeServicing;
 @Repository
 public interface BikeServicingIDao extends CrudRepository<BikeServicing, String>{
 
-	
-	public long countByservcingStatus(String servcingStatus); 
+	public long countByservcingStatus(String servcingStatus);  
 
 }
