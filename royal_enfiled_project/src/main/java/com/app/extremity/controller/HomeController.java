@@ -1,5 +1,12 @@
 package com.app.extremity.controller;
 
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,9 +14,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.app.extremity.iservice.IAdminService;
 import com.app.extremity.iservice.IHomeService;
+import com.app.extremity.iservice.NotificationInterface;
+import com.app.extremity.model.EmployeeDetails;
+import com.app.extremity.model.Notfication;
 
 
 
@@ -25,6 +36,8 @@ public class HomeController {
 	static Logger logger = LogManager.getLogger(HomeController.class);
 	@Autowired
 	IAdminService adminService;
+	
+	
 
 	    
 	// All site actions are go through this method
@@ -124,4 +137,9 @@ public class HomeController {
 		System.out.println("In service controller");
 		return "";
 	}
+	
+	
+
+
+
 }
