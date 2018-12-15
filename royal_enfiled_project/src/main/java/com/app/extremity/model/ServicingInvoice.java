@@ -18,17 +18,27 @@ public class ServicingInvoice {
 	
 	private double totalAmount;
 	
-	private double serviceGstPercent;
+	private double serviceCGstPercent;
+	
+	private double serviceSGstPercent;
 	
 	private String paymentStatus = "unpaid";  //OR paid
 	
 	
 	
-	public double getServiceGstPercent() {
-		return serviceGstPercent;
+	
+	
+	public double getServiceCGstPercent() {
+		return serviceCGstPercent;
 	}
-	public void setServiceGstPercent(double serviceGstPercent) {
-		this.serviceGstPercent = serviceGstPercent;
+	public void setServiceCGstPercent(double serviceCGstPercent) {
+		this.serviceCGstPercent = serviceCGstPercent;
+	}
+	public double getServiceSGstPercent() {
+		return serviceSGstPercent;
+	}
+	public void setServiceSGstPercent(double serviceSGstPercent) {
+		this.serviceSGstPercent = serviceSGstPercent;
 	}
 	public int getServicingInvoiceId() {
 		return servicingInvoiceId;

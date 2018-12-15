@@ -14,6 +14,15 @@
 </head>
 
 <body>
+
+
+	<script>
+		function submitWork(){
+			alert("your work is submitted");
+		}
+	</script>
+	
+
 	<section id="content"  class="bg-light lter">
 	        <section class="vbox">
 	            <section class="scrollable padder">                                               
@@ -30,7 +39,8 @@
                              <section class="panel panel-default">
                                           <header class="panel-heading bg-dark lter" style="font-size: 20px; color: white; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
                                           	Bullet 350cc (MH-12-HF-6454)
-                                          	<a href="" class="btn btn-md btn-warning rounded m-r">Submit Work</a>
+
+                                          	<a class="btn btn-md btn-warning rounded m-r" onclick="submitWork()">Submit Work</a>
                                           </header>
                                                 
                                           <table class="table table-striped m-b-none">
@@ -38,7 +48,7 @@
                                                 <thead>
                                                                 
                                                      <tr>   
-                                                         <th style="text-align: center;">Service Id</th>
+                                                         <th style="text-align: center;">Part Id</th>
                                                          <th style="text-align: center;">Work</th>
                                                          <th style="text-align: center;">Cost</th>
                                                          <th style="text-align: center;">Check</th>
@@ -50,7 +60,7 @@
                                                       <tr style="text-align: center;">
                                                          <td>1</td>
                                                          <td>labour cost</td>
-                                                         <td>600</td>
+                                                         <td>500</td>
                                                          <td>
                                                          	<div class="checkbox"> 
                                                          		<label style="color: #88C800">
@@ -62,7 +72,7 @@
                                                       
                                                       <tr style="text-align: center;">
                                                          <td>2</td>
-                                                         <td>tail light</td>
+                                                         <td>tail light clean</td>
                                                          <td>2020</td>
                                                          <td>
                                                          	<div class="checkbox"> 
@@ -77,7 +87,7 @@
                                                       
                                                       <tr style="text-align: center;">
                                                          <td>4</td>
-                                                         <td>brake change</td>
+                                                         <td>brake clean</td>
                                                          <td>500</td>
                                                          <td>
                                                          	<div class="checkbox"> 
@@ -90,7 +100,7 @@
                                                       
                                                       <tr style="text-align: center;">
                                                          <td>5</td>
-                                                         <td>silence change</td>
+                                                         <td>silence clean</td>
                                                          <td>150</td>
                                                          <td>
                                                          	<div class="checkbox"> 
@@ -117,7 +127,7 @@
                              <section class="panel panel-default">
                                           <header class="panel-heading bg-dark lter" style="color: white; font-size: 20px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
                                           	Bullet 350cc (MH12546HF6454)
-                                          	<a href="" class="btn btn-md btn-warning rounded m-r">Submit Work</a>
+                                          	<a class="btn btn-md btn-warning rounded m-r" onclick="submitWork()">Submit Work</a>
                                           </header>
                                                 
                                           <table class="table table-striped m-b-none">
@@ -125,7 +135,7 @@
                                                 <thead>
                                                                 
                                                      <tr>   
-                                                         <th style="text-align: center;">Service Id</th>
+                                                         <th style="text-align: center;">Part Id</th>
                                                          <th style="text-align: center;">Work</th>
                                                          <th style="text-align: center;">Cost</th>
                                                          <th style="text-align: center;">Check</th>
@@ -149,7 +159,7 @@
                                                       
                                                       <tr style="text-align: center;">
                                                          <td>2</td>
-                                                         <td>tail light</td>
+                                                         <td>tail light clean</td>
                                                          <td>2020</td>
                                                          <td>
                                                          	<div class="checkbox"> 
@@ -164,7 +174,7 @@
                                                       
                                                       <tr style="text-align: center;">
                                                          <td>4</td>
-                                                         <td>brake change</td>
+                                                         <td>brake clean</td>
                                                          <td>500</td>
                                                          <td>
                                                          	<div class="checkbox"> 
@@ -177,7 +187,8 @@
                                                       
                                                       <tr style="text-align: center;">
                                                          <td>5</td>
-                                                         <td>silence change</td>
+                                                         <td>silence clean</td>
+
                                                          <td>150</td>
                                                          <td>
                                                          	<div class="checkbox"> 
@@ -204,5 +215,6 @@
 	        </section>
 	 </section> 
 	
+
 </body>
 </html>

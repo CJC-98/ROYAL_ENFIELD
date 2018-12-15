@@ -14,8 +14,13 @@ public class FreeServicingCount{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int freeServicingCountId;
+	
 	private String chassisNumber;
+	
 	private int freeServicingCount;
+	
+	
+	
 	
 	
 	public int getFreeServicingCountId() {

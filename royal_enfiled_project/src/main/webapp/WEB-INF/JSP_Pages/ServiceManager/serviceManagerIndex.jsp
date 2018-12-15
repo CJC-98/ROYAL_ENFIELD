@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="a" uri="http://java.sun.com/jsp/jstl/core"%>  
 <!DOCTYPE html">
 <html lang="en" class="app">
 <head>
@@ -24,23 +25,27 @@
            
             <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user">
                 <li class="hidden-xs"> <a href="#" class="dropdown-toggle dk" data-toggle="dropdown"> <i class="fa fa-bell"></i>
-                        <span class="badge badge-sm up bg-danger m-l-n-sm count">2</span> </a>
+                        <span class="badge badge-sm up bg-danger m-l-n-sm">${inboxCount}</span> </a>
                     <section class="dropdown-menu aside-xl">
                         <section class="panel bg-white">
-                            <header class="panel-heading b-light bg-light"> <strong>You have <span class="count">2</span>
-                                    notifications</strong> </header>
-                            <div class="list-group list-group-alt animated fadeInRight"> <a href="#" class="media list-group-item">
-                                    <span class="pull-left thumb-sm"> <img src="images/avatar.jpg" alt="John said"
-                                            class="img-circle"> </span> <span class="media-body block m-b-none"> Use
-                                        awesome animate.css<br> <small class="text-muted">10 minutes ago</small> </span>
-                                </a> <a href="#" class="media list-group-item"> <span class="media-body block m-b-none">
-                                        1.0 initial released<br> <small class="text-muted">1 hour ago</small> </span>
-                                </a> </div>
-                            <footer class="panel-footer text-sm"> <a href="#" class="pull-right"><i class="fa fa-cog"></i></a>
-                                <a href="#notes" data-toggle="class:show animated fadeInRight">See all the
-                                    notifications</a> </footer>
-                        </section>
-                    </section>
+                            <header class="panel-heading b-light bg-light"> 
+                            	<strong>You have <span class="">${inboxCount}</span>&nbsp;notifications</strong> 
+                            </header>
+                           <div class=" list-group-alt animated fadeInRight"> 
+                           
+                           	<a:forEach var="data" items="${shortInboxList}">
+                            	<a href="MyNotificationsPage" class="media list-group-item">
+                                    <span class="pull-left thumb-sm"> 
+                                    	<img src="${pageContext.request.contextPath}/Resources/images/EmployeeProfilePicture/${data.senderImg}" alt="John said" class="img-circle"> 
+                                    </span> 
+                                    <span class="media-body block m-b-none"><strong>${data.senderName}</strong>&nbsp;&nbsp;${data.message}<br> 
+                                    	<small class="text-muted">${data.sendDate}</small> 
+                                    </span>
+                                </a> 
+                            </a:forEach>
+                         </div>
+                      </section>
+                  </section>
                 </li>
                 <li class="dropdown hidden-xs"> <a href="#" class="dropdown-toggle dker" data-toggle="dropdown"><i
                             class="fa fa-fw fa-search"></i></a>
@@ -176,7 +181,7 @@
                                                 </li> 
                                             </ul>
                                             
-                                            <ul class="nav lt">
+                                            <ul class="nav lt">  
                                                 <li> 
                                                 	<a href="BikeCustomizationRecordsPage"> 
                                                 		<i class="fa fa-angle-right"></i> 
