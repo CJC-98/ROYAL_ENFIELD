@@ -63,8 +63,8 @@
                 </li>
                 <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 	<span class="thumb-sm avatar pull-left">
-                            <img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/avatar.jpg"> 
-                            </span> John.Smith <b class="caret"></b> </a>
+                            <img src="${pageContext.request.contextPath}/Resources/images/EmployeeProfilePicture/${currentUserImg}"> 
+                            </span> ${currentUserName} <b class="caret"></b> </a>
                     <ul class="dropdown-menu animated fadeInRight"> <span class="arrow top"></span>
                         <li> <a href="#">Settings</a> </li>
                         <li> <a href="profile.html">Profile</a> </li>

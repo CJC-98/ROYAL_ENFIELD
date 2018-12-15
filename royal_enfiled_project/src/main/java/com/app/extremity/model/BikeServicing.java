@@ -30,8 +30,6 @@ public class BikeServicing {
 	@OneToOne(cascade=CascadeType.ALL)
 	private ServicingInvoice servicingInvoice;
 	
-
-	
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<ServicingChart> servicingChart = new ArrayList();
 

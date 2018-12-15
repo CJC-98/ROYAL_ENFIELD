@@ -14,10 +14,10 @@ public interface ServiceManagerInterface {
 	public String getNextBikeServicingId();
 	
 
+	public long getAllServiceCount();
+	public long getAllCustomizationCount();
 	public long getAllServiceCountByServiceStatus(String serviceStatus);
 	public BikeServicing saveBikeServicing(BikeServicing bikeServicing);
 
-
-	public long getAllServiceCount();
 		
 }
