@@ -14,7 +14,7 @@ public interface IAdminService {
 
 	void sendEmail(EmailMessage emailmessage, MultipartFile file);
 
-	List<SoldOldBikeStock> getSoldOldBikeStock();
+	EmployeeDetails getEmployeeDetailsByName(String employeeName);
 
 
 }
