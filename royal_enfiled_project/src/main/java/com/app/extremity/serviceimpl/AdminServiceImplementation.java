@@ -152,10 +152,12 @@ public class AdminServiceImplementation implements IAdminService {
 
 			logger.info("Email has been send to the employee", emailmessage);
 
+
 		} catch (MessagingException e) {
 
 			logger.error("exception While sending Email", e);
 			e.printStackTrace();
+
 		} catch (IOException e) {
 
 			logger.error("file not found exception", e);
@@ -179,12 +181,10 @@ public class AdminServiceImplementation implements IAdminService {
 	}
 
 	@Override
-	public List<SoldOldBikeStock> getSoldOldBikeStock() {
-		// TODO Auto-generated method stub
-		return (List<SoldOldBikeStock>) soldOldBikeStockDao.findAll();
+
+	public EmployeeDetails getEmployeeDetailsByName(String employeeName) {
+		return employeeDetailsDao.findOneByEmployeeName(employeeName);
 	}
 
-	
 
-	
 }

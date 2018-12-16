@@ -15,12 +15,14 @@
 
 <body>
 
+
 	<script>
 		function submitWork(){
 			alert("your work is submitted");
 		}
 	</script>
 	
+
 	<section id="content"  class="bg-light lter">
 	        <section class="vbox">
 	            <section class="scrollable padder">                                               
@@ -37,6 +39,7 @@
                              <section class="panel panel-default">
                                           <header class="panel-heading bg-dark lter" style="font-size: 20px; color: white; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
                                           	Bullet 350cc (MH-12-HF-6454)
+
                                           	<a class="btn btn-md btn-warning rounded m-r" onclick="submitWork()">Submit Work</a>
                                           </header>
                                                 
@@ -185,6 +188,7 @@
                                                       <tr style="text-align: center;">
                                                          <td>5</td>
                                                          <td>silence clean</td>
+
                                                          <td>150</td>
                                                          <td>
                                                          	<div class="checkbox"> 
@@ -211,6 +215,6 @@
 	        </section>
 	 </section> 
 	
-	 
+
 </body>
 </html>

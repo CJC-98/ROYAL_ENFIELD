@@ -1,5 +1,7 @@
 package com.app.extremity.model;
 
+import java.util.Date;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,6 +26,8 @@ private EngineCapacity bikeEngineCapacity; //350cc or 500cc
 private String chasisNumber;
 private String bikewheel;//alloy wheel,spoke
 private String bikeOnRoadPrice;
+private Date soldbikedate;
+
 private String engineStartingType;//kick or Self Start
 private String invoice;//bill genertion
 //@ManyToOne(cascade=CascadeType.ALL)
@@ -33,6 +37,13 @@ public String getStockId() {
 }
 public void setStockId(String stockId) {
 	this.stockId = stockId;
+}
+
+public Date getSoldbikedate() {
+	return soldbikedate;
+}
+public void setSoldbikedate(Date soldbikedate) {
+	this.soldbikedate = soldbikedate;
 }
 
 public BikeModel getBikeModel() {
