@@ -1,17 +1,8 @@
  package com.app.extremity.controller;
 
-import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
-import java.util.List;
-
-import javax.management.Notification;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -20,15 +11,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.app.extremity.iservice.IAdminService;
 import com.app.extremity.iservice.IHomeService;
-
-import com.app.extremity.iservice.NotificationInterface;
 import com.app.extremity.iservice.ServiceManagerInterface;
-import com.app.extremity.model.EmployeeDetails;
-import com.app.extremity.model.Notfication;
 import com.app.extremity.serviceimpl.Account_ServiceImpl;
 
 
@@ -117,7 +102,7 @@ public class HomeController {
 				fds = new SimpleDateFormat("yyyy-MM-dd").parse("2018-01-01");
 				lds = new SimpleDateFormat("yyyy-MM-dd").parse("2018-12-31");
 			} catch (ParseException e) {
-				// TODO Auto-generated catch block
+				
 				e.printStackTrace();
 			}
 			

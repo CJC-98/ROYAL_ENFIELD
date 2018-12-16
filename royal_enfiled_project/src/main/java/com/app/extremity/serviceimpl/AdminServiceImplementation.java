@@ -25,12 +25,30 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.app.extremity.idao.AccessoriesDeadStockIDao;
+import com.app.extremity.idao.AccessoriesStockIDao;
+import com.app.extremity.idao.BikeOfferIDao;
+import com.app.extremity.idao.CustomizationInvoiceIDao;
+import com.app.extremity.idao.DeadStockIDao;
 import com.app.extremity.idao.EmployeeDetailsIDao;
+import com.app.extremity.idao.NewBikeStockIDao;
+import com.app.extremity.idao.OldBikeStockIDao;
+import com.app.extremity.idao.ServcingBikeInfoIDao;
 import com.app.extremity.idao.SoldOldBikeStockIDao;
+import com.app.extremity.idao.TestDriveCustomerIDao;
 import com.app.extremity.iservice.IAdminService;
+import com.app.extremity.model.AccessoriesDeadStock;
+import com.app.extremity.model.AccessoriesStock;
+import com.app.extremity.model.BikeOffer;
+import com.app.extremity.model.CustomizationInvoice;
+import com.app.extremity.model.DeadStock;
 import com.app.extremity.model.EmailMessage;
 import com.app.extremity.model.EmployeeDetails;
-import com.app.extremity.model.SoldOldBikeStock;
+import com.app.extremity.model.NewBikeStock;
+import com.app.extremity.model.OldBikeStock;
+import com.app.extremity.model.ServcingBikeInfo;
+import com.app.extremity.model.TestDriveCustomer;
 
 @Service
 public class AdminServiceImplementation implements IAdminService {
@@ -41,9 +59,26 @@ public class AdminServiceImplementation implements IAdminService {
 
 	@Autowired
 	EmployeeDetailsIDao employeeDetailsDao;
-		@Autowired
+	@Autowired
+	NewBikeStockIDao newBikeStockIDao;
+	@Autowired
+	OldBikeStockIDao oldBikeStockIDao;
+	@Autowired
 	SoldOldBikeStockIDao soldOldBikeStockDao;
-	
+	@Autowired
+	AccessoriesStockIDao accessoriesStockIDao;
+	@Autowired
+	DeadStockIDao deadStockIDao;
+	@Autowired
+	AccessoriesDeadStockIDao accessoriesDeadStockIDao;
+	@Autowired
+	BikeOfferIDao bikeOfferIDao;
+	@Autowired
+	CustomizationInvoiceIDao customizationInvoiceIDao;
+	@Autowired
+	ServcingBikeInfoIDao servcingBikeInfoIDao;
+	@Autowired
+	TestDriveCustomerIDao testDriveCustomerIDao;
 
 	static Logger logger = LogManager.getLogger(AdminServiceImplementation.class);
 
@@ -69,8 +104,8 @@ public class AdminServiceImplementation implements IAdminService {
 			logger.error("error creating upload directory");
 		}
 
-	}	
-	
+	}
+
 	/*
 	 * this method is used to save Employee Details
 	 * 
@@ -152,7 +187,6 @@ public class AdminServiceImplementation implements IAdminService {
 
 			logger.info("Email has been send to the employee", emailmessage);
 
-
 		} catch (MessagingException e) {
 
 			logger.error("exception While sending Email", e);
@@ -181,10 +215,68 @@ public class AdminServiceImplementation implements IAdminService {
 	}
 
 	@Override
-
 	public EmployeeDetails getEmployeeDetailsByName(String employeeName) {
 		return employeeDetailsDao.findOneByEmployeeName(employeeName);
 	}
 
+	@Override
+	public List<NewBikeStock> getNewBikeStock() {
+
+		return (List<NewBikeStock>) newBikeStockIDao.findAll();
+	}
+
+	@Override
+	public List<OldBikeStock> getOldBikeStock() {
+
+		return (List<OldBikeStock>) oldBikeStockIDao.findAll();
+	}
+
+	@Override
+	public List<AccessoriesStock> getAccessoriesStock() {
+		
+		return (List<AccessoriesStock>) accessoriesStockIDao.findAll();
+	}
+
+	@Override
+	public List<DeadStock> getDeadStock() {
+
+		return (List<DeadStock>) deadStockIDao.findAll();
+	}
+
+	@Override
+	public List<AccessoriesDeadStock> getAccessoriesDeadStock() {
+
+		return (List<AccessoriesDeadStock>) accessoriesDeadStockIDao.findAll();
+	}
+
+	@Override
+	public List<EmployeeDetails> getEmployeelist() {
+
+		return null;
+	}
+
+	@Override
+	public List<BikeOffer> getBikeOffer() {
+
+		return (List<BikeOffer>) bikeOfferIDao.findAll();
+	}
+
+	@Override
+	public List<CustomizationInvoice> getCustomizationInvoice() {
+		
+		return (List<CustomizationInvoice>) customizationInvoiceIDao.findAll();
+	}
+
+	@Override
+	public List<ServcingBikeInfo> getServcingBikeInfo() {
+		
+		return (List<ServcingBikeInfo>) servcingBikeInfoIDao.findAll();
+	}
+
+	@Override
+	public List<TestDriveCustomer> getTestDriveCustomer() {
+	
+		return (List<TestDriveCustomer>) testDriveCustomerIDao.findAll();
+	}
 
 }

@@ -46,6 +46,10 @@ public class HomeServiceImplementation implements IHomeService {
 				return 4;
 
 			}
+			
+		}
+		else {
+			
 		}
 		return 0;
 	}
