@@ -6,6 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Date;
+import java.util.List;
 import java.util.Properties;
 
 import javax.mail.Message;
@@ -25,9 +26,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import com.app.extremity.idao.EmployeeDetailsIDao;
+import com.app.extremity.idao.SoldOldBikeStockIDao;
 import com.app.extremity.iservice.IAdminService;
 import com.app.extremity.model.EmailMessage;
 import com.app.extremity.model.EmployeeDetails;
+import com.app.extremity.model.SoldOldBikeStock;
 
 @Service
 public class AdminServiceImplementation implements IAdminService {
@@ -38,6 +41,9 @@ public class AdminServiceImplementation implements IAdminService {
 
 	@Autowired
 	EmployeeDetailsIDao employeeDetailsDao;
+		@Autowired
+	SoldOldBikeStockIDao soldOldBikeStockDao;
+	
 
 	static Logger logger = LogManager.getLogger(AdminServiceImplementation.class);
 
@@ -134,7 +140,7 @@ public class AdminServiceImplementation implements IAdminService {
 				Multipart multipart = new MimeMultipart();
 				multipart.addBodyPart(messageBodyPart);
 				MimeBodyPart attachPart = new MimeBodyPart();
-				attachPart.attachFile((File) file);
+				attachPart.attachFile(UPLOADED_FOLDER + file.getOriginalFilename());
 				String html = "<a href='http://localhost:8080/employeeRegistration'>Register here</a>";
 				messageBodyPart.setText(html, "UTF-8", "html");
 				multipart.addBodyPart(attachPart);
@@ -175,8 +181,10 @@ public class AdminServiceImplementation implements IAdminService {
 	}
 
 	@Override
+
 	public EmployeeDetails getEmployeeDetailsByName(String employeeName) {
 		return employeeDetailsDao.findOneByEmployeeName(employeeName);
 	}
+
 
 }
