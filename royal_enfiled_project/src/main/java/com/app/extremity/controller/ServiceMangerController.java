@@ -10,7 +10,6 @@ import java.util.ArrayList;
 
 import java.io.IOException;
 
-
 import java.util.List;
 
 import javax.management.Notification;
@@ -50,7 +49,6 @@ import com.app.extremity.model.ServicingInvoice;
 @Controller
 public class ServiceMangerController {
 	
-
 
 	static Logger logger = LogManager.getLogger(ServiceMangerController.class);
 	
@@ -119,11 +117,13 @@ public class ServiceMangerController {
 		//test data for notification
 		Notfication notify = new Notfication();
 		
-		notify.setSenderName("samir");
+
+		notify.setSenderName("Siddhi");
 		notify.setSenderImg("person2.jpg");
 		notify.setSenderPost("accounts manager");
 		
-		notify.setReciverName("pranay");
+
+		notify.setReciverName("Chaitali");
 		notify.setReciverImg("person1.jpg");
 		notify.setReciverPost("service manger");
 		
@@ -157,11 +157,14 @@ public class ServiceMangerController {
 	
 		long cscount=serviceManagerInterface.getAllServiceCountByServiceStatus("done");
 		model.addAttribute("completedservices", cscount);
-		
+
 		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
+
 		model.addAttribute("inboxCount", inboxCount);
 		
+
 		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
+
 		model.addAttribute("shortInboxList", shortInboxList);
 
 
@@ -178,11 +181,15 @@ public class ServiceMangerController {
 		session = request.getSession();
 	
 
+
 		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
+
 		model.addAttribute("inboxCount", inboxCount);
 		
+
 		
 		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
+
 		model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","approvedServices.jsp");
@@ -192,11 +199,15 @@ public class ServiceMangerController {
 	@RequestMapping(value="/ServicesInprogressPage")
 	public String ServicesInprogressPage(Model model,HttpServletRequest request){
 		
+
 		session = request.getSession();
 		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
-		model.addAttribute("inboxCount", inboxCount);
+     	model.addAttribute("inboxCount", inboxCount);
 		
+
+	
 		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
+
 		model.addAttribute("shortInboxList", shortInboxList);
 		
 		List<BikeServicing>bikeServicingList = serviceManagerInterface.getAllBikeServicingByServcingStatus("in-progress");
@@ -219,15 +230,17 @@ public class ServiceMangerController {
 	
 	@RequestMapping(value="/ApprovedCustomizationPage")
 	public String ApprovedCustomizationPage(Model model,HttpServletRequest request){
-		
+
 		session = request.getSession();
 
 		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
+
 		model.addAttribute("inboxCount", inboxCount);
 		
 
+		
 		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
-		model.addAttribute("shortInboxList", shortInboxList);
+    	model.addAttribute("shortInboxList", shortInboxList);
 		
 		
 		
@@ -238,6 +251,7 @@ public class ServiceMangerController {
 	@RequestMapping(value="/CustomizationInprogressPage")
 	public String CustomizationInprogressPage(Model model,HttpServletRequest request){
 		
+
 		session = request.getSession();
 
 		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
@@ -256,14 +270,16 @@ public class ServiceMangerController {
 	@RequestMapping(value="/BikeServicesRecordsPage")
 	public String BikeServicesRecordsPage(Model model,HttpServletRequest request){
 		
+
 		session = request.getSession();
 		
 		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
-		model.addAttribute("inboxCount", inboxCount);
+	model.addAttribute("inboxCount", inboxCount);
 		
+
 		
 		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
-		model.addAttribute("shortInboxList", shortInboxList);
+        model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","bikeServicesRecords.jsp");
 		return "ServiceManager/serviceManagerIndex";
@@ -272,13 +288,16 @@ public class ServiceMangerController {
 	@RequestMapping(value="/BikeCustomizationRecordsPage")
 	public String BikeCustomizationRecordsPage(Model model,HttpServletRequest request){
 		
+
 		session = request.getSession();
 		
 		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
-		model.addAttribute("inboxCount", inboxCount);
+	model.addAttribute("inboxCount", inboxCount);
+
+	
 	
 		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
-		model.addAttribute("shortInboxList", shortInboxList);
+        model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","bikeCustomizationRecords.jsp");
 		return "ServiceManager/serviceManagerIndex";
@@ -287,14 +306,16 @@ public class ServiceMangerController {
 	@RequestMapping(value="/AvailableServicesPage")
 	public String AvailableServicesPagePage(Model model,HttpServletRequest request){
 		
+
 		session = request.getSession();
 	
 		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
-		model.addAttribute("inboxCount", inboxCount);
+	model.addAttribute("inboxCount", inboxCount);
 		
+
 		
 		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
-		model.addAttribute("shortInboxList", shortInboxList);
+    	model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","availableServicing.jsp");
 		return "ServiceManager/serviceManagerIndex";
@@ -303,14 +324,16 @@ public class ServiceMangerController {
 	@RequestMapping(value="/AvailableCustomizationPage")
 	public String AvailableCustomizationPage(Model model,HttpServletRequest request){
 		
+
 		session = request.getSession();
 		
 		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
-		model.addAttribute("inboxCount", inboxCount);
-		
+ 	   model.addAttribute("inboxCount", inboxCount);
+	 	
+
 		
 		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
-		model.addAttribute("shortInboxList", shortInboxList);
+    	model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","availableCustomization.jsp");
 		return "ServiceManager/serviceManagerIndex";
@@ -319,13 +342,15 @@ public class ServiceMangerController {
 	@RequestMapping(value="/ServicesInvoicePage")
 	public String ServicesInvoicePage(Model model,HttpServletRequest request){
 		
+
 		session = request.getSession();
 		
 		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
-		model.addAttribute("inboxCount", inboxCount);
+     	model.addAttribute("inboxCount", inboxCount);
+
 
 		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
-		model.addAttribute("shortInboxList", shortInboxList);
+    	model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","servicesInvoice.jsp");
 		return "ServiceManager/serviceManagerIndex";
@@ -334,6 +359,8 @@ public class ServiceMangerController {
 	@RequestMapping(value="/CustomizationInvoicePage")
 	public String CustomizationInvoicePage(Model model,HttpServletRequest request){
 
+
+		
 		session = request.getSession();	
 
 		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
@@ -341,7 +368,7 @@ public class ServiceMangerController {
 		
 	
 		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
-		model.addAttribute("shortInboxList", shortInboxList);
+	model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","customizationInvoice.jsp");
 		return "ServiceManager/serviceManagerIndex";
@@ -353,22 +380,27 @@ public class ServiceMangerController {
 	@RequestMapping(value="/MyNotificationsPage")
 	public String MyNotificationsPage(Model model,HttpServletRequest request){
 		
+
 		session = request.getSession();
 		
 		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication(session.getAttribute("currentUserName").toString());
+
 		model.addAttribute("outboxList",outboxList);
 			
 
 		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication(session.getAttribute("currentUserName").toString());
+
 		model.addAttribute("inboxList",inboxList);   
 
 
+		
 		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
+
 		model.addAttribute("inboxCount", inboxCount);
 		
-
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("pranay", false);
-		model.addAttribute("shortInboxList", shortInboxList);	
+		List<Notfication>shortInboxList=notificationInterface.getMyNotReadedInboxNotfication("chaitali", false);
+		
+    	model.addAttribute("shortInboxList", shortInboxList);	
 		
 		model.addAttribute("link","myNotifications.jsp");	
 		return "ServiceManager/serviceManagerIndex";
@@ -383,21 +415,27 @@ public class ServiceMangerController {
 		session = request.getSession();
 		
 		notificationInterface.markAsRead(notificationInterface.getNotficationById(notficationId));
-		
+
 
 		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication(session.getAttribute("currentUserName").toString());
+
 		model.addAttribute("outboxList",outboxList);  
 		
+
+
 
 		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication(session.getAttribute("currentUserName").toString());
 		model.addAttribute("inboxList",inboxList);   
 		
+
 	
 		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
+
 		model.addAttribute("inboxCount", inboxCount);
 		
+
 		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
-		model.addAttribute("shortInboxList", shortInboxList);
+     	model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","myNotifications.jsp");	
 		return "ServiceManager/serviceManagerIndex";
@@ -427,11 +465,11 @@ public class ServiceMangerController {
 		session = request.getSession();
 		
 		Notfication notify = new Notfication();
-		
+	
 		notify.setSenderName(session.getAttribute("currentUserName").toString()); 
 		notify.setSenderImg(session.getAttribute("currentUserImg").toString());
 		notify.setSenderPost(session.getAttribute("currentUserPost").toString());
-		
+
 		notify.setReciverName(reciverName);
 		notify.setReciverPost(reciverPost);
 		notify.setReciverImg(reciverImg);
