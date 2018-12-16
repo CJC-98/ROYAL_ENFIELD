@@ -22,6 +22,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -236,7 +237,6 @@ public class ServiceMangerController {
 		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
 
 		model.addAttribute("inboxCount", inboxCount);
-		
 
 		
 		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
@@ -398,9 +398,10 @@ public class ServiceMangerController {
 
 		model.addAttribute("inboxCount", inboxCount);
 		
-		List<Notfication>shortInboxList=notificationInterface.getMyNotReadedInboxNotfication("chaitali", false);
+		List<Notfication>shortInboxList=notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
 		
     	model.addAttribute("shortInboxList", shortInboxList);	
+    	
 		
 		model.addAttribute("link","myNotifications.jsp");	
 		return "ServiceManager/serviceManagerIndex";
