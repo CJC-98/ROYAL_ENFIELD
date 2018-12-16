@@ -26,6 +26,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.app.extremity.idao.AccessoriesDeadStockIDao;
 import com.app.extremity.idao.AccessoriesStockIDao;
 import com.app.extremity.idao.AvailableServicingIDao;
 import com.app.extremity.idao.BikeModelDao;
@@ -38,6 +39,7 @@ import com.app.extremity.idao.EngineCapacityIDao;
 import com.app.extremity.idao.FreeServicingCountIDao;
 import com.app.extremity.idao.NewBikeStockIDao;
 import com.app.extremity.idao.NotficationIDao;
+import com.app.extremity.idao.OldBikeStockIDao;
 import com.app.extremity.idao.QuotationIDao;
 import com.app.extremity.idao.ServcingBikeInfoIDao;
 import com.app.extremity.idao.ServiceInvoiceIDao;
@@ -46,6 +48,7 @@ import com.app.extremity.idao.SoldOldBikeStockIDao;
 import com.app.extremity.idao.StateIDao;
 import com.app.extremity.idao.TestDriveCustomerIDao;
 import com.app.extremity.iservice.IAdminService;
+import com.app.extremity.model.AccessoriesDeadStock;
 import com.app.extremity.model.AccessoriesStock;
 import com.app.extremity.model.AvailableServicing;
 import com.app.extremity.model.BikeModel;
@@ -59,6 +62,7 @@ import com.app.extremity.model.EngineCapacity;
 import com.app.extremity.model.FreeServicingCount;
 import com.app.extremity.model.NewBikeStock;
 import com.app.extremity.model.Notfication;
+import com.app.extremity.model.OldBikeStock;
 import com.app.extremity.model.Quotation;
 import com.app.extremity.model.ServcingBikeInfo;
 import com.app.extremity.model.ServicingChart;
@@ -131,6 +135,14 @@ public  class AdminServiceImplementation implements IAdminService {
 	
 	@Autowired
 	DeadStockIDao deadStockIDao;
+	
+	@Autowired
+	OldBikeStockIDao oldBikeStockIDao;
+	
+	@Autowired
+	AccessoriesDeadStockIDao accessoriesDeadStockIDao;
+	
+	
 	
 	static Logger logger = LogManager.getLogger(AdminServiceImplementation.class);
 
@@ -375,11 +387,17 @@ public  class AdminServiceImplementation implements IAdminService {
 		return (List<DeadStock>) deadStockIDao.findAll();
 	}
 
-	/*@Override
-	public List<AccessoriesStock> getAccessoriesStock() {
+	@Override
+	public List<OldBikeStock> getOldBikeStock() {
+		
+		return (List<OldBikeStock>) oldBikeStockIDao.findAll();
+	}
 
-		return (List<AccessoriesStock>) accessoriesStockIDao.findAll();
-	}*/
+	@Override
+	public List<AccessoriesDeadStock> getAccessoriesDeadStock() {
+	
+		return (List<AccessoriesDeadStock>) accessoriesDeadStockIDao.findAll();
+	}
 
 	
 

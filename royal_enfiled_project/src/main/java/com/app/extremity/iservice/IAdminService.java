@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import com.app.extremity.model.AccessoriesDeadStock;
 import com.app.extremity.model.AccessoriesStock;
 import com.app.extremity.model.AvailableServicing;
 import com.app.extremity.model.BikeModel;
@@ -17,6 +18,7 @@ import com.app.extremity.model.EngineCapacity;
 import com.app.extremity.model.FreeServicingCount;
 import com.app.extremity.model.NewBikeStock;
 import com.app.extremity.model.Notfication;
+import com.app.extremity.model.OldBikeStock;
 import com.app.extremity.model.Quotation;
 import com.app.extremity.model.ServcingBikeInfo;
 import com.app.extremity.model.ServicingChart;
@@ -67,6 +69,10 @@ public interface IAdminService {
 	public List<AccessoriesStock> getAccessoriesStock();
 
 	public List<DeadStock> getDeadStock();
+
+	public List<OldBikeStock> getOldBikeStock();
+
+	public List<AccessoriesDeadStock> getAccessoriesDeadStock();
 
 	
 
