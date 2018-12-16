@@ -70,6 +70,51 @@ public class ServiceMangerController {
 	@RequestMapping(value="/DashboardPage")
 	public String ServicesDashboardPage(Model model,HttpServletRequest request){
 		
+		//test data from bike servicing
+		
+		ServcingBikeInfo info = new ServcingBikeInfo();
+		info.setModelName("bullet 500");
+		info.setPlateNumber("MH-24-FD-1243");
+		
+		ServicingChart s1 = new ServicingChart();
+		s1.setWork("labour cost");
+		s1.setCost(245);
+		s1.setStatus("done");
+				
+		ServicingChart s2 = new ServicingChart();
+		s2.setWork("handle clean");
+		s1.setCost(240);
+		
+		ServicingChart s3 = new ServicingChart();
+		s3.setWork("bike clean");
+		s3.setCost(3422);
+		
+		ServicingChart s4 = new ServicingChart();
+		s4.setWork("seat clean");
+		s4.setCost(50);
+		
+		ServicingInvoice i1 = new ServicingInvoice();
+		i1.setAmount(3520);
+		i1.setServiceCGstPercent(4);
+		i1.setServiceSGstPercent(4);
+		i1.setTotalAmount(3500);
+		
+		
+		BikeServicing bs = new BikeServicing();
+		bs.setBikeServicingId(serviceManagerInterface.getNextBikeServicingId());
+		bs.setAppointmentDate("30-01-2018");
+		bs.setServiceProgressPercent(15);
+		
+		bs.setServcingBikeInfo(info);
+		
+		bs.getServicingChart().add(s1);
+		bs.getServicingChart().add(s2);
+		bs.getServicingChart().add(s3);
+		bs.getServicingChart().add(s4);
+
+		bs.setServicingInvoice(i1);
+		
+		//serviceManagerInterface.saveBikeServicing(bs);
 		
 		//test data for notification
 		Notfication notify = new Notfication();
@@ -154,6 +199,20 @@ public class ServiceMangerController {
 		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
 		model.addAttribute("shortInboxList", shortInboxList);
 		
+		List<BikeServicing>bikeServicingList = serviceManagerInterface.getAllBikeServicingByServcingStatus("in-progress");
+		
+		for(BikeServicing data: bikeServicingList) {
+			System.out.println(data.getServcingBikeInfo().getModelName());
+			System.out.println(data.getServiceProgressPercent());
+			List<ServicingChart> chartlist = data.getServicingChart();
+			
+			for(ServicingChart chart:chartlist) {
+				System.out.println("      "+chart.getWork()+" "+chart.getCost()+" "+chart.getStatus());
+			}
+		}
+		
+		model.addAttribute("bikeServicingList",bikeServicingList);
+		
 		model.addAttribute("link","servicesInprogress.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
@@ -170,6 +229,8 @@ public class ServiceMangerController {
 		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
 		model.addAttribute("shortInboxList", shortInboxList);
 		
+		
+		
 		model.addAttribute("link","approvedCustomization.jsp");
 		return "ServiceManager/serviceManagerIndex";  
 	}
@@ -185,6 +246,8 @@ public class ServiceMangerController {
 
 		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
 		model.addAttribute("shortInboxList", shortInboxList);
+		
+		
 		
 		model.addAttribute("link","customizationInprogress.jsp");
 		return "ServiceManager/serviceManagerIndex";
