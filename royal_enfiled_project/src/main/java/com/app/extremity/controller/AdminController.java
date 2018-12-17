@@ -22,6 +22,7 @@ import com.app.extremity.model.EmployeeDetails;
 import com.app.extremity.model.NewBikeStock;
 import com.app.extremity.model.OldBikeStock;
 import com.app.extremity.model.ServcingBikeInfo;
+import com.app.extremity.model.SoldBikeStock;
 import com.app.extremity.model.SoldOldBikeStock;
 import com.app.extremity.model.TestDriveCustomer;
 
@@ -96,6 +97,7 @@ public class AdminController {
 	@RequestMapping(value = "/newBikeStock")
 	public String getNewBikeStock(Model model) {
 		List<NewBikeStock> newBikeStockList = adminService.getNewBikeStock();
+		
 		model.addAttribute("newBikeStockList", newBikeStockList);
 		model.addAttribute("link", "newBikeStock.jsp");
 		return "Admin/adminIndex";
@@ -156,7 +158,7 @@ public class AdminController {
 		return "Admin/adminIndex";
 
 	}
-
+	/* this method is use for getCustomizationInvoice details */
 	@RequestMapping(value = "/servicingAndCustomizationInvoice")
 	public String getCustomizationInvoice(Model model) {
 		List<CustomizationInvoice> customizationInvoiceList = adminService.getCustomizationInvoice();
@@ -165,6 +167,8 @@ public class AdminController {
 		return "Admin/adminIndex";
 
 	}
+
+	/* this method is use for getServcingBikeInfo details */
 
 	@RequestMapping(value = "/servicingBikeInfo")
 	public String getServcingBikeInfo(Model model) {
@@ -186,5 +190,18 @@ public class AdminController {
 		return "Admin/adminIndex";
 
 	}
+	/*this method is use for getSoldBikeStock  details*/
+	@RequestMapping(value="/soldNewBike")
+ public String getSoldBikeStock(Model model)
+    {
+	List<SoldBikeStock> soldBikeStockList=adminService.getSoldBikeStock();
+	System.out.println("Sold Bike Stock List");
+	System.out.println( soldBikeStockList);
+	model.addAttribute(" soldBikeStockList", soldBikeStockList);
+	model.addAttribute("link", "soldNewBike.jsp");
+	return "Admin/adminIndex";
+
+	
+}
 
 }

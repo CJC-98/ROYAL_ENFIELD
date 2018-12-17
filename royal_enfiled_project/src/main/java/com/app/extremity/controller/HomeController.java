@@ -4,8 +4,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,7 +30,7 @@ public class HomeController {
 	@Autowired
 	Account_ServiceImpl AService;
 	
-	static Logger logger = LogManager.getLogger(HomeController.class);
+	static org.apache.log4j.Logger logger = org.apache.log4j.LogManager.getLogger(HomeController.class);
 	@Autowired
 	IAdminService adminService;
 	

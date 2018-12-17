@@ -145,7 +145,8 @@
                                   <tbody>
                                   <c:forEach items="${oldBikeStockList}" var="oldBikeStock">
                                     <tr role="row" class="odd">
-                                    <td class="sorting"></td>
+                                    <!-- <td class="sorting"></td> -->
+                                    <td>${oldBikeStock.oldBikeId}</td>
                                     <td>${oldBikeStock.totalKmRun}</td>
                                     <td>${oldBikeStock.bikeCondition}</td>
                                     <td>${oldBikeStock.bikeMfgYear}</td>

@@ -20,8 +20,8 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -35,6 +35,7 @@ import com.app.extremity.idao.EmployeeDetailsIDao;
 import com.app.extremity.idao.NewBikeStockIDao;
 import com.app.extremity.idao.OldBikeStockIDao;
 import com.app.extremity.idao.ServcingBikeInfoIDao;
+import com.app.extremity.idao.SoldBikeStockIDao;
 import com.app.extremity.idao.SoldOldBikeStockIDao;
 import com.app.extremity.idao.TestDriveCustomerIDao;
 import com.app.extremity.iservice.IAdminService;
@@ -48,6 +49,7 @@ import com.app.extremity.model.EmployeeDetails;
 import com.app.extremity.model.NewBikeStock;
 import com.app.extremity.model.OldBikeStock;
 import com.app.extremity.model.ServcingBikeInfo;
+import com.app.extremity.model.SoldBikeStock;
 import com.app.extremity.model.TestDriveCustomer;
 
 @Service
@@ -79,6 +81,8 @@ public class AdminServiceImplementation implements IAdminService {
 	ServcingBikeInfoIDao servcingBikeInfoIDao;
 	@Autowired
 	TestDriveCustomerIDao testDriveCustomerIDao;
+	@Autowired
+	SoldBikeStockIDao soldBikeStockIDao;
 
 	static Logger logger = LogManager.getLogger(AdminServiceImplementation.class);
 
@@ -128,9 +132,9 @@ public class AdminServiceImplementation implements IAdminService {
 		}
 
 		employeeDetailsDao.save(employeeDetails);
-		logger.info("employee Saved", employeeDetails);
+		logger.info("employee Saved");
 		logger.info(UPLOADED_FOLDER.toString());
-		logger.info("message", UPLOADED_FOLDER);
+		logger.info("message");
 	}
 
 	/*
@@ -185,7 +189,7 @@ public class AdminServiceImplementation implements IAdminService {
 
 			Transport.send(msg);
 
-			logger.info("Email has been send to the employee", emailmessage);
+			logger.info("Email has been send to the employee");
 
 		} catch (MessagingException e) {
 
@@ -277,6 +281,12 @@ public class AdminServiceImplementation implements IAdminService {
 	public List<TestDriveCustomer> getTestDriveCustomer() {
 	
 		return (List<TestDriveCustomer>) testDriveCustomerIDao.findAll();
+	}
+
+	@Override
+	public List<SoldBikeStock> getSoldBikeStock() {
+		
+		return (List<SoldBikeStock>) soldBikeStockIDao.findAll();
 	}
 
 }

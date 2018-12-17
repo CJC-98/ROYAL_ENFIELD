@@ -14,6 +14,7 @@ import com.app.extremity.model.EmployeeDetails;
 import com.app.extremity.model.NewBikeStock;
 import com.app.extremity.model.OldBikeStock;
 import com.app.extremity.model.ServcingBikeInfo;
+import com.app.extremity.model.SoldBikeStock;
 import com.app.extremity.model.SoldOldBikeStock;
 import com.app.extremity.model.TestDriveCustomer;
 
@@ -44,7 +45,8 @@ public interface IAdminService {
 	List<ServcingBikeInfo> getServcingBikeInfo();
 
 	List<TestDriveCustomer> getTestDriveCustomer();
-
+	
+	List<SoldBikeStock> getSoldBikeStock();
 	
 
 
