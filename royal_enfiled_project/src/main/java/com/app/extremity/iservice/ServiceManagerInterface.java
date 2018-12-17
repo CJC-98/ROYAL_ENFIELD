@@ -26,10 +26,12 @@ public interface ServiceManagerInterface {
 	public long getAllCustomizationCountByCustomizationStatus(String Waiting);
 
 
-	BikeCustomization saveBikeCustomization(BikeCustomization bikeCustomization);
 
 	public List<BikeServicing> getAllBikeServicingByServcingStatus(String serviceStatus);
+	public BikeCustomization saveBikeCustomization(BikeCustomization bikeCustomization);
 
-public String getNextBikeServicingId();
-		
+
+	public String getNextBikeServicingId();
+
+
 }

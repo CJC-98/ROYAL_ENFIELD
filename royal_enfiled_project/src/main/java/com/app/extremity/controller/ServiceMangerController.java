@@ -102,62 +102,36 @@ public class ServiceMangerController {
 		i1.setServiceSGstPercent(4);
 		i1.setTotalAmount(3500);
 		
-		BikeServicing bs = new BikeServicing();
-		bs.setBikeServicingId(serviceManagerInterface.getNextBikeServicingId());
-		bs.setAppointmentDate("30-01-2018");
-		bs.setServiceProgressPercent(15);
 		
-		bs.setServcingBikeInfo(info);
+		CustomizationBikeInfo cinfo = new CustomizationBikeInfo();
+		info.setModelName("bullet 500");
+		info.setPlateNumber("MH-24-FD-1243");
 		
-		bs.getServicingChart().add(s1);
-		bs.getServicingChart().add(s2);
-		bs.getServicingChart().add(s3);
-		bs.getServicingChart().add(s4);
-
-		bs.setServicingInvoice(i1);
+		CustomizationChart c1 = new CustomizationChart();
+		c1.setPart("labour cost");
+		c1.setCost(245);
+		c1.setStatus("done");
+				
+		CustomizationChart c2 = new CustomizationChart();
+		c1.setPart("Engine");
+		c1.setCost(150);
 		
-		CustomizationBikeInfo cbi = new CustomizationBikeInfo();
-		cbi.setChasisNumber("PTP59841");
-		cbi.setPlateNumber("MH-17-SP-4170");
+		CustomizationChart c3 = new CustomizationChart();
+		c3.setPart("Brake");
+		c3.setCost(1500);
 		
-
-		CustomizationInvoice ci = new CustomizationInvoice();
-		ci.setAmount(8000);
-		ci.setCustomizationCGstPercent(4);
-		ci.setCustomizationsGstPercent(4);
-		ci.setTotalAmount(11200);
-		 
+		CustomizationChart c4 = new CustomizationChart();
+		c4.setPart("Seat");
+		c4.setCost(500);
 		
 		
-		CustomizationChart cc1 = new CustomizationChart();
-		cc1.setPart("Engine");
-		cc1.setCost(150);
-		   
-		CustomizationChart cc2 = new CustomizationChart();
-		cc2.setPart("Brake");
-		cc2.setCost(1500);
-
-		
- 
-		CustomizationChart cc3 = new CustomizationChart();
-		cc3.setPart("Seat");
-		cc3.setCost(500);
-		
-		CustomizationChart cc4 = new CustomizationChart();
-		cc4.setPart("Headlight");
-		cc4.setCost(2500);
+		CustomizationInvoice ci1 = new CustomizationInvoice();
+		ci1.setAmount(3520);
+		ci1.setCustomizationsGstPercent(4);
+		ci1.setCustomizationCGstPercent(4);
+		ci1.setTotalAmount(3500);
 		
 		
-		
-		 BikeCustomization bc = new BikeCustomization();
-			bc.setBikeCustomizationId(serviceManagerInterface.getNextBikeCustomizationId());
-		    bc.setAppointmentDate("17-12-2018");
-			bc.setCustomizationBikeInfo(cbi);
-			
-			bc.getCustomizationChart().add(cc1);
-			bc.getCustomizationChart().add(cc2);
-			bc.getCustomizationChart().add(cc3);
-			bc.getCustomizationChart().add(cc4);
 			
 		
 		//serviceManagerInterface.saveBikeServicing(bs);
@@ -203,20 +177,20 @@ public class ServiceMangerController {
 		model.addAttribute("completedservices", cscount);
 		
 		long account=serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("Waiting");
-		System.out.println("Approved Customization are:"+account);
+		
 		model.addAttribute("approvedCustomizationCount",account);
 		
 	    long tccount=serviceManagerInterface.getAllCustomizationCount();
-		System.out.println("Total Customization are:"+tccount);
+	
 		model.addAttribute("totalCustomizationCount",tccount);
 		
 
 		long ipcount1=serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("In Progress");
-		System.out.println("In progerss Customization are:"+ipcount1);
+		
 		model.addAttribute("inProgerssCustomization", ipcount1);
 		
-		long cccount=serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("Waiting");
-		System.out.println("Completed Customization are:"+cccount);
+		long cccount=serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("Done");
+	
 		model.addAttribute("completedCustomization", cccount);
 				
 
