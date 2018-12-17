@@ -118,8 +118,8 @@ public class ServiceMangerController {
 		session = request.getSession();
 		
 		System.out.println("name "+session.getAttribute("currentUserName"));
-		System.out.println("name "+session.getAttribute("currentUserPost"));
-		System.out.println("name "+session.getAttribute("currentUserImg"));
+		System.out.println("post "+session.getAttribute("currentUserPost"));
+		System.out.println("img "+session.getAttribute("currentUserImg"));
 
 		   
 		
@@ -358,12 +358,11 @@ public class ServiceMangerController {
 		model.addAttribute("inboxList",inboxList);   
 
 
-		
 		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
 
 		model.addAttribute("inboxCount", inboxCount);
 		
-		List<Notfication>shortInboxList=notificationInterface.getMyNotReadedInboxNotfication("chaitali", false);
+		List<Notfication>shortInboxList=notificationInterface.getMyNotReadedInboxNotfication("currentUserName", false);
 		
     	model.addAttribute("shortInboxList", shortInboxList);	
 		
@@ -448,8 +447,17 @@ public class ServiceMangerController {
 		
 		notify.setMessage(message);
 		
-		Notfication n = notificationInterface.saveNotfication(notify);
 		
+		System.out.println(session.getAttribute("currentUserName").toString());
+		System.out.println(session.getAttribute("currentUserImg").toString());
+		System.out.println(session.getAttribute("currentUserPost").toString());
+		System.out.println(reciverName);
+		System.out.println(reciverPost);
+		System.out.println(reciverImg);
+		System.out.println(message);
+
+		Notfication n = notificationInterface.saveNotfication(notify);
+		System.out.println("data saved.............................");
 		if(n!=null) {
 			return "done";
 		}

@@ -24,37 +24,7 @@ public class NotificationImpl implements NotificationInterface{
 
 	@Override
 	public Notfication saveNotfication(Notfication notfication) {
-
-		System.out.println("saved service..........");
-		
-		//mock data
-		DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy"); 
-		DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("hh:mm:ss a"); 
-		
-		Notfication notify = new Notfication();
-		
-		notify.setSenderName("ram");  //get data from DB.employee table
-		notify.setSenderPost("sales managar");              //get data from DB.employee table  
-		
-		notify.setReciverName("pranay kohad");   //get data from DB.employee table
-		notify.setReciverPost("accountant manager");//get data from DB
-		
-
-
-		notify.setMessage("project is ready for sales");
-		notify.setSendDate(LocalDate.now().format(dateFormat));
-		notify.setMessage("hiiiiiiiiiiii");
-	    notify.setMessage("yes");
-
-		notify.setMarkAsRead(false);
-
-		notify.setSendDate(LocalDateTime.now().format(dateFormat));
-
-		notify.setSendTime(LocalDateTime.now().format(timeFormat));
-		
-		System.out.println("data saved");
-		
-		return notficationIDao.save(notify);
+		return notficationIDao.save(notfication);
 	}
    
 	@Override
