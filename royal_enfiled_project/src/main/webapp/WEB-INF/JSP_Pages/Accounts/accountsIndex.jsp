@@ -18,7 +18,7 @@
         <header class="bg-dark dk header navbar navbar-fixed-top-xs">
             <div class="navbar-header aside-md"> <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open"
                     data-target="#nav,html"> <i class="fa fa-bars"></i> </a> <a href="#" class="navbar-brand"
-                    data-toggle="fullscreen"><img src="${pageContext.request.contextPath}/Resources/notebook UI/images/logo.png" class="m-r-sm">Notebook</a> <a class="btn btn-link visible-xs"
+                    data-toggle="fullscreen"><img src="${pageContext.request.contextPath}/Resources/Royal Enfield images/RL_logo3.jpg" class="m-r-sm">Royal Enfield</a> <a class="btn btn-link visible-xs"
                     data-toggle="dropdown" data-target=".nav-user"> <i class="fa fa-cog"></i> </a> </div>
           
             <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user">
@@ -66,17 +66,7 @@
                 <aside class="bg-dark lter aside-md hidden-print hidden-xs" id="nav">
                     <section class="vbox">
                         <header class="header bg-primary lter text-center clearfix">
-                            <div class="btn-group"> <button type="button" class="btn btn-sm btn-dark btn-icon" title="New project"><i
-                                        class="fa fa-plus"></i></button>
-                                <div class="btn-group hidden-nav-xs"> <button type="button" class="btn btn-sm btn-primary dropdown-toggle"
-                                        data-toggle="dropdown"> Switch Project <span class="caret"></span> </button>
-                                    <ul class="dropdown-menu text-left">
-                                        <li><a href="#">Project</a></li>
-                                        <li><a href="#">Another Project</a></li>
-                                        <li><a href="#">More Projects</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                          
                         </header>
                         <section class="w-f scrollable">
                             <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0"
@@ -99,9 +89,9 @@
                                         	 	<span class="badge badge-sm up bg-danger">${inboxCount}</span>                                       	 	
                                             </a>
                                         </li>
-                                        <li> <a href="notebook.html"> <i class="fa fa-pencil icon"> <b class="bg-info"></b>
-                                                </i> <span>Notes</span> 
-                                             </a> 
+                                        <li> <a href="newBikeList"> <i class="fa fa-info-circle">  <b class="bg-info"></b></i>
+                                        	 	</span> <span>New Bike Stock</span>                                       	 	
+                                            </a>
                                         </li>
                                     </ul>
                                 </nav> <!-- / nav -->
