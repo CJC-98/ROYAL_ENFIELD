@@ -80,7 +80,13 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 		// TODO Auto-generated method stub
 		return 0;
 	}
-	
+
+	@Override
+	public List<BikeServicing> getAllBikeServicingByServcingStatus(String serviceStatus) {
+		return bikeServicingIDao.findAllBikeServicingByServcingStatus(serviceStatus);
+	}
+
+
 
 
 }
