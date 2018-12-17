@@ -32,8 +32,12 @@ import com.app.extremity.idao.BikeServicingIDao;
 import com.app.extremity.iservice.IAdminService;
 import com.app.extremity.iservice.NotificationInterface;
 import com.app.extremity.iservice.ServiceManagerInterface;
+import com.app.extremity.model.BikeCustomization;
 import com.app.extremity.model.BikeServicing;
 import com.app.extremity.model.Color;
+import com.app.extremity.model.CustomizationBikeInfo;
+import com.app.extremity.model.CustomizationChart;
+import com.app.extremity.model.CustomizationInvoice;
 import com.app.extremity.model.EmployeeDetails;
 import com.app.extremity.model.Notfication;
 import com.app.extremity.model.ServcingBikeInfo;
@@ -98,7 +102,6 @@ public class ServiceMangerController {
 		i1.setServiceSGstPercent(4);
 		i1.setTotalAmount(3500);
 		
-		
 		BikeServicing bs = new BikeServicing();
 		bs.setBikeServicingId(serviceManagerInterface.getNextBikeServicingId());
 		bs.setAppointmentDate("30-01-2018");
@@ -112,6 +115,50 @@ public class ServiceMangerController {
 		bs.getServicingChart().add(s4);
 
 		bs.setServicingInvoice(i1);
+		
+		CustomizationBikeInfo cbi = new CustomizationBikeInfo();
+		cbi.setChasisNumber("PTP59841");
+		cbi.setPlateNumber("MH-17-SP-4170");
+		
+
+		CustomizationInvoice ci = new CustomizationInvoice();
+		ci.setAmount(8000);
+		ci.setCustomizationCGstPercent(4);
+		ci.setCustomizationsGstPercent(4);
+		ci.setTotalAmount(11200);
+		 
+		
+		
+		CustomizationChart cc1 = new CustomizationChart();
+		cc1.setPart("Engine");
+		cc1.setCost(150);
+		   
+		CustomizationChart cc2 = new CustomizationChart();
+		cc2.setPart("Brake");
+		cc2.setCost(1500);
+
+		
+ 
+		CustomizationChart cc3 = new CustomizationChart();
+		cc3.setPart("Seat");
+		cc3.setCost(500);
+		
+		CustomizationChart cc4 = new CustomizationChart();
+		cc4.setPart("Headlight");
+		cc4.setCost(2500);
+		
+		
+		
+		 BikeCustomization bc = new BikeCustomization();
+			bc.setBikeCustomizationId(serviceManagerInterface.getNextBikeCustomizationId());
+		    bc.setAppointmentDate("17-12-2018");
+			bc.setCustomizationBikeInfo(cbi);
+			
+			bc.getCustomizationChart().add(cc1);
+			bc.getCustomizationChart().add(cc2);
+			bc.getCustomizationChart().add(cc3);
+			bc.getCustomizationChart().add(cc4);
+			
 		
 		//serviceManagerInterface.saveBikeServicing(bs);
 		
@@ -154,6 +201,25 @@ public class ServiceMangerController {
 	
 		long cscount=serviceManagerInterface.getAllServiceCountByServiceStatus("done");
 		model.addAttribute("completedservices", cscount);
+		
+		long account=serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("Waiting");
+		System.out.println("Approved Customization are:"+account);
+		model.addAttribute("approvedCustomizationCount",account);
+		
+	    long tccount=serviceManagerInterface.getAllCustomizationCount();
+		System.out.println("Total Customization are:"+tccount);
+		model.addAttribute("totalCustomizationCount",tccount);
+		
+
+		long ipcount1=serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("In Progress");
+		System.out.println("In progerss Customization are:"+ipcount1);
+		model.addAttribute("inProgerssCustomization", ipcount1);
+		
+		long cccount=serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("Waiting");
+		System.out.println("Completed Customization are:"+cccount);
+		model.addAttribute("completedCustomization", cccount);
+				
+
 
 		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
 
