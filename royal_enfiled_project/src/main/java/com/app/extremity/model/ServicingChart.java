@@ -19,7 +19,7 @@ public class ServicingChart {
 	
 	private long cost;
 	
-	private String Status = "pending";  //OR done
+	private String status = "pending";  //OR done
 	
 
 
@@ -49,12 +49,14 @@ public class ServicingChart {
 		this.cost = cost;
 	}
 
+	
+
 	public String getStatus() {
-		return Status;
+		return status;
 	}
 
 	public void setStatus(String status) {
-		Status = status;
+		this.status = status;
 	}
 
 	public void setBikeServicing(BikeServicing bs1) {
