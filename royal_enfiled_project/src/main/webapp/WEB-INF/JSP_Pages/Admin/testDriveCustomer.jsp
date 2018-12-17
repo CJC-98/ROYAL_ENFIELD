@@ -15,7 +15,7 @@
 </head>
 <body class="">
     
-                <section id="content">
+                <section id="content" class="bg-light lter">
                     <section class="vbox">
                         <div class="row">
                             <section class="scrollable padder">
@@ -155,24 +155,6 @@
                             </aside>
                     </section>
                 </section>
-            </section> <!-- Bootstrap -->
-            
-			<!-- App -->
-   			 <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/app.v1.js"></script>
-   			 <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/easypiechart/jquery.easy-pie-chart.js"></script>
-    		 <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/sparkline/jquery.sparkline.min.js"></script>
-    		 <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/flot/jquery.flot.min.js"></script>
-    		 <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/flot/jquery.flot.tooltip.min.js"></script>
-    		 <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/flot/jquery.flot.resize.js"></script>
-       		 <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/flot/jquery.flot.grow.js"></script>
-   			 <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/flot/demo.js"></script>
-   			 <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/bootstrap_calendar.js"></script>
-   			 <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/demo.js"></script>
-   			 <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/sortable/jquery.sortable.js"></script>
-   			 <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/app.plugin.js"></script>
-            
-
-
-
+            </section> 
 </body>
 </html>

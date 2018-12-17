@@ -235,13 +235,7 @@ public class AdminController {
 		return "redirect:/loginPage";
 	}
 	
-	@RequestMapping("/soldNewBike")
-	public String toSoldNewBikePage(@ModelAttribute SoldBikeStock soldBikeStock)
-	{
-		
-		return "Admin/soldNewBike";
-		
-	}
+	
 	
 	
 	
