@@ -144,7 +144,7 @@
 								      		
 								      	<aside class="bg-light dk b-l" id="email-list">
                             			<section class="vbox">	
-								      		<section class="scrollable hover">
+								      		
 			                                    <ul class="list-group no-radius m-b-none m-t-n-xxs list-group-alt list-group-lg">
 			                                        
 			                                        
@@ -203,7 +203,7 @@
 			                                        
 			                                        
 												 </ul>
-                              			  </section>  
+                              			 
                               			  </section>
                               			  </aside>             
                               		  </div>
