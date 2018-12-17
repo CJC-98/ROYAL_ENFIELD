@@ -9,8 +9,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
+
 public class AccessoriesDeadStock
-{  
+{     
+
+
 	@Id
 	//@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private String accessoriesDeadStockID;

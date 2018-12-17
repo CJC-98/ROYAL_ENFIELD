@@ -146,10 +146,12 @@ public class AdminServiceImplementation implements IAdminService {
 
 			logger.info("Email has been send to the employee", emailmessage);
 
+
 		} catch (MessagingException e) {
 
 			logger.error("exception While sending Email", e);
 			e.printStackTrace();
+
 		} catch (IOException e) {
 
 			logger.error("file not found exception", e);
@@ -170,6 +172,11 @@ public class AdminServiceImplementation implements IAdminService {
 			logger.info(adminEmailPassword.toString());
 			logger.info(adminEmailUsername.toString());
 		}
+	}
+
+	@Override
+	public EmployeeDetails getEmployeeDetailsByName(String employeeName) {
+		return employeeDetailsDao.findOneByEmployeeName(employeeName);
 	}
 
 }

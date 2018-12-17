@@ -20,7 +20,7 @@ public class BikeServicing {
 	
 	private String servcingStatus = "waiting";   //OR in-progress  OR  done
 	
-	private Date appointmentDate;
+	private String appointmentDate;
 	
 	private String bikeReleaseStatus = "on-hold";  //OR released
 	
@@ -33,15 +33,11 @@ public class BikeServicing {
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<ServicingChart> servicingChart = new ArrayList();
 
-	
-	
-	
-	//FK of customer @OneToOne
-	
 
 
-
-
+	public String getBikeServicingId() {
+		return bikeServicingId;
+	}
 
 
 
@@ -51,15 +47,10 @@ public class BikeServicing {
 
 
 
-	public String getBikeServicingId() {
-		return bikeServicingId;
-	}
-
-
-
 	public String getServcingStatus() {
 		return servcingStatus;
 	}
+
 
 
 	public void setServcingStatus(String servcingStatus) {
@@ -68,13 +59,13 @@ public class BikeServicing {
 
 
 
-	public Date getAppointmentDate() {
+	public String getAppointmentDate() {
 		return appointmentDate;
 	}
 
 
 
-	public void setAppointmentDate(Date appointmentDate) {
+	public void setAppointmentDate(String appointmentDate) {
 		this.appointmentDate = appointmentDate;
 	}
 
@@ -96,16 +87,10 @@ public class BikeServicing {
 		return servcingBikeInfo;
 	}
 
+
+
 	public void setServcingBikeInfo(ServcingBikeInfo servcingBikeInfo) {
 		this.servcingBikeInfo = servcingBikeInfo;
-	}
-
-	public List<ServicingChart> getServicingChart() {
-		return servicingChart;
-	}
-
-	public void setServicingChart(List<ServicingChart> servicingChart) {
-		this.servicingChart = servicingChart;
 	}
 
 
@@ -120,9 +105,25 @@ public class BikeServicing {
 		this.servicingInvoice = servicingInvoice;
 	}
 
-	
+
+
+	public List<ServicingChart> getServicingChart() {
+		return servicingChart;
+	}
+
+
+
+	public void setServicingChart(List<ServicingChart> servicingChart) {
+		this.servicingChart = servicingChart;
+	}
+
+
 
 	
-	
-	
+
+
+
+
+
+
 }

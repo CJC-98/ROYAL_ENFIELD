@@ -15,7 +15,7 @@
 </head>
 
 <body>
-  
+
 	<script>
 		
 		var reciverName;
@@ -23,9 +23,9 @@
 		var reciverImg;
 	
 	
-		function markIt(id){
+		function markItAccount(id){
 			var req = new XMLHttpRequest();		
-			req.open("GET","markIt?notficationId="+id,true);
+			req.open("GET","markItAccount?notficationId="+id,true);
 			req.send();
 			
 		}
@@ -41,13 +41,13 @@
 				alert("Please enter employee name!!!");
 			}
 			//TODO: get login user name from session
-			else if(empName == "pranay"){
+			else if(empName == "akash"){
 				alert("You can't send notification to yourself!!!");
 			}
 			else{
 				var req = new XMLHttpRequest();
 				
-				req.open("GET","searchEmployee?empName="+empName,true);
+				req.open("GET","searchEmployeeAccount?empName="+empName,true);
 				req.send();
 				
 				req.onreadystatechange=function(){
@@ -64,6 +64,7 @@
 							document.getElementById("notificationBody").style.display = "block";	
 							document.getElementById("senderName").innerHTML = empDetails.employeeName;
 							document.getElementById("senderImg").src = "${pageContext.request.contextPath}/Resources/images/EmployeeProfilePicture/"+empDetails.profilePictureUrl;
+							
 							document.getElementById("senderPost").innerHTML = empDetails.employeeDesignation;
 							
 						}
@@ -85,7 +86,7 @@
 
 			if(msg!=""){
 				var req = new XMLHttpRequest();
-				req.open("GET","sendNotification?reciverName="+reciverName+
+				req.open("GET","sendNotificationAccount?reciverName="+reciverName+
 											  "&&reciverPost="+reciverPost+
 											  "&&reciverImg="+reciverImg+
 											  "&&message="+msg, true);
@@ -113,8 +114,6 @@
 	</script>
 	
 	<a:set var="ReciverName" value="hello"/>
-
-
 	<section id="content"  class="bg-light lter">
 	        <section class="vbox">
 	            <section class="scrollable padder">                                               
@@ -143,12 +142,8 @@
 								      <div class="tab-pane active bg-light dker" id="Inbox">  
 								      		
 								      	<aside class="bg-light dk b-l" id="email-list">
-                            			<section class="vbox">	
-								      		<section class="scrollable hover">
-			                                    <ul class="list-group no-radius m-b-none m-t-n-xxs list-group-alt list-group-lg">
-			                                        
-			                                        
-			                                        
+                            			<section class="vbox">				    		
+			                                    <ul class="list-group no-radius m-b-none m-t-n-xxs list-group-alt list-group-lg">      
 			                                        <a:forEach var="data" items="${inboxList}">
 				                                		<li class="list-group-item"> 
 			                                        		<a class="thumb-sm pull-left m-r-sm">
@@ -166,11 +161,7 @@
 			                                                	<span>${data.message}</span>     	
 			                                                </a>
 			                                                
-			                                                <div class="comment-action m-t-sm"> 
-
-
-			                                                	
-			                                                		
+			                                                <div class="comment-action m-t-sm"> 		                                                				                                                		
 			                                               		<a:choose>
 																	  <a:when test="${data.markAsRead}">
 																	  	<a data-toggle="class" class="btn btn-default btn-xs active" disabled=true> 
@@ -182,13 +173,11 @@
 																	    	<a data-toggle="class" class="btn btn-default btn-xs"> 
 			                                                					<i class="fa fa-star-o text-muted text"></i>
 																	    			 <i class="fa fa-star text-danger text-active"></i> 
-													     			    			 <span onclick="markIt(${data.notficationId})">Mark As Read</span>
+													     			    			 <span onclick="markItAccount(${data.notficationId})">Mark As Read</span>
 																	        </a>
 																	  </a:otherwise>
-																	</a:choose>
-			                         
-			                                                
-
+																	</a:choose>			                         
+																				                                              
 			                                                   <%--  <a data-toggle="modal" 
 			                                                       data-target="#myModal" 
 			                                                       class="btn btn-default btn-xs">
@@ -196,14 +185,10 @@
 			                                                        <span onclick="">Reply</span>
 			                                                    </a> --%>
 			                                                </div>
-			                                           </li>
-			          			                                                         
-				                                	</a:forEach>
-			                                        
-			                                        
-			                                        
+			                                           </li>			          			                                                         
+				                                	</a:forEach>		                                        
 												 </ul>
-                              			  </section>  
+                              			  
                               			  </section>
                               			  </aside>             
                               		  </div>
@@ -211,12 +196,10 @@
                                         
                                                                          
                                     		
-                                   	<!-- outbox starts -->
-                                   	
+                                   	<!-- outbox starts -->                                   	
                                     <div class="tab-pane bg-light dker" id="Outbox">
                                       <aside class="bg-light dk b-l" id="email-list">
-                            			<section class="vbox">  
-                                        <section class="scrollable hover">
+                            			<section class="vbox">                                        
 			                                    <ul class="list-group no-radius m-b-none m-t-n-xxs list-group-alt list-group-lg">
 			                                        
 			                                        
@@ -237,8 +220,7 @@
 			                                        	</li>
 				                                	</a:forEach>    
 			                           
-												 </ul>
-                              			  </section> 
+												 </ul>                              			  
                               			</section>
                               		 </aside>          
                                    </div>

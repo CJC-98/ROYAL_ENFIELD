@@ -15,14 +15,16 @@
 
 <body>
 
+
 	<section id="content" class="bg-light lter">
+
         <section class="vbox">
             <section class="scrollable padder">                                               
                                 
                 <div class="m-b-md">
                     <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Approved Services</h3>
                 </div>
-                
+              
                 <!-- fisrt table starts -->
 	                <div class="row">
                          <div class="col-sm-12" >
