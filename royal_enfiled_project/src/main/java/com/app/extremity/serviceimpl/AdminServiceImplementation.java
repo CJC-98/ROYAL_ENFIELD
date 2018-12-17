@@ -28,52 +28,30 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.app.extremity.idao.AccessoriesDeadStockIDao;
 import com.app.extremity.idao.AccessoriesStockIDao;
-import com.app.extremity.idao.AvailableServicingIDao;
-import com.app.extremity.idao.BikeModelDao;
 import com.app.extremity.idao.BikeOfferIDao;
-import com.app.extremity.idao.BikeServicingIDao;
-import com.app.extremity.idao.ColorDaoI;
+import com.app.extremity.idao.CustomizationInvoiceIDao;
 import com.app.extremity.idao.DeadStockIDao;
 import com.app.extremity.idao.EmployeeDetailsIDao;
-import com.app.extremity.idao.EngineCapacityIDao;
-import com.app.extremity.idao.FreeServicingCountIDao;
 import com.app.extremity.idao.NewBikeStockIDao;
-import com.app.extremity.idao.NotficationIDao;
 import com.app.extremity.idao.OldBikeStockIDao;
-import com.app.extremity.idao.QuotationIDao;
 import com.app.extremity.idao.ServcingBikeInfoIDao;
-import com.app.extremity.idao.ServiceInvoiceIDao;
-import com.app.extremity.idao.ServicingChartIDao;
 import com.app.extremity.idao.SoldOldBikeStockIDao;
-import com.app.extremity.idao.StateIDao;
 import com.app.extremity.idao.TestDriveCustomerIDao;
 import com.app.extremity.iservice.IAdminService;
 import com.app.extremity.model.AccessoriesDeadStock;
 import com.app.extremity.model.AccessoriesStock;
-import com.app.extremity.model.AvailableServicing;
-import com.app.extremity.model.BikeModel;
 import com.app.extremity.model.BikeOffer;
-import com.app.extremity.model.BikeServicing;
-import com.app.extremity.model.Color;
+import com.app.extremity.model.CustomizationInvoice;
 import com.app.extremity.model.DeadStock;
 import com.app.extremity.model.EmailMessage;
 import com.app.extremity.model.EmployeeDetails;
-import com.app.extremity.model.EngineCapacity;
-import com.app.extremity.model.FreeServicingCount;
 import com.app.extremity.model.NewBikeStock;
-import com.app.extremity.model.Notfication;
 import com.app.extremity.model.OldBikeStock;
-import com.app.extremity.model.Quotation;
 import com.app.extremity.model.ServcingBikeInfo;
-import com.app.extremity.model.ServicingChart;
-import com.app.extremity.model.ServicingInvoice;
-import com.app.extremity.model.SoldBikeStock;
-import com.app.extremity.model.SoldOldBikeStock;
-import com.app.extremity.model.State;
 import com.app.extremity.model.TestDriveCustomer;
 
 @Service
-public  class AdminServiceImplementation implements IAdminService {
+public class AdminServiceImplementation implements IAdminService {
 
 	private String adminEmailUsername;
 
@@ -81,69 +59,27 @@ public  class AdminServiceImplementation implements IAdminService {
 
 	@Autowired
 	EmployeeDetailsIDao employeeDetailsDao;
-	
-	@Autowired
-	AvailableServicingIDao AvailableServicingIDao;
-	
-	@Autowired
-	ColorDaoI bikecolorDao;
-	
-	@Autowired
-	BikeServicingIDao bikeservicing;
-	
 	@Autowired
 	NewBikeStockIDao newBikeStockIDao;
-	
-	@Autowired
-	BikeModelDao bikeModelIDao;
-	
-	@Autowired
-	 BikeOfferIDao bikeOfferIDao;
-	
-	@Autowired
-	TestDriveCustomerIDao testDriveCustomerIDao;
-	
-	@Autowired
-    SoldOldBikeStockIDao soldOldBikeStockIDao;
-	
-	@Autowired
-	ServiceInvoiceIDao serviceInvoiceIDao;
-	
-	@Autowired
-	ServicingChartIDao servicingChartIDao;
-	
-	@Autowired
-	ServcingBikeInfoIDao servcingBikeInfoIDao;
-	
-	@Autowired
-	QuotationIDao quotationIDao;
-	
-	@Autowired
-	NotficationIDao notficationIDao;
-
-	@Autowired
-	StateIDao stateIDao;
-
-	@Autowired
-	FreeServicingCountIDao freeServicingCountIDao;
-	
-	@Autowired
-	EngineCapacityIDao engineCapacityIDao;
-	
-	@Autowired
-	AccessoriesStockIDao accessoriesStockIDao;
-	
-	@Autowired
-	DeadStockIDao deadStockIDao;
-	
 	@Autowired
 	OldBikeStockIDao oldBikeStockIDao;
-	
+	@Autowired
+	SoldOldBikeStockIDao soldOldBikeStockDao;
+	@Autowired
+	AccessoriesStockIDao accessoriesStockIDao;
+	@Autowired
+	DeadStockIDao deadStockIDao;
 	@Autowired
 	AccessoriesDeadStockIDao accessoriesDeadStockIDao;
-	
-	
-	
+	@Autowired
+	BikeOfferIDao bikeOfferIDao;
+	@Autowired
+	CustomizationInvoiceIDao customizationInvoiceIDao;
+	@Autowired
+	ServcingBikeInfoIDao servcingBikeInfoIDao;
+	@Autowired
+	TestDriveCustomerIDao testDriveCustomerIDao;
+
 	static Logger logger = LogManager.getLogger(AdminServiceImplementation.class);
 
 	/* this is path where profile picture will be stored */
@@ -168,8 +104,8 @@ public  class AdminServiceImplementation implements IAdminService {
 			logger.error("error creating upload directory");
 		}
 
-	}	
-	
+	}
+
 	/*
 	 * this method is used to save Employee Details
 	 * 
@@ -239,7 +175,7 @@ public  class AdminServiceImplementation implements IAdminService {
 				Multipart multipart = new MimeMultipart();
 				multipart.addBodyPart(messageBodyPart);
 				MimeBodyPart attachPart = new MimeBodyPart();
-				attachPart.attachFile((File) file);
+				attachPart.attachFile(UPLOADED_FOLDER + file.getOriginalFilename());
 				String html = "<a href='http://localhost:8080/employeeRegistration'>Register here</a>";
 				messageBodyPart.setText(html, "UTF-8", "html");
 				multipart.addBodyPart(attachPart);
@@ -255,92 +191,13 @@ public  class AdminServiceImplementation implements IAdminService {
 
 			logger.error("exception While sending Email", e);
 			e.printStackTrace();
+
 		} catch (IOException e) {
 
 			logger.error("file not found exception", e);
 			e.printStackTrace();
 		}
 
-	}
-
-	
-	@Override
-	public List<Color> getcolor() {
-		// TODO Auto-generated method stub
-		
-		return (List<Color>) bikecolorDao.findAll() ;
-	}
-
-	@Override
-	public List<AvailableServicing> getAvailableServicing() {
-		// TODO Auto-generated method stub
-		return (List<AvailableServicing>) AvailableServicingIDao.findAll();
-	}
-
-	@Override
-	public List<BikeServicing> getBikeServicing() {
-		// TODO Auto-generated method stub
-		return (List<BikeServicing>) bikeservicing.findAll() ;
-	}
-
-	@Override
-	public List<NewBikeStock> getNewBikeStock() {
-	
-		return (List<NewBikeStock>) newBikeStockIDao.findAll();
-	}
-
-	@Override
-	public List<BikeModel> getBikeModel() {
-		
-		return (List<BikeModel>) bikeModelIDao.findAll();
-	}
-
-	@Override
-	public List<BikeOffer> getBikeOffer() {
-		
-		return (List<BikeOffer>) bikeOfferIDao.findAll();
-	}
-
-	@Override
-	public List<TestDriveCustomer> getTestDriveCustomer() {
-	
-		return (List<TestDriveCustomer>) testDriveCustomerIDao.findAll();
-	}
-
-	@Override
-	public List<SoldOldBikeStock> getSoldOldBikeStock() {
-		// TODO Auto-generated method stub
-		return (List<SoldOldBikeStock>) soldOldBikeStockIDao.findAll();
-	}
-
-	@Override
-	public List<ServicingInvoice> getServicingInvoice() {
-		// TODO Auto-generated method stub
-		return (List<ServicingInvoice>) serviceInvoiceIDao.findAll();
-	}
-
-	@Override
-	public List<ServicingChart> getServicingChart() {
-		// TODO Auto-generated method stub
-		return (List<ServicingChart>) servicingChartIDao.findAll();
-	}
-
-	@Override
-	public List<ServcingBikeInfo> getServcingBikeInfo() {
-		
-		return (List<ServcingBikeInfo>) servcingBikeInfoIDao.findAll();
-	}
-
-	@Override
-	public List<Quotation> getQuotation() {
-		
-		return (List<Quotation>) quotationIDao.findAll();
-	}
-
-	@Override
-	public List<Notfication> getNotfication() {
-        
-		return (List<Notfication>) notficationIDao.findAll();
 	}
 
 	private void getAdminCredentials() {
@@ -358,47 +215,68 @@ public  class AdminServiceImplementation implements IAdminService {
 	}
 
 	@Override
-	public List<State> getState() {
-		
-		return (List<State>) stateIDao.findAll();
+	public EmployeeDetails getEmployeeDetailsByName(String employeeName) {
+		return employeeDetailsDao.findOneByEmployeeName(employeeName);
 	}
 
 	@Override
-	public List<FreeServicingCount> getFreeServicing() {
-		
-		return (List<FreeServicingCount>) freeServicingCountIDao.findAll();
+	public List<NewBikeStock> getNewBikeStock() {
+
+		return (List<NewBikeStock>) newBikeStockIDao.findAll();
 	}
 
 	@Override
-	public List<EngineCapacity> getEngineCapacity() {
-		
-		return (List<EngineCapacity>) engineCapacityIDao.findAll();
+	public List<OldBikeStock> getOldBikeStock() {
+
+		return (List<OldBikeStock>) oldBikeStockIDao.findAll();
 	}
 
 	@Override
 	public List<AccessoriesStock> getAccessoriesStock() {
-		// TODO Auto-generated method stub
+		
 		return (List<AccessoriesStock>) accessoriesStockIDao.findAll();
 	}
 
 	@Override
 	public List<DeadStock> getDeadStock() {
-		
+
 		return (List<DeadStock>) deadStockIDao.findAll();
 	}
 
 	@Override
-	public List<OldBikeStock> getOldBikeStock() {
-		
-		return (List<OldBikeStock>) oldBikeStockIDao.findAll();
-	}
-
-	@Override
 	public List<AccessoriesDeadStock> getAccessoriesDeadStock() {
-	
+
 		return (List<AccessoriesDeadStock>) accessoriesDeadStockIDao.findAll();
 	}
 
+	@Override
+	public List<EmployeeDetails> getEmployeelist() {
+
+		return null;
+	}
+
+	@Override
+	public List<BikeOffer> getBikeOffer() {
+
+		return (List<BikeOffer>) bikeOfferIDao.findAll();
+	}
+
+	@Override
+	public List<CustomizationInvoice> getCustomizationInvoice() {
+		
+		return (List<CustomizationInvoice>) customizationInvoiceIDao.findAll();
+	}
+
+	@Override
+	public List<ServcingBikeInfo> getServcingBikeInfo() {
+		
+		return (List<ServcingBikeInfo>) servcingBikeInfoIDao.findAll();
+	}
+
+	@Override
+	public List<TestDriveCustomer> getTestDriveCustomer() {
 	
+		return (List<TestDriveCustomer>) testDriveCustomerIDao.findAll();
+	}
 
 }

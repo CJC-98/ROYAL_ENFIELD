@@ -8,7 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.app.extremity.idao.NotficationIDao;
+
 import com.app.extremity.iservice.NotificationInterface;
+
+import com.app.extremity.model.EmployeeDetails;
 import com.app.extremity.model.Notfication;
 
 
@@ -23,27 +26,7 @@ public class NotificationImpl implements NotificationInterface{
 
 	@Override
 	public Notfication saveNotfication(Notfication notfication) {
-		
-		
-		//mock data
-		DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy"); 
-		DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("hh:mm:ss a"); 
-		
-		Notfication notify = new Notfication();
-		
-		notify.setSenderName("pranay kohad");  //get data from DB.employee table
-		notify.setSenderPost("service manager");              //get data from DB.employee table  
-		
-		notify.setReciverName("manoj");   //get data from DB.employee table
-		notify.setReciverPost("sales manager");//get data from DB
-		
-		notify.setMessage("project is ready for sales");
-		notify.setSendDate(LocalDateTime.now().format(dateFormat));
-		notify.setSendTime(LocalDateTime.now().format(timeFormat));
-		
-		System.out.println("data saved");
-		
-		return notficationIDao.save(notify);
+		return notficationIDao.save(notfication);
 	}
    
 	@Override
@@ -53,8 +36,35 @@ public class NotificationImpl implements NotificationInterface{
 
 	@Override
 	public List<Notfication> getMyInboxNotfication(String reciverName) {
+		System.out.println("in notificationimpl.." + reciverName);
 		return notficationIDao.findAllByReciverName(reciverName);
 	}
+
+	@Override
+	public Notfication getNotficationById(int id) {
+		return notficationIDao.findAllByNotficationId(id);
+	}
+
+	@Override
+	public boolean markAsRead(Notfication notify) {	
+		notify.setMarkAsRead(true);
+		notficationIDao.save(notify);
+		return true;
+	}
+
+
+	@Override
+	public long getInboxCount(String reciverName, boolean markAsRead) {
+		return notficationIDao.countByReciverNameAndMarkAsRead(reciverName, markAsRead);
+	}
+
+	@Override
+	public List<Notfication> getMyNotReadedInboxNotfication(String reciverName, boolean markAsRead) {
+		return notficationIDao.findAllByReciverNameAndMarkAsRead(reciverName, markAsRead);
+	}
+
+
+
 	 
 
 

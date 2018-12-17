@@ -4,6 +4,8 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.app.extremity.model.SoldOldBikeStock;
 
-public interface SoldOldBikeStockIDao extends CrudRepository<SoldOldBikeStock, Integer> {
+
+public interface SoldOldBikeStockIDao extends CrudRepository<SoldOldBikeStock, String> {
+
 
 }

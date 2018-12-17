@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,18 +33,18 @@
                                     <section class="panel panel-default">
                                         <header class="panel-heading bg-danger lt" style="font-size: 15px">Approved Services</header>
                                         <div class="panel-body text-center">
-                                            <h4>8</h4>
+                                            <h4>${approvedServiceCount} </h4>
                                             <div class="inline">
-                                                <div class="easypiechart text-danger" data-percent="5.33"
+                                                <div class="easypiechart text-danger" data-percent="${approvedServiceCount *100/totalServiceCount }"
                                                     data-line-width="5" data-track-Color="#f0f0f0" data-bar-color="#FF5F4A"
                                                     data-rotate="0" data-scale-Color="false" data-size="150"
-                                                    data-animate="2000"> <span class="h2 step font-bold">5.3</span>%
+                                                    data-animate="2000"> <span class="h2 step font-bold"></span>%
                                                     <div class="easypie-text text-muted">Waiting</div>
                                                 </div>      
                                             </div>
                                         </div>
 
-                                        <div class="panel-footer bg-danger lt" style="font-size: 15px">Total Services 150</div>
+                                        <div class="panel-footer bg-danger lt" style="font-size: 15px">Total Services ${totalServiceCount}</div>
 
                                     </section>    
                              </div>
@@ -54,9 +55,9 @@
                                     <section class="panel panel-default">
                                         <header class="panel-heading bg-warning lt" style="font-size: 15px">In-Progress Services</header>
                                         <div class="panel-body text-center">
-                                            <h4>108</h4>
+                                            <h4>${inProgerssServices}</h4>
                                             <div class="inline">
-                                                <div class="easypiechart text-warning" data-percent="72"
+                                                <div class="easypiechart text-warning" data-percent="${inProgerssServices *100/totalServiceCount }"
                                                     data-line-width="5" data-track-Color="#f0f0f0" data-bar-color="#FFD300"
                                                     data-rotate="0" data-scale-Color="false" data-size="150"
                                                     data-animate="2000"> <span class="h2 step font-bold">72</span>%
@@ -65,20 +66,20 @@
                                             </div>
                                         </div>
 
-                                        <div class="panel-footer bg-warning lt" style="font-size: 15px">Total Services 150</div>
+                                        <div class="panel-footer bg-warning lt" style="font-size: 15px">Total Services ${totalServiceCount}</div>
 
                                     </section>    
                             </div>
                             </a>
-                            
+                               
                             <a href="BikeServicesRecordsPage">
                             <div class="col-lg-4">
                                     <section class="panel panel-default">
                                         <header class="panel-heading bg-success lt" style="font-size: 15px">Completed Services</header>
                                         <div class="panel-body text-center">
-                                            <h4>34</h4>
+                                            <h4>${completedservices}</h4>
                                             <div class="inline">
-                                                <div class="easypiechart text-success" data-percent="22.66"
+                                                <div class="easypiechart text-success" data-percent="${completedservices *100/totalServiceCount }"
                                                     data-line-width="5" data-track-Color="#f0f0f0" data-bar-color="#8ec165"
                                                     data-rotate="0" data-scale-Color="false" data-size="150"
                                                     data-animate="2000"> <span class="h2 step font-bold">22.66</span>%
@@ -87,7 +88,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="panel-footer bg-success lt" style="font-size: 15px">Total Services 150</div>
+                                        <div class="panel-footer bg-success lt" style="font-size: 15px">Total Services ${totalServiceCount}</div>
 
                                     </section>    
                            </div>

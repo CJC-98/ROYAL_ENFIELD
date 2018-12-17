@@ -1,3 +1,4 @@
+
 package com.app.extremity.iservice;
 
 import java.util.List;
@@ -6,26 +7,15 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.app.extremity.model.AccessoriesDeadStock;
 import com.app.extremity.model.AccessoriesStock;
-import com.app.extremity.model.AvailableServicing;
-import com.app.extremity.model.BikeModel;
 import com.app.extremity.model.BikeOffer;
-import com.app.extremity.model.BikeServicing;
-import com.app.extremity.model.Color;
+import com.app.extremity.model.CustomizationInvoice;
 import com.app.extremity.model.DeadStock;
 import com.app.extremity.model.EmailMessage;
 import com.app.extremity.model.EmployeeDetails;
-import com.app.extremity.model.EngineCapacity;
-import com.app.extremity.model.FreeServicingCount;
 import com.app.extremity.model.NewBikeStock;
-import com.app.extremity.model.Notfication;
 import com.app.extremity.model.OldBikeStock;
-import com.app.extremity.model.Quotation;
 import com.app.extremity.model.ServcingBikeInfo;
-import com.app.extremity.model.ServicingChart;
-import com.app.extremity.model.ServicingInvoice;
-import com.app.extremity.model.SoldBikeStock;
 import com.app.extremity.model.SoldOldBikeStock;
-import com.app.extremity.model.State;
 import com.app.extremity.model.TestDriveCustomer;
 
 public interface IAdminService {
@@ -34,47 +24,30 @@ public interface IAdminService {
 
 	void sendEmail(EmailMessage emailmessage, MultipartFile file);
 
-	public List<Color> getcolor();
+	EmployeeDetails getEmployeeDetailsByName(String employeeName);
 
-	public List<AvailableServicing> getAvailableServicing();
+	List<AccessoriesStock> getAccessoriesStock();
 
-	public List<BikeServicing> getBikeServicing();
+	List<NewBikeStock> getNewBikeStock();
 
-	public List<NewBikeStock> getNewBikeStock();
+	List<OldBikeStock> getOldBikeStock();
 
-	public List<BikeModel> getBikeModel();
+	List<DeadStock> getDeadStock();
 
-	public List<BikeOffer> getBikeOffer();
+	List<AccessoriesDeadStock> getAccessoriesDeadStock();
 
-	public List<TestDriveCustomer> getTestDriveCustomer();
+	List<EmployeeDetails> getEmployeelist();
 
-	public List<SoldOldBikeStock> getSoldOldBikeStock();
+	List<BikeOffer> getBikeOffer();
 
-	public List<ServicingInvoice> getServicingInvoice();
+	List<CustomizationInvoice> getCustomizationInvoice();
 
-	public List<ServicingChart> getServicingChart();
+	List<ServcingBikeInfo> getServcingBikeInfo();
 
-	public List<ServcingBikeInfo> getServcingBikeInfo();
-
-	public List<Quotation> getQuotation();
-
-	public List<Notfication> getNotfication();
-
-	public List<State> getState();
-
-	public List<FreeServicingCount> getFreeServicing();
-
-	public List<EngineCapacity> getEngineCapacity();
-
-	public List<AccessoriesStock> getAccessoriesStock();
-
-	public List<DeadStock> getDeadStock();
-
-	public List<OldBikeStock> getOldBikeStock();
-
-	public List<AccessoriesDeadStock> getAccessoriesDeadStock();
+	List<TestDriveCustomer> getTestDriveCustomer();
 
 	
 
 
 }
+

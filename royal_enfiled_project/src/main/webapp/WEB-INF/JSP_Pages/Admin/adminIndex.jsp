@@ -18,8 +18,8 @@
         <!-- Start Header -->
         <header class="bg-dark dk header navbar navbar-fixed-top-xs">
             <div class="navbar-header aside-md"> <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open"
-                    data-target="#nav,html"> <i class="fa fa-bars"></i> </a> <a href="#" class="navbar-brand"
-                    data-toggle="fullscreen"><img src="images/logo.png" class="m-r-sm">Admin</a> <a class="btn btn-link visible-xs"
+                    data-target="#nav,html"> <i class="fa fa-bars"></i> </a> <a href="toAdminHomePage" class="navbar-brand"
+                   ><img src="images/logo.png" class="m-r-sm">Admin</a> <a class="btn btn-link visible-xs"
                     data-toggle="dropdown" data-target=".nav-user"> <i class="fa fa-cog"></i> </a> </div>
             <ul class="nav navbar-nav hidden-xs">
                 <li class="dropdown"> <a href="#" class="dropdown-toggle dker" data-toggle="dropdown"> <i class="fa fa-building-o"></i>
@@ -122,18 +122,28 @@
                                 <nav class="nav-primary hidden-xs">
                                     <ul class="nav">
                                     
+<<<<<<< HEAD
                                    	 <li> 
                                         	<a href="adminDashboard"> 
                                         		<i class="fa fa-dashboard icon">
                                             		<b class="bg-danger"></b> 
                                             	</i> 
                                             	<span>Admin Dashboard</span>
+=======
+                                   
+                                        <li> <a href="#"> <i class="fa fa-dashboard icon"> <b class="bg-warning"></b>
+                                                </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i
+                                                        class="fa fa-angle-up text-active"></i> </span> <span>Add</span>
+>>>>>>> branch 'AdminTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
                                             </a>
+<<<<<<< HEAD
                                         </li>
                                         <li> <a href="#"> <i class="fa fa-dashboard icon"> <b class="bg-warning"></b>
                                                 </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i
                                                         class="fa fa-angle-up text-active"></i> </span> <span>Add</span>
                                             </a>
+=======
+>>>>>>> branch 'AdminTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
                                             <ul class="nav lt">
                                             	
                                                 
@@ -190,7 +200,11 @@
                                                    	</li>
                                             
                                             		<li> 
+<<<<<<< HEAD
                                             			<a href=" "> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i>
+=======
+                                            			<a href=""> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i>
+>>>>>>> branch 'AdminTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
                                                    		 <span>Dead_stock</span> </a>
                                                 		<ul class="nav bg">
                                                    			 <li> 
@@ -248,6 +262,25 @@
                                                     	<a href="bikeServicing">
                                                         <i class="fa fa-angle-right"></i> 
                                                             <span>Service</span> </a>
+<<<<<<< HEAD
+=======
+                                                            
+                                                            <ul class="nav bg">
+                                                   			 <li> 
+                                                   			 	<a href="servicingAndCustomizationInvoice"> 
+                                                            	<span>serviceCustomizationInvoice</span> </a> 
+                                                            </li>
+                                                    		<li> 
+                                                    			<a href="servicingBikeInfo"> 
+                                                           		 <span>servicingBikeInfo</span> </a>
+                                                           	 </li>
+                                                           	 <li> 
+                                                    			<a href="testDriveCustomer"> 
+                                                           		 <span>testDriveCustomer</span> </a>
+                                                           	 </li>
+                                                           	 
+                                               			 </ul>
+>>>>>>> branch 'AdminTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
                                                      </li>
                                                 </ul>
                                             
@@ -311,7 +344,7 @@
     <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/demo.js"></script>
     <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/sortable/jquery.sortable.js"></script>
     <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/app.plugin.js"></script>
-
+	 <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/datatables/demo.js"></script>
             
 
             

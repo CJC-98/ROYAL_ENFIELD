@@ -19,17 +19,11 @@ public class ServicingChart {
 	
 	private long cost;
 	
-	private String Status = "pending";  //OR in-progress OR done
-	
-	@ManyToOne
-	private BikeServicing bikeServicing;
-
-	
-	
-	
+	private String Status = "pending";  //OR done
 	
 
-	
+
+	   
 
 	public int getServicingChartId() {
 		return servicingChartId;
@@ -63,13 +57,11 @@ public class ServicingChart {
 		Status = status;
 	}
 
-	public BikeServicing getBikeServicing() {
-		return bikeServicing;
+	public void setBikeServicing(BikeServicing bs1) {
+		// TODO Auto-generated method stub
+		
 	}
 
-	public void setBikeServicing(BikeServicing bikeServicing) {
-		this.bikeServicing = bikeServicing;
-	}
 	
 	
 	
