@@ -327,8 +327,10 @@ public class ServiceMangerController {
 		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
      	model.addAttribute("inboxCount", inboxCount);
 		
-		List<Notfication>shortInboxList=notificationInterface.getMyNotReadedInboxNotfication("currentUserName", false);
-		System.out.println(session.getAttribute("currentUserName").toString());
+		List<Notfication>shortInboxList=notificationInterface.getMyNotReadedInboxNotfication("Chaitali", false);
+		
+		
+		
 		
     	model.addAttribute("shortInboxList", shortInboxList);	
 			model.addAttribute("link","myNotifications.jsp");	

@@ -36,6 +36,7 @@ public class NotificationImpl implements NotificationInterface{
 
 	@Override
 	public List<Notfication> getMyInboxNotfication(String reciverName) {
+		System.out.println(reciverName);
 		return notficationIDao.findAllByReciverName(reciverName);
 	}
 
