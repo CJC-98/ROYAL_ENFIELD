@@ -1,36 +1,28 @@
 package com.app.extremity.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-
-import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 public class EmployeeDetails 
 {
 	@Id
-	@Column(length = 32)
-	@GeneratedValue(generator = "system-uuid")
-	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	private String employeeId;
 	private String employeeName;
 	private String profilePictureUrl;
-	private String employeeGender;
 	private String employeeMobileNumber;
-	private String employeeDateOfBirth;
+	private String dateOfBirth;
 	private String employeeEmail;
 	private String employeeSalary;
 	private String employeeDesignation;
 	private String employeePassword;
 	private String employeeJoiningDate;
 	private String employeeLastWorkingDate;
-	private String employeeAreaName;
-	private String employeeCityName;
-	private String employeeStateName;
-	private String employeeCountryName;
-	private String employeePincode;
+	private String areaName;
+	private String cityName;
+	private String stateName;
+	private String countryName;
+	private String pincode;
 	
 	
 	public String getEmployeeId() {
@@ -51,33 +43,17 @@ public class EmployeeDetails
 	public void setProfilePictureUrl(String profilePictureUrl) {
 		this.profilePictureUrl = profilePictureUrl;
 	}
-	
-	
-	public String getEmployeeGender() {
-		return employeeGender;
-	}
-	public void setEmployeeGender(String employeeGender) {
-		this.employeeGender = employeeGender;
-	}
-	
-	
 	public String getEmployeeMobileNumber() {
 		return employeeMobileNumber;
 	}
 	public void setEmployeeMobileNumber(String employeeMobileNumber) {
 		this.employeeMobileNumber = employeeMobileNumber;
 	}
-	public String getEmployeePincode() {
-		return employeePincode;
+	public String getDateOfBirth() {
+		return dateOfBirth;
 	}
-	public void setEmployeePincode(String employeePincode) {
-		this.employeePincode = employeePincode;
-	}
-	public String getEmployeeDateOfBirth() {
-		return employeeDateOfBirth;
-	}
-	public void setEmployeeDateOfBirth(String employeeDateOfBirth) {
-		this.employeeDateOfBirth = employeeDateOfBirth;
+	public void setDateOfBirth(String dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
 	public String getEmployeeEmail() {
 		return employeeEmail;
@@ -115,30 +91,38 @@ public class EmployeeDetails
 	public void setEmployeeLastWorkingDate(String employeeLastWorkingDate) {
 		this.employeeLastWorkingDate = employeeLastWorkingDate;
 	}
-	public String getEmployeeAreaName() {
-		return employeeAreaName;
+	public String getAreaName() {
+		return areaName;
 	}
-	public void setEmployeeAreaName(String employeeAreaName) {
-		this.employeeAreaName = employeeAreaName;
+	public void setAreaName(String areaName) {
+		this.areaName = areaName;
 	}
-	public String getEmployeeCityName() {
-		return employeeCityName;
+	public String getCityName() {
+		return cityName;
 	}
-	public void setEmployeeCityName(String employeeCityName) {
-		this.employeeCityName = employeeCityName;
+	public void setCityName(String cityName) {
+		this.cityName = cityName;
 	}
-	public String getEmployeeStateName() {
-		return employeeStateName;
+	public String getStateName() {
+		return stateName;
 	}
-	public void setEmployeeStateName(String employeeStateName) {
-		this.employeeStateName = employeeStateName;
+	public void setStateName(String stateName) {
+		this.stateName = stateName;
 	}
-	public String getEmployeeCountryName() {
-		return employeeCountryName;
+	public String getCountryName() {
+		return countryName;
 	}
-	public void setEmployeeCountryName(String employeeCountryName) {
-		this.employeeCountryName = employeeCountryName;
+	public void setCountryName(String countryName) {
+		this.countryName = countryName;
+	}
+	public String getPincode() {
+		return pincode;
+	}
+	public void setPincode(String pincode) {
+		this.pincode = pincode;
+
 	}
 	
 	
 }
+

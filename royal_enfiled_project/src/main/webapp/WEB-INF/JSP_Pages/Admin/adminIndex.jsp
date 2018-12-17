@@ -18,8 +18,8 @@
         <!-- Start Header -->
         <header class="bg-dark dk header navbar navbar-fixed-top-xs">
             <div class="navbar-header aside-md"> <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open"
-                    data-target="#nav,html"> <i class="fa fa-bars"></i> </a> <a href="#" class="navbar-brand"
-                    data-toggle="fullscreen"><img src="images/logo.png" class="m-r-sm">Admin</a> <a class="btn btn-link visible-xs"
+                    data-target="#nav,html"> <i class="fa fa-bars"></i> </a> <a href="toAdminHomePage" class="navbar-brand"
+                   ><img src="images/logo.png" class="m-r-sm">Admin</a> <a class="btn btn-link visible-xs"
                     data-toggle="dropdown" data-target=".nav-user"> <i class="fa fa-cog"></i> </a> </div>
             <ul class="nav navbar-nav hidden-xs">
                 <li class="dropdown"> <a href="#" class="dropdown-toggle dker" data-toggle="dropdown"> <i class="fa fa-building-o"></i>
@@ -122,14 +122,8 @@
                                 <nav class="nav-primary hidden-xs">
                                     <ul class="nav">
                                     
-                                   	 <li> 
-                                        	<a href="adminDashboard"> 
-                                        		<i class="fa fa-dashboard icon">
-                                            		<b class="bg-danger"></b> 
-                                            	</i> 
-                                            	<span>Admin Dashboard</span>
-                                            </a>
-                                        </li>
+
+                                   
                                         <li> <a href="#"> <i class="fa fa-dashboard icon"> <b class="bg-warning"></b>
                                                 </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i
                                                         class="fa fa-angle-up text-active"></i> </span> <span>Add</span>
@@ -158,9 +152,33 @@
                                                 </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i
                                                         class="fa fa-angle-up text-active"></i> </span> <span>User</span>
                                             </a>
+                                            <ul class="nav lt">
+                                             		<li> <a href="employeeList">
+                                                       <span>SalesManager</span> </a>
+                                                    </li>
+                                                    
+                                                    <li> <a href="employeeList">
+                                                          <span>ServiceManager</span> </a>
+                                                     </li>
+                                                     
+                                                    <li> <a href="employeeList" >
+                                                         <span>Accountant</span> </a>
+                                                     </li>
+                                                     
+                                                    <li> <a href="employeeList">
+                                                         <span>Dealer</span> </a>
+                                                     </li>
+                                                            
+                                                    <li> <a href="employeeList">
+                                                   		<span>User</span> </a> 
+                                                   	</li>
+                                                   
+                                            
+                                            </ul>
                                             
                                         </li>
                                         <!-- End User -->
+                                        
                                         <!-- This for Stock -->
                                        <li>
                                        		 <a href="#"> <i class="fa fa-flask icon"> <b class="bg-success"></b>
@@ -212,44 +230,76 @@
                                                         class="fa fa-angle-up text-active"></i> </span> <span>View</span>
                                             </a>
                                             <ul class="nav lt">
-                                            	 <li> <a href=""> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i>
-                                                    <span>Employee</span> </a>
-                                                <ul class="nav bg">
-                                                
-                                                    <li> <a href="employeeList">
-                                                       <span>SalesManager</span> </a>
-                                                    </li>
-                                                    
-                                                    <li> <a href="employeeList">
-                                                          <span>ServiceManager</span> </a>
-                                                     </li>
-                                                     
-                                                    <li> <a href="employeeList" >
-                                                         <span>Accountant</span> </a>
-                                                     </li>
-                                                     
-                                                    <li> <a href="employeeList">
-                                                         <span>Dealer</span> </a>
-                                                     </li>
-                                                            
-                                                    <li> <a href="employeeList">
-                                                   		<span>User</span> </a> 
+                                            	   
+                                                     <li> <a href="bikeServicesRecords">
+                                                       		<span>Bike_Services_Record</span> </a>
                                                    	</li>
-                                                   
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                      </li>
-                                        <!-- End view -->
+                                                   	
+                                                   	   <!-- TestDrive -->  
+                                           			 <li> 
+                                            				<a href="testDriveCustomer"> 
+                                                     		<span>testDriveCustomer</span> </a>
+                                            		</li>
+                                           			 <!--End Test Drive  -->
+                                             </ul>
+                                             </li> 
+                                        <!-- End view -->     			
+                                                   			
+                                         <!--Start Invoice  -->
+                                
+                                         <li> <a href=""> <i class="fa fa-user icon"> <b class="bg-warning"></b>
+                                                </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i
+                                                        class="fa fa-angle-up text-active"></i> </span> <span>Invoice</span>
+                                            </a>
+                                          </li>
+                                         
+                                          <!--End Invioce  -->  
+                                 
+                                        
                                         <!--Start BikeOffer  -->
                                          			<li> 
-                                         				<a href=""> <i class="fa fa-user icon"> <b class="bg-warning"></b>
+                                         				<a href="bikeOffer"> <i class="fa fa-user icon"> <b class="bg-warning"></b>
                                                			 </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i
                                                         class="fa fa-angle-up text-active"></i> </span> <span>Offer</span>
                                             			</a>
                                          				
                                                     </li>
                                          <!--End BikeOffer  -->
+                                         
+                                          <!--Start Sales  -->
+                                         			<li> 
+                                         				<a href=""> <i class="fa fa-user icon"> <b class="bg-warning"></b>
+                                               			 </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i
+                                                        class="fa fa-angle-up text-active"></i> </span> <span>Sales</span>
+                                            			</a>
+                                            			<ul class="nav bg">
+                                            			
+                                            			<li> 
+                                            			<a href=""> <i class="fa fa-angle-right"></i> <span>Bike</span>
+                                                		</a> 
+                                                         <!-- this for sublist of Bike -->
+                                                         	<ul class="nav lt">
+                                                        		<li> <a href="soldNewBike">
+                                                            		<span>NewBike</span> </a>
+                                                            	 </li>
+                                                        		<li> <a href="soldOldBike" >
+                                                            		<span>OldBike</span> </a>
+                                                            	 </li>
+                                                        	</ul>
+                                                       
+                                                		</li>
+                                                		  <!-- end of sublist of Bike -->
+                                                		
+                                                		<li> 
+                                            			<a href="soldAccessories">
+                                            			 <i class="fa fa-angle-right"></i> 
+                                            			<span>Accessories</span>
+                                                		</a> 
+                                                		</li>
+                                            			</ul>
+                                         				
+                                                    </li>
+                                         <!--End Sales  -->
                                          
                                          <!-- Start Service -->
                                                     <li> 
@@ -264,20 +314,25 @@
                                                        		<span>Available_Service</span> </a>
                                                    			</li>
                                                 
-                                                    		<li> <a href="bikeServicesRecords">
-                                                       		<span>Bike_Service</span> </a>
-                                                   			</li>
+                                                    		
                                                     
                                                    			<li> <a href="bikeCustomization">
-                                                       	    <span>Customization</span> </a>
+                                                       	    <span>Bike_Customization_Details</span> </a>
                                                      		</li>
+                                                     		
+                                                     		 <li><a href="bikeServicing">
+                                              		 		 <span>Bike_Servicing_Details</span> </a>
+                                               				 </li>
+                                                     	</ul>
                                             			
                                                      </li>
                                                     
                                            <!-- End Service -->
-										</li>
+										
                                       </li>   
                                     </ul>
+                                     
+                                 </li>
                                 </nav> <!-- / nav -->
                             </div>
                         </section>
@@ -333,7 +388,7 @@
     <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/demo.js"></script>
     <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/sortable/jquery.sortable.js"></script>
     <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/app.plugin.js"></script>
-
+	 <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/datatables/demo.js"></script>
             
 
             

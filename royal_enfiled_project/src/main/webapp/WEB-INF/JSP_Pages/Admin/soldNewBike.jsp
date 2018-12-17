@@ -117,7 +117,7 @@
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                    <td></td>
+                                   
                                   </tr>
                                   </tbody>
                                   <tfoot>
@@ -125,6 +125,7 @@
                                   	
                                     <th rowspan="1" colspan="1">Model_Name</th>
                                     <th rowspan="1" colspan="1">Color</th>
+                                    <th rowspan="1" colspan="1">Chasis_Number</th>
                                     <th rowspan="1" colspan="1">BikeWheel</th>
                                     <th rowspan="1" colspan="1">BikeOnRoadPrice</th>
                                     <th rowspan="1" colspan="1">Engine_Starting_Type</th>
