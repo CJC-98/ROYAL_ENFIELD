@@ -170,7 +170,7 @@ public class ServiceMangerController {
 	    long tscount=serviceManagerInterface.getAllServiceCount();
 		model.addAttribute("totalServiceCount", tscount);
 
-		long ipcount=serviceManagerInterface.getAllServiceCountByServiceStatus("in-progress");
+		long ipcount=serviceManagerInterface.getAllServiceCountByServiceStatus("inprogress");
 		model.addAttribute("inProgerssServices", ipcount);
 	
 		long cscount=serviceManagerInterface.getAllServiceCountByServiceStatus("done");
@@ -185,7 +185,7 @@ public class ServiceMangerController {
 		model.addAttribute("totalCustomizationCount",tccount);
 		
 
-		long ipcount1=serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("In Progress");
+		long ipcount1=serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("InProgress");
 		
 		model.addAttribute("inProgerssCustomization", ipcount1);
 		

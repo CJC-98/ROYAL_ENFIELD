@@ -127,15 +127,15 @@
 							<a href="CustomizationInprogressPage">
                                 <div class="col-lg-4">
                                     <section class="panel panel-default">
-                                        <header class="panel-heading bg-warning lt" style="font-size: 15px">In-Progress Customization</header>
+                                        <header class="panel-heading bg-warning lt" style="font-size: 15px">InProgress Customization</header>
                                         <div class="panel-body text-center">
-                                            <h4>${inProgerssCustomizationCount}</h4>
+                                            <h4>${inProgerssCustomization}</h4>
                                             <div class="inline">
-                                                <div class="easypiechart text-warning" data-percent="${inProgerssCustomizationCount *100/totalCustomizationCount}"
+                                                <div class="easypiechart text-warning" data-percent="${inProgerssCustomization *100/totalCustomizationCount}"
                                                     data-line-width="5" data-track-Color="#f0f0f0" data-bar-color="#FFD300"
                                                     data-rotate="0" data-scale-Color="false" data-size="150"
                                                     data-animate="2000"> <span class="h2 step font-bold">70</span>%
-                                                    <div class="easypie-text text-muted">In-progress</div>
+                                                    <div class="easypie-text text-muted">Inprogress</div>
                                                 </div>      
                                             </div>
                                         </div>
@@ -151,9 +151,9 @@
                                     <section class="panel panel-default">
                                         <header class="panel-heading bg-success lt" style="font-size: 15px">Completed Customization</header>
                                         <div class="panel-body text-center">
-                                            <h4>${completedCustomizationCount}</h4>
+                                            <h4>${completedCustomization}</h4>
                                             <div class="inline">
-                                                <div class="easypiechart text-success" data-percent="${completedCustomizationCount *100/totalCustomizationCount}"
+                                                <div class="easypiechart text-success" data-percent="${completedCustomization *100/totalCustomizationCount}"
                                                     data-line-width="5" data-track-Color="#f0f0f0" data-bar-color="#8ec165"
                                                     data-rotate="0" data-scale-Color="false" data-size="150"
                                                     data-animate="2000"> <span class="h2 step font-bold">20</span>%
