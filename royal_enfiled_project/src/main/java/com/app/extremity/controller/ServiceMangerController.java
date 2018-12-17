@@ -1,10 +1,18 @@
  package com.app.extremity.controller;
 
 
+import java.io.IOException;
+
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+
+import java.io.IOException;
+
 import java.util.List;
 
+import javax.management.Notification;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -14,20 +22,23 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 
-
+import com.app.extremity.idao.BikeServicingIDao;
 import com.app.extremity.iservice.IAdminService;
-
 import com.app.extremity.iservice.NotificationInterface;
 import com.app.extremity.iservice.ServiceManagerInterface;
-
+import com.app.extremity.model.BikeServicing;
+import com.app.extremity.model.Color;
 import com.app.extremity.model.EmployeeDetails;
-
 import com.app.extremity.model.Notfication;
+import com.app.extremity.model.ServcingBikeInfo;
+import com.app.extremity.model.ServicingChart;
+import com.app.extremity.model.ServicingInvoice;
 
   
 /* 
@@ -54,9 +65,55 @@ public class ServiceMangerController {
 	
 	HttpSession session;
 	
+	
 	@RequestMapping(value="/DashboardPage")
 	public String ServicesDashboardPage(Model model,HttpServletRequest request){
 		
+		//test data from bike servicing
+		
+		ServcingBikeInfo info = new ServcingBikeInfo();
+		info.setModelName("bullet 500");
+		info.setPlateNumber("MH-24-FD-1243");
+		
+		ServicingChart s1 = new ServicingChart();
+		s1.setWork("labour cost");
+		s1.setCost(245);
+		s1.setStatus("done");
+				
+		ServicingChart s2 = new ServicingChart();
+		s2.setWork("handle clean");
+		s1.setCost(240);
+		
+		ServicingChart s3 = new ServicingChart();
+		s3.setWork("bike clean");
+		s3.setCost(3422);
+		
+		ServicingChart s4 = new ServicingChart();
+		s4.setWork("seat clean");
+		s4.setCost(50);
+		
+		ServicingInvoice i1 = new ServicingInvoice();
+		i1.setAmount(3520);
+		i1.setServiceCGstPercent(4);
+		i1.setServiceSGstPercent(4);
+		i1.setTotalAmount(3500);
+		
+		
+		BikeServicing bs = new BikeServicing();
+		bs.setBikeServicingId(serviceManagerInterface.getNextBikeServicingId());
+		bs.setAppointmentDate("30-01-2018");
+		bs.setServiceProgressPercent(15);
+		
+		bs.setServcingBikeInfo(info);
+		
+		bs.getServicingChart().add(s1);
+		bs.getServicingChart().add(s2);
+		bs.getServicingChart().add(s3);
+		bs.getServicingChart().add(s4);
+
+		bs.setServicingInvoice(i1);
+		
+		//serviceManagerInterface.saveBikeServicing(bs);
 		
 		//test data for notification
 		Notfication notify = new Notfication();
@@ -80,58 +137,20 @@ public class ServiceMangerController {
 		notify.setSendTime(LocalDateTime.now().format(timeFormat));
 		
 		//notificationInterface.saveNotfication(notify);
-
-
-
-
-	       //account => approved customization count
-			long account=serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("Waiting");
-			System.out.println("Approved Customization are:"+account);
-			model.addAttribute("approvedCustomizationCount",account);
-			
-			//tc => total customization count
-		    long tccount=serviceManagerInterface.getAllCustomizationCount();
-			System.out.println("Total Customization are:"+tccount);
-			model.addAttribute("totalCustomizationCount",tccount);
-			
-			//ipcount => in progress count
-			long ipcount=serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("InProgress");
-			System.out.println("In progerss Customization are:"+ipcount);
-			model.addAttribute("inProgerssCustomizationCount", ipcount);
-			
-			//cccount => completed customization count
-			long cccount=serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("Completed");
-			System.out.println("Completed Customization are:"+cccount);
-			model.addAttribute("completedCustomizationCount", cccount);
-					
-	
-
-
-		//ipcount => in progress count
-		long ipcount1=serviceManagerInterface.getAllServiceCountByServiceStatus("in-progress");
-		System.out.println("In progerss services are:"+ipcount1);
-		model.addAttribute("inProgerssServices", ipcount1);
-
-
-
+		
 		
 		session = request.getSession();
 		
-		System.out.println("name "+session.getAttribute("currentUserName"));
-		System.out.println("post "+session.getAttribute("currentUserPost"));
-		System.out.println("img "+session.getAttribute("currentUserImg"));
-
-		   
 		
- 
+		
 		long sscount=serviceManagerInterface.getAllServiceCountByServiceStatus("waiting");
 		model.addAttribute("approvedServiceCount",sscount);
- 
-		
+
 	    long tscount=serviceManagerInterface.getAllServiceCount();
 		model.addAttribute("totalServiceCount", tscount);
 
-
+		long ipcount=serviceManagerInterface.getAllServiceCountByServiceStatus("in-progress");
+		model.addAttribute("inProgerssServices", ipcount);
 	
 		long cscount=serviceManagerInterface.getAllServiceCountByServiceStatus("done");
 		model.addAttribute("completedservices", cscount);
@@ -146,16 +165,11 @@ public class ServiceMangerController {
 		model.addAttribute("shortInboxList", shortInboxList);
 
 
-
-
-		
-		 logger.info("dashboard hits........... log");
-			model.addAttribute("link","serviceManagerDashboard.jsp");
-			return "ServiceManager/serviceManagerIndex";
-
-
-	
+		logger.info("dashboard hits........... log");
+		model.addAttribute("link","serviceManagerDashboard.jsp");
+		return "ServiceManager/serviceManagerIndex";
 	}
+  
 	@RequestMapping(value="/ApprovedServicesPage")
 	public String ApprovedServicesgPage(Model model,HttpServletRequest request){
 		 
@@ -175,6 +189,21 @@ public class ServiceMangerController {
 
 		model.addAttribute("shortInboxList", shortInboxList);
 		
+List<BikeServicing>bikeServicingList = serviceManagerInterface.getAllBikeServicingByServcingStatus("waiting");
+		
+		for(BikeServicing data: bikeServicingList) {
+		/*	System.out.println(data.getServcingBikeInfo().getModelName());
+			System.out.println(data.getServiceProgressPercent());
+			List<ServicingChart> chartlist = data.getServicingChart();
+			
+			for(ServicingChart chart:chartlist) {
+				System.out.println("      "+chart.getWork()+" "+chart.getCost()+" "+chart.getStatus());
+			}*/
+		}
+		
+		model.addAttribute("bikeServicingList",bikeServicingList);
+		
+		
 		model.addAttribute("link","approvedServices.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
@@ -193,6 +222,20 @@ public class ServiceMangerController {
 
 		model.addAttribute("shortInboxList", shortInboxList);
 		
+		List<BikeServicing>bikeServicingList = serviceManagerInterface.getAllBikeServicingByServcingStatus("in-progress");
+		
+		for(BikeServicing data: bikeServicingList) {
+			System.out.println(data.getServcingBikeInfo().getModelName());
+			System.out.println(data.getServiceProgressPercent());
+			List<ServicingChart> chartlist = data.getServicingChart();
+			
+			for(ServicingChart chart:chartlist) {
+				System.out.println("      "+chart.getWork()+" "+chart.getCost()+" "+chart.getStatus());
+			}
+		}
+		
+		model.addAttribute("bikeServicingList",bikeServicingList);
+		
 		model.addAttribute("link","servicesInprogress.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
@@ -205,11 +248,12 @@ public class ServiceMangerController {
 		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
 
 		model.addAttribute("inboxCount", inboxCount);
-		
 
 		
 		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
     	model.addAttribute("shortInboxList", shortInboxList);
+		
+		
 		
 		model.addAttribute("link","approvedCustomization.jsp");
 		return "ServiceManager/serviceManagerIndex";  
@@ -227,6 +271,8 @@ public class ServiceMangerController {
 
 		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
 		model.addAttribute("shortInboxList", shortInboxList);
+		
+		
 		
 		model.addAttribute("link","customizationInprogress.jsp");
 		return "ServiceManager/serviceManagerIndex";
@@ -349,28 +395,31 @@ public class ServiceMangerController {
 		session = request.getSession();
 		
 		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication(session.getAttribute("currentUserName").toString());
-
-		model.addAttribute("outboxList",outboxList);
-			
-
+      model.addAttribute("outboxList",outboxList);
+	
 		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication(session.getAttribute("currentUserName").toString());
+ 	   model.addAttribute("inboxList",inboxList);   
 
-		model.addAttribute("inboxList",inboxList);   
 
-
-		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
-
-		model.addAttribute("inboxCount", inboxCount);
 		
-		List<Notfication>shortInboxList=notificationInterface.getMyNotReadedInboxNotfication("currentUserName", false);
+		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
+     	model.addAttribute("inboxCount", inboxCount);
+		
+
+		
+
+		List<Notfication>shortInboxList=notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
+
 		
     	model.addAttribute("shortInboxList", shortInboxList);	
+
+    	
 		
 		model.addAttribute("link","myNotifications.jsp");	
+
 		return "ServiceManager/serviceManagerIndex";
 	}
 	
-
 
 	
 	
@@ -400,7 +449,9 @@ public class ServiceMangerController {
 		
 
 		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
-     	model.addAttribute("shortInboxList", shortInboxList);
+     	
+		
+		model.addAttribute("shortInboxList", shortInboxList);
 		
 		model.addAttribute("link","myNotifications.jsp");	
 		return "ServiceManager/serviceManagerIndex";
@@ -447,17 +498,13 @@ public class ServiceMangerController {
 		
 		notify.setMessage(message);
 		
-		
 		System.out.println(session.getAttribute("currentUserName").toString());
 		System.out.println(session.getAttribute("currentUserImg").toString());
 		System.out.println(session.getAttribute("currentUserPost").toString());
 		System.out.println(reciverName);
-		System.out.println(reciverPost);
-		System.out.println(reciverImg);
-		System.out.println(message);
-
+		
 		Notfication n = notificationInterface.saveNotfication(notify);
-		System.out.println("data saved.............................");
+		
 		if(n!=null) {
 			return "done";
 		}
@@ -466,5 +513,4 @@ public class ServiceMangerController {
 		
 	}
 	
-
 }

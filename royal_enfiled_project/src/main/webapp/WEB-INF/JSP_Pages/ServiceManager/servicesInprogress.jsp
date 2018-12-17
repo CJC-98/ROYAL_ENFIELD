@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="a" uri="http://java.sun.com/jsp/jstl/core"%>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +12,14 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/css/font.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/css/app.v1.css" type="text/css" />
+     
+  
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  
+
+    
 </head>
 
 <body>
@@ -34,16 +43,19 @@
                 	</div>     
 	               
 	                <!-- fisrt table starts -->
+	                <a:forEach var="data" items="${bikeServicingList}">
 	                <div class="row">
                          <div class="col-sm-12">
                              <section class="panel panel-default">
                                           <header class="panel-heading bg-dark lter" style="font-size: 20px; color: white; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
-                                          	Bullet 350cc (MH-12-HF-6454)
+                                          	${data.servcingBikeInfo.modelName}
 
                                           	<a class="btn btn-md btn-warning rounded m-r" onclick="submitWork()">Submit Work</a>
                                           </header>
-                                                
-                                          <table class="table table-striped m-b-none">
+                                            
+                                          
+                                          
+                                                  <table class="table table-striped m-b-none">
                                                       
                                                 <thead>
                                                                 
@@ -56,159 +68,59 @@
                                                 </thead>
                                                 
                                                 <tbody>
-                                                        
-                                                      <tr style="text-align: center;">
-                                                         <td>1</td>
-                                                         <td>labour cost</td>
-                                                         <td>500</td>
-                                                         <td>
-                                                         	<div class="checkbox"> 
-                                                         		<label style="color: #88C800">
-                                                         			work done
-                                                    			</label> 
-                                                    		</div>
-                                                         </td>
-                                                      </tr>
-                                                      
-                                                      <tr style="text-align: center;">
-                                                         <td>2</td>
-                                                         <td>tail light clean</td>
-                                                         <td>2020</td>
-                                                         <td>
-                                                         	<div class="checkbox"> 
-                                                         		<label> 
-                                                         			<input type="checkbox">
-                                                    			</label> 
-                                                    		</div>
-                                                         </td>
-                                                      </tr>
-                                                      
-                                                      
-                                                      
-                                                      <tr style="text-align: center;">
-                                                         <td>4</td>
-                                                         <td>brake clean</td>
-                                                         <td>500</td>
-                                                         <td>
-                                                         	<div class="checkbox"> 
-                                                         		<label> 
-                                                         			<input type="checkbox">
-                                                    			</label> 
-                                                    		</div>
-                                                         </td>
-                                                      </tr>
-                                                      
-                                                      <tr style="text-align: center;">
-                                                         <td>5</td>
-                                                         <td>silence clean</td>
-                                                         <td>150</td>
-                                                         <td>
-                                                         	<div class="checkbox"> 
-                                                         		<label> 
-                                                         			<input type="checkbox">
-                                                    			</label> 
-                                                    		</div>
-                                                         </td>
+                                                       
+                                                      <a:forEach var="work" items="${data.servicingChart}">
+	                                                      <tr style="text-align: center;">
+	                                                         <td>${work.servicingChartId}</td>
+	                                                         <td>${work.work}</td>
+	                                                         <td>500</td>
+	                                                         <td>
+	                                                         	<a:choose>
+																	  <a:when test="${work.status == 'done'}">
+																			 <div class="checkbox"> 
+				                                                         		<label style="color: #88C800">
+				                                                         			work done
+				                                                    			</label> 
+				                                                    		</div>
+																	  </a:when>
+																	  <a:otherwise>
+																			  <div class="checkbox"> 
+					                                                         		<label> 
+					                                                         			<input type="checkbox">
+					                                                    			</label> 
+					                                                        	</div>
+																	  </a:otherwise>
+																</a:choose>
+																	  
+	                                                         	
+	                                                         </td>
+	                                                      </tr>
+                                                      </a:forEach> 
+                                                                                                            
+
+                                                      <tr>
+	                                                    <div class="progress">
+														    <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" 
+														    	style="width:${data.serviceProgressPercent}%;height:20px">${data.serviceProgressPercent}%</div>
+														 </div> 
                                                       </tr>
         
                                                       
                                                     </tbody>
 
-                                             </table>
-                                                     
+                                             </table>   	
+                                        
+                          
                              </section>
                                          
                         </div>
+
+                           
                     </div>
+                       </a:forEach>  
                     <!-- first record ends-->
                     
-                     <div class="row">
-                         <div class="col-sm-12">
-                             <section class="panel panel-default">
-                                          <header class="panel-heading bg-dark lter" style="color: white; font-size: 20px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
-                                          	Bullet 350cc (MH12546HF6454)
-                                          	<a class="btn btn-md btn-warning rounded m-r" onclick="submitWork()">Submit Work</a>
-                                          </header>
-                                                
-                                          <table class="table table-striped m-b-none">
-                                                      
-                                                <thead>
-                                                                
-                                                     <tr>   
-                                                         <th style="text-align: center;">Part Id</th>
-                                                         <th style="text-align: center;">Work</th>
-                                                         <th style="text-align: center;">Cost</th>
-                                                         <th style="text-align: center;">Check</th>
-                                                     </tr>
-                                                </thead>
-                                                
-                                                <tbody>
-                                                        
-                                                      <tr style="text-align: center;">
-                                                         <td>1</td>
-                                                         <td>labour cost</td>
-                                                         <td>500</td>
-                                                         <td>
-                                                         	<div class="checkbox"> 
-                                                         		<label style="color: #88C800">
-                                                         			work done
-                                                    			</label> 
-                                                    		</div>
-                                                         </td>
-                                                      </tr>
-                                                      
-                                                      <tr style="text-align: center;">
-                                                         <td>2</td>
-                                                         <td>tail light clean</td>
-                                                         <td>2020</td>
-                                                         <td>
-                                                         	<div class="checkbox"> 
-                                                         		<label> 
-                                                         			<input type="checkbox">
-                                                    			</label> 
-                                                    		</div>
-                                                         </td>
-                                                      </tr>
-                                                      
-                                                      
-                                                      
-                                                      <tr style="text-align: center;">
-                                                         <td>4</td>
-                                                         <td>brake clean</td>
-                                                         <td>500</td>
-                                                         <td>
-                                                         	<div class="checkbox"> 
-                                                         		<label> 
-                                                         			<input type="checkbox">
-                                                    			</label> 
-                                                    		</div>
-                                                         </td>
-                                                      </tr>
-                                                      
-                                                      <tr style="text-align: center;">
-                                                         <td>5</td>
-                                                         <td>silence clean</td>
-
-                                                         <td>150</td>
-                                                         <td>
-                                                         	<div class="checkbox"> 
-                                                         		<label> 
-                                                         			<input type="checkbox">
-                                                    			</label> 
-                                                    		</div>
-                                                         </td>
-                                                      </tr>
-        
-                                                      
-                                                    </tbody>
-
-                                             </table>
-                                                     
-                             </section>
-                                         
-                        </div>
-                    </div>
-                    <!-- first record ends-->
+                    
                   
                      
 	            </section>

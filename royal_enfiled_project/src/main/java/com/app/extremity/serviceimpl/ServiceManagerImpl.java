@@ -1,6 +1,8 @@
 package com.app.extremity.serviceimpl;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -100,6 +102,19 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 		// TODO Auto-generated method stub
 		return saveBikeServicing(bikeServicing);
 	}
+
+
+	@Override
+	public List<BikeServicing> getAllBikeServicingByServcingStatus(String serviceStatus) {
+		return bikeServicingIDao.findAllBikeServicingByServcingStatus(serviceStatus);
+	}
+
+	@Override
+	public String getNextBikeServicingId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
 
 

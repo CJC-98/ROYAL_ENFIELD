@@ -28,5 +28,8 @@ public interface ServiceManagerInterface {
 
 	BikeCustomization saveBikeCustomization(BikeCustomization bikeCustomization);
 
+	public List<BikeServicing> getAllBikeServicingByServcingStatus(String serviceStatus);
+
+public String getNextBikeServicingId();
 		
 }
