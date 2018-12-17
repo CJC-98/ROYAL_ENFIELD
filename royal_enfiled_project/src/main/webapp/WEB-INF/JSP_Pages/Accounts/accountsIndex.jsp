@@ -22,7 +22,7 @@
                     data-toggle="dropdown" data-target=".nav-user"> <i class="fa fa-cog"></i> </a> </div>
           
             <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user">
-                <li class="hidden-xs"> <a href="#" class="dropdown-toggle dk" data-toggle="dropdown"> <i class="fa fa-bell"></i>
+                <li class="h idden-xs"> <a href="#" class="dropdown-toggle dk" data-toggle="dropdown"> <i class="fa fa-bell"></i>
                         <span class="badge badge-sm up bg-danger m-l-n-sm">${inboxCount}</span> </a>
                     <section class="dropdown-menu aside-xl">
                         <section class="panel bg-white">
@@ -83,7 +83,7 @@
                                 data-size="5px" data-color="#333333">
                                 <!-- nav -->
                                 <nav class="nav-primary hidden-xs">
-                                    <ul class="nav">
+                                     <ul class="nav">
                                         
                                         <li> <a href="Dashboard" class="active"> <i class="fa fa-dashboard"> 
                                         		<b class="bg-warning"></b>
