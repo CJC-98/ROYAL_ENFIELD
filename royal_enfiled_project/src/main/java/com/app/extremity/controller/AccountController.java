@@ -36,6 +36,7 @@ import com.app.extremity.model.Notfication;
 public class AccountController {
 
 	
+	
 	@Autowired
 	NotificationInterface notificationInterface;
 	@Autowired
