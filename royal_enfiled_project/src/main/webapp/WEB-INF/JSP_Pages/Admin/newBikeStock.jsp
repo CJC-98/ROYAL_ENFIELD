@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -19,34 +19,28 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/app.v1.css"
 	type="text/css" />
+	<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/js/datatables/datatables.css"
+	type="text/css" />
+	
 <!--[if lt IE 9]> <script src="js/ie/html5shiv.js"></script> <script src="js/ie/respond.min.js"></script> <script src="js/ie/excanvas.js"></script> <![endif]-->
 </head>
 <body class="">
 
-	<section id="content" class="bg-light lter">
-	 <section
-		class="vbox">
-		 <section class="scrollable padder">
-
-	<div class="content-header">
-		<ul class="breadcrumb no-border no-radius b-b b-light pull-in">
-			<li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
-		</ul>
-		<div class="m-b-md">
-			<h3 class="m-b-none">Workset</h3>
-			<small>Welcome back,Royal_Enfield</small>
-		</div>
+	<section id="content" class="bg-light lter"> <section
+		class="vbox"> <section class="scrollable padder">
+	<ul class="breadcrumb no-border no-radius b-b b-light pull-in">
+		<li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+		<li><a href="#">Stock</a></li>
+		<li><a href="#">Bike</a></li>
+		<li><a href="#">NewBike</a></li>
+	</ul>
+	<div class="m-b-md">
+		<h3 class="m-b-none">NewBike Stock</h3>
 	</div>
-	</section> <!-- Table  -->
-	<div class="row text-center m-b-md">
-		<section class="scrollable padder">
-		<h3>
-			<b>New_Bike</b>
-		</h3>
-		</section>
-	</div>
+	<section class="panel panel-default">
 	<div class="row ">
-		<section class="scrollable padder">
+
 		<div class="container">
 			<div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
 				<div class="row">
@@ -150,48 +144,30 @@
 							aria-live="polite">Showing 1 to 10 of 57 entries</div>
 					</div>
 					<div class="col-sm-12 col-md-7">
-						<div class="dataTables_paginate paging_simple_numbers"
-							id="example1_paginate">
-							<ul class="pagination">
-								<li class="paginate_button page-item previous disabled"
-									id="example1_previous"><a href="#"
-									aria-controls="example1" data-dt-idx="0" tabindex="0"
-									class="page-link">Previous</a></li>
-								<li class="paginate_button page-item active"><a href="#"
-									aria-controls="example1" data-dt-idx="1" tabindex="0"
-									class="page-link">1</a></li>
-								<li class="paginate_button page-item "><a href="#"
-									aria-controls="example1" data-dt-idx="2" tabindex="0"
-									class="page-link">2</a></li>
-								<li class="paginate_button page-item "><a href="#"
-									aria-controls="example1" data-dt-idx="3" tabindex="0"
-									class="page-link">3</a></li>
-								<li class="paginate_button page-item "><a href="#"
-									aria-controls="example1" data-dt-idx="4" tabindex="0"
-									class="page-link">4</a></li>
-								<li class="paginate_button page-item "><a href="#"
-									aria-controls="example1" data-dt-idx="5" tabindex="0"
-									class="page-link">5</a></li>
-								<li class="paginate_button page-item "><a href="#"
-									aria-controls="example1" data-dt-idx="6" tabindex="0"
-									class="page-link">6</a></li>
-								<li class="paginate_button page-item next" id="example1_next">
-									<a href="#" aria-controls="example1" data-dt-idx="7"
-									tabindex="0" class="page-link">Next</a>
-								</li>
-							</ul>
+						<div class="dataTables_paginate paging_full_numbers"
+							id="DataTables_Table_0_paginate">
+							<a class="paginate_button first disabled"
+								aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0"
+								id="DataTables_Table_0_first">First</a><a
+								class="paginate_button previous disabled"
+								aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0"
+								id="DataTables_Table_0_previous">Previous</a><span></span><a
+								class="paginate_button next disabled"
+								aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0"
+								id="DataTables_Table_0_next">Next</a><a
+								class="paginate_button last disabled"
+								aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0"
+								id="DataTables_Table_0_last">Last</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		</section>
 	</div>
-	<!-- End table --> <aside class="bg-light lter b-l aside-md hide"
+	</section> <!-- End table --> <aside class="bg-light lter b-l aside-md hide"
 		id="notes">
 	<div class="wrapper">Notification</div>
-	</aside> 
-	</section> </section>
+	</aside> </section> </section>
 	
 </body>
 </html>
