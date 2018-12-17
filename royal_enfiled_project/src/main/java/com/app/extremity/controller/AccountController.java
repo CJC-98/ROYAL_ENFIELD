@@ -146,8 +146,6 @@ public class AccountController {
 		return "Accounts/accountsIndex";
 	}
 	
-
-	
 	
 	@RequestMapping(value="/markItAccount")    
 	public @ResponseBody String udpateNotification(@RequestParam int notficationId,Model model, 
