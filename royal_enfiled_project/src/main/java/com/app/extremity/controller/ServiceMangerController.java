@@ -23,6 +23,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -32,6 +33,7 @@ import com.app.extremity.idao.BikeServicingIDao;
 import com.app.extremity.iservice.IAdminService;
 import com.app.extremity.iservice.NotificationInterface;
 import com.app.extremity.iservice.ServiceManagerInterface;
+import com.app.extremity.model.AvailableServicing;
 import com.app.extremity.model.BikeServicing;
 import com.app.extremity.model.Color;
 import com.app.extremity.model.EmployeeDetails;
@@ -213,16 +215,6 @@ public class ServiceMangerController {
 		
 		List<BikeServicing>bikeServicingList = serviceManagerInterface.getAllBikeServicingByServcingStatus("in-progress");
 		
-		for(BikeServicing data: bikeServicingList) {
-			System.out.println(data.getServcingBikeInfo().getModelName());
-			System.out.println(data.getServiceProgressPercent());
-			List<ServicingChart> chartlist = data.getServicingChart();
-			
-			for(ServicingChart chart:chartlist) {
-				System.out.println("      "+chart.getWork()+" "+chart.getCost()+" "+chart.getStatus());
-			}
-		}
-		
 		model.addAttribute("bikeServicingList",bikeServicingList);
 		
 		model.addAttribute("link","servicesInprogress.jsp");
@@ -274,7 +266,7 @@ public class ServiceMangerController {
 		session = request.getSession();
 		
 		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
-	model.addAttribute("inboxCount", inboxCount);
+	    model.addAttribute("inboxCount", inboxCount);
 		
 
 		
@@ -292,7 +284,7 @@ public class ServiceMangerController {
 		session = request.getSession();
 		
 		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
-	model.addAttribute("inboxCount", inboxCount);
+	    model.addAttribute("inboxCount", inboxCount);
 
 	
 	
@@ -305,12 +297,14 @@ public class ServiceMangerController {
 	
 	@RequestMapping(value="/AvailableServicesPage")
 	public String AvailableServicesPagePage(Model model,HttpServletRequest request){
-		
 
 		session = request.getSession();
+		
+		List<AvailableServicing> serviceList = serviceManagerInterface.getAllAvailableServicing();
+		model.addAttribute("serviceList", serviceList);
 	
 		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
-	model.addAttribute("inboxCount", inboxCount);
+	    model.addAttribute("inboxCount", inboxCount);
 		
 
 		
@@ -374,9 +368,6 @@ public class ServiceMangerController {
 		return "ServiceManager/serviceManagerIndex";
 	}
 
-	
-
-	
 	@RequestMapping(value="/MyNotificationsPage")
 	public String MyNotificationsPage(Model model,HttpServletRequest request){
 		
@@ -406,10 +397,7 @@ public class ServiceMangerController {
 		model.addAttribute("link","myNotifications.jsp");	
 		return "ServiceManager/serviceManagerIndex";
 	}
-	
 
-	
-	
 	@RequestMapping(value="/markIt")    
 	public @ResponseBody String udpateNotification(@RequestParam int notficationId,Model model,HttpServletRequest request){
 		
@@ -442,8 +430,7 @@ public class ServiceMangerController {
 		return "ServiceManager/serviceManagerIndex";
 
 	}
-	
-	
+		
 	@RequestMapping(value="/searchEmployee")    
 	public @ResponseBody EmployeeDetails searchEmployee(@RequestParam String empName,HttpServletRequest request) {
 		
@@ -455,7 +442,7 @@ public class ServiceMangerController {
 	}
 	
 	@RequestMapping(value="/sendNotification")    
-	public @ResponseBody String sendNotification(@RequestParam String reciverName, 
+	public String sendNotification(@RequestParam String reciverName, 
 												 @RequestParam String reciverPost,
 												 @RequestParam String reciverImg,
 												 @RequestParam String message,
@@ -492,5 +479,75 @@ public class ServiceMangerController {
 		return null;
 		
 	}
+	
+	@RequestMapping(value="/submitInProgressWork") 
+	public String submitInProgressWork(@RequestParam(required = false) int workStatusChange[],Model model,HttpServletRequest request) {
+		
+		session = request.getSession();
+		
+		if(workStatusChange != null) {
+			for(int i : workStatusChange) {
+				System.out.println(i);
+			}
+			List<BikeServicing>bikeServicingList = serviceManagerInterface.getAllBikeServicingByServcingStatus("in-progress");
+			model.addAttribute("bikeServicingList",bikeServicingList);
+
+			long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
+			model.addAttribute("inboxCount", inboxCount);
+			
+			List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
+	     	model.addAttribute("shortInboxList", shortInboxList);
+	     	
+			model.addAttribute("link","servicesInprogress.jsp");	
+			return "ServiceManager/serviceManagerIndex";
+
+		}
+		else {
+			List<BikeServicing>bikeServicingList = serviceManagerInterface.getAllBikeServicingByServcingStatus("in-progress");
+			model.addAttribute("bikeServicingList",bikeServicingList);
+
+			long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
+			model.addAttribute("inboxCount", inboxCount);
+			
+			List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
+	     	model.addAttribute("shortInboxList", shortInboxList);
+	     	
+			model.addAttribute("link","servicesInprogress.jsp");	
+			return "ServiceManager/serviceManagerIndex";
+
+		}		
+				
+	}
+	
+	@RequestMapping(value="/addNewService")
+	public String saveNewServices(@ModelAttribute AvailableServicing service, Model model, HttpServletRequest request) {
+		
+		session = request.getSession();
+		
+		serviceManagerInterface.saveAvailableServicingIDao(service);
+		
+		List<AvailableServicing> serviceList = serviceManagerInterface.getAllAvailableServicing();
+		model.addAttribute("serviceList", serviceList);
+
+		List<BikeServicing>bikeServicingList = serviceManagerInterface.getAllBikeServicingByServcingStatus("in-progress");
+		model.addAttribute("bikeServicingList",bikeServicingList);
+
+		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
+		model.addAttribute("inboxCount", inboxCount);
+		
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
+     	model.addAttribute("shortInboxList", shortInboxList);
+		
+		model.addAttribute("link","availableServicing.jsp");	
+		return "ServiceManager/serviceManagerIndex";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }

@@ -26,8 +26,20 @@
 
 
 	<script>
-		function submitWork(){
-			alert("your work is submitted");
+		function subWork(){
+/* 			var workStatusArray = document.getElementById("workStatusChange").value;
+			
+			if(workStatusArray==null){
+				alert("work can't submit");
+			}
+			else{
+				alert("work  is submit");
+			} */
+
+//			var req = new XMLHttpRequest();		
+//			req.open("GET","submitInProgressWork?notficationId="+workStatusArray,true);
+//			req.send();
+//			alert("your work is submitted"+empName);
 		}
 	</script>
 	
@@ -35,27 +47,31 @@
 	<section id="content"  class="bg-light lter">
 	        <section class="vbox">
 	            <section class="scrollable padder">                                               
-	                                
-	                <div class="m-b-md hbox" style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
-                    	<h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">
-                    		Current Services
-                    	</h3>
-                	</div>     
+	               <form action="submitInProgressWork">            
+		                <div class="m-b-md hbox" style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
+	                    	<h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">
+	                    		Current Services
+	                    	</h3>
+	                    	<input class="btn btn-md btn-warning rounded m-r" type="submit" value="Submit Work">
+	                	</div>     
 	               
 	                <!-- fisrt table starts -->
+	                
 	                <a:forEach var="data" items="${bikeServicingList}">
+	                
+	                
 	                <div class="row">
                          <div class="col-sm-12">
                              <section class="panel panel-default">
-                                          <header class="panel-heading bg-dark lter" style="font-size: 20px; color: white; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
+                                          <header class="panel-heading bg-dark lter" 
+                                          	style="font-size: 20px; color: white; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
                                           	${data.servcingBikeInfo.modelName}
-
-                                          	<a class="btn btn-md btn-warning rounded m-r" onclick="submitWork()">Submit Work</a>
+                                          	
                                           </header>
                                             
                                           
                                           
-                                                  <table class="table table-striped m-b-none">
+                                           <table class="table table-striped m-b-none">
                                                       
                                                 <thead>
                                                                 
@@ -73,7 +89,7 @@
 	                                                      <tr style="text-align: center;">
 	                                                         <td>${work.servicingChartId}</td>
 	                                                         <td>${work.work}</td>
-	                                                         <td>500</td>
+	                                                         <td>${work.cost}</td>
 	                                                         <td>
 	                                                         	<a:choose>
 																	  <a:when test="${work.status == 'done'}">
@@ -86,7 +102,7 @@
 																	  <a:otherwise>
 																			  <div class="checkbox"> 
 					                                                         		<label> 
-					                                                         			<input type="checkbox">
+					                                                         			<input type="checkbox" name="workStatusChange" value="${work.servicingChartId}">
 					                                                    			</label> 
 					                                                        	</div>
 																	  </a:otherwise>
@@ -117,11 +133,13 @@
 
                            
                     </div>
-                       </a:forEach>  
-                    <!-- first record ends-->
-                    
-                    
                   
+                   
+                   
+                </a:forEach>  
+                 </form>
+             <!-- first record ends-->
+    
                      
 	            </section>
 	        </section>

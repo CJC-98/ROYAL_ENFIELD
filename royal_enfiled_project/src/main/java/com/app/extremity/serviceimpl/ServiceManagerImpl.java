@@ -7,7 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
+import com.app.extremity.idao.AvailableServicingIDao;
 import com.app.extremity.idao.BikeCustomizationIDao;
 import com.app.extremity.idao.BikeServicingIDao;
 import com.app.extremity.idao.ServcingBikeInfoIDao;
@@ -17,6 +17,7 @@ import com.app.extremity.idao.ServicingChartIDao;
 
 
 import com.app.extremity.iservice.ServiceManagerInterface;
+import com.app.extremity.model.AvailableServicing;
 import com.app.extremity.model.BikeServicing;
 
 import com.app.extremity.model.Notfication;
@@ -42,7 +43,8 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	ServicingChartIDao servicingChartIDao;
 	
 	  
-	
+	@Autowired
+	AvailableServicingIDao availableServicingIDao;
   
 	
 	
@@ -84,6 +86,17 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	@Override
 	public List<BikeServicing> getAllBikeServicingByServcingStatus(String serviceStatus) {
 		return bikeServicingIDao.findAllBikeServicingByServcingStatus(serviceStatus);
+	}
+
+	@Override
+	public AvailableServicing saveAvailableServicingIDao(AvailableServicing availableServicing) {
+		return availableServicingIDao.save(availableServicing);
+	}
+
+	@Override
+	public List<AvailableServicing> getAllAvailableServicing() {
+		System.out.println(availableServicingIDao.findAll());
+		return (List<AvailableServicing>)availableServicingIDao.findAll();
 	}
 
 
