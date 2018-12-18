@@ -202,14 +202,20 @@ public class ServiceMangerController {
 								 
 						System.out.println(""+bikeno.getChasisNumber()+" "+bikeno.getPlateNumber()+"");
 						 
-				
+						List<ServicingChart> chartlist = data.getServicingChart();
+						
+						for(ServicingChart chart:chartlist) {
+							System.out.println("      "+chart.getWork()+" "+chart.getCost()+" "+chart.getStatus());
+						}
 					
 				}
         
         
-        
-        
 		model.addAttribute("bikeServicingList",bikeServicingList);
+		
+		
+		
+		
 		
 		
 		model.addAttribute("link","approvedServices.jsp");
