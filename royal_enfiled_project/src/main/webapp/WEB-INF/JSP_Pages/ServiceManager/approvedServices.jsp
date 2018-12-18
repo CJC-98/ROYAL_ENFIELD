@@ -34,7 +34,7 @@
                                           <header class="panel-heading bg-warning dk" style="font-size: 20px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
                                          
                                           	<a:choose>
-																	  <a:when test="${data.servcingBikeInfo.plateNumber !='  '}">
+																	  <a:when test="${data.servcingBikeInfo.plateNumber !=''}">
 																	 
 																			 <div class="checkbox"> 
 				                                                         		
@@ -44,10 +44,9 @@
 																	  </a:when>
 																	  <a:otherwise>
 																			  <div class="checkbox"> 
-					                                                         		<label> 
-					                                                         			<input type="checkbox">
+					                                                         		 
 					                                                         			${data.servcingBikeInfo.modelName}(${data.servcingBikeInfo.chasisNumber})
-					                                                    			</label> 
+					                                                    			 
 					                                                        	</div>
 																	  </a:otherwise>
 																</a:choose>
