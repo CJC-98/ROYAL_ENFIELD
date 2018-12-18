@@ -189,6 +189,29 @@ public class ServiceMangerController {
 
 		model.addAttribute("shortInboxList", shortInboxList);
 		
+        List<BikeServicing>bikeServicingList = serviceManagerInterface.getAllBikeServicingByServcingStatus("waiting");
+        
+       
+        for(BikeServicing data: bikeServicingList) {
+		
+				System.out.println("      "+data.getBikeServicingId()+" "+data.getAppointmentDate()+" ");
+				
+			
+				 ServcingBikeInfo bikeno= data.getServcingBikeInfo();
+				 
+								 
+						System.out.println(""+bikeno.getChasisNumber()+" "+bikeno.getPlateNumber()+"");
+						 
+				
+					
+				}
+        
+        
+        
+        
+		model.addAttribute("bikeServicingList",bikeServicingList);
+		
+		
 		model.addAttribute("link","approvedServices.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
