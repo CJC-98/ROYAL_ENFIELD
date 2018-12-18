@@ -16,7 +16,6 @@
 
 <body>
 
-
 	<section id="content" class="bg-light lter">
 
         <section class="vbox">
@@ -53,24 +52,6 @@
 																
 																  
 																
-																
-																
-																
-																
-																
-																
-																
-																
-																
-																
-																
-																
-																
-																
-                                          	
-                                          	
-                                          	
-                                          	
                                           	                                          </header>
                                                 
                                           <table class="table table-striped m-b-none" >
@@ -108,10 +89,14 @@
                                          
                         </div>
                     </div>
+                    
+                    
+                    
+                    
+                    
+                    
                     </a:forEach>
                     <!-- first record ends-->
-                    
-                    
                     <!-- modal starts-->
  
 						  <div class="modal fade" id="myModal" role="dialog">
@@ -120,7 +105,9 @@
 						        <div class="modal-header">
 
 						        	<h3 style="text-align: center">Service Details</h3>  
+						        	 
 						        </div>
+						        
 						        <div class="modal-body">
 						          		
                                     <section class="panel panel-default">
@@ -132,32 +119,17 @@
                                                     <th style="text-align: center">Status</th>
                                                 </tr>
                                             </thead>
-                                            
+                                          
+                                          
                                             <tbody>
-                                            
+                                            <a:forEach var="work" items="${data.servicingChart}">
                                             	<tr style="text-align: center">
-                                                    	 <td>labour cost</td>
-                                                         <td>500</td>
-                                                         <td style="color: #FF681B">pending</td>
+                                                    	 <td>${work.work}</td>
+                                                         <td>${work.cost}</td>
+                                                         <td style="color: #FF681B">${work.status}</td>
                                                 </tr>
                                             
-                                                <tr style="text-align: center">
-                                                    	 <td>brake tuning</td>
-                                                         <td>500</td>
-                                                         <td style="color: #FF681B">pending</td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>silencer tuning</td>
-                                                         <td>350</td>
-                                                         <td style="color: #FF681B">pending</td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>tail light clean</td>
-                                                         <td>300</td>
-                                                         <td style="color: #FF681B">pending</td>
-                                                </tr>
+                                             </a:forEach>
                     
                                             </tbody>
                                             
@@ -174,7 +146,9 @@
 					  	</div>
 					  
 					  	<!-- modal ends -->
-            
+                    
+                    
+                                
                       
         </section>
    </section> 

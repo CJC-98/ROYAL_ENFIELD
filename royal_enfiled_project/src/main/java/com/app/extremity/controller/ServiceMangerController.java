@@ -239,13 +239,17 @@ public class ServiceMangerController {
 			System.out.println(data.getServiceProgressPercent());
 			List<ServicingChart> chartlist = data.getServicingChart();
 			
-			for(ServicingChart chart:chartlist) {
-				System.out.println("      "+chart.getWork()+" "+chart.getCost()+" "+chart.getStatus());
-			}
-		}
-		
-
-       
+                 	 ServcingBikeInfo bikeno= data.getServcingBikeInfo();
+				 System.out.println(""+bikeno.getChasisNumber()+" "+bikeno.getPlateNumber()+"");
+						
+						for(ServicingChart chart:chartlist) {
+							System.out.println("      "+chart.getWork()+" "+chart.getCost()+" "+chart.getStatus());
+						}
+					
+				}
+        
+        
+		model.addAttribute("bikeServicingList",bikeServicingList);
 		model.addAttribute("link","approvedServices.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
