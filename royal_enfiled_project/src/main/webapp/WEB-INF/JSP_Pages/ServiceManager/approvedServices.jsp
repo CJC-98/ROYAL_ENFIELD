@@ -1,5 +1,6 @@
  <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="a" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,12 +27,51 @@
                 </div>
               
                 <!-- fisrt table starts -->
+                 <a:forEach var="data" items="${bikeServicingList}">
 	                <div class="row">
                          <div class="col-sm-12" >
                              <section class="panel panel-default" >
                                           <header class="panel-heading bg-warning dk" style="font-size: 20px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
-                                          	Bullet 350cc (NBFGH654351354)
-                                          </header>
+                                         
+                                          	<a:choose>
+																	  <a:when test="${data.servcingBikeInfo.plateNumber !=''}">
+																	 
+																			 <div class="checkbox"> 
+				                                                         		
+				                                                         			${data.servcingBikeInfo.modelName}(${data.servcingBikeInfo.plateNumber})
+				                                                    			 
+				                                                    		</div>
+																	  </a:when>
+																	  <a:otherwise>
+																			  <div class="checkbox"> 
+					                                                         		 
+					                                                         			${data.servcingBikeInfo.modelName}(${data.servcingBikeInfo.chasisNumber})
+					                                                    			 
+					                                                        	</div>
+																	  </a:otherwise>
+																</a:choose>
+																
+																  
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+                                          	
+                                          	
+                                          	
+                                          	
+                                          	                                          </header>
                                                 
                                           <table class="table table-striped m-b-none" >
                                                       
@@ -49,8 +89,8 @@
                                                 <tbody>
                                                         
                                                       <tr style="text-align: center;">
-                                                         <td>BC00565</td>
-                                                         <td>12/2/2018</td>
+                                                         <td>${data.bikeServicingId}</td>
+                                                         <td>${data.appointmentDate}</td>
                                                          <td>
                                                          	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded">Services Details</a>
                                                          </td>     
@@ -68,142 +108,9 @@
                                          
                         </div>
                     </div>
+                    </a:forEach>
                     <!-- first record ends-->
                     
-                    <!-- fisrt table starts -->
-	                <div class="row">
-                         <div class="col-sm-12">
-                             <section class="panel panel-default">
-                                          <header class="panel-heading bg-warning dk" style="font-size: 20px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
-                                          	Avenger 400cc (MH-54-FH-4343)
-                                          </header>
-                                                
-                                          <table class="table table-striped m-b-none">
-                                                      
-                                                <thead>
-                                                                
-                                                     <tr>   
-
-                                                         <th style="text-align: center;">Services Id</th>
-                                                         <th style="text-align: center;">Appointment Date</th>
-                                                         <th style="text-align: center;">Services Details</th>
-                                                         <th style="text-align: center;">Start Services</th>
-                                                     </tr>
-                                                </thead>
-                                                
-                                                <tbody>
-                                                        
-                                                      <tr style="text-align: center;">
-                                                         <td>BC054651</td>
-                                                         <td>25/2/2018</td>
-                                                         <td>
-                                                         	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded">Services Details</a>
-                                                         </td>  
-                                                         <td>
-                                                         	<a href="ServicesInprogressPage" class="btn btn-md btn-primary m-r rounded">Start Services</a>
-
-                                                         </td>                                              
-                                                      </tr>
-                                     
-                                                    </tbody>
-
-                                             </table>
-                                                     
-                             </section>
-                                         
-                        </div>
-                    </div>
-                    <!-- first record ends-->
-                    
-                    <!-- fisrt table starts -->
-	                <div class="row">
-                         <div class="col-sm-12">
-                             <section class="panel panel-default">
-                                          <header class="panel-heading bg-warning dk" style="font-size: 20px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
-                                          	ThunderBird 300cc (MH-54-UH-8768)
-                                          </header>
-                                                
-                                          <table class="table table-striped m-b-none">
-                                                      
-                                                <thead>
-                                                                
-                                                     <tr>   
-
-                                                         <th style="text-align: center;">Services Id</th>
-                                                         <th style="text-align: center;">Appointment Date</th>
-                                                         <th style="text-align: center;">Services Details</th>
-                                                         <th style="text-align: center;">Start Services</th>
-                                                     </tr>
-                                                </thead>
-                                                
-                                                <tbody>
-                                                        
-                                                      <tr style="text-align: center;">
-                                                         <td>BC8452</td>
-                                                         <td>8/2/2018</td>
-                                                         <td>
-                                                         	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded">Services Details</a>
-                                                         </td> 
-                                                         <td>
-                                                         	<a href="ServicesInprogressPage" class="btn btn-md btn-primary m-r rounded">Start Services</a>
-
-                                                         </td>                                               
-                                                      </tr>
-                                     
-                                                    </tbody>
-
-                                             </table>
-                                                     
-                             </section>
-                                         
-                        </div>
-                    </div>
-                    <!-- first record ends-->
-                    
-                    <!-- fisrt table starts -->
-	                <div class="row">
-                         <div class="col-sm-12">
-                             <section class="panel panel-default">
-                                          <header class="panel-heading bg-warning dk" style="font-size: 20px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
-                                          	Bullet 350cc (MH-12-HF-6454)
-                                          </header>
-                                                
-                                          <table class="table table-striped m-b-none">
-                                                      
-                                                <thead>
-                                                                
-                                                     <tr>   
-                                                     
-                                                         <th style="text-align: center;">Services Id</th>
-                                                         <th style="text-align: center;">Appointment Date</th>
-                                                         <th style="text-align: center;">Services Details</th>
-                                                         <th style="text-align: center;">Start Services</th>
-                                                     </tr>
-                                                </thead>
-                                                
-                                                <tbody>
-                                                        
-                                                      <tr style="text-align: center;">
-                                                         <td>BC00565</td>
-                                                         <td>12/2/2018</td>
-                                                         <td>
-                                                         	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded">Services Details</a>
-                                                         </td> 
-                                                         <td>
-                                                         	<a href="ServicesInprogressPage" class="btn btn-md btn-primary m-r rounded">Start Services</a>
-
-                                                         </td>                                               
-                                                      </tr>
-                                     
-                                                    </tbody>
-
-                                             </table>
-                                                     
-                             </section>
-                                         
-                        </div>
-                    </div>
-                    <!-- first record ends-->
                     
                     <!-- modal starts-->
  
