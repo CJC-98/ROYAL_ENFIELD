@@ -15,7 +15,10 @@ import org.springframework.web.multipart.MultipartFile;
 import com.app.extremity.iservice.IAdminService;
 import com.app.extremity.model.AccessoriesDeadStock;
 import com.app.extremity.model.AccessoriesStock;
+import com.app.extremity.model.AvailableServicing;
+import com.app.extremity.model.BikeCustomization;
 import com.app.extremity.model.BikeOffer;
+import com.app.extremity.model.BikeServicing;
 import com.app.extremity.model.CustomizationInvoice;
 import com.app.extremity.model.DeadStock;
 import com.app.extremity.model.EmailMessage;
@@ -23,6 +26,7 @@ import com.app.extremity.model.EmployeeDetails;
 import com.app.extremity.model.NewBikeStock;
 import com.app.extremity.model.OldBikeStock;
 import com.app.extremity.model.ServcingBikeInfo;
+import com.app.extremity.model.SoldBikeStock;
 import com.app.extremity.model.TestDriveCustomer;
 
 
@@ -193,22 +197,40 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value = "/soldNewBike")
-	public String getSoldNewBikeInfo(Model model) {
-		//List<SoldNewBike> servcingBikeInfoList = adminService.getSoldNewBike();
-		//model.addAttribute("servcingBikeInfoList", servcingBikeInfoList);
+	public String getSoldNewBikeInfo(Model model) 
+	{
+		List<SoldBikeStock> soldNewBikeInfoList = adminService.getSoldNewBike();
+		model.addAttribute("soldNewBikeInfoList", soldNewBikeInfoList);
 		model.addAttribute("link", "soldNewBike.jsp");
 		return "Admin/adminIndex";
 
 	}
 	
-	@RequestMapping(value = "/soldOldBike")
-	public String getSoldOldBikeInfo(Model model) {
-		//List<SoldNewBike> servcingBikeInfoList = adminService.getSoldNewBike();
-		//model.addAttribute("servcingBikeInfoList", servcingBikeInfoList);
-		model.addAttribute("link", "soldOldBike.jsp");
+	@RequestMapping(value = "/avaliableServicing")
+	public String getAvaliableServicingInfo(Model model) {
+		List<AvailableServicing> avaliableServicingInfoList = adminService.getavaliableServicing();
+		model.addAttribute("avaliableServicingInfoList", avaliableServicingInfoList);
+		model.addAttribute("link", "avaliableServicing.jsp");
 		return "Admin/adminIndex";
 
 	}
+	@RequestMapping(value = "/bikeCustomization")
+	public String getBikeCustomizationInfo(Model model) {
+		List<BikeCustomization> bikeCustomizationInfoList = adminService.getbikeCustomization();
+		model.addAttribute("bikeCustomizationInfoList", bikeCustomizationInfoList);
+		model.addAttribute("link", "bikeCustomization.jsp");
+		return "Admin/adminIndex";
+
+	}
+	@RequestMapping(value = "/bikeServicing")
+	public String getBikeServicingInfo(Model model) {
+		List<BikeServicing> bikeServicingInfoList = adminService.getBikeServicing();
+		model.addAttribute("bikeServicingInfoList", bikeServicingInfoList);
+		model.addAttribute("link", "bikeServicing.jsp");
+		return "Admin/adminIndex";
+
+	}
+	
 	@RequestMapping(value = "/soldAccessories")
 	public String getSoldAccessoriesInfo(Model model) {
 		//List<SoldNewBike> servcingBikeInfoList = adminService.getSoldNewBike();

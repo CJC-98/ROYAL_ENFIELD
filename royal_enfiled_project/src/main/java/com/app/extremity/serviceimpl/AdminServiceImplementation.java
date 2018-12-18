@@ -47,7 +47,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.app.extremity.idao.AccessoriesDeadStockIDao;
 import com.app.extremity.idao.AccessoriesStockIDao;
+import com.app.extremity.idao.AvailableServicingIDao;
+import com.app.extremity.idao.BikeCustomizationIDao;
 import com.app.extremity.idao.BikeOfferIDao;
+import com.app.extremity.idao.BikeServicingIDao;
 import com.app.extremity.idao.CustomizationInvoiceIDao;
 import com.app.extremity.idao.DeadStockIDao;
 import com.app.extremity.idao.EmployeeDetailsIDao;
@@ -59,7 +62,10 @@ import com.app.extremity.idao.TestDriveCustomerIDao;
 import com.app.extremity.iservice.IAdminService;
 import com.app.extremity.model.AccessoriesDeadStock;
 import com.app.extremity.model.AccessoriesStock;
+import com.app.extremity.model.AvailableServicing;
+import com.app.extremity.model.BikeCustomization;
 import com.app.extremity.model.BikeOffer;
+import com.app.extremity.model.BikeServicing;
 import com.app.extremity.model.CustomizationInvoice;
 import com.app.extremity.model.DeadStock;
 import com.app.extremity.model.EmailMessage;
@@ -67,6 +73,7 @@ import com.app.extremity.model.EmployeeDetails;
 import com.app.extremity.model.NewBikeStock;
 import com.app.extremity.model.OldBikeStock;
 import com.app.extremity.model.ServcingBikeInfo;
+import com.app.extremity.model.SoldBikeStock;
 import com.app.extremity.model.TestDriveCustomer;
 
 @Service
@@ -98,6 +105,13 @@ public class AdminServiceImplementation implements IAdminService {
 	ServcingBikeInfoIDao servcingBikeInfoIDao;
 	@Autowired
 	TestDriveCustomerIDao testDriveCustomerIDao;
+	@Autowired
+	AvailableServicingIDao availableServicingIDao;
+	@Autowired
+	BikeCustomizationIDao bikeCustomizationIDao;
+	@Autowired
+	BikeServicingIDao bikeServicingIDao;
+	
 
 	static Logger logger = LogManager.getLogger(AdminServiceImplementation.class);
 
@@ -296,6 +310,30 @@ public class AdminServiceImplementation implements IAdminService {
 	public List<TestDriveCustomer> getTestDriveCustomer() {
 	
 		return (List<TestDriveCustomer>) testDriveCustomerIDao.findAll();
+	}
+
+	@Override
+	public List<AvailableServicing> getavaliableServicing() {
+		
+		return (List<AvailableServicing>) availableServicingIDao.findAll();
+	}
+
+	@Override
+	public List<BikeServicing> getBikeServicing() {
+		
+		return (List<BikeServicing>) bikeServicingIDao.findAll();
+	}
+
+	@Override
+	public List<BikeCustomization> getbikeCustomization() {
+		
+		return (List<BikeCustomization>) bikeCustomizationIDao.findAll();
+	}
+
+	@Override
+	public List<SoldBikeStock> getSoldNewBike() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

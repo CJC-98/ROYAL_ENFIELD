@@ -37,7 +37,7 @@
 		<li><a href="#">NewBike</a></li>
 	</ul>
 	<div class="m-b-md">
-		<h3 class="m-b-none">NewBike Stock</h3>
+		<h3 class="m-b-none">New Bike Stock</h3>
 	</div>
 	<section class="panel panel-default">
 	<div class="row ">
@@ -165,11 +165,14 @@
 			</div>
 		</div>
 	</div>
-	</section> <!-- End table --> <aside class="bg-light lter b-l aside-md hide"
+	</section> <!-- End table -->
+	 <aside class="bg-light lter b-l aside-md hide"
 		id="notes">
 	<div class="wrapper">Notification</div>
-	</aside> </section> </section>
-	
+	</aside>
+	 </section>
+	  </section>
+	</section>
 
 </body>
 </html>

@@ -26,7 +26,7 @@
 <body class="">
 	<section id="content" class="bg-light lter"> <section
 		class="vbox"> <section class="scrollable padder">
-<ul class="breadcrumb no-border no-radius b-b b-light pull-in">
+							<ul class="breadcrumb no-border no-radius b-b b-light pull-in">
                                 <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
                                 <li><a href="#">Stock</a></li>
                                 <li><a href="#">Accessories</a></li>
