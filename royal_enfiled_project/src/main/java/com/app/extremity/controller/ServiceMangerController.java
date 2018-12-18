@@ -12,6 +12,7 @@ import java.util.List;
 
 import javax.management.Notification;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -98,7 +99,6 @@ public class ServiceMangerController {
 		
 		//notificationInterface.saveNotfication(notify);
 
-		
 		
 		long sscount=serviceManagerInterface.getAllServiceCountByServiceStatus("waiting");
 		model.addAttribute("approvedServiceCount",sscount);
@@ -223,7 +223,7 @@ public class ServiceMangerController {
 	@RequestMapping(value="/addNewService")
 	public String saveServices(Model model,@ModelAttribute AvailableServicing saveService )
 	{
-		System.out.println("in addnewservice controller");
+		System.out.println("in addnewservice controller...!");
 	
 		
 		service.saveNewServices(saveService);
@@ -300,7 +300,6 @@ public class ServiceMangerController {
 	@RequestMapping(value="/MyNotificationsPage")
 	public String MyNotificationsPage(Model model){
 		
-	
 		
 		//TODO: get login user name from session 
 		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication("pranay");
