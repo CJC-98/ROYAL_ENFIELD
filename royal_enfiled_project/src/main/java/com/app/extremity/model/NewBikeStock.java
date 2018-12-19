@@ -68,4 +68,11 @@ public class NewBikeStock
 	public void setBikeMfgDate(String bikeMfgDate) {
 		this.bikeMfgDate = bikeMfgDate;
 	}
+	public Date getArrivalDate() {
+		return arrivalDate;
+	}
+	public void setArrivalDate(Date arrivalDate) {
+		this.arrivalDate = arrivalDate;
+	}
+	
 }
