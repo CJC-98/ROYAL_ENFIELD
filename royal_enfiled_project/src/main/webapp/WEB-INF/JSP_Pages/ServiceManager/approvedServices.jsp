@@ -16,7 +16,8 @@
 <script type="text/javascript">
 function detail()
 {
-	var s=document.getElementbyId("myModal").value;
+	alert("detail")
+	var s=document.getElementbyId("#myModal").value;
 	var req=new XMLHttpRequest();
 	var url="serviceDetails? a="+s;
     alert(s);
@@ -103,7 +104,7 @@ function detail()
                                                          <td>${data.bikeServicingId}</td>
                                                          <td>${data.appointmentDate}</td>
                                                          <td>
-                                                         	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded">Services Details</a>
+                                                         	<a href="#myModal" data-toggle="modal" data-target="#myModal" onclick="detail()" class="btn btn-md btn-info m-r rounded">Services Details</a>
                                                          </td>     
                                                          <td>
                                                          	<a href="ServicesInprogressPage" class="btn btn-md btn-primary m-r rounded">Start Services</a>
@@ -116,7 +117,7 @@ function detail()
                                              </table>
                                                      
                              </section>
-                                         
+                                        
                         </div>
                     </div>
                     </a:forEach>
@@ -125,12 +126,12 @@ function detail()
                     
                     <!-- modal starts-->
  
-						  <div class="modal fade" select onchange="detail()" id="myModal" role="dialog">
+						  <div class="modal fade"  id="myModal" role="dialog">
 						    <div class="modal-dialog modal-md">
 						      <div class="modal-content">
-						        <div class="modal-header">
+						        <div class="modal-header" >
 
-						        	<h3 style="text-align: center">Service Details</h3>  
+						        	<h3 style="text-align: center" >Service Details </h3>  
 						        	 
 						        </div>
 						        
