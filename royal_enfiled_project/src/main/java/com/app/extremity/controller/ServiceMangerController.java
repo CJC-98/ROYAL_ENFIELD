@@ -73,6 +73,8 @@ public class ServiceMangerController {
 	@RequestMapping(value="/DashboardPage")
 	public String ServicesDashboardPage(Model model,HttpServletRequest request){
 		
+		session = request.getSession();
+		
 		//test data from bike servicing
 		
 		ServcingBikeInfo info = new ServcingBikeInfo();
@@ -160,7 +162,7 @@ public class ServiceMangerController {
 		//notificationInterface.saveNotfication(notify);
 		
 		
-		session = request.getSession();
+		
 		
 		
 		
