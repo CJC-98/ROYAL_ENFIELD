@@ -290,12 +290,6 @@
 		
 		<script>
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
-
-<script>
 
 	
 	
@@ -318,7 +312,7 @@
 	
 	 
 </script>
-<<<<<<< HEAD
+
       <!-- modal starts-->
  
 						  <div class="modal fade" id="myModal" role="dialog">
@@ -344,37 +338,15 @@
 					  
 					  	<!-- modal ends -->
 	                
-=======
+
 
 	<script src="js/app.v1.js"></script>
     <script src="js/charts/easypiechart/jquery.easy-pie-chart.js"></script>
     <script src="js/charts/sparkline/jquery.sparkline.min.js"></script>
     <script src="js/app.plugin.js"></script>
-=======
-			
-			function sendNotification(){
-				alert("notification is send successfully");
-				document.getElementById("notificationBody").style.display = "none";
-			}
-			
-			function cancel(){
-				document.getElementById("notificationBody").style.display = "none";
-			}
-=======
->>>>>>> refs/heads/pooja
->>>>>>> refs/heads/serviceManagerTeamBranch
-			document.getElementById("notificationBody").style.display = "none";	
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> branch 'serviceManagerTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
->>>>>>> refs/heads/pooja
->>>>>>> refs/heads/serviceManagerTeamBranch
-		</script>
-					  		
+			
+			  		
 					                           
 
 </body>
