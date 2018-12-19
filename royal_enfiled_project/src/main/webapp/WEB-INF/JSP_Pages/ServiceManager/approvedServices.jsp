@@ -12,9 +12,40 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/css/font.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/css/app.v1.css" type="text/css" />
+
+<script type="text/javascript">
+function detail()
+{
+	alert("detail")
+	var s=document.getElementbyId("#myModal").value;
+	var req=new XMLHttpRequest();
+	var url="serviceDetails? a="+s;
+    alert(s);
+    alert(req);
+    var req=new XMLHttpRequest();
+	alert(req);
+	req.open("GET", url, true);
+	req.send();
+	
+	
+	}
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
 </head>
 
 <body>
+
 
 	<section id="content" class="bg-light lter">
 
@@ -50,7 +81,7 @@
 																	  </a:otherwise>
 																</a:choose>
 																
-																  
+																
 																
                                           	                                          </header>
                                                 
@@ -73,7 +104,7 @@
                                                          <td>${data.bikeServicingId}</td>
                                                          <td>${data.appointmentDate}</td>
                                                          <td>
-                                                         	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded">Services Details</a>
+                                                         	<a href="#myModal" data-toggle="modal" data-target="#myModal" onclick="detail()" class="btn btn-md btn-info m-r rounded">Services Details</a>
                                                          </td>     
                                                          <td>
                                                          	<a href="ServicesInprogressPage" class="btn btn-md btn-primary m-r rounded">Start Services</a>
@@ -86,25 +117,21 @@
                                              </table>
                                                      
                              </section>
-                                         
+                                        
                         </div>
                     </div>
-                    
-                    
-                    
-                    
-                    
-                    
                     </a:forEach>
                     <!-- first record ends-->
+                    
+                    
                     <!-- modal starts-->
  
-						  <div class="modal fade" id="myModal" role="dialog">
+						  <div class="modal fade"  id="myModal" role="dialog">
 						    <div class="modal-dialog modal-md">
 						      <div class="modal-content">
-						        <div class="modal-header">
+						        <div class="modal-header" >
 
-						        	<h3 style="text-align: center">Service Details</h3>  
+						        	<h3 style="text-align: center" >Service Details </h3>  
 						        	 
 						        </div>
 						        
@@ -120,9 +147,9 @@
                                                 </tr>
                                             </thead>
                                           
-                                          
+                                            
                                             <tbody>
-                                            <a:forEach var="work" items="${data.servicingChart}">
+                                            <a:forEach var="work" items="${servicingChart}">
                                             	<tr style="text-align: center">
                                                     	 <td>${work.work}</td>
                                                          <td>${work.cost}</td>
@@ -146,9 +173,7 @@
 					  	</div>
 					  
 					  	<!-- modal ends -->
-                    
-                    
-                                
+            
                       
         </section>
    </section> 

@@ -2,14 +2,11 @@
 
 
 import java.io.IOException;
-
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-
 import java.io.IOException;
-
 import java.util.List;
 
 import javax.management.Notification;
@@ -25,9 +22,9 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 
 import com.app.extremity.idao.BikeServicingIDao;
 import com.app.extremity.iservice.IAdminService;
@@ -45,6 +42,7 @@ import com.app.extremity.model.Notfication;
 import com.app.extremity.model.ServcingBikeInfo;
 import com.app.extremity.model.ServicingChart;
 import com.app.extremity.model.ServicingInvoice;
+import com.google.gson.Gson;
 
   
 /* 
@@ -74,6 +72,8 @@ public class ServiceMangerController {
 	
 	@RequestMapping(value="/DashboardPage")
 	public String ServicesDashboardPage(Model model,HttpServletRequest request){
+		
+		session = request.getSession();
 		
 		//test data from bike servicing
 		
@@ -162,7 +162,7 @@ public class ServiceMangerController {
 		//notificationInterface.saveNotfication(notify);
 		
 		
-		session = request.getSession();
+		
 		
 		
 		
@@ -243,12 +243,49 @@ public class ServiceMangerController {
 						}
 					
 				}
-        
+		
         
 		model.addAttribute("bikeServicingList",bikeServicingList);
 		model.addAttribute("link","approvedServices.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
+	
+	
+	
+	
+	@RequestMapping(value="/serviceDetails",method=RequestMethod.GET,produces="application/json")
+	public @ResponseBody String update(HttpServletResponse res)throws IOException
+	{
+
+        List<BikeServicing>bikeServicingList = serviceManagerInterface.getAllBikeServicingByServcingStatus("waiting");
+		
+		for(BikeServicing data: bikeServicingList) {
+		 ServcingBikeInfo bikeno= data.getServcingBikeInfo();
+        List<ServicingChart> chartlist = data.getServicingChart();
+		for(ServicingChart chart:chartlist)
+		{
+		System.out.println("      "+chart.getWork()+" "+chart.getCost()+" "+chart.getStatus());
+			
+			
+		String json=new Gson().toJson(chartlist);
+		System.out.println(json);
+
+		res.flushBuffer();
+		res.setContentType("application/json");
+		res.setCharacterEncoding("UTF-8");
+		res.getOutputStream();
+		System.out.println("..........");
+		
+		
+		return json;
+		
+	}
+	}
+		return "ServiceManager/serviceManagerIndex";
+     
+	}
+	
+	
 	
 	@RequestMapping(value="/ServicesInprogressPage")
 	public String ServicesInprogressPage(Model model,HttpServletRequest request){
