@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -44,8 +45,11 @@ public class AdminController {
 	}
 
 	@RequestMapping(value = "/composeMail")
-	public String toComposeMailPage(Model model) {
+	public String toComposeMailPage(Model model,@RequestParam int designation) {
+		model.addAttribute("designationId", designation);
 		model.addAttribute("link", "composeMail.jsp");
+		
+		System.out.println(designation);
 		return "Admin/adminIndex";
 	}
 	/*
@@ -55,10 +59,12 @@ public class AdminController {
 	 */
 
 	@RequestMapping(value = "/sendEmail", method = RequestMethod.POST)
-	public String sendEmail(@ModelAttribute EmailMessage emailmessage, @RequestParam("file") MultipartFile file,
-			Model model) {
-
-		adminService.sendEmail(emailmessage, file);
+	public String sendEmail(@ModelAttribute EmailMessage emailmessage, @RequestParam("attachment") MultipartFile file,
+			Model model,@RequestParam String designation) {
+		
+		System.out.println(emailmessage.getTo_address());
+		System.out.println(emailmessage.getSubject());
+		adminService.sendEmail(emailmessage, file,designation);
 		model.addAttribute("link", "adminDashboard.jsp");
 		return "Admin/adminIndex";
 	}
@@ -70,7 +76,9 @@ public class AdminController {
 	 */
 
 	@RequestMapping(value = "/employeeRegistration")
-	public String toEmployeeRegistrationPage() {
+	public String toEmployeeRegistrationPage(@RequestParam int designation,Model model) {
+		System.out.println(designation);
+		model.addAttribute("designation", designation);
 		return "Admin/employeeRegistration";
 	}
 

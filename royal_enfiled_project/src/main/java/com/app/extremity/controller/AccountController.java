@@ -101,7 +101,6 @@ public class AccountController {
 			fds = new SimpleDateFormat("yyyy-MM-dd").parse("2018-01-01");
 			lds = new SimpleDateFormat("yyyy-MM-dd").parse("2018-12-31");
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -122,11 +121,11 @@ public class AccountController {
 		
 		session = request.getSession();
 		
-		//TODO: get login user name from session 
+		// get login user name from session 
 		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication(session.getAttribute("currentUserName").toString());
 		model.addAttribute("outboxList",outboxList);
 			
-		//TODO: get login user name from session 
+		//get login user name from session 
 		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication(session.getAttribute("currentUserName").toString());
 		model.addAttribute("inboxList",inboxList);   
 
@@ -160,7 +159,7 @@ public class AccountController {
 		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication(session.getAttribute("currentUserName").toString());
 		model.addAttribute("outboxList",outboxList);  
 		
-		//TODO: get login user name from session
+		// get login user name from session
 		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication(session.getAttribute("currentUserName").toString());
 		model.addAttribute("inboxList",inboxList);   
 		
@@ -202,7 +201,7 @@ public class AccountController {
 		Notfication notify = new Notfication();
 		
 		
-		//TODO: get login user details from session
+		// get login user details from session
 		notify.setSenderName(session.getAttribute("currentUserName").toString()); 
 		notify.setSenderImg("person4.jpg");
 		notify.setSenderPost("account manager");

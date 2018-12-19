@@ -10,13 +10,17 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/font.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/app.v1.css" type="text/css" />
+    <link>
     <!--[if lt IE 9]> <script src="js/ie/html5shiv.js"></script> <script src="js/ie/respond.min.js"></script> <script src="js/ie/excanvas.js"></script> <![endif]-->
 </head>
 <body class="">
     <section id="content" class="bg-light lter">
         			<section class="vbox">
            				 <section class="scrollable padder">
+           				 <section class="panel panel-default">
                         <div class="container">
+                         <form action="sendEmail" method="post" enctype="multipart/form-data">
+                         <input type="hidden" name="designation" value="${designationId}">
                                 <div class="card card-primary card-outline">
                                     <div class="card-header">
                                         <h3 class="card-title">Compose New Message</h3>
@@ -24,10 +28,10 @@
                                     <!-- /.card-header -->
                                     <div class="card-body">
                                         <div class="form-group">
-                                            <input class="form-control" placeholder="To:">
+                                            <input class="form-control" placeholder="To:" name="to_address">
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control" placeholder="Subject:">
+                                            <input class="form-control" placeholder="Subject:" name="subject">
                                         </div>
                                         <div class="form-group">
                                             <textarea id="compose-textarea" class="form-control" style="height: 300px">                      &lt;h1&gt;&lt;u&gt;Heading Of Message&lt;/u&gt;&lt;/h1&gt;
@@ -66,18 +70,18 @@
                                     <!-- /.card-body -->
                                     <div class="card-footer">
                                         <div class="float-right">
-                                            <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i>
-                                                Draft</button>
+                                         
                                             <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i>
                                                 Send</button>
                                         </div>
-                                        <button type="reset" class="btn btn-default"><i class="fa fa-times"></i>
-                                            Discard</button>
-                                    </div>
+                                                </div>
                                     <!-- /.card-footer -->
                                 </div>
                                 <!-- /. box -->
-                        </div>
+                               </form>
+                                 </div>
+                                </section>
+                       
 
                             <!-- End compose -->
 

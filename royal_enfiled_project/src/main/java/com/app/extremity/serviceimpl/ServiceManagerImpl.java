@@ -58,7 +58,6 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 
 	@Override
 	public String getNextBikeCustomizationId() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -77,7 +76,6 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 
 	@Override
 	public long getAllCustomizationCount() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 	
