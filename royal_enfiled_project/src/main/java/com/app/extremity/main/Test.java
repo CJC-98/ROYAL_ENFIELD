@@ -20,7 +20,7 @@ public class Test {
 	public static void main(String[] args) {
 		SpringApplication.run(Test.class);
 		logger.warn("application started............");
-		System.out.println("application started...........!!");
+		System.out.println("application started...........!!!!!");
 
 	}
 }
