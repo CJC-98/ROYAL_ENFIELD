@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/font.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/app.v1.css" type="text/css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/js/datatables/datatables.css"type="text/css" />
     <!--[if lt IE 9]> <script src="js/ie/html5shiv.js"></script> <script src="js/ie/respond.min.js"></script> <script src="js/ie/excanvas.js"></script> <![endif]-->
 </head>
 <body class="">
@@ -111,34 +112,21 @@
                                 <div class="dataTables_info" id="example1_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div>
                             </div>
                             <div class="col-sm-12 col-md-7">
-                                <div class="dataTables_paginate paging_simple_numbers" id="example1_paginate">
-                                    <ul class="pagination">
-                                    <li class="paginate_button page-item previous disabled" id="example1_previous">
-                                        <a href="#" aria-controls="example1" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
-                                    </li>
-                                    <li class="paginate_button page-item active">
-                                        <a href="#" aria-controls="example1" data-dt-idx="1" tabindex="0" class="page-link">1</a>
-                                    </li>
-                                    <li class="paginate_button page-item ">
-                                        <a href="#" aria-controls="example1" data-dt-idx="2" tabindex="0" class="page-link">2</a>
-                                    </li>
-                                    <li class="paginate_button page-item ">
-                                        <a href="#" aria-controls="example1" data-dt-idx="3" tabindex="0" class="page-link">3</a>
-                                    </li>
-                                    <li class="paginate_button page-item ">
-                                        <a href="#" aria-controls="example1" data-dt-idx="4" tabindex="0" class="page-link">4</a>
-                                    </li>
-                                    <li class="paginate_button page-item ">
-                                        <a href="#" aria-controls="example1" data-dt-idx="5" tabindex="0" class="page-link">5</a>
-                                    </li>
-                                    <li class="paginate_button page-item ">
-                                        <a href="#" aria-controls="example1" data-dt-idx="6" tabindex="0" class="page-link">6</a>
-                                    </li>
-                                    <li class="paginate_button page-item next" id="example1_next">
-                                        <a href="#" aria-controls="example1" data-dt-idx="7" tabindex="0" class="page-link">Next</a>
-                                    </li>
-                                    </ul>
-                                    </div>
+                                <div class="dataTables_paginate paging_full_numbers"
+							id="DataTables_Table_0_paginate">
+							<a class="paginate_button first disabled"
+								aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0"
+								id="DataTables_Table_0_first">First</a><a
+								class="paginate_button previous disabled"
+								aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0"
+								id="DataTables_Table_0_previous">Previous</a><span></span><a
+								class="paginate_button next disabled"
+								aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0"
+								id="DataTables_Table_0_next">Next</a><a
+								class="paginate_button last disabled"
+								aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0"
+								id="DataTables_Table_0_last">Last</a>
+						</div>
                                 </div>
                             </div>
                         </div>

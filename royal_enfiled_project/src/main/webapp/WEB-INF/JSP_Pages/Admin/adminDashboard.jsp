@@ -15,7 +15,6 @@
 
 <body>
  	 <section id="content">
-                    <section class="vbox container-fluid ">
                         <section class="scrollable padder">
                         <div class="m-b-md">
 	                    <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Dashboard</h3>

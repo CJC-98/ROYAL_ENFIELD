@@ -1,9 +1,14 @@
  package com.app.extremity.controller;
 
+
 import java.text.ParseException;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
+
+
+
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,8 +52,8 @@ public class HomeController {
 	{ 
 		logger.info("In home controller log");
 		return "home";
-	}  
-	 
+	}
+	
 	@RequestMapping(value="/loginPage")
 	public String loginPage()
 	{ 

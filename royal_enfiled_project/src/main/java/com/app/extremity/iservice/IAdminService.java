@@ -1,11 +1,10 @@
 package com.app.extremity.iservice;
 
 import java.util.List;
-
 import org.springframework.web.multipart.MultipartFile;
-
 import com.app.extremity.model.AccessoriesDeadStock;
 import com.app.extremity.model.AccessoriesStock;
+import com.app.extremity.model.AvailableServicing;
 import com.app.extremity.model.BikeOffer;
 import com.app.extremity.model.CustomizationInvoice;
 import com.app.extremity.model.DeadStock;
@@ -45,7 +44,16 @@ public interface IAdminService {
 	List<ServcingBikeInfo> getServcingBikeInfo();
 
 	List<TestDriveCustomer> getTestDriveCustomer();
-	
+
+
+	List<AvailableServicing> getavaliableServicing();
+
+	List<com.app.extremity.model.BikeServicing> getBikeServicing();
+
+	List<com.app.extremity.model.BikeCustomization> getbikeCustomization();
+
+	List<SoldBikeStock> getSoldNewBike();
+
 	List<SoldBikeStock> getSoldBikeStock();
 	
 	List<EmployeeDetails> getEmployeeDesignation(String employeeDesignation);
@@ -54,6 +62,4 @@ public interface IAdminService {
 	
 	public int getEmployeeEmail(String employeeEmail);
 	
-
-
 }
