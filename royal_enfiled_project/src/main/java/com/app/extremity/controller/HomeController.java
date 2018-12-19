@@ -9,9 +9,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.app.extremity.iservice.IDealerService;
 import com.app.extremity.model.Country;
+import com.app.extremity.model.Login;
 
 
 
@@ -53,14 +55,31 @@ public class HomeController {
 	
 	
 	@RequestMapping(value="/SignIn")
-	public String signIn(Model model)    
+	public String signIn(Model model,@RequestParam String email,@RequestParam String password)    
 	{ 
 		
-		System.out.println("dashboard hits...........");
+		System.out.println("1111111111");
+		System.out.println(email);
+		System.out.println(password);
+		System.out.println(email+" "+password);
+		Login l= service.getLogin(email,password);
+			System.out.println("login l"+l);
+		if(email.equals(l.getEmail()) && password.equals(l.getPassword()))
+		{
+			model.addAttribute("msg", "welcome..");
+				System.out.println("dashboard hits...........");
 		model.addAttribute("link","dealerDashboard.jsp");
-	
+		
 		System.out.println("In SignIn controller");
-		return "Dealer/dealerIndex";//by default go to client index.jsp  
+		return "Dealer/dealerIndex";
+		}
+		else
+		{
+			model.addAttribute("link","login.jsp");
+			
+			System.out.println("In SignIn controller");
+			return "Dealer/dealerIndex";
+		}//by default go to client index.jsp  
 
 	}  
 	

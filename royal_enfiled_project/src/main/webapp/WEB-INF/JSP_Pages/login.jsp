@@ -10,6 +10,14 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/font.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/app.v1.css" type="text/css" />
     <!--[if lt IE 9]> <script src="js/ie/html5shiv.js"></script> <script src="js/ie/respond.min.js"></script> <script src="js/ie/excanvas.js"></script> <![endif]-->
+    
+    <script type="text/javascript">
+    // 
+    
+    
+    
+    </script>
+    
 </head>    
 
 <body class="">
@@ -20,10 +28,15 @@
         </a>
             <section class="panel panel-default bg-white m-t-lg">
                 <header class="panel-heading text-center"> <strong>Sign in</strong> </header>
-                <form action="http://flatfull.com/them	es/note/index.html" class="panel-body wrapper-lg">
-                    <div class="form-group"> <label class="control-label">Email</label> <input type="email" placeholder="test@example.com"
+               
+                <form action="SignIn" class="panel-body wrapper-lg">
+                    <div class="form-group"> <label class="control-label">Email</label> 
+                    <input type="email" placeholder="test@example.com" name="email"
                             class="form-control input-lg"> </div>
-                    <div class="form-group"> <label class="control-label">Password</label> <input type="password" id="inputPassword"
+                            
+                            
+                    <div class="form-group"> <label class="control-label">Password</label> 
+                    <input type="password" id="inputPassword" name="password"
                             placeholder="Password" class="form-control input-lg"> </div>
                     <div class="checkbox"> 
 	                    <label> 
@@ -34,12 +47,9 @@
                     	<a href="#" class="pull-right m-t-xs">
                     		<small>Forgot password?</small>
                     	</a> 
+                        	<input type="submit" value="SignIn" class="btn btn-primary">
                     
-                        <a href="SignIn">
-                        	<button type="button" class="btn btn-primary">Sign in</button>
-                        </a>
-                    
-                    	<div class="line line-dashed"></div> 
+                    	<div class="line line-dshed"></div> 
                     	
                     	<a href="#" class="btn btn-facebook btn-block m-b-sm">
                     		<i class="fa fa-facebook pull-left"></i>Sign in with Facebook
@@ -51,6 +61,7 @@
                     	<small>Do not have an account?</small></p> 
                     	<a href="signup" class="btn btn-default btn-block">Create an account</a>
                 </form>
+               
             </section>
         </div>
     </section> 
@@ -59,4 +70,4 @@
     <script src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/js/app.plugin.js"></script>
 </body>
 
-</html> 
+</html>
