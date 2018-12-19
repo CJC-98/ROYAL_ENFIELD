@@ -78,7 +78,13 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	public long getAllCustomizationCount() {
 		return 0;
 	}
-	
+
+	@Override
+	public List<BikeServicing> getAllBikeServicingByServcingStatus(String serviceStatus) {
+		return bikeServicingIDao.findAllBikeServicingByServcingStatus(serviceStatus);
+	}
+
+
 
 
 }
