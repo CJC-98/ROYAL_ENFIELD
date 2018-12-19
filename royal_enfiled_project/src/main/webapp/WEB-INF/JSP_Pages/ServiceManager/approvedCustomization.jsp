@@ -1,6 +1,6 @@
  <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ taglib prefix="a" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@ taglib prefix="a" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,30 +24,31 @@
                 </div>
                 
                 <!-- fisrt table starts -->
-	               <a:forEach var="data" items="${bikeCustomizationList}">
+	                  <a:forEach var="data" items="${bikeCustomizationsList}">
 	                <div class="row">
                          <div class="col-sm-12" >
                              <section class="panel panel-default" >
                                           <header class="panel-heading bg-warning dk" style="font-size: 20px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
                                          
-                                     	<a:choose>
-									 <a:when test="${data.customizationBikeInfo.plateNumber !=''}">
+                                          	<a:choose>
+																	  <a:when test="${data.customizationBikeInfo.plateNumber !=''}">
 																	 
-												 <div class="checkbox"> 
+																			 <div class="checkbox"> 
 				                                                         		
-				                                  	${data.customizationBikeInfo.modelName}(${customizationBikeInfo.customizationBikeInfo.plateNumber})
+				                                                         			${data.customizationBikeInfo.modelName}(${data.customizationBikeInfo.plateNumber})
 				                                                    			 
-				                                        </div>
-														  </a:when>
-														  <a:otherwise>
-														  <div class="checkbox"> 
+				                                                    		</div>
+																	  </a:when>
+																	  <a:otherwise>
+																			  <div class="checkbox"> 
 					                                                         		 
-	                                         			${data.customizationBikeInfo.modelName}(${data.customizationBikeInfo.chasisNumber})
+					                                                         			${data.customizationBikeInfo.modelName}(${data.customizationBikeInfo.chasisNumber})
 					                                                    			 
-					                                              	</div>
+					                                                        	</div>
 																	  </a:otherwise>
 																</a:choose>
-																          </header>
+																
+                                          </header>
                                                 
                                           <table class="table table-striped m-b-none" >
                                                       
@@ -64,8 +65,8 @@
                                                 <tbody>
                                                         
                                                       <tr style="text-align: center;">
-                                                          <td>${data.bikeCustomizationId}</td>
-                                                         <td>${data.appointmentDate}</td>
+                                                         <td>${data.bikeCustomizationId}</td>
+                                                         <td>${data.appointmentDate }</td>
                                                          <td>
                                                          	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded">Customization Details</a>
                                                          </td>     
@@ -83,9 +84,7 @@
                         </div>
                     </div>
                     </a:forEach>
-                    <!-- first record ends-->
-                    
-                       <!-- modal starts-->
+                    <!-- modal starts-->
  
 						  <div class="modal fade" id="myModal" role="dialog">
 						    <div class="modal-dialog modal-md">
@@ -150,7 +149,3 @@
         </section>
    </section> 
    </section>
-
- 
-</body>
-</html>

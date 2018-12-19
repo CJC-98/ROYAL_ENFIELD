@@ -329,6 +329,7 @@ public class ServiceMangerController {
 		CustomizationBikeInfo bikeno= data.getCustomizationBikeInfo();
 	 System.out.println(""+bikeno.getChasisNumber()+" "+bikeno.getPlateNumber()+"");
 		}
+		model.addAttribute("bikeCustomizationsList",bikeCustomizationsList);
 		model.addAttribute("link","approvedCustomization.jsp");
 		return "ServiceManager/serviceManagerIndex";  
 		
