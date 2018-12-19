@@ -19,12 +19,14 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+
 
 import com.app.extremity.idao.AccessoriesDeadStockIDao;
 import com.app.extremity.idao.AccessoriesStockIDao;
@@ -104,7 +106,9 @@ public class AdminServiceImplementation implements IAdminService {
 				dir.mkdirs();
 			}
 			UPLOADED_FOLDER = UPLOADED_FOLDER + File.separatorChar + dir.getName() + File.separatorChar;
-		} catch (Exception e) {
+		} 
+		catch (Exception e) 
+		{
 			logger.error("error creating upload directory");
 		}
 
@@ -130,7 +134,7 @@ public class AdminServiceImplementation implements IAdminService {
 			logger.error("while saving profile picture", e);
 			e.printStackTrace();
 		}
-
+		employeeDetails.setEmployeeId(getEmployeeCount());
 		employeeDetailsDao.save(employeeDetails);
 		logger.info("employee Saved");
 		logger.info(UPLOADED_FOLDER.toString());
@@ -287,6 +291,48 @@ public class AdminServiceImplementation implements IAdminService {
 	public List<SoldBikeStock> getSoldBikeStock() {
 		
 		return (List<SoldBikeStock>) soldBikeStockIDao.findAll();
+	}
+
+	@Override
+	public List<EmployeeDetails> getEmployeeDesignation(String employeeDesignation) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getEmployeeCount() {
+		// TODO Auto-generated method stub
+		int acount=(int)employeeDetailsDao.count();
+		System.out.println("count"+acount);
+		String employeeId="Emp00";
+		acount++;
+	    employeeId=employeeId+Integer.toString(acount);
+		
+			return employeeId;
+	}
+
+	@Override
+	public int getEmployeeEmail(String employeeEmail) {
+		System.out.println("service imple");
+		System.out.println(employeeEmail);
+		 EmployeeDetails employeeDetails=employeeDetailsDao.findOneByEmployeeEmail(employeeEmail);
+		
+		 try{
+			 if(employeeDetails.getEmployeeEmail()==null)
+			 {
+				 return 1;
+			 }
+		 }
+		 catch(NullPointerException e)
+		 {
+			 
+			 logger.error(e);
+			 return 1;
+		 }
+		 return 0;
+		 
+		
+		  
 	}
 
 }

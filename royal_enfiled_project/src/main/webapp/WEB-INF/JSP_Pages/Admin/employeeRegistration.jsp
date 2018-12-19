@@ -46,30 +46,30 @@ h2 {
 </style>
 <script>
 	function createXmlHttpRequestObject() {
-	var xmlHttp;
-	if (window.ActiveXObject) {
-		try {
-			xmlHttp = new ActiveXObject(Microsoft.XMLHTTP);
-		} catch (e) {
-			xmlHttp = false;
+		var xmlHttp;
+		if (window.ActiveXObject) {
+			try {
+				xmlHttp = new ActiveXObject(Microsoft.XMLHTTP);
+			} catch (e) {
+				xmlHttp = false;
+			}
+		} else {
+			try {
+				xmlHttp = new XMLHttpRequest();
+			} catch (e) {
+				xmlHttp = false;
+			}
 		}
-	} else {
-		try {
-			xmlHttp = new XMLHttpRequest();
-		} catch (e) {
-			xmlHttp = false;
-		}
+		if (!xmlHttp)
+			alert("cant create xmlHttp object");
+		else
+			return xmlHttp;
 	}
-	if (!xmlHttp)
-		alert("cant create xmlHttp object");
-	else
-		return xmlHttp;
-	}
-		
+
 	function showForm() {
 		document.getElementById("panel").style.opacity = "1";
 	}
-	
+
 	function openFile() {
 		var fileReader = new FileReader();
 		fileReader.readAsDataURL(document.getElementById("file").files[0]);
@@ -77,7 +77,7 @@ h2 {
 			document.getElementById("uploadPreview").src = oFREvent.target.result;
 		};
 	}
-	
+
 	function checkPassword() {
 		var password = document.getElementById("password").value;
 		console.log(password);
@@ -94,7 +94,37 @@ h2 {
 			passwordMessage.style.display = "initial";
 		}
 	}
+	function verifyEmail() {
+		var xmlHttp = createXmlHttpRequestObject();
+		
+		var email = document.getElementById("email").value;
+		
+		var url = "log?email=" + email;
+		alert(email);
+		xmlHttp.open("GET", url, true);
+		xmlHttp.send();
 	
+	xmlHttp.onreadystatechange = function() {
+		//alert(xmlHttp.readyState)
+		//alert(xmlHttp.status)
+		if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+			//alert("re text"+xmlHttp.responseText);
+			var response = xmlHttp.responseText;
+			if (response == 0)
+			{
+				document.getElementById("emailMessage").innerHTML = "the email is already registered";
+			}
+			else
+				{
+				document.getElementById("emailMessage").innerHTML =" ";
+				}
+		}
+	}
+	 
+	
+	
+		
+}
 </script>
 
 </head>
@@ -169,8 +199,9 @@ h2 {
 									</div>
 									<div class="col-md-6">
 										<input type="text" class="form-control"
-											id="employeeCountryName" placeholder="Enter countryname"
-											name="employeeCountryName" required>
+											id="employeeCountryName" onchange="getState()"
+											placeholder="Enter countryname" name="employeeCountryName"
+											required>
 									</div>
 								</div>
 							</div>
@@ -234,9 +265,9 @@ h2 {
 											class="glyphicon glyphicon-user"></i></span> <input id="email"
 											type="text" class="form-control parsley-validated"
 											name="employeeEmail" placeholder="Email" data-type="email"
-											data-required="true">
+											data-required="true" onchange="verifyEmail()">
 									</div>
-									<div class="emailMessage"></div>
+									<small id="emailMessage"></small>
 								</div>
 							</div>
 

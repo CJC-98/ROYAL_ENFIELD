@@ -48,6 +48,12 @@ public interface IAdminService {
 	
 	List<SoldBikeStock> getSoldBikeStock();
 	
+	List<EmployeeDetails> getEmployeeDesignation(String employeeDesignation);
+	
+	public String getEmployeeCount();
+	
+	public int getEmployeeEmail(String employeeEmail);
+	
 
 
 }

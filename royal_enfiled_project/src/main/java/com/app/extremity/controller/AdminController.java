@@ -1,6 +1,10 @@
 package com.app.extremity.controller;
 
+import java.io.IOException;
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletResponseWrapper;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.app.extremity.iservice.IAdminService;
@@ -25,6 +30,7 @@ import com.app.extremity.model.ServcingBikeInfo;
 import com.app.extremity.model.SoldBikeStock;
 import com.app.extremity.model.SoldOldBikeStock;
 import com.app.extremity.model.TestDriveCustomer;
+import com.google.gson.Gson;
 
 @Controller
 /* @RequestMapping(value="/admin") */
@@ -73,6 +79,26 @@ public class AdminController {
 	@RequestMapping(value = "/employeeRegistration")
 	public String toEmployeeRegistrationPage() {
 		return "Admin/employeeRegistration";
+	}
+	@RequestMapping(value ="/log" , produces = "application/json")
+	public @ResponseBody String verifyEmail(@RequestParam String email,HttpServletResponse response)
+	{
+		System.out.println("verify Email");
+		int checkEmail= adminService.getEmployeeEmail(email);
+		String json = new Gson().toJson(checkEmail);
+		System.out.println(json);
+		response.setContentType("application/json");
+		response.setCharacterEncoding("UTF-8");
+		try {
+			response.getOutputStream();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return json;
+		 
+		
+		
 	}
 
 	/*

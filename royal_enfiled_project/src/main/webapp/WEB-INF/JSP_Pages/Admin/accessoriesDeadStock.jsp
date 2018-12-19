@@ -105,7 +105,9 @@
 								<c:forEach items="${accessoriesDeadStockList}"
 									var="accessoriesDeadStock">
 									<tr role="row" class="odd">
-										<td class="sorting"></td>
+										
+										<td>${ accessoriesDeadStock.accessoriesDeadStockID}</td>
+										<td>${ accessoriesDeadStock.acd.partId}</td>
 										<td>${ accessoriesDeadStock.acd.partName}</td>
 										<td>${ accessoriesDeadStock.acd.partPrice}</td>
 										<td>${ accessoriesDeadStock.acd.partQuantity}</td>
