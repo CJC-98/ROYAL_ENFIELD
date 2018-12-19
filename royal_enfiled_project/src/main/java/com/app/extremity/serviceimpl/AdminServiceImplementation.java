@@ -1,5 +1,24 @@
+
 package com.app.extremity.serviceimpl;
 
+import java.io.IOException;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Date;
+import java.util.Properties;
+
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Multipart;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -28,19 +47,26 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.app.extremity.idao.AccessoriesDeadStockIDao;
 import com.app.extremity.idao.AccessoriesStockIDao;
+import com.app.extremity.idao.AvailableServicingIDao;
+import com.app.extremity.idao.BikeCustomizationIDao;
 import com.app.extremity.idao.BikeOfferIDao;
+import com.app.extremity.idao.BikeServicingIDao;
 import com.app.extremity.idao.CustomizationInvoiceIDao;
 import com.app.extremity.idao.DeadStockIDao;
 import com.app.extremity.idao.EmployeeDetailsIDao;
 import com.app.extremity.idao.NewBikeStockIDao;
 import com.app.extremity.idao.OldBikeStockIDao;
 import com.app.extremity.idao.ServcingBikeInfoIDao;
+import com.app.extremity.idao.SoldBikeStockIDao;
 import com.app.extremity.idao.SoldOldBikeStockIDao;
 import com.app.extremity.idao.TestDriveCustomerIDao;
 import com.app.extremity.iservice.IAdminService;
 import com.app.extremity.model.AccessoriesDeadStock;
 import com.app.extremity.model.AccessoriesStock;
+import com.app.extremity.model.AvailableServicing;
+import com.app.extremity.model.BikeCustomization;
 import com.app.extremity.model.BikeOffer;
+import com.app.extremity.model.BikeServicing;
 import com.app.extremity.model.CustomizationInvoice;
 import com.app.extremity.model.DeadStock;
 import com.app.extremity.model.EmailMessage;
@@ -48,6 +74,7 @@ import com.app.extremity.model.EmployeeDetails;
 import com.app.extremity.model.NewBikeStock;
 import com.app.extremity.model.OldBikeStock;
 import com.app.extremity.model.ServcingBikeInfo;
+import com.app.extremity.model.SoldBikeStock;
 import com.app.extremity.model.TestDriveCustomer;
 
 @Service
@@ -79,6 +106,17 @@ public class AdminServiceImplementation implements IAdminService {
 	ServcingBikeInfoIDao servcingBikeInfoIDao;
 	@Autowired
 	TestDriveCustomerIDao testDriveCustomerIDao;
+	@Autowired
+
+	AvailableServicingIDao availableServicingIDao;
+	@Autowired
+	BikeCustomizationIDao bikeCustomizationIDao;
+	@Autowired
+	BikeServicingIDao bikeServicingIDao;
+	
+
+	SoldBikeStockIDao soldBikeStockIDao;
+
 
 	static Logger logger = LogManager.getLogger(AdminServiceImplementation.class);
 
@@ -129,9 +167,9 @@ public class AdminServiceImplementation implements IAdminService {
 		}
 		employeeDetails.setEmployeeId(getEmployeeCount());
 		employeeDetailsDao.save(employeeDetails);
-		logger.info("employee Saved", employeeDetails);
+		logger.info("employee Saved");
 		logger.info(UPLOADED_FOLDER.toString());
-		logger.info("message", UPLOADED_FOLDER);
+		logger.info("message");
 	}
 
 	/*
@@ -188,7 +226,7 @@ public class AdminServiceImplementation implements IAdminService {
 
 			Transport.send(msg);
 
-			logger.info("Email has been send to the employee", emailmessage);
+			logger.info("Email has been send to the employee");
 
 		} catch (MessagingException e) {
 
@@ -293,4 +331,30 @@ public class AdminServiceImplementation implements IAdminService {
 	
 	}
 
+	@Override
+
+	public List<AvailableServicing> getavaliableServicing() {
+		
+		return (List<AvailableServicing>) availableServicingIDao.findAll();
+	}
+
+	@Override
+	public List<BikeServicing> getBikeServicing() {
+		
+		return (List<BikeServicing>) bikeServicingIDao.findAll();
+	}
+
+	@Override
+	public List<BikeCustomization> getbikeCustomization() {
+		
+		return (List<BikeCustomization>) bikeCustomizationIDao.findAll();
+	}
+
+	@Override
+	public List<SoldBikeStock> getSoldNewBike() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
+

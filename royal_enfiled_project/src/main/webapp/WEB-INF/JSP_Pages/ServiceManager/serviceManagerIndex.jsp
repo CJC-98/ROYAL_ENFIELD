@@ -258,9 +258,9 @@
                     </section>
                 </aside> <!-- /.aside -->
                   
-                <!-- dashboard starts -->
+               <!-- dashboard starts -->
                 	 <jsp:include page="${link}"/>
-                <!-- dashboard ends -->
+                <!-- dashboard ends --> 
                 
                 <aside class="bg-light lter b-l aside-md hide" id="notes">
                     <div class="wrapper">Notification</div>
