@@ -26,7 +26,9 @@ import com.app.extremity.model.EmployeeDetails;
 import com.app.extremity.model.NewBikeStock;
 import com.app.extremity.model.OldBikeStock;
 import com.app.extremity.model.ServcingBikeInfo;
+import com.app.extremity.model.SoldAccessories;
 import com.app.extremity.model.SoldBikeStock;
+import com.app.extremity.model.SoldOldBikeStock;
 import com.app.extremity.model.TestDriveCustomer;
 
 
@@ -167,7 +169,8 @@ public class AdminController {
 	}
 
 	@RequestMapping(value = "/servicingAndCustomizationInvoice")
-	public String getCustomizationInvoice(Model model) {
+	public String getCustomizationInvoice(Model model)
+	{
 		List<CustomizationInvoice> customizationInvoiceList = adminService.getCustomizationInvoice();
 		model.addAttribute("customizationInvoiceList", customizationInvoiceList);
 		model.addAttribute("link", "servicingAndCustomizationInvoice.jsp");
@@ -187,9 +190,8 @@ public class AdminController {
 	/* this method is use for getTestDriveCustomer details */
 	@RequestMapping(value = "/testDriveCustomer")
 	public String getTestDriveCustomer(Model model) {
+		System.out.println("In Test Drive");
 		List<TestDriveCustomer> testDriveCustomerList = adminService.getTestDriveCustomer();
-		System.out.println("Test Drive Customer List ");
-		System.out.println(testDriveCustomerList);
 		model.addAttribute("testDriveCustomerList", testDriveCustomerList);
 		model.addAttribute("link", "testDriveCustomer.jsp");
 		return "Admin/adminIndex";
@@ -197,11 +199,31 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value = "/soldNewBike")
-	public String getSoldNewBikeInfo(Model model) 
+	public String getSoldBikeStockInfo(Model model) 
 	{
-		List<SoldBikeStock> soldNewBikeInfoList = adminService.getSoldNewBike();
+		System.out.println("In Sold New Bike");
+		List<SoldBikeStock> soldNewBikeInfoList = adminService.getSoldBikeStockInfo();
 		model.addAttribute("soldNewBikeInfoList", soldNewBikeInfoList);
 		model.addAttribute("link", "soldNewBike.jsp");
+		return "Admin/adminIndex";
+
+	}
+
+	@RequestMapping(value = "/soldOldBike")
+	public String getSoldOldBikeInfo(Model model) 
+	{
+		System.out.println("In Sold Old Bike");
+		List<SoldOldBikeStock> soldOldBikeInfoList = adminService.getSoldOldBike();
+		model.addAttribute("soldOldBikeInfoList", soldOldBikeInfoList);
+		model.addAttribute("link", "soldOldBike.jsp");
+		return "Admin/adminIndex";
+
+	}
+	@RequestMapping(value = "/soldAccessories")
+	public String getSoldAccessoriesInfo(Model model) {
+		List<SoldAccessories> soldAccessoriesInfoList = adminService.getSoldAccessoriesInfo();
+		model.addAttribute("soldAccessoriesInfoList", soldAccessoriesInfoList);
+		model.addAttribute("link", "soldAccessories.jsp");
 		return "Admin/adminIndex";
 
 	}
@@ -231,14 +253,7 @@ public class AdminController {
 
 	}
 	
-	@RequestMapping(value = "/soldAccessories")
-	public String getSoldAccessoriesInfo(Model model) {
-		//List<SoldNewBike> servcingBikeInfoList = adminService.getSoldNewBike();
-		//model.addAttribute("servcingBikeInfoList", servcingBikeInfoList);
-		model.addAttribute("link", "soldAccessories.jsp");
-		return "Admin/adminIndex";
-
-	}
+	
 
 
 }

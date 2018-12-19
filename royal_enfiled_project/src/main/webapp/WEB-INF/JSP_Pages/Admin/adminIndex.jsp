@@ -173,6 +173,13 @@
                                                     <li> <a href="employeeList">
                                                    		<span>User</span> </a> 
                                                    	</li>
+                                                   	
+                                                   	 <!-- TestDrive -->  
+                                           			 <li> 
+                                            				<a href="testDriveCustomer"> 
+                                                     		<span>testDriveCustomer</span> </a>
+                                            		</li>
+                                           			 <!--End Test Drive  -->
                                                    
                                             
                                             </ul>
@@ -225,30 +232,10 @@
                                        		 </ul>
                                        	</li>
 										 <!-- End Stock -->
-										<!-- This for View -->
-                                        <li> <a href="#v"> <i class="fa fa-user icon"> <b class="bg-warning"></b>
-                                                </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i
-                                                        class="fa fa-angle-up text-active"></i> </span> <span>View</span>
-                                            </a>
-                                            <ul class="nav lt">
-                                            	   
-                                                     <li> <a href="bikeServicesRecords">
-                                                       		<span>Bike_Services_Record</span> </a>
-                                                   	</li>
-                                                   	
-                                                   	   <!-- TestDrive -->  
-                                           			 <li> 
-                                            				<a href="testDriveCustomer"> 
-                                                     		<span>testDriveCustomer</span> </a>
-                                            		</li>
-                                           			 <!--End Test Drive  -->
-                                             </ul>
-                                             </li> 
-                                        <!-- End view -->     			
-                                                   			
+										 
                                          <!--Start Invoice  -->
                                 
-                                         <li> <a href=""> <i class="fa fa-user icon"> <b class="bg-warning"></b>
+                                         <li> <a href="servicingAndCustomizationInvoice"> <i class="fa fa-user icon"> <b class="bg-warning"></b>
                                                 </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i
                                                         class="fa fa-angle-up text-active"></i> </span> <span>Invoice</span>
                                             </a>

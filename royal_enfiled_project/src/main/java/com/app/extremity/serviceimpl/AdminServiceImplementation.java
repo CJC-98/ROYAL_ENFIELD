@@ -3,6 +3,7 @@ package com.app.extremity.serviceimpl;
 
 import java.io.IOException;
 
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -57,6 +58,8 @@ import com.app.extremity.idao.EmployeeDetailsIDao;
 import com.app.extremity.idao.NewBikeStockIDao;
 import com.app.extremity.idao.OldBikeStockIDao;
 import com.app.extremity.idao.ServcingBikeInfoIDao;
+import com.app.extremity.idao.SoldAccessoriesIDao;
+import com.app.extremity.idao.SoldBikeStockIDao;
 import com.app.extremity.idao.SoldOldBikeStockIDao;
 import com.app.extremity.idao.TestDriveCustomerIDao;
 import com.app.extremity.iservice.IAdminService;
@@ -73,7 +76,9 @@ import com.app.extremity.model.EmployeeDetails;
 import com.app.extremity.model.NewBikeStock;
 import com.app.extremity.model.OldBikeStock;
 import com.app.extremity.model.ServcingBikeInfo;
+import com.app.extremity.model.SoldAccessories;
 import com.app.extremity.model.SoldBikeStock;
+import com.app.extremity.model.SoldOldBikeStock;
 import com.app.extremity.model.TestDriveCustomer;
 
 @Service
@@ -91,6 +96,10 @@ public class AdminServiceImplementation implements IAdminService {
 	OldBikeStockIDao oldBikeStockIDao;
 	@Autowired
 	SoldOldBikeStockIDao soldOldBikeStockDao;
+	@Autowired
+	SoldBikeStockIDao soldBikeStockDao;
+	@Autowired
+	SoldAccessoriesIDao soldAccessoriesDao;
 	@Autowired
 	AccessoriesStockIDao accessoriesStockIDao;
 	@Autowired
@@ -330,10 +339,28 @@ public class AdminServiceImplementation implements IAdminService {
 		return (List<BikeCustomization>) bikeCustomizationIDao.findAll();
 	}
 
+	
+
 	@Override
-	public List<SoldBikeStock> getSoldNewBike() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<SoldOldBikeStock> getSoldOldBike() {
+		
+		return (List<SoldOldBikeStock>) soldOldBikeStockDao.findAll();
 	}
+
+	@Override
+	public List<SoldBikeStock> getSoldBikeStockInfo() {
+	
+		return (List<SoldBikeStock>) soldBikeStockDao.findAll();
+	}
+
+	@Override
+	public List<SoldAccessories> getSoldAccessoriesInfo() {
+		
+		return (List<SoldAccessories>) soldAccessoriesDao.findAll();
+	}
+
+
+
+	
 
 }

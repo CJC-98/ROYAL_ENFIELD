@@ -78,13 +78,18 @@
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-label="Browser: 
                                             activate to sort column ascending" 
-                                            style="width: 125px;">Color
+                                            style="width: 125px;">EnginType
                                         </th>
                                         
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-label="Platform(s): 
                                             activate to sort column ascending" 
                                             style="width: 125px;">Chasis_Number
+                                        </th>
+                                        <th class="sorting" tabindex="0" aria-controls="example1" 
+                                            rowspan="1" colspan="1" 
+                                            aria-label="CSS grade: activate to sort column ascending" 
+                                            style="width: 125px;">EngineStartingType
                                         </th>
                                        
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
@@ -97,44 +102,47 @@
                                             aria-label="CSS grade: activate to sort column ascending" 
                                             style="width: 125px;">BikeOnRoadPrice
                                         </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" 
-                                            aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;">EngineStartingType
-                                        </th>
+                                        
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" 
                                             aria-label="CSS grade: activate to sort column ascending" 
                                             style="width: 125px;">Invoice
                                         </th>
+                                        <th class="sorting" tabindex="0" aria-controls="example1" 
+                                            rowspan="1" colspan="1" 
+                                            aria-label="CSS grade: activate to sort column ascending" 
+                                            style="width: 125px;">Sold_Bike_Date
+                                        </th>
                                         
                                     </tr>
                                   </thead>
                                   <tbody>
+                                  <c:forEach items="${soldNewBikeInfoList}" var="soldNewBikeInfo">
                               
-                                    <tr role="row" class="odd">
-                                     
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    
+                                   <tr role="row" class="odd">
+                                    <td>${soldNewBikeInfo.bikeModel.modelName }</td>
+                                    <td>${soldNewBikeInfo.bikeEngineCapacity.engineType }</td>
+                                    <td>${soldNewBikeInfo.chasisNumber }</td>
+                                    <td>${soldNewBikeInfo.engineStartingType }</td>
+                                    <td>${soldNewBikeInfo.bikewheel}</td>
+                                    <td>${soldNewBikeInfo.bikeOnRoadPrice }</td>
+                                 	<td>${soldNewBikeInfo.invoice }</td>
+                                    <td>${soldNewBikeInfo.soldbikedate }</td>
                                   </tr>
+                                  </c:forEach>
                                   
                                   </tbody>
                                   <tfoot>
                                   <tr>
                                   	
                                     <th rowspan="1" colspan="1">Model_Name</th>
-                                    <th rowspan="1" colspan="1">Color</th>
+                                    <th rowspan="1" colspan="1">Engin_Type</th>
                                     <th rowspan="1" colspan="1">Chasis_Number</th>
+                                    <th rowspan="1" colspan="1">Engine_Starting_Type</th>
                                     <th rowspan="1" colspan="1">BikeWheel</th>
                                     <th rowspan="1" colspan="1">BikeOnRoadPrice</th>
-                                    <th rowspan="1" colspan="1">Engine_Starting_Type</th>
                                     <th rowspan="1" colspan="1">Invoice</th>
+                                    <th rowspan="1" colspan="1">Sold_Bike_Date</th>
                                     </tr>
                                   </tfoot>
                                 </table>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -66,11 +67,7 @@
                                             role="grid" aria-describedby="example1_info">
                                   <thead>
                                   <tr role="row">
-                                      <th class="sorting_asc" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" aria-sort="ascending" 
-                                            aria-label="Rendering engine: activate to sort column descending"
-                                            style="width: 125px;">Part_id
-                                      </th>
+                                 
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-label="Browser: 
                                             activate to sort column ascending" 
@@ -96,17 +93,18 @@
                                     </tr>
                                   </thead>
                                   <tbody>
+                                 <c:forEach items="${soldAccessoriesInfoList}" var="soldAccessoriesInfo">
                                     <tr role="row" class="odd">
-                                    <td class="sorting"></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                   
+                                    <td>${soldAccessoriesInfo.partName}</td>
+                                    <td>${soldAccessoriesInfo.partPrice}</td>
+                                    <td>${soldAccessoriesInfo.partQuantity}</td>
+                                    <td>${soldAccessoriesInfo.bikeModel.modelName}</td>
+                                  
                                   </tr>
+                                  </c:forEach>
                                   </tbody>
                                   <tfoot>
-                                  <tr><th rowspan="1" colspan="1">Part_Id</th>
+                                  <tr>
                                     <th rowspan="1" colspan="1">Part_Name</th>
                                     <th rowspan="1" colspan="1">Part_Price</th>
                                     <th rowspan="1" colspan="1">Part_Quantity</th>
