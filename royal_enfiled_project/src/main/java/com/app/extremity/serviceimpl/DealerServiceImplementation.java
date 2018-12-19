@@ -5,15 +5,18 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.app.extremity.idao.BikeModelIDao;
 import com.app.extremity.idao.CityIdao;
 import com.app.extremity.idao.CountryIdao;
 import com.app.extremity.idao.LoginIdao;
+import com.app.extremity.idao.OldBikeStockIDao;
 import com.app.extremity.idao.RegistrationIdao;
 import com.app.extremity.idao.StateIdao;
 import com.app.extremity.iservice.IDealerService;
 import com.app.extremity.model.City;
 import com.app.extremity.model.Country;
 import com.app.extremity.model.Login;
+import com.app.extremity.model.OldBikeStock;
 import com.app.extremity.model.Registration;
 import com.app.extremity.model.State;
 @Service
@@ -28,7 +31,10 @@ CountryIdao countryIdao;
 StateIdao statedaoi; 
 @Autowired
 LoginIdao loginIdao;
-
+@Autowired
+OldBikeStockIDao oldbkdao;
+@Autowired
+BikeModelIDao  bikeModelIdao;
 //this method to save user/dealer
 //@Author Akshata Yevatkar 
 @Override
@@ -76,7 +82,7 @@ public List<Country> getAllcountry() {
 @Override
 public List<State> findAllState(int a) {
 	System.out.println("in serviceimpl"+a);
-	   Country country=  countryIdao.findOne(a);
+	   Country country=  countryIdao.findOneById(a);
 	    List<State>list= statedaoi.findAllByCountry(country);
 		System.out.println("serviceimple="+list);
 	    return list;
@@ -122,6 +128,33 @@ public int getDealerCount() {
 public Login getLogin(Login login) {
 	// TODO Auto-generated method stub
 	return null;
+}
+
+
+
+@Override
+public OldBikeStock saveoldbike(OldBikeStock oldBk) {
+	// TODO Auto-generated method stub
+	
+	oldBk.setOldBikeId(getModelCount());
+	return oldbkdao.save(oldBk);
+}
+
+
+
+
+
+
+
+@Override
+public String getModelCount() {
+	System.out.println("in modelcount method");
+	int bm=(int)  bikeModelIdao.count();
+	String model="BKMID00";
+	bm++;
+	model=model+Integer.toString(bm);
+	
+	return model;
 }
 
 

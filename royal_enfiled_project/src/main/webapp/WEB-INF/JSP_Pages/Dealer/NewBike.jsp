@@ -15,9 +15,9 @@
 		<ul class="thumbnails">
 			<li class="span3">
 			  <div class="thumbnail">
-				<a href="product_details.html" class="overlay"></a>
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.html"><img src="${pageContext.request.contextPath}/Resources/images/interceptor.jpg" width="276px" height="376px" alt=""></a>
+				<a href="quickview" class="overlay"></a>
+				<a class="zoomTool" href="quickview" title="viewBike"><span class="icon-search"></span> QUICK VIEW</a>
+				<a href="quickview"><img src="${pageContext.request.contextPath}/Resources/images/interceptor.jpg" width="276px" height="376px" alt=""></a>
 				<div class="caption cntr">
 					<p>Bike name</p>
 					<p><strong> $30.00</strong></p>

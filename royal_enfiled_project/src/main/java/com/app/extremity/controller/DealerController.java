@@ -25,8 +25,9 @@ import com.app.extremity.model.Login;
 import com.app.extremity.model.Registration;
 import com.app.extremity.model.Role;
 import com.app.extremity.model.State;
-import com.app.extremity.iservice.IDealerService;
 import com.google.gson.Gson;
+import com.app.extremity.iservice.IDealerService;
+
 
 
 @Controller
@@ -37,8 +38,7 @@ public class DealerController {
 	
 	@RequestMapping(value="/DealerDashboardPage")
 	public String ServicesDashboardPage(Model model){
-		//
-		//
+		
 		System.out.println("dashboard hits...........");
 		model.addAttribute("link","dealerDashboard.jsp");
 		return "Dealer/dealerIndex";
@@ -75,6 +75,35 @@ public class DealerController {
 		System.out.println("newbike hits...........");   
 		model.addAttribute("link","Accessories.jsp");
       System.out.println("final");
+		return "Dealer/dealerIndex";
+	}
+	
+	@RequestMapping(value="/quickview")
+	public String quickview(Model model)
+	{
+		
+		System.out.println("newbike hits...........");   
+		model.addAttribute("link","quickView.jsp");
+		System.out.println("final");
+		return "Dealer/dealerIndex";
+	}
+	
+	@RequestMapping(value="/Print")
+	public String Addbike(Model model){
+		
+		System.out.println("newbike hits...........");   
+		model.addAttribute("link","AddBike.jsp");
+		System.out.println("final");
+		return "Dealer/dealerIndex";
+	}
+	
+	@RequestMapping(value="/cart")
+	public String cart(Model model)
+	{
+		
+		System.out.println("newbike hits...........");   
+		model.addAttribute("link","cart.jsp");
+		System.out.println("final");
 		return "Dealer/dealerIndex";
 	}
 	

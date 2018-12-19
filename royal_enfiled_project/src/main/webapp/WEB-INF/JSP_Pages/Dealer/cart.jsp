@@ -7,8 +7,23 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/font.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/app.v1.css" type="text/css" />
+
+<script type="text/javascript">
+function removeItem(productId){
+	alert(productId)
+		
+	document.deletecart.action="deletecart?productId="+productId;
+	document.deletecart.submit();
+	req.send();
+	alert("sent()")
+	
+}
+
+</script>
 </head>
+
 <body>
+
 <section id="content">
                     <section class="vbox">
                         <section class="scrollable padder">
@@ -18,11 +33,11 @@
 Lower Header Section 
 -->
 
-	<div class="row">
-	<div class="span12">
+
+	<div class="span10">
     
 	<div class="well well-small">
-		<h1>Check Out <small class="pull-right"> 2 Items are in the cart </small></h1>
+		<h1>Check Out <small class="pull-right"> 1 Items are in the cart </small></h1>
 	<hr class="soften"/>	
 
 	<table class="table table-bordered table-condensed">
@@ -30,49 +45,29 @@ Lower Header Section
                 <tr>
                   <th>Product</th>
                   <th>Description</th>
-				  <th>	Ref. </th>
-                  <th>Avail.</th>
-                  <th>Unit price</th>
+				   
                   <th>Qty </th>
                   <th>Total</th>
 				</tr>
               </thead>
               <tbody>
                 <tr>
+                <a:forEach items="${data}" var="data"> 
+                <%-- <input type="hidden" id="productId" value="${data.productId}"> --%>
                   <td><img width="100" src="${pageContext.request.contextPath}/Resources/images/interceptor.jpg" alt=""></td>
-                  <td>Items name here<br>Carate : 22<br>Model : n/a</td>
-                  <td> - </td>
-                  <td><span class="shopBtn"><span class="icon-ok"></span></span> </td>
-                  <td>$50.00</td>
-                  <td>
-					<input class="span1" style="max-width:34px" placeholder="1" id="appendedInputButtons" size="16" type="text" value="2">
-				  <div class="input-append">
-					<button class="btn btn-mini" type="button">-</button><button class="btn btn-mini" type="button"> + </button><button class="btn btn-mini btn-danger" type="button"><span class="icon-remove"></span></button>
-				</div>
-				</td>
-                  <td>$100.00</td>
+                  <td>Classic 350</td>
+                  
+                  <td>1 </td>
+                  <td>100000</td>
+                  </a:forEach>
                 </tr>
-				<tr>
-                  <td><img width="100" src="${pageContext.request.contextPath}/Resources/images/interceptor.jpg" alt=""></td>
-                  <td>Item names and brief details<br>Carate:24 <br>Model:HBK24</td>
-                  <td> - </td>
-                  <td><span class="shopBtn"><span class="icon-ok"></span></span> </td>
-                  <td>$348.42</td>
-                  <td>
-				  <input class="span1" style="max-width:34px" placeholder="1" size="16" type="text">
-				  <div class="input-append">
-					<button class="btn btn-mini" type="button">-</button><button class="btn btn-mini" type="button">+</button><button class="btn btn-mini btn-danger" type="button"><span class="icon-remove"></span></button>
-				</div>
-				  </td>
-                  <td>$348.42</td>
-                </tr>
-               
+				
 				 <tr>
-                  <td colspan="6" class="alignR">Total products:	</td>
-                  <td> $448.42</td>
+                  <td colspan="3" class="alignR">Total products:	</td>
+                  <td>1</td>
                 </tr>
 				 <tr>
-                  <td colspan="6" class="alignR">Total products:	</td>
+                  <td colspan="3" class="alignR">Price	</td>
                   <td class="label label-primary"> $448.42</td>
                 </tr>
 				</tbody>
