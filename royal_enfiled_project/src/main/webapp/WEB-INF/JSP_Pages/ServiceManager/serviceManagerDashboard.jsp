@@ -168,8 +168,7 @@
 							</a>
                                 
 	               </div>
-	               
-
+	              
 	            </section>
 	        </section>
 	 </section>               
