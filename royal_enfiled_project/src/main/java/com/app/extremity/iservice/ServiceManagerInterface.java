@@ -21,6 +21,7 @@ public interface ServiceManagerInterface {
 	public long getAllCustomizationCount();
 	public long getAllServiceCountByServiceStatus(String serviceStatus);
 	public BikeServicing saveBikeServicing(BikeServicing bikeServicing);
+	public List<BikeServicing> getAllBikeServicing();
 
 	public AvailableServicing saveAvailableServicingIDao(AvailableServicing availableServicing);
 	public List<AvailableServicing> getAllAvailableServicing();

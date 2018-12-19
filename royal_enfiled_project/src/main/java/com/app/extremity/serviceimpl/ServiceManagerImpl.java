@@ -57,8 +57,8 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	CustomizationChartIDao customizationChartIDao;
 	
 
-   @Autowired
-   BikeServicingIDao bikeServicingIDao;
+    @Autowired
+    BikeServicingIDao bikeServicingIDao;
 
 
 	@Autowired
@@ -99,14 +99,12 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	}
 
 	@Override
-	public BikeCustomization saveBikeCustomization(BikeCustomization bikeCustomization) {
-		
+	public BikeCustomization saveBikeCustomization(BikeCustomization bikeCustomization) {		
 		return bikeCustomizationIDao.save(bikeCustomization);
 	}
 
 	@Override
-	public long getAllCustomizationCountByCustomizationStatus(String customizationStatus) 
-	{
+	public long getAllCustomizationCountByCustomizationStatus(String customizationStatus) {
 		return bikeCustomizationIDao.countBycustomizationStatus(customizationStatus);
 	
 	}
@@ -115,9 +113,6 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	public BikeServicing saveBikeServicing(BikeServicing bikeServicing) {
 		return saveBikeServicing(bikeServicing);
 	}
-
-
-
 
 	@Override
 	public String getNextBikeServicingId() {
@@ -140,6 +135,11 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	public List<AvailableServicing> getAllAvailableServicing() {
 		System.out.println(availableServicingIDao.findAll());
 		return (List<AvailableServicing>)availableServicingIDao.findAll();
+	}
+
+	@Override
+	public List<BikeServicing> getAllBikeServicing() {
+		return (List<BikeServicing>) bikeServicingIDao.findAll();
 	}
 
 

@@ -286,97 +286,10 @@
 	        </section>    	        
 	 	</section> 
 	 
-	        
-		
-		<script>
-
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
-
-<script>
-
 	
-	
-	document.getElementById("notificationBody").style.display = "none";
-	
-	function showBody(){
-		document.getElementById("notificationBody").style.display = "block";
-	}
-	
-	function sendNotification(){
-		alert("notification is send successfully");
-		document.getElementById("notificationBody").style.display = "none";
-	}
-	
-	function cancel(){
-		document.getElementById("notificationBody").style.display = "none";
-	}
-	
-	
-	
-	 
-</script>
-<<<<<<< HEAD
-      <!-- modal starts-->
- 
-						  <div class="modal fade" id="myModal" role="dialog">
-						    <div class="modal-dialog modal-md">
-						      <div class="modal-content">
-						        <div class="modal-header">
-						        	
-                <header class="panel-heading text-center"> <strong>Reply window</strong> </header>
-                <form action="http://flatfull.com/themes/note/index.html" class="panel-body wrapper-lg">
-                    <div class="form-group"> <label class="control-label">To:</label> <textarea="email" placeholder="Welcome to Reply Window"
-                            class="form-control input-lg"> </div>
-                   <button type="submit" class="btn btn-primary">Send</button>
-                    <button type="submit" class="btn btn-primary">Cancel</button>
-                   
-                </form>
-            </section>
-                                </div>
-						        </div>
-						        
-						      </div>
-						    </div>
-					  	</div>
-					  
-					  	<!-- modal ends -->
-	                
-=======
-
-	<script src="js/app.v1.js"></script>
-    <script src="js/charts/easypiechart/jquery.easy-pie-chart.js"></script>
-    <script src="js/charts/sparkline/jquery.sparkline.min.js"></script>
-    <script src="js/app.plugin.js"></script>
-=======
-			
-			function sendNotification(){
-				alert("notification is send successfully");
-				document.getElementById("notificationBody").style.display = "none";
-			}
-			
-			function cancel(){
-				document.getElementById("notificationBody").style.display = "none";
-			}
-=======
->>>>>>> refs/heads/pooja
->>>>>>> refs/heads/serviceManagerTeamBranch
-			document.getElementById("notificationBody").style.display = "none";	
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> branch 'serviceManagerTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
->>>>>>> refs/heads/pooja
->>>>>>> refs/heads/serviceManagerTeamBranch
-		</script>
-					  		
-					                           
-
+	<script>
+		document.getElementById("notificationBody").style.display = "none";	 
+	</script>
 </body>
 
 </html>
