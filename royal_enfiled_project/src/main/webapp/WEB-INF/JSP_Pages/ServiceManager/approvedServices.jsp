@@ -146,7 +146,7 @@ function detail()
                                                 </tr>
                                             </thead>
                                           
-                                          
+                                            
                                             <tbody>
                                             <a:forEach var="work" items="${servicingChart}">
                                             	<tr style="text-align: center">
