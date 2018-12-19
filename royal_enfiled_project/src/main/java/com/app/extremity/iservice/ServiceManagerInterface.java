@@ -33,6 +33,7 @@ public interface ServiceManagerInterface {
 
 
 	public String getNextBikeServicingId();
+	public BikeServicing getBikeServicingBiId(String serviceId);
 
 
 }

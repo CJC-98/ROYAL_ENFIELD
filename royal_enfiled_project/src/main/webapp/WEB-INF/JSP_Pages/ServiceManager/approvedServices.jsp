@@ -17,6 +17,49 @@
 <body>
 
 
+	<script>
+		function getServiceDetails(serviceId){
+			var req = new XMLHttpRequest();		
+			req.open("GET","getServiceDetails?serviceId="+serviceId,true);
+			req.send(); 
+			
+			var table = document.getElementById("serviceDataTable");
+			
+			while(table.rows.length>1){
+				table.deleteRow(table.rows.length-1);
+			}
+			
+			req.onreadystatechange=function(){
+					
+				if(req.readyState==4 && req.status==200){
+					
+					var list = JSON.parse(req.responseText);	
+					 				 
+
+					for(index = 0; index < list.length; index++){
+
+						
+						var row = table.insertRow(1);
+						
+						var cell1 = row.insertCell(0);
+						var cell2 = row.insertCell(1);
+						var cell3 = row.insertCell(2);
+						
+						cell1.innerHTML =  list[index].work;
+						cell2.innerHTML =  list[index].cost;
+						cell3.innerHTML =  list[index].status;
+						
+						cell1.style.textAlign = "center";
+
+						
+						cell3.style.color = "red";
+						
+					}
+				}
+			}
+		}
+	</script>
+
 	<section id="content" class="bg-light lter">
 
         <section class="vbox">
@@ -34,51 +77,26 @@
                                           <header class="panel-heading bg-warning dk" style="font-size: 20px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
                                          
                                           	<a:choose>
-																	  <a:when test="${data.servcingBikeInfo.plateNumber !=''}">
-																	 
-																			 <div class="checkbox"> 
-				                                                         		
-				                                                         			${data.servcingBikeInfo.modelName}(${data.servcingBikeInfo.plateNumber})
-				                                                    			 
-				                                                    		</div>
-																	  </a:when>
-																	  <a:otherwise>
-																			  <div class="checkbox"> 
-					                                                         		 
-					                                                         			${data.servcingBikeInfo.modelName}(${data.servcingBikeInfo.chasisNumber})
-					                                                    			 
-					                                                        	</div>
-																	  </a:otherwise>
-																</a:choose>
+													 <a:when test="${data.servcingBikeInfo.plateNumber !=''}">		 
+															<div> 
+				                                                  ${data.servcingBikeInfo.modelName}(${data.servcingBikeInfo.plateNumber})       			 
+				                                            </div>
+													</a:when>
+													<a:otherwise>
+															<div>             		 
+					                                               ${data.servcingBikeInfo.modelName}(${data.servcingBikeInfo.chasisNumber})      			 
+					                                        </div>
+													</a:otherwise>
+											</a:choose>
+	  
 																
-																  
-																
-																
-																
-																
-																
-																
-																
-																
-																
-																
-																
-																
-																
-																
-																
-                                          	
-                                          	
-                                          	
-                                          	
-                                          	                                          </header>
+                                         </header>
                                                 
                                           <table class="table table-striped m-b-none" >
                                                       
                                                 <thead >
                                                                 
                                                      <tr>   
-
                                                          <th style="text-align: center;">Service Id</th>
                                                          <th style="text-align: center;">Appointment Date</th>
                                                          <th style="text-align: center;">Services Details</th>
@@ -92,7 +110,7 @@
                                                          <td>${data.bikeServicingId}</td>
                                                          <td>${data.appointmentDate}</td>
                                                          <td>
-                                                         	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded">Services Details</a>
+                                                         	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded"><span onclick="getServiceDetails('${data.bikeServicingId}')">Services Details</span></a>
                                                          </td>     
                                                          <td>
                                                          	<a href="ServicesInprogressPage" class="btn btn-md btn-primary m-r rounded">Start Services</a>
@@ -108,10 +126,14 @@
                                          
                         </div>
                     </div>
+                    
+                    
+                    
+                    
+                    
+                    
                     </a:forEach>
                     <!-- first record ends-->
-                    
-                    
                     <!-- modal starts-->
  
 						  <div class="modal fade" id="myModal" role="dialog">
@@ -120,11 +142,13 @@
 						        <div class="modal-header">
 
 						        	<h3 style="text-align: center">Service Details</h3>  
+						        	 
 						        </div>
+						        
 						        <div class="modal-body">
 						          		
                                     <section class="panel panel-default">
-                                        <table class="table table-striped m-b-none">
+                                        <table class="table table-striped m-b-none" id="serviceDataTable">
                                             <thead>
                                                 <tr>
                                                     <th style="text-align: center">Work</th>
@@ -132,32 +156,9 @@
                                                     <th style="text-align: center">Status</th>
                                                 </tr>
                                             </thead>
-                                            
+                                          
+                                          
                                             <tbody>
-                                            
-                                            	<tr style="text-align: center">
-                                                    	 <td>labour cost</td>
-                                                         <td>500</td>
-                                                         <td style="color: #FF681B">pending</td>
-                                                </tr>
-                                            
-                                                <tr style="text-align: center">
-                                                    	 <td>brake tuning</td>
-                                                         <td>500</td>
-                                                         <td style="color: #FF681B">pending</td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>silencer tuning</td>
-                                                         <td>350</td>
-                                                         <td style="color: #FF681B">pending</td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>tail light clean</td>
-                                                         <td>300</td>
-                                                         <td style="color: #FF681B">pending</td>
-                                                </tr>
                     
                                             </tbody>
                                             
@@ -174,7 +175,9 @@
 					  	</div>
 					  
 					  	<!-- modal ends -->
-            
+                    
+                    
+                                
                       
         </section>
    </section> 

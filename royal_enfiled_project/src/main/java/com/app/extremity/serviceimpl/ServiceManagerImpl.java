@@ -111,7 +111,7 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 
 	@Override
 	public BikeServicing saveBikeServicing(BikeServicing bikeServicing) {
-		return saveBikeServicing(bikeServicing);
+		return bikeServicingIDao.save(bikeServicing);
 	}
 
 	@Override
@@ -140,6 +140,11 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	@Override
 	public List<BikeServicing> getAllBikeServicing() {
 		return (List<BikeServicing>) bikeServicingIDao.findAll();
+	}
+
+	@Override
+	public BikeServicing getBikeServicingBiId(String serviceId) {
+		return bikeServicingIDao.findBikeServicingByBikeServicingId(serviceId);
 	}
 
 
