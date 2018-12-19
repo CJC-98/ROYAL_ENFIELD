@@ -93,8 +93,7 @@
                                     </section>    
                            </div>
 						   </a>
-                        
-	               		 
+                    
 	               </div>
 	               
 	               
