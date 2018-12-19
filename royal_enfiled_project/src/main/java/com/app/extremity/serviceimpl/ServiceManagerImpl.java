@@ -142,6 +142,12 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 		return (List<AvailableServicing>)availableServicingIDao.findAll();
 	}
 
+	@Override
+	public List<BikeCustomization> getAllBikeCustomizationByCustomizationStatus(String customizationStatus) {
+		// TODO Auto-generated method stub
+		return (List<BikeCustomization>)bikeCustomizationIDao.findAll();
+	}
+
 
 
 

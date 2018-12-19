@@ -14,24 +14,24 @@ import com.app.extremity.model.Notfication;
 
 public interface ServiceManagerInterface {
 
-	public String getNextBikeCustomizationId();
 	
 
 	public long getAllServiceCount();
-	public long getAllCustomizationCount();
+	public String getNextBikeServicingId();
+
 	public long getAllServiceCountByServiceStatus(String serviceStatus);
 	public BikeServicing saveBikeServicing(BikeServicing bikeServicing);
-
+	public List<BikeServicing> getAllBikeServicingByServcingStatus(String serviceStatus);
+	
 	public AvailableServicing saveAvailableServicingIDao(AvailableServicing availableServicing);
 	public List<AvailableServicing> getAllAvailableServicing();
 
-	public long getAllCustomizationCountByCustomizationStatus(String Waiting);
 
-	public List<BikeServicing> getAllBikeServicingByServcingStatus(String serviceStatus);
+
+	public long getAllCustomizationCount();
 	public BikeCustomization saveBikeCustomization(BikeCustomization bikeCustomization);
+	public String getNextBikeCustomizationId();
+	public long getAllCustomizationCountByCustomizationStatus(String string);
 
-
-	public String getNextBikeServicingId();
-
-
+    public List<BikeCustomization> getAllBikeCustomizationByCustomizationStatus(String customizationStatus);
 }

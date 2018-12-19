@@ -179,21 +179,17 @@ public class ServiceMangerController {
 		model.addAttribute("completedservices", cscount);
 		
 		long account=serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("Waiting");
-		
 		model.addAttribute("approvedCustomizationCount",account);
 		
 	    long tccount=serviceManagerInterface.getAllCustomizationCount();
-	
-		model.addAttribute("totalCustomizationCount",tccount);
+	    model.addAttribute("totalCustomizationCount",tccount);
 		
 
 		long ipcount1=serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("InProgress");
-		
 		model.addAttribute("inProgerssCustomization", ipcount1);
 		
 		long cccount=serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("Done");
-	
-		model.addAttribute("completedCustomization", cccount);
+	    model.addAttribute("completedCustomization", cccount);
 				
 
 
@@ -289,11 +285,18 @@ public class ServiceMangerController {
 		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
     	model.addAttribute("shortInboxList", shortInboxList);
 		
-		
-		
+    	
+		List<BikeCustomization> bikeCustomizationsList= serviceManagerInterface.getAllBikeCustomizationByCustomizationStatus("Waiting");
+		for(BikeCustomization data: bikeCustomizationsList) {
+
+		CustomizationBikeInfo bikeno= data.getCustomizationBikeInfo();
+	 System.out.println(""+bikeno.getChasisNumber()+" "+bikeno.getPlateNumber()+"");
+		}
 		model.addAttribute("link","approvedCustomization.jsp");
 		return "ServiceManager/serviceManagerIndex";  
+		
 	}
+	
 	
 	@RequestMapping(value="/CustomizationInprogressPage")
 	public String CustomizationInprogressPage(Model model,HttpServletRequest request){
