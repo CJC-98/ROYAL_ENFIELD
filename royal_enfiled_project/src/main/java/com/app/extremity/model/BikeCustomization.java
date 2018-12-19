@@ -1,6 +1,7 @@
 package com.app.extremity.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -13,29 +14,42 @@ import javax.persistence.Table;
 @Entity
 @Table(name="BikeCustomizationTable")
 public class BikeCustomization {
-	
+	   
 	@Id
 	private String bikeCustomizationId;
 	
 	private String customizationStatus = "waiting";  //OR in-progress  OR  done
 	
+	
+	
+	
 	private String appointmentDate;
 	
 	private String bikeReleaseStatus = "on-hold";   //OR released
 	
-	@OneToOne
+	private int customizationProgressPercent = 0;  // 0-100 %
+	
+	@OneToOne(cascade=CascadeType.ALL)
 	private CustomizationBikeInfo customizationBikeInfo; 
 	
 	@OneToMany(cascade=CascadeType.ALL)
-	private List<CustomizationChart> customizationChart = new ArrayList();
+	private List<CustomizationChart> customizationChart = new ArrayList<CustomizationChart>();
 	
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
 	private CustomizationInvoice customizationInvoice;
 	
-	//FK of customer @OneToOne
+
 	
 	
 	
+
+	public int getCustomizationProgressPercent() {
+		return customizationProgressPercent;
+	}
+
+	public void setCustomizationProgressPercent(int customizationProgressPercent) {
+		this.customizationProgressPercent = customizationProgressPercent;
+	}
 
 	public String getBikeCustomizationId() {
 		return bikeCustomizationId;
@@ -53,15 +67,14 @@ public class BikeCustomization {
 		this.customizationStatus = customizationStatus;
 	}
 
+
 	public String getAppointmentDate() {
 		return appointmentDate;
 	}
 
-	public void setAppointmentDate(String appointmentDate) {
-		this.appointmentDate = appointmentDate;
+	public void setAppointmentDate(String string) {
+		this.appointmentDate = string;
 	}
-
-	
 
 	public String getBikeReleaseStatus() {
 		return bikeReleaseStatus;

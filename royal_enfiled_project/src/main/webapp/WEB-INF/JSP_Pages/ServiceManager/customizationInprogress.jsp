@@ -11,9 +11,20 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/css/font.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/css/app.v1.css" type="text/css" />
+    
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
 
 <body>
+	
+	<script>
+		function submitWork(){
+			alert("your work is submitted");
+		}
+	</script>
+
 	<section id="content"  class="bg-light lter">
 	        <section class="vbox">
 	            <section class="scrollable padder">                                               
@@ -30,7 +41,7 @@
                              <section class="panel panel-default">
                                           <header class="panel-heading bg-dark lter" style="font-size: 20px; color: white; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
                                           	Bullet 350cc (MH-12-HF-6454)
-                                          	<a href="" class="btn btn-md btn-warning rounded m-r">Submit Work</a>
+                                          	<a class="btn btn-md btn-warning rounded m-r" onclick="submitWork()">Submit Work</a>
                                           </header>
                                                 
                                           <table class="table table-striped m-b-none">
@@ -99,6 +110,13 @@
                                                     			</label> 
                                                     		</div>
                                                          </td>
+                                                      </tr>
+                                                      
+                                                      <tr>
+	                                                    <div class="progress" style="height:30px">
+														    <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" 
+														    	style="width:25%;height:30px">25%</div>
+														 </div> 
                                                       </tr>
         
                                                       
@@ -117,7 +135,7 @@
                              <section class="panel panel-default">
                                           <header class="panel-heading bg-dark lter" style="color: white; font-size: 20px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
                                           	Bullet 350cc (MH12546HF6454)
-                                          	<a href="" class="btn btn-md btn-warning rounded m-r">Submit Work</a>
+                                          	<a class="btn btn-md btn-warning rounded m-r" onclick="submitWork()">Submit Work</a>
                                           </header>
                                                 
                                           <table class="table table-striped m-b-none">
@@ -186,6 +204,13 @@
                                                     			</label> 
                                                     		</div>
                                                          </td>
+                                                      </tr>
+                                                      
+                                                      <tr>
+	                                                    <div class="progress" style="height:30px">
+														    <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" 
+														    	style="width:25%;height:30px">25%</div>
+														 </div> 
                                                       </tr>
         
                                                       
