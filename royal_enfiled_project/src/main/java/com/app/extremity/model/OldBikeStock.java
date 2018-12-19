@@ -1,145 +1,115 @@
 package com.app.extremity.model;
 
-import javax.persistence.CascadeType;
+import java.util.Date;
+
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 
 //old bike maintainance in showroom
 //this data for all 
 @Entity
 public class OldBikeStock {
 	@Id
-	//@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private String oldBikeId;
+	private String oldBikeStockId;
+	private String oldBikeModelName;
+	private Date date;
 	private String totalKmRun;
-	private String bikeCondition;
-	private String bikeMfgYear;
-	private String bikePurchaseYear;
-	private String bikeServiceStatus;// recently service or not
+	private String bikeModelYear;
+	private String bikePurchaseDate;
+	
 	private String mobileNumber;
 	private String registrationNo;
-	private String taxPaidDetails;
-	private String taxRemaining;
-	private String sellerDetails;
+	
+	private String sellerName;
+	
 	private String bikeMileage;
 	private String bikeImage;
-	// @OneToOne(cascade=CascadeType.ALL)
-	// private User bikeUser;
-	// @OneToOne(cascade=CascadeType.ALL)
-	// private Invoice invoicePaid;
-
-	// private String
-	// bikeModel,bikeEngineType,bikeChasisNumber,bikeEngineNumber,bikeColor,bikeWheel,bikeEngineStartType;
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="bikeId")
-	private NewBikeStock newBikeStock;
-
-	public String getOldBikeId() {
-		return oldBikeId;
+	private String colors;
+	private long price;
+	private long newPrice;
+	public long getNewPrice() {
+		return newPrice;
 	}
-
-	public void setOldBikeId(String oldBikeId) {
-		this.oldBikeId = oldBikeId;
+	public void setNewPrice(long newPrice) {
+		this.newPrice = newPrice;
 	}
-
+	public String getOldBikeStockId() {
+		return oldBikeStockId;
+	}
+	public void setOldBikeStockId(String oldBikeStockId) {
+		this.oldBikeStockId = oldBikeStockId;
+	}
+	public String getOldBikeModelName() {
+		return oldBikeModelName;
+	}
+	public void setOldBikeModelName(String oldBikeModelName) {
+		this.oldBikeModelName = oldBikeModelName;
+	}
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
 	public String getTotalKmRun() {
 		return totalKmRun;
 	}
-
 	public void setTotalKmRun(String totalKmRun) {
 		this.totalKmRun = totalKmRun;
 	}
-
-	public String getBikeCondition() {
-		return bikeCondition;
+	public String getBikeModelYear() {
+		return bikeModelYear;
 	}
-
-	public void setBikeCondition(String bikeCondition) {
-		this.bikeCondition = bikeCondition;
+	public void setBikeModelYear(String bikeModelYear) {
+		this.bikeModelYear = bikeModelYear;
 	}
-
-	public String getBikeMfgYear() {
-		return bikeMfgYear;
+	public String getBikePurchaseDate() {
+		return bikePurchaseDate;
 	}
-
-	public void setBikeMfgYear(String bikeMfgYear) {
-		this.bikeMfgYear = bikeMfgYear;
+	public void setBikePurchaseDate(String bikePurchaseDate) {
+		this.bikePurchaseDate = bikePurchaseDate;
 	}
-
-	public String getBikePurchaseYear() {
-		return bikePurchaseYear;
-	}
-
-	public void setBikePurchaseYear(String bikePurchaseYear) {
-		this.bikePurchaseYear = bikePurchaseYear;
-	}
-
-	public String getBikeServiceStatus() {
-		return bikeServiceStatus;
-	}
-
-	public void setBikeServiceStatus(String bikeServiceStatus) {
-		this.bikeServiceStatus = bikeServiceStatus;
-	}
-
 	public String getMobileNumber() {
 		return mobileNumber;
 	}
-
 	public void setMobileNumber(String mobileNumber) {
 		this.mobileNumber = mobileNumber;
 	}
-
 	public String getRegistrationNo() {
 		return registrationNo;
 	}
-
 	public void setRegistrationNo(String registrationNo) {
 		this.registrationNo = registrationNo;
 	}
-
-	public String getTaxPaidDetails() {
-		return taxPaidDetails;
+	public String getSellerName() {
+		return sellerName;
 	}
-
-	public void setTaxPaidDetails(String taxPaidDetails) {
-		this.taxPaidDetails = taxPaidDetails;
+	public void setSellerName(String sellerName) {
+		this.sellerName = sellerName;
 	}
-
-	public String getTaxRemaining() {
-		return taxRemaining;
-	}
-
-	public void setTaxRemaining(String taxRemaining) {
-		this.taxRemaining = taxRemaining;
-	}
-
-	public String getSellerDetails() {
-		return sellerDetails;
-	}
-
-	public void setSellerDetails(String sellerDetails) {
-		this.sellerDetails = sellerDetails;
-	}
-
 	public String getBikeMileage() {
 		return bikeMileage;
 	}
-
 	public void setBikeMileage(String bikeMileage) {
 		this.bikeMileage = bikeMileage;
 	}
-
 	public String getBikeImage() {
 		return bikeImage;
 	}
-
 	public void setBikeImage(String bikeImage) {
 		this.bikeImage = bikeImage;
+	}
+	public String getColors() {
+		return colors;
+	}
+	public void setColors(String colors) {
+		this.colors = colors;
+	}
+	public long getPrice() {
+		return price;
+	}
+	public void setPrice(long price) {
+		this.price = price;
 	}
 
 }

@@ -5,17 +5,25 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.app.extremity.idao.BikeModelIDao;
+import com.app.extremity.idao.BikeSaleForUserIDaoI;
+import com.app.extremity.idao.CartIDaoi;
 import com.app.extremity.idao.CityIdao;
 import com.app.extremity.idao.CountryIdao;
 import com.app.extremity.idao.LoginIdao;
 import com.app.extremity.idao.RegistrationIdao;
 import com.app.extremity.idao.StateIdao;
 import com.app.extremity.iservice.IDealerService;
+import com.app.extremity.model.BikeModel;
+import com.app.extremity.model.BikeSaleForUser;
+import com.app.extremity.model.Cart;
 import com.app.extremity.model.City;
 import com.app.extremity.model.Country;
 import com.app.extremity.model.Login;
 import com.app.extremity.model.Registration;
 import com.app.extremity.model.State;
+
+
 @Service
 public class DealerServiceImplementation implements IDealerService{
 @Autowired
@@ -28,6 +36,15 @@ CountryIdao countryIdao;
 StateIdao statedaoi; 
 @Autowired
 LoginIdao loginIdao;
+
+
+@Autowired
+BikeModelIDao bikeModelIdao;
+@Autowired
+BikeSaleForUserIDaoI bikeSaleForUserIdao;
+@Autowired
+CartIDaoi cartIdaoi;
+
 
 //this method to save user/dealer
 //@Author Akshata Yevatkar 
@@ -119,13 +136,91 @@ public int getDealerCount() {
 
 
 @Override
-public Login getLogin(Login login) {
-	// TODO Auto-generated method stub
-	return null;
+public Login getLogin(String email, String password) {
+	
+	
+		System.out.println("in serviceimpl login...");
+		
+		Login login1= loginIdao.findAllByEmailAndPassword(email,password);
+		System.out.println("email serviceimpl"+login1.getEmail());
+		return login1;
+	
 }
 
+	@Override
+	public BikeModel saveBikes(BikeModel bike) {
+		bike.setModelId(getModelCount());
+		return bikeModelIdao.save(bike);
+	
+	}
+
+	
+
+	@Override
+	public List<BikeModel> getAllBikes() {
+		List<BikeModel> list= (List<BikeModel>) bikeModelIdao.findAll();
+		return list;
+	}
 
 
 
+	@Override
+	public String getModelCount() {
+		// TODO Auto-generated method stub
+		System.out.println("in modelcount method");
+		int bm=(int)  bikeModelIdao.count();
+		String model="BKMID00";
+		bm++;
+		model=model+Integer.toString(bm);
+		
+		return model;
+	}
+
+
+
+
+	@Override
+	public List<BikeSaleForUser> getBikeIdWiseAllSpecification() {
+		// TODO Auto-generated method stub
+		List<BikeSaleForUser> bs= (List<BikeSaleForUser>) bikeSaleForUserIdao.findAll();
+		System.out.println("serviceimpl quickview"+bs);
+		return bs;
+	}
+
+	
+	
+	@Override
+	public List<BikeSaleForUser> getBikeId() {
+		// TODO Auto-generated method stub
+		List<BikeSaleForUser> bs= (List<BikeSaleForUser>) bikeSaleForUserIdao.findAll();
+		System.out.println("serviceimpl quickview"+bs);
+		return bs;
+	}
+
+
+	
+	@Override
+	public Cart saveCart(Cart cart) {
+		// TODO Auto-generated method stub
+		System.out.println("in serviceimpl save cart");
+		Cart c=cartIdaoi.save(cart);
+		return c;
+	}
+
+	@Override
+	public List<Cart> getAllCart() {
+		// TODO Auto-generated method stub\
+		List<Cart> allcartlist=(List<Cart>) cartIdaoi.findAll();
+		return allcartlist;
+	}
+
+	@Override
+	public void deleteCart(int productId) {
+		// TODO Auto-generated method stub
+		System.out.println("in delete cart method");
+		cartIdaoi.delete(productId);
+	}
+
+	
 }
 

@@ -19,11 +19,18 @@ public class AccessoriesStock
 	private String partId;
 	private String partName;
 	private String partPrice;
+	private String image;
 	private long partQuantity;
 	//@OneToOne(cascade=CascadeType.ALL)
 	//private Model model;
 	public String getPartId() {
 		return partId;
+	}
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
 	}
 	public void setPartId(String partId) {
 		this.partId = partId;
