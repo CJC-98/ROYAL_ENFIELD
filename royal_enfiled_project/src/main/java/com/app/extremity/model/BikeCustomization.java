@@ -20,6 +20,9 @@ public class BikeCustomization {
 	
 	private String customizationStatus = "waiting";  //OR in-progress  OR  done
 	
+	
+	
+	
 	private String appointmentDate;
 	
 	private String bikeReleaseStatus = "on-hold";   //OR released

@@ -34,6 +34,7 @@ import com.app.extremity.iservice.IAdminService;
 import com.app.extremity.iservice.NotificationInterface;
 import com.app.extremity.iservice.ServiceManagerInterface;
 import com.app.extremity.model.AvailableServicing;
+import com.app.extremity.model.BikeCustomization;
 import com.app.extremity.model.BikeServicing;
 import com.app.extremity.model.EmployeeDetails;
 import com.app.extremity.model.Notfication;
@@ -89,21 +90,17 @@ public class ServiceMangerController {
 		model.addAttribute("completedservices", cscount);
 		
 		long account=serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("Waiting");
-		
 		model.addAttribute("approvedCustomizationCount",account);
 		
 	    long tccount=serviceManagerInterface.getAllCustomizationCount();
-	
-		model.addAttribute("totalCustomizationCount",tccount);
+	    model.addAttribute("totalCustomizationCount",tccount);
 		
 
 		long ipcount1=serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("InProgress");
-		
 		model.addAttribute("inProgerssCustomization", ipcount1);
 		
 		long cccount=serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("Done");
-	
-		model.addAttribute("completedCustomization", cccount);
+	    model.addAttribute("completedCustomization", cccount);
 				
 
 
@@ -220,10 +217,16 @@ public class ServiceMangerController {
 		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
     	model.addAttribute("shortInboxList", shortInboxList);
 		
-				
+    	
+		List<BikeCustomization> bikeCustomizationsList= serviceManagerInterface.getAllBikeCustomizationByCustomizationStatus("Waiting");
+		
+		model.addAttribute("bikeCustomizationsList",bikeCustomizationsList);
+
 		model.addAttribute("link","approvedCustomization.jsp");
 		return "ServiceManager/serviceManagerIndex";  
+		
 	}
+	
 	
 	@RequestMapping(value="/CustomizationInprogressPage")
 	public String CustomizationInprogressPage(Model model,HttpServletRequest request){

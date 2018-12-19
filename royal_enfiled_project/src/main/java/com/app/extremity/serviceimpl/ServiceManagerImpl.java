@@ -145,6 +145,11 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	@Override
 	public BikeServicing getBikeServicingBiId(String serviceId) {
 		return bikeServicingIDao.findBikeServicingByBikeServicingId(serviceId);
+	}	
+
+	@Override
+	public List<BikeCustomization> getAllBikeCustomizationByCustomizationStatus(String customizationStatus) {
+		return (List<BikeCustomization>)bikeCustomizationIDao.findAllBikeCustomizationBycustomizationStatus(customizationStatus);
 	}
 
 

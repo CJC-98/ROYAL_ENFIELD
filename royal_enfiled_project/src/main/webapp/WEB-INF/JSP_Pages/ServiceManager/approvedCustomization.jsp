@@ -1,5 +1,6 @@
  <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="a" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +8,7 @@
     <title>Notebook | Web Application</title>
     <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    
+     
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/css/font.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/css/app.v1.css" type="text/css" />
@@ -23,11 +24,30 @@
                 </div>
                 
                 <!-- fisrt table starts -->
+	                  <a:forEach var="data" items="${bikeCustomizationsList}">
 	                <div class="row">
                          <div class="col-sm-12" >
                              <section class="panel panel-default" >
                                           <header class="panel-heading bg-warning dk" style="font-size: 20px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
-                                          	Bullet 350cc (NBFGH654351354)
+                                         
+                                          	<a:choose>
+																	  <a:when test="${data.customizationBikeInfo.plateNumber !=''}">
+																	 
+																			 <div class="checkbox"> 
+				                                                         		
+				                                                         			${data.customizationBikeInfo.modelName}(${data.customizationBikeInfo.plateNumber})
+				                                                    			 
+				                                                    		</div>
+																	  </a:when>
+																	  <a:otherwise>
+																			  <div class="checkbox"> 
+					                                                         		 
+					                                                         			${data.customizationBikeInfo.modelName}(${data.customizationBikeInfo.chasisNumber})
+					                                                    			 
+					                                                        	</div>
+																	  </a:otherwise>
+																</a:choose>
+																
                                           </header>
                                                 
                                           <table class="table table-striped m-b-none" >
@@ -45,8 +65,8 @@
                                                 <tbody>
                                                         
                                                       <tr style="text-align: center;">
-                                                         <td>BC00565</td>
-                                                         <td>12/2/2018</td>
+                                                         <td>${data.bikeCustomizationId}</td>
+                                                         <td>${data.appointmentDate }</td>
                                                          <td>
                                                          	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded">Customization Details</a>
                                                          </td>     
@@ -63,137 +83,7 @@
                                          
                         </div>
                     </div>
-                    <!-- first record ends-->
-                    
-                    <!-- fisrt table starts -->
-	                <div class="row">
-                         <div class="col-sm-12">
-                             <section class="panel panel-default">
-                                          <header class="panel-heading bg-warning dk" style="font-size: 20px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
-                                          	Avenger 400cc (MH-54-FH-4343)
-                                          </header>
-                                                
-                                          <table class="table table-striped m-b-none">
-                                                      
-                                                <thead>
-                                                                
-                                                     <tr>   
-                                                         <th style="text-align: center;">Customization Id</th>
-                                                         <th style="text-align: center;">Appointment Date</th>
-                                                         <th style="text-align: center;">Customization Details</th>
-                                                         <th style="text-align: center;">Start Customization</th>
-                                                     </tr>
-                                                </thead>
-                                                
-                                                <tbody>
-                                                        
-                                                      <tr style="text-align: center;">
-                                                         <td>BC054651</td>
-                                                         <td>25/2/2018</td>
-                                                         <td>
-                                                         	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded">Customization Details</a>
-                                                         </td>  
-                                                         <td>
-                                                         	<a href="CustomizationInprogressPage" class="btn btn-md btn-primary m-r rounded">Start Customization</a>
-                                                         </td>                                              
-                                                      </tr>
-                                     
-                                                    </tbody>
-
-                                             </table>
-                                                     
-                             </section>
-                                         
-                        </div>
-                    </div>
-                    <!-- first record ends-->
-                    
-                    <!-- fisrt table starts -->
-	                <div class="row">
-                         <div class="col-sm-12">
-                             <section class="panel panel-default">
-                                          <header class="panel-heading bg-warning dk" style="font-size: 20px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
-                                          	ThunderBird 300cc (MH-54-UH-8768)
-                                          </header>
-                                                
-                                          <table class="table table-striped m-b-none">
-                                                      
-                                                <thead>
-                                                                
-                                                     <tr>   
-                                                         <th style="text-align: center;">Customization Id</th>
-                                                         <th style="text-align: center;">Appointment Date</th>
-                                                         <th style="text-align: center;">Customization Details</th>
-                                                         <th style="text-align: center;">Start Customization</th>
-                                                     </tr>
-                                                </thead>
-                                                
-                                                <tbody>
-                                                        
-                                                      <tr style="text-align: center;">
-                                                         <td>BC8452</td>
-                                                         <td>8/2/2018</td>
-                                                         <td>
-                                                         	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded">Customization Details</a>
-                                                         </td> 
-                                                         <td>
-                                                         	<a href="CustomizationInprogressPage" class="btn btn-md btn-primary m-r rounded">Start Customization</a>
-                                                         </td>                                               
-                                                      </tr>
-                                     
-                                                    </tbody>
-
-                                             </table>
-                                                     
-                             </section>
-                                         
-                        </div>
-                    </div>
-                    <!-- first record ends-->
-                    
-                    <!-- fisrt table starts -->
-	                <div class="row">
-                         <div class="col-sm-12">
-                             <section class="panel panel-default">
-                                          <header class="panel-heading bg-warning dk" style="font-size: 20px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
-                                          	Bullet 350cc (MH-12-HF-6454)
-                                          </header>
-                                                
-                                          <table class="table table-striped m-b-none">
-                                                      
-                                                <thead>
-                                                                
-                                                     <tr>   
-                                                         <th style="text-align: center;">Customization Id</th>
-                                                         <th style="text-align: center;">Appointment Date</th>
-                                                         <th style="text-align: center;">Customization Details</th>
-                                                         <th style="text-align: center;">Start Customization</th>
-                                                     </tr>
-                                                </thead>
-                                                
-                                                <tbody>
-                                                        
-                                                      <tr style="text-align: center;">
-                                                         <td>BC00565</td>
-                                                         <td>12/2/2018</td>
-                                                         <td>
-                                                         	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded">Customization Details</a>
-                                                         </td> 
-                                                         <td>
-                                                         	<a href="CustomizationInprogressPage" class="btn btn-md btn-primary m-r rounded">Start Customization</a>
-                                                         </td>                                               
-                                                      </tr>
-                                     
-                                                    </tbody>
-
-                                             </table>
-                                                     
-                             </section>
-                                         
-                        </div>
-                    </div>
-                    <!-- first record ends-->
-                    
+                    </a:forEach>
                     <!-- modal starts-->
  
 						  <div class="modal fade" id="myModal" role="dialog">
@@ -259,7 +149,3 @@
         </section>
    </section> 
    </section>
-
- 
-</body>
-</html>

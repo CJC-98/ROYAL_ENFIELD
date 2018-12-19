@@ -21,6 +21,7 @@ import javax.mail.internet.MimeMultipart;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -113,7 +114,7 @@ public class AdminServiceImplementation implements IAdminService {
 			}
 		});
 
-		Message msg = new MimeMessage(session);
+		MimeMessage msg = new MimeMessage(session);
 		try {
 			getAdminCredentials();
 			msg.setFrom(new InternetAddress(adminEmailUsername, false));
