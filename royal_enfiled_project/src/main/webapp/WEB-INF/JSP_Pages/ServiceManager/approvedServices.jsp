@@ -12,9 +12,39 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/css/font.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/css/app.v1.css" type="text/css" />
+
+<script type="text/javascript">
+function detail()
+{
+	var s=document.getElementbyId("myModal").value;
+	var req=new XMLHttpRequest();
+	var url="serviceDetails? a="+s;
+    alert(s);
+    alert(req);
+    var req=new XMLHttpRequest();
+	alert(req);
+	req.open("GET", url, true);
+	req.send();
+	
+	
+	}
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
 </head>
 
 <body>
+
 
 	<section id="content" class="bg-light lter">
 
@@ -50,7 +80,7 @@
 																	  </a:otherwise>
 																</a:choose>
 																
-																  
+																
 																
                                           	                                          </header>
                                                 
@@ -89,17 +119,13 @@
                                          
                         </div>
                     </div>
-                    
-                    
-                    
-                    
-                    
-                    
                     </a:forEach>
                     <!-- first record ends-->
+                    
+                    
                     <!-- modal starts-->
  
-						  <div class="modal fade" id="myModal" role="dialog">
+						  <div class="modal fade" select onchange="detail()" id="myModal" role="dialog">
 						    <div class="modal-dialog modal-md">
 						      <div class="modal-content">
 						        <div class="modal-header">
@@ -122,7 +148,7 @@
                                           
                                           
                                             <tbody>
-                                            <a:forEach var="work" items="${data.servicingChart}">
+                                            <a:forEach var="work" items="${servicingChart}">
                                             	<tr style="text-align: center">
                                                     	 <td>${work.work}</td>
                                                          <td>${work.cost}</td>
@@ -146,9 +172,7 @@
 					  	</div>
 					  
 					  	<!-- modal ends -->
-                    
-                    
-                                
+            
                       
         </section>
    </section> 
