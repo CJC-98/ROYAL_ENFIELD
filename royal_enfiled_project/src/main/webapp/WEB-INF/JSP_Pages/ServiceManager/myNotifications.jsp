@@ -286,10 +286,12 @@
 	        </section>    	        
 	 	</section> 
 	 
+
 	
 	<script>
 		document.getElementById("notificationBody").style.display = "none";	 
 	</script>
+
 </body>
 
 </html>

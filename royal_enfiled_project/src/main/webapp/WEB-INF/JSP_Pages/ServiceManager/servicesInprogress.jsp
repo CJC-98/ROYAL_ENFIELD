@@ -24,24 +24,6 @@
 
 <body>
 
-
-	<script>
-		function subWork(){
-/* 			var workStatusArray = document.getElementById("workStatusChange").value;
-			
-			if(workStatusArray==null){
-				alert("work can't submit");
-			}
-			else{
-				alert("work  is submit");
-			} */
-
-//			var req = new XMLHttpRequest();		
-//			req.open("GET","submitInProgressWork?notficationId="+workStatusArray,true);
-//			req.send();
-//			alert("your work is submitted"+empName);
-		}
-	</script>
 	
 
 	<section id="content"  class="bg-light lter">

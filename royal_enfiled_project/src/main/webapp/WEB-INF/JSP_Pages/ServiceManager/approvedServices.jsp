@@ -12,9 +12,11 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/css/font.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/css/app.v1.css" type="text/css" />
+
 </head>
 
 <body>
+
 
 
 	<script>
@@ -58,7 +60,20 @@
 				}
 			}
 		}
+		
+		
+		
+		
+		function ServicesInprogressPage(serviceId){
+			var req = new XMLHttpRequest();		
+			req.open("GET","ServicesInprogressPage?serviceId="+serviceId,true);
+			req.send(); 
+		}
+		
+		
+		
 	</script>
+
 
 	<section id="content" class="bg-light lter">
 
@@ -90,7 +105,11 @@
 											</a:choose>
 	  
 																
-                                         </header>
+
+																
+																
+                  </header>
+
                                                 
                                           <table class="table table-striped m-b-none" >
                                                       
@@ -110,10 +129,12 @@
                                                          <td>${data.bikeServicingId}</td>
                                                          <td>${data.appointmentDate}</td>
                                                          <td>
+
                                                          	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded"><span onclick="getServiceDetails('${data.bikeServicingId}')">Services Details</span></a>
+
                                                          </td>     
                                                          <td>
-                                                         	<a href="ServicesInprogressPage" class="btn btn-md btn-primary m-r rounded">Start Services</a>
+                                                         	<a class="btn btn-md btn-primary m-r rounded"><span onclick="ServicesInprogressPage('${data.bikeServicingId}')">Start Services</span></a>
 
                                                          </td>                                           
                                                       </tr>
@@ -123,25 +144,21 @@
                                              </table>
                                                      
                              </section>
-                                         
+                                        
                         </div>
                     </div>
-                    
-                    
-                    
-                    
-                    
-                    
                     </a:forEach>
                     <!-- first record ends-->
+                    
+                    
                     <!-- modal starts-->
  
-						  <div class="modal fade" id="myModal" role="dialog">
+						  <div class="modal fade"  id="myModal" role="dialog">
 						    <div class="modal-dialog modal-md">
 						      <div class="modal-content">
-						        <div class="modal-header">
+						        <div class="modal-header" >
 
-						        	<h3 style="text-align: center">Service Details</h3>  
+						        	<h3 style="text-align: center" >Service Details </h3>  
 						        	 
 						        </div>
 						        
@@ -157,8 +174,9 @@
                                                 </tr>
                                             </thead>
                                           
-                                          
+                                            
                                             <tbody>
+
                     
                                             </tbody>
                                             
@@ -175,9 +193,7 @@
 					  	</div>
 					  
 					  	<!-- modal ends -->
-                    
-                    
-                                
+            
                       
         </section>
    </section> 
