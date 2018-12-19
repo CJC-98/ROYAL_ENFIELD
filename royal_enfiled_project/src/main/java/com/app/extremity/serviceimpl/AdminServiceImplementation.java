@@ -4,6 +4,7 @@ package com.app.extremity.serviceimpl;
 import java.io.IOException;
 
 
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -19,6 +20,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
+
 import javax.mail.internet.MimeMultipart;
 import java.io.File;
 import java.io.IOException;
@@ -115,12 +117,16 @@ public class AdminServiceImplementation implements IAdminService {
 	@Autowired
 	TestDriveCustomerIDao testDriveCustomerIDao;
 	@Autowired
+
 	AvailableServicingIDao availableServicingIDao;
 	@Autowired
 	BikeCustomizationIDao bikeCustomizationIDao;
 	@Autowired
 	BikeServicingIDao bikeServicingIDao;
 	
+
+	SoldBikeStockIDao soldBikeStockIDao;
+
 
 	static Logger logger = LogManager.getLogger(AdminServiceImplementation.class);
 
@@ -170,9 +176,9 @@ public class AdminServiceImplementation implements IAdminService {
 		}
 
 		employeeDetailsDao.save(employeeDetails);
-		logger.info("employee Saved", employeeDetails);
+		logger.info("employee Saved");
 		logger.info(UPLOADED_FOLDER.toString());
-		logger.info("message", UPLOADED_FOLDER);
+		logger.info("message");
 	}
 
 	/*
@@ -227,7 +233,7 @@ public class AdminServiceImplementation implements IAdminService {
 
 			Transport.send(msg);
 
-			logger.info("Email has been send to the employee", emailmessage);
+			logger.info("Email has been send to the employee");
 
 		} catch (MessagingException e) {
 
@@ -322,6 +328,7 @@ public class AdminServiceImplementation implements IAdminService {
 	}
 
 	@Override
+
 	public List<AvailableServicing> getavaliableServicing() {
 		
 		return (List<AvailableServicing>) availableServicingIDao.findAll();
@@ -349,8 +356,8 @@ public class AdminServiceImplementation implements IAdminService {
 
 	@Override
 	public List<SoldBikeStock> getSoldBikeStockInfo() {
-	
-		return (List<SoldBikeStock>) soldBikeStockDao.findAll();
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
@@ -360,7 +367,5 @@ public class AdminServiceImplementation implements IAdminService {
 	}
 
 
-
-	
-
 }
+

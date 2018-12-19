@@ -3,6 +3,7 @@ package com.app.extremity.controller;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,7 +29,11 @@ import com.app.extremity.model.OldBikeStock;
 import com.app.extremity.model.ServcingBikeInfo;
 import com.app.extremity.model.SoldAccessories;
 import com.app.extremity.model.SoldBikeStock;
+
+
 import com.app.extremity.model.SoldOldBikeStock;
+
+
 import com.app.extremity.model.TestDriveCustomer;
 
 
@@ -107,6 +112,7 @@ public class AdminController {
 	@RequestMapping(value = "/newBikeStock")
 	public String getNewBikeStock(Model model) {
 		List<NewBikeStock> newBikeStockList = adminService.getNewBikeStock();
+		
 		model.addAttribute("newBikeStockList", newBikeStockList);
 		model.addAttribute("link", "newBikeStock.jsp");
 		return "Admin/adminIndex";
@@ -167,7 +173,7 @@ public class AdminController {
 		return "Admin/adminIndex";
 
 	}
-
+	/* this method is use for getCustomizationInvoice details */
 	@RequestMapping(value = "/servicingAndCustomizationInvoice")
 	public String getCustomizationInvoice(Model model)
 	{
@@ -177,6 +183,8 @@ public class AdminController {
 		return "Admin/adminIndex";
 
 	}
+
+	/* this method is use for getServcingBikeInfo details */
 
 	@RequestMapping(value = "/servicingBikeInfo")
 	public String getServcingBikeInfo(Model model) {
@@ -197,6 +205,7 @@ public class AdminController {
 		return "Admin/adminIndex";
 
 	}
+
 	
 	@RequestMapping(value = "/soldNewBike")
 	public String getSoldBikeStockInfo(Model model) 
