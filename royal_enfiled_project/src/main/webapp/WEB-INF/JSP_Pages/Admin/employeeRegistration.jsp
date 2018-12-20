@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,30 +47,30 @@ h2 {
 </style>
 <script>
 	function createXmlHttpRequestObject() {
-	var xmlHttp;
-	if (window.ActiveXObject) {
-		try {
-			xmlHttp = new ActiveXObject(Microsoft.XMLHTTP);
-		} catch (e) {
-			xmlHttp = false;
+		var xmlHttp;
+		if (window.ActiveXObject) {
+			try {
+				xmlHttp = new ActiveXObject(Microsoft.XMLHTTP);
+			} catch (e) {
+				xmlHttp = false;
+			}
+		} else {
+			try {
+				xmlHttp = new XMLHttpRequest();
+			} catch (e) {
+				xmlHttp = false;
+			}
 		}
-	} else {
-		try {
-			xmlHttp = new XMLHttpRequest();
-		} catch (e) {
-			xmlHttp = false;
-		}
+		if (!xmlHttp)
+			alert("cant create xmlHttp object");
+		else
+			return xmlHttp;
 	}
-	if (!xmlHttp)
-		alert("cant create xmlHttp object");
-	else
-		return xmlHttp;
-	}
-		
+
 	function showForm() {
 		document.getElementById("panel").style.opacity = "1";
 	}
-	
+
 	function openFile() {
 		var fileReader = new FileReader();
 		fileReader.readAsDataURL(document.getElementById("file").files[0]);
@@ -77,7 +78,7 @@ h2 {
 			document.getElementById("uploadPreview").src = oFREvent.target.result;
 		};
 	}
-	
+
 	function checkPassword() {
 		var password = document.getElementById("password").value;
 		console.log(password);
@@ -94,7 +95,6 @@ h2 {
 			passwordMessage.style.display = "initial";
 		}
 	}
-	
 </script>
 
 </head>
@@ -105,7 +105,7 @@ h2 {
 				<div class="panel-heading">
 					<h2>Registration Form</h2>
 				</div>
-				<form action="admin/saveEmployee" data-validate="parsley"
+				<form action="saveEmployee" data-validate="parsley"
 					enctype="multipart/form-data" method="post">
 					<div class="panel-body">
 						<!-- name -->
@@ -202,7 +202,18 @@ h2 {
 									<label for="employeeDateOfBirth">Date Of Birth:</label> <input
 										type="date" name="employeeDateOfBirth" required>
 								</div>
-
+								<c:if test="${designation==1}">
+								<input type="hidden" name="employeeDesignation"
+									value="SalesManager">
+									</c:if>
+									<c:if test="${designation==2}">
+								<input type="hidden" name="employeeDesignation"
+									value="ServiceManager">
+									</c:if>
+									<c:if test="${designation==3}">
+								<input type="hidden" name="employeeDesignation"
+									value="AccountManager">
+									</c:if>
 								<!-- designation -->
 								<!-- <div class="form-group">
 									<label for="designation">Designation</label> <input type="text"
@@ -266,7 +277,7 @@ h2 {
 										<span class="input-group-addon"><i
 											class="glyphicon glyphicon-lock"></i></span> <input
 											id="confirmPassword" type="password" class="form-control"
-											name="employeePassword" placeholder="Password"
+											 placeholder="Password"
 											onchange="checkPassword()">
 									</div>
 									<small id="passwordMessage" class="alert-danger"></small>

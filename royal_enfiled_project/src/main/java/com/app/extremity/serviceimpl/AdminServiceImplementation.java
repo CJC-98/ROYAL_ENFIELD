@@ -160,11 +160,12 @@ public class AdminServiceImplementation implements IAdminService {
 			Path path = Paths.get(UPLOADED_FOLDER + profilePic.getOriginalFilename());
 			Files.write(path, bytes);
 			employeeDetails.setProfilePictureUrl(profilePic.getOriginalFilename());
+			
 		} catch (IOException e) {
 			logger.error("while saving profile picture", e);
 			e.printStackTrace();
 		}
-
+		employeeDetails.setEmployeeId(getEmployeeCount());
 		employeeDetailsDao.save(employeeDetails);
 		logger.info("employee Saved");
 		logger.info(UPLOADED_FOLDER.toString());
@@ -178,7 +179,7 @@ public class AdminServiceImplementation implements IAdminService {
 	 */
 
 	@Override
-	public void sendEmail(EmailMessage emailmessage, MultipartFile file) {
+	public void sendEmail(EmailMessage emailmessage, MultipartFile file, String designation) {
 
 		Properties props = new Properties();
 		props.put("mail.smtp.auth", "true");
@@ -204,22 +205,24 @@ public class AdminServiceImplementation implements IAdminService {
 			msg.setSentDate(new Date());
 			MimeBodyPart messageBodyPart = new MimeBodyPart();
 			messageBodyPart.setContent(emailmessage.getBody(), "text/html");
+			Multipart multipart = new MimeMultipart();
+			multipart.addBodyPart(messageBodyPart);
+
 			if (!file.isEmpty()) {
 				System.out.println("the file is not empty");
 				byte[] bytes = file.getBytes();
 				Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename());
 				Files.write(path, bytes);
-
-				Multipart multipart = new MimeMultipart();
-				multipart.addBodyPart(messageBodyPart);
 				MimeBodyPart attachPart = new MimeBodyPart();
 				attachPart.attachFile(UPLOADED_FOLDER + file.getOriginalFilename());
-				String html = "<a href='http://localhost:8080/employeeRegistration'>Register here</a>";
-				messageBodyPart.setText(html, "UTF-8", "html");
 				multipart.addBodyPart(attachPart);
-				msg.setContent(multipart);
-				// sends the e-mail
+
 			}
+			String html = "<a href='http://localhost:8080/employeeRegistration?designation="+designation+"'>Register here</a>";
+			messageBodyPart.setText(html, "UTF-8", "html");
+
+			msg.setContent(multipart);
+			// sends the e-mail
 
 			Transport.send(msg);
 
@@ -271,7 +274,7 @@ public class AdminServiceImplementation implements IAdminService {
 
 	@Override
 	public List<AccessoriesStock> getAccessoriesStock() {
-		
+
 		return (List<AccessoriesStock>) accessoriesStockIDao.findAll();
 	}
 
@@ -301,20 +304,56 @@ public class AdminServiceImplementation implements IAdminService {
 
 	@Override
 	public List<CustomizationInvoice> getCustomizationInvoice() {
-		
+
 		return (List<CustomizationInvoice>) customizationInvoiceIDao.findAll();
 	}
 
 	@Override
 	public List<ServcingBikeInfo> getServcingBikeInfo() {
-		
+
 		return (List<ServcingBikeInfo>) servcingBikeInfoIDao.findAll();
 	}
 
 	@Override
 	public List<TestDriveCustomer> getTestDriveCustomer() {
-	
+
 		return (List<TestDriveCustomer>) testDriveCustomerIDao.findAll();
+	}
+	
+	public String getEmployeeCount() {
+		// TODO Auto-generated method stub
+	int acount=(int)employeeDetailsDao.count();
+	String employeeId="Emp00";
+	acount++;
+    employeeId=employeeId+Integer.toString(acount);
+	
+		return employeeId;
+	
+	}
+
+	@Override
+
+	public List<AvailableServicing> getavaliableServicing() {
+		
+		return (List<AvailableServicing>) availableServicingIDao.findAll();
+	}
+
+	@Override
+	public List<BikeServicing> getBikeServicing() {
+		
+		return (List<BikeServicing>) bikeServicingIDao.findAll();
+	}
+
+	@Override
+	public List<BikeCustomization> getbikeCustomization() {
+		
+		return (List<BikeCustomization>) bikeCustomizationIDao.findAll();
+	}
+
+	@Override
+	public List<SoldBikeStock> getSoldNewBike() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
