@@ -19,6 +19,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.hibernate.annotations.SourceType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,6 +30,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.app.extremity.idao.BikeServicingIDao;
+import com.app.extremity.idao.CustomizationChartIDao;
 import com.app.extremity.idao.ServicingChartIDao;
 import com.app.extremity.iservice.IAdminService;
 import com.app.extremity.iservice.NotificationInterface;
@@ -70,6 +72,9 @@ public class ServiceMangerController {
 	
 	@Autowired
 	ServicingChartIDao servicingChartIDao;
+	
+	@Autowired
+	CustomizationChartIDao customizationChartIDao;
 	
 	
 	HttpSession session;
@@ -248,6 +253,13 @@ public class ServiceMangerController {
 		
 		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
 		model.addAttribute("shortInboxList", shortInboxList);
+		
+		List<BikeCustomization>bikeCustomizationList = serviceManagerInterface.getAllBikeCustomizationByCustomizationStatus("in-progress");
+		model.addAttribute("bikeCustomizationList",bikeCustomizationList);
+		
+		for(BikeCustomization b : bikeCustomizationList) {
+			System.out.println(b.getBikeCustomizationId());
+		}
 				
 		model.addAttribute("link","customizationInprogress.jsp");
 		return "ServiceManager/serviceManagerIndex";
@@ -468,9 +480,10 @@ public class ServiceMangerController {
 		
 	}
 	
-	@RequestMapping(value="/submitInProgressWork") 
-	public String submitInProgressWork(@RequestParam(required = false) int workStatusChange[],Model model,HttpServletRequest request) {
+	@RequestMapping(value="/submitServicingWork") 
+	public String submitServicingWork(@RequestParam(required = false) int workStatusChange[],Model model,HttpServletRequest request) {
 		
+
 		session = request.getSession();
 		
 		if(workStatusChange != null) {
@@ -519,6 +532,89 @@ public class ServiceMangerController {
 				
 	}
 	
+	@RequestMapping(value="/submitCustomizationWork") 
+	public String submitCustomizationWork(@RequestParam(required = false) int workStatusChange[],Model model,HttpServletRequest request) {
+		
+
+		session = request.getSession();
+		
+		if(workStatusChange != null) {
+			for(int i : workStatusChange) {
+				CustomizationChart chart = customizationChartIDao.findById(i);
+				CustomizationChart newChart = new CustomizationChart();
+				
+				newChart.setCustomizationChartId(i);
+				newChart.setStatus("done");
+				newChart.setCost(chart.getCost());
+				newChart.setPart(chart.getPart());
+				
+				customizationChartIDao.save(newChart);
+			}
+			
+			updateCustomizationPercent();
+						
+			
+			List<BikeCustomization>bikeCustomizationList = serviceManagerInterface.getAllBikeCustomizationByCustomizationStatus("in-progress");
+			model.addAttribute("bikeCustomizationList",bikeCustomizationList);
+
+			long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
+			model.addAttribute("inboxCount", inboxCount);
+			
+			List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
+	     	model.addAttribute("shortInboxList", shortInboxList);
+	     	
+			model.addAttribute("link","customizationInprogress.jsp");	
+			return "ServiceManager/serviceManagerIndex";
+
+		}
+		else {
+			List<BikeCustomization>bikeCustomizationList = serviceManagerInterface.getAllBikeCustomizationByCustomizationStatus("in-progress");
+			model.addAttribute("bikeCustomizationList",bikeCustomizationList);
+
+			long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
+			model.addAttribute("inboxCount", inboxCount);
+			
+			List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
+	     	model.addAttribute("shortInboxList", shortInboxList);
+	     	
+			model.addAttribute("link","customizationInprogress.jsp");	
+			return "ServiceManager/serviceManagerIndex";
+
+		}		
+				
+	}
+	
+	private void updateCustomizationPercent() {
+		
+		int totalCount = 0;
+		int doneCount = 0;
+		
+		List<BikeCustomization> bikeCustomizationList = serviceManagerInterface.getAllBikeCustomizationByCustomizationStatus("in-progress");
+		
+		for(BikeCustomization cust : bikeCustomizationList) {
+			
+			List<CustomizationChart> chartList = cust.getCustomizationChart();
+			
+			for(CustomizationChart work : chartList) {
+				
+				totalCount++;
+				
+				if(work.getStatus().equals("done")) {
+					doneCount++;
+				}
+			}
+			cust.setCustomizationProgressPercent((doneCount*100)/totalCount);
+			
+			if(cust.getCustomizationProgressPercent()==100) {
+				cust.setCustomizationStatus("done");
+			}
+			
+			serviceManagerInterface.saveBikeCustomization(cust);
+		}
+
+		
+	}
+
 	private void updateServicePercent() {
 		
 		int totalCount = 0;

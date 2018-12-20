@@ -29,7 +29,7 @@
 	<section id="content"  class="bg-light lter">
 	        <section class="vbox">
 	            <section class="scrollable padder">                                               
-	               <form action="submitInProgressWork">            
+	               <form action="submitServicingWork">            
 		                <div class="m-b-md hbox" style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
 	                    	<h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">
 	                    		Current Services
