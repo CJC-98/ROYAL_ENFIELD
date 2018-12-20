@@ -20,27 +20,11 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Date;
+
 import java.util.List;
-import java.util.Properties;
 
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Multipart;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeBodyPart;
-import javax.mail.internet.MimeMessage;
-import javax.mail.internet.MimeMultipart;
-
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -163,7 +147,7 @@ public class AdminServiceImplementation implements IAdminService {
 			
 		} catch (IOException e) {
 			logger.error("while saving profile picture", e);
-			e.printStackTrace();
+			
 		}
 		employeeDetails.setEmployeeId(getEmployeeCount());
 		employeeDetailsDao.save(employeeDetails);
@@ -209,7 +193,6 @@ public class AdminServiceImplementation implements IAdminService {
 			multipart.addBodyPart(messageBodyPart);
 
 			if (!file.isEmpty()) {
-				System.out.println("the file is not empty");
 				byte[] bytes = file.getBytes();
 				Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename());
 				Files.write(path, bytes);
@@ -356,30 +339,7 @@ public class AdminServiceImplementation implements IAdminService {
 		return null;
 	}
 
-	@Override
-
-	public List<AvailableServicing> getavaliableServicing() {
-		
-		return (List<AvailableServicing>) availableServicingIDao.findAll();
-	}
-
-	@Override
-	public List<BikeServicing> getBikeServicing() {
-		
-		return (List<BikeServicing>) bikeServicingIDao.findAll();
-	}
-
-	@Override
-	public List<BikeCustomization> getbikeCustomization() {
-		
-		return (List<BikeCustomization>) bikeCustomizationIDao.findAll();
-	}
-
-	@Override
-	public List<SoldBikeStock> getSoldNewBike() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 }
 

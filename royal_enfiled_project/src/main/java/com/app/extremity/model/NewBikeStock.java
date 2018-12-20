@@ -28,12 +28,7 @@ public class NewBikeStock
 	
 	private Date arrivalDate;
 	
-	public Date getArrivalDate() {
-		return arrivalDate;
-	}
-	public void setArrivalDate(Date arrivalDate) {
-		this.arrivalDate = arrivalDate;
-	}
+
 	public String getBikeId() {
 		return bikeId;
 	}

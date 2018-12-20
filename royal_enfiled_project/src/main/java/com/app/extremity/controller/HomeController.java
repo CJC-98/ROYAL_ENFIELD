@@ -37,7 +37,7 @@ public class HomeController {
 	Account_ServiceImpl AService;
 	
 
-	static org.apache.log4j.Logger logger = org.apache.log4j.LogManager.getLogger(HomeController.class);
+	static Logger logger = LogManager.getLogger(HomeController.class);
 
 	@Autowired
 	IAdminService adminService;
