@@ -39,7 +39,9 @@ public interface ServiceManagerInterface {
 	public long getAllCustomizationCountByCustomizationStatus(String string);
 
 
-	public BikeServicing getBikeServicingBiId(String serviceId);
+	public BikeServicing getBikeServicingById(String serviceId);
+	public BikeCustomization getBikeCustomizationById(String customizationId);
+
 
 
 

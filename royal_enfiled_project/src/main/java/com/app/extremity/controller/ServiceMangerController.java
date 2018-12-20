@@ -36,6 +36,9 @@ import com.app.extremity.iservice.ServiceManagerInterface;
 import com.app.extremity.model.AvailableServicing;
 import com.app.extremity.model.BikeCustomization;
 import com.app.extremity.model.BikeServicing;
+import com.app.extremity.model.CustomizationBikeInfo;
+import com.app.extremity.model.CustomizationChart;
+import com.app.extremity.model.CustomizationInvoice;
 import com.app.extremity.model.EmployeeDetails;
 import com.app.extremity.model.Notfication;
 import com.app.extremity.model.ServcingBikeInfo;
@@ -74,6 +77,47 @@ public class ServiceMangerController {
 	
 	@RequestMapping(value="/DashboardPage")
 	public String ServicesDashboardPage(Model model,HttpServletRequest request){
+		
+		
+		
+		//test data for customization
+		
+		CustomizationBikeInfo info = new CustomizationBikeInfo();
+		info.setChasisNumber("7541464");
+		info.setModelName("bajaj pulsur");
+		info.setPlateNumber("MH-14-RE-5979");
+		
+
+		
+		CustomizationChart part4 = new CustomizationChart();
+		part4.setPart("labout cost");
+		part4.setCost(500);
+		
+		CustomizationChart part5 = new CustomizationChart();
+		part5.setPart("handle");
+		part5.setCost(250);
+		
+		CustomizationChart part1 = new CustomizationChart();
+		part1.setPart("egine change");
+		part1.setCost(25000);
+		
+		CustomizationInvoice invoice = new CustomizationInvoice();
+		invoice.setAmount(35000);
+		invoice.setCustomizationCGstPercent(4);
+		invoice.setCustomizationSGstPercent(4);
+		invoice.setTotalAmount(45000);
+		
+		BikeCustomization cust = new BikeCustomization();
+		cust.setBikeCustomizationId(serviceManagerInterface.getNextBikeCustomizationId());
+		cust.setAppointmentDate("13-1-2018");
+		cust.setCustomizationBikeInfo(info);
+		cust.getCustomizationChart().add(part4);
+		cust.getCustomizationChart().add(part5);
+		cust.getCustomizationChart().add(part1);
+		cust.setCustomizationInvoice(invoice);
+		
+		//BikeCustomization c = serviceManagerInterface.saveBikeCustomization(cust);
+		//System.out.println("data saved........."+c.getBikeCustomizationId());
 		
 		session = request.getSession();
 
@@ -143,48 +187,11 @@ public class ServiceMangerController {
 		return "ServiceManager/serviceManagerIndex";
 	}
 	
-	
-	
-	
-//	@RequestMapping(value="/serviceDetails",method=RequestMethod.GET,produces="application/json")
-//	public @ResponseBody String update(HttpServletResponse res)throws IOException
-//	{
-//
-//        List<BikeServicing>bikeServicingList = serviceManagerInterface.getAllBikeServicingByServcingStatus("waiting");
-//		
-//		for(BikeServicing data: bikeServicingList) {
-//		 ServcingBikeInfo bikeno= data.getServcingBikeInfo();
-//        List<ServicingChart> chartlist = data.getServicingChart();
-//		for(ServicingChart chart:chartlist)
-//		{
-//		System.out.println("      "+chart.getWork()+" "+chart.getCost()+" "+chart.getStatus());
-//			
-//			
-//		String json=new Gson().toJson(chartlist);
-//		System.out.println(json);
-//
-//		res.flushBuffer();
-//		res.setContentType("application/json");
-//		res.setCharacterEncoding("UTF-8");
-//		res.getOutputStream();
-//		System.out.println("..........");
-//		
-//		
-//		return json;
-//		
-//	}
-//	}
-//		return "ServiceManager/serviceManagerIndex";
-//     
-//	}
-	
-	
-	
 	@RequestMapping(value="/ServicesInprogressPage")
 	public String ServicesInprogressPage(@RequestParam(required = false) String serviceId, Model model,HttpServletRequest request){
 		
 		if(serviceId!=null) {
-			BikeServicing bike = serviceManagerInterface.getBikeServicingBiId(serviceId);
+			BikeServicing bike = serviceManagerInterface.getBikeServicingById(serviceId);
 			bike.setServcingStatus("in-progress");
 			serviceManagerInterface.saveBikeServicing(bike);
 		}
@@ -210,39 +217,38 @@ public class ServiceMangerController {
 		session = request.getSession();
 
 		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
-
 		model.addAttribute("inboxCount", inboxCount);
 
-		
 		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
     	model.addAttribute("shortInboxList", shortInboxList);
-		
-    	
-		List<BikeCustomization> bikeCustomizationsList= serviceManagerInterface.getAllBikeCustomizationByCustomizationStatus("Waiting");
-		
-		model.addAttribute("bikeCustomizationsList",bikeCustomizationsList);
 
+		List<BikeCustomization> bikeCustomizationsList = serviceManagerInterface.getAllBikeCustomizationByCustomizationStatus("waiting");	
+		model.addAttribute("bikeCustomizationsList",bikeCustomizationsList);
+		
 		model.addAttribute("link","approvedCustomization.jsp");
 		return "ServiceManager/serviceManagerIndex";  
 		
 	}
 	
-	
 	@RequestMapping(value="/CustomizationInprogressPage")
-	public String CustomizationInprogressPage(Model model,HttpServletRequest request){
+	public String CustomizationInprogressPage(@RequestParam(required = false) String customizationId, Model model,HttpServletRequest request){
 		
-
+		
+		System.out.println(customizationId);
+		if(customizationId!=null) {
+			BikeCustomization bike = serviceManagerInterface.getBikeCustomizationById(customizationId);
+			bike.setCustomizationStatus("in-progress");
+			serviceManagerInterface.saveBikeCustomization(bike);
+		}
+			
 		session = request.getSession();
 
 		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
 		model.addAttribute("inboxCount", inboxCount);
 		
-
 		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
 		model.addAttribute("shortInboxList", shortInboxList);
-		
-		
-		
+				
 		model.addAttribute("link","customizationInprogress.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
@@ -567,11 +573,19 @@ public class ServiceMangerController {
 	}
 	
 	@RequestMapping(value="/getServiceDetails",method=RequestMethod.GET)    
-	public @ResponseBody List<ServicingChart> state(@RequestParam String serviceId,HttpServletResponse response) throws IOException {
+	public @ResponseBody List<ServicingChart> getServiceDetails(@RequestParam String serviceId,HttpServletResponse response) throws IOException {
 		
-		BikeServicing bike = serviceManagerInterface.getBikeServicingBiId(serviceId);
+		BikeServicing bike = serviceManagerInterface.getBikeServicingById(serviceId);
 
 		return bike.getServicingChart();
+	}
+	
+	@RequestMapping(value="/getCustomizationDetails",method=RequestMethod.GET)    
+	public @ResponseBody List<CustomizationChart> getCustomizationDetails(@RequestParam String customizationId,HttpServletResponse response) throws IOException {
+		
+		BikeCustomization bike = serviceManagerInterface.getBikeCustomizationById(customizationId);
+
+		return bike.getCustomizationChart();
 	}
 	
 	

@@ -68,6 +68,7 @@
 			var req = new XMLHttpRequest();		
 			req.open("GET","ServicesInprogressPage?serviceId="+serviceId,true);
 			req.send(); 
+			alert("Please refresh the page");
 		}
 		
 		

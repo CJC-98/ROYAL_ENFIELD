@@ -117,7 +117,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="panel-footer bg-danger lt" style="font-size: 15px">Total Customization${totalCustomizationcount} 25</div>
+                                        <div class="panel-footer bg-danger lt" style="font-size: 15px">Total Customization${totalCustomizationcount}</div>
 
                                     </section>    
                                 </div>
@@ -139,7 +139,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="panel-footer bg-warning lt" style="font-size: 15px">Total Customization${totalCustomizationcount} 25</div>
+                                        <div class="panel-footer bg-warning lt" style="font-size: 15px">Total Customization${totalCustomizationcount}</div>
 
                                     </section>    
                                 </div>
@@ -161,7 +161,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="panel-footer bg-success lt" style="font-size: 15px">Total Customization${totalCustomizationcount} 25</div>
+                                        <div class="panel-footer bg-success lt" style="font-size: 15px">Total Customization${totalCustomizationcount}</div>
 
                                     </section>    
                                 </div>
