@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+ <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+ <%@ taglib prefix="a" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,10 +24,10 @@
 	                </div>
 	                
 	               <!-- first table starts -->
-                	<div class="col-sm-12">
+	              <div class="col-sm-12">
                                     <section class="panel panel-default">
                                         <table class="table table-striped m-b-none b-a">
-                                            <thead>
+                                               <thead>
                                                 <tr>
                                                     <th style="text-align: center">Invoice Id</th>
                                                     <th style="text-align: center">Amount</th>
@@ -39,94 +40,24 @@
                                             </thead>
                                             
                                             <tbody>
-                                            
-                                                <tr style="text-align: center">
-                                                    	 <td>1</td>
-                                                         <td>2500</td>
-                                                         <td>4</td>
-                                                         <td>4</td>
-                                                         <td>2700</td>
-                                                         <td style="color: #FF681B">unpaid</td>
+                                             <a:forEach var="data" items="${bikeServicingList}">
+	                                         <tr style="text-align: center">
+                                                    	 <td>${data.servicingInvoice.servicingInvoiceId}</td>
+                                                         <td>${data.servicingInvoice.amount}</td>
+                                                         <td>${data.servicingInvoice.totalAmount}</td>
+                                                         <td>${data.servicingInvoice.serviceCGstPercent}</td>
+                                                         <td>${data.servicingInvoice.serviceSGstPercent}</td>
+                                                         <td style="color: #FF681B">${data.servicingInvoice.paymentStatus}</td>
                                                          <td>
                                                          	<a href="" class="btn btn-md btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
                                                          		Amount Details
                                                          	</a>
                                                      </td>
                                                 </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>2</td>
-                                                         <td>5421</td>
-                                                         <td>4</td>
-                                                         <td>4</td>
-                                                         <td>5642</td>
-                                                         <td style="color: #FF681B">unpaid</td>
-                                                         <td>
-                                                         	<a href="" class="btn btn-md btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
-                                                         		Amount Details
-                                                         	</a>
-                                                     </td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>3</td>
-                                                         <td>4784</td>
-                                                         <td>4</td>
-                                                         <td>4</td>
-                                                         <td>7524</td>
-                                                         <td style="color: #81EF19">paid</td>
-                                                         <td>
-                                                         	<a href="" class="btn btn-md btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
-                                                         		Amount Details
-                                                         	</a>
-                                                     </td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>4</td>
-                                                         <td>3544</td>
-                                                         <td>4</td>
-                                                         <td>4</td>
-                                                         <td>4513</td>
-                                                         <td style="color: #FF681B">unpaid</td>
-                                                         <td>
-                                                         	<a href="" class="btn btn-md btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
-                                                         		Amount Details
-                                                         	</a>
-                                                     </td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>5</td>
-                                                         <td>9784</td>
-                                                         <td>4</td>
-                                                         <td>4</td>
-                                                         <td>10325</td>
-                                                         <td style="color: #81EF19">paid</td>
-                                                         <td>
-                                                         	<a href="" class="btn btn-md btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
-                                                         		Amount Details
-                                                         	</a>
-                                                     </td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>6</td>
-                                                         <td>2500</td>
-                                                         <td>4</td>
-                                                         <td>4</td>
-                                                         <td>2700</td>
-                                                         <td style="color: #FF681B">unpaid</td>
-                                                         <td>
-                                                         	<a href="" class="btn btn-md btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
-                                                         		Amount Details
-                                                         	</a>
-                                                     </td>
-                                                </tr>
-    
-                                               
-                                            </tbody>
-                                            
+                                                 </a:forEach>
+                                             </tbody>
+                                          
+                                           
                                         </table>
                                     </section>
                                 </div>
