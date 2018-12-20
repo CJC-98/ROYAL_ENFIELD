@@ -217,7 +217,7 @@ public class ServiceMangerController {
 		session = request.getSession();
 
 		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
-		model.addAttribute("inboxCount", inboxCount);
+		model.addAttribute("inboxCount", inboxCount);  
 
 		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
     	model.addAttribute("shortInboxList", shortInboxList);
