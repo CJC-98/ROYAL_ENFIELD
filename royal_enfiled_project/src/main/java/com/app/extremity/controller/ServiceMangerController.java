@@ -577,7 +577,7 @@ public class ServiceMangerController {
 			List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
 	     	model.addAttribute("shortInboxList", shortInboxList);
 	     	
-			model.addAttribute("link","customizationInprogress.jsp");	
+			model.addAttribute("link","customizationInprogress.jsp");	  
 			return "ServiceManager/serviceManagerIndex";
 
 		}		
