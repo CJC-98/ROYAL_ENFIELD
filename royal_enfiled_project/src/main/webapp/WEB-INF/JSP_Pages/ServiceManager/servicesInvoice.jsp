@@ -15,6 +15,60 @@
 </head>
 
 <body>
+<script>
+		function getServiceDetails(serviceId){
+			var req = new XMLHttpRequest();		
+			req.open("GET","getAmountDetails?serviceId="+serviceId,true);
+			req.send(); 
+			
+			var table = document.getElementById("serviceDataTable");
+			
+			while(table.rows.length>1){
+				table.deleteRow(table.rows.length-1);
+			}
+			
+			req.onreadystatechange=function(){
+					
+				if(req.readyState==4 && req.status==200){
+					
+					var list = JSON.parse(req.responseText);	
+					 				 
+
+					for(index = 0; index < list.length; index++){
+
+						
+						var row = table.insertRow(1);
+						
+						var cell1 = row.insertCell(0);
+						var cell2 = row.insertCell(1);
+						var cell3 = row.insertCell(2);
+						
+						cell1.innerHTML =  list[index].work;
+						cell2.innerHTML =  list[index].cost;
+						cell3.innerHTML =  list[index].status;
+						
+						cell1.style.textAlign = "center";
+
+						
+						cell3.style.color = "red";
+						
+					}
+				}
+			}
+		}
+		
+
+		
+		/* function ServicesInprogressPage(serviceId){
+			var req = new XMLHttpRequest();		
+			req.open("GET","ServicesInprogressPage?serviceId="+serviceId,true);
+			req.send(); 
+			alert("Please refresh the page");
+		}
+		 */
+		
+		
+	</script>
 	<section id="content" class="bg-light lter">
 	        <section class="vbox">
 	            <section class="scrollable padder">                                               
@@ -76,7 +130,7 @@
 						        <div class="modal-body">
 						          		
                                     <section class="panel panel-default">
-                                        <table class="table table-striped m-b-none">
+                                        <table class="table table-striped m-b-none" id="serviceDataTable">
                                             <thead>
                                                 <tr>
                                                     <th style="text-align: center">Work</th>
@@ -87,38 +141,7 @@
                                             
                                             <tbody>
                                             
-                                                <tr style="text-align: center">
-                                                    	 <td>labour cost</td>
-                                                         <td>500</td>
-                                                         <td style="color: #81EF19">done</td>
-                                                </tr>
                                                 
-                                                <tr style="text-align: center">
-                                                    	 <td>engine oil change</td>
-                                                         <td>350</td>
-                                                         <td style="color: #81EF19">done</td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>brake oil change</td>
-                                                         <td>30</td>
-                                                         <td style="color: #81EF19">done</td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>engine tuning</td>
-                                                         <td>500</td>
-                                                         <td style="color: #81EF19">done</td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>horn tuning</td>
-                                                         <td>200</td>
-                                                         <td style="color: #81EF19">done</td>
-                                                </tr>
-                                                
-                                                
-    
                                                
                                             </tbody>
                                             

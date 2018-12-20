@@ -652,7 +652,15 @@ public class ServiceMangerController {
 		return "ServiceManager/serviceManagerIndex";
 	}
 	
-	
+
+	@RequestMapping(value="/getAmountDetails",method=RequestMethod.GET)    
+	public @ResponseBody List<ServicingInvoice> servicingInvoicesDetails(@RequestParam String serviceId,HttpServletResponse response) throws IOException {
+		
+		BikeServicing bike = serviceManagerInterface.getBikeServicingById(serviceId);
+
+		return bike.getServicingInvoice();
+
+	}
 	
 	
 	

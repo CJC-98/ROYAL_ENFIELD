@@ -20,19 +20,11 @@ import com.app.extremity.idao.ServicingChartIDao;
 
 
 import com.app.extremity.iservice.ServiceManagerInterface;
-
 import com.app.extremity.model.AvailableServicing;
-
 import com.app.extremity.model.BikeCustomization;
-
-
 import com.app.extremity.model.BikeServicing;
-
 import com.app.extremity.model.BikeServicing;
-
-
 import com.app.extremity.model.Notfication;
-
 import com.app.extremity.model.ServcingBikeInfo;
 import com.app.extremity.model.ServicingChart;
 import com.app.extremity.model.ServicingInvoice;
@@ -141,10 +133,19 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 		System.out.println(availableServicingIDao.findAll());
 		return (List<AvailableServicing>)availableServicingIDao.findAll();
 	}
+	
+	@Override
+	public List<BikeServicing> getAllBikeServicing() {
+		return (List<BikeServicing>) bikeServicingIDao.findAll();
+	}
+	
+	@Override
+	public BikeServicing getBikeServicingById(String serviceId) {
+		return bikeServicingIDao.findBikeServicingByBikeServicingId(serviceId);
+	}
 
+	
 
 
 
 }
-
-

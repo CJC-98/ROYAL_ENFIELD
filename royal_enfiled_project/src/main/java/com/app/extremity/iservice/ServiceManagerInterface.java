@@ -3,8 +3,9 @@ package com.app.extremity.iservice;
 import java.util.List;
 
 
-import com.app.extremity.model.BikeCustomization;
 
+
+import com.app.extremity.model.BikeCustomization;
 import com.app.extremity.idao.NotficationIDao;
 import com.app.extremity.model.AvailableServicing;
 import com.app.extremity.model.BikeServicing;
@@ -33,5 +34,9 @@ public interface ServiceManagerInterface {
 
 	public String getNextBikeServicingId();
 
+	public BikeServicing getBikeServicingById(String serviceId);
+
+
+	List<BikeServicing> getAllBikeServicing();
 
 }
