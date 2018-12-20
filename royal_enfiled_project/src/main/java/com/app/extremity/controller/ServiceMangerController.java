@@ -351,10 +351,20 @@ public class ServiceMangerController {
 
 		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
     	model.addAttribute("shortInboxList", shortInboxList);
-		
+    	
+    	List<BikeServicing> bikeServicingList = serviceManagerInterface.getAllBikeServicingByServcingStatus("waiting");
+    	for(BikeServicing data: bikeServicingList) {
+    	ServicingInvoice servicingInvoicesList=data.getServicingInvoice();
+    	System.out.println(""+servicingInvoicesList.getServicingInvoiceId()+","+servicingInvoicesList.getAmount()+"");
+    	
+    		
+    	}
+    	
+    	model.addAttribute("bikeServicingList",bikeServicingList);
 		model.addAttribute("link","servicesInvoice.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
+	
 	
 	@RequestMapping(value="/CustomizationInvoicePage")
 	public String CustomizationInvoicePage(Model model,HttpServletRequest request){
