@@ -9,6 +9,7 @@ import com.app.extremity.idao.NotficationIDao;
 import com.app.extremity.model.AvailableServicing;
 import com.app.extremity.model.BikeServicing;
 import com.app.extremity.model.Notfication;
+import com.app.extremity.model.ServicingInvoice;
 
 
 
@@ -23,6 +24,7 @@ public interface ServiceManagerInterface {
 	public BikeServicing saveBikeServicing(BikeServicing bikeServicing);
 
 	public List<BikeServicing> getAllBikeServicing();
+	public List<BikeCustomization> getAllBikeCustomization();
 
 
 	public List<BikeServicing> getAllBikeServicingByServcingStatus(String serviceStatus);
@@ -30,8 +32,8 @@ public interface ServiceManagerInterface {
 
 	public AvailableServicing saveAvailableServicingIDao(AvailableServicing availableServicing);
 	public List<AvailableServicing> getAllAvailableServicing();
-
-
+	
+	public List<ServicingInvoice>getAllServicingInvoice(); 
 
 	public long getAllCustomizationCount();
 	public BikeCustomization saveBikeCustomization(BikeCustomization bikeCustomization);

@@ -130,7 +130,6 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 
 	@Override
 	public List<AvailableServicing> getAllAvailableServicing() {
-		System.out.println(availableServicingIDao.findAll());
 		return (List<AvailableServicing>)availableServicingIDao.findAll();
 	}
 
@@ -154,6 +153,17 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	public BikeCustomization getBikeCustomizationById(String customizationId) {
 		return bikeCustomizationIDao.findBikeCustomizationByBikeCustomizationId(customizationId);
 	}
+
+	@Override
+	public List<ServicingInvoice> getAllServicingInvoice() {
+		return (List<ServicingInvoice>) serviceInvoiceIDao.findAll();
+	}
+
+	@Override
+	public List<BikeCustomization> getAllBikeCustomization() {
+		return (List<BikeCustomization>) bikeCustomizationIDao.findAll();
+	}
+
 
 
 

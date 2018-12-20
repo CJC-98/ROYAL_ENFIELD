@@ -68,7 +68,12 @@
 			var req = new XMLHttpRequest();		
 			req.open("GET","ServicesInprogressPage?serviceId="+serviceId,true);
 			req.send(); 
-			alert("Please refresh the page");
+			
+			req.onreadystatechange=function(){
+				if(req.readyState==4 && req.status==200){
+					location.reload();
+				}
+			}
 		}
 		
 		
@@ -91,24 +96,11 @@
                          <div class="col-sm-12" >
                              <section class="panel panel-default" >
                                           <header class="panel-heading bg-warning dk" style="font-size: 20px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
-                                         
-                                          	<a:choose>
-													 <a:when test="${data.servcingBikeInfo.plateNumber !=''}">		 
-															<div> 
-				                                                  ${data.servcingBikeInfo.modelName}(${data.servcingBikeInfo.plateNumber})       			 
-				                                            </div>
-													</a:when>
-													<a:otherwise>
-															<div>             		 
-					                                               ${data.servcingBikeInfo.modelName}(${data.servcingBikeInfo.chasisNumber})      			 
-					                                        </div>
-													</a:otherwise>
-											</a:choose>
-	  
-																
 
-																
-																
+										  <div> 
+				                              ${data.servcingBikeInfo.modelName} ( ${data.servcingBikeInfo.plateNumber} )       			 
+				                          </div>
+										
                   </header>
 
                                                 

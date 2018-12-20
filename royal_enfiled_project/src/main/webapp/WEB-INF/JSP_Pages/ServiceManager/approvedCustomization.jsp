@@ -26,9 +26,11 @@
 			
 			var table = document.getElementById("customizationDataTable");
 			
-			while(table.rows.length>1){
+			
+			
+			 while(table.rows.length>1){
 				table.deleteRow(table.rows.length-1);
-			}
+			} 
 			
 			req.onreadystatechange=function(){
 					
@@ -38,7 +40,7 @@
 					
 					for(index = 0; index < list.length; index++){
 
-						
+					
 						var row = table.insertRow(1);
 						
 						var cell1 = row.insertCell(0);
@@ -66,7 +68,12 @@
 			var req = new XMLHttpRequest();		
 			req.open("GET","CustomizationInprogressPage?customizationId="+customizationId,true);
 			req.send();
-			alert("Please refresh the page");
+			
+			req.onreadystatechange=function(){
+				if(req.readyState==4 && req.status==200){
+					location.reload();
+				}
+			}
 		}
 		
 		
@@ -93,14 +100,14 @@
 																	 
 																			 <div> 
 				                                                         		
-				                                                         			${data.customizationBikeInfo.modelName}(${data.customizationBikeInfo.plateNumber})
+				                                                         			${data.customizationBikeInfo.modelName} ( ${data.customizationBikeInfo.plateNumber} )
 				                                                    			 
 				                                                    		</div>
 																	  </a:when>
 																	  <a:otherwise>
 																			  <div> 
 					                                                         		 
-					                                                         			${data.customizationBikeInfo.modelName}(${data.customizationBikeInfo.chasisNumber})
+					                                                         			${data.customizationBikeInfo.modelName} ( ${data.customizationBikeInfo.chasisNumber} )
 					                                                    			 
 					                                                        	</div>
 																	  </a:otherwise>

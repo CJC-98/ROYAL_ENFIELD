@@ -43,7 +43,16 @@
                          <div class="col-sm-12">
                              <section class="panel panel-default">
                                           <header class="panel-heading bg-dark lter" style="font-size: 20px; color: white; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
-                                          	${data.customizationBikeInfo.modelName}
+                                          	${data.customizationBikeInfo.modelName} (
+                                          		<a:choose>
+                                          		          <a:when test="${data.customizationBikeInfo.plateNumber !=''}">
+				                                                 ${data.customizationBikeInfo.plateNumber}
+														  </a:when>
+														  <a:otherwise>
+					                                             ${data.customizationBikeInfo.chasisNumber}
+														  </a:otherwise>
+												</a:choose>
+                                          	)
                                           	
                                           </header>
                                                 
