@@ -52,14 +52,11 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	@Autowired
 	CustomizationBikeInfoIDao customizationBikeInfoIDao;
 	
-
 	@Autowired
 	CustomizationChartIDao customizationChartIDao;
 	
-
     @Autowired
     BikeServicingIDao bikeServicingIDao;
-
 
 	@Autowired
 	ServiceInvoiceIDao serviceInvoiceIDao;
@@ -99,7 +96,7 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	}
 
 	@Override
-	public BikeCustomization saveBikeCustomization(BikeCustomization bikeCustomization) {		
+	public BikeCustomization saveBikeCustomization(BikeCustomization bikeCustomization) {
 		return bikeCustomizationIDao.save(bikeCustomization);
 	}
 
@@ -143,13 +140,19 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	}
 
 	@Override
-	public BikeServicing getBikeServicingBiId(String serviceId) {
+	public BikeServicing getBikeServicingById(String serviceId) {
 		return bikeServicingIDao.findBikeServicingByBikeServicingId(serviceId);
 	}	
 
 	@Override
 	public List<BikeCustomization> getAllBikeCustomizationByCustomizationStatus(String customizationStatus) {
 		return (List<BikeCustomization>)bikeCustomizationIDao.findAllBikeCustomizationBycustomizationStatus(customizationStatus);
+	}
+
+
+	@Override
+	public BikeCustomization getBikeCustomizationById(String customizationId) {
+		return bikeCustomizationIDao.findBikeCustomizationByBikeCustomizationId(customizationId);
 	}
 
 

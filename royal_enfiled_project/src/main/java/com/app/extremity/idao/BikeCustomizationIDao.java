@@ -15,5 +15,7 @@ public interface BikeCustomizationIDao extends CrudRepository<BikeCustomization,
 	public long countBycustomizationStatus(String customizationStatus); 
 	
 	public List<BikeCustomization> findAllBikeCustomizationBycustomizationStatus(String customizationStatus);
+	
+	public BikeCustomization findBikeCustomizationByBikeCustomizationId(String customizationId);
 
 }

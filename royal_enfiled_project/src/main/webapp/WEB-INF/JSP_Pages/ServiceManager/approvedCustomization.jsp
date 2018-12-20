@@ -15,6 +15,64 @@
 </head>
 
 <body>
+
+	<script>
+		function getCustomizationDetails(customizationId){
+			
+
+			var req = new XMLHttpRequest();		
+			req.open("GET","getCustomizationDetails?customizationId="+customizationId,true);
+			req.send(); 
+			
+			var table = document.getElementById("customizationDataTable");
+			
+			while(table.rows.length>1){
+				table.deleteRow(table.rows.length-1);
+			}
+			
+			req.onreadystatechange=function(){
+					
+				if(req.readyState==4 && req.status==200){
+					
+					var list = JSON.parse(req.responseText);	
+					
+					for(index = 0; index < list.length; index++){
+
+						
+						var row = table.insertRow(1);
+						
+						var cell1 = row.insertCell(0);
+						var cell2 = row.insertCell(1);
+						var cell3 = row.insertCell(2);
+						
+						cell1.innerHTML =  list[index].part;
+						cell2.innerHTML =  list[index].cost;
+						cell3.innerHTML =  list[index].status;
+						
+						cell1.style.textAlign = "center";
+
+						
+						cell3.style.color = "red";
+						
+					}
+				}
+			}
+		}
+		
+		
+		
+		
+		function CustomizationInprogressPage(customizationId){
+			var req = new XMLHttpRequest();		
+			req.open("GET","CustomizationInprogressPage?customizationId="+customizationId,true);
+			req.send();
+			alert("Please refresh the page");
+		}
+		
+		
+		
+	</script>
+
 	<section id="content" class="bg-light lter">
         <section class="vbox">
             <section class="scrollable padder">                                               
@@ -33,14 +91,14 @@
                                           	<a:choose>
 																	  <a:when test="${data.customizationBikeInfo.plateNumber !=''}">
 																	 
-																			 <div class="checkbox"> 
+																			 <div> 
 				                                                         		
 				                                                         			${data.customizationBikeInfo.modelName}(${data.customizationBikeInfo.plateNumber})
 				                                                    			 
 				                                                    		</div>
 																	  </a:when>
 																	  <a:otherwise>
-																			  <div class="checkbox"> 
+																			  <div> 
 					                                                         		 
 					                                                         			${data.customizationBikeInfo.modelName}(${data.customizationBikeInfo.chasisNumber})
 					                                                    			 
@@ -68,10 +126,12 @@
                                                          <td>${data.bikeCustomizationId}</td>
                                                          <td>${data.appointmentDate }</td>
                                                          <td>
-                                                         	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded">Customization Details</a>
+                                                         	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded"><span onclick="getCustomizationDetails('${data.bikeCustomizationId}')">Customization Details</span></a>
                                                          </td>     
-                                                         <td>
-                                                         	<a href="CustomizationInprogressPage" class="btn btn-md btn-primary m-r rounded">Start Customization</a>
+                                                         <td>                                                  	
+                                                         	<a class="btn btn-md btn-primary m-r rounded">
+                                                         		<span onclick="CustomizationInprogressPage('${data.bikeCustomizationId}')">Start Customization</span>
+                                                         	</a>
                                                          </td>                                           
                                                       </tr>
                                      
@@ -95,7 +155,7 @@
 						        <div class="modal-body">
 						          		
                                     <section class="panel panel-default">
-                                        <table class="table table-striped m-b-none">
+                                        <table class="table table-striped m-b-none" id="customizationDataTable">
                                             <thead>
                                                 <tr>
                                                     <th style="text-align: center">Part</th>
@@ -104,32 +164,7 @@
                                                 </tr>
                                             </thead>
                                             
-                                            <tbody>
-                                            
-                                            	<tr style="text-align: center">
-                                                    	 <td>labour cost</td>
-                                                         <td>500</td>
-                                                         <td style="color: #FF681B">pending</td>
-                                                </tr>
-                                            
-                                                <tr style="text-align: center">
-                                                    	 <td>brake change</td>
-                                                         <td>500</td>
-                                                         <td style="color: #FF681B">pending</td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>silencer change</td>
-                                                         <td>350</td>
-                                                         <td style="color: #FF681B">pending</td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>tail light change</td>
-                                                         <td>300</td>
-                                                         <td style="color: #FF681B">pending</td>
-                                                </tr>
-                    
+
                                             </tbody>
                                             
                                         </table>
