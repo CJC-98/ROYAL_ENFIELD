@@ -39,8 +39,8 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -329,6 +329,31 @@ public class AdminServiceImplementation implements IAdminService {
 	
 		return employeeId;
 	
+	}
+
+	@Override
+
+	public List<AvailableServicing> getavaliableServicing() {
+		
+		return (List<AvailableServicing>) availableServicingIDao.findAll();
+	}
+
+	@Override
+	public List<BikeServicing> getBikeServicing() {
+		
+		return (List<BikeServicing>) bikeServicingIDao.findAll();
+	}
+
+	@Override
+	public List<BikeCustomization> getbikeCustomization() {
+		
+		return (List<BikeCustomization>) bikeCustomizationIDao.findAll();
+	}
+
+	@Override
+	public List<SoldBikeStock> getSoldNewBike() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
