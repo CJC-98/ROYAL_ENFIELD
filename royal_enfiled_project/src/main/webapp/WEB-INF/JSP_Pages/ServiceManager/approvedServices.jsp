@@ -35,13 +35,6 @@ function detail()
 </script>
 
 
-
-
-
-
-
-
-
 </head>
 
 <body>
