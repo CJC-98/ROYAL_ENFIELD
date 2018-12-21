@@ -1,6 +1,8 @@
 package com.app.extremity.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -9,13 +11,14 @@ import javax.persistence.Table;
 public class CustomizationInvoice {
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int customizationInvoiceId;
 	
 	private double amount;
 	
 	private double customizationCGstPercent;
 	
-	private double customizationsGstPercent;
+	private double customizationSGstPercent;
 	
 	private double totalAmount;
 	
@@ -31,11 +34,12 @@ public class CustomizationInvoice {
 	public void setCustomizationCGstPercent(double customizationCGstPercent) {
 		this.customizationCGstPercent = customizationCGstPercent;
 	}
-	public double getCustomizationsGstPercent() {
-		return customizationsGstPercent;
+	
+	public double getCustomizationSGstPercent() {
+		return customizationSGstPercent;
 	}
-	public void setCustomizationsGstPercent(double customizationsGstPercent) {
-		this.customizationsGstPercent = customizationsGstPercent;
+	public void setCustomizationSGstPercent(double customizationSGstPercent) {
+		this.customizationSGstPercent = customizationSGstPercent;
 	}
 	public int getCustomizationInvoiceId() {
 		return customizationInvoiceId;

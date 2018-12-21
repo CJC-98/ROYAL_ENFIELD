@@ -1,6 +1,10 @@
 =\=\=\=\=\=\=
 <<<<<<<=HEAD
+<<<<<<< HEAD
 >>>>>>>=refs/heads/serviceManagerTeamBranch
+=======
+>>>>>>>=branch 'serviceManagerTeamBranch' of https\://github.com/CJC-98/ROYAL_ENFIELD.git
+>>>>>>> refs/heads/serviceManagerTeamBranch
 eclipse.preferences.version=1
 org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
 org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.8

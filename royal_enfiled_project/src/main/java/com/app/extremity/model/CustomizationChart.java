@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;  
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -50,6 +49,10 @@ public class CustomizationChart {
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	public void setBikeCustomization(BikeCustomization bc1) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

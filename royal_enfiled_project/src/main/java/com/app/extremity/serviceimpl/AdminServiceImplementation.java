@@ -5,7 +5,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Properties;
 
 import javax.mail.Message;
@@ -21,6 +23,7 @@ import javax.mail.internet.MimeMultipart;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -113,7 +116,7 @@ public class AdminServiceImplementation implements IAdminService {
 			}
 		});
 
-		Message msg = new MimeMessage(session);
+		MimeMessage msg = new MimeMessage(session);
 		try {
 			getAdminCredentials();
 			msg.setFrom(new InternetAddress(adminEmailUsername, false));
@@ -178,5 +181,6 @@ public class AdminServiceImplementation implements IAdminService {
 	public EmployeeDetails getEmployeeDetailsByName(String employeeName) {
 		return employeeDetailsDao.findOneByEmployeeName(employeeName);
 	}
+
 
 }
