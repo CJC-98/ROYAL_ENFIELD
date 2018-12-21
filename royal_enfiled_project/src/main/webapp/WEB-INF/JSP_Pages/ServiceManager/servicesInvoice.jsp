@@ -86,7 +86,8 @@
                                             
                                             <tbody>
                                              <a:forEach var="data" items="${bikeServicingList}">
-	                                         <tr style="text-align: center">
+	                                       
+                                              <tr style="text-align: center">
                                                     	 <td>${data.servicingInvoice.servicingInvoiceId}</td>
                                                          <td>${data.servicingInvoice.amount}</td>
                                                          <td>${data.servicingInvoice.totalAmount}</td>
@@ -95,15 +96,15 @@
                                                          <td style="color: #FF681B">${data.servicingInvoice.paymentStatus}</td>
                                                          <td>
                                                          	
-                                                         	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded"><span onclick="getAmountDetails(''${data.bikeServicingId}')">Amount Details</span></a>
+                                                         	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded"><span onclick="getAmountDetails('${data.bikeServicingId}')">Amount Details</span></a>
 
                                                          </td>     
                                                      
                                                 </tr>
-                                                 </a:forEach>
+                                                  </a:forEach>
                                              </tbody>
                                           
-                                           
+                                          
                                         </table>
                                     </section>
                                 </div>
