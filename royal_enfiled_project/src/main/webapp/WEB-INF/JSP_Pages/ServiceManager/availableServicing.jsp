@@ -1,10 +1,7 @@
  <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-<<<<<<< HEAD
-    pageEncoding="ISO-8859-1"%>  
-=======
     pageEncoding="ISO-8859-1"%>
     <%@ taglib prefix="a" uri="http://java.sun.com/jsp/jstl/core"%>  
->>>>>>> refs/heads/serviceManagerTeamBranch
+
 <!DOCTYPE html>
 <html>
 <head>
