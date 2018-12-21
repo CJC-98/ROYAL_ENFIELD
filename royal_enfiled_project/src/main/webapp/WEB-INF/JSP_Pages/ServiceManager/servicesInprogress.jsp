@@ -32,7 +32,7 @@
 	               <form action="submitServicingWork">            
 		                <div class="m-b-md hbox" style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
 	                    	<h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">
-	                    		Current Services
+	                    		In-progress Servicing
 	                    	</h3>
 	                    	<input class="btn btn-md btn-warning rounded m-r" type="submit" value="Submit Work">
 	                	</div>     
@@ -76,7 +76,7 @@
 	                                                         	<a:choose>
 																	  <a:when test="${work.status == 'done'}">
 																			 <div class="checkbox"> 
-				                                                         		<label style="color: #88C800">
+				                                                         		<label style="color: #81EF19">
 				                                                         			work done
 				                                                    			</label> 
 				                                                    		</div>
@@ -96,11 +96,9 @@
                                                       </a:forEach> 
                                                                                                             
 
-                                                      <tr>
-	                                                    <div class="progress">
+                                                      <tr class="progress">
 														    <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" 
 														    	style="width:${data.serviceProgressPercent}%;height:20px">${data.serviceProgressPercent}%</div>
-														 </div> 
                                                       </tr>
         
                                                       

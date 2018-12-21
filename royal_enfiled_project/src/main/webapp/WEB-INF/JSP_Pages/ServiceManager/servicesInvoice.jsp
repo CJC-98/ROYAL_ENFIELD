@@ -15,12 +15,62 @@
 </head>
 
 <body>
+	
+	<script>
+		function getServiceDetails(serviceId){
+
+  			var req = new XMLHttpRequest();		
+			req.open("GET","getServiceDetails?serviceId="+serviceId,true);
+			req.send(); 
+			
+			var table = document.getElementById("serviceTable");
+			
+			while(table.rows.length>1){
+				table.deleteRow(table.rows.length-1);
+			}
+			
+			req.onreadystatechange=function(){
+				if(req.readyState==4 && req.status==200){
+					
+					var list = JSON.parse(req.responseText);
+					
+					for(index = 0; index < list.length; index++){
+
+						
+						var row = table.insertRow(1);
+						
+						var cell1 = row.insertCell(0);
+						var cell2 = row.insertCell(1);
+						var cell3 = row.insertCell(2);
+						
+						cell1.innerHTML =  list[index].work;
+						cell2.innerHTML =  list[index].cost;
+						cell3.innerHTML =  list[index].status;
+						
+						cell1.style.textAlign = "center";
+						cell2.style.textAlign = "center";
+						cell3.style.textAlign = "center";
+						
+						if(list[index].status == 'done'){
+							cell3.style.color = "#81EF19";
+						}
+						else{
+							cell3.style.color = "#FF681B";
+						}
+						
+						
+					}
+				}
+			}  
+		}
+	</script>
+	
 	<section id="content" class="bg-light lter">
 	        <section class="vbox">
 	            <section class="scrollable padder">                                               
 	                                
 	                <div class="m-b-md">
-	                    <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Services Invoice</h3>
+	                    <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Servicing Invoice</h3>
 	                </div>
 	                
 	               <!-- first table starts -->
@@ -41,21 +91,23 @@
                                             
                                             <tbody>
                                              <a:forEach var="data" items="${bikeServicingList}">
-	                                         <tr style="text-align: center">
-                                                    	 <td>${data.servicingInvoice.servicingInvoiceId}</td>
-                                                         <td>${data.servicingInvoice.amount}</td>
-                                                         <td>${data.servicingInvoice.totalAmount}</td>
-                                                         <td>${data.servicingInvoice.serviceCGstPercent}</td>
-                                                         <td>${data.servicingInvoice.serviceSGstPercent}</td>
-                                                         <td style="color: #FF681B">${data.servicingInvoice.paymentStatus}</td>
-                                                         <td>
-                                                         	<a href="" class="btn btn-md btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
-                                                         		Amount Details
-                                                         	</a>
-                                                     </td>
-                                                </tr>
-                                                 </a:forEach>
-                                             </tbody>
+		                                         <tr style="text-align: center">
+	                                                    	 <td>${data.servicingInvoice.servicingInvoiceId}</td>
+	                                                         <td>${data.servicingInvoice.amount}</td>
+	                                                         <td>${data.servicingInvoice.serviceCGstPercent}</td>
+	                                                         <td>${data.servicingInvoice.serviceSGstPercent}</td>
+	                                                         <td>${data.servicingInvoice.totalAmount}</td>
+	                                                         <td style="color: #81EF19">${data.servicingInvoice.paymentStatus}</td>
+	                                                         <td>
+	                                                         	<span onclick="getServiceDetails('${data.bikeServicingId}')">
+	                                                         		<a class="btn btn-md btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
+	                                                         			Amount Details
+	                                                         		</a>
+	                                                         	</span>
+	                                                     </td>
+	                                                </tr>
+                                              </a:forEach>
+                                            </tbody>
                                           
                                            
                                         </table>
@@ -76,7 +128,7 @@
 						        <div class="modal-body">
 						          		
                                     <section class="panel panel-default">
-                                        <table class="table table-striped m-b-none">
+                                        <table class="table table-striped m-b-none" id="serviceTable">
                                             <thead>
                                                 <tr>
                                                     <th style="text-align: center">Work</th>
@@ -86,40 +138,6 @@
                                             </thead>
                                             
                                             <tbody>
-                                            
-                                                <tr style="text-align: center">
-                                                    	 <td>labour cost</td>
-                                                         <td>500</td>
-                                                         <td style="color: #81EF19">done</td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>engine oil change</td>
-                                                         <td>350</td>
-                                                         <td style="color: #81EF19">done</td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>brake oil change</td>
-                                                         <td>30</td>
-                                                         <td style="color: #81EF19">done</td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>engine tuning</td>
-                                                         <td>500</td>
-                                                         <td style="color: #81EF19">done</td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>horn tuning</td>
-                                                         <td>200</td>
-                                                         <td style="color: #81EF19">done</td>
-                                                </tr>
-                                                
-                                                
-    
-                                               
                                             </tbody>
                                             
                                         </table>

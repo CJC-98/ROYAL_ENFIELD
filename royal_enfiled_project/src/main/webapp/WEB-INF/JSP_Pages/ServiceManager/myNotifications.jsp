@@ -17,7 +17,7 @@
 <body>
   
 	<script>
-		
+
 		var reciverName;
 		var reciverPost;
 		var reciverImg;
@@ -46,8 +46,7 @@
 			if(empName==""){
 				alert("Please enter employee name!!!");
 			}
-			//TODO: get login user name from session
-			else if(empName == "pranay"){
+			else if(empName == '${currentUserName}'){
 				alert("You can't send notification to yourself!!!");
 			}
 			else{

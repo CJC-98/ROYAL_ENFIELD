@@ -5,11 +5,11 @@ import java.util.List;
 
 import com.app.extremity.model.BikeCustomization;
 
-import com.app.extremity.idao.NotficationIDao;
 import com.app.extremity.model.AvailableServicing;
 import com.app.extremity.model.BikeServicing;
-import com.app.extremity.model.Notfication;
-import com.app.extremity.model.ServicingInvoice;
+import com.app.extremity.model.CustomizationChart;
+import com.app.extremity.model.FreeServicingCount;
+import com.app.extremity.model.ServicingChart;
 
 
 
@@ -33,7 +33,8 @@ public interface ServiceManagerInterface {
 	public AvailableServicing saveAvailableServicingIDao(AvailableServicing availableServicing);
 	public List<AvailableServicing> getAllAvailableServicing();
 	
-	public List<ServicingInvoice>getAllServicingInvoice(); 
+	//public List<Availablec>
+	
 
 	public long getAllCustomizationCount();
 	public BikeCustomization saveBikeCustomization(BikeCustomization bikeCustomization);
@@ -48,5 +49,20 @@ public interface ServiceManagerInterface {
 
 
     public List<BikeCustomization> getAllBikeCustomizationByCustomizationStatus(String customizationStatus);
+    
+    public FreeServicingCount getFreeServicingCountByChassisNumber(String chassisNumber);
+    
+    public ServicingChart updateServicingChart(ServicingChart servicingChart);
+    public CustomizationChart updateCustomizationChart(CustomizationChart customizationChart);
+    
+    public ServicingChart getServicingChart(int id); 
+    public CustomizationChart getCustomizationChart(int id);
+    
+    public FreeServicingCount updateFreeServicingCount(FreeServicingCount freeServicingCount); 
+    
+    public BikeCustomization getBikeCustomizationByBikeCustomizationId(String customizationId);
+    
+    public BikeServicing getBikeServicingByBikeServicingId(String servicingId);
+    
 
 }

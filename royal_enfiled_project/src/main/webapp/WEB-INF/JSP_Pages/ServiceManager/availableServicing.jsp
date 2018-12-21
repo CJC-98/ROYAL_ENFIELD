@@ -38,7 +38,7 @@
             <section class="scrollable padder">                                               
                                 
                 <div class="m-b-md" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-                    <h3 class="m-b-none inline" style="font-size: 30pxl; font-weight: bold;">Available Services</h3>
+                    <h3 class="m-b-none inline" style="font-size: 30pxl; font-weight: bold;">Available Servicing</h3>
                     <a href="" class="btn btn-lg btn-success btn-rounded" data-toggle="modal" data-target="#myModal" style="margin-top: 20px">Add new Service</a>
                 </div>
                 
