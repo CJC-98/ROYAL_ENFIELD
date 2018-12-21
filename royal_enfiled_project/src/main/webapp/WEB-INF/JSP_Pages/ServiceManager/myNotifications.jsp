@@ -36,9 +36,8 @@
 			
 		}
 		
-		
-	
-		function searchEmployee(){
+
+  		function searchEmployee(){
 			
 			var empName = document.getElementById("empName").value;
 			
@@ -83,8 +82,10 @@
 			
 			}
 			
-		}
+		} 
 		
+				
+			
 		function sendNotification(){
 			var msg = document.getElementById("message").value;
 
@@ -116,7 +117,7 @@
 			document.getElementById("empName").value = "";
 		}
 
-
+		
 
 	</script>
 	
@@ -181,7 +182,7 @@
 			                                                		
 			                                               		<a:choose>
 																	  <a:when test="${data.markAsRead}">
-																	  	<a data-toggle="class" class="btn btn-default btn-xs active" disabled=true> 
+																	  	<a data-toggle="class" class="btn btn-default btn-xs active" disabled> 
 			                                                				<i class="fa fa-star-o text-muted text"></i>
 																	    		<i class="fa fa-star text-danger text-active"></i> Mark As Read
 																	    </a>		 
@@ -196,13 +197,6 @@
 																	</a:choose>
 			                         
 			                                                
-
-			                                                   <%--  <a data-toggle="modal" 
-			                                                       data-target="#myModal" 
-			                                                       class="btn btn-default btn-xs">
-			                                                        <i class="fa fa-mail-reply text-muted"></i> 
-			                                                        <span onclick="">Reply</span>
-			                                                    </a> --%>
 			                                                </div>
 			                                           </li>
 			          			                                                         

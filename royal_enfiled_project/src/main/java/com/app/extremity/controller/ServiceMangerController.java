@@ -324,6 +324,8 @@ public class ServiceMangerController {
 
 	}
 	
+
+	
 	@RequestMapping(value="/sendNotification")    
 	public @ResponseBody String sendNotification(@RequestParam String reciverName, @RequestParam String reciverPost,
 												 @RequestParam String reciverImg, @RequestParam String message) {
