@@ -27,7 +27,7 @@ import com.app.extremity.model.BikeCustomization;
 
 
 import com.app.extremity.model.BikeServicing;
-
+import com.app.extremity.model.CustomizationInvoice;
 import com.app.extremity.model.BikeServicing;
 
 
@@ -145,9 +145,15 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 
 	@Override
 	public List<BikeCustomization> getAllBikeCustomizationByCustomizationStatus(String customizationStatus) {
-		return (List<BikeCustomization>)bikeCustomizationIDao.findAllBikeCustomizationBycustomizationStatus(customizationStatus);
+		return (List<BikeCustomization>)bikeCustomizationIDao.findAll();
 	}
 
+	
+	@Override
+	public List<CustomizationInvoice> getAllCustomizationInvoice() {
+		
+		return (List<CustomizationInvoice>) customizationInvoiceIDao.findAll();
+	}
 
 	@Override
 	public BikeCustomization getBikeCustomizationById(String customizationId) {
@@ -162,6 +168,12 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	@Override
 	public List<BikeCustomization> getAllBikeCustomization() {
 		return (List<BikeCustomization>) bikeCustomizationIDao.findAll();
+	}
+
+	@Override
+	public BikeServicing getBikeServicingBiId(String serviceId) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

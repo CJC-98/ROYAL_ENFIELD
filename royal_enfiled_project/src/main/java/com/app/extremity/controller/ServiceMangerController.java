@@ -8,6 +8,7 @@ import java.time.format.DateTimeFormatter;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -36,6 +37,7 @@ import com.app.extremity.model.AvailableServicing;
 import com.app.extremity.model.BikeCustomization;
 import com.app.extremity.model.BikeServicing;
 import com.app.extremity.model.CustomizationChart;
+import com.app.extremity.model.CustomizationInvoice;
 import com.app.extremity.model.EmployeeDetails;
 import com.app.extremity.model.Notfication;
 import com.app.extremity.model.ServicingChart;
@@ -323,7 +325,14 @@ public class ServiceMangerController {
 	
 		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
 	model.addAttribute("shortInboxList", shortInboxList);
-		
+	   
+	   List<BikeCustomization> bikeCustomizationsList=serviceManagerInterface.getAllBikeCustomizationByCustomizationStatus("Waiting");
+	   for(BikeCustomization data:bikeCustomizationsList){
+		  CustomizationInvoice customizationInvoiceList=data.getCustomizationInvoice();
+		   System.out.println(""+customizationInvoiceList.getCustomizationInvoiceId()+" "+customizationInvoiceList.getAmount()+"");  
+		   
+	   }
+	    model.addAttribute("bikeCustomizationsList", bikeCustomizationsList);
 		model.addAttribute("link","customizationInvoice.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
@@ -433,8 +442,9 @@ public class ServiceMangerController {
 		
 	}
 	
-	@RequestMapping(value="/submitServicingWork") 
-	public String submitServicingWork(@RequestParam(required = false) int workStatusChange[],Model model,HttpServletRequest request) {
+	
+	@RequestMapping(value="/submitInProgressWork") 
+	public String submitInProgressWork(@RequestParam(required = false) int workStatusChange[],Model model,HttpServletRequest request) {
 		
 
 		session = request.getSession();
@@ -466,7 +476,6 @@ public class ServiceMangerController {
 	     	
 			model.addAttribute("link","servicesInprogress.jsp");	
 			return "ServiceManager/serviceManagerIndex";
-
 		}
 		else {
 			List<BikeServicing>bikeServicingList = serviceManagerInterface.getAllBikeServicingByServcingStatus("in-progress");
