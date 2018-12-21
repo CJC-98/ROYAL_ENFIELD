@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.Properties;
@@ -35,6 +36,7 @@ import com.app.extremity.idao.EmployeeDetailsIDao;
 import com.app.extremity.idao.NewBikeStockIDao;
 import com.app.extremity.idao.OldBikeStockIDao;
 import com.app.extremity.idao.ServcingBikeInfoIDao;
+import com.app.extremity.idao.SoldNewBikeIDao;
 import com.app.extremity.idao.SoldOldBikeStockIDao;
 import com.app.extremity.idao.TestDriveCustomerIDao;
 import com.app.extremity.iservice.IAdminService;
@@ -48,6 +50,7 @@ import com.app.extremity.model.EmployeeDetails;
 import com.app.extremity.model.NewBikeStock;
 import com.app.extremity.model.OldBikeStock;
 import com.app.extremity.model.ServcingBikeInfo;
+import com.app.extremity.model.SoldBikeStock;
 import com.app.extremity.model.TestDriveCustomer;
 
 @Service
@@ -79,6 +82,8 @@ public class AdminServiceImplementation implements IAdminService {
 	ServcingBikeInfoIDao servcingBikeInfoIDao;
 	@Autowired
 	TestDriveCustomerIDao testDriveCustomerIDao;
+	@Autowired
+	SoldNewBikeIDao soldNewBikeIDao;
 
 	static Logger logger = LogManager.getLogger(AdminServiceImplementation.class);
 
@@ -279,4 +284,25 @@ public class AdminServiceImplementation implements IAdminService {
 		return (List<TestDriveCustomer>) testDriveCustomerIDao.findAll();
 	}
 
+	@Override
+	public List<SoldBikeStock> getNewBikeSaleByDate(Date date) {
+		
+		
+		return (List<SoldBikeStock>) soldNewBikeIDao.findAllBySoldbikedate(date);
+		
+		
+	}
+
+	@Override
+	public List<EmployeeDetails> deleteById(String employeeId) {
+		employeeDetailsDao.deleteById(employeeId);
+		return (List<EmployeeDetails>) employeeDetailsDao.findAll();
+	}
+
+	/*@Override
+	public EmployeeDetails findOneByEmployeeId(String employeeId) {
+		
+		return employeeDetailsDao.deleteAll(employeeId);
+	}
+*/
 }

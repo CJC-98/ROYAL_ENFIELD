@@ -11,5 +11,7 @@ public interface EmployeeDetailsIDao extends CrudRepository<EmployeeDetails	, St
 	EmployeeDetails findOneByEmployeeDesignation(String employeeDesignation);
 	
 	EmployeeDetails findOneByEmployeeName(String employeeName);
+	
+	EmployeeDetails findOneByEmployeeId(String employeeId);
 
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -104,14 +105,17 @@
                                     </tr>
                                   </thead>
                                   <tbody>
+                                  <c:forEach items="${employeeList}" var="employeeList">
                                     <tr role="row" class="odd">
-                                    <td class="sorting">1</td>
-                                    <td>Nikita</td>
-                                    <td>Pune</td>
-                                    <td>9975588575</td>
-                                    <td>njpise18@gmail.com</td>
-                                    <td >nikita123</td>
-                                  
+                                   
+                                    <td>${employeeList.employeeId}</td>
+                                    <td>${employeeList.employeeName}</td>
+                                    <td>${employeeList.cityName}</td>
+                                    <td>${employeeList.employeeMobileNumber}</td>
+                                    <td>${employeeList.employeeEmail}</td>
+                                    <td>${employeeList.employeePassword}</td>
+                                  </tr>
+                                  </c:forEach>
                                   </tbody>
                                   <tfoot>
                                   <tr><th rowspan="1" colspan="1">Employee_Id</th>

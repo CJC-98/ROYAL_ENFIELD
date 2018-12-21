@@ -80,10 +80,6 @@
 									<th class="sorting_asc" tabindex="0" aria-controls="example1"
 										rowspan="1" colspan="1" aria-sort="ascending"
 										aria-label="Rendering engine: activate to sort column descending"
-										style="width: 125px;">Accessories_Dead_Stock_ID</th>
-									<th class="sorting_asc" tabindex="0" aria-controls="example1"
-										rowspan="1" colspan="1" aria-sort="ascending"
-										aria-label="Rendering engine: activate to sort column descending"
 										style="width: 125px;">Part_Id</th>
 									<th class="sorting_asc" tabindex="0" aria-controls="example1"
 										rowspan="1" colspan="1" aria-sort="ascending"
@@ -106,7 +102,8 @@
 								<c:forEach items="${accessoriesDeadStockList}"
 									var="accessoriesDeadStock">
 									<tr role="row" class="odd">
-										<td class="sorting"></td>
+								
+										<td>${ accessoriesDeadStock.acd.partId}</td>
 										<td>${ accessoriesDeadStock.acd.partName}</td>
 										<td>${ accessoriesDeadStock.acd.partPrice}</td>
 										<td>${ accessoriesDeadStock.acd.partQuantity}</td>
@@ -116,7 +113,7 @@
 							</tbody>
 							<tfoot>
 								<tr>
-									<th rowspan="1" colspan="1">Accessories_Dead_Stock_ID</th>
+									
 									<th rowspan="1" colspan="1">Part_Id</th>
 									<th rowspan="1" colspan="1">Part_Name</th>
 									<th rowspan="1" colspan="1">Part_Price</th>

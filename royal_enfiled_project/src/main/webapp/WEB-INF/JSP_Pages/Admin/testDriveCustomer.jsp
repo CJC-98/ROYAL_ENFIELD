@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -21,7 +22,7 @@
 	type="text/css" />
 	<link rel="stylesheet"
 	href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/js/datatables/datatables.css"
-	type="text/css" />s
+	type="text/css" />
 <!--[if lt IE 9]> <script src="js/ie/html5shiv.js"></script> <script src="js/ie/respond.min.js"></script> <script src="js/ie/excanvas.js"></script> <![endif]-->
 </head>
 <body class="">
@@ -91,10 +92,13 @@
 									</tr>
 								</thead>
 								<tbody>
+								 <c:forEach items="${testDriveCustomerList}" var="DriveCustomer">
 									<tr role="row" class="odd">
-										<td class="sorting"></td>
-										<td></td>
-										<td></td>
+										<td>${DriveCustomer.bikeName }</td>
+										<td>${DriveCustomer.visitingDate}</td>
+										<td>${DriveCustomer.testDriveDate}</td>
+										</tr>
+								 </c:forEach>
 								</tbody>
 								<tfoot>
 									<tr>

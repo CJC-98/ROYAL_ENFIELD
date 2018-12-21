@@ -122,28 +122,13 @@
                                 <nav class="nav-primary hidden-xs">
                                     <ul class="nav">
                                     
-<<<<<<< HEAD
-                                   	 <li> 
-                                        	<a href="adminDashboard"> 
-                                        		<i class="fa fa-dashboard icon">
-                                            		<b class="bg-danger"></b> 
-                                            	</i> 
-                                            	<span>Admin Dashboard</span>
-=======
+
                                    
                                         <li> <a href="#"> <i class="fa fa-dashboard icon"> <b class="bg-warning"></b>
                                                 </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i
                                                         class="fa fa-angle-up text-active"></i> </span> <span>Add</span>
->>>>>>> branch 'AdminTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
-                                            </a>
-<<<<<<< HEAD
-                                        </li>
-                                        <li> <a href="#"> <i class="fa fa-dashboard icon"> <b class="bg-warning"></b>
-                                                </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i
-                                                        class="fa fa-angle-up text-active"></i> </span> <span>Add</span>
-                                            </a>
-=======
->>>>>>> branch 'AdminTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
+ </a>
+
                                             <ul class="nav lt">
                                             	
                                                 
@@ -199,12 +184,9 @@
                                                    		 </a> 
                                                    	</li>
                                             
-                                            		<li> 
-<<<<<<< HEAD
-                                            			<a href=" "> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i>
-=======
+ 
                                             			<a href=""> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i>
->>>>>>> branch 'AdminTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
+
                                                    		 <span>Dead_stock</span> </a>
                                                 		<ul class="nav bg">
                                                    			 <li> 
@@ -262,8 +244,6 @@
                                                     	<a href="bikeServicing">
                                                         <i class="fa fa-angle-right"></i> 
                                                             <span>Service</span> </a>
-<<<<<<< HEAD
-=======
                                                             
                                                             <ul class="nav bg">
                                                    			 <li> 
@@ -280,7 +260,6 @@
                                                            	 </li>
                                                            	 
                                                			 </ul>
->>>>>>> branch 'AdminTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
                                                      </li>
                                                 </ul>
                                             
