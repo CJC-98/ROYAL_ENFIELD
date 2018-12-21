@@ -13,8 +13,53 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/css/app.v1.css" type="text/css" />
 </head>
-
+ 
 <body>
+<script>
+		function getAmountDetails(serviceId){
+			var req = new XMLHttpRequest();		
+			req.open("GET","getAmountDetails?serviceId="+serviceId,true);
+			req.send(); 
+			
+			var table = document.getElementById("amountDataTable");
+			
+			while(table.rows.length>1){
+				table.deleteRow(table.rows.length-1);
+			}
+			
+			req.onreadystatechange=function(){
+					
+				if(req.readyState==4 && req.status==200){
+					
+					var list = JSON.parse(req.responseText);	
+					 				 
+
+					for(index = 0; index < list.length; index++){
+
+						
+						var row = table.insertRow(1);
+						
+						var cell1 = row.insertCell(0);
+						var cell2 = row.insertCell(1);
+						var cell3 = row.insertCell(2);
+						
+						cell1.innerHTML =  list[index].work;
+						cell2.innerHTML =  list[index].cost;
+						cell3.innerHTML =  list[index].status;
+						
+						cell1.style.textAlign = "center";
+
+						
+						cell3.style.color = "red";
+						
+					}
+				}
+			}
+		}
+		
+
+		
+	</script>
 	<section id="content" class="bg-light lter">
 	        <section class="vbox">
 	            <section class="scrollable padder">                                               
@@ -41,7 +86,7 @@
                                             
                                             <tbody>
                                              <a:forEach var="data" items="${bikeServicingList}">
-	                                         <tr style="text-align: center">
+                                     <tr style="text-align: center">
                                                     	 <td>${data.servicingInvoice.servicingInvoiceId}</td>
                                                          <td>${data.servicingInvoice.amount}</td>
                                                          <td>${data.servicingInvoice.totalAmount}</td>
@@ -49,15 +94,19 @@
                                                          <td>${data.servicingInvoice.serviceSGstPercent}</td>
                                                          <td style="color: #FF681B">${data.servicingInvoice.paymentStatus}</td>
                                                          <td>
-                                                         	<a href="" class="btn btn-md btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
-                                                         		Amount Details
-                                                         	</a>
-                                                     </td>
+                                                         	
+                                                         	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded"><span onclick="getAmountDetails('${data.bikeServicingId}')">Amount Details</span></a>
+
+                                                         </td>     
+                                                     
                                                 </tr>
-                                                 </a:forEach>
+
+                                                  </a:forEach>
                                              </tbody>
                                           
-                                           
+
+                                             </tbody>
+                       y
                                         </table>
                                     </section>
                                 </div>
@@ -65,18 +114,21 @@
 
                                 <!-- fisrt table ends -->
                                 
-                                <!-- modal starts-->
+                               <!-- modal starts-->
  
-						  <div class="modal fade" id="myModal" role="dialog">
+						  <div class="modal fade"  id="myModal" role="dialog">
 						    <div class="modal-dialog modal-md">
 						      <div class="modal-content">
-						        <div class="modal-header">
-						        	<h3 style="text-align: center">Amount Details</h3>  
+						        <div class="modal-header" >
+
+						        	<h3 style="text-align: center" >Amount Details </h3>  
+						        	 
 						        </div>
+						        
 						        <div class="modal-body">
 						          		
                                     <section class="panel panel-default">
-                                        <table class="table table-striped m-b-none">
+                                        <table class="table table-striped m-b-none" id="amountDataTable">
                                             <thead>
                                                 <tr>
                                                     <th style="text-align: center">Work</th>
@@ -84,47 +136,17 @@
                                                     <th style="text-align: center">Status</th>
                                                 </tr>
                                             </thead>
+                                          
                                             
                                             <tbody>
-                                            
-                                                <tr style="text-align: center">
-                                                    	 <td>labour cost</td>
-                                                         <td>500</td>
-                                                         <td style="color: #81EF19">done</td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>engine oil change</td>
-                                                         <td>350</td>
-                                                         <td style="color: #81EF19">done</td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>brake oil change</td>
-                                                         <td>30</td>
-                                                         <td style="color: #81EF19">done</td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>engine tuning</td>
-                                                         <td>500</td>
-                                                         <td style="color: #81EF19">done</td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>horn tuning</td>
-                                                         <td>200</td>
-                                                         <td style="color: #81EF19">done</td>
-                                                </tr>
-                                                
-                                                
-    
-                                               
+
+                    
                                             </tbody>
                                             
                                         </table>
                                     </section>
                                 
+
 						        </div>
 						        <div class="modal-footer">	
 						          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -134,9 +156,12 @@
 					  	</div>
 					  
 					  	<!-- modal ends -->
-	                
-	            </section>
-	        </section>
-	 </section> 
+            
+                      
+        </section>
+   </section> 
+   </section>
+
+
 </body>
 </html>

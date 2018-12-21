@@ -141,6 +141,9 @@ public class ServiceMangerController {
 		return "ServiceManager/serviceManagerIndex";
 	}
 	
+
+	
+	
 	@RequestMapping(value="/ServicesInprogressPage")
 	public  String ServicesInprogressPage(@RequestParam(required = false) String serviceId, Model model,HttpServletRequest request){
 		
@@ -298,7 +301,9 @@ public class ServiceMangerController {
 		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
     	model.addAttribute("shortInboxList", shortInboxList);
     	
-    	List<BikeServicing> bikeServicingList = serviceManagerInterface.getAllBikeServicingByServcingStatus("waiting");
+
+    	List<BikeServicing> bikeServicingList = serviceManagerInterface.getAllBikeServicing();
+
     	for(BikeServicing data: bikeServicingList) {
     	ServicingInvoice servicingInvoicesList=data.getServicingInvoice();
     	System.out.println(""+servicingInvoicesList.getServicingInvoiceId()+","+servicingInvoicesList.getAmount()+"");
@@ -630,6 +635,9 @@ public class ServiceMangerController {
 		return "ServiceManager/serviceManagerIndex";
 	}
 	
+
+
+
 	@RequestMapping(value="/getServiceDetails",method=RequestMethod.GET)    
 	public @ResponseBody List<ServicingChart> getServiceDetails(@RequestParam String serviceId,HttpServletResponse response) throws IOException {
 		
