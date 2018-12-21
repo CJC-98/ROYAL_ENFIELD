@@ -86,8 +86,7 @@
                                             
                                             <tbody>
                                              <a:forEach var="data" items="${bikeServicingList}">
-	                                       
-                                              <tr style="text-align: center">
+                                     <tr style="text-align: center">
                                                     	 <td>${data.servicingInvoice.servicingInvoiceId}</td>
                                                          <td>${data.servicingInvoice.amount}</td>
                                                          <td>${data.servicingInvoice.totalAmount}</td>
@@ -101,10 +100,13 @@
                                                          </td>     
                                                      
                                                 </tr>
+
                                                   </a:forEach>
                                              </tbody>
                                           
-                                          
+
+                                             </tbody>
+                       y
                                         </table>
                                     </section>
                                 </div>

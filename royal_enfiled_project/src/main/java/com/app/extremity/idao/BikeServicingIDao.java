@@ -16,6 +16,8 @@ public interface BikeServicingIDao extends CrudRepository<BikeServicing, String>
 	public long countByservcingStatus(String servcingStatus); 
 	
 	public List<BikeServicing> findAllBikeServicingByServcingStatus(String servcingStatus);
+	
+	public BikeServicing findBikeServicingByBikeServicingId(String serviceId);
 
 	public BikeServicing findBikeServicingByBikeServicingId(String serviceId);
 	

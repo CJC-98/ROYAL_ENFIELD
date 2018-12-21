@@ -79,7 +79,7 @@
                                         <div class="panel-body text-center">
                                             <h4>${completedservices}</h4>
                                             <div class="inline">
-                                                <div class="easypiechart text-success" data-percent="${completedservices *100/totalServiceCount }"
+                                                <div class="easypiechart text-success" data-percent="${completedservices *100/totalServiceCount}"
                                                     data-line-width="5" data-track-Color="#f0f0f0" data-bar-color="#8ec165"
                                                     data-rotate="0" data-scale-Color="false" data-size="150"
                                                     data-animate="2000"> <span class="h2 step font-bold">22.66</span>%
@@ -108,7 +108,7 @@
                                         <div class="panel-body text-center">
                                             <h4>${approvedCustomizationCount}</h4>
                                             <div class="inline">
-                                                <div class="easypiechart text-danger" data-percent="${approvedCustomizationCount *100/totalCustomizationCount }"
+                                                <div class="easypiechart text-danger" data-percent="${approvedCustomizationCount *100/totalCustomizationCount}"
                                                     data-line-width="5" data-track-Color="#f0f0f0" data-bar-color="#FF5F4A"
                                                     data-rotate="0" data-scale-Color="false" data-size="150"
                                                     data-animate="2000"> <span class="h2 step font-bold">5.3</span>%
@@ -117,7 +117,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="panel-footer bg-danger lt" style="font-size: 15px">Total Customization${totalCustomizationcount} 25</div>
+                                        <div class="panel-footer bg-danger lt" style="font-size: 15px">Total Customization ${totalCustomizationCount}</div>
 
                                     </section>    
                                 </div>
@@ -139,7 +139,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="panel-footer bg-warning lt" style="font-size: 15px">Total Customization${totalCustomizationcount} 25</div>
+                                        <div class="panel-footer bg-warning lt" style="font-size: 15px">Total Customization ${totalCustomizationCount}</div>
 
                                     </section>    
                                 </div>
@@ -161,7 +161,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="panel-footer bg-success lt" style="font-size: 15px">Total Customization${totalCustomizationcount} 25</div>
+                                        <div class="panel-footer bg-success lt" style="font-size: 15px">Total Customization ${totalCustomizationCount}</div>
 
                                     </section>    
                                 </div>

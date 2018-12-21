@@ -23,6 +23,10 @@ import com.app.extremity.iservice.ServiceManagerInterface;
 import com.app.extremity.model.AvailableServicing;
 import com.app.extremity.model.BikeCustomization;
 import com.app.extremity.model.BikeServicing;
+<<<<<<< HEAD
+=======
+import com.app.extremity.model.CustomizationInvoice;
+>>>>>>> branch 'serviceManagerTeamBranch' of local repository
 import com.app.extremity.model.BikeServicing;
 import com.app.extremity.model.Notfication;
 import com.app.extremity.model.ServcingBikeInfo;
@@ -44,14 +48,11 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	@Autowired
 	CustomizationBikeInfoIDao customizationBikeInfoIDao;
 	
-
 	@Autowired
 	CustomizationChartIDao customizationChartIDao;
 	
-
-   @Autowired
-   BikeServicingIDao bikeServicingIDao;
-
+    @Autowired
+    BikeServicingIDao bikeServicingIDao;
 
 	@Autowired
 	ServiceInvoiceIDao serviceInvoiceIDao;
@@ -92,24 +93,19 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 
 	@Override
 	public BikeCustomization saveBikeCustomization(BikeCustomization bikeCustomization) {
-		
 		return bikeCustomizationIDao.save(bikeCustomization);
 	}
 
 	@Override
-	public long getAllCustomizationCountByCustomizationStatus(String customizationStatus) 
-	{
+	public long getAllCustomizationCountByCustomizationStatus(String customizationStatus) {
 		return bikeCustomizationIDao.countBycustomizationStatus(customizationStatus);
 	
 	}
 
 	@Override
 	public BikeServicing saveBikeServicing(BikeServicing bikeServicing) {
-		return saveBikeServicing(bikeServicing);
+		return bikeServicingIDao.save(bikeServicing);
 	}
-
-
-
 
 	@Override
 	public String getNextBikeServicingId() {
@@ -130,7 +126,6 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 
 	@Override
 	public List<AvailableServicing> getAllAvailableServicing() {
-		System.out.println(availableServicingIDao.findAll());
 		return (List<AvailableServicing>)availableServicingIDao.findAll();
 	}
 	
@@ -143,6 +138,50 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	public BikeServicing getBikeServicingById(String serviceId) {
 		return bikeServicingIDao.findBikeServicingByBikeServicingId(serviceId);
 	}
+
+	@Override
+	public List<BikeServicing> getAllBikeServicing() {
+		return (List<BikeServicing>) bikeServicingIDao.findAll();
+	}
+
+	@Override
+	public BikeServicing getBikeServicingById(String serviceId) {
+		return bikeServicingIDao.findBikeServicingByBikeServicingId(serviceId);
+	}	
+
+	@Override
+	public List<BikeCustomization> getAllBikeCustomizationByCustomizationStatus(String customizationStatus) {
+		return (List<BikeCustomization>)bikeCustomizationIDao.findAll();
+	}
+
+	
+	@Override
+	public List<CustomizationInvoice> getAllCustomizationInvoice() {
+		
+		return (List<CustomizationInvoice>) customizationInvoiceIDao.findAll();
+	}
+
+	@Override
+	public BikeCustomization getBikeCustomizationById(String customizationId) {
+		return bikeCustomizationIDao.findBikeCustomizationByBikeCustomizationId(customizationId);
+	}
+
+	@Override
+	public List<ServicingInvoice> getAllServicingInvoice() {
+		return (List<ServicingInvoice>) serviceInvoiceIDao.findAll();
+	}
+
+	@Override
+	public List<BikeCustomization> getAllBikeCustomization() {
+		return (List<BikeCustomization>) bikeCustomizationIDao.findAll();
+	}
+
+	@Override
+	public BikeServicing getBikeServicingBiId(String serviceId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 
 

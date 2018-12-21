@@ -28,6 +28,12 @@
 			req.open("GET","markIt?notficationId="+id,true);
 			req.send();
 			
+			req.onreadystatechange=function(){
+				if(req.readyState==4 && req.status==200){
+					location.reload();
+				}
+			}
+			
 		}
 		
 		
@@ -91,9 +97,12 @@
 											  "&&message="+msg, true);
 				req.send();
 				
-				alert("notification is send successfully");
-				document.getElementById("notificationBody").style.display = "none";
-				document.getElementById("empName").value = "";
+				req.onreadystatechange=function(){
+					if(req.readyState==4 && req.status==200){
+						location.reload();
+					}
+				}
+				
 			}
 			else{
 				alert("please write a message!!!");
@@ -286,15 +295,11 @@
 	        </section>    	        
 	 	</section> 
 	 
-	        
-		
-		<script>
 
-			document.getElementById("notificationBody").style.display = "none";	
-
-		</script>
-					  		
-					                           
+	
+	<script>
+		document.getElementById("notificationBody").style.display = "none";	 
+	</script>
 
 </body>
 

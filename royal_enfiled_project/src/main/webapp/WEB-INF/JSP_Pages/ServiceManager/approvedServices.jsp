@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/css/app.v1.css" type="text/css" />
 
+<<<<<<< HEAD
 <script type="text/javascript">
 function detail()
 {
@@ -35,9 +36,74 @@ function detail()
 </script>
 
 
+=======
+>>>>>>> branch 'serviceManagerTeamBranch' of local repository
 </head>
 
 <body>
+
+
+
+	<script>
+		function getServiceDetails(serviceId){
+			var req = new XMLHttpRequest();		
+			req.open("GET","getServiceDetails?serviceId="+serviceId,true);
+			req.send(); 
+			
+			var table = document.getElementById("serviceDataTable");
+			
+			while(table.rows.length>1){
+				table.deleteRow(table.rows.length-1);
+			}
+			
+			req.onreadystatechange=function(){
+					
+				if(req.readyState==4 && req.status==200){
+					
+					var list = JSON.parse(req.responseText);	
+					 				 
+
+					for(index = 0; index < list.length; index++){
+
+						
+						var row = table.insertRow(1);
+						
+						var cell1 = row.insertCell(0);
+						var cell2 = row.insertCell(1);
+						var cell3 = row.insertCell(2);
+						
+						cell1.innerHTML =  list[index].work;
+						cell2.innerHTML =  list[index].cost;
+						cell3.innerHTML =  list[index].status;
+						
+						cell1.style.textAlign = "center";
+
+						
+						cell3.style.color = "red";
+						
+					}
+				}
+			}
+		}
+		
+		
+		
+		
+		function ServicesInprogressPage(serviceId){
+			var req = new XMLHttpRequest();		
+			req.open("GET","ServicesInprogressPage?serviceId="+serviceId,true);
+			req.send(); 
+			
+			req.onreadystatechange=function(){
+				if(req.readyState==4 && req.status==200){
+					location.reload();
+				}
+			}
+		}
+		
+		
+		
+	</script>
 
 
 	<section id="content" class="bg-light lter">
@@ -55,35 +121,19 @@ function detail()
                          <div class="col-sm-12" >
                              <section class="panel panel-default" >
                                           <header class="panel-heading bg-warning dk" style="font-size: 20px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
-                                         
-                                          	<a:choose>
-																	  <a:when test="${data.servcingBikeInfo.plateNumber !=''}">
-																	 
-																			 <div class="checkbox"> 
-				                                                         		
-				                                                         			${data.servcingBikeInfo.modelName}(${data.servcingBikeInfo.plateNumber})
-				                                                    			 
-				                                                    		</div>
-																	  </a:when>
-																	  <a:otherwise>
-																			  <div class="checkbox"> 
-					                                                         		 
-					                                                         			${data.servcingBikeInfo.modelName}(${data.servcingBikeInfo.chasisNumber})
-					                                                    			 
-					                                                        	</div>
-																	  </a:otherwise>
-																</a:choose>
-																
-																
-																
-                                          	                                          </header>
+
+										  <div> 
+				                              ${data.servcingBikeInfo.modelName} ( ${data.servcingBikeInfo.plateNumber} )       			 
+				                          </div>
+										
+                  </header>
+
                                                 
                                           <table class="table table-striped m-b-none" >
                                                       
                                                 <thead >
                                                                 
                                                      <tr>   
-
                                                          <th style="text-align: center;">Service Id</th>
                                                          <th style="text-align: center;">Appointment Date</th>
                                                          <th style="text-align: center;">Services Details</th>
@@ -97,10 +147,12 @@ function detail()
                                                          <td>${data.bikeServicingId}</td>
                                                          <td>${data.appointmentDate}</td>
                                                          <td>
-                                                         	<a href="#myModal" data-toggle="modal" data-target="#myModal" onclick="detail()" class="btn btn-md btn-info m-r rounded">Services Details</a>
+
+                                                         	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded"><span onclick="getServiceDetails('${data.bikeServicingId}')">Services Details</span></a>
+
                                                          </td>     
                                                          <td>
-                                                         	<a href="ServicesInprogressPage" class="btn btn-md btn-primary m-r rounded">Start Services</a>
+                                                         	<a class="btn btn-md btn-primary m-r rounded"><span onclick="ServicesInprogressPage('${data.bikeServicingId}')">Start Services</span></a>
 
                                                          </td>                                           
                                                       </tr>
@@ -131,7 +183,7 @@ function detail()
 						        <div class="modal-body">
 						          		
                                     <section class="panel panel-default">
-                                        <table class="table table-striped m-b-none">
+                                        <table class="table table-striped m-b-none" id="serviceDataTable">
                                             <thead>
                                                 <tr>
                                                     <th style="text-align: center">Work</th>
@@ -142,14 +194,7 @@ function detail()
                                           
                                             
                                             <tbody>
-                                            <a:forEach var="work" items="${servicingChart}">
-                                            	<tr style="text-align: center">
-                                                    	 <td>${work.work}</td>
-                                                         <td>${work.cost}</td>
-                                                         <td style="color: #FF681B">${work.status}</td>
-                                                </tr>
-                                            
-                                             </a:forEach>
+
                     
                                             </tbody>
                                             

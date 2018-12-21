@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="a" uri="http://java.sun.com/jsp/jstl/core"%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,76 +55,20 @@
                                              
                                             <tbody>
                                             
+                                              <a:forEach var="data" items="${bikeServicingList}">
+                                            
                                                 <tr style="text-align: center">
-                                                    	 <td>BC3451</td>
-                                                         <td>08-10-18</td>
-                                                         <td>MH12 AC 2345</td>
+                                                    	 <td>${data.bikeServicingId}</td>
+                                                         <td>${data.appointmentDate}</td>
+                                                         <td>${data.servcingBikeInfo.plateNumber}</td>
                                                          <td style="color: #FF681B">unpaid</td>
                                                          <td> 
                                                             <input type="button" class="btn btn-md btn-success btn-rounded" id="myBtn1" onclick="releaseBike()" value="Release Bike" disabled/>
                                                          </td>
-                                                         <td style="color: #81EF19">on-hold</td>
+                                                         <td style="color: #81EF19">${data.servcingStatus}</td>
                                                 </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>BC3452</td>
-                                                         <td>05-10-18</td>
-                                                         <td>MH29 AD 1254</td>
-                                                         <td style="color: #81EF19">paid</td>                           
-                                                         <td>
-                                                         	<input type="button" class="btn btn-md btn-success btn-rounded" id="myBtn" onclick="releaseBike()" value="Release Bike" />
-                                                        </td>
-                                                        <td style="color: #81EF19"  id="releaseStatus">on-hold</td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>BC8663</td>
-                                                         <td>08-09-18</td>
-                                                         <td>MH32 X 8546</td>
-                                                         <td style="color: #81EF19">paid</td>
-                                                         <td>
-                                                         	<input type="button" class="btn btn-md btn-danger btn-rounded" id="myBtn4" onclick="releaseBike()" value="Bike Released" disabled/>
-                                                        </td>
-                                                        <td style="color: #FF681B">bike released</button></td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>BC8764</td>
-                                                         <td>12-08-18</td>
-                                                         <td>RJ14 FV 7842</td>
-                                                         <td style="color: #FF681B">unpaid</td>
-                                                         <td>
-                                                         	<input type="button" class="btn btn-md btn-success btn-rounded" id="myBtn2" onclick="releaseBike()" value="Release Bike" disabled/>
-                                                         </td>
-                                                         <td style="color: #81EF19">On-hold</td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>BC8755</td>
-                                                         <td>09-10-18</td>
-                                                         <td>GJ02 ZV 5426</td>
-                                                         <td style="color: #81EF19">paid</td>
-                                                         <td>
-                                                         	<input type="button" class="btn btn-md btn-danger btn-rounded" id="myBtn4" onclick="releaseBike()" value="Bike Released" disabled/>
-                                                        </td>
-                                                        <td style="color: #FF681B">bike released</button></td>
-                                                </tr>
-                                                
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>BC6876</td>
-                                                         <td>02-09-18</td>
-                                                         <td>MH25 GH 4587</td>
-                                                         <td style="color: #FF681B">unpaid</td>
-                                                         <td>
-                                                         	<button type="button" class="btn btn-md btn-success btn-rounded"  disabled>
-                                                         	 	Release Bike
-                                                            </button>
-                                                        </td>
-                                                        <td style="color: #81EF19">on-hold</td>
-                                                </tr>
-    
-                                               
+                                               </a:forEach> 
+
                                             </tbody>
                                             
                                         </table>
