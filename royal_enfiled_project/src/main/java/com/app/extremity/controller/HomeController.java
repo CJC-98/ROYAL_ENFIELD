@@ -33,7 +33,9 @@ public class HomeController {
 	@Autowired
 	Account_ServiceImpl AService;
 	
+
 	static Logger logger = LogManager.getLogger(HomeController.class);
+
 	@Autowired
 	IAdminService adminService;
 	
