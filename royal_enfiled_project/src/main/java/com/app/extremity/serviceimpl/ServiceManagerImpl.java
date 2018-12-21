@@ -155,10 +155,9 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	
 	@Override
 	public List<CustomizationInvoice> getAllCustomizationInvoice() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return (List<CustomizationInvoice>) customizationInvoiceIDao.findAll();
 	}
-
 
 
 
