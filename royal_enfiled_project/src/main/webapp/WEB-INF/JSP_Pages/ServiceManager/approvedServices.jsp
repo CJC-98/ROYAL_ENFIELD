@@ -112,7 +112,7 @@ function detail()
             <section class="scrollable padder">                                               
                                 
                 <div class="m-b-md">
-                    <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Approved Services</h3>
+                    <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Pending Servicing</h3>
                 </div>
               
                 <!-- fisrt table starts -->
@@ -148,11 +148,11 @@ function detail()
                                                          <td>${data.appointmentDate}</td>
                                                          <td>
 
-                                                         	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded"><span onclick="getServiceDetails('${data.bikeServicingId}')">Services Details</span></a>
+                                                         	<span onclick="getServiceDetails('${data.bikeServicingId}')"><a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded">Services Details</a></span>
 
                                                          </td>     
                                                          <td>
-                                                         	<a class="btn btn-md btn-primary m-r rounded"><span onclick="ServicesInprogressPage('${data.bikeServicingId}')">Start Services</span></a>
+                                                         	<span onclick="ServicesInprogressPage('${data.bikeServicingId}')"><a class="btn btn-md btn-primary m-r rounded">Start Services</a></span>
 
                                                          </td>                                           
                                                       </tr>

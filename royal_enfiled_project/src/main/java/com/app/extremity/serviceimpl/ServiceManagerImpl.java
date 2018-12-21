@@ -1,7 +1,6 @@
 package com.app.extremity.serviceimpl;
 
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,25 +9,27 @@ import org.springframework.stereotype.Service;
 import com.app.extremity.idao.AvailableServicingIDao;
 import com.app.extremity.idao.BikeCustomizationIDao;
 import com.app.extremity.idao.BikeServicingIDao;
-import com.app.extremity.idao.CustomizationBikeInfoIDao;
 import com.app.extremity.idao.CustomizationChartIDao;
-import com.app.extremity.idao.CustomizationInvoiceIDao;
-import com.app.extremity.idao.ServcingBikeInfoIDao;
-import com.app.extremity.idao.ServiceInvoiceIDao;
+import com.app.extremity.idao.FreeServicingCountIDao;
 import com.app.extremity.idao.ServicingChartIDao;
-
-
-
+import com.app.extremity.iservice.NotificationInterface;
 import com.app.extremity.iservice.ServiceManagerInterface;
+
 import com.app.extremity.model.AvailableServicing;
 import com.app.extremity.model.BikeCustomization;
-import com.app.extremity.model.BikeServicing;
+
 import com.app.extremity.model.BikeServicing;
 import com.app.extremity.model.CustomizationInvoice;
 import com.app.extremity.model.Notfication;
 import com.app.extremity.model.ServcingBikeInfo;
+
+import com.app.extremity.model.CustomizationChart;
+import com.app.extremity.model.FreeServicingCount;
+import com.app.extremity.model.CustomizationInvoice;
+import com.app.extremity.model.Notfication;
+import com.app.extremity.model.ServcingBikeInfo;
+
 import com.app.extremity.model.ServicingChart;
-import com.app.extremity.model.ServicingInvoice;
 
 
 
@@ -39,31 +40,23 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	@Autowired
 	BikeCustomizationIDao bikeCustomizationIDao;
 	
-	@Autowired
-	CustomizationInvoiceIDao customizationInvoiceIDao;
-	 
-	@Autowired
-	CustomizationBikeInfoIDao customizationBikeInfoIDao;
-	
-	@Autowired
-	CustomizationChartIDao customizationChartIDao;
-	
     @Autowired
     BikeServicingIDao bikeServicingIDao;
-
-	@Autowired
-	ServiceInvoiceIDao serviceInvoiceIDao;
-	
-	@Autowired
-	ServcingBikeInfoIDao servcingBikeInfoIDao;
-	
-	@Autowired
-	ServicingChartIDao servicingChartIDao;
 	  
 	@Autowired
 	AvailableServicingIDao availableServicingIDao;
   
+	@Autowired
+	FreeServicingCountIDao freeServicingCountIDao;
 	
+	@Autowired
+	ServicingChartIDao servicingChartIDao;
+	
+	@Autowired
+	CustomizationChartIDao customizationChartIDao;
+	
+	@Autowired
+	NotificationInterface notificationInterface;
 	
 
 	@Override
@@ -75,7 +68,6 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	public long getAllServiceCountByServiceStatus(String serviceStatus) {
 		return bikeServicingIDao.countByservcingStatus(serviceStatus);
 	}
-
 
 	@Override
 	public String getNextBikeCustomizationId() {
@@ -96,7 +88,6 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	@Override
 	public long getAllCustomizationCountByCustomizationStatus(String customizationStatus) {
 		return bikeCustomizationIDao.countBycustomizationStatus(customizationStatus);
-	
 	}
 
 	@Override
@@ -109,7 +100,6 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 		long totalCount = getAllServiceCount();
 		return "BS"+(totalCount+1);
 	}
-
 
 	@Override
 	public List<BikeServicing> getAllBikeServicingByServcingStatus(String serviceStatus) {
@@ -139,14 +129,7 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 
 	@Override
 	public List<BikeCustomization> getAllBikeCustomizationByCustomizationStatus(String customizationStatus) {
-		return (List<BikeCustomization>)bikeCustomizationIDao.findAll();
-	}
-
-	
-	@Override
-	public List<CustomizationInvoice> getAllCustomizationInvoice() {
-		
-		return (List<CustomizationInvoice>) customizationInvoiceIDao.findAll();
+		return (List<BikeCustomization>)bikeCustomizationIDao.findAllBikeCustomizationBycustomizationStatus(customizationStatus);
 	}
 
 	@Override
@@ -155,23 +138,38 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	}
 
 	@Override
-	public List<ServicingInvoice> getAllServicingInvoice() {
-		return (List<ServicingInvoice>) serviceInvoiceIDao.findAll();
-	}
-
-	@Override
 	public List<BikeCustomization> getAllBikeCustomization() {
 		return (List<BikeCustomization>) bikeCustomizationIDao.findAll();
 	}
 
 	@Override
-	public BikeServicing getBikeServicingBiId(String serviceId) {
-		// TODO Auto-generated method stub
-		return null;
+	public FreeServicingCount getFreeServicingCountByChassisNumber(String chassisNumber) {
+		return freeServicingCountIDao.findFreeServicingCountByChassisNumber(chassisNumber);
+	}
+
+	@Override
+	public ServicingChart updateServicingChart(ServicingChart servicingChart) {
+		return servicingChartIDao.save(servicingChart);
+	}
+
+	@Override
+	public CustomizationChart updateCustomizationChart(CustomizationChart customizationChart) {
+		return customizationChartIDao.save(customizationChart);
+	}
+
+	@Override
+	public ServicingChart getServicingChart(int id) {
+		return servicingChartIDao.findById(id);
 	}
 
 
+	@Override
+	public CustomizationChart getCustomizationChart(int id) {
+		return customizationChartIDao.findById(id);
+	}
 
-
-
+	@Override
+	public FreeServicingCount updateFreeServicingCount(FreeServicingCount freeServicingCount) {
+		return freeServicingCountIDao.save(freeServicingCount);
+	}
 }

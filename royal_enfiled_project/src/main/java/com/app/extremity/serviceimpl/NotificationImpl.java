@@ -1,8 +1,6 @@
 package com.app.extremity.serviceimpl;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +10,6 @@ import com.app.extremity.idao.NotficationIDao;
 
 import com.app.extremity.iservice.NotificationInterface;
 
-import com.app.extremity.model.EmployeeDetails;
 import com.app.extremity.model.Notfication;
 
 @Service
@@ -34,7 +31,6 @@ public class NotificationImpl implements NotificationInterface{
 
 	@Override
 	public List<Notfication> getMyInboxNotfication(String reciverName) {
-		System.out.println(reciverName);
 		return notficationIDao.findAllByReciverName(reciverName);
 	}
 
@@ -58,7 +54,7 @@ public class NotificationImpl implements NotificationInterface{
 
 	@Override
 	public List<Notfication> getMyNotReadedInboxNotfication(String reciverName, boolean markAsRead) {
-		return notficationIDao.findAllByReciverNameAndMarkAsRead(reciverName, markAsRead);
+		return notficationIDao.findAllByReciverNameAndMarkAsRead(reciverName, markAsRead).subList(0, 3);
 	}
 
 

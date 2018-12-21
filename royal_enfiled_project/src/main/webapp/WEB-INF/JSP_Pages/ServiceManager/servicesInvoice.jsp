@@ -15,6 +15,7 @@
 </head>
  
 <body>
+<<<<<<< HEAD
 <script>
 		function getAmountDetails(serviceId){
 			var req = new XMLHttpRequest();		
@@ -60,12 +61,64 @@
 
 		
 	</script>
+=======
+	
+	<script>
+		function getServiceDetails(serviceId){
+
+  			var req = new XMLHttpRequest();		
+			req.open("GET","getServiceDetails?serviceId="+serviceId,true);
+			req.send(); 
+			
+			var table = document.getElementById("serviceTable");
+			
+			while(table.rows.length>1){
+				table.deleteRow(table.rows.length-1);
+			}
+			
+			req.onreadystatechange=function(){
+				if(req.readyState==4 && req.status==200){
+					
+					var list = JSON.parse(req.responseText);
+					
+					for(index = 0; index < list.length; index++){
+
+						
+						var row = table.insertRow(1);
+						
+						var cell1 = row.insertCell(0);
+						var cell2 = row.insertCell(1);
+						var cell3 = row.insertCell(2);
+						
+						cell1.innerHTML =  list[index].work;
+						cell2.innerHTML =  list[index].cost;
+						cell3.innerHTML =  list[index].status;
+						
+						cell1.style.textAlign = "center";
+						cell2.style.textAlign = "center";
+						cell3.style.textAlign = "center";
+						
+						if(list[index].status == 'done'){
+							cell3.style.color = "#81EF19";
+						}
+						else{
+							cell3.style.color = "#FF681B";
+						}
+						
+						
+					}
+				}
+			}  
+		}
+	</script>
+	
+>>>>>>> branch 'serviceManagerTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 	<section id="content" class="bg-light lter">
 	        <section class="vbox">
 	            <section class="scrollable padder">                                               
 	                                
 	                <div class="m-b-md">
-	                    <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Services Invoice</h3>
+	                    <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Servicing Invoice</h3>
 	                </div>
 	                
 	               <!-- first table starts -->
@@ -86,6 +139,7 @@
                                             
                                             <tbody>
                                              <a:forEach var="data" items="${bikeServicingList}">
+<<<<<<< HEAD
                                      <tr style="text-align: center">
                                                     	 <td>${data.servicingInvoice.servicingInvoiceId}</td>
                                                          <td>${data.servicingInvoice.amount}</td>
@@ -103,6 +157,25 @@
 
                                                   </a:forEach>
                                              </tbody>
+=======
+		                                         <tr style="text-align: center">
+	                                                    	 <td>${data.servicingInvoice.servicingInvoiceId}</td>
+	                                                         <td>${data.servicingInvoice.amount}</td>
+	                                                         <td>${data.servicingInvoice.serviceCGstPercent}</td>
+	                                                         <td>${data.servicingInvoice.serviceSGstPercent}</td>
+	                                                         <td>${data.servicingInvoice.totalAmount}</td>
+	                                                         <td style="color: #81EF19">${data.servicingInvoice.paymentStatus}</td>
+	                                                         <td>
+	                                                         	<span onclick="getServiceDetails('${data.bikeServicingId}')">
+	                                                         		<a class="btn btn-md btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
+	                                                         			Amount Details
+	                                                         		</a>
+	                                                         	</span>
+	                                                     </td>
+	                                                </tr>
+                                              </a:forEach>
+                                            </tbody>
+>>>>>>> branch 'serviceManagerTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
                                           
 
                                              </tbody>
@@ -128,7 +201,11 @@
 						        <div class="modal-body">
 						          		
                                     <section class="panel panel-default">
+<<<<<<< HEAD
                                         <table class="table table-striped m-b-none" id="amountDataTable">
+=======
+                                        <table class="table table-striped m-b-none" id="serviceTable">
+>>>>>>> branch 'serviceManagerTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
                                             <thead>
                                                 <tr>
                                                     <th style="text-align: center">Work</th>
@@ -139,8 +216,11 @@
                                           
                                             
                                             <tbody>
+<<<<<<< HEAD
 
                     
+=======
+>>>>>>> branch 'serviceManagerTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
                                             </tbody>
                                             
                                         </table>

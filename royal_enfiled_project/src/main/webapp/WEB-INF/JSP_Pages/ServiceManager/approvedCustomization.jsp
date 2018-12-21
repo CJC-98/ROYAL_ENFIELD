@@ -18,10 +18,9 @@
 
 	<script>
 		function getCustomizationDetails(customizationId){
-			
 
 			var req = new XMLHttpRequest();		
-			req.open("GET","getCustomizationDetails?customizationId="+customizationId,true);
+			req.open("GET","getCustomizationDetails?custId="+customizationId,true);
 			req.send(); 
 			
 			var table = document.getElementById("customizationDataTable");
@@ -30,7 +29,7 @@
 			
 			 while(table.rows.length>1){
 				table.deleteRow(table.rows.length-1);
-			} 
+			 } 
 			
 			req.onreadystatechange=function(){
 					
@@ -85,7 +84,7 @@
             <section class="scrollable padder">                                               
                                 
                 <div class="m-b-md">
-                    <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Approved Customization</h3>
+                    <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Pending Customization</h3>
                 </div>
                 
                 <!-- fisrt table starts -->
@@ -131,14 +130,16 @@
                                                         
                                                       <tr style="text-align: center;">
                                                          <td>${data.bikeCustomizationId}</td>
-                                                         <td>${data.appointmentDate }</td>
+                                                         <td>${data.appointmentDate}</td>
                                                          <td>
-                                                         	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded"><span onclick="getCustomizationDetails('${data.bikeCustomizationId}')">Customization Details</span></a>
+                                                         	<span onclick="getCustomizationDetails('${data.bikeCustomizationId}')"><a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded">Customization Details</a></span>
                                                          </td>     
                                                          <td>                                                  	
+                                                         	<span onclick="CustomizationInprogressPage('${data.bikeCustomizationId}')">
                                                          	<a class="btn btn-md btn-primary m-r rounded">
-                                                         		<span onclick="CustomizationInprogressPage('${data.bikeCustomizationId}')">Start Customization</span>
+                                                         		Start Customization
                                                          	</a>
+                                                         	</span>
                                                          </td>                                           
                                                       </tr>
                                      
