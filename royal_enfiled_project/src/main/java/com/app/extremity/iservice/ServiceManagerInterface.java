@@ -35,6 +35,6 @@ public interface ServiceManagerInterface {
 	public String getNextBikeCustomizationId();
 	public long getAllCustomizationCountByCustomizationStatus(String string);
     public List<BikeCustomization> getAllBikeCustomizationByCustomizationStatus(String customizationStatus);
-	List<CustomizationInvoice> getAllBikeCustomizationCountByCustomizationStatus(String customizationStatus);
+	public List<CustomizationInvoice> getAllCustomizationInvoice();
 
 }

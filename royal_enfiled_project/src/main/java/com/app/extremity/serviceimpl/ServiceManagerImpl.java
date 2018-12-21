@@ -152,10 +152,11 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 		return (List<BikeCustomization>)bikeCustomizationIDao.findAll();
 	}
 
+	
 	@Override
-	public List<CustomizationInvoice> getAllBikeCustomizationCountByCustomizationStatus(String customizationStatus) {
-
-		return (List<CustomizationInvoice>)customizationInvoiceIDao.findAll();
+	public List<CustomizationInvoice> getAllCustomizationInvoice() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 
