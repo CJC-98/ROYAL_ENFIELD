@@ -20,7 +20,7 @@
 		function getCustomizationDetails(customizationId){
 
 			var req = new XMLHttpRequest();		
-			req.open("GET","getCustomizationDetails?customizationId="+customizationId,true);
+			req.open("GET","getCustomizationDetails?custId="+customizationId,true);
 			req.send(); 
 			
 			var table = document.getElementById("customizationDataTable");

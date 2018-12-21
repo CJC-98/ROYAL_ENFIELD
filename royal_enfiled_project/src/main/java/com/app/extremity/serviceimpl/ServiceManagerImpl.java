@@ -20,6 +20,9 @@ import com.app.extremity.model.BikeCustomization;
 import com.app.extremity.model.BikeServicing;
 import com.app.extremity.model.CustomizationChart;
 import com.app.extremity.model.FreeServicingCount;
+import com.app.extremity.model.CustomizationInvoice;
+import com.app.extremity.model.Notfication;
+import com.app.extremity.model.ServcingBikeInfo;
 import com.app.extremity.model.ServicingChart;
 
 
@@ -161,18 +164,6 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	public FreeServicingCount updateFreeServicingCount(FreeServicingCount freeServicingCount) {
 		return freeServicingCountIDao.save(freeServicingCount);
 	}
-
-	@Override
-	public BikeCustomization getBikeCustomizationByBikeCustomizationId(String customizationId) {
-		return bikeCustomizationIDao.findBikeCustomizationByBikeCustomizationId(customizationId);
-	}
-
-	@Override
-	public BikeServicing getBikeServicingByBikeServicingId(String servicingId) {
-		return bikeServicingIDao.findBikeServicingByBikeServicingId(servicingId);
-	}
-
-
 
 }
 

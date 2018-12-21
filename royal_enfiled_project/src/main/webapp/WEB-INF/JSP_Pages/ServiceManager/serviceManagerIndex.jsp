@@ -39,7 +39,7 @@
                                     	<img src="${pageContext.request.contextPath}/Resources/images/EmployeeProfilePicture/${data.senderImg}" alt="John said" class="img-circle"> 
                                     </span> 
                                     <span class="media-body block m-b-none"><strong>${data.senderName}</strong>&nbsp;&nbsp;${data.message}<br> 
-                                    	<small class="text-muted">${data.sendDate} ${data.sendTime}</small> 
+                                    	<small class="text-muted">${data.sendDate}</small> 
                                     </span>
                                 </a> 
                             </a:forEach>

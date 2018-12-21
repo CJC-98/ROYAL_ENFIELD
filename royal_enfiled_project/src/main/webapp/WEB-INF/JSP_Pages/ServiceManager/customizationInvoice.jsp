@@ -89,6 +89,7 @@
                                             </thead>
                                             
                                             <tbody>
+
    												<a:forEach var="data" items="${bikeCustomizationsList}">
 			                                         <tr style="text-align: center">
 		                                                    	 <td>${data.customizationInvoice.customizationInvoiceId}</td>
@@ -105,6 +106,7 @@
 		                                              </tr>
                                                  </a:forEach>
                                             </tbody>
+
                                             
                                         </table>
                                     </section>
