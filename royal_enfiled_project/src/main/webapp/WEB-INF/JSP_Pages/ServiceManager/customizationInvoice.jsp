@@ -45,7 +45,7 @@
                                             </thead>
                                             
                                             <tbody>
-                                            <a:forEach var="data" items="${bikeCustomizationsList }">
+                                            <a:forEach var="data" items="${bikeCustomizationsList}">
                                             <tr style="text-align: center">
                                             <td>${data.CustomizationInvoice.customizationInvoiceId }</td>
                                             <td>${data.CustomizationInvoice.amount }</td>
