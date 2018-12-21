@@ -257,7 +257,7 @@ public class ServiceMangerController {
 	
 	
 	
-	@RequestMapping(value="/serviceDetails",method=RequestMethod.GET,produces="application/json")
+	/*@RequestMapping(value="/serviceDetails",method=RequestMethod.GET,produces="application/json")
 	public @ResponseBody String update(HttpServletResponse res)throws IOException
 	{
 
@@ -288,7 +288,7 @@ public class ServiceMangerController {
 		return "ServiceManager/serviceManagerIndex";
      
 	}
-	
+	*/
 	
 	
 	@RequestMapping(value="/ServicesInprogressPage")
@@ -654,10 +654,11 @@ public class ServiceMangerController {
 	
 
 	@RequestMapping(value="/getAmountDetails",method=RequestMethod.GET)    
-	public @ResponseBody List<ServicingInvoice> servicingInvoicesDetails(@RequestParam String serviceId,HttpServletResponse response) throws IOException {
+	public @ResponseBody ServicingInvoice servicingInvoicesDetails(@RequestParam String serviceId,HttpServletResponse response) throws IOException {
 		
 		BikeServicing bike = serviceManagerInterface.getBikeServicingById(serviceId);
 
+		
 		return bike.getServicingInvoice();
 
 	}

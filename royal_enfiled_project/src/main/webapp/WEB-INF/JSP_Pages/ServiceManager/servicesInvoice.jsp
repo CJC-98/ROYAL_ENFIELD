@@ -16,12 +16,12 @@
 
 <body>
 <script>
-		function getServiceDetails(serviceId){
+		function getAmountDetails(serviceId){
 			var req = new XMLHttpRequest();		
 			req.open("GET","getAmountDetails?serviceId="+serviceId,true);
 			req.send(); 
 			
-			var table = document.getElementById("serviceDataTable");
+			var table = document.getElementById("amountDataTable");
 			
 			while(table.rows.length>1){
 				table.deleteRow(table.rows.length-1);
@@ -59,15 +59,6 @@
 		
 
 		
-		/* function ServicesInprogressPage(serviceId){
-			var req = new XMLHttpRequest();		
-			req.open("GET","ServicesInprogressPage?serviceId="+serviceId,true);
-			req.send(); 
-			alert("Please refresh the page");
-		}
-		 */
-		
-		
 	</script>
 	<section id="content" class="bg-light lter">
 	        <section class="vbox">
@@ -103,10 +94,11 @@
                                                          <td>${data.servicingInvoice.serviceSGstPercent}</td>
                                                          <td style="color: #FF681B">${data.servicingInvoice.paymentStatus}</td>
                                                          <td>
-                                                         	<a href="" class="btn btn-md btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
-                                                         		Amount Details
-                                                         	</a>
-                                                     </td>
+                                                         	
+                                                         	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded"><span onclick="getAmountDetails(''${data.bikeServicingId}')">Amount Details</span></a>
+
+                                                         </td>     
+                                                     
                                                 </tr>
                                                  </a:forEach>
                                              </tbody>
@@ -119,18 +111,21 @@
 
                                 <!-- fisrt table ends -->
                                 
-                                <!-- modal starts-->
+                               <!-- modal starts-->
  
-						  <div class="modal fade" id="myModal" role="dialog">
+						  <div class="modal fade"  id="myModal" role="dialog">
 						    <div class="modal-dialog modal-md">
 						      <div class="modal-content">
-						        <div class="modal-header">
-						        	<h3 style="text-align: center">Amount Details</h3>  
+						        <div class="modal-header" >
+
+						        	<h3 style="text-align: center" >Amount Details </h3>  
+						        	 
 						        </div>
+						        
 						        <div class="modal-body">
 						          		
                                     <section class="panel panel-default">
-                                        <table class="table table-striped m-b-none" id="serviceDataTable">
+                                        <table class="table table-striped m-b-none" id="amountDataTable">
                                             <thead>
                                                 <tr>
                                                     <th style="text-align: center">Work</th>
@@ -138,16 +133,17 @@
                                                     <th style="text-align: center">Status</th>
                                                 </tr>
                                             </thead>
+                                          
                                             
                                             <tbody>
-                                            
-                                                
-                                               
+
+                    
                                             </tbody>
                                             
                                         </table>
                                     </section>
                                 
+
 						        </div>
 						        <div class="modal-footer">	
 						          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -157,9 +153,12 @@
 					  	</div>
 					  
 					  	<!-- modal ends -->
-	                
-	            </section>
-	        </section>
-	 </section> 
+            
+                      
+        </section>
+   </section> 
+   </section>
+
+
 </body>
 </html>
