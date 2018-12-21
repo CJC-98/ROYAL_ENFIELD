@@ -36,6 +36,8 @@ import com.app.extremity.iservice.ServiceManagerInterface;
 import com.app.extremity.model.AvailableServicing;
 import com.app.extremity.model.BikeCustomization;
 import com.app.extremity.model.BikeServicing;
+import com.app.extremity.model.CustomizationBikeInfo;
+import com.app.extremity.model.CustomizationInvoice;
 import com.app.extremity.model.EmployeeDetails;
 import com.app.extremity.model.Notfication;
 import com.app.extremity.model.ServcingBikeInfo;
@@ -351,7 +353,14 @@ public class ServiceMangerController {
 	
 		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
 	model.addAttribute("shortInboxList", shortInboxList);
-		
+	   
+	   List<BikeCustomization> bikeCustomizationsList=serviceManagerInterface.getAllBikeCustomizationByCustomizationStatus("Waiting");
+	   for(BikeCustomization data:bikeCustomizationsList){
+		  CustomizationInvoice customizationInvoiceList=data.getCustomizationInvoice();
+		   System.out.println(""+customizationInvoiceList.getCustomizationInvoiceId()+" "+customizationInvoiceList.getAmount()+"");  
+		   
+	   }
+	    model.addAttribute("bikeCustomizationsList", bikeCustomizationsList);
 		model.addAttribute("link","customizationInvoice.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
@@ -462,7 +471,7 @@ public class ServiceMangerController {
 		
 	}
 	
-	@RequestMapping(value="/submitInProgressWork") 
+	/*@RequestMapping(value="/submitInProgressWork") 
 	public String submitInProgressWork(@RequestParam(required = false) int workStatusChange[],Model model,HttpServletRequest request) {
 		
 		session = request.getSession();
@@ -483,6 +492,27 @@ public class ServiceMangerController {
 			updateServicePercent();
 						
 			
+			List<BikeServicing>bikeServicingList = serviceManagerInterface.getAllBikeServicingByServcingStatus("in-progress");
+			model.addAttribute("bikeServicingList",bikeServicingList);
+
+			long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
+			model.addAttribute("inboxCount", inboxCount);
+			
+			List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
+	     	model.addAttribute("shortInboxList", shortInboxList);
+	     	
+			model.addAttribute("link","servicesInprogress.jsp");	
+			return "ServiceManager/serviceManagerIndex";
+*/
+	@RequestMapping(value="/submitInProgressWork") 
+	public String submitInProgressWork(@RequestParam(required = false) int workStatusChange[],Model model,HttpServletRequest request) {
+		
+		session = request.getSession();
+		
+		if(workStatusChange != null) {
+			for(int i : workStatusChange) {
+				System.out.println(i);
+			}
 			List<BikeServicing>bikeServicingList = serviceManagerInterface.getAllBikeServicingByServcingStatus("in-progress");
 			model.addAttribute("bikeServicingList",bikeServicingList);
 

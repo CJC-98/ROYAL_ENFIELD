@@ -45,93 +45,22 @@
                                             </thead>
                                             
                                             <tbody>
-                                            
-                                                <tr style="text-align: center">
-                                                    	 <td>1</td>
-                                                         <td>2500</td>
-                                                         <td>4</td>
-                                                         <td>4</td>
-                                                         <td>2700</td>
-                                                         <td style="color: #FF681B">unpaid</td>
-                                                         <td>
-                                                         	<a href="" class="btn btn-md btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
-                                                         		Amount Details
-                                                         	</a>
-                                                     </td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>2</td>
-                                                         <td>5421</td>
-                                                         <td>4</td>
-                                                         <td>4</td>
-                                                         <td>5642</td>
-                                                         <td style="color: #FF681B">unpaid</td>
-                                                         <td>
-                                                         	<a href="" class="btn btn-md btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
-                                                         		Amount Details
-                                                         	</a>
-                                                     </td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>3</td>
-                                                         <td>4784</td>
-                                                         <td>4</td>
-                                                         <td>4</td>
-                                                         <td>7524</td>
-                                                         <td style="color: #81EF19">paid</td>
-                                                         <td>
-                                                         	<a href="" class="btn btn-md btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
-                                                         		Amount Details
-                                                         	</a>
-                                                     </td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>4</td>
-                                                         <td>3544</td>
-                                                         <td>4</td>
-                                                         <td>4</td>
-                                                         <td>4513</td>
-                                                         <td style="color: #FF681B">unpaid</td>
-                                                         <td>
-                                                         	<a href="" class="btn btn-md btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
-                                                         		Amount Details
-                                                         	</a>
-                                                     </td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>5</td>
-                                                         <td>9784</td>
-                                                         <td>4</td>
-                                                         <td>4</td>
-                                                         <td>10325</td>
-                                                         <td style="color: #81EF19">paid</td>
-                                                         <td>
-                                                         	<a href="" class="btn btn-md btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
-                                                         		Amount Details
-                                                         	</a>
-                                                     </td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>6</td>
-                                                         <td>2500</td>
-                                                         <td>4</td>
-                                                         <td>4</td>
-                                                         <td>2700</td>
-                                                         <td style="color: #FF681B">unpaid</td>
-                                                         <td>
-                                                         	<a href="" class="btn btn-md btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
-                                                         		Amount Details
-                                                         	</a>
-                                                     </td>
-                                                </tr>
-    
+                                            <a:forEach var="data" items="${bikeCustomizationsList }">
+                                            <tr style="text-align: center">
+                                            <td>${data.CustomizationInvoice.customizationInvoiceId }</td>
+                                            <td>${data.CustomizationInvoice.amount }</td>
+                                            <td>${data.CustomizationInvoice.customizationCGstPercent }</td>
+                                            <td>${data.CustomizationInvoice.customizationsGstPercent }</td>
+                                            <td>${data.CustomizationInvoice.totalAmount }</td>
+                                            <td style="color: #FF681B">${ data.CustomizationInvoice.paymentStatus}</td>
+                                            <td>
+                                            <a href="" class="btn btn-md-info btn-rounded" data-toggle="modal">
+                                            Amount Details</a>
+                                            </td>
+                                            </tr>
+                                            </a:forEach>
                                                
-                                            </tbody>
+                                                </tbody>
                                             
                                         </table>
                                     </section>
