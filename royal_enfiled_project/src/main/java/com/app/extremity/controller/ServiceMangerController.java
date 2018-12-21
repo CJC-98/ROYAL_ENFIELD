@@ -438,7 +438,7 @@ public class ServiceMangerController {
 		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
     	model.addAttribute("shortInboxList", shortInboxList);
     	
-    	List<BikeServicing> bikeServicingList = serviceManagerInterface.getAllBikeServicingByServcingStatus("waiting");
+    	List<BikeServicing> bikeServicingList = serviceManagerInterface.getAllBikeServicing();
     	for(BikeServicing data: bikeServicingList) {
     	ServicingInvoice servicingInvoicesList=data.getServicingInvoice();
     	System.out.println(""+servicingInvoicesList.getServicingInvoiceId()+","+servicingInvoicesList.getAmount()+"");
