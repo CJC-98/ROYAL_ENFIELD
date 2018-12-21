@@ -134,7 +134,7 @@
                                   <tbody>
                                   <c:forEach items="${soldOldBikeInfoList}" var="soldOldBikeInfo">
                                     <tr role="row" class="odd">
-                                    <td ><img src="${pageContext.request.contextPath}/Resources/images/img1.jpg" width="90"></td>
+                                    <td><img src="${pageContext.request.contextPath}/Resources/images/img1.jpg" width="90"></td>
                                     <td >${soldOldBikeInfo.totalKmRun}</td>
                                     <td>${soldOldBikeInfo. bikeCondition}</td>
                                     <td>${soldOldBikeInfo.bikeMfgYear }</td>
@@ -209,5 +209,6 @@
                     </section>
                 </section>
             </section> 
+            
 </body>
 </html>

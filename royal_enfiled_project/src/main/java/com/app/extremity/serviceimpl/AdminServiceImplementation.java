@@ -300,7 +300,7 @@ public class AdminServiceImplementation implements IAdminService {
 	@Override
 	public List<EmployeeDetails> getEmployeelist() {
 
-		return null;
+		return (List<EmployeeDetails>) employeeDetailsDao.findAll();
 	}
 
 	@Override

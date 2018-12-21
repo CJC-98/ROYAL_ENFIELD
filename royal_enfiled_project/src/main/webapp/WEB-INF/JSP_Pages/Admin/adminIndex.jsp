@@ -111,10 +111,10 @@
         </header>
         <!-- End Header -->
         <section>
-            <section class="hbox stretch">
-                <!-- .aside -->
+             <section class="hbox stretch">
+               
                 <aside class="bg-dark lter aside-md hidden-print hidden-xs" id="nav">
-                    <section class="vbox">
+                    <section class="vbox"> 
 
                         <section class="w-f scrollable">
                             <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0"
@@ -122,12 +122,9 @@
                                 <!-- nav -->
                                 <nav class="nav-primary hidden-xs">
                                     <ul class="nav">
-                                    
-
-                                   
-                                        <li> <a href="#"> <i class="fa fa-dashboard icon"> <b class="bg-warning"></b>
-                                                </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i
-                                                        class="fa fa-angle-up text-active"></i> </span> <span>Add</span>
+                                      <li> <a href="#"> <i class="fa fa-dashboard icon"> <b class="bg-warning"></b>
+                                                </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> 
+                                                <i class="fa fa-angle-up text-active"></i> </span> <span>Add</span>
                                             </a>
                                             <ul class="nav lt">
                                             	
@@ -316,18 +313,25 @@
                                                      </li>
                                                     
                                            <!-- End Service -->
-										
-                                      </li>   
-                                    </ul>
+									 
+                                    
                                      
                                  </li>
+                                 </ul>
                                 </nav> <!-- / nav -->
                             </div>
                         </section>
+                        
                         <footer class="footer lt hidden-xs b-t b-dark">
                             <div id="chat" class="dropup">
                                 <section class="dropdown-menu on aside-md m-l-n">
-
+                                    <section class="panel bg-white">
+                                        <header class="panel-heading b-b b-light">Active chats</header>
+                                        <div class="panel-body animated fadeInRight">
+                                            <p class="text-sm">No active chats.</p>
+                                            <p><a href="#" class="btn btn-sm btn-default">Start a chat</a></p>
+                                        </div>
+                                    </section>
                                 </section>
                             </div>
                             <div id="invite" class="dropup">
@@ -349,7 +353,8 @@
                                 <button type="button" title="Contacts" class="btn btn-icon btn-sm btn-dark" data-toggle="dropdown"
                                     data-target="#invite"><i class="fa fa-facebook"></i></button> </div>
                         </footer>
-                    </section>
+                        
+                    </section> 
                 </aside> <!-- /.aside -->
            
  
@@ -360,9 +365,14 @@
                         <aside class="bg-light lter b-l aside-md hide" id="notes">
                             <div class="wrapper">Notification</div>
                         </aside>
+                        
+                       
                     
-                </section>
-            </section> <!-- Bootstrap -->
+                			</section>
+                     </section>
+                  
+                     </section>
+             <!-- Bootstrap -->
             <!-- App -->
     <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/app.v1.js"></script>
     <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/easypiechart/jquery.easy-pie-chart.js"></script>

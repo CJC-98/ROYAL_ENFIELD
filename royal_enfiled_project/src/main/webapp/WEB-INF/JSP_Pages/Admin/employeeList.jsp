@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -14,9 +15,30 @@
     <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/js/datatables/datatables.css"
 	type="text/css" />
+	
+	<script type="text/javascript">
+	function edit() 
+	{
+		alert("edit");
+		var emp=doccument.getElementById("").value;
+		u
+		document.action="adminIndex.jsp";
+		document.submit();
+		
+	}
+	function remove() 
+	{
+		alert("remove");
+		document.action="employeeList.jsp";
+		document.submit();
+	}
+	
+	</script>
     <!--[if lt IE 9]> <script src="js/ie/html5shiv.js"></script> <script src="js/ie/respond.min.js"></script> <script src="js/ie/excanvas.js"></script> <![endif]-->
 </head>
 <body class="">
+
+	
     <section id="content" class="bg-light lter">
         <section class="vbox">
             
@@ -55,25 +77,26 @@
                                             role="grid" aria-describedby="example1_info">
                                   <thead>
                                   <tr role="row">
-                                      <th class="sorting_asc" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" aria-sort="ascending" 
-                                            aria-label="Rendering engine: activate to sort column descending"
-                                            style="width: 125px;">Employee_id
-                                      </th>
+                                      
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-label="Browser: 
                                             activate to sort column ascending" 
-                                            style="width: 125px;">Name
+                                            style="width: 125px;">ProfilePicture
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-label="Platform(s): 
                                             activate to sort column ascending" 
-                                            style="width: 125px;">City
+                                            style="width: 125px;">Name
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                              rowspan="1" colspan="1" 
                                             aria-label="Engine version: activate to sort column ascending" 
-                                            style="width: 125px;">Contact
+                                            style="width: 125px;">MobileNumber
+                                        </th>
+                                        <th class="sorting" tabindex="0" aria-controls="example1" 
+                                            rowspan="1" colspan="1" 
+                                            aria-label="CSS grade: activate to sort column ascending" 
+                                            style="width: 125px;">DateOfBrith
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" 
@@ -83,27 +106,51 @@
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" 
                                             aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;">Username
+                                            style="width: 125px;">Joining_Date
                                         </th>
+                                        <th class="sorting" tabindex="0" aria-controls="example1" 
+                                            rowspan="1" colspan="1" 
+                                            aria-label="CSS grade: activate to sort column ascending" 
+                                            style="width: 125px;">
+                                        </th>
+                                        
                                     </tr>
                                   </thead>
                                   <tbody>
+                                  <c:forEach items="${employeeList }" var="employee">
                                     <tr role="row" class="odd">
-                                    <td class="sorting">1</td>
-                                    <td>Nikita</td>
-                                    <td>Pune</td>
-                                    <td>9975588575</td>
-                                    <td>njpise18@gmail.com</td>
-                                    <td >nikita123</td>
-                                  
+                                    <td><img  src="${pageContext.request.contextPath}/Resources/images/EmployeeProfilePicture/person1.jpg" width="50"></td>
+                                    <td>${ employee.employeeName}</td>
+                                    <td>${ employee.employeeMobileNumber}</td>
+                                    <td>${ employee.dateOfBirth}</td>
+                                    <td>${ employee.employeeEmail}</td>
+                                 	<td>${ employee.employeeJoiningDate}</td>
+                                    <td> 
+                                    <div id="editdata">
+                                    	<button type="button" 
+                                    	class="btn btn-primary" 
+                                    	style="border-color:gray " 
+                                    	onclick="edit()">Edit </button> &nbsp&nbsp&nbsp&nbsp
+                                    </div>
+                                    <div id="removedata">
+                                    	 <button type="button" 
+                                    	 class="btn btn-info" 
+                                    	 style="border-color:gray " 
+                                    	 onclick="remove()">Remove</button>
+                                    </div>
+                                    </td>
+                                   	</tr>
+                                  </c:forEach>
                                   </tbody>
                                   <tfoot>
-                                  <tr><th rowspan="1" colspan="1">Employee_Id</th>
+                                  <tr><th rowspan="1" colspan="1">Profile_Pic</th>
                                     <th rowspan="1" colspan="1">Name</th>
-                                    <th rowspan="1" colspan="1">City</th>
-                                    <th rowspan="1" colspan="1">Contact</th>
+                                    <th rowspan="1" colspan="1">MobileNumber</th>
+                                    <th rowspan="1" colspan="1">DateOfBirth</th>
                                     <th rowspan="1" colspan="1">Email</th>
-                                    <th rowspan="1" colspan="1">Username</th></tr>
+                                    <th rowspan="1" colspan="1">Joining_Date</th>
+                                    <th></th>
+                                    </tr>
                                   </tfoot>
                                 </table>
                             </div>

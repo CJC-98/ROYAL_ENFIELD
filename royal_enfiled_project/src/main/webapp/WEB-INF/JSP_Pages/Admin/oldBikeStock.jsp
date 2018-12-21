@@ -142,13 +142,9 @@
                                   <tbody>
                                   <c:forEach items="${oldBikeStockList}" var="oldBikeStock">
                                     <tr role="row" class="odd">
-<<<<<<< HEAD
-                                    
-                                    <td width="100px" height="100px">${oldBikeStock.bikeImage}</td>
-=======
-                                    <!-- <td class="sorting"></td> -->
-                                    <td>${oldBikeStock.oldBikeId}</td>
->>>>>>> branch 'AdminTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
+
+                                    <td><img  src="${pageContext.request.contextPath}/Resources/images/img1.jpg"></td>
+
                                     <td>${oldBikeStock.totalKmRun}</td>
                                     <td>${oldBikeStock.bikeCondition}</td>
                                     <td>${oldBikeStock.bikeMfgYear}</td>
