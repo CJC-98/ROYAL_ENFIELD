@@ -17,6 +17,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.app.extremity.idao.LoginIDao;
 import com.app.extremity.iservice.IAdminService;
 import com.app.extremity.iservice.IHomeService;
 import com.app.extremity.iservice.ServiceManagerInterface;
@@ -44,6 +46,7 @@ public class HomeController {
 	
 	@Autowired
 	ServiceManagerInterface serviceManagerInterface;
+	
 	
 	
 
@@ -122,6 +125,12 @@ public class HomeController {
 			model.addAttribute("lg1", lg1);
 			model.addAttribute("link", "accountsDashboard.jsp");
 			return "Accounts/accountsIndex";
+			
+		case 5:
+			//return dealer home page here
+		case 6:
+			//return user home page here
+	
 		default:
 			model.addAttribute("msg", "Wrong Credentials");
 			return "login";

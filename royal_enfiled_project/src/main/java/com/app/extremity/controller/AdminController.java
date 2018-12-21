@@ -160,8 +160,8 @@ public class AdminController {
 	}
 
 	@RequestMapping(value = "/employeeList")
-	public String getEmployeeList(Model model) {
-		List<EmployeeDetails> employeeList = adminService.getEmployeelist();
+	public String getEmployeeListByDesignation(@RequestParam (name="designation")String employeeDesignation,Model model) {
+		List<EmployeeDetails> employeeList = adminService.getEmployeeListByDesignation(employeeDesignation);
 		model.addAttribute("employeeList", employeeList);
 		model.addAttribute("link", "employeeList.jsp");
 		return "Admin/adminIndex";

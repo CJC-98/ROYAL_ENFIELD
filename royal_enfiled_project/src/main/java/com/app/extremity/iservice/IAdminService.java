@@ -41,8 +41,6 @@ public interface IAdminService {
 
 	List<AccessoriesDeadStock> getAccessoriesDeadStock();
 
-	List<EmployeeDetails> getEmployeelist();
-
 	List<BikeOffer> getBikeOffer();
 
 	List<CustomizationInvoice> getCustomizationInvoice();
@@ -59,6 +57,8 @@ public interface IAdminService {
 	List<com.app.extremity.model.BikeCustomization> getbikeCustomization();
 
 	List<SoldBikeStock> getSoldNewBike();
+
+	List<EmployeeDetails> getEmployeeListByDesignation(String employeeDesignation);
 
 
 

@@ -153,7 +153,7 @@ public class AdminServiceImplementation implements IAdminService {
 		employeeDetailsDao.save(employeeDetails);
 		logger.info("employee Saved");
 		logger.info(UPLOADED_FOLDER.toString());
-		logger.info("message");
+		
 	}
 
 	/*
@@ -273,12 +273,7 @@ public class AdminServiceImplementation implements IAdminService {
 		return (List<AccessoriesDeadStock>) accessoriesDeadStockIDao.findAll();
 	}
 
-	@Override
-	public List<EmployeeDetails> getEmployeelist() {
-
-		return null;
-	}
-
+	
 	@Override
 	public List<BikeOffer> getBikeOffer() {
 
@@ -338,6 +333,14 @@ public class AdminServiceImplementation implements IAdminService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public List<EmployeeDetails> getEmployeeListByDesignation(String employeeDesignation) {
+		
+		return (List<EmployeeDetails>) employeeDetailsDao.findAllByEmployeeDesignation(employeeDesignation);
+	}
+
+	
 
 	
 

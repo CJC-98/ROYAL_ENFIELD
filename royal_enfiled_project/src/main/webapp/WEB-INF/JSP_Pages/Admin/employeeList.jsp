@@ -9,7 +9,6 @@
     <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/font.css" type="text/css" />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/app.v1.css" type="text/css" />
     <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/js/datatables/datatables.css"
@@ -51,7 +50,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <table id="example1" class="table table-bordered table-striped dataTable" 
+                                            <table id="table" class="table table-bordered table-striped dataTable" 
                                             role="grid" aria-describedby="example1_info">
                                   <thead>
                                   <tr role="row">
