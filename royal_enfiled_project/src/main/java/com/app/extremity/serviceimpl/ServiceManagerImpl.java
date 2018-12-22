@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.app.extremity.idao.AccessoriesStockDao;
 import com.app.extremity.idao.AvailableServicingIDao;
 import com.app.extremity.idao.BikeCustomizationIDao;
 import com.app.extremity.idao.BikeServicingIDao;
@@ -14,15 +15,12 @@ import com.app.extremity.idao.FreeServicingCountIDao;
 import com.app.extremity.idao.ServicingChartIDao;
 import com.app.extremity.iservice.NotificationInterface;
 import com.app.extremity.iservice.ServiceManagerInterface;
-
+import com.app.extremity.model.AccessoriesStock;
 import com.app.extremity.model.AvailableServicing;
 import com.app.extremity.model.BikeCustomization;
 import com.app.extremity.model.BikeServicing;
 import com.app.extremity.model.CustomizationChart;
 import com.app.extremity.model.FreeServicingCount;
-import com.app.extremity.model.CustomizationInvoice;
-import com.app.extremity.model.Notfication;
-import com.app.extremity.model.ServcingBikeInfo;
 import com.app.extremity.model.ServicingChart;
 
 
@@ -51,6 +49,9 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	
 	@Autowired
 	NotificationInterface notificationInterface;
+	
+	@Autowired
+	AccessoriesStockDao accessoriesStockDao;
 	
 
 	@Override
@@ -163,6 +164,11 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	@Override
 	public FreeServicingCount updateFreeServicingCount(FreeServicingCount freeServicingCount) {
 		return freeServicingCountIDao.save(freeServicingCount);
+	}
+
+	@Override
+	public List<AccessoriesStock> getAllAccessoriesStock() {
+		return (List<AccessoriesStock>) accessoriesStockDao.findAll();
 	}
 
 }

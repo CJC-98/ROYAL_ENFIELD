@@ -4,11 +4,10 @@ import java.util.List;
 
 
 import com.app.extremity.model.BikeCustomization;
-
+import com.app.extremity.model.AccessoriesStock;
 import com.app.extremity.model.AvailableServicing;
 import com.app.extremity.model.BikeServicing;
 import com.app.extremity.model.CustomizationChart;
-import com.app.extremity.model.CustomizationInvoice;
 import com.app.extremity.model.FreeServicingCount;
 import com.app.extremity.model.ServicingChart;
 
@@ -52,6 +51,8 @@ public interface ServiceManagerInterface {
     
     public ServicingChart getServicingChart(int id); 
     public CustomizationChart getCustomizationChart(int id);
+
     
+    public List<AccessoriesStock> getAllAccessoriesStock();
 
 }

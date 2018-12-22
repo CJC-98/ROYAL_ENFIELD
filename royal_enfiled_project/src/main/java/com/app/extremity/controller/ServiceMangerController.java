@@ -248,7 +248,7 @@ public class ServiceMangerController {
 		model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
 		
 		//get all available accessories list
-		//model.addAttribute("accessoriesStockList", serviceManagerInterface.);
+		model.addAttribute("accessoriesStockList", serviceManagerInterface.getAllAccessoriesStock());
 		
 		model.addAttribute("link","availableCustomization.jsp");
 		return "ServiceManager/serviceManagerIndex";
