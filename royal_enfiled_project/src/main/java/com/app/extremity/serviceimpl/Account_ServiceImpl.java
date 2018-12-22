@@ -13,6 +13,7 @@ import com.app.extremity.idao.AccountSoldBikeStockInterface;
 import com.app.extremity.idao.Account_Invoice_DaoInterface;
 import com.app.extremity.iservice.Account_ServiceInterface;
 import com.app.extremity.model.Demo;
+import com.app.extremity.model.NewBikeStock;
 
 @Service
 public class Account_ServiceImpl implements Account_ServiceInterface {
@@ -47,6 +48,18 @@ public class Account_ServiceImpl implements Account_ServiceInterface {
 		long cnt = asdao.countBysoldbikedateBetween(fds, lds);
 		System.out.println("Sold Bike ServiceImpl.. " + cnt);
 		return cnt;
+	}
+
+
+
+	@Override
+	public List<NewBikeStock> getAllNewBikeStock() {
+		List<NewBikeStock> list = (List<NewBikeStock>)adao.findAll();
+		System.out.println("List of new bike.." + list);
+		for(NewBikeStock n : list) {
+			System.out.println("BikeId.." + n.getBikeId() +" "+ "mfgDate" + n.getBikeMfgDate() );
+		}
+		return list;
 	}
 
 

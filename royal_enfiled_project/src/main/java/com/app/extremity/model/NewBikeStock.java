@@ -25,7 +25,10 @@ public class NewBikeStock
 	private String engineStartingType;
 	private String bikePrice;
 	private String bikeMfgDate;
+	
 	private Date arrivalDate;
+	
+
 	public String getBikeId() {
 		return bikeId;
 	}

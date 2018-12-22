@@ -20,28 +20,12 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Date;
+
 import java.util.List;
-import java.util.Properties;
-
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Multipart;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeBodyPart;
-import javax.mail.internet.MimeMessage;
-import javax.mail.internet.MimeMultipart;
-import javax.servlet.http.HttpServletResponse;
-
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -164,11 +148,12 @@ public class AdminServiceImplementation implements IAdminService {
 			Path path = Paths.get(UPLOADED_FOLDER + profilePic.getOriginalFilename());
 			Files.write(path, bytes);
 			employeeDetails.setProfilePictureUrl(profilePic.getOriginalFilename());
+			
 		} catch (IOException e) {
 			logger.error("while saving profile picture", e);
-			e.printStackTrace();
+			
 		}
-		employeeDetails.setEmployeeId(getEmployeeCount());
+		employeeDetails.setEmployeeId(getEmployeeCount1());
 		employeeDetailsDao.save(employeeDetails);
 		logger.info("employee Saved");
 		logger.info(UPLOADED_FOLDER.toString());
@@ -182,7 +167,7 @@ public class AdminServiceImplementation implements IAdminService {
 	 */
 
 	@Override
-	public void sendEmail(EmailMessage emailmessage, MultipartFile file) {
+	public void sendEmail(EmailMessage emailmessage, MultipartFile file, String designation) {
 
 		Properties props = new Properties();
 		props.put("mail.smtp.auth", "true");
@@ -208,22 +193,23 @@ public class AdminServiceImplementation implements IAdminService {
 			msg.setSentDate(new Date());
 			MimeBodyPart messageBodyPart = new MimeBodyPart();
 			messageBodyPart.setContent(emailmessage.getBody(), "text/html");
+			Multipart multipart = new MimeMultipart();
+			multipart.addBodyPart(messageBodyPart);
+
 			if (!file.isEmpty()) {
-				System.out.println("the file is not empty");
 				byte[] bytes = file.getBytes();
 				Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename());
 				Files.write(path, bytes);
-
-				Multipart multipart = new MimeMultipart();
-				multipart.addBodyPart(messageBodyPart);
 				MimeBodyPart attachPart = new MimeBodyPart();
 				attachPart.attachFile(UPLOADED_FOLDER + file.getOriginalFilename());
-				String html = "<a href='http://localhost:8080/employeeRegistration'>Register here</a>";
-				messageBodyPart.setText(html, "UTF-8", "html");
 				multipart.addBodyPart(attachPart);
-				msg.setContent(multipart);
-				// sends the e-mail
+
 			}
+			String html = "<a href='http://localhost:8080/employeeRegistration?designation="+designation+"'>Register here</a>";
+			messageBodyPart.setText(html, "UTF-8", "html");
+
+			msg.setContent(multipart);
+			// sends the e-mail
 
 			Transport.send(msg);
 
@@ -235,7 +221,7 @@ public class AdminServiceImplementation implements IAdminService {
 			e.printStackTrace();
 
 		} catch (IOException e) {
-
+				System.out.println();
 			logger.error("file not found exception", e);
 			e.printStackTrace();
 		}
@@ -248,6 +234,7 @@ public class AdminServiceImplementation implements IAdminService {
 			EmployeeDetails employeeDetails = employeeDetailsDao.findOneByEmployeeDesignation("Admin");
 			adminEmailUsername = employeeDetails.getEmployeeEmail();
 			adminEmailPassword = employeeDetails.getEmployeePassword();
+			
 		} catch (Exception e) {
 			logger.info("exception while getting user creadentials");
 			logger.error("admin Credentials", e);
@@ -275,7 +262,7 @@ public class AdminServiceImplementation implements IAdminService {
 
 	@Override
 	public List<AccessoriesStock> getAccessoriesStock() {
-		
+
 		return (List<AccessoriesStock>) accessoriesStockIDao.findAll();
 	}
 
@@ -305,20 +292,31 @@ public class AdminServiceImplementation implements IAdminService {
 
 	@Override
 	public List<CustomizationInvoice> getCustomizationInvoice() {
-		
+
 		return (List<CustomizationInvoice>) customizationInvoiceIDao.findAll();
 	}
 
 	@Override
 	public List<ServcingBikeInfo> getServcingBikeInfo() {
-		
+
 		return (List<ServcingBikeInfo>) servcingBikeInfoIDao.findAll();
 	}
 
 	@Override
 	public List<TestDriveCustomer> getTestDriveCustomer() {
-	
+
 		return (List<TestDriveCustomer>) testDriveCustomerIDao.findAll();
+	}
+	
+	public String getEmployeeCount1() {
+		// TODO Auto-generated method stub
+	int acount=(int)employeeDetailsDao.count();
+	String employeeId="Emp00";
+	acount++;
+    employeeId=employeeId+Integer.toString(acount);
+	
+		return employeeId;
+	
 	}
 
 	@Override
@@ -345,6 +343,7 @@ public class AdminServiceImplementation implements IAdminService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 
 	@Override
 	public List<EmployeeDetails> getEmployeeDesignation(String employeeDesignation) {

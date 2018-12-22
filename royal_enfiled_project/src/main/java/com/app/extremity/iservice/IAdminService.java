@@ -21,7 +21,7 @@ public interface IAdminService {
 
 	void saveEmployee(EmployeeDetails employeeDetails, MultipartFile profilePic);
 
-	void sendEmail(EmailMessage emailmessage, MultipartFile file);
+	void sendEmail(EmailMessage emailmessage, MultipartFile file, String designation);
 
 	EmployeeDetails getEmployeeDetailsByName(String employeeName);
 

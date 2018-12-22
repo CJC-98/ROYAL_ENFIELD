@@ -11,19 +11,20 @@ public class EmployeeDetails
 	private String employeeName;
 	private String profilePictureUrl;
 	private String employeeMobileNumber;
-	private String dateOfBirth;
+	private String employeeDateOfBirth;
 	private String employeeEmail;
 	private String employeeSalary;
 	private String employeeDesignation;
 	private String employeePassword;
 	private String employeeJoiningDate;
 	private String employeeLastWorkingDate;
-	private String areaName;
-	private String cityName;
-	private String stateName;
-	private String countryName;
-	private String pincode;
-	
+	private String employeeAreaName;
+	private String employeeCityName;
+	private String employeeStateName;
+	private String employeeCountryName;
+	private String employeePincode;
+	private String employeeGender;
+
 	
 	public String getEmployeeId() {
 		return employeeId;
@@ -49,11 +50,12 @@ public class EmployeeDetails
 	public void setEmployeeMobileNumber(String employeeMobileNumber) {
 		this.employeeMobileNumber = employeeMobileNumber;
 	}
-	public String getDateOfBirth() {
-		return dateOfBirth;
+	
+	public String getEmployeeDateOfBirth() {
+		return employeeDateOfBirth;
 	}
-	public void setDateOfBirth(String dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
+	public void setEmployeeDateOfBirth(String employeeDateOfBirth) {
+		this.employeeDateOfBirth = employeeDateOfBirth;
 	}
 	public String getEmployeeEmail() {
 		return employeeEmail;
@@ -91,37 +93,43 @@ public class EmployeeDetails
 	public void setEmployeeLastWorkingDate(String employeeLastWorkingDate) {
 		this.employeeLastWorkingDate = employeeLastWorkingDate;
 	}
-	public String getAreaName() {
-		return areaName;
+	public String getEmployeeAreaName() {
+		return employeeAreaName;
 	}
-	public void setAreaName(String areaName) {
-		this.areaName = areaName;
+	public void setEmployeeAreaName(String employeeAreaName) {
+		this.employeeAreaName = employeeAreaName;
 	}
-	public String getCityName() {
-		return cityName;
+	public String getEmployeeCityName() {
+		return employeeCityName;
 	}
-	public void setCityName(String cityName) {
-		this.cityName = cityName;
+	public void setEmployeeCityName(String employeeCityName) {
+		this.employeeCityName = employeeCityName;
 	}
-	public String getStateName() {
-		return stateName;
+	public String getEmployeeStateName() {
+		return employeeStateName;
 	}
-	public void setStateName(String stateName) {
-		this.stateName = stateName;
+	public void setEmployeeStateName(String employeeStateName) {
+		this.employeeStateName = employeeStateName;
 	}
-	public String getCountryName() {
-		return countryName;
+	public String getEmployeeCountryName() {
+		return employeeCountryName;
 	}
-	public void setCountryName(String countryName) {
-		this.countryName = countryName;
+	public void setEmployeeCountryName(String employeeCountryName) {
+		this.employeeCountryName = employeeCountryName;
 	}
-	public String getPincode() {
-		return pincode;
+	public String getEmployeePincode() {
+		return employeePincode;
 	}
-	public void setPincode(String pincode) {
-		this.pincode = pincode;
-
+	public void setEmployeePincode(String employeePincode) {
+		this.employeePincode = employeePincode;
 	}
+	public String getEmployeeGender() {
+		return employeeGender;
+	}
+	public void setEmployeeGender(String employeeGender) {
+		this.employeeGender = employeeGender;
+	}
+	
 	
 	
 }

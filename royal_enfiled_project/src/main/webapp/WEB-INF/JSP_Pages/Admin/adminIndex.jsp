@@ -132,15 +132,15 @@
                                             <ul class="nav lt">
                                             	
                                                 
-                                                    <li> <a href="composeMail" >
+                                                    <li> <a href="composeMail?designation=1" >
                                                        <span>SalesManager</span> </a>
                                                     </li>
                                                     
-                                                    <li> <a href="composeMail">
+                                                    <li> <a href="composeMail?designation=2">
                                                           <span>ServiceManager</span> </a>
                                                      </li>
                                                      
-                                                    <li> <a href="composeMail">
+                                                    <li> <a href="composeMail?designation=3">
                                                          <span>Accountant</span> </a>
                                                      </li>
                                                     

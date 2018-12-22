@@ -28,12 +28,12 @@ import com.app.extremity.iservice.IAdminService;
 import com.app.extremity.iservice.NotificationInterface;
 import com.app.extremity.model.Demo;
 import com.app.extremity.model.EmployeeDetails;
+import com.app.extremity.model.NewBikeStock;
 import com.app.extremity.model.Notfication;
 
 
 @Controller
 public class AccountController {
-
 	
 	@Autowired
 	NotificationInterface notificationInterface;
@@ -50,7 +50,6 @@ public class AccountController {
 	{ 
 		System.out.println("In Invoice controller");
 		LocalDate date = LocalDate.now();
-		System.out.println("date.." + date);
 		model.addAttribute("link", "Invoice.jsp");
 		model.addAttribute("date",date);
 		
@@ -63,16 +62,11 @@ public class AccountController {
 		}		
 		model.addAttribute("list", list);
 		
+		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
+		model.addAttribute("inboxCount", inboxCount);
+		
 		return "Accounts/accountsIndex";
 	} 
-	
-	
-	@RequestMapping(value="/Notification")
-	public String Notification(Model model) {
-		System.out.println("In Notification Controll..");
-		model.addAttribute("link", "myNotification.jsp");
-		return "Accounts/accountsIndex";
-	}
 	
 
 	@RequestMapping(value="/Dashboard")
@@ -101,7 +95,6 @@ public class AccountController {
 			fds = new SimpleDateFormat("yyyy-MM-dd").parse("2018-01-01");
 			lds = new SimpleDateFormat("yyyy-MM-dd").parse("2018-12-31");
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -115,18 +108,18 @@ public class AccountController {
 		return "Accounts/accountsIndex";
 	}
 	
-
+	
 	@RequestMapping(value="/MyNotificationsPageAccount")
 	public String MyNotificationsPage(Model model, HttpServletRequest request){
 		System.out.println("in myNotificationAccount controller..");
 		
 		session = request.getSession();
 		
-		//TODO: get login user name from session 
+		// get login user name from session 
 		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication(session.getAttribute("currentUserName").toString());
 		model.addAttribute("outboxList",outboxList);
 			
-		//TODO: get login user name from session 
+		//get login user name from session 
 		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication(session.getAttribute("currentUserName").toString());
 		model.addAttribute("inboxList",inboxList);   
 
@@ -135,18 +128,12 @@ public class AccountController {
 		model.addAttribute("inboxCount", inboxCount);
 		
 		//TODO: get login user details from session
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("akash", false);
-		for(Notfication n : shortInboxList) {
-			System.out.println("notify id.."+n.getNotficationId());
-			System.out.println("notify msg.." + n.getMessage() + n.getSenderName());
-		}
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("akash", false);		
 		model.addAttribute("shortInboxList", shortInboxList);	
 		
 		model.addAttribute("link","myNotifications.jsp");	
 		return "Accounts/accountsIndex";
 	}
-	
-
 	
 	
 	@RequestMapping(value="/markItAccount")    
@@ -160,7 +147,7 @@ public class AccountController {
 		List<Notfication> outboxList= notificationInterface.getMyOutboxNotfication(session.getAttribute("currentUserName").toString());
 		model.addAttribute("outboxList",outboxList);  
 		
-		//TODO: get login user name from session
+		// get login user name from session
 		List<Notfication> inboxList= notificationInterface.getMyInboxNotfication(session.getAttribute("currentUserName").toString());
 		model.addAttribute("inboxList",inboxList);   
 		
@@ -176,7 +163,7 @@ public class AccountController {
 		return "Accounts/accountsIndex";
 
 	}
-	
+		
 	
 	@RequestMapping(value="/searchEmployeeAccount")    
 	public @ResponseBody EmployeeDetails searchEmployee(@RequestParam String empName) {
@@ -187,6 +174,7 @@ public class AccountController {
 		return null;
 
 	}
+	
 	
 	@RequestMapping(value="/sendNotificationAccount")    
 	public @ResponseBody String sendNotification(@RequestParam String reciverName, 
@@ -202,7 +190,7 @@ public class AccountController {
 		Notfication notify = new Notfication();
 		
 		
-		//TODO: get login user details from session
+		// get login user details from session
 		notify.setSenderName(session.getAttribute("currentUserName").toString()); 
 		notify.setSenderImg("person4.jpg");
 		notify.setSenderPost("account manager");
@@ -227,6 +215,25 @@ public class AccountController {
 		
 		return null;
 		
+	}
+	
+	
+	
+	
+	@RequestMapping(value="newBikeList")
+	public String NewBikeList(Model model, HttpServletRequest request) {
+		session = request.getSession();
+		model.addAttribute("link", "NewBikeStock.jsp");
+		
+		List<NewBikeStock> list = Service.getAllNewBikeStock();
+		for(NewBikeStock n : list) {
+			System.out.println("New Bike List.."+ n.getArrivalDate() + n.getBikeId() + "  "+ n.getBikePrice());
+		}
+		model.addAttribute("list", list);
+		
+		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
+		model.addAttribute("inboxCount", inboxCount);
+		return "Accounts/accountsIndex";
 	}
 	
 	//Akash code Ends here..

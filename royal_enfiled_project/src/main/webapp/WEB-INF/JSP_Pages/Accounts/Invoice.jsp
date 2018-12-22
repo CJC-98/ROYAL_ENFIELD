@@ -26,18 +26,19 @@
                 <section id="content">
                     <section class="vbox bg-white">
                         <header class="header b-b b-light hidden-print"> 
-                        	<button href="#" class="btn btn-sm btn-info pull-right" onClick="window.print();">Print</button>
-                            <p>Invoice</p>
+                        	<button href="#" class="btn btn-s-md btn-danger pull-right" onClick="window.print();">Print</button>                         	
+                            <p>Invoice</p> 
+                            <button href="#" class="btn btn-s-md btn-primary pull-right">Pay</button>
                         </header>
                         
-                        <section class="scrollable wrapper">
-                        	<img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/logo1.png"
-                                            class="img-circle">
-                                          
+                        <section class="scrollable wrapper">                        	
+                            <span class="pull-left thumb-sm"> 
+                                  <img src="${pageContext.request.contextPath}/Resources/Royal Enfield images/RL_logo3.jpg" class="img-circle"> 
+                            </span>               
                             <div class="row">
-                                <div class="col-xs-6">
-                                    <h4>Complete Java Clases..</h4>
-                                    <p><a href="http://www.completejavaclasses.com/">www.completejavaclasses.com</a></p>
+                                <div class="col-xs-5">
+                                    <h4>Royal Enfield</h4>
+                                    <p><a href="#">www.RoyalEnfield.com</a></p>
                                     <p>1st Floor <br> Vikas Mitra Mandal Chowk Road, <br> Near Karve Nagar Stop,Pune-52 </p>
                                     <p> Contact no:- +91-8888022204<br> </p>
                                 </div>
@@ -45,23 +46,16 @@
                                     <p class="h4">Date</p>
                                     <h5>
                                     	${date}
-                                    </h5>
-
-      								
+                                    </h5> 								
                                 </div>
                             </div>
                             
                             <div class="well m-t">
                                 <div class="row">
                                     <div class="col-xs-6"> <strong>TO:</strong>
-                                        <h4>Nagesh Nagshakti</h4>
+                                        <h4>Akash</h4>
                                         <p> 3rd Floor<br> lane no 6, Karvenagar 411052<br> Maharashtra, INDIA<br>
-                                            Phone: 957-958-6717<br> Email: nageshwarbadkhal22@gmail.com<br> </p>
-                                    </div>
-                                    <div class="col-xs-6"> <strong>SHIP TO:</strong>
-                                        <h4>Nagesh Nagshakti</h4>
-                                        <p> 3rd Floor<br> lane no 6, Karvenagar 411052<br> Maharashtra, INDIA<br>
-                                            Phone: 957-958-6717<br> Email: nageshwarbadkhal22@gmail.com<br> </p>
+                                            Phone: 957-958-6717<br> Email: akash@gmail.com<br> </p>
                                     </div>
                                 </div>
                             </div>

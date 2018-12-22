@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/css/font.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/css/app.v1.css" type="text/css" />
+    
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -107,6 +111,13 @@
                                                     		</div>
                                                          </td>
                                                       </tr>
+                                                      
+                                                      <tr>
+	                                                    <div class="progress" style="height:30px">
+														    <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" 
+														    	style="width:25%;height:30px">25%</div>
+														 </div> 
+                                                      </tr>
         
                                                       
                                                     </tbody>
@@ -193,6 +204,13 @@
                                                     			</label> 
                                                     		</div>
                                                          </td>
+                                                      </tr>
+                                                      
+                                                      <tr>
+	                                                    <div class="progress" style="height:30px">
+														    <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" 
+														    	style="width:25%;height:30px">25%</div>
+														 </div> 
                                                       </tr>
         
                                                       

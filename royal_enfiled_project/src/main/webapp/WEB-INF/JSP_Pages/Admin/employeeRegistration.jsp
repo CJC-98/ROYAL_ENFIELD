@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,6 +95,7 @@ h2 {
 			passwordMessage.style.display = "initial";
 		}
 	}
+
 	function verifyEmail() {
 		var xmlHttp = createXmlHttpRequestObject();
 		
@@ -125,6 +127,8 @@ h2 {
 	
 		
 }
+
+
 </script>
 
 </head>
@@ -135,7 +139,7 @@ h2 {
 				<div class="panel-heading">
 					<h2>Registration Form</h2>
 				</div>
-				<form action="admin/saveEmployee" data-validate="parsley"
+				<form action="saveEmployee" data-validate="parsley"
 					enctype="multipart/form-data" method="post">
 					<div class="panel-body">
 						<!-- name -->
@@ -233,7 +237,18 @@ h2 {
 									<label for="employeeDateOfBirth">Date Of Birth:</label> <input
 										type="date" name="employeeDateOfBirth" required>
 								</div>
-
+								<c:if test="${designation==1}">
+								<input type="hidden" name="employeeDesignation"
+									value="SalesManager">
+									</c:if>
+									<c:if test="${designation==2}">
+								<input type="hidden" name="employeeDesignation"
+									value="ServiceManager">
+									</c:if>
+									<c:if test="${designation==3}">
+								<input type="hidden" name="employeeDesignation"
+									value="AccountManager">
+									</c:if>
 								<!-- designation -->
 								<!-- <div class="form-group">
 									<label for="designation">Designation</label> <input type="text"
@@ -297,7 +312,7 @@ h2 {
 										<span class="input-group-addon"><i
 											class="glyphicon glyphicon-lock"></i></span> <input
 											id="confirmPassword" type="password" class="form-control"
-											name="employeePassword" placeholder="Password"
+											 placeholder="Password"
 											onchange="checkPassword()">
 									</div>
 									<small id="passwordMessage" class="alert-danger"></small>
