@@ -59,6 +59,8 @@ public class AdminController {
 
 	@RequestMapping(value = "/toAdminHomePage")
 	public String toadminDashboard(Model model) {
+		model.addAttribute("bikeCount", adminService.getBikeSaleForUserCount());
+		model.addAttribute("registerUser", adminService.getRegistrationCount());
 		model.addAttribute("link", "adminDashboard.jsp");
 		return "Admin/adminIndex";
 
@@ -192,15 +194,16 @@ public class AdminController {
 		return "Admin/adminIndex";
 	}
 
-	/*@RequestMapping(value = "/employeeList")
-	public String getEmployeeList(Model model) {
-		List<EmployeeDetails> employeeList = adminService.getEmployeelist();
+	@RequestMapping(value = "/employeeList")
+	public String getEmployeeListByDesignation(@RequestParam (name="designation")String employeeDesignation,Model model) {
+		List<EmployeeDetails> employeeList = adminService.getEmployeeListByDesignation(employeeDesignation);
+
 		model.addAttribute("employeeList", employeeList);
 		model.addAttribute("link", "employeeList.jsp");
 		return "Admin/adminIndex";
 
 	}
-*/
+
 	@RequestMapping(value = "/bikeOffer")
 	public String getbikeOffer(Model model) {
 		
@@ -269,8 +272,8 @@ public class AdminController {
 	 System.out.println(employeeDetailsList);
 		return "Admin/adminIndex";
 	 
- }
-*/
+ }*/
+
      @RequestMapping(value = "/avaliableServicing")
 	public String getAvaliableServicingInfo(Model model)
      {
@@ -305,7 +308,7 @@ public class AdminController {
 		return "Admin/adminIndex";
 
 	}
-	@RequestMapping(value="/soldOldBike")
+   @RequestMapping(value="/soldOldBike")
    public String getSoldOldBikeStock(Model model)
    {
 	   List<SoldOldBikeStock> soldOldBikeStockList=adminService.getSoldOldBikeStock();
@@ -314,7 +317,10 @@ public class AdminController {
 		return "Admin/adminIndex";
 
    }
-
+	
+	
+			
+	
 }
 
 	

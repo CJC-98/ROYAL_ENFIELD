@@ -35,12 +35,14 @@ import com.app.extremity.idao.AccessoriesStockIDao;
 import com.app.extremity.idao.AvailableServicingIDao;
 import com.app.extremity.idao.BikeCustomizationIDao;
 import com.app.extremity.idao.BikeOfferIDao;
+import com.app.extremity.idao.BikeSaleForUserIDao;
 import com.app.extremity.idao.BikeServicingIDao;
 import com.app.extremity.idao.CustomizationInvoiceIDao;
 import com.app.extremity.idao.DeadStockIDao;
 import com.app.extremity.idao.EmployeeDetailsIDao;
 import com.app.extremity.idao.NewBikeStockIDao;
 import com.app.extremity.idao.OldBikeStockIDao;
+import com.app.extremity.idao.RegistrationIDao;
 import com.app.extremity.idao.ServcingBikeInfoIDao;
 import com.app.extremity.idao.SoldAccessoriesIDao;
 import com.app.extremity.idao.SoldBikeStockIDao;
@@ -97,6 +99,7 @@ public class AdminServiceImplementation implements IAdminService {
 	TestDriveCustomerIDao testDriveCustomerIDao;
 	@Autowired
 	SoldNewBikeIDao soldNewBikeIDao;
+	@Autowired
 	AvailableServicingIDao availableServicingIDao;
 	@Autowired
 	BikeCustomizationIDao bikeCustomizationIDao;
@@ -106,8 +109,10 @@ public class AdminServiceImplementation implements IAdminService {
 	SoldBikeStockIDao soldBikeStockIDao;
     @Autowired
     SoldAccessoriesIDao soldAccessoriesIDao;
-
-
+    @Autowired
+    RegistrationIDao registrationIDao;
+    @Autowired
+    BikeSaleForUserIDao bikeSaleForUserIDao;
 	static Logger logger = LogManager.getLogger(AdminServiceImplementation.class);
 
 	/* this is path where profile picture will be stored */
@@ -159,7 +164,7 @@ public class AdminServiceImplementation implements IAdminService {
 		employeeDetailsDao.save(employeeDetails);
 		logger.info("employee Saved");
 		logger.info(UPLOADED_FOLDER.toString());
-		logger.info("message");
+		
 	}
 
 	/*
@@ -279,12 +284,7 @@ public class AdminServiceImplementation implements IAdminService {
 		return (List<AccessoriesDeadStock>) accessoriesDeadStockIDao.findAll();
 	}
 
-	@Override
-	public List<EmployeeDetails> getEmployeelist() {
-
-		return null;
-	}
-
+	
 	@Override
 	public List<BikeOffer> getBikeOffer() {
 
@@ -310,7 +310,7 @@ public class AdminServiceImplementation implements IAdminService {
 	}
 	
 	public String getEmployeeCount() {
-		// TODO Auto-generated method stub
+	
 	int acount=(int)employeeDetailsDao.count();
 	String employeeId="Emp00";
 	acount++;
@@ -341,11 +341,19 @@ public class AdminServiceImplementation implements IAdminService {
 
 	@Override
 	public List<SoldBikeStock> getSoldNewBike() {
-		// TODO Auto-generated method stub
-		return (List<SoldBikeStock>) soldBikeStockIDao.findAll();
+
+	
+		return (List<SoldBikeStock>) soldNewBikeIDao.findAll();
+	}
+
+	@Override
+	public List<EmployeeDetails> getEmployeeListByDesignation(String employeeDesignation) {
+		
+		return (List<EmployeeDetails>) employeeDetailsDao.findAllByEmployeeDesignation(employeeDesignation);
 	}
 
 	
+
 
 	@Override
 	public List<SoldBikeStock> getNewBikeSaleByDate(Date date) {
@@ -364,7 +372,7 @@ public class AdminServiceImplementation implements IAdminService {
 
 	@Override
 	public List<SoldOldBikeStock> getSoldOldBikeStock() {
-		// TODO Auto-generated method stub
+		
 		return (List<SoldOldBikeStock>) soldOldBikeStockDao.findAll();
 	}
 
@@ -374,6 +382,30 @@ public class AdminServiceImplementation implements IAdminService {
 		return (List<SoldAccessories>) soldAccessoriesIDao.findAll();
 	}
 
+	@Override
+	public List<EmployeeDetails> getEmployeeDetails() {
+		
+		return (List<EmployeeDetails>) employeeDetailsDao.findAll();
+	}
+
+	public long getRegistrationCount() {
+		
+		long regisrtationCount=registrationIDao.count();
+		
+		
+			return regisrtationCount;
+			
+	}
+
+	@Override
+	public long getBikeSaleForUserCount() {
+		
+		long BikeSaleForUserCount=bikeSaleForUserIDao.count();
+		
+		return BikeSaleForUserCount ;
+	}
+	
+
 	/*@Override
 	public EmployeeDetails findOneByEmployeeId(String employeeId) {
 		
@@ -381,4 +413,5 @@ public class AdminServiceImplementation implements IAdminService {
 	}
 */
 }
+
 

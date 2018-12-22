@@ -1,5 +1,9 @@
 package com.app.extremity.idao;
 
+
+
+import java.util.List;
+
 import org.springframework.data.repository.CrudRepository;
 
 import com.app.extremity.model.EmployeeDetails;
@@ -8,10 +12,15 @@ public interface EmployeeDetailsIDao extends CrudRepository<EmployeeDetails	, St
 
 	EmployeeDetails findOneByEmployeeEmailAndEmployeePassword(String email, String password);
 
-	EmployeeDetails findOneByEmployeeDesignation(String employeeDesignation);
 	
 	EmployeeDetails findOneByEmployeeName(String employeeName);
 	
 	EmployeeDetails findOneByEmployeeId(String employeeId);
+
+
+	EmployeeDetails findOneByEmployeeDesignation(String string);
+
+
+	List<EmployeeDetails> findAllByEmployeeDesignation(String employeeDesignation);
 
 }

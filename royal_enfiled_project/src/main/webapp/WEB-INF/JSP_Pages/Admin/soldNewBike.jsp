@@ -151,22 +151,22 @@
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                              rowspan="1" colspan="1" 
                                             aria-label="Engine version: activate to sort column ascending" 
-                                            style="width: 125px;">BikeWheel
+                                            style="width: 125px;"onclick="sortTable(3)">BikeWheel
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" 
                                             aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;" onclick="sortTable(3)">BikeOnRoadPrice
+                                            style="width: 125px;" onclick="sortTable(4)">BikeOnRoadPrice
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" 
                                             aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;" onclick="sortTable(4)">EngineStartingType
+                                            style="width: 125px;" onclick="sortTable(5)">EngineStartingType
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" 
                                             aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;" onclick="sortTable(5)">Invoice
+                                            style="width: 125px;" onclick="sortTable(6)">Invoice
                                         </th>
                                         
                                     </tr>
@@ -176,7 +176,7 @@
                                     <tr role="row" class="odd">
                                      
                                     <td>${soldNewBike.bikeModel.modelName}</td>
-                                     <td>${soldNewBike.bikeModel.colors}</td> 
+                                    <td>${soldNewBike.bikeModel.colors}</td> 
                                     <td>${soldNewBike.chasisNumber}</td>
                                     <td>${soldNewBike.bikewheel}</td>
                                     <td>${soldNewBike.bikeOnRoadPrice}</td>

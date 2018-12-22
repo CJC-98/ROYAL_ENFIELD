@@ -155,15 +155,15 @@
                                                         class="fa fa-angle-up text-active"></i> </span> <span>User</span>
                                             </a>
                                             <ul class="nav lt">
-                                             		<li> <a href="employeeList">
+                                             		<li> <a href="employeeList?designation=SalesManager">
                                                        <span>SalesManager</span> </a>
                                                     </li>
                                                     
-                                                    <li> <a href="employeeList">
+                                                    <li> <a href="employeeList?designation=ServiceManager">
                                                           <span>ServiceManager</span> </a>
                                                      </li>
                                                      
-                                                    <li> <a href="employeeList" >
+                                                    <li> <a href="employeeList?designation=AccountManager" >
                                                          <span>Accountant</span> </a>
                                                      </li>
                                                      
@@ -387,12 +387,15 @@
     <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/flot/jquery.flot.resize.js"></script>
     <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/flot/jquery.flot.grow.js"></script>
     <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/flot/demo.js"></script>
-    <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/bootstrap_calendar.js"></script>
+    <%-- <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/bootstrap_calendar.js"></script>
     <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/demo.js"></script>
-    <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/sortable/jquery.sortable.js"></script>
+    <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/sortable/jquery.sortable.js"></script> --%>
     <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/app.plugin.js"></script>
-	 <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/datatables/demo.js"></script>
-            
+	<%-- <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/datatables/demo.js"></script> --%>
+    <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/flot/jquery.flot.orderBars.js"></script>
+    <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/flot/jquery.flot.pie.min.js"></script>
+ <%--  	<script src="${pageContext.request.contextPath}/Resources/notebook UI/js/datatables/jquery.dataTables.min.js"></script> --%>
+   
 
             
 </body>

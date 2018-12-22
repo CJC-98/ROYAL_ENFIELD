@@ -45,8 +45,6 @@ public interface IAdminService {
 
 	List<AccessoriesDeadStock> getAccessoriesDeadStock();
 
-	List<EmployeeDetails> getEmployeelist();
-
 	List<BikeOffer> getBikeOffer();
 
 	List<CustomizationInvoice> getCustomizationInvoice();
@@ -65,6 +63,8 @@ public interface IAdminService {
 
 	List<SoldBikeStock> getSoldNewBike();
 
+	List<EmployeeDetails> getEmployeeListByDesignation(String employeeDesignation);
+
 
 
 	
@@ -80,8 +80,11 @@ public interface IAdminService {
 
 	List<SoldAccessories> getSoldAccessories();
 
+	List<EmployeeDetails> getEmployeeDetails();
 
+	public long getRegistrationCount();
 
+	public long getBikeSaleForUserCount();
 
 
 

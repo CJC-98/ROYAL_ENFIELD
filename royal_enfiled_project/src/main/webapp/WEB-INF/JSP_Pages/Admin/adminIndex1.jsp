@@ -292,6 +292,12 @@
     <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/demo.js"></script>
     <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/sortable/jquery.sortable.js"></script>
     <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/app.plugin.js"></script>
+    <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/flot/jquery.flot.orderBars.js"></script>
+    <script src="${pageContext.request.contextPath}js/charts/flot/jquery.flot.pie.min.js"></script>
+   
+   
+
+</body>
 </body>
 <!-- Mirrored from flatfull.com/themes/note/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Oct 2018 11:16:42 GMT -->
 
