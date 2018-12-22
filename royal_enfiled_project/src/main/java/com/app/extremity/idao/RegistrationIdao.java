@@ -14,4 +14,13 @@ public interface RegistrationIdao extends CrudRepository<Registration, String>
 		//@author=akshata
 		@Query("select COUNT(ra) from Registration ra where ra.role='2'")
 		public int getDealerCount();
+		
+		public Registration findAllByEmail(String email);
+		public Registration findAllByEmailAndPassword(String email, String password);
+
+		
 }
+
+
+
+

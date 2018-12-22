@@ -2,6 +2,8 @@ package com.app.extremity.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.app.extremity.iservice.IDealerService;
 import com.app.extremity.model.Country;
-import com.app.extremity.model.Login;
+
 
 
 
@@ -55,35 +57,36 @@ public class HomeController {
 	
 	
 	@RequestMapping(value="/SignIn")
-	public String signIn(Model model,@RequestParam String email,@RequestParam String password)    
+	public String signIn(Model model,@RequestParam String email,@RequestParam String password,HttpServletRequest request)    
 	{ 
 		
 		System.out.println("1111111111");
 		System.out.println(email);
 		System.out.println(password);
 		System.out.println(email+" "+password);
-		Login l= service.getLogin(email,password);
-			System.out.println("login l"+l);
-		if(email.equals(l.getEmail()) && password.equals(l.getPassword()))
+		int i= service.getLogin(email,password,request);
+			System.out.println("login l"+i);
+			switch(i)
 		{
-			model.addAttribute("msg", "welcome..");
+			case 1:
+				model.addAttribute("msg", "welcome..");
 				System.out.println("dashboard hits...........");
-		model.addAttribute("link","dealerDashboard.jsp");
+				model.addAttribute("link","dealerDashboard.jsp");
 		
-		System.out.println("In SignIn controller");
-		return "Dealer/dealerIndex";
-		}
-		else
-		{
-			model.addAttribute("link","login.jsp");
+				System.out.println("In SignIn controller");
+				return "Dealer/dealerIndex";
+		
 			
-			System.out.println("In SignIn controller");
-			return "Dealer/dealerIndex";
-		}//by default go to client index.jsp  
+			default:
+		
+		
+				model.addAttribute("msg", "Wrong Credentials");
+				return "login";
+		//by default go to client index.jsp  
 
-	}  
+	}
 	
-	
+	}
 	
 	@RequestMapping(value="/gotToColorOptionPage")
 	public String gotToColorOptionPage()    

@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <!-- author shital beloar 
-this form is designed to check prize of items and then save to mycart 
--->
 <%@ taglib prefix="a" uri="http://java.sun.com/jsp/jstl/core" %> 
   
  
@@ -29,15 +26,15 @@ function getPrice(){
 
 
 
-function saveCart(modelId){
-	//alert(modelId)
+function saveCart(partId){
+	alert(partId)
 	
 	
 	var qty=document.getElementById("qty").value;
-	//alert(qty)
+	alert(qty)
 	var total=document.getElementById("totalprice").value;
-	//alert(total)
-	document.savecart.action="savecart?modelId="+modelId+"&qty="+qty+"&total="+total;
+	alert(total)
+	document.savecart.action="savecart3?id="+partId+"&qty="+qty+"&total="+total;
 	document.savecart.submit();
 	req.send();
 	
@@ -63,7 +60,7 @@ function saveCart(modelId){
 								<th></th>
 								<th>Product Name</th>
 								<th>Image</th>	
-								<th>On Road Page Price</th>
+								<th>Accessories Price</th>
 								<th>Quantity</th>
 									<th>Total Price</th>
 								</tr>
@@ -71,12 +68,12 @@ function saveCart(modelId){
 	
 	<td align="center">
 					<td>
-					<input type="hidden" id="modelId" value="${data.bikemodel.modelId}">
-					<a:out value="${data.bikemodel.modelName}"></a:out></td>
-					<td align="center"><img src="${pageContext.request.contextPath}/Resources/images/bikeImages/${data.bikemodel.image}" width="100px"></td>
-					<td align="center"><input readonly="readonly" type="text" id="sp" value="${data.bikeOnRoadPrice}"></td>		
+					<input type="hidden" id="partId" value="${data.partId}">
+					<a:out value="${data.partName}"></a:out></td>
+					<td align="center"><img src="${pageContext.request.contextPath}/Resources/images/bikeImages/${data.image}" width="100px"></td>
+					<td align="center"><input readonly="readonly" type="text" id="sp" value="${data.partPrice}"></td>		
 			<td> <input type='text'  id='qty' name="qty"  onkeyup="getPrice()" />
-			 ${msg}
+			 
 			 </td>
 			 <td><input type="text" id="totalprice" ></td>
 				</tr>
@@ -85,7 +82,7 @@ function saveCart(modelId){
 							</table>
 <tr>
 					<td> </td>
-					<input type="button"class="btn btn-s-md btn-primary btn-rounded"value="save To Cart" onclick="saveCart('${data.bikemodel.modelId}')">
+					<input type="button"class="btn btn-s-md btn-primary btn-rounded"value="save To Cart" onclick="saveCart('${data.partId}')">
 					<%-- <td> <a href="addtocart?id=${data.bikemodel.modelId}">Buy Now</a></td>
  --%>					<a href="DealerDashboardPage"class="btn btn-s-md btn-success btn-rounded">Continue Shopping</a>
 

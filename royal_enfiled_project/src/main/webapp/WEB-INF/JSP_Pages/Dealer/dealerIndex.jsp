@@ -72,7 +72,7 @@
                         <li> <a href="#"> <span class="badge bg-danger pull-right">3</span> Notifications </a> </li>
                         <li> <a href="docs.html">Help</a> </li>
                         <li class="divider"></li>
-                        <li> <a href="modal.lockme.html" data-toggle="ajaxModal">Logout</a> </li>
+                        <li> <a href="logout" data-toggle="ajaxModal">Logout</a> </li>
                     </ul>
                 </li>
             </ul>
@@ -135,7 +135,7 @@
                                             </a> 
                                         </li>
                                         
-                                      <!--   <li> 
+                                        <li> 
                                             <a href="Print"> 
                                                 <i class="fa fa-print"> 
                                                     <b class="bg-success dker"></b>
@@ -143,7 +143,7 @@
                                                 <span>Print</span> 
                                             </a> 
                                        </li>
-                                       --> 
+                                       
                                        
                                     </ul>
                                 </nav><!-- / nav -->

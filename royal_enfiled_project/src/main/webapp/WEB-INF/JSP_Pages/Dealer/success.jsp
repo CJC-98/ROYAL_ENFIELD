@@ -1,32 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="a"%>
-<!DOCTYPE html>
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="a" uri="http://java.sun.com/jsp/jstl/core" %> 
+  
+ 
+<!DOCTYPE>
 <html>
 <head>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/font.css" type="text/css" />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/app.v1.css" type="text/css" />
-    
 </head>
-<title>Old Bike</title>
-
-<body>
-<section id="content">
+<body>			
+		<section id="content">
                     <section class="vbox">
                         <section class="scrollable padder">
-                        <h1>Old Bike</h1>
+                        <h1>Old Bikes</h1>
 <div class="navbar">
 	  
 		<ul class="thumbnails">
-			<a:forEach items="${list}" var="bike">
-			<li class="span4">
+			<a:forEach items="${data}" var="old">
+			<li class="span3">
 			  <div class="bg-dark">
 				
-				
-				<a href="viewList?name=${bike.modelName}"><img src="${pageContext.request.contextPath}/Resources/images/bikeImages/${bike.image}" width="126px" height="226px" alt=""></a>
+				<h4><a class="zoomTool" href="quickview1?oldBikeStockId=${old.oldBikeStockId}" title="View Bike"><span class="icon-search"></span> QUICK VIEW</a></h4>
+				<a href="quickview1?oldBikeStockId=${old.oldBikeStockId}"><img src="${pageContext.request.contextPath}/Resources/images/bikeImages/${old.bikeImage}" width="276px" height="376px" alt=""></a>
 				<div class="caption cntr">
-					<h3><p><a href="viewList?name=${bike.modelName}"><a:out value="${bike.modelName}"></a:out></a></p></h3>
+					<p><h3><strong><a:out value="${old.oldBikeModelName}"></a:out></strong></h3></p>
 					
 					
 					<div class="actionList">			
@@ -59,39 +55,10 @@ Clients
 </section>
 </section>
 </section>
+		
 
 
+</body>
 
-</body> 
+
 </html>
-<%-- 
-
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<!-- author sonika 
-this form is designed to display old bikes 
--->
-<body>
-
-<form name="myform" method="post">
-<table>
- <tr><th>Modelname</th></tr>
- <c:forEach items="${ list}" var="data">
- <tr>
- <td>${data.modelName}</td>
- <td>
- <a href="viewList?name=${data.modelName}">${data.modelName}</a>
- </td>
- </tr>
- </c:forEach>
- </table>
- </form>
- </body>
- </html> --%>

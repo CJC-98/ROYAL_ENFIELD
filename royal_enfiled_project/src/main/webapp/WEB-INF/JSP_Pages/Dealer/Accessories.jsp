@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="a"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,14 +10,11 @@
 	content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1" />
-<link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/css/font.css" type="text/css" />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/css/app.v1.css" type="text/css" />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/css/bootstrap.min.css" type="text/css" />
-      <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/css/bootstrap-responsive.css" type="text/css">
-      <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/css/bootstrap.min.css" type="text/css" />
-<link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-responsive.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/font.css" type="text/css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/app.v1.css" type="text/css" />
 </head>
+
 <body>
 <section id="content">
                     <section class="vbox">
@@ -25,196 +23,26 @@
 <div class="navbar">
 	  
 		<ul class="thumbnails">
+			<a:forEach items="${list}" var="accessories">
 			<li class="span3">
-			  <div class="thumbnail">
-				<a href="product_details.html" class="overlay"></a>
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.html"><img src="${pageContext.request.contextPath}/Resources/images/interceptor.jpg" width="276px" height="376px" alt=""></a>
+			  <div class="thubnail">
 				<div class="caption cntr">
-					<p>Bike name</p>
-					<p><strong> $30.00</strong></p>
-					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
-					<div class="actionList">
-						
-					</div> 
+				<h4><a class="zoomTool" href="#"title="View Bike"><span class="icon-search"></span></a></h4>
+				<img src="${pageContext.request.contextPath}/Resources/images/bikeImages/${accessories.image}" width="276px" height="376px" alt="">
+				
+					<p><h4><strong>Accessories Name:-</strong><a:out value="${accessories.partName}"></a:out></h4></p>
+					<p><h4><strong>Accessories Price:-</strong><a:out value="${accessories.partPrice}"></a:out></h4></p>
+					<h4><a href="addcart3?id=${accessories.partId}" title="add to cart" class="btn btn-s-md btn-primary btn-rounded">Add to cart</a>
+					
+					<div class="actionList">			
+					</div>
 					<br class="clr">
 				</div>
-			   </div>
-			</li>
-			<li class="span3">
-			  <div class="thumbnail">
-				<a href="product_details.html" class="overlay"></a>
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.html"><img src="${pageContext.request.contextPath}/Resources/images/interceptor.jpg" width="276px" height="376px" alt=""></a>
-				<div class="caption cntr">
-					<p>Bike name</p>
-					<p><strong> $22.00</strong></p>
-					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
-					<div class="actionList">
-						
-					</div> 
-					<br class="clr">
-				</div>
+				
 			  </div>
-			</li>
-			<li class="span3">
-			  <div class="thumbnail">
-				<a href="product_details.html" class="overlay"></a>
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.html"><img src="${pageContext.request.contextPath}/Resources/images/interceptor.jpg" width="276px" height="376px" alt=""></a>
-				<div class="caption cntr">
-					<p>Bike name</p>
-					<p><strong> $22.00</strong></p>
-					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
-					<div class="actionList">
-						
-					</div> 
-					<br class="clr">
-				</div>
-			  </div>
-			</li>
-			<li class="span3">
-			  <div class="thumbnail">
-				<a href="product_details.html" class="overlay"></a>
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.html"><img src="${pageContext.request.contextPath}/Resources/images/interceptor.jpg" width="276px" height="376px" alt=""></a>
-				<div class="caption cntr">
-					<p>Bike name</p>
-					<p><strong> $22.00</strong></p>
-					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
-					<div class="actionList">
-						
-					</div> 
-					<br class="clr">
-				</div>
-			  </div>
-			</li>
-			<li class="span3">
-			  <div class="thumbnail">
-				<a href="product_details.html" class="overlay"></a>
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.html"><img src="${pageContext.request.contextPath}/Resources/images/interceptor.jpg" width="276px" height="376px" alt=""></a>
-				<div class="caption cntr">
-					<p>Bike name</p>
-					<p><strong> $22.00</strong></p>
-					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
-					<div class="actionList">
-						
-					</div> 
-					<br class="clr">
-				</div>
-			  </div>
-			</li>
-			<li class="span3">
-			  <div class="thumbnail">
-				<a href="product_details.html" class="overlay"></a>
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.html"><img src="${pageContext.request.contextPath}/Resources/images/interceptor.jpg" width="276px" height="376px" alt=""></a>
-				<div class="caption cntr">
-					<p>Bike name</p>
-					<p><strong> $22.00</strong></p>
-					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
-					<div class="actionList">
-						
-					</div> 
-					<br class="clr">
-				</div>
-			  </div>
-			</li><li class="span3">
-			  <div class="thumbnail">
-				<a href="product_details.html" class="overlay"></a>
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.html"><img src="${pageContext.request.contextPath}/Resources/images/interceptor.jpg" width="276px" height="376px" alt=""></a>
-				<div class="caption cntr">
-					<p>Bike name</p>
-					<p><strong> $22.00</strong></p>
-					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
-					<div class="actionList">
-						
-					</div> 
-					<br class="clr">
-				</div>
-			  </div>
-			</li>
-			<li class="span3">
-			  <div class="thumbnail">
-				<a href="product_details.html" class="overlay"></a>
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.html"><img src="${pageContext.request.contextPath}/Resources/images/interceptor.jpg" width="276px" height="376px" alt=""></a>
-				<div class="caption cntr">
-					<p>Bike name</p>
-					<p><strong> $22.00</strong></p>
-					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
-					<div class="actionList">
-						
-					</div> 
-					<br class="clr">
-				</div>
-			  </div>
-			</li>
-			<li class="span3">
-			  <div class="thumbnail">
-				<a href="product_details.html" class="overlay"></a>
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.html"><img src="${pageContext.request.contextPath}/Resources/images/interceptor.jpg" width="276px" height="376px" alt=""></a>
-				<div class="caption cntr">
-					<p>Bike name</p>
-					<p><strong> $22.00</strong></p>
-					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
-					<div class="actionList">
-						
-					</div> 
-					<br class="clr">
-				</div>
-			  </div>
-			</li>
-			<li class="span3">
-			  <div class="thumbnail">
-				<a href="product_details.html" class="overlay"></a>
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.html"><img src="${pageContext.request.contextPath}/Resources/images/interceptor.jpg" width="276px" height="376px" alt=""></a>
-				<div class="caption cntr">
-					<p>Bike name</p>
-					<p><strong> $22.00</strong></p>
-					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
-					<div class="actionList">
-						
-					</div> 
-					<br class="clr">
-				</div>
-			  </div>
-			</li>
-			<li class="span3">
-			  <div class="thumbnail">
-				<a href="product_details.html" class="overlay"></a>
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.html"><img src="${pageContext.request.contextPath}/Resources/images/interceptor.jpg" width="276px" height="376px" alt=""></a>
-				<div class="caption cntr">
-					<p>Bike name</p>
-					<p><strong> $22.00</strong></p>
-					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
-					<div class="actionList">
-						
-					</div> 
-					<br class="clr">
-				</div>
-			  </div>
-			</li>
-			<li class="span3">
-			  <div class="thumbnail">
-				<a href="product_details.html" class="overlay"></a>
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.html"><img src="${pageContext.request.contextPath}/Resources/images/interceptor.jpg" width="276px" height="376px" alt=""></a>
-				<div class="caption cntr">
-					<p>Bike name</p>
-					<p><strong> $22.00</strong></p>
-					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
-					<div class="actionList">
-						
-					</div> 
-					<br class="clr">
-				</div>
-			  </div>
+			  
+			</li></a:forEach>
+</ul>
 
 <!-- 
 Clients 
