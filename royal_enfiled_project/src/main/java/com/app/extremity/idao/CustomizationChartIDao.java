@@ -9,5 +9,8 @@ import com.app.extremity.model.CustomizationChart;
 @Repository
 public interface CustomizationChartIDao extends CrudRepository<CustomizationChart, Integer>{
 
+
+
+	public CustomizationChart findOneByCustomizationChartId(int id);
 	
 }

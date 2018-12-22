@@ -29,7 +29,7 @@
                     <section class="dropdown-menu aside-xl">
                         <section class="panel bg-white">
                             <header class="panel-heading b-light bg-light"> 
-                            	<strong>You have <span class="">${inboxCount}</span>&nbsp;notifications</strong> 
+                            	<strong>You have <span class="">${inboxCount}</span>&nbsp;unread notifications</strong> 
                             </header>
                            <div class=" list-group-alt animated fadeInRight"> 
                            
@@ -44,23 +44,16 @@
                                 </a> 
                             </a:forEach>
                          </div>
+                        <%--  <footer class="panel-footer text-sm"> 
+                         	<a href="MyNotificationsPage" class="pull-right"></a>
+                            <a href="MyNotificationsPage" data-toggle="class:show animated fadeInRight">
+                            	See all the notifications
+                            </a> 
+                         </footer> --%>
                       </section>
                   </section>
                 </li>
-                <li class="dropdown hidden-xs"> <a href="#" class="dropdown-toggle dker" data-toggle="dropdown"><i
-                            class="fa fa-fw fa-search"></i></a>
-                    <section class="dropdown-menu aside-xl animated fadeInUp">
-                        <section class="panel bg-white">
-                            <form role="search">
-                                <div class="form-group wrapper m-b-none">
-                                    <div class="input-group"> <input type="text" class="form-control" placeholder="Search">
-                                        <span class="input-group-btn"> <button type="submit" class="btn btn-info btn-icon"><i
-                                                    class="fa fa-search"></i></button> </span> </div>
-                                </div>
-                            </form>
-                        </section>
-                    </section>
-                </li>
+
                 <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 	<span class="thumb-sm avatar pull-left">
                             <img src="${pageContext.request.contextPath}/Resources/images/EmployeeProfilePicture/${currentUserImg}"> 
@@ -117,7 +110,7 @@
                                                 <li> 
                                                 	<a href="ApprovedServicesPage"> 
                                                 		<i class="fa fa-angle-right"></i> 
-                                                		<span>Approved Services</span> 
+                                                		<span>Pending Services</span> 
                                                 	</a> 
                                                 </li> 
                                             </ul>
@@ -167,7 +160,7 @@
                                                 <li> 
                                                 	<a href="ApprovedCustomizationPage"> 
                                                 		<i class="fa fa-angle-right"></i> 
-                                                		<span>Approved Customization</span> 
+                                                		<span>Pending Customization</span> 
                                                 	</a> 
                                                 </li> 
                                             </ul>

@@ -15,11 +15,10 @@ public class Test {
 
 
 	static Logger logger = LogManager.getLogger(Test.class);
-
+ 
 	public static void main(String[] args) {
 		SpringApplication.run(Test.class);
-		logger.warn("application started............");
-		System.out.println("application started...........!!");
-
+		logger.warn("application started............!!!");
+		System.out.println("application started...........!!!!!");
 	}
-}
+} 

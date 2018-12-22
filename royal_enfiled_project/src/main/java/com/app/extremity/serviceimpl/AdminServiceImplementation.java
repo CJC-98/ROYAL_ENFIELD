@@ -153,11 +153,11 @@ public class AdminServiceImplementation implements IAdminService {
 			logger.error("while saving profile picture", e);
 			
 		}
-		employeeDetails.setEmployeeId(getEmployeeCount1());
+		employeeDetails.setEmployeeId(getEmployeeCount());
 		employeeDetailsDao.save(employeeDetails);
 		logger.info("employee Saved");
 		logger.info(UPLOADED_FOLDER.toString());
-		logger.info("message");
+		
 	}
 
 	/*
@@ -278,12 +278,7 @@ public class AdminServiceImplementation implements IAdminService {
 		return (List<AccessoriesDeadStock>) accessoriesDeadStockIDao.findAll();
 	}
 
-	@Override
-	public List<EmployeeDetails> getEmployeelist() {
-
-		return null;
-	}
-
+	
 	@Override
 	public List<BikeOffer> getBikeOffer() {
 
@@ -307,17 +302,7 @@ public class AdminServiceImplementation implements IAdminService {
 
 		return (List<TestDriveCustomer>) testDriveCustomerIDao.findAll();
 	}
-	
-	public String getEmployeeCount1() {
-		// TODO Auto-generated method stub
-	int acount=(int)employeeDetailsDao.count();
-	String employeeId="Emp00";
-	acount++;
-    employeeId=employeeId+Integer.toString(acount);
-	
-		return employeeId;
-	
-	}
+
 
 	@Override
 
@@ -340,8 +325,14 @@ public class AdminServiceImplementation implements IAdminService {
 
 	@Override
 	public List<SoldBikeStock> getSoldNewBike() {
-		// TODO Auto-generated method stub
+	
 		return null;
+	}
+
+	@Override
+	public List<EmployeeDetails> getEmployeeListByDesignation(String employeeDesignation) {
+		
+		return (List<EmployeeDetails>) employeeDetailsDao.findAllByEmployeeDesignation(employeeDesignation);
 	}
 
 
@@ -393,5 +384,17 @@ public class AdminServiceImplementation implements IAdminService {
 		return null;
 	}
 
-}
 
+	public String getEmployeeCount1() {
+		int acount=(int)employeeDetailsDao.count();
+		String employeeId="Emp00";
+		acount++;
+	    employeeId=employeeId+Integer.toString(acount);
+		
+			return employeeId;
+		
+	}
+
+	
+
+}

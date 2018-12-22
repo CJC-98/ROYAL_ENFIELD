@@ -1,3 +1,4 @@
+
 package com.app.extremity.iservice;
 
 import java.util.List;
@@ -35,8 +36,6 @@ public interface IAdminService {
 
 	List<AccessoriesDeadStock> getAccessoriesDeadStock();
 
-	List<EmployeeDetails> getEmployeelist();
-
 	List<BikeOffer> getBikeOffer();
 
 	List<CustomizationInvoice> getCustomizationInvoice();
@@ -54,7 +53,12 @@ public interface IAdminService {
 
 	List<SoldBikeStock> getSoldNewBike();
 
+
 	List<SoldBikeStock> getSoldBikeStock();
+	List<EmployeeDetails> getEmployeeListByDesignation(String employeeDesignation);
+
+
+
 	
 	List<EmployeeDetails> getEmployeeDesignation(String employeeDesignation);
 	

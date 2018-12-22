@@ -5,6 +5,9 @@ import java.text.ParseException;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import javax.servlet.http.HttpSession;
+
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -13,8 +16,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.app.extremity.idao.LoginIDao;
 import com.app.extremity.iservice.IAdminService;
 import com.app.extremity.iservice.IHomeService;
+import com.app.extremity.iservice.NotificationInterface;
 import com.app.extremity.iservice.ServiceManagerInterface;
 import com.app.extremity.serviceimpl.Account_ServiceImpl;
 
@@ -41,9 +47,12 @@ public class HomeController {
 	@Autowired
 	ServiceManagerInterface serviceManagerInterface;
 	
-	
+	@Autowired
+	NotificationInterface notificationInterface;
 
-	    
+	HttpSession session;   
+	
+	
 	// All site actions are go through this method
 	    //This is our landing page
 	@RequestMapping(value="/")
@@ -72,7 +81,7 @@ public class HomeController {
 
 		logger.info("In SignIn controller log");
 		int i=homeService.checkLoginCredentials(email,password,request);
-	
+		session = request.getSession();
 		
 		switch (i) {
 		case 1:
@@ -82,17 +91,20 @@ public class HomeController {
 			model.addAttribute("link", "salesManagerDashboard.jsp");
 			return "SalesManager/salesManagerIndex";
 		case 3:
-			long sscount=serviceManagerInterface.getAllServiceCountByServiceStatus("waiting");
-			model.addAttribute("approvedServiceCount",sscount);
-
-		    long tscount=serviceManagerInterface.getAllServiceCount();
-			model.addAttribute("totalServiceCount", tscount);
-
-			long ipcount=serviceManagerInterface.getAllServiceCountByServiceStatus("in-progress");
-			model.addAttribute("inProgerssServices", ipcount);
-		
-			long cscount=serviceManagerInterface.getAllServiceCountByServiceStatus("done");
-			model.addAttribute("completedservices", cscount);
+			//get service count
+			model.addAttribute("approvedServiceCount", serviceManagerInterface.getAllServiceCountByServiceStatus("waiting"));
+			model.addAttribute("inProgerssServices", serviceManagerInterface.getAllServiceCountByServiceStatus("in-progress"));
+			model.addAttribute("completedservices", serviceManagerInterface.getAllServiceCountByServiceStatus("done"));
+			model.addAttribute("totalServiceCount", serviceManagerInterface.getAllServiceCount());
+			
+			//get customization count
+			model.addAttribute("approvedCustomizationCount", serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("waiting"));
+			model.addAttribute("inProgerssCustomization", serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("in-progress"));
+		    model.addAttribute("completedCustomization", serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("done"));
+			//get short notification list
+			model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
+			model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
+			
 			model.addAttribute("link", "serviceManagerDashboard.jsp");
 			return "ServiceManager/serviceManagerIndex";
 		case 4:
@@ -118,6 +130,12 @@ public class HomeController {
 			model.addAttribute("lg1", lg1);
 			model.addAttribute("link", "accountsDashboard.jsp");
 			return "Accounts/accountsIndex";
+			
+		case 5:
+			//return dealer home page here
+		case 6:
+			//return user home page here
+	
 		default:
 			model.addAttribute("msg", "Wrong Credentials");
 			return "login";
