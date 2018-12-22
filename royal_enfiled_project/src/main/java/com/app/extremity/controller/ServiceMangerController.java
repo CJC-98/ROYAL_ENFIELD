@@ -2,7 +2,6 @@ package com.app.extremity.controller;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
@@ -23,7 +22,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.app.extremity.iservice.IAdminService;
 import com.app.extremity.iservice.NotificationInterface;
 import com.app.extremity.iservice.ServiceManagerInterface;
-
 import com.app.extremity.model.AvailableServicing;
 import com.app.extremity.model.BikeCustomization;
 import com.app.extremity.model.BikeServicing;
@@ -32,6 +30,7 @@ import com.app.extremity.model.EmployeeDetails;
 import com.app.extremity.model.FreeServicingCount;
 import com.app.extremity.model.Notfication;
 import com.app.extremity.model.ServicingChart;
+
 
 
 
@@ -125,6 +124,9 @@ public class ServiceMangerController {
 		model.addAttribute("link","approvedServices.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
+	
+
+	
 	
 	@RequestMapping(value="/ServicesInprogressPage")
 	public String ServicesInprogressPage(@RequestParam(required = false) String serviceId, Model model,HttpServletRequest request){
@@ -246,7 +248,7 @@ public class ServiceMangerController {
 		model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
 		
 		//get all available accessories list
-		//model.addAttribute("accessoriesStockList", serviceManagerInterface.);
+		model.addAttribute("accessoriesStockList", serviceManagerInterface.getAllAccessoriesStock());
 		
 		model.addAttribute("link","availableCustomization.jsp");
 		return "ServiceManager/serviceManagerIndex";
@@ -263,7 +265,7 @@ public class ServiceMangerController {
     	
 		//get servicing invoice list  	
     	model.addAttribute("bikeServicingList", serviceManagerInterface.getAllBikeServicing());
-    	
+
 		model.addAttribute("link","servicesInvoice.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}

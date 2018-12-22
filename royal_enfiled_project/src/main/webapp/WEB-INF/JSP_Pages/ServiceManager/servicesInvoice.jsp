@@ -13,8 +13,9 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/css/app.v1.css" type="text/css" />
 </head>
-
+ 
 <body>
+
 	
 	<script>
 		function getServiceDetails(serviceId){
@@ -91,6 +92,7 @@
                                             
                                             <tbody>
                                              <a:forEach var="data" items="${bikeServicingList}">
+
 		                                         <tr style="text-align: center">
 	                                                    	 <td>${data.servicingInvoice.servicingInvoiceId}</td>
 	                                                         <td>${data.servicingInvoice.amount}</td>
@@ -108,8 +110,11 @@
 	                                                </tr>
                                               </a:forEach>
                                             </tbody>
+
                                           
-                                           
+
+                                             </tbody>
+                       
                                         </table>
                                     </section>
                                 </div>
@@ -117,18 +122,23 @@
 
                                 <!-- fisrt table ends -->
                                 
-                                <!-- modal starts-->
+                               <!-- modal starts-->
  
-						  <div class="modal fade" id="myModal" role="dialog">
+						  <div class="modal fade"  id="myModal" role="dialog">
 						    <div class="modal-dialog modal-md">
 						      <div class="modal-content">
-						        <div class="modal-header">
-						        	<h3 style="text-align: center">Amount Details</h3>  
+						        <div class="modal-header" >
+
+						        	<h3 style="text-align: center" >Amount Details </h3>  
+						        	 
 						        </div>
+						        
 						        <div class="modal-body">
 						          		
                                     <section class="panel panel-default">
+
                                         <table class="table table-striped m-b-none" id="serviceTable">
+
                                             <thead>
                                                 <tr>
                                                     <th style="text-align: center">Work</th>
@@ -136,13 +146,16 @@
                                                     <th style="text-align: center">Status</th>
                                                 </tr>
                                             </thead>
+                                          
                                             
                                             <tbody>
+
                                             </tbody>
                                             
                                         </table>
                                     </section>
                                 
+
 						        </div>
 						        <div class="modal-footer">	
 						          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -152,9 +165,12 @@
 					  	</div>
 					  
 					  	<!-- modal ends -->
-	                
-	            </section>
-	        </section>
-	 </section> 
+            
+                      
+        </section>
+   </section> 
+   </section>
+
+
 </body>
 </html>
