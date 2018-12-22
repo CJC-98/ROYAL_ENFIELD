@@ -20,13 +20,16 @@ public class CustomizationBikeInfo {
 	public void setCustomizationBikeInfoId(int customizationBikeInfoId) {
 		this.customizationBikeInfoId = customizationBikeInfoId;
 	}
+	private String modelName;
 	private String chasisNumber;
 	private String plateNumber;
-	
-	
-	
-	
-	
+
+	public String getModelName() {
+		return modelName;
+	}
+	public void setModelName(String modelName) {
+		this.modelName = modelName;
+	}
 	public String getChasisNumber() {
 		return chasisNumber;
 	}
@@ -39,6 +42,9 @@ public class CustomizationBikeInfo {
 	public void setPlateNumber(String plateNumber) {
 		this.plateNumber = plateNumber;
 	}
+	
+	
+	
 	
 	
 	

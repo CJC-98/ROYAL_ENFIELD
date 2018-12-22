@@ -1,8 +1,9 @@
  <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="a" uri="http://java.sun.com/jsp/jstl/core"%>  
 <!DOCTYPE html>
 <html>
-<head>  
+<head>
 <meta charset="utf-8" />
     <title>Notebook | Web Application</title>
     <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
@@ -14,207 +15,49 @@
 </head>
 
 <body>
+
+
 	<section id="content" class="bg-light lter">
         <section class="vbox">
             <section class="scrollable padder">                                               
                                 
-                <div class="m-b-md">
-                    <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Available Customization</h3>
+                <div class="m-b-md" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+                    <h3 class="m-b-none inline" style="font-size: 30pxl; font-weight: bold;">Available Customization</h3>
                 </div>
                 
-                <div>
+                <div class="hbox" style="display: flex; flex-wrap: wrap; justify-content: center;">
                 
-                	<!-- first table starts -->
-                	<div class="col-sm-12">
-                                    <section class="panel panel-default">
-                                        <header class="panel-heading bg-success dk" style="font-size: 25px;">Bullet 350cc</header>
-                                        <table class="table table-striped m-b-none">
+                	<!-- table starts -->
+                	<div class="col-sm-8">
+                                    <section class="panel panel-default b-a" style="border-color: #C8C5C3">
+                                        <!-- <header class="panel-heading bg-success dk" style="font-size: 25px;">Bullet 350cc</header> -->
+                                        <table class="table table-striped m-b-none bg-light lt">
                                             <thead>
                                                 <tr>
-                                                    <th style="text-align: center">Accessories</th>
-                                                    <th style="text-align: center">Cost</th>
-                                                    <th style="text-align: center">Quantity</th>
-                                                    <th style="text-align: center">Notify Sales Manager</th>
+                                                    <th style="text-align: center">Part Name</th>
+                                                    <th style="text-align: center">Cost</th>                      
                                                 </tr>
                                             </thead>
                                             
                                             <tbody>
-                                            
-                                                <tr style="text-align: center">
-                                                    <td>Seat</td>
-                                                         <td>2500</td>
-                                                         <td>10</td>
-                                                         <td>
+                                            	
+                                            	<a:forEach var="data" items="${accessoriesStockList}">
+                                            		<tr style="text-align: center">
+                                                    	 <td>${data.partName}</td>
+                                                         <td>${data.partPrice}</td>                
+                                                	</tr>
+                                            	</a:forEach>
 
-                                                         	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
-
-                                                     </td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    <td>Seat</td>
-                                                         <td>2500</td>
-                                                         <td>10</td>
-                                                         <td>
-
-                                                         	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
-
-                                                     </td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    <td>Seat</td>
-                                                         <td>2500</td>
-                                                         <td>10</td>
-                                                         <td>
-
-                                                         	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
-
-                                                     </td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    <td>Seat</td>
-                                                         <td>2500</td>
-                                                         <td>10</td>
-                                                         <td>
-
-                                                         	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
-
-                                                     </td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    <td>Seat</td>
-                                                         <td>2500</td>
-                                                         <td>10</td>
-                                                         <td>
-
-                                                         	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
-
-                                                     </td>
-                                                </tr>
-                                                
-                                                
-                                               
+          
                                             </tbody>
                                             
                                         </table>
                                     </section>
                                 </div>
-                                <!-- fisrt table ends -->
+                                <!-- table ends -->
                                 
-                                <!-- 2nd table starts -->
-                                	<div class="col-sm-12">
-                                    <section class="panel panel-default">
-                                        <header class="panel-heading bg-success dk" style="font-size: 25px;">Bullet 350cc</header>
-                                        <table class="table table-striped m-b-none">
-                                            <thead>
-                                                <tr>
-                                                    <th style="text-align: center">Accessories</th>
-                                                    <th style="text-align: center">Cost</th>
-                                                    <th style="text-align: center">Quantity</th>
-                                                    <th style="text-align: center">Notify Sales Manager</th>
-                                                </tr>
-                                            </thead>
-                                            
-                                            <tbody>
-                                            
-                                                <tr style="text-align: center">
-                                                    <td>Seat</td>
-                                                         <td>2500</td>
-                                                         <td>10</td>
-                                                         <td>
-
-                                                         	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
-
-                                                     </td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    <td>Seat</td>
-                                                         <td>2500</td>
-                                                         <td>10</td>
-                                                         <td>
-
-                                                         	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
-
-                                                     </td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    <td>Seat</td>
-                                                         <td>2500</td>
-                                                         <td>10</td>
-                                                         <td>
-
-                                                         	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
-
-                                                     </td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    <td>Seat</td>
-                                                         <td>2500</td>
-                                                         <td>10</td>
-                                                         <td>
-
-                                                         	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
-
-                                                     </td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    <td>Seat</td>
-                                                         <td>2500</td>
-                                                         <td>10</td>
-                                                         <td>
-
-                                                         	<a href="" class="btn btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#myModal">Send Notification</a>
-
-                                                     </td>
-                                                </tr>
-                                                
-                                                
-                                               
-                                            </tbody>
-                                            
-                                        </table>
-                                    </section>
-                                </div>
                                 
-                                <!-- 2nd table ends -->
                 
-                	
-                    
-                    
-                    <!-- modal starts-->
- 
-						  <div class="modal fade" id="myModal" role="dialog">
-						    <div class="modal-dialog modal-md">
-						      <div class="modal-content">
-						        <div class="modal-header">
-						        	<h3 style="text-align: center">Send Notification</h3>
-						        	<div class="input-group"> 
-						        		<input type="text" class="form-control rounded" placeholder="Search Sales Manager"> 
-						        		<span class="input-group-btn">
-					                          <button class="btn btn-success" type="button">write notificaltion</button>
-					                    </span> 
-					                </div>  
-						        </div>
-						        <div class="modal-body">
-						          <h5><u>Sales Manager Name Here</u></h5>
-						          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Please buy bullet 350 cc seats"></textarea>
-						        </div>
-						        <div class="modal-footer">
-						          <button type="button" class="btn btn-primary" data-dismiss="modal">Send Notification</button>	
-						          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-						        </div>
-						      </div>
-						    </div>
-					  	</div>
-					  
-					  	<!-- modal ends -->
                
                </div>
             
@@ -224,36 +67,5 @@
    </section>
 
  
-
-	  <div class="modal fade" id="myModal" role="dialog">
-	    <div class="modal-dialog modal-md">
-	      <div class="modal-content">
-	        <div class="modal-header">
-	        	<h3 style="text-align: center">Notification Window</h3>
-	        	<div class="input-group"> 
-	        		<input type="text" class="form-control rounded" placeholder="Search Sales Manager"> 
-	        		<span class="input-group-btn">
-                          <button class="btn btn-success" type="button">write notificaltion</button>
-                    </span> 
-                </div>  
-	        </div>
-	        <div class="modal-body">
-	          <h5><u>//Sales Manager Name Here</u></h5>
-	          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="seats are getting out of stock"></textarea>
-	        </div>
-	        <div class="modal-footer">
-	          <button type="button" class="btn btn-primary" data-dismiss="modal">Send Notification</button>	
-	          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-	        </div>
-	      </div>
-
-  	</div>
-
-      
-  	<!-- modal ends -->
-
-
-
-
 </body>
 </html>
