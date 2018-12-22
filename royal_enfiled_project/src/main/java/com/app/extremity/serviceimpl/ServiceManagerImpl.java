@@ -110,6 +110,7 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	public List<AvailableServicing> getAllAvailableServicing() {
 		return (List<AvailableServicing>)availableServicingIDao.findAll();
 	}
+	
 
 	@Override
 	public List<BikeServicing> getAllBikeServicing() {
@@ -155,6 +156,7 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	public ServicingChart getServicingChart(int id) {
 		return servicingChartIDao.findById(id);
 	}
+  
 
 	@Override
 	public CustomizationChart getCustomizationChart(int id) {
@@ -172,5 +174,4 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	}
 
 }
-
 

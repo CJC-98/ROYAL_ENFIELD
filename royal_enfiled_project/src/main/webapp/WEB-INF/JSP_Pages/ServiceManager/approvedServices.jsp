@@ -13,6 +13,31 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/css/app.v1.css" type="text/css" />
 
+<<<<<<< HEAD
+<script type="text/javascript">
+function detail()
+{
+	alert("detail")
+	var s=document.getElementbyId("#myModal").value;
+	var req=new XMLHttpRequest();
+	var url="serviceDetails? a="+s;
+    alert(s);
+    alert(req);
+    var req=new XMLHttpRequest();
+	alert(req);
+	req.open("GET", url, true);
+	req.send();
+	
+	
+	}
+
+
+
+</script>
+
+
+=======
+>>>>>>> branch 'serviceManagerTeamBranch' of local repository
 </head>
 
 <body>

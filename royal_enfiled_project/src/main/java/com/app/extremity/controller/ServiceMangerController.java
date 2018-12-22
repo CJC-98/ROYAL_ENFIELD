@@ -2,7 +2,6 @@ package com.app.extremity.controller;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-
 import java.util.List;
 
 import javax.servlet.http.HttpServlet;
@@ -24,7 +23,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.app.extremity.iservice.IAdminService;
 import com.app.extremity.iservice.NotificationInterface;
 import com.app.extremity.iservice.ServiceManagerInterface;
-
 import com.app.extremity.model.AvailableServicing;
 import com.app.extremity.model.BikeCustomization;
 import com.app.extremity.model.BikeServicing;
@@ -34,6 +32,7 @@ import com.app.extremity.model.EmployeeDetails;
 import com.app.extremity.model.FreeServicingCount;
 import com.app.extremity.model.Notfication;
 import com.app.extremity.model.ServicingChart;
+import com.app.extremity.model.ServicingInvoice;
 
 
 
@@ -127,6 +126,9 @@ public class ServiceMangerController {
 		model.addAttribute("link","approvedServices.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
+	
+
+	
 	
 	@RequestMapping(value="/ServicesInprogressPage")
 	public String ServicesInprogressPage(@RequestParam(required = false) String serviceId, Model model,HttpServletRequest request){
@@ -263,9 +265,17 @@ public class ServiceMangerController {
 		model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
 		model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
     	
+
+
+    	List<BikeServicing> bikeServicingList = serviceManagerInterface.getAllBikeServicing();
+
+    	for(BikeServicing data: bikeServicingList) {
+    	ServicingInvoice servicingInvoicesList=data.getServicingInvoice();
+    	System.out.println(""+servicingInvoicesList.getServicingInvoiceId()+","+servicingInvoicesList.getAmount()+"");
+    	}
 		//get servicing invoice list  	
     	model.addAttribute("bikeServicingList", serviceManagerInterface.getAllBikeServicing());
-    	
+
 		model.addAttribute("link","servicesInvoice.jsp");
 		return "ServiceManager/serviceManagerIndex";
 	}
@@ -535,6 +545,9 @@ public class ServiceMangerController {
 		return "ServiceManager/serviceManagerIndex";
 	}
 	
+
+
+
 	@RequestMapping(value="/getServiceDetails",method=RequestMethod.GET)    
 	public @ResponseBody List<ServicingChart> getServiceDetails(@RequestParam String serviceId, HttpServletResponse response) {
 	
