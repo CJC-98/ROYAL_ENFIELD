@@ -299,7 +299,7 @@ public class AdminServiceImplementation implements IAdminService {
 	}
 	
 	public String getEmployeeCount() {
-		// TODO Auto-generated method stub
+	
 	int acount=(int)employeeDetailsDao.count();
 	String employeeId="Emp00";
 	acount++;
@@ -330,7 +330,7 @@ public class AdminServiceImplementation implements IAdminService {
 
 	@Override
 	public List<SoldBikeStock> getSoldNewBike() {
-		// TODO Auto-generated method stub
+	
 		return null;
 	}
 
@@ -345,4 +345,3 @@ public class AdminServiceImplementation implements IAdminService {
 	
 
 }
-
