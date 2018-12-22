@@ -1,6 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -72,10 +70,7 @@
 							aria-describedby="example1_info">
 
 
-
-
-
-							<thead>
+                                <thead>
 								<tr role="row">
 									<th class="sorting_asc" tabindex="0" aria-controls="example1"
 										rowspan="1" colspan="1" aria-sort="ascending"
@@ -94,13 +89,10 @@
 										rowspan="1" colspan="1" aria-sort="ascending"
 										aria-label="Rendering engine: activate to sort column descending"
 										style="width: 125px;">Part_Quantity</th>
-
-
-								</tr>
+                              </tr>
 							</thead>
 							<tbody>
-								<c:forEach items="${accessoriesDeadStockList}"
-									var="accessoriesDeadStock">
+								<c:forEach items="${accessoriesDeadStockList}" var="accessoriesDeadStock">
 									<tr role="row" class="odd">
 								
 										<td>${ accessoriesDeadStock.acd.partId}</td>
@@ -118,11 +110,7 @@
 									<th rowspan="1" colspan="1">Part_Name</th>
 									<th rowspan="1" colspan="1">Part_Price</th>
 									<th rowspan="1" colspan="1">Part_Quantity</th>
-
-
-
-
-								</tr>
+                                </tr>
 							</tfoot>
 						</table>
 					</div>
@@ -154,7 +142,5 @@
 		</div>
 	</div>
 	</section> <!-- End table --> </section> </section> </section>
-	</
-
 </body>
 </html>

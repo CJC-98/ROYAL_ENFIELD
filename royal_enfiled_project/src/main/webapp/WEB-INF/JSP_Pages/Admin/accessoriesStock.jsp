@@ -1,6 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -28,8 +26,8 @@
 <body class="">
 	<section id="content" class="bg-light lter"> <section
 		class="vbox"> <section class="scrollable padder">
-<ul class="breadcrumb no-border no-radius b-b b-light pull-in">
 
+							<ul class="breadcrumb no-border no-radius b-b b-light pull-in">
                                 <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
                                 <li><a href="#">Stock</a></li>
                                 <li><a href="#">Accessories</a></li>
@@ -96,9 +94,8 @@
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach items="${accessoriesStockList}"
-									var="accessoriesStock">
-									<tr role="row" class="odd">
+								<c:forEach items="${accessoriesStockList}" var="accessoriesStock">
+									    <tr role="row" class="odd">
 										<td class="sorting"></td>
 										<td>${accessoriesStock.partName}</td>
 										<td>${accessoriesStock.partPrice}</td>

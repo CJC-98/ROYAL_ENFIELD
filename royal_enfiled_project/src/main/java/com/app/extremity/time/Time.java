@@ -14,7 +14,6 @@ import org.springframework.beans.propertyeditors.CustomDateEditor;
 public class Time {
 
 	public static void main(String[] args) throws ParseException {
-		// TODO Auto-generated method stub
 
 		System.out.println("in time..");
 		LocalTime time = LocalTime.now();

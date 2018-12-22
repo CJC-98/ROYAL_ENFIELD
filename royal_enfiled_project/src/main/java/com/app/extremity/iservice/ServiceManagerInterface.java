@@ -18,6 +18,7 @@ public interface ServiceManagerInterface {
 	public long getAllCustomizationCount();
 	public long getAllServiceCountByServiceStatus(String serviceStatus);
 	public BikeServicing saveBikeServicing(BikeServicing bikeServicing);
+	public List<BikeServicing> getAllBikeServicingByServcingStatus(String serviceStatus);
 
 		
 }

@@ -1,10 +1,7 @@
 package com.app.extremity.controller;
 
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
 
@@ -13,7 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestAttribute;
+
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,7 +21,10 @@ import com.app.extremity.iservice.IAdminService;
 import com.app.extremity.model.AccessoriesDeadStock;
 import com.app.extremity.model.AccessoriesStock;
 
+import com.app.extremity.model.AvailableServicing;
+import com.app.extremity.model.BikeCustomization;
 import com.app.extremity.model.BikeOffer;
+import com.app.extremity.model.BikeServicing;
 import com.app.extremity.model.CustomizationInvoice;
 
 import com.app.extremity.model.DeadStock;
@@ -32,12 +33,20 @@ import com.app.extremity.model.EmployeeDetails;
 import com.app.extremity.model.NewBikeStock;
 import com.app.extremity.model.OldBikeStock;
 import com.app.extremity.model.ServcingBikeInfo;
+import com.app.extremity.model.SoldAccessories;
 import com.app.extremity.model.SoldBikeStock;
+
+
 import com.app.extremity.model.SoldOldBikeStock;
+
 import com.app.extremity.model.TestDriveCustomer;
 
+
+
 @Controller
+
 /* @RequestMapping(value="/admin") */
+
 public class AdminController {
 
 	@Autowired
@@ -46,18 +55,21 @@ public class AdminController {
     /*
 	 * this method is for showing admin home page
 
-	 * 
-	 * 
 	 */
+
 	@RequestMapping(value = "/toAdminHomePage")
 	public String toadminDashboard(Model model) {
 		model.addAttribute("link", "adminDashboard.jsp");
 		return "Admin/adminIndex";
+
 	}
 
 	@RequestMapping(value = "/composeMail")
-	public String toComposeMailPage(Model model) {
+	public String toComposeMailPage(Model model,@RequestParam int designation) {
+		model.addAttribute("designationId", designation);
 		model.addAttribute("link", "composeMail.jsp");
+		
+		System.out.println(designation);
 		return "Admin/adminIndex";
 	}
 	/*
@@ -67,10 +79,12 @@ public class AdminController {
 	 */
 
 	@RequestMapping(value = "/sendEmail", method = RequestMethod.POST)
-	public String sendEmail(@ModelAttribute EmailMessage emailmessage, @RequestParam("file") MultipartFile file,
-			Model model) {
-
-		adminService.sendEmail(emailmessage, file);
+	public String sendEmail(@ModelAttribute EmailMessage emailmessage, @RequestParam("attachment") MultipartFile file,
+			Model model,@RequestParam String designation) {
+		
+		System.out.println(emailmessage.getTo_address());
+		System.out.println(emailmessage.getSubject());
+		adminService.sendEmail(emailmessage, file,designation);
 		model.addAttribute("link", "adminDashboard.jsp");
 		return "Admin/adminIndex";
 	}
@@ -82,8 +96,10 @@ public class AdminController {
 	 */
 
 	@RequestMapping(value = "/employeeRegistration")
-	public String toEmployeeRegistrationPage() {
-	
+
+	public String toEmployeeRegistrationPage(@RequestParam int designation,Model model) {
+		System.out.println(designation);
+		model.addAttribute("designation", designation);
 		return "Admin/employeeRegistration";
 	}
 
@@ -103,6 +119,7 @@ public class AdminController {
 
 	}
 
+
 	/*
 	 * this method is used to newBikeStockList Details
 	 * 
@@ -111,14 +128,25 @@ public class AdminController {
 	@RequestMapping(value = "/newBikeStock")
 	public String getNewBikeStock(Model model) {
 		List<NewBikeStock> newBikeStockList = adminService.getNewBikeStock();
+		
 		model.addAttribute("newBikeStockList", newBikeStockList);
 		model.addAttribute("link", "newBikeStock.jsp");
 		return "Admin/adminIndex";
 
 	}
+	@RequestMapping(value = "/soldNewBike")
+	public String getSoldNewBike(Model model) 
+	{
+		List<SoldBikeStock> soldNewBikeInfoList = adminService.getSoldNewBike();
+		model.addAttribute("soldNewBikeInfoList", soldNewBikeInfoList);
+		model.addAttribute("link", "soldNewBike.jsp");
+		return "Admin/adminIndex";
 
-	@RequestMapping(value = "/oldBikeStock")
-	public String getOldBikeStock(Model model) {
+	}
+
+	@RequestMapping(value ="/oldBikeStock")
+	public String getOldBikeStock(Model model)
+	{
 		List<OldBikeStock> oldBikeStockList = adminService.getOldBikeStock();
 		model.addAttribute("oldBikeStockList", oldBikeStockList);
 		model.addAttribute("link", "oldBikeStock.jsp");
@@ -182,9 +210,10 @@ public class AdminController {
 		return "Admin/adminIndex";
 
 	}
-
+	/* this method is use for getCustomizationInvoice details */
 	@RequestMapping(value = "/servicingAndCustomizationInvoice")
-	public String getCustomizationInvoice(Model model) {
+	public String getCustomizationInvoice(Model model)
+	{
 		List<CustomizationInvoice> customizationInvoiceList = adminService.getCustomizationInvoice();
 		model.addAttribute("customizationInvoiceList", customizationInvoiceList);
 		model.addAttribute("link", "servicingAndCustomizationInvoice.jsp");
@@ -192,7 +221,10 @@ public class AdminController {
 
 	}
 
-	//@RequestMapping(value = "/servicingBikeInfo")
+
+	/* this method is use for getServcingBikeInfo details */
+
+	@RequestMapping(value = "/servicingBikeInfo")
 	public String getServcingBikeInfo(Model model) {
 		List<ServcingBikeInfo> servcingBikeInfoList = adminService.getServcingBikeInfo();
 		model.addAttribute("servcingBikeInfoList", servcingBikeInfoList);
@@ -212,7 +244,7 @@ public class AdminController {
 		return "Admin/adminIndex";
 
 	}
-	@RequestMapping(value="/servicingBikeInfo")
+	//@RequestMapping(value="/servicingBikeInfo")
   public String getNewBikeSaleByDate(Model model)
   {
 		LocalDate now = LocalDate.now();
@@ -239,30 +271,50 @@ public class AdminController {
 	 
  }
 */
-	
-	@RequestMapping(value=("/employeeList"))
-	public String getLastWorkingDate(@ModelAttribute EmployeeDetails employeeDetails,Model model)
-	{
+     @RequestMapping(value = "/avaliableServicing")
+	public String getAvaliableServicingInfo(Model model)
+     {
+		List<AvailableServicing> avaliableServicingInfoList = adminService.getAvaliableServicing();
+		model.addAttribute("avaliableServicingInfoList", avaliableServicingInfoList);
+		model.addAttribute("link", "avaliableServicing.jsp");
+		return "Admin/adminIndex";
 
-		LocalDate now = LocalDate.now();
-		 System.out.println("Current Date="+now);
-	      
-		 Date date=new Date();
-		   System.out.println(date);
-			List<SoldBikeStock> soldBikeStockList=adminService.getNewBikeSaleByDate(date);
-			System.out.println("  Sold Bike is.. "+soldBikeStockList);
-			model.addAttribute("soldBikeList", soldBikeStockList);
-		    model.addAttribute("link", "soldNewBike.jsp");
-		 
-        return "Admin/adminIndex";
-		
-		
+	}
+	@RequestMapping(value = "/bikeCustomization")
+	public String getBikeCustomizationInfo(Model model) {
+		List<BikeCustomization> bikeCustomizationInfoList = adminService.getbikeCustomization();
+		model.addAttribute("bikeCustomizationInfoList", bikeCustomizationInfoList);
+		model.addAttribute("link", "bikeCustomization.jsp");
+		return "Admin/adminIndex";
 
-		
+	}
+	@RequestMapping(value = "/bikeServicing")
+	public String getBikeServicingInfo(Model model) {
+		List<BikeServicing> bikeServicingInfoList = adminService.getBikeServicing();
+		model.addAttribute("bikeServicingInfoList", bikeServicingInfoList);
+		model.addAttribute("link", "bikeServicing.jsp");
+		return "Admin/adminIndex";
+
 	}
 	
-	
-	
+	@RequestMapping(value = "/soldAccessories")
+	public String getSoldAccessories(Model model) {
+		List<SoldAccessories> SoldAccessoriesList = adminService.getSoldAccessories();
+		model.addAttribute("SoldAccessoriesList", SoldAccessoriesList);
+		model.addAttribute("link", "soldAccessories.jsp");
+		return "Admin/adminIndex";
+
+	}
+	@RequestMapping(value="/soldOldBike")
+   public String getSoldOldBikeStock(Model model)
+   {
+	   List<SoldOldBikeStock> soldOldBikeStockList=adminService.getSoldOldBikeStock();
+	    model.addAttribute("soldOldBikeStockList", soldOldBikeStockList);
+		model.addAttribute("link", "soldOldBike.jsp");
+		return "Admin/adminIndex";
+
+   }
+
 }
 
 	

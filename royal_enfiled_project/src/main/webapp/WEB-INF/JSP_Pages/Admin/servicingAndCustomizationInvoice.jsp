@@ -24,8 +24,8 @@
                     <section class="scrollable padder">
                        <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
 			<li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
-			<li><a href="#">View</a></li>
-			<li><a href="#">Service</a></li>
+			<li><a href="#">Invioce</a></li>
+		
 
 		</ul>
 		<div class="m-b-md">
@@ -82,6 +82,7 @@
                                             style="width: 125px;">Payment_Status
                                         </th>
                                         
+                                        
                                     </tr>
                                   </thead>
                                   <tbody>
@@ -90,8 +91,7 @@
                                     <td>${customizationInvoice.amount}</td>
                                     <td>${customizationInvoice.totalAmount}</td>
                                     <td>${customizationInvoice.paymentStatus}</td>
-                                    
-                                    
+                                    </tr>
                                   </c:forEach>
                                   </tbody>
                                   <tfoot>
@@ -129,6 +129,7 @@
 				</div>
 
 			</div>
+
                         </div>
                          </section>
                         </div>

@@ -1,13 +1,13 @@
+
 package com.app.extremity.serviceimpl;
 
-import java.io.File;
 import java.io.IOException;
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.Date;
-import java.util.List;
 import java.util.Properties;
 
 import javax.mail.Message;
@@ -20,6 +20,9 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
+import java.io.File;
+
+import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -29,20 +32,28 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.app.extremity.idao.AccessoriesDeadStockIDao;
 import com.app.extremity.idao.AccessoriesStockIDao;
+import com.app.extremity.idao.AvailableServicingIDao;
+import com.app.extremity.idao.BikeCustomizationIDao;
 import com.app.extremity.idao.BikeOfferIDao;
+import com.app.extremity.idao.BikeServicingIDao;
 import com.app.extremity.idao.CustomizationInvoiceIDao;
 import com.app.extremity.idao.DeadStockIDao;
 import com.app.extremity.idao.EmployeeDetailsIDao;
 import com.app.extremity.idao.NewBikeStockIDao;
 import com.app.extremity.idao.OldBikeStockIDao;
 import com.app.extremity.idao.ServcingBikeInfoIDao;
+import com.app.extremity.idao.SoldAccessoriesIDao;
+import com.app.extremity.idao.SoldBikeStockIDao;
 import com.app.extremity.idao.SoldNewBikeIDao;
 import com.app.extremity.idao.SoldOldBikeStockIDao;
 import com.app.extremity.idao.TestDriveCustomerIDao;
 import com.app.extremity.iservice.IAdminService;
 import com.app.extremity.model.AccessoriesDeadStock;
 import com.app.extremity.model.AccessoriesStock;
+import com.app.extremity.model.AvailableServicing;
+import com.app.extremity.model.BikeCustomization;
 import com.app.extremity.model.BikeOffer;
+import com.app.extremity.model.BikeServicing;
 import com.app.extremity.model.CustomizationInvoice;
 import com.app.extremity.model.DeadStock;
 import com.app.extremity.model.EmailMessage;
@@ -50,7 +61,9 @@ import com.app.extremity.model.EmployeeDetails;
 import com.app.extremity.model.NewBikeStock;
 import com.app.extremity.model.OldBikeStock;
 import com.app.extremity.model.ServcingBikeInfo;
+import com.app.extremity.model.SoldAccessories;
 import com.app.extremity.model.SoldBikeStock;
+import com.app.extremity.model.SoldOldBikeStock;
 import com.app.extremity.model.TestDriveCustomer;
 
 @Service
@@ -84,6 +97,16 @@ public class AdminServiceImplementation implements IAdminService {
 	TestDriveCustomerIDao testDriveCustomerIDao;
 	@Autowired
 	SoldNewBikeIDao soldNewBikeIDao;
+	AvailableServicingIDao availableServicingIDao;
+	@Autowired
+	BikeCustomizationIDao bikeCustomizationIDao;
+	@Autowired
+	BikeServicingIDao bikeServicingIDao;
+    @Autowired
+	SoldBikeStockIDao soldBikeStockIDao;
+    @Autowired
+    SoldAccessoriesIDao soldAccessoriesIDao;
+
 
 	static Logger logger = LogManager.getLogger(AdminServiceImplementation.class);
 
@@ -127,15 +150,16 @@ public class AdminServiceImplementation implements IAdminService {
 			Path path = Paths.get(UPLOADED_FOLDER + profilePic.getOriginalFilename());
 			Files.write(path, bytes);
 			employeeDetails.setProfilePictureUrl(profilePic.getOriginalFilename());
+			
 		} catch (IOException e) {
 			logger.error("while saving profile picture", e);
-			e.printStackTrace();
+			
 		}
-
+		employeeDetails.setEmployeeId(getEmployeeCount());
 		employeeDetailsDao.save(employeeDetails);
-		logger.info("employee Saved", employeeDetails);
+		logger.info("employee Saved");
 		logger.info(UPLOADED_FOLDER.toString());
-		logger.info("message", UPLOADED_FOLDER);
+		logger.info("message");
 	}
 
 	/*
@@ -145,7 +169,7 @@ public class AdminServiceImplementation implements IAdminService {
 	 */
 
 	@Override
-	public void sendEmail(EmailMessage emailmessage, MultipartFile file) {
+	public void sendEmail(EmailMessage emailmessage, MultipartFile file, String designation) {
 
 		Properties props = new Properties();
 		props.put("mail.smtp.auth", "true");
@@ -171,26 +195,27 @@ public class AdminServiceImplementation implements IAdminService {
 			msg.setSentDate(new Date());
 			MimeBodyPart messageBodyPart = new MimeBodyPart();
 			messageBodyPart.setContent(emailmessage.getBody(), "text/html");
+			Multipart multipart = new MimeMultipart();
+			multipart.addBodyPart(messageBodyPart);
+
 			if (!file.isEmpty()) {
-				System.out.println("the file is not empty");
 				byte[] bytes = file.getBytes();
 				Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename());
 				Files.write(path, bytes);
-
-				Multipart multipart = new MimeMultipart();
-				multipart.addBodyPart(messageBodyPart);
 				MimeBodyPart attachPart = new MimeBodyPart();
 				attachPart.attachFile(UPLOADED_FOLDER + file.getOriginalFilename());
-				String html = "<a href='http://localhost:8080/employeeRegistration'>Register here</a>";
-				messageBodyPart.setText(html, "UTF-8", "html");
 				multipart.addBodyPart(attachPart);
-				msg.setContent(multipart);
-				// sends the e-mail
+
 			}
+			String html = "<a href='http://localhost:8080/employeeRegistration?designation="+designation+"'>Register here</a>";
+			messageBodyPart.setText(html, "UTF-8", "html");
+
+			msg.setContent(multipart);
+			// sends the e-mail
 
 			Transport.send(msg);
 
-			logger.info("Email has been send to the employee", emailmessage);
+			logger.info("Email has been send to the employee");
 
 		} catch (MessagingException e) {
 
@@ -238,7 +263,7 @@ public class AdminServiceImplementation implements IAdminService {
 
 	@Override
 	public List<AccessoriesStock> getAccessoriesStock() {
-		
+
 		return (List<AccessoriesStock>) accessoriesStockIDao.findAll();
 	}
 
@@ -268,21 +293,59 @@ public class AdminServiceImplementation implements IAdminService {
 
 	@Override
 	public List<CustomizationInvoice> getCustomizationInvoice() {
-		
+
 		return (List<CustomizationInvoice>) customizationInvoiceIDao.findAll();
 	}
 
 	@Override
 	public List<ServcingBikeInfo> getServcingBikeInfo() {
-		
+
 		return (List<ServcingBikeInfo>) servcingBikeInfoIDao.findAll();
 	}
 
 	@Override
 	public List<TestDriveCustomer> getTestDriveCustomer() {
-	
+
 		return (List<TestDriveCustomer>) testDriveCustomerIDao.findAll();
 	}
+	
+	public String getEmployeeCount() {
+		// TODO Auto-generated method stub
+	int acount=(int)employeeDetailsDao.count();
+	String employeeId="Emp00";
+	acount++;
+    employeeId=employeeId+Integer.toString(acount);
+	
+		return employeeId;
+	
+	}
+
+	@Override
+
+	public List<AvailableServicing> getAvaliableServicing() {
+		
+		return (List<AvailableServicing>) availableServicingIDao.findAll();
+	}
+
+	@Override
+	public List<BikeServicing> getBikeServicing() {
+		
+		return (List<BikeServicing>) bikeServicingIDao.findAll();
+	}
+
+	@Override
+	public List<BikeCustomization> getbikeCustomization() {
+		
+		return (List<BikeCustomization>) bikeCustomizationIDao.findAll();
+	}
+
+	@Override
+	public List<SoldBikeStock> getSoldNewBike() {
+		// TODO Auto-generated method stub
+		return (List<SoldBikeStock>) soldBikeStockIDao.findAll();
+	}
+
+	
 
 	@Override
 	public List<SoldBikeStock> getNewBikeSaleByDate(Date date) {
@@ -299,6 +362,18 @@ public class AdminServiceImplementation implements IAdminService {
 		return (List<EmployeeDetails>) employeeDetailsDao.findAll();
 	}
 
+	@Override
+	public List<SoldOldBikeStock> getSoldOldBikeStock() {
+		// TODO Auto-generated method stub
+		return (List<SoldOldBikeStock>) soldOldBikeStockDao.findAll();
+	}
+
+	@Override
+	public List<SoldAccessories> getSoldAccessories() {
+		
+		return (List<SoldAccessories>) soldAccessoriesIDao.findAll();
+	}
+
 	/*@Override
 	public EmployeeDetails findOneByEmployeeId(String employeeId) {
 		
@@ -306,3 +381,4 @@ public class AdminServiceImplementation implements IAdminService {
 	}
 */
 }
+

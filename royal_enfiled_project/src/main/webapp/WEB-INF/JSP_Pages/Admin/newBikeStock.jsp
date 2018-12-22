@@ -29,6 +29,7 @@
 <body class="">
 
 
+
 	<section id="content" class="bg-light lter"> <section
 		class="vbox"> <section class="scrollable padder">
 	<ul class="breadcrumb no-border no-radius b-b b-light pull-in">
@@ -38,7 +39,7 @@
 		<li><a href="#">NewBike</a></li>
 	</ul>
 	<div class="m-b-md">
-		<h3 class="m-b-none">NewBike Stock</h3>
+		<h3 class="m-b-none">New Bike Stock</h3>
 	</div>
 	<section class="panel panel-default">
 	<div class="row ">
@@ -113,7 +114,7 @@
 							<tbody>
 								<c:forEach items="${newBikeStockList }" var="newBike">
 									<tr role="row" class="odd">
-										<td class="sorting"></td>
+										<td> ${newBike.bikeId}</td>
 										<td>${newBike.bikeModel.modelName}</td>
 										<td>${newBike.chasisNumber }</td>
 										<td>${newBike.wheelType }</td>
@@ -165,10 +166,14 @@
 			</div>
 		</div>
 	</div>
-	</section> <!-- End table --> <aside class="bg-light lter b-l aside-md hide"
+	</section> <!-- End table -->
+	 <aside class="bg-light lter b-l aside-md hide"
 		id="notes">
 	<div class="wrapper">Notification</div>
-	</aside> </section> </section>
-	
+	</aside>
+	 </section>
+	  </section>
+	</section>
+
 </body>
 </html>

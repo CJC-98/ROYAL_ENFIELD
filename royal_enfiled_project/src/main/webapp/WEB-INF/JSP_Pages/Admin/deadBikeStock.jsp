@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/font.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/app.v1.css" type="text/css" />
+
   <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/js/datatables/datatables.css"
 	type="text/css" /> 
@@ -23,13 +24,7 @@
 
                             
                         <!-- Table  -->
-<<<<<<< HEAD
-                        <div class="row text-center m-b-md">
-                                <section class="scrollable padder">
-                                <h3><b>Dead_Bike</b></h3>
-                                </section>
-                        </div>
-=======
+
                        <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
 		<li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
 		<li><a href="#">Stock</a></li>
@@ -39,7 +34,6 @@
 	<div class="m-b-md">
 		<h3 class="m-b-none">BikeDeadStock</h3>
 	</div>
->>>>>>> branch 'AdminTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
                         <div class="row ">
  <section class="panel panel-default">
                         <div class="container">
@@ -120,7 +114,7 @@
                                     <c:forEach items="${deadStockList}" var="deadStock">
                                     <tr role="row" class="odd">
                                     <td class="sorting"></td>
-                                    <td></td>
+                                 
                                     <td>${deadStock.deadBikeStock.bikeModel.modelName}</td>
                                     <td>${deadStock.deadBikeStock.chasisNumber}</td>
                                     <td>${deadStock.deadBikeStock.wheelType}</td>
@@ -171,6 +165,7 @@
 						</div>
 					</div>
 				</div>
+
                         </div>
                         </div>
                          </section>
