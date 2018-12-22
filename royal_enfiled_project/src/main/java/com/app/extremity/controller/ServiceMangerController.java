@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -27,12 +26,11 @@ import com.app.extremity.model.AvailableServicing;
 import com.app.extremity.model.BikeCustomization;
 import com.app.extremity.model.BikeServicing;
 import com.app.extremity.model.CustomizationChart;
-import com.app.extremity.model.CustomizationInvoice;
 import com.app.extremity.model.EmployeeDetails;
 import com.app.extremity.model.FreeServicingCount;
 import com.app.extremity.model.Notfication;
 import com.app.extremity.model.ServicingChart;
-import com.app.extremity.model.ServicingInvoice;
+
 
 
 
@@ -265,14 +263,6 @@ public class ServiceMangerController {
 		model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
 		model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
     	
-
-
-    	List<BikeServicing> bikeServicingList = serviceManagerInterface.getAllBikeServicing();
-
-    	for(BikeServicing data: bikeServicingList) {
-    	ServicingInvoice servicingInvoicesList=data.getServicingInvoice();
-    	System.out.println(""+servicingInvoicesList.getServicingInvoiceId()+","+servicingInvoicesList.getAmount()+"");
-    	}
 		//get servicing invoice list  	
     	model.addAttribute("bikeServicingList", serviceManagerInterface.getAllBikeServicing());
 
@@ -545,9 +535,6 @@ public class ServiceMangerController {
 		return "ServiceManager/serviceManagerIndex";
 	}
 	
-
-
-
 	@RequestMapping(value="/getServiceDetails",method=RequestMethod.GET)    
 	public @ResponseBody List<ServicingChart> getServiceDetails(@RequestParam String serviceId, HttpServletResponse response) {
 	

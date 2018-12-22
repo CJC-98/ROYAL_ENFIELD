@@ -15,53 +15,7 @@
 </head>
  
 <body>
-<<<<<<< HEAD
-<script>
-		function getAmountDetails(serviceId){
-			var req = new XMLHttpRequest();		
-			req.open("GET","getAmountDetails?serviceId="+serviceId,true);
-			req.send(); 
-			
-			var table = document.getElementById("amountDataTable");
-			
-			while(table.rows.length>1){
-				table.deleteRow(table.rows.length-1);
-			}
-			
-			req.onreadystatechange=function(){
-					
-				if(req.readyState==4 && req.status==200){
-					
-					var list = JSON.parse(req.responseText);	
-					 				 
 
-					for(index = 0; index < list.length; index++){
-
-						
-						var row = table.insertRow(1);
-						
-						var cell1 = row.insertCell(0);
-						var cell2 = row.insertCell(1);
-						var cell3 = row.insertCell(2);
-						
-						cell1.innerHTML =  list[index].work;
-						cell2.innerHTML =  list[index].cost;
-						cell3.innerHTML =  list[index].status;
-						
-						cell1.style.textAlign = "center";
-
-						
-						cell3.style.color = "red";
-						
-					}
-				}
-			}
-		}
-		
-
-		
-	</script>
-=======
 	
 	<script>
 		function getServiceDetails(serviceId){
@@ -112,7 +66,6 @@
 		}
 	</script>
 	
->>>>>>> branch 'serviceManagerTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 	<section id="content" class="bg-light lter">
 	        <section class="vbox">
 	            <section class="scrollable padder">                                               
@@ -139,25 +92,7 @@
                                             
                                             <tbody>
                                              <a:forEach var="data" items="${bikeServicingList}">
-<<<<<<< HEAD
-                                     <tr style="text-align: center">
-                                                    	 <td>${data.servicingInvoice.servicingInvoiceId}</td>
-                                                         <td>${data.servicingInvoice.amount}</td>
-                                                         <td>${data.servicingInvoice.totalAmount}</td>
-                                                         <td>${data.servicingInvoice.serviceCGstPercent}</td>
-                                                         <td>${data.servicingInvoice.serviceSGstPercent}</td>
-                                                         <td style="color: #FF681B">${data.servicingInvoice.paymentStatus}</td>
-                                                         <td>
-                                                         	
-                                                         	<a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded"><span onclick="getAmountDetails('${data.bikeServicingId}')">Amount Details</span></a>
 
-                                                         </td>     
-                                                     
-                                                </tr>
-
-                                                  </a:forEach>
-                                             </tbody>
-=======
 		                                         <tr style="text-align: center">
 	                                                    	 <td>${data.servicingInvoice.servicingInvoiceId}</td>
 	                                                         <td>${data.servicingInvoice.amount}</td>
@@ -175,11 +110,11 @@
 	                                                </tr>
                                               </a:forEach>
                                             </tbody>
->>>>>>> branch 'serviceManagerTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
+
                                           
 
                                              </tbody>
-                       y
+                       
                                         </table>
                                     </section>
                                 </div>
@@ -201,11 +136,9 @@
 						        <div class="modal-body">
 						          		
                                     <section class="panel panel-default">
-<<<<<<< HEAD
-                                        <table class="table table-striped m-b-none" id="amountDataTable">
-=======
+
                                         <table class="table table-striped m-b-none" id="serviceTable">
->>>>>>> branch 'serviceManagerTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
+
                                             <thead>
                                                 <tr>
                                                     <th style="text-align: center">Work</th>
@@ -216,11 +149,7 @@
                                           
                                             
                                             <tbody>
-<<<<<<< HEAD
 
-                    
-=======
->>>>>>> branch 'serviceManagerTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
                                             </tbody>
                                             
                                         </table>
