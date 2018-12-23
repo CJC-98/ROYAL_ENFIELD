@@ -115,7 +115,7 @@
 							data-animate="2000" data-target="#bugs" data-update="3000">
 						</span>
 						</span> <a class="clear" href="#"> <span class="h3 block m-t-xs">
-								<strong id="bugs">488</strong>
+								<strong id="bugs">${accessoriesCount}</strong>
 						</span> <small class="text-muted text-uc">Accesories</small>
 						</a>
 					</div>

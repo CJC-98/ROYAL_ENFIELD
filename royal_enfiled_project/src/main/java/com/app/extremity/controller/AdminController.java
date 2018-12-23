@@ -59,6 +59,7 @@ public class AdminController {
 
 	@RequestMapping(value = "/toAdminHomePage")
 	public String toadminDashboard(Model model) {
+		model.addAttribute("accessoriesCount", adminService.getAccessoriesCount());
 		model.addAttribute("bikeCount", adminService.getBikeSaleForUserCount());
 		model.addAttribute("registerUser", adminService.getRegistrationCount());
 		model.addAttribute("link", "adminDashboard.jsp");
@@ -154,10 +155,6 @@ public class AdminController {
 		model.addAttribute("link", "oldBikeStock.jsp");
 		return "Admin/adminIndex";
 	}
-	/*this method is used to getOldBikeStock Details
-	 * 
-	 *  author: omprakash nagolkar 
-	 * */
 	@RequestMapping(value = "/deadBikeStock")
 	public String getDeadStock(Model model) {
 
@@ -167,10 +164,6 @@ public class AdminController {
 		model.addAttribute("link", "deadBikeStock.jsp");
 		return "Admin/adminIndex";
 	}
-	/*this method is used to getDeadStock Details
-	 * 
-	 *  author: omprakash nagolkar 
-	 * */
 	@RequestMapping(value = "/accessoriesStock")
 	public String getAccessoriesStock(Model model) {
 		List<AccessoriesStock> accessoriesStockList = adminService.getAccessoriesStock();
@@ -179,11 +172,7 @@ public class AdminController {
 		return "Admin/adminIndex";
 
 	}
-	/*this method is used to getAccessoriesStock Details
-	 * 
-	 *  author: omprakash nagolkar 
-	 * */
-
+	
 
 	@RequestMapping(value = "/accessoriesDeadStock")
 	public String getAccessoriesDeadStock(Model model) {
@@ -247,7 +236,7 @@ public class AdminController {
 		return "Admin/adminIndex";
 
 	}
-	//@RequestMapping(value="/servicingBikeInfo")
+//	@RequestMapping(value="/servicingBikeInfo")
   public String getNewBikeSaleByDate(Model model)
   {
 		LocalDate now = LocalDate.now();
@@ -263,16 +252,7 @@ public class AdminController {
         return "Admin/adminIndex";
 	  
   }
-	/*@RequestMapping(value=("/employeeList"))
- public String getEmployeeDetails(@RequestParam String employeeId, Model model)
- {
-	 List<EmployeeDetails> employeeDetailsList=adminService.deleteById(employeeId);
-	    model.addAttribute("employeeList", employeeDetailsList);
-		model.addAttribute("link", "employeeList.jsp");
-	 System.out.println(employeeDetailsList);
-		return "Admin/adminIndex";
-	 
- }*/
+	
 
      @RequestMapping(value = "/avaliableServicing")
 	public String getAvaliableServicingInfo(Model model)
@@ -308,6 +288,7 @@ public class AdminController {
 		return "Admin/adminIndex";
 
 	}
+	
    @RequestMapping(value="/soldOldBike")
    public String getSoldOldBikeStock(Model model)
    {
@@ -315,12 +296,8 @@ public class AdminController {
 	    model.addAttribute("soldOldBikeStockList", soldOldBikeStockList);
 		model.addAttribute("link", "soldOldBike.jsp");
 		return "Admin/adminIndex";
-
-   }
-	
-	
-			
-	
+   }	
+  
 }
 
 	

@@ -404,7 +404,12 @@ public class AdminServiceImplementation implements IAdminService {
 		
 		return BikeSaleForUserCount ;
 	}
-	
+	public long getAccessoriesCount()
+	{
+		long AccessoriesCount=accessoriesStockIDao.count();
+		
+		return AccessoriesCount;
+	}
 
 	/*@Override
 	public EmployeeDetails findOneByEmployeeId(String employeeId) {

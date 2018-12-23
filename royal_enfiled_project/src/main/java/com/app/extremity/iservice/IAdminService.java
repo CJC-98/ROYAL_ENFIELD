@@ -86,6 +86,8 @@ public interface IAdminService {
 
 	public long getBikeSaleForUserCount();
 
+	long getAccessoriesCount();
+
 
 
 }
