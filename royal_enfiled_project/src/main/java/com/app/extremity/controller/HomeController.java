@@ -89,6 +89,11 @@ public class HomeController {
 		
 		switch (i) {
 		case 1:
+			//get short notification list
+			model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
+			model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
+			
+			
 			model.addAttribute("link", "adminDashboard.jsp");			
 			return "Admin/adminIndex";			
 		case 2:
