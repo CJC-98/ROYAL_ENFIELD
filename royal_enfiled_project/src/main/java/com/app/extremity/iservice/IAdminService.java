@@ -1,6 +1,8 @@
 
 package com.app.extremity.iservice;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 
@@ -20,6 +22,7 @@ import com.app.extremity.model.EmployeeDetails;
 import com.app.extremity.model.NewBikeStock;
 import com.app.extremity.model.OldBikeStock;
 import com.app.extremity.model.ServcingBikeInfo;
+import com.app.extremity.model.SoldAccessories;
 import com.app.extremity.model.SoldBikeStock;
 import com.app.extremity.model.SoldOldBikeStock;
 import com.app.extremity.model.TestDriveCustomer;
@@ -51,7 +54,8 @@ public interface IAdminService {
 	List<TestDriveCustomer> getTestDriveCustomer();
 
 
-	List<AvailableServicing> getavaliableServicing();
+
+	List<AvailableServicing> getAvaliableServicing();
 
 	List<com.app.extremity.model.BikeServicing> getBikeServicing();
 
@@ -64,8 +68,27 @@ public interface IAdminService {
 
 
 	
+	//public Long findAllByDate(Date fd, Date ld);
 
+	List<SoldBikeStock> getNewBikeSaleByDate(Date date);
+	
+	//EmployeeDetails findOneByEmployeeId(String employeeId);
+
+	List<EmployeeDetails> deleteById(String employeeId);
+
+	List<SoldOldBikeStock> getSoldOldBikeStock();
+
+	List<SoldAccessories> getSoldAccessories();
+
+	List<EmployeeDetails> getEmployeeDetails();
+
+	public long getRegistrationCount();
+
+	public long getBikeSaleForUserCount();
+
+	long getAccessoriesCount();
 
 
 
 }
+

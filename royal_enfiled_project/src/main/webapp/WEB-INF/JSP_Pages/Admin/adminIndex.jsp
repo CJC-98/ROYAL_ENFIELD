@@ -128,7 +128,8 @@
                                         <li> <a href="#"> <i class="fa fa-dashboard icon"> <b class="bg-warning"></b>
                                                 </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i
                                                         class="fa fa-angle-up text-active"></i> </span> <span>Add</span>
-                                            </a>
+ </a>
+
                                             <ul class="nav lt">
                                             	
                                                 
@@ -208,8 +209,9 @@
                                                    		 </a> 
                                                    	</li>
                                             
-                                            		<li> 
+ 
                                             			<a href=""> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i>
+
                                                    		 <span>Dead_stock</span> </a>
                                                 		<ul class="nav bg">
                                                    			 <li> 

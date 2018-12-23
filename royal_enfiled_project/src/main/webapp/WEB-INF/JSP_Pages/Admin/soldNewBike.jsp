@@ -16,7 +16,68 @@
 	href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/js/datatables/datatables.css"
 	type="text/css" />
     <!--[if lt IE 9]> <script src="js/ie/html5shiv.js"></script> <script src="js/ie/respond.min.js"></script> <script src="js/ie/excanvas.js"></script> <![endif]-->
+    
+    <script type="text/javascript">
+    function sortTable(n) {
+    	  var table, rows, switching,shouldSwitch, dir, switchcount = 0;
+    	  var y,x;
+    	  table = document.getElementById("table");
+    	  switching = true;
+    	  //Set the sorting direction to ascending:
+    	  dir = "asc"; 
+    	  /*Make a loop that will continue until
+    	  no switching has been done:*/
+    	  while (switching) {
+    	    //start by saying: no switching is done:
+    	    switching = false;
+    	    rows = table.rows;
+    	    /*Loop through all table rows (except the
+    	    first, which contains table headers):*/
+    	    for (i = 1; i < (rows.length - 2); i++) {
+    	      //start by saying there should be no switching:
+    	      shouldSwitch = false;
+    	      /*Get the two elements you want to compare,
+    	      one from current row and one from the next:*/
+    	      x = rows[i].getElementsByTagName("TD")[n];
+    	     // alert(x.innerHTML.toLowerCase());
+    	      y = rows[i + 1].getElementsByTagName("TD")[n];
+    	      /*check if the two rows should switch place,
+    	      based on the direction, asc or desc:*/
+    	      if (dir == "asc") {
+    	    	  //alert(i);
+    	        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+    	          //if so, mark as a switch and break the loop:
+    	          shouldSwitch= true;
+    	          break;
+    	        }
+    	      } else if (dir == "desc") {
+    	        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+    	          //if so, mark as a switch and break the loop:
+    	          shouldSwitch = true;
+    	          break;
+    	        }
+    	      }
+    	    }
+    	    if (shouldSwitch) {
+    	      /*If a switch has been marked, make the switch
+    	      and mark that a switch has been done:*/
+    	      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+    	      switching = true;
+    	      //Each time a switch is done, increase this count by 1:
+    	      switchcount ++;      
+    	    } else {
+    	      /*If no switching has been done AND the direction is "asc",
+    	      set the direction to "desc" and run the while loop again.*/
+    	      if (switchcount == 0 && dir == "asc") {
+    	        dir = "desc";
+    	        switching = true;
+    	      }
+    	    }
+    	  }
+    	}
+    </script>
 </head>
+
 <body class="">
     
                 <section id="content" class="bg-light lter">
@@ -65,7 +126,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <table id="example1" class="table table-bordered table-striped dataTable" 
+                                            <table id="table" class="table table-bordered table-striped dataTable" 
                                             role="grid" aria-describedby="example1_info">
                                   <thead>
                                   <tr role="row">
@@ -73,56 +134,57 @@
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-label="Browser: 
                                             activate to sort column ascending" 
-                                            style="width: 125px;">Model_Name
+                                            style="width: 125px;" onclick="sortTable(0)">Model_Name
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-label="Browser: 
                                             activate to sort column ascending" 
-                                            style="width: 125px;">Color
+                                            style="width: 125px;" onclick="sortTable(1)">Color
                                         </th>
                                         
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-label="Platform(s): 
                                             activate to sort column ascending" 
-                                            style="width: 125px;">Chasis_Number
+                                            style="width: 125px;"onclick="sortTable(2)">Chasis_Number
                                         </th>
                                        
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                              rowspan="1" colspan="1" 
                                             aria-label="Engine version: activate to sort column ascending" 
-                                            style="width: 125px;">BikeWheel
+                                            style="width: 125px;"onclick="sortTable(3)">BikeWheel
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" 
                                             aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;">BikeOnRoadPrice
+                                            style="width: 125px;" onclick="sortTable(4)">BikeOnRoadPrice
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" 
                                             aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;">EngineStartingType
+                                            style="width: 125px;" onclick="sortTable(5)">EngineStartingType
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" 
                                             aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;">Invoice
+                                            style="width: 125px;" onclick="sortTable(6)">Invoice
                                         </th>
                                         
                                     </tr>
                                   </thead>
                                   <tbody>
-                              
+                                  <c:forEach items="${soldNewBikeInfoList}" var="soldNewBike">
                                     <tr role="row" class="odd">
                                      
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>${soldNewBike.bikeModel.modelName}</td>
+                                    <td>${soldNewBike.bikeModel.colors}</td> 
+                                    <td>${soldNewBike.chasisNumber}</td>
+                                    <td>${soldNewBike.bikewheel}</td>
+                                    <td>${soldNewBike.bikeOnRoadPrice}</td>
+                                    <td>${soldNewBike.engineStartingType}</td>
+                                    <td>${soldNewBike.invoice}</td>
                                     
                                   </tr>
+                                  </c:forEach>
                                   
                                   </tbody>
                                   <tfoot>
