@@ -122,23 +122,81 @@
                                     <td><img  src="${pageContext.request.contextPath}/Resources/images/EmployeeProfilePicture/person1.jpg" width="50"></td>
                                     <td>${ employee.employeeName}</td>
                                     <td>${ employee.employeeMobileNumber}</td>
-                                    <td>${ employee.dateOfBirth}</td>
+                                    <td>${ employee.employeeDateOfBirth}</td>
                                     <td>${ employee.employeeEmail}</td>
                                  	<td>${ employee.employeeJoiningDate}</td>
-                                    <td> 
-                                    <div id="editdata">
-                                    	<button type="button" 
-                                    	class="btn btn-primary" 
-                                    	style="border-color:gray " 
-                                    	onclick="edit()">Edit </button> &nbsp&nbsp&nbsp&nbsp
-                                    </div>
-                                    <div id="removedata">
-                                    	 <button type="button" 
-                                    	 class="btn btn-info" 
-                                    	 style="border-color:gray " 
-                                    	 onclick="remove()">Remove</button>
-                                    </div>
+                                    <td>
+                                     <div> 
+                                     	<!-- Button to Open the Popup -->
+                                   
+		                                   <button type="button" 
+		                                     class="btn btn-primary " 
+                                    		 data-toggle="modal"
+                                     		 data-target="#editdata">Edit
+  										   </button>
+    								 		<button type="button" 
+    											 class="btn btn-danger" 
+    											 data-toggle="modal" 
+    											 data-target="">Remove
+ 									 		</button>
+    									
                                     </td>
+                                    
+                                   
+										<!-- The Modal -->
+  											<div class="modal" id="editdata">
+    										<div class="modal-dialog">
+      										<div class="modal-content">
+      
+       								 <!-- Modal Header -->
+        								<div class="modal-header">
+          								<h4 class="modal-title">Employee_Details</h4>
+         								 <button type="button" 
+         								 class="close" 
+         								 data-dismiss="modal">&times;</button>
+        								</div>
+        
+       								 <!-- Modal body -->
+        								<div class="modal-body">
+          								Id:
+        								</div>
+        								<div class="modal-body">
+          								Name:
+        								</div>
+        								<div class="modal-body">
+          								Salary:
+        								</div>
+        								<div class="modal-body">
+          								Designation:
+        								</div>
+        								<div class="modal-body">
+          								LastWorkingDate:
+        								</div>
+        								<div class="modal-body">
+          								City:
+        								</div>
+        								<div class="modal-body">
+          								Area:
+        								</div>
+        								<div class="modal-body">
+          								State:
+        								</div>
+        								<div class="modal-body">
+          								Country:
+        								</div>
+        
+        							<!-- Modal footer -->
+        								<div class="modal-footer">
+          								<button type="button" 
+          								class="btn btn-danger" 
+          								data-dismiss="modal">Close</button>
+        								</div>
+        
+      								</div>
+    							</div>
+  							</div>
+ 
+ 						</div>
                                    	</tr>
                                   </c:forEach>
                                   </tbody>
