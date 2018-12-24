@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -23,6 +24,7 @@
 
                             
                         <!-- Table  -->
+
                        <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
 		<li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
 		<li><a href="#">Stock</a></li>
@@ -112,7 +114,7 @@
                                     <c:forEach items="${deadStockList}" var="deadStock">
                                     <tr role="row" class="odd">
                                     <td class="sorting"></td>
-                                    <td></td>
+                                 
                                     <td>${deadStock.deadBikeStock.bikeModel.modelName}</td>
                                     <td>${deadStock.deadBikeStock.chasisNumber}</td>
                                     <td>${deadStock.deadBikeStock.wheelType}</td>

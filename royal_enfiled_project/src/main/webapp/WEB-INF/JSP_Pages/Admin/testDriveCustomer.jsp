@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<<<<<<< HEAD
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+=======
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+>>>>>>> branch 'AdminTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -23,6 +28,65 @@
 	href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/js/datatables/datatables.css"
 	type="text/css" />
 <!--[if lt IE 9]> <script src="js/ie/html5shiv.js"></script> <script src="js/ie/respond.min.js"></script> <script src="js/ie/excanvas.js"></script> <![endif]-->
+<script type="text/javascript">
+function sortTable(n) {
+	  var table, rows, switching,shouldSwitch, dir, switchcount = 0;
+	  var y,x;
+	  table = document.getElementById("table");
+	  switching = true;
+	  //Set the sorting direction to ascending:
+	  dir = "asc"; 
+	  /*Make a loop that will continue until
+	  no switching has been done:*/
+	  while (switching) {
+	    //start by saying: no switching is done:
+	    switching = false;
+	    rows = table.rows;
+	    /*Loop through all table rows (except the
+	    first, which contains table headers):*/
+	    for (i = 1; i < (rows.length - 2); i++) {
+	      //start by saying there should be no switching:
+	      shouldSwitch = false;
+	      /*Get the two elements you want to compare,
+	      one from current row and one from the next:*/
+	      x = rows[i].getElementsByTagName("TD")[n];
+	     // alert(x.innerHTML.toLowerCase());
+	      y = rows[i + 1].getElementsByTagName("TD")[n];
+	      /*check if the two rows should switch place,
+	      based on the direction, asc or desc:*/
+	      if (dir == "asc") {
+	    	  //alert(i);
+	        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+	          //if so, mark as a switch and break the loop:
+	          shouldSwitch= true;
+	          break;
+	        }
+	      } else if (dir == "desc") {
+	        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+	          //if so, mark as a switch and break the loop:
+	          shouldSwitch = true;
+	          break;
+	        }
+	      }
+	    }
+	    if (shouldSwitch) {
+	      /*If a switch has been marked, make the switch
+	      and mark that a switch has been done:*/
+	      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+	      switching = true;
+	      //Each time a switch is done, increase this count by 1:
+	      switchcount ++;      
+	    } else {
+	      /*If no switching has been done AND the direction is "asc",
+	      set the direction to "desc" and run the while loop again.*/
+	      if (switchcount == 0 && dir == "asc") {
+	        dir = "desc";
+	        switching = true;
+	      }
+	    }
+	  }
+	}
+</script>
 </head>
 <body class="">
 
@@ -69,7 +133,7 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
-							<table id="example1"
+							<table id="table"
 								class="table table-bordered table-striped dataTable" role="grid"
 								aria-describedby="example1_info">
 								<thead>
@@ -78,26 +142,38 @@
 										<th class="sorting" tabindex="0" aria-controls="example1"
 											rowspan="1" colspan="1"
 											aria-label="Engine version: activate to sort column ascending"
-											style="width: 125px;">Bike_Name</th>
+											style="width: 125px;" onclick="sortTable(0)">Bike_Name</th>
 										<th class="sorting" tabindex="0" aria-controls="example1"
 											rowspan="1" colspan="1"
 											aria-label="Engine version: activate to sort column ascending"
-											style="width: 125px;">Visiting_Date</th>
+											style="width: 125px;" onclick="sortTable(1)">Visiting_Date</th>
 										<th class="sorting" tabindex="0" aria-controls="example1"
 											rowspan="1" colspan="1"
 											aria-label="Engine version: activate to sort column ascending"
-											style="width: 125px;">Test_Drive_Date</th>
+											style="width: 125px;" onclick="sortTable(2)">Test_Drive_Date</th>
 
 									</tr>
 								</thead>
 								<tbody>
+<<<<<<< HEAD
 								<c:forEach items="${testDriveCustomerList}" var="testDriveCustomer">
+=======
+								 <c:forEach items="${testDriveCustomerList}" var="DriveCustomer">
+>>>>>>> branch 'AdminTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 									<tr role="row" class="odd">
+<<<<<<< HEAD
 										<td>${testDriveCustomer.bikeName}</td>
 										<td>${testDriveCustomer.visitingDate}</td>
 										<td>${testDriveCustomer.testDriveDate}</td>
 									</tr>
 								</c:forEach>
+=======
+										<td>${DriveCustomer.bikeName }</td>
+										<td>${DriveCustomer.visitingDate}</td>
+										<td>${DriveCustomer.testDriveDate}</td>
+										</tr>
+								 </c:forEach>
+>>>>>>> branch 'AdminTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 								</tbody>
 								<tfoot>
 									<tr>

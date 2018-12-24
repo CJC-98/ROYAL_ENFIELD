@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -10,7 +12,6 @@
     <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/font.css" type="text/css" />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/app.v1.css" type="text/css" />
     <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/js/datatables/datatables.css"
@@ -40,6 +41,65 @@
 	
 	</script>
     <!--[if lt IE 9]> <script src="js/ie/html5shiv.js"></script> <script src="js/ie/respond.min.js"></script> <script src="js/ie/excanvas.js"></script> <![endif]-->
+<script type="text/javascript">
+function sortTable(n) {
+	  var table, rows, switching,shouldSwitch, dir, switchcount = 0;
+	  var y,x;
+	  table = document.getElementById("table");
+	  switching = true;
+	  //Set the sorting direction to ascending:
+	  dir = "asc"; 
+	  /*Make a loop that will continue until
+	  no switching has been done:*/
+	  while (switching) {
+	    //start by saying: no switching is done:
+	    switching = false;
+	    rows = table.rows;
+	    /*Loop through all table rows (except the
+	    first, which contains table headers):*/
+	    for (i = 1; i < (rows.length - 2); i++) {
+	      //start by saying there should be no switching:
+	      shouldSwitch = false;
+	      /*Get the two elements you want to compare,
+	      one from current row and one from the next:*/
+	      x = rows[i].getElementsByTagName("TD")[n];
+	     // alert(x.innerHTML.toLowerCase());
+	      y = rows[i + 1].getElementsByTagName("TD")[n];
+	      /*check if the two rows should switch place,
+	      based on the direction, asc or desc:*/
+	      if (dir == "asc") {
+	    	  //alert(i);
+	        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+	          //if so, mark as a switch and break the loop:
+	          shouldSwitch= true;
+	          break;
+	        }
+	      } else if (dir == "desc") {
+	        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+	          //if so, mark as a switch and break the loop:
+	          shouldSwitch = true;
+	          break;
+	        }
+	      }
+	    }
+	    if (shouldSwitch) {
+	      /*If a switch has been marked, make the switch
+	      and mark that a switch has been done:*/
+	      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+	      switching = true;
+	      //Each time a switch is done, increase this count by 1:
+	      switchcount ++;      
+	    } else {
+	      /*If no switching has been done AND the direction is "asc",
+	      set the direction to "desc" and run the while loop again.*/
+	      if (switchcount == 0 && dir == "asc") {
+	        dir = "desc";
+	        switching = true;
+	      }
+	    }
+	  }
+	}
+</script>
 </head>
 <body>
 <form action="" name="myform">
@@ -78,40 +138,61 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <table id="example1" class="table table-bordered table-striped dataTable" 
+                                            <table id="table" class="table table-bordered table-striped dataTable" 
                                             role="grid" aria-describedby="example1_info">
                                   <thead>
                                   <tr role="row">
-                                      
+
+                                      <th class="sorting_asc" tabindex="0" aria-controls="example1" 
+                                            rowspan="1" colspan="1" aria-sort="ascending" 
+                                            aria-label="Rendering engine: activate to sort column descending"
+                                            style="width: 125px;" onclick="sortTable(0)">Employee_id
+                                      </th>
+
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-label="Browser: 
                                             activate to sort column ascending" 
+
                                             style="width: 125px;">ProfilePicture
+
+                                            style="width: 125px;"onclick="sortTable(1)">Name
+
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-label="Platform(s): 
                                             activate to sort column ascending" 
+
                                             style="width: 125px;">Name
+
+                                            style="width: 125px;"onclick="sortTable(2)">City
+
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                              rowspan="1" colspan="1" 
                                             aria-label="Engine version: activate to sort column ascending" 
+
                                             style="width: 125px;">MobileNumber
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" 
                                             aria-label="CSS grade: activate to sort column ascending" 
                                             style="width: 125px;">DateOfBrith
+
+
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" 
                                             aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;">Email
+                                            style="width: 125px;"onclick="sortTable(4)">Email
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" 
                                             aria-label="CSS grade: activate to sort column ascending" 
+
                                             style="width: 125px;">Joining_Date
+
+                                            style="width: 125px;"onclick="sortTable(5)">Password
+
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" 
@@ -122,8 +203,11 @@
                                     </tr>
                                   </thead>
                                   <tbody>
-                                  <c:forEach items="${employeeList }" var="employee">
+
+                                  <c:forEach items="${employeeList}" var="employeeList">
+
                                     <tr role="row" class="odd">
+
                                     <td><img  src="${pageContext.request.contextPath}/Resources/images/EmployeeProfilePicture/person1.jpg" width="50"></td>
                                     <td>${ employee.employeeName}</td>
                                     <td>${ employee.employeeMobileNumber}</td>
@@ -320,6 +404,7 @@
  
  					
                                    	</tr>
+
                                   </c:forEach>
                                   </tbody>
                                   <tfoot>
@@ -328,9 +413,13 @@
                                     <th rowspan="1" colspan="1">MobileNumber</th>
                                     <th rowspan="1" colspan="1">DateOfBirth</th>
                                     <th rowspan="1" colspan="1">Email</th>
+
                                     <th rowspan="1" colspan="1">Joining_Date</th>
                                     <th></th>
                                     </tr>
+
+                                    <th rowspan="1" colspan="1">Password</th></tr>
+
                                   </tfoot>
                                 </table>
                             </div>

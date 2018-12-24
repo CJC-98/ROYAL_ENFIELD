@@ -4,7 +4,9 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.app.extremity.model.AccessoriesStock;
 
+
 public interface AccessoriesStockIDao extends CrudRepository<AccessoriesStock, String>
 {
+
 
 }
