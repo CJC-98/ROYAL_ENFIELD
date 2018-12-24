@@ -23,7 +23,7 @@ public class NewBikeStock
 	private String chasisNumber;
 	private String wheelType;
 	private String engineStartingType;
-	private String bikePrice;
+	private Double bikePrice;
 	private String bikeMfgDate;
 	
 	private Date arrivalDate;
@@ -33,6 +33,12 @@ public class NewBikeStock
 	}
 	public void setArrivalDate(Date arrivalDate) {
 		this.arrivalDate = arrivalDate;
+	}
+	public Double getBikePrice() {
+		return bikePrice;
+	}
+	public void setBikePrice(Double bikePrice) {
+		this.bikePrice = bikePrice;
 	}
 	public String getBikeId() {
 		return bikeId;
@@ -64,12 +70,7 @@ public class NewBikeStock
 	public void setEngineStartingType(String engineStartingType) {
 		this.engineStartingType = engineStartingType;
 	}
-	public String getBikePrice() {
-		return bikePrice;
-	}
-	public void setBikePrice(String bikePrice) {
-		this.bikePrice = bikePrice;
-	}
+	
 	public String getBikeMfgDate() {
 		return bikeMfgDate;
 	}

@@ -55,23 +55,19 @@ public class AccountController {
 	Account_ServiceInterface Service;
 	
 
+	
 	@RequestMapping(value="/Invoice")
 	public String Invoice(Model model)
-	{ 
-			
-		System.out.println("In Invoice controller");		
-		LocalDate date = LocalDate.now();
+	{ 			
+			System.out.println("In Invoice controller");
 		model.addAttribute("link", "Invoice.jsp");
+		
+		LocalDate date = LocalDate.now();		
 		model.addAttribute("date",date);
 		
-		//List<Usercart> list = Service.getAllByPurchaseStatusAndRegistration(purchaseStatus, registrationid);
-		
-		//List<Cart> list1 = Service.getAllCart();
-		String purchaseSatus = null;
-		int  qty = 0;
+
 		Registration regi = null;
-		BikeSaleForUser bikeSaleForUser = null;
-		AccessoriesStock accessoriesStock =  new AccessoriesStock();
+		String purchaseSatus = null;
 		
 		Registration reg = new Registration(); //-- TO_Do :- UserId fetch from Registration.. 
 		reg.setRegistrationId("1");
@@ -80,27 +76,17 @@ public class AccountController {
 			System.out.println("Controller.. GetCart By RegId..");
 			for(Cart c : cart) {
 				
-				
 				System.out.println(c.getAccessories().getPartName());
-				
+				System.out.println(c.getOldbike().getNewBikeStock().getBikePrice());
 				regi=new Registration();
 				regi = c.getRegistration();
 				purchaseSatus = c.getPurchaseStatus();
-				qty = c.getQty();
-				bikeSaleForUser = new BikeSaleForUser();
-				bikeSaleForUser = c.getBikeSaleForUser();
-				accessoriesStock = c.getAccessories();
+
 			}
 			
-			model.addAttribute("accessoriesStock", accessoriesStock);
-			model.addAttribute("bikeSaleForUser", bikeSaleForUser);
-			model.addAttribute("qty", qty);
 			model.addAttribute("purchaseSatus", purchaseSatus);
 			model.addAttribute("regi", regi);
 			model.addAttribute("list", cart);
-		
-//		List<Demo> list = Service.getAllDemo();					
-//		model.addAttribute("list", list);
 		
 		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
 		model.addAttribute("inboxCount", inboxCount);
@@ -111,8 +97,6 @@ public class AccountController {
 
 	@RequestMapping(value="/Dashboard")
 	public String Dashboard(Model model,HttpServletRequest request,@ModelAttribute Cart cart1) {
-		
-
 		
 		session = request.getSession();
 		System.out.println("name "+session.getAttribute("currentUserName"));
@@ -170,7 +154,7 @@ public class AccountController {
 		model.addAttribute("inboxCount", inboxCount);
 		
 		//TODO: get login user details from session
-		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication("akash", false);		
+		List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);		
 		model.addAttribute("shortInboxList", shortInboxList);	
 		
 		model.addAttribute("link","myNotifications.jsp");	
