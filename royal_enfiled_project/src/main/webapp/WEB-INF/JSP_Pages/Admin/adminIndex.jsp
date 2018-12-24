@@ -91,7 +91,7 @@
                            <div class=" list-group-alt animated fadeInRight"> 
                            
                            	<a:forEach var="data" items="${shortInboxList}">
-                            	<a href="MyNotificationsPage" class="media list-group-item">
+                            	<a href="myNotificationsPage" class="media list-group-item">
                                     <span class="pull-left thumb-sm"> 
                                     	<img src="${pageContext.request.contextPath}/Resources/images/EmployeeProfilePicture/${data.senderImg}" alt="John said" class="img-circle"> 
                                     </span> 
@@ -101,12 +101,12 @@
                                 </a> 
                             </a:forEach>
                          </div>
-                        <%--  <footer class="panel-footer text-sm"> 
-                         	<a href="MyNotificationsPage" class="pull-right"></a>
-                            <a href="MyNotificationsPage" data-toggle="class:show animated fadeInRight">
+                          <footer class="panel-footer text-sm"> 
+                         	<a href="myNotificationsPage" class="pull-right"></a>
+                            <a href="myNotificationsPage" data-toggle="class:show animated fadeInRight">
                             	See all the notifications
                             </a> 
-                         </footer> --%>
+                         </footer>
                       </section>
                   </section>
                 </li>
@@ -308,13 +308,14 @@
 			<!-- End Service -->
 			
 			<!--Start notification  -->
-			<li><a href="myNotifications"> <i class="fa fa-user icon"> <b
+			<li><a href="myNotifications"> <i class="fa fa-bell icon"> <b
 						class="bg-warning"></b>
 				</i> <span class="pull-right"> <i class="fa fa-angle-down text"></i>
 						<i class="fa fa-angle-up text-active"></i>
 				</span> <span>Notification</span>
 			</a></li>
-			<!--End BikeOffer  -->
+			
+			<!--End notification  -->
 
 			</li>
 		</ul>
