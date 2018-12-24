@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -90,8 +91,8 @@
                             </header>
                            <div class=" list-group-alt animated fadeInRight"> 
                            
-                           	<a:forEach var="data" items="${shortInboxList}">
-                            	<a href="myNotificationsPage" class="media list-group-item">
+                           	<c:forEach var="data" items="${shortInboxList}">
+                            	<a href="myNotifications" class="media list-group-item">
                                     <span class="pull-left thumb-sm"> 
                                     	<img src="${pageContext.request.contextPath}/Resources/images/EmployeeProfilePicture/${data.senderImg}" alt="John said" class="img-circle"> 
                                     </span> 
@@ -99,14 +100,14 @@
                                     	<small class="text-muted">${data.sendDate}</small> 
                                     </span>
                                 </a> 
-                            </a:forEach>
+                            </c:forEach>
                          </div>
-                          <footer class="panel-footer text-sm"> 
-                         	<a href="myNotificationsPage" class="pull-right"></a>
-                            <a href="myNotificationsPage" data-toggle="class:show animated fadeInRight">
+                          <!-- <footer class="panel-footer text-sm"> 
+                         	<a href="myNotifications" class="pull-right"></a>
+                            <a href="myNotifications" data-toggle="class:show animated fadeInRight">
                             	See all the notifications
                             </a> 
-                         </footer>
+                         </footer> -->
                       </section>
                   </section>
                 </li>
@@ -118,7 +119,7 @@
                     <ul class="dropdown-menu animated fadeInRight"> <span class="arrow top"></span>
                         <li> <a href="#">Settings</a> </li>
                         <li> <a href="profile.html">Profile</a> </li>
-                        <li> <a href="#"> <span class="badge bg-danger pull-right">3</span> Notifications </a> </li>
+                        <li> <a href="myNotifications"> <span class="badge bg-danger pull-right">${inboxCount}</span> Notifications </a> </li>
                         <li> <a href="docs.html">Help</a> </li>
                         <li class="divider"></li>
                         <li> <a href="modal.lockme.html" data-toggle="ajaxModal">Logout</a> </li>

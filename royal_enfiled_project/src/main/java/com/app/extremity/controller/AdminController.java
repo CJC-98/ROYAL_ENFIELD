@@ -232,7 +232,7 @@ public class AdminController {
 	public String getbikeOffer(Model model, HttpServletRequest request ) {
 		session = request.getSession();
 		//get short notification list
-		System.out.println(session.getAttribute("currentUserName").toString());
+		//System.out.println(session.getAttribute("currentUserName").toString());
 		model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
 		model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
 		
@@ -279,8 +279,10 @@ public class AdminController {
 
 	/* this method is use for getTestDriveCustomer details */
 	@RequestMapping(value = "/testDriveCustomer")
-	public String getTestDriveCustomer(Model model) {
+	public String getTestDriveCustomer(Model model, HttpServletRequest request) {
 		
+	
+	session = request.getSession();
 		//get short notification list
 		model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
 		model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
@@ -294,8 +296,13 @@ public class AdminController {
 
 	}
 //	@RequestMapping(value="/servicingBikeInfo")
-  public String getNewBikeSaleByDate(Model model)
+  public String getNewBikeSaleByDate(Model model, HttpServletRequest request)
   {
+	  
+	  session = request.getSession();
+		//get short notification list
+		model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
+		model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
 		LocalDate now = LocalDate.now();
 		 System.out.println("Current Date="+now);
 	      
@@ -328,7 +335,7 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value = "/avaliableServicing")
-	public String getAvaliableServicingInfo(Model model)
+	public String getAvaliableServicingInfo(Model model, HttpServletRequest request)
 	{
 		//get short notification list
 		model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
@@ -336,7 +343,7 @@ public class AdminController {
 		
 		List<AvailableServicing> avaliableServicingInfoList = adminService.getAvaliableServicing();
         model.addAttribute("avaliableServicingInfoList", avaliableServicingInfoList);
-	model.addAttribute("link", "avaliableServicing.jsp");
+	    model.addAttribute("link", "avaliableServicing.jsp");
 		
 		
 		return "Admin/adminIndex";
