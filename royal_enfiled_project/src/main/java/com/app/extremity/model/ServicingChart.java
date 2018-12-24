@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -13,28 +12,24 @@ public class ServicingChart {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int ServicingChartId;
+	private int servicingChartId;
 	
 	private String work;
 	
 	private long cost;
 	
-	private String Status = "pending";  //OR in-progress OR done
+	private String status = "pending";  //OR done
 	
-	@ManyToOne
-	private BikeServicing bikeServicing;
 
-	
-	
-	
-	
+
+	   
 
 	public int getServicingChartId() {
-		return ServicingChartId;
+		return servicingChartId;
 	}
 
 	public void setServicingChartId(int servicingChartId) {
-		ServicingChartId = servicingChartId;
+		this.servicingChartId = servicingChartId;
 	}
 
 	public String getWork() {
@@ -53,21 +48,21 @@ public class ServicingChart {
 		this.cost = cost;
 	}
 
+	
+
 	public String getStatus() {
-		return Status;
+		return status;
 	}
 
 	public void setStatus(String status) {
-		Status = status;
+		this.status = status;
 	}
 
-	public BikeServicing getBikeServicing() {
-		return bikeServicing;
+	public void setBikeServicing(BikeServicing bs1) {
+		// TODO Auto-generated method stub
+		
 	}
 
-	public void setBikeServicing(BikeServicing bikeServicing) {
-		this.bikeServicing = bikeServicing;
-	}
 	
 	
 	

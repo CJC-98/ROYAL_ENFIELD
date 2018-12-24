@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" class="app">
-<!-- Mirrored from flatfull.com/themes/note/table-static.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Oct 2018 11:16:47 GMT -->
+<!-- Mirrored from flatfull.com/themes/note/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Oct 2018 11:16:42 GMT -->
 
 <head>
     <meta charset="utf-8" />
     <title>Notebook | Web Application</title>
     <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <link rel="stylesheet" href="css/font.css" type="text/css" />
-    <link rel="stylesheet" href="css/app.v1.css" type="text/css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/font.css" type="text/css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/app.v1.css" type="text/css" />
     <!--[if lt IE 9]> <script src="js/ie/html5shiv.js"></script> <script src="js/ie/respond.min.js"></script> <script src="js/ie/excanvas.js"></script> <![endif]-->
 </head>
 
@@ -17,7 +18,7 @@
         <header class="bg-dark dk header navbar navbar-fixed-top-xs">
             <div class="navbar-header aside-md"> <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open"
                     data-target="#nav,html"> <i class="fa fa-bars"></i> </a> <a href="#" class="navbar-brand"
-                    data-toggle="fullscreen"><img src="images/logo.png" class="m-r-sm">Notebook</a> <a class="btn btn-link visible-xs"
+                    data-toggle="fullscreen"><img src="${pageContext.request.contextPath}/Resources/notebook UI/images/logo.png" class="m-r-sm">Notebook</a> <a class="btn btn-link visible-xs"
                     data-toggle="dropdown" data-target=".nav-user"> <i class="fa fa-cog"></i> </a> </div>
             <ul class="nav navbar-nav hidden-xs">
                 <li class="dropdown"> <a href="#" class="dropdown-toggle dker" data-toggle="dropdown"> <i class="fa fa-building-o"></i>
@@ -58,7 +59,7 @@
                             <header class="panel-heading b-light bg-light"> <strong>You have <span class="count">2</span>
                                     notifications</strong> </header>
                             <div class="list-group list-group-alt animated fadeInRight"> <a href="#" class="media list-group-item">
-                                    <span class="pull-left thumb-sm"> <img src="images/avatar.jpg" alt="John said"
+                                    <span class="pull-left thumb-sm"> <img src="${pageContext.request.contextPath}/Resources/notebook UI/images/avatar.jpg" alt="John said"
                                             class="img-circle"> </span> <span class="media-body block m-b-none"> Use
                                         awesome animate.css<br> <small class="text-muted">10 minutes ago</small> </span>
                                 </a> <a href="#" class="media list-group-item"> <span class="media-body block m-b-none">
@@ -85,7 +86,7 @@
                     </section>
                 </li>
                 <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb-sm avatar pull-left">
-                            <img src="images/avatar.jpg"> </span> John.Smith <b class="caret"></b> </a>
+                            <img src="${pageContext.request.contextPath}/Resources/notebook UI/images/avatar.jpg"> </span> John.Smith <b class="caret"></b> </a>
                     <ul class="dropdown-menu animated fadeInRight"> <span class="arrow top"></span>
                         <li> <a href="#">Settings</a> </li>
                         <li> <a href="profile.html">Profile</a> </li>
@@ -100,7 +101,7 @@
         <section>
             <section class="hbox stretch">
                 <!-- .aside -->
-                <aside class="bg-light lter b-r aside-md hidden-print hidden-xs" id="nav">
+                <aside class="bg-dark lter aside-md hidden-print hidden-xs" id="nav">
                     <section class="vbox">
                         <header class="header bg-primary lter text-center clearfix">
                             <div class="btn-group"> <button type="button" class="btn btn-sm btn-dark btn-icon" title="New project"><i
@@ -121,13 +122,13 @@
                                 <!-- nav -->
                                 <nav class="nav-primary hidden-xs">
                                     <ul class="nav">
-                                        <li> <a href="index.html"> <i class="fa fa-dashboard icon"> <b class="bg-danger"></b>
-                                                </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i
-                                                        class="fa fa-angle-up text-active"></i> </span> <span>Workset</span>
+                                        <li class="active"> <a href="index.html" class="active"> <i class="fa fa-dashboard icon">
+                                                    <b class="bg-danger"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i>
+                                                    <i class="fa fa-angle-up text-active"></i> </span> <span>Workset</span>
                                             </a>
                                             <ul class="nav lt">
-                                                <li> <a href="index.html"> <i class="fa fa-angle-right"></i> <span>Dashboard
-                                                            v1</span> </a> </li>
+                                                <li class="active"> <a href="index.html" class="active"> <i class="fa fa-angle-right"></i>
+                                                        <span>Dashboard v1</span> </a> </li>
                                                 <li> <a href="dashboard.html"> <i class="fa fa-angle-right"></i> <span>Dashboard
                                                             v2</span> </a> </li>
                                             </ul>
@@ -149,9 +150,9 @@
                                                         <span>Fluid Layout</span> </a> </li>
                                             </ul>
                                         </li>
-                                        <li class="active"> <a href="#uikit" class="active"> <i class="fa fa-flask icon">
-                                                    <b class="bg-success"></b> </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i>
-                                                    <i class="fa fa-angle-up text-active"></i> </span> <span>UI kit</span>
+                                        <li> <a href="#uikit"> <i class="fa fa-flask icon"> <b class="bg-success"></b>
+                                                </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i
+                                                        class="fa fa-angle-up text-active"></i> </span> <span>UI kit</span>
                                             </a>
                                             <ul class="nav lt">
                                                 <li> <a href="buttons.html"> <i class="fa fa-angle-right"></i> <span>Buttons</span>
@@ -166,13 +167,11 @@
                                                     </a> </li>
                                                 <li> <a href="list.html"> <i class="fa fa-angle-right"></i> <span>List
                                                             group</span> </a> </li>
-                                                <li class="active"> <a href="#table" class="active"> <i class="fa fa-angle-down text"></i>
-                                                        <i class="fa fa-angle-up text-active"></i> <span>Table</span>
-                                                    </a>
+                                                <li> <a href="#table"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i>
+                                                        <span>Table</span> </a>
                                                     <ul class="nav bg">
-                                                        <li class="active"> <a href="table-static.html" class="active">
-                                                                <i class="fa fa-angle-right"></i> <span>Table static</span>
-                                                            </a> </li>
+                                                        <li> <a href="table-static.html"> <i class="fa fa-angle-right"></i>
+                                                                <span>Table static</span> </a> </li>
                                                         <li> <a href="table-datatable.html"> <i class="fa fa-angle-right"></i>
                                                                 <span>Datatable</span> </a> </li>
                                                         <li> <a href="table-datagrid.html"> <i class="fa fa-angle-right"></i>
@@ -235,7 +234,7 @@
                                 </nav> <!-- / nav -->
                             </div>
                         </section>
-                        <footer class="footer lt hidden-xs b-t b-light">
+                        <footer class="footer lt hidden-xs b-t b-dark">
                             <div id="chat" class="dropup">
                                 <section class="dropdown-menu on aside-md m-l-n">
                                     <section class="panel bg-white">
@@ -259,153 +258,21 @@
                                         </div>
                                     </section>
                                 </section>
-                            </div> <a href="#nav" data-toggle="class:nav-xs" class="pull-right btn btn-sm btn-default btn-icon">
+                            </div> <a href="#nav" data-toggle="class:nav-xs" class="pull-right btn btn-sm btn-dark btn-icon">
                                 <i class="fa fa-angle-left text"></i> <i class="fa fa-angle-right text-active"></i> </a>
-                            <div class="btn-group hidden-nav-xs"> <button type="button" title="Chats" class="btn btn-icon btn-sm btn-default"
+                            <div class="btn-group hidden-nav-xs"> <button type="button" title="Chats" class="btn btn-icon btn-sm btn-dark"
                                     data-toggle="dropdown" data-target="#chat"><i class="fa fa-comment-o"></i></button>
-                                <button type="button" title="Contacts" class="btn btn-icon btn-sm btn-default"
-                                    data-toggle="dropdown" data-target="#invite"><i class="fa fa-facebook"></i></button>
-                            </div>
+                                <button type="button" title="Contacts" class="btn btn-icon btn-sm btn-dark" data-toggle="dropdown"
+                                    data-target="#invite"><i class="fa fa-facebook"></i></button> </div>
                         </footer>
                     </section>
                 </aside> <!-- /.aside -->
-                <section id="content">
-                    <section class="vbox">
-                        <section class="scrollable padder">
-                            <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
-                                <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
-                                <li><a href="#">UI kit</a></li>
-                                <li><a href="#">Table</a></li>
-                                <li class="active">Static table</li>
-                            </ul>
-                           
-                                    
-                            <div class="m-b-md">
-                                    <h3 class="m-b-none">Display Customization</h3>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <section class="panel panel-default">
-                                            <header class="panel-heading">Bullet 350</header>
-                                            
-                                            <table class="table table-striped m-b-none">
-                                                  
-                                                <thead>
-                                                         
-                                                    <tr>
-                                                        <th>Accessories</th>
-                                                        <th>Cost</th>
-                                                        <th>Quantity</th>
-                                                        <th width="70"></th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    
-                                                       <tr>
-                                                           <td>Silencer</td>
-                                                            <td>200</td>
-                                                          <td>60</td>
-                                                          <th width="70"></th>
-                                                       </tr>
-    
-    
-                                                       <tr>
-                                                        <td>Headlight Grill</td>
-                                                         <td>1100</td>
-                                                       <td>50</td>
-                                                       <th width="70"></th>
-                                                    </tr>
-    
-                                                    
-                                                    <tr>
-                                                        <td>Wheel</td>
-                                                         <td>7000</td>
-                                                       <td>35</td>
-                                                       <th width="70"></th>
-                                                    </tr>
-                                                </tbody>
-    
-                                                       </div>
-                                                      
-                                                         </div>       
-                                                       
-                                                        
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-    
-    
-                                    
-                                        </section>
-                                      
-                                    </div>
-                                   
-    
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                                 
-                                            <section class="panel panel-default">
-                                                <header class="panel-heading">Classic 350</header>
-                                                <table class="table table-striped m-b-none">
-                                                    <thead>
-                                                          
-    
-                                                            
-                                                        <tr>
-                                                            <th>Accessories</th>
-                                                            <th>Cost</th>
-                                                            <th>Quantity</th>
-                                                            <th width="70"></th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        
-                                                           <tr>
-                                                               <td>Silencer</td>
-                                                                <td>300</td>
-                                                              <td>45</td>
-                                                              <th width="70"></th>
-                                                           </tr>
-        
-        
-                                                           <tr>
-                                                            <td>Headlight Grill</td>
-                                                             <td>2100</td>
-                                                           <td>38</td>
-                                                           <th width="70"></th>
-                                                        </tr>
-        
-                                                        
-                                                        <tr>
-                                                            <td>Wheel</td>
-                                                             <td>7000</td>
-                                                           <td>35</td>
-                                                           <th width="70"></th>
-                                                        </tr>
-                                                    </tbody>
-        
-                                                           </div>
-                                                          
-                                                             </div>       
-                                                           
-                                                            
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-        
-        
-                                        
-                                            </section>
-                                        </div>
-                                                   
-                                        
-                               
-                            </div>
-                         
-                        </section>
-                    </section> <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen, open"
-                        data-target="#nav,html"></a>
-                </section>
+                
+                <!-- dashboard starts -->
+                	 <jsp:include page="adminDashboard.jsp"/>
+                <!-- dashboard ends -->
+                
+                
                 <aside class="bg-light lter b-l aside-md hide" id="notes">
                     <div class="wrapper">Notification</div>
                 </aside>
@@ -413,10 +280,19 @@
         </section>
     </section> <!-- Bootstrap -->
     <!-- App -->
-    <script src="js/app.v1.js"></script>
-    <script src="js/charts/sparkline/jquery.sparkline.min.js"></script>
-    <script src="js/app.plugin.js"></script>
+    <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/app.v1.js"></script>
+    <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/easypiechart/jquery.easy-pie-chart.js"></script>
+    <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/sparkline/jquery.sparkline.min.js"></script>
+    <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/flot/jquery.flot.min.js"></script>
+    <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/flot/jquery.flot.resize.js"></script>
+    <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/flot/jquery.flot.grow.js"></script>
+    <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/charts/flot/demo.js"></script>
+    <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/bootstrap_calendar.js"></script>
+    <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/demo.js"></script>
+    <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/sortable/jquery.sortable.js"></script>
+    <script src="${pageContext.request.contextPath}/Resources/notebook UI/js/app.plugin.js"></script>
 </body>
-<!-- Mirrored from flatfull.com/themes/note/table-static.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Oct 2018 11:16:47 GMT -->
+<!-- Mirrored from flatfull.com/themes/note/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Oct 2018 11:16:42 GMT -->
 
 </html>

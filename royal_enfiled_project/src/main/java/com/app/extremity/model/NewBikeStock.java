@@ -1,5 +1,7 @@
 package com.app.extremity.model;
 
+import java.util.Date;
+
 import javax.persistence.CascadeType;
 
 import javax.persistence.Entity;
@@ -23,7 +25,15 @@ public class NewBikeStock
 	private String engineStartingType;
 	private String bikePrice;
 	private String bikeMfgDate;
-	private String arrivalDate;
+	
+	private Date arrivalDate;
+	
+	public Date getArrivalDate() {
+		return arrivalDate;
+	}
+	public void setArrivalDate(Date arrivalDate) {
+		this.arrivalDate = arrivalDate;
+	}
 	public String getBikeId() {
 		return bikeId;
 	}
@@ -65,11 +75,5 @@ public class NewBikeStock
 	}
 	public void setBikeMfgDate(String bikeMfgDate) {
 		this.bikeMfgDate = bikeMfgDate;
-	}
-	public String getArrivalDate() {
-		return arrivalDate;
-	}
-	public void setArrivalDate(String arrivalDate) {
-		this.arrivalDate = arrivalDate;
 	}
 }

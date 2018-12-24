@@ -21,8 +21,10 @@ public class BikeModel
 	@JoinColumn(name="engineid")
 	private EngineCapacity enginecapacity;
 	@OneToMany(cascade=CascadeType.ALL)
-	private Set<Color>colors=new HashSet();
+	private Set<Color>colors=new HashSet<Color>();
 	private String image;
+	
+	
 	public String getImage(){
 		return image;
 	}
