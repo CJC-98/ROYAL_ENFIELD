@@ -3,17 +3,34 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <meta charset="utf-8" />
-    <title>Notebook | Web Application</title>
-    <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/font.css" type="text/css" />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/app.v1.css" type="text/css" />
-   <link rel="stylesheet"
+<meta charset="utf-8" />
+<title>Notebook | Web Application</title>
+<meta name="description"
+	content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/font.css"
+	type="text/css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/js/calendar/bootstrap_calendar.css"
+	type="text/css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/app.v1.css"
+	type="text/css" />
+<link rel="stylesheet"
 	href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/js/datatables/datatables.css"
 	type="text/css" />
-    <!--[if lt IE 9]> <script src="js/ie/html5shiv.js"></script> <script src="js/ie/respond.min.js"></script> <script src="js/ie/excanvas.js"></script> <![endif]-->
+
+<!--[if lt IE 9]> <script src="js/ie/html5shiv.js"></script> <script src="js/ie/respond.min.js"></script> <script src="js/ie/excanvas.js"></script> <![endif]-->
+<style type="text/css">
+.nil {
+	
+	overflow-x: auto;
+	white-space: nowrap;
+}
+</style>
+
 <script type="text/javascript">
 function sortTable(n) {
 	  var table, rows, switching,shouldSwitch, dir, switchcount = 0;
@@ -75,12 +92,10 @@ function sortTable(n) {
 </script>
 </head>
 <body class="">
-    
-                <section id="content" class="bg-light lter">
-                    <section class="vbox">
-                        <section class="scrollable padder">
 
-                            <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
+	<section id="content" class="bg-light lter"> <section
+		class="vbox"> <section class="scrollable padder">
+	                            <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
                                 <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
                                 <li><a href="#">Stock</a></li>
                                 <li><a href="#">Bike</a></li>
@@ -248,11 +263,11 @@ function sortTable(n) {
                             <div class="col-sm-12 col-md-7">
                                <div class="dataTables_paginate paging_full_numbers"
 							id="DataTables_Table_0_paginate">
-<a class="paginate_button first disabled"
+							<a class="paginate_button first disabled"
 								aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0"
 								id="DataTables_Table_0_first">First</a><a
 								class="paginate_button previous disabled"
-								aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0"
+								aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="1"
 								id="DataTables_Table_0_previous">Previous</a><span></span><a
 								class="paginate_button next disabled"
 								aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0"

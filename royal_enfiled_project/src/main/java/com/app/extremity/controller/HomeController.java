@@ -92,6 +92,12 @@ public class HomeController {
 			model.addAttribute("bikeCount", adminService.getBikeSaleForUserCount());
 			model.addAttribute("registerUser", adminService.getRegistrationCount());
 			model.addAttribute("accessoriesCount", adminService.getAccessoriesCount());
+
+			//get short notification list
+			model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
+			model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
+			
+			
 			model.addAttribute("link", "adminDashboard.jsp");			
 			return "Admin/adminIndex";			
 		case 2:
