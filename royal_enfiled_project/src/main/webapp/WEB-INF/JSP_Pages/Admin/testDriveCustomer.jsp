@@ -1,10 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<<<<<<< HEAD
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-=======
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
->>>>>>> branch 'AdminTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -155,25 +153,18 @@ function sortTable(n) {
 									</tr>
 								</thead>
 								<tbody>
-<<<<<<< HEAD
+
 								<c:forEach items="${testDriveCustomerList}" var="testDriveCustomer">
-=======
-								 <c:forEach items="${testDriveCustomerList}" var="DriveCustomer">
->>>>>>> branch 'AdminTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
+
 									<tr role="row" class="odd">
-<<<<<<< HEAD
+
 										<td>${testDriveCustomer.bikeName}</td>
 										<td>${testDriveCustomer.visitingDate}</td>
 										<td>${testDriveCustomer.testDriveDate}</td>
 									</tr>
 								</c:forEach>
-=======
-										<td>${DriveCustomer.bikeName }</td>
-										<td>${DriveCustomer.visitingDate}</td>
-										<td>${DriveCustomer.testDriveDate}</td>
-										</tr>
-								 </c:forEach>
->>>>>>> branch 'AdminTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
+
+								
 								</tbody>
 								<tfoot>
 									<tr>

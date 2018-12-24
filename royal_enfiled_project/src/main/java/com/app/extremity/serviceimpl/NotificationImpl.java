@@ -55,7 +55,8 @@ public class NotificationImpl implements NotificationInterface{
 
 	@Override
 	public List<Notfication> getMyNotReadedInboxNotfication(String reciverName, boolean markAsRead) {
-		return notficationIDao.findAllByReciverNameAndMarkAsRead(reciverName, markAsRead).subList(0, 3);
+		System.out.println("hiii");
+		return notficationIDao.findAllByReciverNameAndMarkAsRead(reciverName, markAsRead);
 	}
 
 

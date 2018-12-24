@@ -1,8 +1,19 @@
 package com.app.extremity.controller;
 
+
+
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,9 +24,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-
 import com.app.extremity.iservice.IAdminService;
+import com.app.extremity.iservice.NotificationInterface;
 import com.app.extremity.model.AccessoriesDeadStock;
 import com.app.extremity.model.AccessoriesStock;
 
@@ -29,14 +41,15 @@ import com.app.extremity.model.DeadStock;
 import com.app.extremity.model.EmailMessage;
 import com.app.extremity.model.EmployeeDetails;
 import com.app.extremity.model.NewBikeStock;
+import com.app.extremity.model.Notfication;
 import com.app.extremity.model.OldBikeStock;
 import com.app.extremity.model.ServcingBikeInfo;
 import com.app.extremity.model.SoldAccessories;
 import com.app.extremity.model.SoldBikeStock;
 
 import com.app.extremity.model.SoldOldBikeStock;
-
 import com.app.extremity.model.TestDriveCustomer;
+import com.google.gson.Gson;
 
 @Controller
 
@@ -46,6 +59,9 @@ public class AdminController {
 
 	@Autowired
 	IAdminService adminService;
+	@Autowired
+	NotificationInterface notificationInterface;
+	HttpSession session;
 
 	/*
 	 * this method is for showing admin home page
@@ -100,6 +116,30 @@ public class AdminController {
 		model.addAttribute("designation", designation);
 		return "Admin/employeeRegistration";
 	}
+	
+	
+//	verify Email..... Dipali...
+	
+	@RequestMapping(value ="/log" , produces = "application/json")
+	public @ResponseBody String verifyEmail(@RequestParam String email,HttpServletResponse response)
+	{
+		System.out.println("verify Email");
+		int checkEmail= adminService.getEmployeeEmail(email);
+		String json = new Gson().toJson(checkEmail);
+		System.out.println(json);
+		response.setContentType("application/json");
+		response.setCharacterEncoding("UTF-8");
+		try {
+			response.getOutputStream();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return json;
+		 
+		
+		
+	}
 
 	/*
 	 * this method is used to save Employee Details
@@ -123,7 +163,12 @@ public class AdminController {
 	 * author: omprakash nagolkar
 	 */
 	@RequestMapping(value = "/newBikeStock")
-	public String getNewBikeStock(Model model) {
+	public String getNewBikeStock(Model model,HttpServletRequest request) {
+		
+		session = request.getSession();
+		//get short notification list
+		model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
+		model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
 		List<NewBikeStock> newBikeStockList = adminService.getNewBikeStock();
 
 		model.addAttribute("newBikeStockList", newBikeStockList);
@@ -132,8 +177,11 @@ public class AdminController {
 
 	}
 
-	@RequestMapping(value = "/oldBikeStock")
-	public String getOldBikeStock(Model model) {
+	
+
+	@RequestMapping(value ="/oldBikeStock")
+	public String getOldBikeStock(Model model)
+	{
 		List<OldBikeStock> oldBikeStockList = adminService.getOldBikeStock();
 		model.addAttribute("oldBikeStockList", oldBikeStockList);
 		model.addAttribute("link", "oldBikeStock.jsp");
@@ -161,6 +209,10 @@ public class AdminController {
 
 	@RequestMapping(value = "/accessoriesDeadStock")
 	public String getAccessoriesDeadStock(Model model) {
+		//get short notification list
+		model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
+		model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
+		
 		List<AccessoriesDeadStock> accessoriesDeadStockList = adminService.getAccessoriesDeadStock();
 		model.addAttribute("accessoriesDeadStockList", accessoriesDeadStockList);
 		System.out.println(accessoriesDeadStockList);
@@ -168,11 +220,7 @@ public class AdminController {
 		return "Admin/adminIndex";
 	}
 
-	public String getEmployeeList(Model model) {
-		System.out.println("Employee_List");
-		List<EmployeeDetails> employeeList = adminService.getEmployeelist();
-		return "Admin/adminIndex";
-	}
+	
 
 	@RequestMapping(value = "/employeeList")
 	public String getEmployeeListByDesignation(@RequestParam(name = "designation") String employeeDesignation,
@@ -186,8 +234,14 @@ public class AdminController {
 	}
 
 	@RequestMapping(value = "/bikeOffer")
-	public String getbikeOffer(Model model) {
 
+	public String getbikeOffer(Model model, HttpServletRequest request ) {
+		session = request.getSession();
+		//get short notification list
+		//System.out.println(session.getAttribute("currentUserName").toString());
+		model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
+		model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
+		
 		List<BikeOffer> bikeOfferList = adminService.getBikeOffer();
 		model.addAttribute("bikeOfferList", bikeOfferList);
 		model.addAttribute("link", "bikeOffer.jsp");
@@ -197,7 +251,13 @@ public class AdminController {
 
 	/* this method is use for getCustomizationInvoice details */
 	@RequestMapping(value = "/servicingAndCustomizationInvoice")
-	public String getCustomizationInvoice(Model model) {
+	public String getCustomizationInvoice(Model model,HttpServletRequest request)
+	{
+		session = request.getSession();
+		
+		//get short notification list
+		model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
+		model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
 		List<CustomizationInvoice> customizationInvoiceList = adminService.getCustomizationInvoice();
 		model.addAttribute("customizationInvoiceList", customizationInvoiceList);
 		model.addAttribute("link", "servicingAndCustomizationInvoice.jsp");
@@ -208,7 +268,13 @@ public class AdminController {
 	/* this method is use for getServcingBikeInfo details */
 
 	@RequestMapping(value = "/servicingBikeInfo")
-	public String getServcingBikeInfo(Model model) {
+	public String getServcingBikeInfo(Model model, HttpServletRequest request) 
+	{
+		session=request.getSession();
+		//get short notification list
+		model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
+		model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
+		
 		List<ServcingBikeInfo> servcingBikeInfoList = adminService.getServcingBikeInfo();
 		model.addAttribute("servcingBikeInfoList", servcingBikeInfoList);
 		model.addAttribute("link", "servicingBikeInfo.jsp");
@@ -218,46 +284,72 @@ public class AdminController {
 
 	/* this method is use for getTestDriveCustomer details */
 	@RequestMapping(value = "/testDriveCustomer")
-	public String getTestDriveCustomer(Model model) {
-		System.out.println("In Test Drive");
+	public String getTestDriveCustomer(Model model, HttpServletRequest request) {
+		
+	
+	session = request.getSession();
+		//get short notification list
+		model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
+		model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
+		
 		List<TestDriveCustomer> testDriveCustomerList = adminService.getTestDriveCustomer();
 		model.addAttribute("testDriveCustomerList", testDriveCustomerList);
 		model.addAttribute("link", "testDriveCustomer.jsp");
 		return "Admin/adminIndex";
 
 	}
-
-	// @RequestMapping(value="/servicingBikeInfo")
-	public String getNewBikeSaleByDate(Model model) {
+//	@RequestMapping(value="/servicingBikeInfo")
+  public String getNewBikeSaleByDate(Model model, HttpServletRequest request)
+  {
+	  
+	  session = request.getSession();
+		//get short notification list
+		model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
+		model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
 		LocalDate now = LocalDate.now();
-		System.out.println("Current Date=" + now);
-
-		Date date = new Date();
-		System.out.println(date);
-		List<SoldBikeStock> soldBikeStockList = adminService.getNewBikeSaleByDate(date);
-		System.out.println("  Sold Bike is.. " + soldBikeStockList);
-		model.addAttribute("soldBikeList", soldBikeStockList);
-		model.addAttribute("link", "soldNewBike.jsp");
-
-		return "Admin/adminIndex";
-
-	}
-
+		 System.out.println("Current Date="+now);
+	      
+		 Date date=new Date();
+		   System.out.println(date);
+			List<SoldBikeStock> soldBikeStockList=adminService.getNewBikeSaleByDate(date);
+			System.out.println("  Sold Bike is.. "+soldBikeStockList);
+			model.addAttribute("soldBikeList", soldBikeStockList);
+		    model.addAttribute("link", "soldNewBike.jsp");
+		 
+        return "Admin/adminIndex";
+	  
+  }
+	
+  
 	@RequestMapping(value = "/soldNewBike")
-	public String getSoldBikeStockInfo(Model model) {
-		System.out.println("In Sold New Bike");
-		List<SoldBikeStock> soldNewBikeInfoList = adminService.getSoldBikeStockInfo();
+	public String getSoldNewBikeInfo(Model model) 
+	{
+		//get short notification list
+		model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
+		model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
+		
+		
+		List<SoldBikeStock> soldNewBikeInfoList = adminService.getSoldNewBike();
 		model.addAttribute("soldNewBikeInfoList", soldNewBikeInfoList);
 		model.addAttribute("link", "soldNewBike.jsp");
 		return "Admin/adminIndex";
 
-	}
 
+
+	}
+	
 	@RequestMapping(value = "/avaliableServicing")
-	public String getAvaliableServicingInfo(Model model) {
+	public String getAvaliableServicingInfo(Model model, HttpServletRequest request)
+	{
+		//get short notification list
+		model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
+		model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
+		
 		List<AvailableServicing> avaliableServicingInfoList = adminService.getAvaliableServicing();
-		model.addAttribute("avaliableServicingInfoList", avaliableServicingInfoList);
-		model.addAttribute("link", "avaliableServicing.jsp");
+        model.addAttribute("avaliableServicingInfoList", avaliableServicingInfoList);
+	    model.addAttribute("link", "avaliableServicing.jsp");
+		
+		
 		return "Admin/adminIndex";
 
 	}
@@ -299,11 +391,102 @@ public class AdminController {
 		return "Admin/adminIndex";
 
 	}
+	
+	@RequestMapping(value="/sendAdminNotification")    
+	public @ResponseBody String sendNotification(@RequestParam String reciverName, @RequestParam String reciverPost,
+												 @RequestParam String reciverImg, @RequestParam String message, HttpServletRequest request) {
+        
+		session=request.getSession();
+		Notfication notify = new Notfication();
+	
+		notify.setSenderName(session.getAttribute("currentUserName").toString()); 
+		notify.setSenderImg(session.getAttribute("currentUserImg").toString());
+		notify.setSenderPost(session.getAttribute("currentUserPost").toString());
 
-	@RequestMapping(value = "/soldOldBike")
-	public String getSoldOldBikeStock(Model model) {
-		List<SoldOldBikeStock> soldOldBikeStockList = adminService.getSoldOldBikeStock();
-		model.addAttribute("soldOldBikeStockList", soldOldBikeStockList);
+		notify.setReciverName(reciverName);
+		notify.setReciverPost(reciverPost);
+		notify.setReciverImg(reciverImg);
+		
+		DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy"); 
+		DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("hh:mm:ss a"); 
+		
+		notify.setSendDate(LocalDateTime.now().format(dateFormat));
+		notify.setSendTime(LocalDateTime.now().format(timeFormat));
+		
+		notify.setMessage(message);
+		
+		
+		Notfication saveNotify = notificationInterface.saveNotfication(notify);
+		
+		if(saveNotify != null) {
+			return "done";
+		}
+		
+		return null;
+		
+	}
+	
+	
+	@RequestMapping(value="/adminDashboard")
+	public String adminDashboardPage(Model model){
+
+
+		//test data for notification
+		Notfication notify = new Notfication();
+
+		notify.setSenderName("samir");
+		notify.setSenderImg("person2.png");
+		notify.setSenderPost("accounts manager");
+
+		notify.setReciverName("pranay");
+		notify.setReciverImg("person1.png");
+		notify.setReciverPost("service manger");
+
+		notify.setMessage("I am leaving");
+
+		DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy"); 
+		DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("hh:mm:ss a"); 
+
+		notify.setSendDate(LocalDateTime.now().format(dateFormat));
+		notify.setSendTime(LocalDateTime.now().format(timeFormat));
+		 
+	    //get short notification list
+		model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
+		model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
+	    
+		model.addAttribute("link","adminDashboard.jsp");
+	
+		return "Admin/adminIndex";
+	}
+	
+	
+	@RequestMapping(value="/myNotifications")
+	public String MyNotificationsPage(Model model,HttpServletRequest request){
+		
+		session = request.getSession();
+		
+		//get short notification list
+		model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
+		model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
+			
+		//get current user name
+		model.addAttribute("currentUserName", session.getAttribute("currentUserName").toString());
+			
+		//get outbox notification list
+        model.addAttribute("outboxList", notificationInterface.getMyOutboxNotfication(session.getAttribute("currentUserName").toString()));
+	
+        //get inbox notification list
+ 	    model.addAttribute("inboxList", notificationInterface.getMyInboxNotfication(session.getAttribute("currentUserName").toString()));   
+ 	    
+		model.addAttribute("link","myNotifications.jsp");	
+		return "Admin/adminIndex";
+	}
+
+   @RequestMapping(value="/soldOldBike")
+   public String getSoldOldBikeStock(Model model)
+   {
+	   List<SoldOldBikeStock> soldOldBikeStockList=adminService.getSoldOldBikeStock();
+	    model.addAttribute("soldOldBikeStockList", soldOldBikeStockList);
 		model.addAttribute("link", "soldOldBike.jsp");
 		return "Admin/adminIndex";
 	}

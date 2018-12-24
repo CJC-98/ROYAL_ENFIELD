@@ -27,11 +27,14 @@ import javax.mail.internet.MimeMultipart;
 import java.io.File;
 
 import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+
 
 import com.app.extremity.idao.AccessoriesDeadStockIDao;
 import com.app.extremity.idao.AccessoriesStockIDao;
@@ -140,7 +143,9 @@ public class AdminServiceImplementation implements IAdminService {
 				dir.mkdirs();
 			}
 			UPLOADED_FOLDER = UPLOADED_FOLDER + File.separatorChar + dir.getName() + File.separatorChar;
-		} catch (Exception e) {
+		} 
+		catch (Exception e) 
+		{
 			logger.error("error creating upload directory");
 		}
 
@@ -235,7 +240,7 @@ public class AdminServiceImplementation implements IAdminService {
 			e.printStackTrace();
 
 		} catch (IOException e) {
-
+				System.out.println();
 			logger.error("file not found exception", e);
 			e.printStackTrace();
 		}
@@ -248,6 +253,7 @@ public class AdminServiceImplementation implements IAdminService {
 			EmployeeDetails employeeDetails = employeeDetailsDao.findOneByEmployeeDesignation("Admin");
 			adminEmailUsername = employeeDetails.getEmployeeEmail();
 			adminEmailPassword = employeeDetails.getEmployeePassword();
+			
 		} catch (Exception e) {
 			logger.info("exception while getting user creadentials");
 			logger.error("admin Credentials", e);
@@ -291,11 +297,7 @@ public class AdminServiceImplementation implements IAdminService {
 		return (List<AccessoriesDeadStock>) accessoriesDeadStockIDao.findAll();
 	}
 
-	@Override
-	public List<EmployeeDetails> getEmployeelist() {
-
-		return (List<EmployeeDetails>) employeeDetailsDao.findAll();
-	}
+	
 	@Override
 	public List<BikeOffer> getBikeOffer() {
 
@@ -319,17 +321,7 @@ public class AdminServiceImplementation implements IAdminService {
 
 		return (List<TestDriveCustomer>) testDriveCustomerIDao.findAll();
 	}
-	
-	public String getEmployeeCount() {
-	
-	int acount=(int)employeeDetailsDao.count();
-	String employeeId="Emp00";
-	acount++;
-    employeeId=employeeId+Integer.toString(acount);
-	
-		return employeeId;
-	
-	}
+
 
 	@Override
 
@@ -386,7 +378,65 @@ public class AdminServiceImplementation implements IAdminService {
 		return (List<EmployeeDetails>) employeeDetailsDao.findAllByEmployeeDesignation(employeeDesignation);
 	}
 
-	
+
+	@Override
+	public List<EmployeeDetails> getEmployeeDesignation(String employeeDesignation) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getEmployeeCount() {
+		// TODO Auto-generated method stub
+		int acount=(int)employeeDetailsDao.count();
+		System.out.println("count"+acount);
+		String employeeId="Emp00";
+		acount++;
+	    employeeId=employeeId+Integer.toString(acount);
+		
+			return employeeId;
+	}
+
+	@Override
+	public int getEmployeeEmail(String employeeEmail) {
+		System.out.println("service imple");
+		System.out.println(employeeEmail);
+		 EmployeeDetails employeeDetails=employeeDetailsDao.findOneByEmployeeEmail(employeeEmail);
+		
+		 try{
+			 if(employeeDetails.getEmployeeEmail()==null)
+			 {
+				 return 1;
+			 }
+		 }
+		 catch(NullPointerException e)
+		 {
+			 
+			 logger.error(e);
+			 return 1;
+		 }
+		 return 0;
+		 
+		
+		  
+	}
+
+	@Override
+	public List<SoldBikeStock> getSoldBikeStock() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	public String getEmployeeCount1() {
+		int acount=(int)employeeDetailsDao.count();
+		String employeeId="Emp00";
+		acount++;
+	    employeeId=employeeId+Integer.toString(acount);
+		
+			return employeeId;
+		
+	}
 
 
 
@@ -401,7 +451,7 @@ public class AdminServiceImplementation implements IAdminService {
 
 	@Override
 	public List<EmployeeDetails> deleteById(String employeeId) {
-		employeeDetailsDao.deleteById(employeeId);
+		employeeDetailsDao.findOneByEmployeeId(employeeId);
 		return (List<EmployeeDetails>) employeeDetailsDao.findAll();
 	}
 
