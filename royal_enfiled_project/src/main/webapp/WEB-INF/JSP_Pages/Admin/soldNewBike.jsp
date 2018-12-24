@@ -167,11 +167,6 @@
                                         </th>
 
 
-                                        <th class="sorting" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" 
-                                            aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;" onclick="sortTable(5)">EngineStartingType
-                                        </th>
 
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" 
@@ -208,7 +203,7 @@
                                   <tr>
                                   	
                                     <th rowspan="1" colspan="1">Model_Name</th>
-                                    <th rowspan="1" colspan="1">Engin_Type</th>
+                                    <th rowspan="1" colspan="1">Color</th>
                                     <th rowspan="1" colspan="1">Chasis_Number</th>
                                     <th rowspan="1" colspan="1">Engine_Starting_Type</th>
                                     <th rowspan="1" colspan="1">BikeWheel</th>

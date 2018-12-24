@@ -129,11 +129,7 @@ function sortTable(n) {
                                   <thead>
                                   <tr role="row">
 
-                                      <th class="sorting_asc" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" aria-sort="ascending" 
-                                            aria-label="Rendering engine: activate to sort column descending"
-                                            style="width: 125px;" onclick="sortTable(0)">Part_id
-                                      </th>
+                                      
 
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-label="Browser: 

@@ -134,22 +134,12 @@ function sortTable(n) {
 
                                 <thead>
 								<tr role="row">
-<<<<<<< HEAD
-									
+								
 									<th class="sorting_asc" tabindex="0" aria-controls="example1"
 										rowspan="1" colspan="1" aria-sort="ascending"
 										aria-label="Rendering engine: activate to sort column descending"
-										style="width: 125px;">Part_Name</th>
-=======
-									<th class="sorting_asc" tabindex="0" aria-controls="example1"
-										rowspan="1" colspan="1" aria-sort="ascending"
-										aria-label="Rendering engine: activate to sort column descending"
-										style="width: 125px;" onclick="sortTable(0)">Part_Id</th>
-									<th class="sorting_asc" tabindex="0" aria-controls="example1"
-										rowspan="1" colspan="1" aria-sort="ascending"
-										aria-label="Rendering engine: activate to sort column descending"
-										style="width: 125px;"  onclick="sortTable(1)">Part_Name</th>
->>>>>>> branch 'AdminTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
+										style="width: 125px;" onclick="sortTable(1)">Part_Name</th>
+
 
 									<th class="sorting_asc" tabindex="0" aria-controls="example1"
 										rowspan="1" colspan="1" aria-sort="ascending"
@@ -176,10 +166,7 @@ function sortTable(n) {
 							<tfoot>
 								<tr>
 									
-<<<<<<< HEAD
-=======
-									<th rowspan="1" colspan="1">Part_Id</th>
->>>>>>> branch 'AdminTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
+
 									<th rowspan="1" colspan="1">Part_Name</th>
 									<th rowspan="1" colspan="1">Part_Price</th>
 									<th rowspan="1" colspan="1">Part_Quantity</th>

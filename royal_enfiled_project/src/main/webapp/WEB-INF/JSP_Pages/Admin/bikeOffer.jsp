@@ -159,20 +159,11 @@ function sortTable(n) {
 								</tr>
 							</thead>
 							<tbody>
-<<<<<<< HEAD
+
 							<c:forEach items="${bikeOfferList }" var="bikeOffer">
-=======
-							<c:forEach items="${bikeOfferList}" var="bikeOffer">
->>>>>>> branch 'AdminTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
+
 								<tr role="row" class="odd">
-<<<<<<< HEAD
-									<td>${bikeOffer.offerName }</td>
-									<td>${bikeOffer.startDate }</td>
-									<td>${bikeOffer.endDate }</td>
-									<td>${bikeOffer.discountInPercentage}</td>
-								</tr>
-							</c:forEach>
-=======
+
 									<td>${bikeOffer.offerName}</td>
 									<td>${bikeOffer.startDate}</td>
 									<td>${bikeOffer.endDate}</td>
@@ -180,7 +171,7 @@ function sortTable(n) {
 									</tr>
 									</c:forEach>
 									
->>>>>>> branch 'AdminTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
+
 							</tbody>
 							<tfoot>
 								<tr>

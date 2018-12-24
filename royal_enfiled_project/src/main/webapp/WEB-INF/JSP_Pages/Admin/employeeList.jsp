@@ -18,18 +18,18 @@
 	type="text/css" />
 	
 	<script type="text/javascript">
-	function editEmployee() 
+	/* function editEmployee() 
 	{
 		alert("edit");
 		document.myform.action="editEmployee";
 		document.myform.submit();
 		
-	}
+	} */
 	
-	function updateEmployee(employee) 
+	function updateEmployee() 
 	{
 		alert("update");
-		document.myform.action="updateEmployee?employee="+employee;
+		document.myform.action="updateEmployee";
 		document.myform.submit();
 	}
 	function remove() 
@@ -143,11 +143,7 @@ function sortTable(n) {
                                   <thead>
                                   <tr role="row">
 
-                                      <th class="sorting_asc" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" aria-sort="ascending" 
-                                            aria-label="Rendering engine: activate to sort column descending"
-                                            style="width: 125px;" onclick="sortTable(0)">Employee_id
-                                      </th>
+                                      
 
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-label="Browser: 
@@ -155,28 +151,27 @@ function sortTable(n) {
 
                                             style="width: 125px;">ProfilePicture
 
-                                            style="width: 125px;"onclick="sortTable(1)">Name
+                                          
 
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-label="Platform(s): 
                                             activate to sort column ascending" 
 
-                                            style="width: 125px;">Name
+                                            style="width: 125px;"onclick="sortTable(1)">Name
 
-                                            style="width: 125px;"onclick="sortTable(2)">City
-
+                                          
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                              rowspan="1" colspan="1" 
                                             aria-label="Engine version: activate to sort column ascending" 
 
-                                            style="width: 125px;">MobileNumber
+                                            style="width: 125px;"onclick="sortTable(2)">MobileNumber
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" 
                                             aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;">DateOfBrith
+                                            style="width: 125px;" onclick="sortTable(3)">DateOfBrith
 
 
                                         </th>
@@ -189,10 +184,9 @@ function sortTable(n) {
                                             rowspan="1" colspan="1" 
                                             aria-label="CSS grade: activate to sort column ascending" 
 
-                                            style="width: 125px;">Joining_Date
+                                            style="width: 125px;" onclick="sortTable(5)">Joining_Date
 
-                                            style="width: 125px;"onclick="sortTable(5)">Password
-
+                                            
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" 
@@ -204,7 +198,7 @@ function sortTable(n) {
                                   </thead>
                                   <tbody>
 
-                                  <c:forEach items="${employeeList}" var="employeeList">
+                                  <c:forEach items="${employeeList}" var="employee">
 
                                     <tr role="row" class="odd">
 
@@ -221,7 +215,7 @@ function sortTable(n) {
 		                                   <button type="button" 
 		                                     class="btn btn-primary " 
                                     		 data-toggle="modal"
-                                     		 data-target="#editdata" onclick="editEmployee(${employee})">Edit
+                                     		 data-target="#editdata" onclick="editEmployee()">Edit
   										   </button>
     								 		<button type="button" 
     											 class="btn btn-danger" 
@@ -249,6 +243,9 @@ function sortTable(n) {
         								<div class="modal-body">
         								  <div class="form-group">
         								  <input type="hidden" name="employeeId" value="${employee.employeeId}">
+        								  <input type="hidden" name="employeeGender" value="${employee.employeeGender}">
+        								  <input type="hidden" name="employeeDesignation" value="${employee.employeeDesignation}">
+        								  
 										    <label for="name">Name:</label>
 										 	<input type="text"
 											class="form-control" 
@@ -384,7 +381,7 @@ function sortTable(n) {
           									<div class="col-md-6">
          								 		<button type="button" 
          								 		class="btn btn-primary" 
-         								 		data-togal="modal" onclick="updateEmployee('${employee}')">Update</button>
+         								 		data-togal="modal" onclick="updateEmployee()">Update</button>
          								 	</div>
           									<div class="col-md-6">
          								 		<button type="button" 
@@ -418,9 +415,7 @@ function sortTable(n) {
                                     <th></th>
                                     </tr>
 
-                                    <th rowspan="1" colspan="1">Password</th></tr>
-
-                                  </tfoot>
+                                                                    </tfoot>
                                 </table>
                             </div>
                         </div>

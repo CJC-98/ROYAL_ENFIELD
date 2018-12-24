@@ -122,13 +122,7 @@
                                 <!-- nav -->
                                 <nav class="nav-primary hidden-xs">
                                     <ul class="nav">
-<<<<<<< HEAD
-                                      <li> <a href="#"> <i class="fa fa-dashboard icon"> <b class="bg-warning"></b>
-                                                </i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> 
-                                                <i class="fa fa-angle-up text-active"></i> </span> <span>Add</span>
-                                            </a>
-=======
-                                    
+                         
 
                                    
                                         <li> <a href="#"> <i class="fa fa-dashboard icon"> <b class="bg-warning"></b>
@@ -136,7 +130,6 @@
                                                         class="fa fa-angle-up text-active"></i> </span> <span>Add</span>
  </a>
 
->>>>>>> branch 'AdminTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
                                             <ul class="nav lt">
                                             	
                                                 
@@ -174,11 +167,11 @@
                                                          <span>Accountant</span> </a>
                                                      </li>
                                                      
-                                                    <li> <a href="employeeList">
+                                                    <li> <a href="employeeList?designation=DEALER">
                                                          <span>Dealer</span> </a>
                                                      </li>
                                                             
-                                                    <li> <a href="employeeList">
+                                                    <li> <a href="employeeList?designation=USER">
                                                    		<span>User</span> </a> 
                                                    	</li>
                                                    	
@@ -223,7 +216,7 @@
                                                    		 </a> 
                                                    	</li>
                                             
- 
+ 													<li>
                                             			<a href=""> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i>
 
                                                    		 <span>Dead_stock</span> </a>
