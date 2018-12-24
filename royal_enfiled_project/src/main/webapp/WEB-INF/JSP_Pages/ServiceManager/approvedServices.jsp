@@ -13,31 +13,14 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/css/app.v1.css" type="text/css" />
 
-<<<<<<< HEAD
-<script type="text/javascript">
-function detail()
-{
-	alert("detail")
-	var s=document.getElementbyId("#myModal").value;
-	var req=new XMLHttpRequest();
-	var url="serviceDetails? a="+s;
-    alert(s);
-    alert(req);
-    var req=new XMLHttpRequest();
-	alert(req);
-	req.open("GET", url, true);
-	req.send();
-	
-	
-	}
+	<style>
+		@media all and (max-width: 500px) {
+			.name, .reduce-size{
+				font-size: 15px;
+			}
+		}
+	</style>
 
-
-
-</script>
-
-
-=======
->>>>>>> branch 'serviceManagerTeamBranch' of local repository
 </head>
 
 <body>
@@ -122,22 +105,22 @@ function detail()
                              <section class="panel panel-default" >
                                           <header class="panel-heading bg-warning dk" style="font-size: 20px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;">
 
-										  <div> 
+										  <div class="reduce-size"> 
 				                              ${data.servcingBikeInfo.modelName} ( ${data.servcingBikeInfo.plateNumber} )       			 
 				                          </div>
 										
                   </header>
 
                                                 
-                                          <table class="table table-striped m-b-none" >
+                                          <table class="table table-striped m-b-none">
                                                       
                                                 <thead >
                                                                 
-                                                     <tr>   
-                                                         <th style="text-align: center;">Service Id</th>
-                                                         <th style="text-align: center;">Appointment Date</th>
-                                                         <th style="text-align: center;">Services Details</th>
-                                                         <th style="text-align: center;">Start Services</th>
+                                                     <tr class="reduce-size">   
+                                                         <th style="text-align: center;" >Service Id</th>
+                                                         <th style="text-align: center;" >Appointment Date</th>
+                                                         <th style="text-align: center;" >Services Details</th>
+                                                         <th style="text-align: center;" >Start Services</th>
                                                      </tr>
                                                 </thead>
                                                 
@@ -145,7 +128,7 @@ function detail()
                                                         
                                                       <tr style="text-align: center;">
                                                          <td>${data.bikeServicingId}</td>
-                                                         <td>${data.appointmentDate}</td>
+                                                         <td  class="add-br">${data.appointmentDate}</td>
                                                          <td>
 
                                                          	<span onclick="getServiceDetails('${data.bikeServicingId}')"><a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-md btn-info m-r rounded">Services Details</a></span>

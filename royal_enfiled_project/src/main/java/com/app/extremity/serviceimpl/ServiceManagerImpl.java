@@ -52,6 +52,7 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	
 	@Autowired
 	AccessoriesStockDao accessoriesStockDao;
+
 	
 
 	@Override
@@ -154,15 +155,15 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 
 	@Override
 	public ServicingChart getServicingChart(int id) {
-		return servicingChartIDao.findById(id);
+		return servicingChartIDao.findByServicingChartId(id);  
 	}
   
 
 	@Override
 	public CustomizationChart getCustomizationChart(int id) {
-		return customizationChartIDao.findById(id);
+		return customizationChartIDao.findByCustomizationChartId(id);
 	}
-
+ 
 	@Override
 	public FreeServicingCount updateFreeServicingCount(FreeServicingCount freeServicingCount) {
 		return freeServicingCountIDao.save(freeServicingCount);
@@ -172,6 +173,7 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 	public List<AccessoriesStock> getAllAccessoriesStock() {
 		return (List<AccessoriesStock>) accessoriesStockDao.findAll();
 	}
+
 
 }
 

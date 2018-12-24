@@ -54,6 +54,8 @@ public class ServiceMangerController {
 	
 	@Autowired
 	IAdminService adminService;
+	
+	
 		
 	HttpSession session;
 	

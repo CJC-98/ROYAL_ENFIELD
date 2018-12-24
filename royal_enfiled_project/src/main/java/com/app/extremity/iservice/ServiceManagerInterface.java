@@ -50,6 +50,8 @@ public interface ServiceManagerInterface {
 
     
     public List<AccessoriesStock> getAllAccessoriesStock();
+    
+ 
 
 
 }
