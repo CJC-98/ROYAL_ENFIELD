@@ -363,6 +363,14 @@ public class AdminServiceImplementation implements IAdminService {
 		return (List<SoldAccessories>) soldAccessoriesDao.findAll();
 	}
 
+	@Override
+	public void updateEmployee(EmployeeDetails employee) {
+		employeeDetailsDao.save(employee);
+		
+	}
+
+	
+
 
 }
 

@@ -167,7 +167,6 @@ public class AdminController {
 	public String getEmployeeList(Model model) {
 		System.out.println("Employee_List");
 		List<EmployeeDetails> employeeList =adminService.getEmployeelist();
-		System.out.println(employeeList);
 		model.addAttribute("employeeList", employeeList);
 		model.addAttribute("link", "employeeList.jsp");
 		return "Admin/adminIndex";
@@ -272,6 +271,19 @@ public class AdminController {
 
 	}
 	
+	@RequestMapping(value = "/updateEmployee")
+	public String getUpdateEmployeeInfo(@ModelAttribute EmployeeDetails employee ,Model model) {
+		System.out.println(employee);
+		System.out.println(employee.getEmployeeId());
+		adminService.updateEmployee(employee);
+		List<EmployeeDetails> employeeList =adminService.getEmployeelist();
+		model.addAttribute("employeeList", employeeList);
+		model.addAttribute("link", "employeeList.jsp");
+		return "Admin/adminIndex";
+		
+		
+
+	}
 	
 
 

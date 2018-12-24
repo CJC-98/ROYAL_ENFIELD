@@ -66,6 +66,10 @@ public interface IAdminService {
 
 	List<SoldAccessories> getSoldAccessoriesInfo();
 
+	void updateEmployee(EmployeeDetails employee);
+
+
+
 
 
 

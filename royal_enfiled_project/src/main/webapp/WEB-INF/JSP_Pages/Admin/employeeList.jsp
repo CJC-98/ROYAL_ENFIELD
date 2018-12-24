@@ -17,27 +17,32 @@
 	type="text/css" />
 	
 	<script type="text/javascript">
-	function edit() 
+	function editEmployee() 
 	{
 		alert("edit");
-		var emp=doccument.getElementById("").value;
-		u
-		document.action="adminIndex.jsp";
-		document.submit();
+		document.myform.action="editEmployee";
+		document.myform.submit();
 		
+	}
+	
+	function updateEmployee(employee) 
+	{
+		alert("update");
+		document.myform.action="updateEmployee?employee="+employee;
+		document.myform.submit();
 	}
 	function remove() 
 	{
 		alert("remove");
-		document.action="employeeList.jsp";
-		document.submit();
+		document.myform.action="removeEmployee";
+		document.myform.submit();
 	}
 	
 	</script>
     <!--[if lt IE 9]> <script src="js/ie/html5shiv.js"></script> <script src="js/ie/respond.min.js"></script> <script src="js/ie/excanvas.js"></script> <![endif]-->
 </head>
-<body class="">
-
+<body>
+<form action="" name="myform">
 	
     <section id="content" class="bg-light lter">
         <section class="vbox">
@@ -132,21 +137,21 @@
 		                                   <button type="button" 
 		                                     class="btn btn-primary " 
                                     		 data-toggle="modal"
-                                     		 data-target="#editdata">Edit
+                                     		 data-target="#editdata" onclick="editEmployee(${employee})">Edit
   										   </button>
     								 		<button type="button" 
     											 class="btn btn-danger" 
     											 data-toggle="modal" 
-    											 data-target="">Remove
+    											 data-target="" onclick="removeEmployee()">Remove
  									 		</button>
     									
                                     </td>
                                     
                                    
 										<!-- The Modal -->
-  											<div class="modal" id="editdata">
-    										<div class="modal-dialog">
-      										<div class="modal-content">
+  						<div class="modal" id="editdata">
+    						<div class="modal-dialog">
+      						   <div class="modal-content">
       
        								 <!-- Modal Header -->
         								<div class="modal-header">
@@ -158,50 +163,167 @@
         
        								 <!-- Modal body -->
         								<div class="modal-body">
-          								Id:
+        								  <div class="form-group">
+        								  <input type="hidden" name="employeeId" value="${employee.employeeId}">
+										    <label for="name">Name:</label>
+										 	<input type="text"
+											class="form-control" 
+											id="name" placeholder="Enter name"
+											name="employeeName" value="${employee.employeeName}" required>
+										   </div>
+        								
+          									<div class="form-group">
+												<label for="address">Address:</label>
+												<div class="row">
+												<div class="col-md-6">
+													<input type="text" 
+													class="form-control" 
+													id="employeeAreaName"
+													placeholder="Enter areaname"
+												 	name="employeeAreaName" value="${employee.employeeAreaName}" required>
+												</div>
+												<div class="col-md-6">
+													<input type="text" 
+													class="form-control" 
+													id="cityname"
+													placeholder="Enter cityname" 
+													name="employeeCityName" value="${employee.employeeCityName}" required>
+												</div>
+												</div>
+											</div>
+        								
+          								<div class="form-group">
+											<div class="row">
+												<div class="col-md-6">
+													<input type="text" 
+													class="form-control" 
+													id="employeeStateName"
+													placeholder="Enter statename" 
+													name="employeeStateName" value="${employee.employeeStateName}" required>
+												</div>
+												<div class="col-md-6">
+													<input type="text" 
+													class="form-control"
+													id="employeeCountryName" 
+													placeholder="Enter countryname"
+													name="employeeCountryName" value="${employee.employeeCountryName}" required>
+												</div>
+											</div>
+									</div>
+									<div class="form-group">
+											<div class="row">
+												<div class="col-md-6">
+													<input type="text" 
+													class="form-control" id="pincode"
+													placeholder="Enter pincode" 
+													name="employeePincode" value="${employee.employeePincode}" required>
+												</div>
+											</div>
+									</div>
+								<div class="row">
+										<div class="col-md-6">
+											<!-- mobile no -->
+												<div class="form-group">
+													<label>Mobile no:</label> 
+													<input type="text"
+													class="form-control" 
+													data-type="phone"
+													placeholder="(XXX) XXXX XXX" 
+													data-required="true" 
+													name="employeeMobileNumber" value="${employee.employeeMobileNumber}">
+												</div>
+										</div>
+										
+							<div class="col-md-6">
+							
+								<div class="form-group">
+									<label for="employeeDateOfBirth">Date Of Birth:</label> <input
+										class="form-control" type="date" name="employeeDateOfBirth" value="${employee.employeeDateOfBirth}" required>
+								</div>
+							</div>
+							</div>
+							<div class="row">
+								
+										<div class="col-md-6">
+											<label for="employeeDateOfJoining">Date Of Joining:</label> <input
+												class="form-control" type="date" name="employeeDateOfJoining" value="${employee.employeeJoiningDate}" required>
+											</div>
+								
+									 <div class="col-md-6">
+										<div class="form-group">
+											<label for="employeeEmail">Email:</label>
+												<div class="form-group">
+												<input id="email"
+													type="text" class="form-control" 
+													name="employeeEmail" 
+													placeholder="Email" data-type="email"
+													data-required="true" value="${employee.employeeEmail}">
+												</div>
+											<div class="emailMessage"></div>
+										</div>
+									</div>
+							</div>
+							<div class="row">
+							<div class="col-md-6">
+								<!-- password -->
+								<div class="form-group">
+
+									<label for="employeePassword">Password:</label>
+									<div class="form-group">
+										<input id="password"
+											type="password" class="form-control" 
+											name="employeePassword" 
+											placeholder="Password" value="${employee.employeePassword}">
+									</div>
+
+								</div>
+
+							</div>
+							<div class="col-md-6">
+								<!--Confirm password -->
+								<div class="form-group">
+
+									<label for="employeePassword">Confirm Password:</label>
+									<div class="form-group">
+										<input id="confirmPassword" type="password" class="form-control"
+											 placeholder="Password" value="${employee.employeePassword}"
+											onchange="checkPassword()">
+									</div>
+									<small id="passwordMessage" class="alert-danger"></small>
+								</div>
+							</div>
+						</div>
+							<!-- Model Footer -->
+							<div class="modal-footer">
+          								<div class="row">
+          								
+          									<div class="col-md-6">
+         								 		<button type="button" 
+         								 		class="btn btn-primary" 
+         								 		data-togal="modal" onclick="updateEmployee('${employee}')">Update</button>
+         								 	</div>
+          									<div class="col-md-6">
+         								 		<button type="button" 
+         								 		class="btn btn-danger" 
+         								 		data-dismiss="modal">Close</button>
+         								 	</div>
+         								 	
+         								 	
         								</div>
-        								<div class="modal-body">
-          								Name:
-        								</div>
-        								<div class="modal-body">
-          								Salary:
-        								</div>
-        								<div class="modal-body">
-          								Designation:
-        								</div>
-        								<div class="modal-body">
-          								LastWorkingDate:
-        								</div>
-        								<div class="modal-body">
-          								City:
-        								</div>
-        								<div class="modal-body">
-          								Area:
-        								</div>
-        								<div class="modal-body">
-          								State:
-        								</div>
-        								<div class="modal-body">
-          								Country:
-        								</div>
-        
-        							<!-- Modal footer -->
-        								<div class="modal-footer">
-          								<button type="button" 
-          								class="btn btn-danger" 
-          								data-dismiss="modal">Close</button>
-        								</div>
-        
-      								</div>
-    							</div>
-  							</div>
+        					</div>
+							
+							<!--End Footer  -->
+							</div>
+						</div>
+    				</div>
+  				</div>
  
- 						</div>
+ 					
                                    	</tr>
                                   </c:forEach>
                                   </tbody>
                                   <tfoot>
-                                  <tr><th rowspan="1" colspan="1">Profile_Pic</th>
+                                  <tr><th rowspan="1" colspan="1">ProfilePicture</th>
                                     <th rowspan="1" colspan="1">Name</th>
                                     <th rowspan="1" colspan="1">MobileNumber</th>
                                     <th rowspan="1" colspan="1">DateOfBirth</th>
@@ -247,6 +369,6 @@
                     </section>
                 </section>
             </section>
-
+</form>
 </body>
 </html>
