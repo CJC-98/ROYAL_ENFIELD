@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Notebook | Account_Index</title>
+    <title>Royal Enfield</title>
     <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/font.css" type="text/css" />
@@ -18,11 +18,11 @@
         <header class="bg-dark dk header navbar navbar-fixed-top-xs">
             <div class="navbar-header aside-md"> <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open"
                     data-target="#nav,html"> <i class="fa fa-bars"></i> </a> <a href="#" class="navbar-brand"
-                    data-toggle="fullscreen"><img src="${pageContext.request.contextPath}/Resources/notebook UI/images/logo.png" class="m-r-sm">Notebook</a> <a class="btn btn-link visible-xs"
+                    data-toggle="fullscreen"><img src="${pageContext.request.contextPath}/Resources/Royal Enfield images/RL_logo3.jpg" class="m-r-sm">Royal Enfield</a> <a class="btn btn-link visible-xs"
                     data-toggle="dropdown" data-target=".nav-user"> <i class="fa fa-cog"></i> </a> </div>
           
             <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user">
-                <li class="h idden-xs"> <a href="#" class="dropdown-toggle dk" data-toggle="dropdown"> <i class="fa fa-bell"></i>
+                <li class="hidden-xs"> <a href="#" class="dropdown-toggle dk" data-toggle="dropdown"> <i class="fa fa-bell"></i>
                         <span class="badge badge-sm up bg-danger m-l-n-sm">${inboxCount}</span> </a>
                     <section class="dropdown-menu aside-xl">
                         <section class="panel bg-white">
@@ -49,11 +49,9 @@
                 <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb-sm avatar pull-left">
                             <img src="${pageContext.request.contextPath}/Resources/images/EmployeeProfilePicture/${currentUserImg}"> 
                             </span> ${currentUserName} <b class="caret"></b> </a>
-                    <ul class="dropdown-menu animated fadeInRight"> <span class="arrow top"></span>
-                        <li> <a href="#">Settings</a> </li>
+                    <ul class="dropdown-menu animated fadeInRight"> <span class="arrow top"></span>                      
                         <li> <a href="profile.html">Profile</a> </li>
                         <li> <a href="MyNotificationsPageAccount"> <span class="badge bg-danger pull-right">${inboxCount}</span> Notifications </a> </li>
-                        <li> <a href="docs.html">Help</a> </li>
                         <li class="divider"></li>
                         <li> <a href="modal.lockme.html" data-toggle="ajaxModal">Logout</a> </li>
                     </ul>
@@ -66,24 +64,14 @@
                 <aside class="bg-dark lter aside-md hidden-print hidden-xs" id="nav">
                     <section class="vbox">
                         <header class="header bg-primary lter text-center clearfix">
-                            <div class="btn-group"> <button type="button" class="btn btn-sm btn-dark btn-icon" title="New project"><i
-                                        class="fa fa-plus"></i></button>
-                                <div class="btn-group hidden-nav-xs"> <button type="button" class="btn btn-sm btn-primary dropdown-toggle"
-                                        data-toggle="dropdown"> Switch Project <span class="caret"></span> </button>
-                                    <ul class="dropdown-menu text-left">
-                                        <li><a href="#">Project</a></li>
-                                        <li><a href="#">Another Project</a></li>
-                                        <li><a href="#">More Projects</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                          
                         </header>
                         <section class="w-f scrollable">
                             <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0"
                                 data-size="5px" data-color="#333333">
                                 <!-- nav -->
                                 <nav class="nav-primary hidden-xs">
-                                     <ul class="nav">
+                                    <ul class="nav">
                                         
                                         <li> <a href="Dashboard" class="active"> <i class="fa fa-dashboard"> 
                                         		<b class="bg-warning"></b>
@@ -99,9 +87,9 @@
                                         	 	<span class="badge badge-sm up bg-danger">${inboxCount}</span>                                       	 	
                                             </a>
                                         </li>
-                                        <li> <a href="notebook.html"> <i class="fa fa-pencil icon"> <b class="bg-info"></b>
-                                                </i> <span>Notes</span> 
-                                             </a> 
+                                        <li> <a href="newBikeList"> <i class="fa fa-bars">  <b class="bg-info"></b></i>
+                                        	 	</span> <span>New Bike Stock</span>                                       	 	
+                                            </a>
                                         </li>
                                     </ul>
                                 </nav> <!-- / nav -->

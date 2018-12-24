@@ -26,18 +26,19 @@
                 <section id="content">
                     <section class="vbox bg-white">
                         <header class="header b-b b-light hidden-print"> 
-                        	<button href="#" class="btn btn-sm btn-info pull-right" onClick="window.print();">Print</button>
-                            <p>Invoice</p>
+                        	<button href="#" class="btn btn-s-md btn-danger pull-right" onClick="window.print();">Print</button>                         	
+                            <p>Invoice</p> 
+                            <button href="#" class="btn btn-s-md btn-primary pull-right">Pay</button>
                         </header>
                         
-                        <section class="scrollable wrapper">
-                        	<img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/logo1.png"
-                                            class="img-circle">
-                                          
+                        <section class="scrollable wrapper">                        	
+                            <span class="pull-left thumb-sm"> 
+                                  <img src="${pageContext.request.contextPath}/Resources/Royal Enfield images/RL_logo3.jpg" class="img-circle"> 
+                            </span>               
                             <div class="row">
-                                <div class="col-xs-6">
-                                    <h4>Complete Java Clases..</h4>
-                                    <p><a href="http://www.completejavaclasses.com/">www.completejavaclasses.com</a></p>
+                                <div class="col-xs-5">
+                                    <h4>Royal Enfield</h4>
+                                    <p><a href="#">www.RoyalEnfield.com</a></p>
                                     <p>1st Floor <br> Vikas Mitra Mandal Chowk Road, <br> Near Karve Nagar Stop,Pune-52 </p>
                                     <p> Contact no:- +91-8888022204<br> </p>
                                 </div>
@@ -45,29 +46,30 @@
                                     <p class="h4">Date</p>
                                     <h5>
                                     	${date}
-                                    </h5>
-
-      								
+                                    </h5> 								
                                 </div>
                             </div>
                             
                             <div class="well m-t">
                                 <div class="row">
                                     <div class="col-xs-6"> <strong>TO:</strong>
-                                        <h4>Nagesh Nagshakti</h4>
-                                        <p> 3rd Floor<br> lane no 6, Karvenagar 411052<br> Maharashtra, INDIA<br>
-                                            Phone: 957-958-6717<br> Email: nageshwarbadkhal22@gmail.com<br> </p>
-                                    </div>
-                                    <div class="col-xs-6"> <strong>SHIP TO:</strong>
-                                        <h4>Nagesh Nagshakti</h4>
-                                        <p> 3rd Floor<br> lane no 6, Karvenagar 411052<br> Maharashtra, INDIA<br>
-                                            Phone: 957-958-6717<br> Email: nageshwarbadkhal22@gmail.com<br> </p>
+                                    
+                                    	
+                                    	
+                                        <h4>${regi.contact.name}</h4>
+                                        <p> ${regi.contact.address.city}<br> ${regi.contact.address.state}<br> ${regi.contact.address.country}<br>
+                                            Phone: ${regi.contact.mobile}<br> Email: ${regi.login.email}<br> </p>                                   	
                                     </div>
                                 </div>
                             </div>
-                            <p class="m-t m-b">Order date: <strong>${date}</strong><br> Order status: <span class="label bg-success">Unpaid</span><br>
-                                Order ID: <strong>#9399034</strong> </p>
+                            <p class="m-t m-b">Order date: <strong>${date}</strong><br>                            
+                            	Order status: <span class="label bg-success">${purchaseSatus}</span><br>                             
+                             </p>
                             <div class="line"></div>
+                            
+                            			
+                            
+                            
                             
                             
                             <table class="table">
@@ -83,37 +85,52 @@
                                 
                                 	<c:set var="SubTotal" value="${0}" />
                         			
-                                	<c:forEach var="l" items="${list}">
-                                		<c:set var="Total" value="${0}"/>
-                                		<c:set var="qty" value="${l.qty}"/>
-                                		<c:set var="unitcost" value="${l.unitCost}"/>
-                                		<c:set var="Total" value="${l.qty * l.unitCost}" />                            		
-                                		<c:set var="SubTotal" value="${SubTotal + Total}" />   		
+                              <!--   	<c:forEach var="l" items="${list}">  --> 
+                                	 	<c:set var="BikeTotal" value="${0}"/>
+                                		<c:set var="qty" value="${qty}"/>
+                                		<c:set var="bikeOnRoadPrice" value="${bikeSaleForUser.bikeOnRoadPrice}"/>
+                                		<c:set var="BikeTotal" value="${qty * bikeSaleForUser.bikeOnRoadPrice}" />     
+                                		
+                                		<c:set var="Aqty" value="${qty}"/>
+                                		<c:set var="ATotal" value="${qty * accessoriesStock.partPrice}"/>
+                                		                       		
+                                		<c:set var="SubTotal" value="${ATotal + BikeTotal}" />   		
+                                		
+                                		
+                                		
+                                		
+                                		
                                 		<tr>				 
                                 			<td> <c:out value="${qty}"/> </td>
-                                			<td> <c:out value="${l.name}"/> </td>
-                                			<td> <c:out value="${l.unitCost}"/> </td>                    				
-                                			<td> <c:out value="${Total}"/> </td>              			
+                                			<td> <c:out value="${bikeSaleForUser.bikemodel.modelName}"/> </td>
+                                			<td> <c:out value="${bikeOnRoadPrice}"/> </td>                    				
+                                			<td> <c:out value="${BikeTotal}"/> </td>              			
                                 		</tr>
-                                	</c:forEach>
+                                		<tr>				 
+                                			<td> <c:out value="${qty}"/> </td>
+                                			<td> <c:out value="${accessoriesStock.partName}"/> </td>
+                                			<td> <c:out value="${accessoriesStock.partPrice}"/> </td>                    				
+                                			<td> <c:out value="${ATotal}"/> </td>              			
+                                		</tr>
+                                <!--  	</c:forEach>    --> 
+                                	                                                               	
 	                                    <tr>
 	                                        <td colspan="3" class="text-right"><strong>Subtotal</strong></td>
 	                                        <td> <c:out value="${SubTotal}"/> </td>
 	                                    </tr>   
-	                                    <tr>
-	                                        <td colspan="3" class="text-right no-border"><strong>Shipping</strong></td>
-	                                        <td>$0.00</td>
-	                                    </tr>
-	                                    <tr>
-	                                        <td colspan="3" class="text-right no-border"><strong>VAT Included in Total</strong></td>
-	                                        <td>$0.00</td>
-	                                    </tr>
+	                                    
 	                                    <tr>
 	                                        <td colspan="3" class="text-right no-border"><strong>Total</strong></td>
 	                                        <td><strong><c:out value="${SubTotal}"/></strong></td>
 	                                    </tr>
 	                                </tbody>
 	                            </table>
+                            
+                            
+                            
+                            
+                            
+                         
                         </section>
                     </section> <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen, open"
                         data-target="#nav,html"></a>

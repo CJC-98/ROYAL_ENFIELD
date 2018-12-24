@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+ <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/css/font.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/css/app.v1.css" type="text/css" />
+
+
+
 </head>
 
 <body>
@@ -50,7 +53,7 @@
                              </div>
                     		</a>
 							
-						   <a  href="ServicesInprogressPage">	
+						  <a  href="ServicesInprogressPage">	
                            <div class="col-lg-4">
                                     <section class="panel panel-default">
                                         <header class="panel-heading bg-warning lt" style="font-size: 15px">In-Progress Services</header>
@@ -79,7 +82,7 @@
                                         <div class="panel-body text-center">
                                             <h4>${completedservices}</h4>
                                             <div class="inline">
-                                                <div class="easypiechart text-success" data-percent="${completedservices *100/totalServiceCount }"
+                                                <div class="easypiechart text-success" data-percent="${completedservices *100/totalServiceCount}"
                                                     data-line-width="5" data-track-Color="#f0f0f0" data-bar-color="#8ec165"
                                                     data-rotate="0" data-scale-Color="false" data-size="150"
                                                     data-animate="2000"> <span class="h2 step font-bold">22.66</span>%
@@ -93,8 +96,7 @@
                                     </section>    
                            </div>
 						   </a>
-                            
-	               		
+                    
 	               </div>
 	               
 	               
@@ -107,9 +109,9 @@
                                     <section class="panel panel-default">
                                         <header class="panel-heading bg-danger lt" style="font-size: 15px">Approved Customization</header>
                                         <div class="panel-body text-center">
-                                            <h4>8</h4>
+                                            <h4>${approvedCustomizationCount}</h4>
                                             <div class="inline">
-                                                <div class="easypiechart text-danger" data-percent="5.33"
+                                                <div class="easypiechart text-danger" data-percent="${approvedCustomizationCount *100/totalCustomizationCount}"
                                                     data-line-width="5" data-track-Color="#f0f0f0" data-bar-color="#FF5F4A"
                                                     data-rotate="0" data-scale-Color="false" data-size="150"
                                                     data-animate="2000"> <span class="h2 step font-bold">5.3</span>%
@@ -118,7 +120,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="panel-footer bg-danger lt" style="font-size: 15px">Total Customization 20</div>
+                                        <div class="panel-footer bg-danger lt" style="font-size: 15px">Total Customization ${totalCustomizationCount}</div>
 
                                     </section>    
                                 </div>
@@ -127,20 +129,20 @@
 							<a href="CustomizationInprogressPage">
                                 <div class="col-lg-4">
                                     <section class="panel panel-default">
-                                        <header class="panel-heading bg-warning lt" style="font-size: 15px">In-Progress Customization</header>
+                                        <header class="panel-heading bg-warning lt" style="font-size: 15px">InProgress Customization</header>
                                         <div class="panel-body text-center">
-                                            <h4>14</h4>
+                                            <h4>${inProgerssCustomization}</h4>
                                             <div class="inline">
-                                                <div class="easypiechart text-warning" data-percent="70"
+                                                <div class="easypiechart text-warning" data-percent="${inProgerssCustomization *100/totalCustomizationCount}"
                                                     data-line-width="5" data-track-Color="#f0f0f0" data-bar-color="#FFD300"
                                                     data-rotate="0" data-scale-Color="false" data-size="150"
                                                     data-animate="2000"> <span class="h2 step font-bold">70</span>%
-                                                    <div class="easypie-text text-muted">In-progress</div>
+                                                    <div class="easypie-text text-muted">Inprogress</div>
                                                 </div>      
                                             </div>
                                         </div>
 
-                                        <div class="panel-footer bg-warning lt" style="font-size: 15px">Total Customization 20</div>
+                                        <div class="panel-footer bg-warning lt" style="font-size: 15px">Total Customization ${totalCustomizationCount}</div>
 
                                     </section>    
                                 </div>
@@ -151,9 +153,9 @@
                                     <section class="panel panel-default">
                                         <header class="panel-heading bg-success lt" style="font-size: 15px">Completed Customization</header>
                                         <div class="panel-body text-center">
-                                            <h4>4</h4>
+                                            <h4>${completedCustomization}</h4>
                                             <div class="inline">
-                                                <div class="easypiechart text-success" data-percent="20"
+                                                <div class="easypiechart text-success" data-percent="${completedCustomization *100/totalCustomizationCount}"
                                                     data-line-width="5" data-track-Color="#f0f0f0" data-bar-color="#8ec165"
                                                     data-rotate="0" data-scale-Color="false" data-size="150"
                                                     data-animate="2000"> <span class="h2 step font-bold">20</span>%
@@ -162,15 +164,14 @@
                                             </div>
                                         </div>
 
-                                        <div class="panel-footer bg-success lt" style="font-size: 15px">Total Customization 20</div>
+                                        <div class="panel-footer bg-success lt" style="font-size: 15px">Total Customization ${totalCustomizationCount}</div>
 
                                     </section>    
                                 </div>
 							</a>
                                 
 	               </div>
-	               
-
+	              
 	            </section>
 	        </section>
 	 </section>               

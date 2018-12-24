@@ -23,6 +23,8 @@ public class BikeModel
 	@OneToMany(cascade=CascadeType.ALL)
 	private Set<Color>colors=new HashSet<Color>();
 	private String image;
+	
+	
 	public String getImage(){
 		return image;
 	}
