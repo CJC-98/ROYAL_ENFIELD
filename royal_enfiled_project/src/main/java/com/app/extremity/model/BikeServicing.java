@@ -1,7 +1,6 @@
 package com.app.extremity.model;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -24,6 +23,8 @@ public class BikeServicing {
 	
 	private String bikeReleaseStatus = "on-hold";  //OR released
 	
+	private int serviceProgressPercent = 0;  // 0-100 %  
+	
 	@OneToOne(cascade=CascadeType.ALL)
 	private ServcingBikeInfo servcingBikeInfo; 
 
@@ -37,6 +38,18 @@ public class BikeServicing {
 
 	public String getBikeServicingId() {
 		return bikeServicingId;
+	}
+
+
+
+	public int getServiceProgressPercent() {
+		return serviceProgressPercent;
+	}
+
+
+
+	public void setServiceProgressPercent(int serviceProgressPercent) {
+		this.serviceProgressPercent = serviceProgressPercent;
 	}
 
 

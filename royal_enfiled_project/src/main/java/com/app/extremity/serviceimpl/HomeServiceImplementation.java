@@ -27,6 +27,8 @@ public class HomeServiceImplementation implements IHomeService {
 		
 		HttpSession session = request.getSession();
 		
+	
+		
 		EmployeeDetails employeeDetails=employeeDetailsDao.findOneByEmployeeEmailAndEmployeePassword(email, password);
 		if(employeeDetails!=null) {
 			
@@ -36,6 +38,8 @@ public class HomeServiceImplementation implements IHomeService {
 			session.setAttribute("currentUserPost", employeeDetails.getEmployeeDesignation());
 			session.setAttribute("currentUserImg", employeeDetails.getProfilePictureUrl());
 			
+		
+
 			if(employeeDetails.getEmployeeDesignation().equals("Admin")) {
 				return 1;
 			}else if(employeeDetails.getEmployeeDesignation().equals("SalesManager")) {

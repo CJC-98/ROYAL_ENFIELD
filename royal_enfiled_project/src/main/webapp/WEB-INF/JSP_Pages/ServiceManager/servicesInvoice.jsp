@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+ <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+ <%@ taglib prefix="a" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,21 +13,72 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/css/app.v1.css" type="text/css" />
 </head>
-
+ 
 <body>
+
+	
+	<script>
+		function getServiceDetails(serviceId){
+
+  			var req = new XMLHttpRequest();		
+			req.open("GET","getServiceDetails?serviceId="+serviceId,true);
+			req.send(); 
+			
+			var table = document.getElementById("serviceTable");
+			
+			while(table.rows.length>1){
+				table.deleteRow(table.rows.length-1);
+			}
+			
+			req.onreadystatechange=function(){
+				if(req.readyState==4 && req.status==200){
+					
+					var list = JSON.parse(req.responseText);
+					
+					for(index = 0; index < list.length; index++){
+
+						
+						var row = table.insertRow(1);
+						
+						var cell1 = row.insertCell(0);
+						var cell2 = row.insertCell(1);
+						var cell3 = row.insertCell(2);
+						
+						cell1.innerHTML =  list[index].work;
+						cell2.innerHTML =  list[index].cost;
+						cell3.innerHTML =  list[index].status;
+						
+						cell1.style.textAlign = "center";
+						cell2.style.textAlign = "center";
+						cell3.style.textAlign = "center";
+						
+						if(list[index].status == 'done'){
+							cell3.style.color = "#81EF19";
+						}
+						else{
+							cell3.style.color = "#FF681B";
+						}
+						
+						
+					}
+				}
+			}  
+		}
+	</script>
+	
 	<section id="content" class="bg-light lter">
 	        <section class="vbox">
 	            <section class="scrollable padder">                                               
 	                                
 	                <div class="m-b-md">
-	                    <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Services Invoice</h3>
+	                    <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Servicing Invoice</h3>
 	                </div>
 	                
 	               <!-- first table starts -->
-                	<div class="col-sm-12">
+	              <div class="col-sm-12">
                                     <section class="panel panel-default">
                                         <table class="table table-striped m-b-none b-a">
-                                            <thead>
+                                               <thead>
                                                 <tr>
                                                     <th style="text-align: center">Invoice Id</th>
                                                     <th style="text-align: center">Amount</th>
@@ -39,94 +91,30 @@
                                             </thead>
                                             
                                             <tbody>
-                                            
-                                                <tr style="text-align: center">
-                                                    	 <td>1</td>
-                                                         <td>2500</td>
-                                                         <td>4</td>
-                                                         <td>4</td>
-                                                         <td>2700</td>
-                                                         <td style="color: #FF681B">unpaid</td>
-                                                         <td>
-                                                         	<a href="" class="btn btn-md btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
-                                                         		Amount Details
-                                                         	</a>
-                                                     </td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>2</td>
-                                                         <td>5421</td>
-                                                         <td>4</td>
-                                                         <td>4</td>
-                                                         <td>5642</td>
-                                                         <td style="color: #FF681B">unpaid</td>
-                                                         <td>
-                                                         	<a href="" class="btn btn-md btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
-                                                         		Amount Details
-                                                         	</a>
-                                                     </td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>3</td>
-                                                         <td>4784</td>
-                                                         <td>4</td>
-                                                         <td>4</td>
-                                                         <td>7524</td>
-                                                         <td style="color: #81EF19">paid</td>
-                                                         <td>
-                                                         	<a href="" class="btn btn-md btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
-                                                         		Amount Details
-                                                         	</a>
-                                                     </td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>4</td>
-                                                         <td>3544</td>
-                                                         <td>4</td>
-                                                         <td>4</td>
-                                                         <td>4513</td>
-                                                         <td style="color: #FF681B">unpaid</td>
-                                                         <td>
-                                                         	<a href="" class="btn btn-md btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
-                                                         		Amount Details
-                                                         	</a>
-                                                     </td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>5</td>
-                                                         <td>9784</td>
-                                                         <td>4</td>
-                                                         <td>4</td>
-                                                         <td>10325</td>
-                                                         <td style="color: #81EF19">paid</td>
-                                                         <td>
-                                                         	<a href="" class="btn btn-md btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
-                                                         		Amount Details
-                                                         	</a>
-                                                     </td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>6</td>
-                                                         <td>2500</td>
-                                                         <td>4</td>
-                                                         <td>4</td>
-                                                         <td>2700</td>
-                                                         <td style="color: #FF681B">unpaid</td>
-                                                         <td>
-                                                         	<a href="" class="btn btn-md btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
-                                                         		Amount Details
-                                                         	</a>
-                                                     </td>
-                                                </tr>
-    
-                                               
+                                             <a:forEach var="data" items="${bikeServicingList}">
+
+		                                         <tr style="text-align: center">
+	                                                    	 <td>${data.servicingInvoice.servicingInvoiceId}</td>
+	                                                         <td>${data.servicingInvoice.amount}</td>
+	                                                         <td>${data.servicingInvoice.serviceCGstPercent}</td>
+	                                                         <td>${data.servicingInvoice.serviceSGstPercent}</td>
+	                                                         <td>${data.servicingInvoice.totalAmount}</td>
+	                                                         <td style="color: #81EF19">${data.servicingInvoice.paymentStatus}</td>
+	                                                         <td>
+	                                                         	<span onclick="getServiceDetails('${data.bikeServicingId}')">
+	                                                         		<a class="btn btn-md btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
+	                                                         			Amount Details
+	                                                         		</a>
+	                                                         	</span>
+	                                                     </td>
+	                                                </tr>
+                                              </a:forEach>
                                             </tbody>
-                                            
+
+                                          
+
+                                             </tbody>
+                       
                                         </table>
                                     </section>
                                 </div>
@@ -134,18 +122,23 @@
 
                                 <!-- fisrt table ends -->
                                 
-                                <!-- modal starts-->
+                               <!-- modal starts-->
  
-						  <div class="modal fade" id="myModal" role="dialog">
+						  <div class="modal fade"  id="myModal" role="dialog">
 						    <div class="modal-dialog modal-md">
 						      <div class="modal-content">
-						        <div class="modal-header">
-						        	<h3 style="text-align: center">Amount Details</h3>  
+						        <div class="modal-header" >
+
+						        	<h3 style="text-align: center" >Amount Details </h3>  
+						        	 
 						        </div>
+						        
 						        <div class="modal-body">
 						          		
                                     <section class="panel panel-default">
-                                        <table class="table table-striped m-b-none">
+
+                                        <table class="table table-striped m-b-none" id="serviceTable">
+
                                             <thead>
                                                 <tr>
                                                     <th style="text-align: center">Work</th>
@@ -153,47 +146,16 @@
                                                     <th style="text-align: center">Status</th>
                                                 </tr>
                                             </thead>
+                                          
                                             
                                             <tbody>
-                                            
-                                                <tr style="text-align: center">
-                                                    	 <td>labour cost</td>
-                                                         <td>500</td>
-                                                         <td style="color: #81EF19">done</td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>engine oil change</td>
-                                                         <td>350</td>
-                                                         <td style="color: #81EF19">done</td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>brake oil change</td>
-                                                         <td>30</td>
-                                                         <td style="color: #81EF19">done</td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>engine tuning</td>
-                                                         <td>500</td>
-                                                         <td style="color: #81EF19">done</td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>horn tuning</td>
-                                                         <td>200</td>
-                                                         <td style="color: #81EF19">done</td>
-                                                </tr>
-                                                
-                                                
-    
-                                               
+
                                             </tbody>
                                             
                                         </table>
                                     </section>
                                 
+
 						        </div>
 						        <div class="modal-footer">	
 						          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -203,9 +165,12 @@
 					  	</div>
 					  
 					  	<!-- modal ends -->
-	                
-	            </section>
-	        </section>
-	 </section> 
+            
+                      
+        </section>
+   </section> 
+   </section>
+
+
 </body>
 </html>

@@ -6,9 +6,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
@@ -245,6 +243,7 @@ public class AccountController {
 	}
 	
 	
+
 	@RequestMapping(value="newBikeList")
 	public String NewBikeList(Model model, HttpServletRequest request) {
 		session = request.getSession();
