@@ -4,13 +4,7 @@ package com.app.extremity.iservice;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
-
-
-
-
 import org.springframework.web.multipart.MultipartFile;
-
-
 import com.app.extremity.model.AccessoriesDeadStock;
 import com.app.extremity.model.AccessoriesStock;
 import com.app.extremity.model.AvailableServicing;
@@ -63,10 +57,18 @@ public interface IAdminService {
 
 	List<SoldBikeStock> getSoldNewBike();
 
+
+	List<SoldBikeStock> getSoldBikeStock();
 	List<EmployeeDetails> getEmployeeListByDesignation(String employeeDesignation);
 
 
 
+	
+	List<EmployeeDetails> getEmployeeDesignation(String employeeDesignation);
+	
+	public String getEmployeeCount();
+	
+	public int getEmployeeEmail(String employeeEmail);
 	
 	//public Long findAllByDate(Date fd, Date ld);
 

@@ -156,12 +156,13 @@ public class ServiceManagerImpl implements ServiceManagerInterface{
 
 	@Override
 	public ServicingChart getServicingChart(int id) {
-		return servicingChartIDao.findById(id);
+		return servicingChartIDao.findByServicingChartId(id);
 	}
 
 	@Override
 	public CustomizationChart getCustomizationChart(int id) {
-		return customizationChartIDao.findById(id);
+	
+		return customizationChartIDao.findOneByCustomizationChartId(id);
 	}
 
 	@Override
