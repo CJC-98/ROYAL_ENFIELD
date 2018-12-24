@@ -310,6 +310,7 @@ public class AdminController {
 	  
   }
 	
+  
 	@RequestMapping(value = "/soldNewBike")
 	public String getSoldNewBikeInfo(Model model) 
 	{
