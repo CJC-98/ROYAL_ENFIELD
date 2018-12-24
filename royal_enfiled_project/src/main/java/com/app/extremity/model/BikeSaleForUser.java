@@ -23,6 +23,10 @@ private String bikewheel;
 private String showroomPrice;
 private String bikeOnRoadPrice;//with gst
 private String engineStartingType;//with kick or selfStart
+
+
+
+
 public String getStockId() {
 	return stockId;
 }

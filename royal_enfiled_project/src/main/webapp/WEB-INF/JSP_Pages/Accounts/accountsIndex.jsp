@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Notebook | Account_Index</title>
+    <title>Royal Enfield</title>
     <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/font.css" type="text/css" />
@@ -49,11 +49,9 @@
                 <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb-sm avatar pull-left">
                             <img src="${pageContext.request.contextPath}/Resources/images/EmployeeProfilePicture/${currentUserImg}"> 
                             </span> ${currentUserName} <b class="caret"></b> </a>
-                    <ul class="dropdown-menu animated fadeInRight"> <span class="arrow top"></span>
-                        <li> <a href="#">Settings</a> </li>
+                    <ul class="dropdown-menu animated fadeInRight"> <span class="arrow top"></span>                      
                         <li> <a href="profile.html">Profile</a> </li>
                         <li> <a href="MyNotificationsPageAccount"> <span class="badge bg-danger pull-right">${inboxCount}</span> Notifications </a> </li>
-                        <li> <a href="docs.html">Help</a> </li>
                         <li class="divider"></li>
                         <li> <a href="modal.lockme.html" data-toggle="ajaxModal">Logout</a> </li>
                     </ul>
@@ -89,7 +87,7 @@
                                         	 	<span class="badge badge-sm up bg-danger">${inboxCount}</span>                                       	 	
                                             </a>
                                         </li>
-                                        <li> <a href="newBikeList"> <i class="fa fa-info-circle">  <b class="bg-info"></b></i>
+                                        <li> <a href="newBikeList"> <i class="fa fa-bars">  <b class="bg-info"></b></i>
                                         	 	</span> <span>New Bike Stock</span>                                       	 	
                                             </a>
                                         </li>

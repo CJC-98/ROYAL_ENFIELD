@@ -20,7 +20,6 @@ public class Test {
 
 	static Logger logger = LogManager.getLogger(Test.class);
 
-	
 	public static void main(String[] args) {
 		SpringApplication.run(Test.class);
 		logger.warn("application started............");
