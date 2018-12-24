@@ -78,9 +78,7 @@ public class AccountController {
 		
 		List<Cart> cart = Service.getCartByRegistrationId(reg);
 			System.out.println("Controller.. GetCart By RegId..");
-			for(Cart c : cart) {
-				
-				
+			for(Cart c : cart) {								
 				System.out.println(c.getAccessories().getPartName());
 				
 				regi=new Registration();
