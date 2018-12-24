@@ -99,7 +99,6 @@ public class AdminController {
 	 */
 
 	@RequestMapping(value = "/employeeRegistration")
-
 	public String toEmployeeRegistrationPage(@RequestParam int designation,Model model) {
 		System.out.println(designation);
 		model.addAttribute("designation", designation);
