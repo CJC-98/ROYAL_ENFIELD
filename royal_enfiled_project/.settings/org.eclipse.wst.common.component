@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'AdminTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
     <wb-module deploy-name="royal_enfiled_project-0.0.1-SNAPSHOT">
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>

@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Properties;
 
@@ -36,14 +37,18 @@ import com.app.extremity.idao.AccessoriesStockIDao;
 import com.app.extremity.idao.AvailableServicingIDao;
 import com.app.extremity.idao.BikeCustomizationIDao;
 import com.app.extremity.idao.BikeOfferIDao;
+import com.app.extremity.idao.BikeSaleForUserIDao;
 import com.app.extremity.idao.BikeServicingIDao;
 import com.app.extremity.idao.CustomizationInvoiceIDao;
 import com.app.extremity.idao.DeadStockIDao;
 import com.app.extremity.idao.EmployeeDetailsIDao;
 import com.app.extremity.idao.NewBikeStockIDao;
 import com.app.extremity.idao.OldBikeStockIDao;
+import com.app.extremity.idao.RegistrationIDao;
 import com.app.extremity.idao.ServcingBikeInfoIDao;
+import com.app.extremity.idao.SoldAccessoriesIDao;
 import com.app.extremity.idao.SoldBikeStockIDao;
+import com.app.extremity.idao.SoldNewBikeIDao;
 import com.app.extremity.idao.SoldOldBikeStockIDao;
 import com.app.extremity.idao.TestDriveCustomerIDao;
 import com.app.extremity.iservice.IAdminService;
@@ -60,7 +65,9 @@ import com.app.extremity.model.EmployeeDetails;
 import com.app.extremity.model.NewBikeStock;
 import com.app.extremity.model.OldBikeStock;
 import com.app.extremity.model.ServcingBikeInfo;
+import com.app.extremity.model.SoldAccessories;
 import com.app.extremity.model.SoldBikeStock;
+import com.app.extremity.model.SoldOldBikeStock;
 import com.app.extremity.model.TestDriveCustomer;
 
 @Service
@@ -93,17 +100,21 @@ public class AdminServiceImplementation implements IAdminService {
 	@Autowired
 	TestDriveCustomerIDao testDriveCustomerIDao;
 	@Autowired
-
+	SoldNewBikeIDao soldNewBikeIDao;
+	@Autowired
 	AvailableServicingIDao availableServicingIDao;
 	@Autowired
 	BikeCustomizationIDao bikeCustomizationIDao;
 	@Autowired
 	BikeServicingIDao bikeServicingIDao;
-	
-
+    @Autowired
 	SoldBikeStockIDao soldBikeStockIDao;
-
-
+    @Autowired
+    SoldAccessoriesIDao soldAccessoriesIDao;
+    @Autowired
+    RegistrationIDao registrationIDao;
+    @Autowired
+    BikeSaleForUserIDao bikeSaleForUserIDao;
 	static Logger logger = LogManager.getLogger(AdminServiceImplementation.class);
 
 	/* this is path where profile picture will be stored */
@@ -306,7 +317,7 @@ public class AdminServiceImplementation implements IAdminService {
 
 	@Override
 
-	public List<AvailableServicing> getavaliableServicing() {
+	public List<AvailableServicing> getAvaliableServicing() {
 		
 		return (List<AvailableServicing>) availableServicingIDao.findAll();
 	}
@@ -325,8 +336,9 @@ public class AdminServiceImplementation implements IAdminService {
 
 	@Override
 	public List<SoldBikeStock> getSoldNewBike() {
+
 	
-		return null;
+		return (List<SoldBikeStock>) soldNewBikeIDao.findAll();
 	}
 
 	@Override
@@ -395,6 +407,69 @@ public class AdminServiceImplementation implements IAdminService {
 		
 	}
 
-	
 
+	@Override
+	public List<SoldBikeStock> getNewBikeSaleByDate(Date date) {
+		
+		
+		return (List<SoldBikeStock>) soldNewBikeIDao.findAllBySoldbikedate(date);
+		
+		
+	}
+
+	@Override
+	public List<EmployeeDetails> deleteById(String employeeId) {
+		employeeDetailsDao.findOneByEmployeeId(employeeId);
+		return (List<EmployeeDetails>) employeeDetailsDao.findAll();
+	}
+
+	@Override
+	public List<SoldOldBikeStock> getSoldOldBikeStock() {
+		
+		return (List<SoldOldBikeStock>) soldOldBikeStockDao.findAll();
+	}
+
+	@Override
+	public List<SoldAccessories> getSoldAccessories() {
+		
+		return (List<SoldAccessories>) soldAccessoriesIDao.findAll();
+	}
+
+	@Override
+	public List<EmployeeDetails> getEmployeeDetails() {
+		
+		return (List<EmployeeDetails>) employeeDetailsDao.findAll();
+	}
+
+	public long getRegistrationCount() {
+		
+		long regisrtationCount=registrationIDao.count();
+		
+		
+			return regisrtationCount;
+			
+	}
+
+	@Override
+	public long getBikeSaleForUserCount() {
+		
+		long BikeSaleForUserCount=bikeSaleForUserIDao.count();
+		
+		return BikeSaleForUserCount ;
+	}
+	public long getAccessoriesCount()
+	{
+		long AccessoriesCount=accessoriesStockIDao.count();
+		
+		return AccessoriesCount;
+	}
+
+	/*@Override
+	public EmployeeDetails findOneByEmployeeId(String employeeId) {
+		
+		return employeeDetailsDao.deleteAll(employeeId);
+	}
+*/
 }
+
+

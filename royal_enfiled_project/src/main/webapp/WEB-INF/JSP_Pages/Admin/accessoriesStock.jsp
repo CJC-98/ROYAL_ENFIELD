@@ -26,6 +26,7 @@
 <body class="">
 	<section id="content" class="bg-light lter"> <section
 		class="vbox"> <section class="scrollable padder">
+
 							<ul class="breadcrumb no-border no-radius b-b b-light pull-in">
                                 <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
                                 <li><a href="#">Stock</a></li>
@@ -93,9 +94,8 @@
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach items="${accessoriesStockList}"
-									var="accessoriesStock">
-									<tr role="row" class="odd">
+								<c:forEach items="${accessoriesStockList}" var="accessoriesStock">
+									    <tr role="row" class="odd">
 										<td class="sorting"></td>
 										<td>${accessoriesStock.partName}</td>
 										<td>${accessoriesStock.partPrice}</td>
@@ -144,6 +144,6 @@
 	</div>
 	</section> <!-- End table --> </section> </section> </section>
 	</
->>>>>>> branch 'AdminTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
+
 </body>
 </html>
