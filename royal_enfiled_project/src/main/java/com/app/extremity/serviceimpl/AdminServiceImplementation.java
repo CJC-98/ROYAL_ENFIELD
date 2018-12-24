@@ -43,6 +43,7 @@ import com.app.extremity.idao.EmployeeDetailsIDao;
 import com.app.extremity.idao.NewBikeStockIDao;
 import com.app.extremity.idao.OldBikeStockIDao;
 import com.app.extremity.idao.RegistrationIDao;
+import com.app.extremity.idao.RoleIDao;
 import com.app.extremity.idao.ServcingBikeInfoIDao;
 import com.app.extremity.idao.SoldAccessoriesIDao;
 import com.app.extremity.idao.SoldBikeStockIDao;
@@ -62,6 +63,7 @@ import com.app.extremity.model.EmailMessage;
 import com.app.extremity.model.EmployeeDetails;
 import com.app.extremity.model.NewBikeStock;
 import com.app.extremity.model.OldBikeStock;
+import com.app.extremity.model.Role;
 import com.app.extremity.model.ServcingBikeInfo;
 import com.app.extremity.model.SoldAccessories;
 import com.app.extremity.model.SoldBikeStock;
@@ -113,6 +115,8 @@ public class AdminServiceImplementation implements IAdminService {
     RegistrationIDao registrationIDao;
     @Autowired
     BikeSaleForUserIDao bikeSaleForUserIDao;
+    @Autowired
+    RoleIDao roleIDao;
 	static Logger logger = LogManager.getLogger(AdminServiceImplementation.class);
 
 	/* this is path where profile picture will be stored */
@@ -348,8 +352,17 @@ public class AdminServiceImplementation implements IAdminService {
 
 	@Override
 	public List<EmployeeDetails> getEmployeeListByDesignation(String employeeDesignation) {
-		
-		return (List<EmployeeDetails>) employeeDetailsDao.findAllByEmployeeDesignation(employeeDesignation);
+		List<EmployeeDetails>employeeListByDesignation;
+		employeeListByDesignation=(List<EmployeeDetails>) employeeDetailsDao.findAllByEmployeeDesignation(employeeDesignation);
+		if(employeeListByDesignation!=null) {
+			return employeeListByDesignation;
+		}
+		else {
+			Role role=roleIDao.findOneByRoleName(employeeDesignation);
+			return registrationIDao.findAllByRole(role);
+			
+			
+		}
 	}
 
 	

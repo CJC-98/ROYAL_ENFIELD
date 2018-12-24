@@ -167,11 +167,11 @@
                                                          <span>Accountant</span> </a>
                                                      </li>
                                                      
-                                                    <li> <a href="employeeList">
+                                                    <li> <a href="employeeList?designation=DEALER">
                                                          <span>Dealer</span> </a>
                                                      </li>
                                                             
-                                                    <li> <a href="employeeList">
+                                                    <li> <a href="employeeList?designation=USER">
                                                    		<span>User</span> </a> 
                                                    	</li>
                                                    

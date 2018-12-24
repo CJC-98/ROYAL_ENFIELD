@@ -60,21 +60,7 @@ public class HomeServiceImplementation implements IHomeService {
 			}
 			
 		}
-		else {
-			
-			Login userLogin=loginIDao.findOneByEmailAndPassword(email,password);
-			Registration userRegistration=registrationIDao.findOneByLogin(userLogin);
-			if (userLogin != null) {
-				session.setAttribute("currentUserName", userRegistration.getContact().getName());
-				//add rolename value in place of Role name and remove this comment
-				if(userLogin.getRole().getRoleName().equals("Rolename")) {
-					return 5;
-				}else if(userLogin.getRole().getRoleName().equals("Rolenam")) {
-					return 6;
-				}
-			}
-			
-		}
+		
 		return 0;
 	}
 

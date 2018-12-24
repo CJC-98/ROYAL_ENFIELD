@@ -2,13 +2,12 @@ package com.app.extremity.model;
 
 
 
-import java.util.Date;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 /**
  * @author Individual User & Dealer;
@@ -19,55 +18,68 @@ import javax.persistence.OneToOne;
 
 @Entity
 public class Registration {
-	
 	@Id
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String registrationId;
-	
-	private Date registrationDate;;
-	
 	@OneToOne(cascade=CascadeType.ALL)
 	private Role role;
-	
-	@OneToOne(cascade=CascadeType.ALL)	
-	private Contact contact;
-	
-	@OneToOne(cascade=CascadeType.ALL)
-	private Login login;
-	
-	
-	
 	public Role getRole() {
 		return role;
 	}
+
 	public void setRole(Role role) {
 		this.role = role;
 	}
+
+	@OneToOne(cascade=CascadeType.ALL)	
+	private Contact contact;
+	
+	private String date;
+	private String email;
+	private String password;
+	
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	
 	public String getRegistrationId() {
 		return registrationId;
 	}
-	
-	public Date getRegistrationDate() {
-		return registrationDate;
+
+	public String getDate() {
+		return date;
 	}
-	public void setRegistrationDate(Date registrationDate) {
-		this.registrationDate = registrationDate;
+
+	public void setDate(String date) {
+		this.date = date;
 	}
+
 	public void setRegistrationId(String registrationId) {
 		this.registrationId = registrationId;
 	}
+
 	public Contact getContact() {
 		return contact;
 	}
+
 	public void setContact(Contact contact) {
 		this.contact = contact;
 	}
-	public Login getLogin() {
-		return login;
-	}
-	public void setLogin(Login login) {
-		this.login = login;
-	}
-	
+
 	
 
 }

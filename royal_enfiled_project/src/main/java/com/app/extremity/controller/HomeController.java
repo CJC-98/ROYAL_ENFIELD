@@ -89,6 +89,9 @@ public class HomeController {
 		
 		switch (i) {
 		case 1:
+			model.addAttribute("bikeCount", adminService.getBikeSaleForUserCount());
+			model.addAttribute("registerUser", adminService.getRegistrationCount());
+			model.addAttribute("accessoriesCount", adminService.getAccessoriesCount());
 			model.addAttribute("link", "adminDashboard.jsp");			
 			return "Admin/adminIndex";			
 		case 2:
