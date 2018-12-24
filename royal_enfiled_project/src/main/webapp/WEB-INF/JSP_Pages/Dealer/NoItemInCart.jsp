@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/app.v1.css" type="text/css" />
 <meta charset="ISO-8859-1">
-<title>Product Not Available</title>
+<title>Cart is empty</title>
 </head>
 <body class="">
     <section id="content">
@@ -19,8 +19,8 @@
                 <br>
                 <div class="row">
                 <div class="col-md-12"> 
-                <center><h2>product is not available---!</h2></center></div></div>
-                <a href="OldBike"class="btn btn-s-md btn-success btn-rounded">Continue Shopping</a>
+                <center><h2>Your cart is Empty---!</h2></center></div></div>
+                <a href="continueShopping"class="btn btn-s-md btn-success btn-rounded">Continue Shopping</a>
                       </div>
        
        

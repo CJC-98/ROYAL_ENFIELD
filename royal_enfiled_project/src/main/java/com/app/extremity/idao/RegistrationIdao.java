@@ -16,7 +16,7 @@ public interface RegistrationIdao extends CrudRepository<Registration, String>
 		public int getDealerCount();
 		
 		public Registration findAllByEmail(String email);
-		public Registration findAllByEmailAndPassword(String email, String password);
+		public Registration findOneByEmailAndPassword(String email, String password);
 
 		
 }

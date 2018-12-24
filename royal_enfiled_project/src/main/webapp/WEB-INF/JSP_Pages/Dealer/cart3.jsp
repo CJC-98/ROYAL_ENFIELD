@@ -27,13 +27,11 @@ function getPrice(){
 
 
 function saveCart(partId){
-	alert(partId)
-	
-	
+	//alert(partId)
 	var qty=document.getElementById("qty").value;
-	alert(qty)
+	//alert(qty)
 	var total=document.getElementById("totalprice").value;
-	alert(total)
+	//alert(total)
 	document.savecart.action="savecart3?id="+partId+"&qty="+qty+"&total="+total;
 	document.savecart.submit();
 	req.send();

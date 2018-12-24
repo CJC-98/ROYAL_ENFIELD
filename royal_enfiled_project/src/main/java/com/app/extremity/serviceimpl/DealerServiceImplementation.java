@@ -9,17 +9,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.app.extremity.idao.AccessoriesStockIDao;
+import com.app.extremity.idao.BikeCustomizationIDao;
 import com.app.extremity.idao.BikeModelIDao;
 import com.app.extremity.idao.BikeModelNameIDao;
 import com.app.extremity.idao.BikeSaleForUserIDaoI;
 import com.app.extremity.idao.CartIDaoi;
 import com.app.extremity.idao.CityIdao;
 import com.app.extremity.idao.CountryIdao;
+import com.app.extremity.idao.EmployeeDetailsIDao;
 import com.app.extremity.idao.OldBikeStockIDao;
 import com.app.extremity.idao.RegistrationIdao;
 import com.app.extremity.idao.StateIdao;
 import com.app.extremity.iservice.IDealerService;
 import com.app.extremity.model.AccessoriesStock;
+import com.app.extremity.model.BikeCustomization;
 import com.app.extremity.model.BikeModel;
 import com.app.extremity.model.BikeModelName;
 import com.app.extremity.model.BikeSaleForUser;
@@ -36,13 +39,13 @@ public class DealerServiceImplementation implements IDealerService{
 @Autowired
 RegistrationIdao registrationIdao;
 @Autowired
+EmployeeDetailsIDao employeeDetailsDao;
+@Autowired
 CityIdao cityIdao;
 @Autowired
 CountryIdao countryIdao;
 @Autowired 
 StateIdao statedaoi; 
-
-
 @Autowired
 BikeModelIDao bikeModelIdao;
 @Autowired
@@ -55,6 +58,8 @@ AccessoriesStockIDao accessoriesStockIdao;
 OldBikeStockIDao oldBikeStockIdao;
 @Autowired
  BikeModelNameIDao bikeModelNameIdao;
+@Autowired
+BikeCustomizationIDao bkcidao;
 
 //this method to save user/dealer
 //@Author Akshata Yevatkar 
@@ -69,7 +74,38 @@ public Registration saveData(Registration register,HttpServletRequest request) {
 }
 
 	
+//this method to get  list of countries 
+	@Override
+	public List<Country> getAllcountry() {
+		System.out.println("in Getallcountry service...");
+		 List<Country>list= (List<Country>) countryIdao.findAll();
+		 System.out.println("serviceImpl"+list);
+		 return list;
+	}
 
+	//this method to get states from a country
+	@Override
+	public List<State> findAllState(int a) {
+		System.out.println("in serviceimpl"+a);
+		   Country country=  countryIdao.findOne(a);
+		    List<State>list= statedaoi.findAllByCountry(country);
+			System.out.println("serviceimple="+list);
+		    return list;
+
+	}
+
+	//this method to get cities from states
+	@Override
+	public List<City> getAllcitiesByState(String b) {
+		// TODO Auto-generated method stub
+		System.out.println("in service cities...");
+		State sname= statedaoi.findOneBySname(b);
+		List<City>list= cityIdao.findAllCityByState(sname);
+		return list;
+	}
+
+	
+	
 /* //@Author Akshata Yevatkar
 //this method to get count for registered users
 @Override
@@ -94,37 +130,6 @@ public Registration findEmail(String email) {
   
 //@Author Sonika Takalkar
 //this method to get  list of countries 
-@Override
-public List<Country> getAllcountry() {
-	System.out.println("in Getallcountry service...");
-	 List<Country>list= (List<Country>) countryIdao.findAll();
-	 System.out.println("serviceImpl"+list);
-	 return list;
-}
-
-//@Author Sonika Takalkar
-//this method to get states from a country
-@Override
-public List<State> findAllState(int a) {
-	System.out.println("in serviceimpl"+a);
-	   Country country=  countryIdao.findOne(a);
-	    List<State>list= statedaoi.findAllByCountry(country);
-		System.out.println("serviceimple="+list);
-	    return list;
-
-}
-
-//@Author Sonika Takalkar
-//this method to get cities from states
-@Override
-public List<City> getAllcitiesByState(String b) {
-	// TODO Auto-generated method stub
-	System.out.println("in service cities...");
-	State sname= statedaoi.findOneBySname(b);
-	List<City>list= cityIdao.findAllCityByState(sname);
-	return list;
-}
-
 
 //@Author Akshata Yevatkar
 //to get user count
@@ -149,26 +154,6 @@ public int getDealerCount() {
 }
 
 
-@Override
-public int getLogin(String email, String password,HttpServletRequest request) {
-	System.out.println("in serviceimpl login...");
-	HttpSession session = request.getSession();
-	Registration login1= registrationIdao.findAllByEmailAndPassword(email,password);
-		System.out.println("email serviceimpl"+login1.getEmail());
-		if(login1!=null){
-			session.setAttribute("reg", login1);
-			session.setAttribute("id", login1.getRegistrationId());
-			session.setAttribute("email", login1.getEmail());
-			session.setAttribute("password", login1.getPassword());
-			System.out.println(email+" "+password);
-			if(email.equals(login1.getEmail()) && password.equals(login1.getPassword()))
-			{
-				return 1;
-			}
-		
-		}
-		return 0;
-}	
 
 @Override
 	public BikeModel saveBikes(BikeModel bike) {
@@ -363,6 +348,57 @@ public List<OldBikeStock> getOldBikeId() {
 	System.out.println("serviceimpl quickview"+ob);
 	return ob;
 }
+@Override
+public List<AccessoriesStock> getAccessoriesStock(AccessoriesStock accStock) {
+	// TODO Auto-generated method stub
+	System.out.println("In getAccessoriesStock of service impl...");
+	String id=accStock.getPartId();
+	System.out.println("accstock and id"+accStock+" & "+id);
+	List<AccessoriesStock>l=accessoriesStockIdao.findAllByPartId(id);
+	System.out.println(l);
+	return  l;
+}
+
+
+
+@Override
+public void saveCustomizationDetails(BikeCustomization bikecust) {
+System.out.println("In save from delearservice");
+bkcidao.save(bikecust);
+	
+}
+/*@Override
+public String getAllBikeModelCount() {
+	// TODO Auto-generated method stub
+int bcnt=(int)bikeModelIdao.count();
+//bcnt++;
+String id="BM";
+	return id+(bcnt+1);
+}
+
+
+*/
+@Override
+public String getAccessoriesCount() {
+	int r=(int)accessoriesStockIdao.count();
+	r++;
+	String s="accid";
+	return s+r;
+}
+
+
+
+@Override
+public String getAllBikeCustomizationCount() {
+	// TODO Auto-generated method stub
+	int b=(int)bkcidao.count();
+	b++;
+	String bcid="BCID";
+	return bcid+b;
+}
+
+
+
 
 
 }

@@ -27,13 +27,13 @@ function getPrice(){
 
 
 function saveCart(oldBikeStockId){
-	alert(oldBikeStockId)
+	//alert(oldBikeStockId)
 	
 	
 	var qty=document.getElementById("qty").value;
-	alert(qty)
+	//alert(qty)
 	var total=document.getElementById("totalprice").value;
-	alert(total)
+	//alert(total)
 	document.savecart.action="savecart2?id="+oldBikeStockId+"&qty="+qty+"&total="+total;
 	document.savecart.submit();
 	req.send();
@@ -60,7 +60,7 @@ function saveCart(oldBikeStockId){
 								<th></th>
 								<th>Product Name</th>
 								<th>Image</th>	
-								<th>Accessories Price</th>
+								<th>Bike Price</th>
 								<th>Quantity</th>
 									<th>Total Price</th>
 								</tr>

@@ -34,8 +34,16 @@ public class BikeCustomization {
 	
 	//FK of customer @OneToOne
 	
-	
-	
+	@OneToOne
+	private BikeModel bikeModel;
+
+	public BikeModel getBikeModel() {
+		return bikeModel;
+	}
+
+	public void setBikeModel(BikeModel bikeModel) {
+		this.bikeModel = bikeModel;
+	}
 
 	public String getBikeCustomizationId() {
 		return bikeCustomizationId;

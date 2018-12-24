@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -26,18 +28,26 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.app.extremity.model.AccessoriesStock;
 import com.app.extremity.model.Address;
+import com.app.extremity.model.BikeCustomization;
 import com.app.extremity.model.BikeModel;
 import com.app.extremity.model.BikeModelName;
 import com.app.extremity.model.BikeSaleForUser;
 import com.app.extremity.model.Cart;
 import com.app.extremity.model.City;
 import com.app.extremity.model.Contact;
+import com.app.extremity.model.CustomizationBikeInfo;
+import com.app.extremity.model.CustomizationChart;
+import com.app.extremity.model.CustomizationInvoice;
+import com.app.extremity.model.EmployeeDetails;
+import com.app.extremity.model.Notfication;
 import com.app.extremity.model.OldBikeStock;
 import com.app.extremity.model.Registration;
 import com.app.extremity.model.Role;
 import com.app.extremity.model.State;
-import com.app.extremity.exceptionHandling.QuantityNotNullException;
+import com.app.extremity.exceptionHandling.CustomException;
+import com.app.extremity.iservice.IAdminService;
 import com.app.extremity.iservice.IDealerService;
+import com.app.extremity.iservice.NotificationInterface;
 import com.google.gson.Gson;
 
 @Controller
@@ -46,19 +56,51 @@ public class DealerController {
 	@Autowired
 	IDealerService service;
 
+	@Autowired
+	NotificationInterface notificationInterface;
+	
+	@Autowired
+	IAdminService adminService;
+	
 	HttpSession session;
 
 	@RequestMapping(value = "/DealerDashboardPage")
 	public String ServicesDashboardPage(Model model) {
-		//
-		//
+		
+		//@RequestMapping(value="/dealerDashboard")
+		
+
+			//test data for notification
+			Notfication notify = new Notfication();
+
+			notify.setSenderName("samir");
+			notify.setSenderImg("person2.png");
+			notify.setSenderPost("accounts manager");
+
+			notify.setReciverName("pranay");
+			notify.setReciverImg("person1.png");
+			notify.setReciverPost("service manger");
+
+			notify.setMessage("I am leaving");
+
+			DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy"); 
+			DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("hh:mm:ss a"); 
+
+			notify.setSendDate(LocalDateTime.now().format(dateFormat));
+			notify.setSendTime(LocalDateTime.now().format(timeFormat));
+			 
+		    //get short notification list
+			model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
+			model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
+		    
+			
 
 		System.out.println("dashboard hits...........");
 		model.addAttribute("link", "dealerDashboard.jsp");
 		return "Dealer/dealerIndex";
 	}
 /* @ author shital belokar this method is used for continue shopping and return on dealer dashboard*/
-	@RequestMapping(value = "/continue")
+	@RequestMapping(value = "/continueShopping")
 	public String ContinueShopping(Model model) {
 		
 		System.out.println("dashboard hits...........");
@@ -81,9 +123,10 @@ public class DealerController {
 	/* @ author shital belokar this method to show  customize bike*/
 	@RequestMapping(value = "/CustmizeBike")
 	public String custmizeBike(Model model) {
-
-		System.out.println("newbike hits...........");
-		model.addAttribute("link", "customizationofBike.jsp");
+		List<AccessoriesStock>list=service.getAllAccessories();
+		System.out.println(list+"in controller...");
+		model.addAttribute("data", list);
+		model.addAttribute("link","customization.jsp");
 		System.out.println("final");
 		return "Dealer/dealerIndex";
 	}
@@ -108,7 +151,7 @@ public class DealerController {
 						+ c.getRegistration().getRegistrationId());
 				if ((reiid).equals(reg.getRegistrationId())) {
 					System.out.println("save cart if");
-					if(!c.getPurchaseStatus().equals("sold")){
+					if(!c.getPurchaseStatus().equals("buyNow")){
 					if (c.getRegistration().getRegistrationId().equals(reiid))
 						 {
 						
@@ -124,23 +167,29 @@ public class DealerController {
 								oldBikeCartList.add(c);
 							}
 						}
-					}
+					
 					
 					 sum=(long) (sum+c.getTotalprice());
 					 model.addAttribute("msg", sum);
+					 model.addAttribute("data1", bikeCartList);
+					 model.addAttribute("data2", accesseriesCartList);
+					 model.addAttribute("data3", oldBikeCartList);
+					 model.addAttribute("link", "MyCart.jsp");
+					}
 					
+					else{
+						model.addAttribute("link","NoItemInCart.jsp");
+					}
 				}
 
 				System.out.println("dashboard hits...........");
-				model.addAttribute("link", "MyCart.jsp");
+				
 
 			}
 
 		}
 		
-		model.addAttribute("data1", bikeCartList);
-		model.addAttribute("data2", accesseriesCartList);
-		model.addAttribute("data3", oldBikeCartList);
+		
 		return "Dealer/dealerIndex";
 
 	}
@@ -177,20 +226,17 @@ public class DealerController {
 
 		session = request.getSession();
 		System.out.println("values" + qty);
-		if (qty == 0) {
-			System.out.println("in 1st try");
-			QuantityNotNullException e = new QuantityNotNullException();
-			try {
-				System.out.println("in try");
-				throw e;
-			} catch (QuantityNotNullException e1) {
-				// TODO Auto-generated catch block
-				System.out.println("in catch");
-				e1.printStackTrace();
-				System.out.println(e.getMessage());
-				// return "Dealer/ExceptionHandler";
-			}
+		
+		if(qty==0)
+		{
+			System.out.println("in throws exception");
+			throw new CustomException("Quantity should not be Zero", "CustomException");
+			
+	
 		}
+		
+		else 
+		{
 		System.out.println("name " + session.getAttribute("id"));
 		Registration reg = (Registration) session.getAttribute("reg");
 		session.getAttribute("email");
@@ -227,22 +273,64 @@ public class DealerController {
 							cartPage(model, request);
 						}
 					}
-				} else {
+				} 
+				else {
 
-					model.addAttribute("msg",
-							"stock is not sufficient please enter less quantity");
-
-					model.addAttribute("link", "cart.jsp");
-					return "Dealer/dealerIndex";
-
+					System.out.println("in throws exception");
+					throw new CustomException("stock is not sufficient plese enter less quantity", "CustomException");
+					
 				}
 			}
-
+			
+			
+		}
 		}
 		model.addAttribute("link", "MyCart.jsp");
 		return "Dealer/dealerIndex";
 	}
 
+	
+	
+
+	//@Author =akshata yevatkar
+	@RequestMapping(value="/quantity", method=RequestMethod.GET,produces="application/json")
+		public @ResponseBody String getBikeAvailability(Model model,@RequestParam String modelId,@RequestParam(value="qty") int qty, HttpServletResponse re)throws IOException
+		{
+			System.out.println("in getbikestock()...quantity"+qty+" modelID "+modelId);
+			//BikeSaleForUser bs=new BikeSaleForUser();
+			//int dbs=Integer.parseInt();
+			List<BikeSaleForUser> bs1list=service.getBikeId();
+			System.out.println("list from controller"+bs1list);
+			for(BikeSaleForUser b1:bs1list)
+			{
+				if(b1.getBikemodel().getModelId().equals(modelId))
+				{
+				System.out.println("in if --quantity--"+b1.getQuantity());
+				int dbs=Integer.parseInt(b1.getQuantity());
+				
+				if(dbs<qty)
+				 {
+					 System.out.println("In if");
+				//String msg= "Stock Not available";
+				//model.addAttribute(msg, "msg");
+				String json=new Gson().toJson("Stock Not available");	
+				re.setContentType("application/json");
+				re.getOutputStream();
+				return json;
+				}
+				 else {
+					 String msg="Stock is Available";
+					 String json=new Gson().toJson("Stock is Available");
+					 re.setContentType("application/json");
+					 re.getOutputStream();
+					 return json;
+				 }			
+				}
+			}
+			System.out.println("check");
+			return "json";
+
+		}
 	/* @author shital belokar this method used for to delete cart items */
 	@RequestMapping(value = "/deletecart", method = RequestMethod.POST)
 	public String deleteCartProduct(Model model, @RequestParam int productId,
@@ -250,9 +338,16 @@ public class DealerController {
 		session = request.getSession();
 		service.deleteCart(productId);
 		Registration reg = (Registration) session.getAttribute("reg");
-		cartPage(model, request);
+	String c=cartPage(model, request);
+	if(!c.isEmpty()){
 		//model.addAttribute("data", list);
 		model.addAttribute("link", "MyCart.jsp");
+	}
+	else{
+			System.out.println("in throws exception");
+			throw new CustomException("Your Cart Is Empty", "CustomException");
+			
+		}
 		return "Dealer/dealerIndex";
 
 	}
@@ -463,13 +558,7 @@ public class DealerController {
 	 * }
 	 */
 
-	@ExceptionHandler(value = QuantityNotNullException.class)
-	public String exceptionHandling(Model model) {
-		
-		return "Dealer/ExceptionHandler";
-
-	}
-
+	
 	/* @ author Hemant Jadhav this method is to add Accessories in cart */
 	@RequestMapping(value = "/addcart3", method = RequestMethod.GET)
 	public String saveAccToCart(Model model,
@@ -503,12 +592,10 @@ public class DealerController {
 		System.out.println("values" + qty + "" + total);
 		System.out.println("name " + session.getAttribute("id"));
 		Registration reg = (Registration) session.getAttribute("reg");
-		
 		session.getAttribute("email");
 		System.out.println("session id" + reg);
 		String regid = reg.getRegistrationId();
 		System.out.println("session regid" + regid);
-
 		List<AccessoriesStock> Aclist = service.getAccessoriesId();
 		for (AccessoriesStock AC : Aclist) {
 			System.out.println("in for ");
@@ -705,7 +792,9 @@ public class DealerController {
 			System.out.println("in controller"+name);
 			List<OldBikeStock>list=service.getAllBikeByOldbikemodelname(name);
 			if(list.isEmpty()){
-				model.addAttribute("link", "Ooops.jsp");
+				System.out.println("in throws exception");
+				throw new CustomException("Product Not Available", "CustomException");
+				
 			}
 			else{
 			model.addAttribute("data", list);
@@ -715,7 +804,7 @@ public class DealerController {
 			}	
 			return "Dealer/dealerIndex";
 		}
-/* @ author shital belokar this method*/
+/* @ author shital belokar this method is to set status after buying bike*/
 		@RequestMapping("/status")
 		public String checkStatus(Model model,HttpServletRequest request){
 			System.out.println("in check status");
@@ -724,7 +813,7 @@ public class DealerController {
 			session.getAttribute("email");
 			System.out.println("session id" + reg);
 			List<Cart> cartlist = service.getAllCart();
-			long sum=0;
+			
 			for (Cart c : cartlist) {
 				if (c.getRegistration() != null) {
 					String reiid = c.getRegistration().getRegistrationId();
@@ -736,25 +825,183 @@ public class DealerController {
 						if (c.getRegistration().getRegistrationId().equals(reiid))
 							 {
 							    c.setRegistration(reg);
-								c.setPurchaseStatus("sold");
+								c.setPurchaseStatus("buyNow");
 								Cart c1 = service.saveCart(c);
 							 }
 						}
 					}
 			}
 			cartPage(model, request);
-			model.addAttribute("link", "MyCart.jsp");
+			model.addAttribute("link", "dealerDashboard.jsp");
 			return "Dealer/dealerIndex";
 			
 		}
 		
+		@RequestMapping(value="/sendDealerNotification")    
+		public @ResponseBody String sendNotification( @RequestParam String reciverName, @RequestParam String reciverPost,
+													 @RequestParam String reciverImg, @RequestParam String message,HttpServletRequest request) {
+
+			session =request.getSession();
+			Notfication notify = new Notfication();
+		
+			notify.setSenderName(session.getAttribute("currentUserName").toString()); 
+			notify.setSenderImg(session.getAttribute("currentUserImg").toString());
+			notify.setSenderPost(session.getAttribute("currentUserPost").toString());
+
+			notify.setReciverName(reciverName);
+			notify.setReciverPost(reciverPost);
+			notify.setReciverImg(reciverImg);
+			
+			DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy"); 
+			DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("hh:mm:ss a"); 
+			
+			notify.setSendDate(LocalDateTime.now().format(dateFormat));
+			notify.setSendTime(LocalDateTime.now().format(timeFormat));
+			
+			notify.setMessage(message);
+			
+			
+			Notfication saveNotify = notificationInterface.saveNotfication(notify);
+			
+			if(saveNotify != null) {
+				return "done";
+			}
+			
+			return null;
+			
+		}
+		
+		
+		
+		
+		@RequestMapping(value="/MyNotificationss")
+		public String MyNotificationsPage(Model model,HttpServletRequest request){
+			
+			session = request.getSession();
+			
+			//get short notification list
+			model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("email").toString(), false));
+			model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("email").toString(), false));
+				
+			//get current user name
+			model.addAttribute("currentUserName", session.getAttribute("email").toString());
+				
+			//get outbox notification list
+	        model.addAttribute("outboxList", notificationInterface.getMyOutboxNotfication(session.getAttribute("email").toString()));
+		
+	        //get inbox notification list
+	 	    model.addAttribute("inboxList", notificationInterface.getMyInboxNotfication(session.getAttribute("email").toString()));   
+	 	    
+			model.addAttribute("link","MyNotification.jsp");	
+			return "Dealer/dealerIndex";
+		}
+
+		@RequestMapping(value="/searchEmployee")    
+		public @ResponseBody EmployeeDetails searchEmployee(@RequestParam String empName, HttpServletResponse response) {
+			
+			if(adminService.getEmployeeDetailsByName(empName) != null) 
+				return adminService.getEmployeeDetailsByName(empName);
+
+			return null;
+
+		}
+		
+
+		
 	@RequestMapping(value = "/logout")
 	public String logout(HttpServletRequest request) {
 		System.out.println("logout()");
+		//session.removeAttribute("reg");
+		session = request.getSession();
+		session.invalidate();
 
-		HttpSession httpSession = request.getSession();
-		httpSession.invalidate();
+		return "login";
+	}
+	@RequestMapping(value="/savecustomize")
+	public String customizeBike(@ModelAttribute BikeCustomization bikecust, @ModelAttribute AccessoriesStock as, @ModelAttribute CustomizationBikeInfo cbi,@RequestParam String modelName,
+		@ModelAttribute CustomizationInvoice cstinvc  , @ModelAttribute CustomizationChart cc,Model model, HttpServletRequest req)
+	{	session=req.getSession();
+	System.out.println("ModelName111"+modelName);
+	Registration reg = (Registration) session.getAttribute("reg");
+	System.out.println(reg);
+	if(reg!=null){
+	
+		System.out.println("in dealer controller....");
+		System.out.println("in saveCustomize");
+		List<BikeModel> bikem=service.getAllBikes();
+		for(BikeModel b:bikem){
+			System.out.println("in  model for ");
+			if(b.getModelName().equals(modelName)){
+				System.out.println("in if1111");
+				bikecust.setBikeModel(b);
+		
+			}
+		}
+		System.out.println(modelName);
+		String appointmentDate=req.getParameter("appointmentDate");
+		bikecust.setAppointmentDate(appointmentDate);
+		//bc.setAccessoriesStock(accessoriesStock);
+		System.out.println(appointmentDate);
+		String chasisNumber=req.getParameter("chasisNumber");
+		String plateNumber=req.getParameter("plateNumber");
+		cbi.setChasisNumber(chasisNumber);
+		cbi.setPlateNumber(plateNumber);
+		//bc.setCustomizationInvoice(cstinvc);
+		//to get partname and partprice from accessoriesstock table as per selected checkbox
+		String id1;
+		String[] id=req.getParameterValues("id");
+		System.out.println(id);
+		List<CustomizationChart> list=new ArrayList<CustomizationChart>();
+		int i;
+		
+			
+		for(i=0 ; i<id.length ; i++){			
+			
+			String partId = id[i];
+			String x=(partId);
+			
+			AccessoriesStock as1=new AccessoriesStock();
+			as1.setPartId(x);
+			
+			List<AccessoriesStock> l=service.getAccessoriesStock(as1);
+			as.setPartId(x);
+			for(AccessoriesStock as2: l)
+				{
+					System.out.println(as2.getPartName());
+					System.out.println(as2.getPartPrice());
+					
+					CustomizationChart c1=new CustomizationChart();
+					c1.setPart(as2.getPartName());
+					c1.setCost(Long.parseLong(as2.getPartPrice()));
+					
+					bikecust.getCustomizationChart().add(c1);
+					
+					
 
-		return "home";
+					
+					System.out.println("data saved........");
+					
+				}	
+		
+				
+			String bccount=service.getAllBikeCustomizationCount();
+			System.out.println(bccount);
+			//bc.setAccessoriesStock(as);
+			bikecust.setBikeCustomizationId(bccount);
+		
+			//String bikemodelcount=service.getAllBikeModelCount();
+			//System.out.println(bikemodelcount);
+			//bm.setModelId(bikemodelcount);
+			//bikecust.setBikeModel(bm);
+			bikecust.setCustomizationBikeInfo(cbi);
+			service.saveCustomizationDetails(bikecust);
+		}
+	}
+		model.addAttribute("link","dealerDashboard.jsp");
+		
+		
+		System.out.println("in saveCustomizationController");
+		return "Dealer/dealerIndex";	
+		
 	}
 }

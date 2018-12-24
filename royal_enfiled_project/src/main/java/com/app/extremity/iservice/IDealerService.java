@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import com.app.extremity.model.AccessoriesStock;
+import com.app.extremity.model.BikeCustomization;
 import com.app.extremity.model.BikeModel;
 import com.app.extremity.model.BikeModelName;
 import com.app.extremity.model.BikeSaleForUser;
@@ -22,15 +23,12 @@ public Registration saveData(Registration register, HttpServletRequest request);
 
 public Registration findEmail(String email);
 
-public List<Country> getAllcountry();
 
-public List<State> findAllState(int a);
-
-public List<City>getAllcitiesByState(String b );
 public int getUserCount();
 public int getDealerCount();
-public int getLogin(String email, String password,HttpServletRequest request);
-
+public List<Country> getAllcountry();
+public List<State> findAllState(int a);
+public List<City>getAllcitiesByState(String b );
 public List<BikeSaleForUser> getBikeId();
 public BikeModel saveBikes(BikeModel bike); 
 public String getModelCount();
@@ -55,6 +53,12 @@ public List<OldBikeStock> getOldBikeId();
 public List<BikeModelName>getModelname();
 
  public List<OldBikeStock> getAllBikeByOldbikemodelname(String oldBikeModelName);
+ public List<AccessoriesStock> getAccessoriesStock(AccessoriesStock accStock);
+ //public String getAllBikeModelCount();
 
+ public String getAccessoriesCount();
+
+ public String getAllBikeCustomizationCount();
+ public void saveCustomizationDetails(BikeCustomization bikecust);
 
 }

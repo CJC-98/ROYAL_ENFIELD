@@ -29,7 +29,7 @@
            
             <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user">
                 <li class="hidden-xs"> <a href="#" class="dropdown-toggle dk" data-toggle="dropdown"> <i class="fa fa-bell"></i>
-                        <span class="badge badge-sm up bg-danger m-l-n-sm count">2</span> </a>
+                         </a>
                     <section class="dropdown-menu aside-xl">
                         <section class="panel bg-white">
                             <header class="panel-heading b-light bg-light"> <strong>You have <span class="count">2</span>
@@ -42,12 +42,12 @@
                                         1.0 initial released<br> <small class="text-muted">1 hour ago</small> </span>
                                 </a> </div>
                             <footer class="panel-footer text-sm"> <a href="#" class="pull-right"><i class="fa fa-cog"></i></a>
-                                <a href="#notes" data-toggle="class:show animated fadeInRight">See all the
+                                <a href="MyNotifications" data-toggle="class:show animated fadeInRight">See all the
                                     notifications</a> </footer>
                         </section>
                     </section>
                 </li>
-                <li><a href="cart"><i class="fa fa-shopping-cart"></i> <span class="badge badge-sm up bg-danger m-l-n-sm count">2</span></a></li>
+                <li><a href="cart"><i class="fa fa-shopping-cart"></i> </a></li>
                 <li class="dropdown hidden-xs"> <a href="#" class="dropdown-toggle dker" data-toggle="dropdown"><i
                             class="fa fa-fw fa-search"></i></a>
                     <section class="dropdown-menu aside-xl animated fadeInUp">
@@ -65,12 +65,12 @@
                 <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 	<span class="thumb-sm avatar pull-left">
                             <img src="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/images/PicsArt_02-27-07.02.06.jpg" > 
-                            </span>Shital.B <b class="caret"></b> </a>
+                            </span>${reg.contact.name} <b class="caret"></b> </a>
                     <ul class="dropdown-menu animated fadeInRight"> <span class="arrow top"></span>
                         <li> <a href="#">Settings</a> </li>
-                        <li> <a href="profile.html">Profile</a> </li>
-                        <li> <a href="#"> <span class="badge bg-danger pull-right">3</span> Notifications </a> </li>
-                        <li> <a href="docs.html">Help</a> </li>
+                        <!-- <li> <a href="profile.html">Profile</a> </li> -->
+                        <li> <a href="MyNotificationss"> <span class="badge bg-danger pull-right">3</span> Notifications </a> </li>
+                        
                         <li class="divider"></li>
                         <li> <a href="logout" data-toggle="ajaxModal">Logout</a> </li>
                     </ul>
@@ -134,15 +134,22 @@
                                                 <span>Accessories</span> 
                                             </a> 
                                         </li>
-                                        
-                                        <li> 
+                                         <li> 
+                                        	<a href="MyNotifications"> 
+                                        		<i class="fa fa-bell icon"> 
+                                        			<b class="bg-info lt"></b>  
+                                                </i> 
+                                                <span>My Notifications</span> 
+                                            </a> 
+                                       </li>
+                                      <!--   <li> 
                                             <a href="Print"> 
                                                 <i class="fa fa-print"> 
                                                     <b class="bg-success dker"></b>
                                                 </i> 
                                                 <span>Print</span> 
                                             </a> 
-                                       </li>
+                                       </li> -->
                                        
                                        
                                     </ul>
