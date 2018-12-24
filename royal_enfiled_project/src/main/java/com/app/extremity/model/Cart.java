@@ -1,5 +1,6 @@
 package com.app.extremity.model;
 
+
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -43,67 +44,94 @@ public class Cart {
 	
 	private String purchaseStatus="unsold";//buy now and sold
 
+	
+	
+	
+	public int getProductId() {
+		return productId;
+	}
 
+	public void setProductId(int productId) {
+		this.productId = productId;
+	}
 
+	public int getQty() {
+		return qty;
+	}
+
+	public void setQty(int qty) {
+		this.qty = qty;
+	}
+
+	public double getTotalprice() {
+		return totalprice;
+	}
+
+	public void setTotalprice(double totalprice) {
+		this.totalprice = totalprice;
+	}
 
 	public Date getOrderDate() {
 		return orderDate;
 	}
+
 	public void setOrderDate(Date orderDate) {
 		this.orderDate = orderDate;
 	}
 
-public OldBikeStock getOldbike() {
-	return oldbike;
-}
-public void setOldbike(OldBikeStock oldbike) {
-	this.oldbike = oldbike;
-}
-public String getPurchaseStatus() {
-	return purchaseStatus;
-}
-public void setPurchaseStatus(String purchaseStatus) {
-	this.purchaseStatus = purchaseStatus;
-}
-public AccessoriesStock getAccessories() {
-	return accessories;
-}
-public void setAccessories(AccessoriesStock accessories) {
-	this.accessories = accessories;
-}
-
-	
-	public int getProductId() {
-	return productId;
-}
-public void setProductId(int productId) {
-	this.productId = productId;
-}
-	public int getQty() {
-		return qty;
+	public CartInvoice getCartInvoice() {
+		return cartInvoice;
 	}
-	public void setQty(int qty) {
-		this.qty = qty;
-	}
-	public double getTotalprice() {
-	return totalprice;
-}
-public void setTotalprice(double totalprice) {
-	this.totalprice = totalprice;
-}
 
-public BikeSaleForUser getBikeSaleForUser() {
-	return bikeSaleForUser;
-}
-public void setBikeSaleForUser(BikeSaleForUser bikeSaleForUser) {
-	this.bikeSaleForUser = bikeSaleForUser;
-}
-public Registration getRegistration() {
-	return registration;
-}
-public void setRegistration(Registration registration) {
-	this.registration = registration;
-}
+	public void setCartInvoice(CartInvoice cartInvoice) {
+		this.cartInvoice = cartInvoice;
+	}
+
+	public AccessoriesStock getAccessories() {
+		return accessories;
+	}
+
+	public void setAccessories(AccessoriesStock accessories) {
+		this.accessories = accessories;
+	}
+
+	public Registration getRegistration() {
+		return registration;
+	}
+
+	public void setRegistration(Registration registration) {
+		this.registration = registration;
+	}
+
+	public BikeSaleForUser getBikeSaleForUser() {
+		return bikeSaleForUser;
+	}
+
+	public void setBikeSaleForUser(BikeSaleForUser bikeSaleForUser) {
+		this.bikeSaleForUser = bikeSaleForUser;
+	}
+
+	public OldBikeStock getOldbike() {
+		return oldbike;
+	}
+
+	public void setOldbike(OldBikeStock oldbike) {
+		this.oldbike = oldbike;
+	}
+
+	public String getPurchaseStatus() {
+		return purchaseStatus;
+	}
+
+	public void setPurchaseStatus(String purchaseStatus) {
+		this.purchaseStatus = purchaseStatus;
+	}
+
+
+
+
+
+
 
 
 }
