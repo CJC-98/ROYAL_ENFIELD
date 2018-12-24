@@ -3,6 +3,9 @@ package com.app.extremity.serviceimpl;
 
 import java.io.IOException;
 
+
+
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -19,6 +22,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
+
 import javax.mail.internet.MimeMultipart;
 import java.io.File;
 
@@ -26,6 +30,10 @@ import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'AdminTeamBranch' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -86,6 +94,10 @@ public class AdminServiceImplementation implements IAdminService {
 	OldBikeStockIDao oldBikeStockIDao;
 	@Autowired
 	SoldOldBikeStockIDao soldOldBikeStockDao;
+	@Autowired
+	SoldBikeStockIDao  soldBikeStockDao;
+	@Autowired
+	SoldAccessoriesIDao soldAccessoriesDao;
 	@Autowired
 	AccessoriesStockIDao accessoriesStockIDao;
 	@Autowired
@@ -337,7 +349,30 @@ public class AdminServiceImplementation implements IAdminService {
 		return (List<BikeCustomization>) bikeCustomizationIDao.findAll();
 	}
 
+	
+
 	@Override
+	public List<SoldOldBikeStock> getSoldOldBike() {
+		
+		return (List<SoldOldBikeStock>) soldOldBikeStockDao.findAll();
+	}
+
+	@Override
+	public List<SoldBikeStock> getSoldBikeStockInfo() {
+	
+		return (List<SoldBikeStock>) soldBikeStockDao.findAll();
+	}
+
+	@Override
+	public List<SoldAccessories> getSoldAccessoriesInfo() {
+		
+		return (List<SoldAccessories>) soldAccessoriesDao.findAll();
+	}
+
+	@Override
+	public void updateEmployee(EmployeeDetails employee) {
+		employeeDetailsDao.save(employee);
+	}
 	public List<SoldBikeStock> getSoldNewBike() {
 
 	
@@ -418,6 +453,7 @@ public class AdminServiceImplementation implements IAdminService {
 			return employeeId;
 		
 	}
+
 
 
 	@Override

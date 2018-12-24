@@ -8,7 +8,9 @@ import org.springframework.web.multipart.MultipartFile;
 import com.app.extremity.model.AccessoriesDeadStock;
 import com.app.extremity.model.AccessoriesStock;
 import com.app.extremity.model.AvailableServicing;
+import com.app.extremity.model.BikeCustomization;
 import com.app.extremity.model.BikeOffer;
+import com.app.extremity.model.BikeServicing;
 import com.app.extremity.model.CustomizationInvoice;
 import com.app.extremity.model.DeadStock;
 import com.app.extremity.model.EmailMessage;
@@ -51,15 +53,26 @@ public interface IAdminService {
 
 	List<AvailableServicing> getAvaliableServicing();
 
-	List<com.app.extremity.model.BikeServicing> getBikeServicing();
+	List<BikeServicing> getBikeServicing();
 
-	List<com.app.extremity.model.BikeCustomization> getbikeCustomization();
+	List<BikeCustomization> getbikeCustomization();
+	
+	List<SoldOldBikeStock> getSoldOldBike();
 
-	List<SoldBikeStock> getSoldNewBike();
+	List<SoldBikeStock> getSoldBikeStockInfo();
+
+	List<SoldAccessories> getSoldAccessoriesInfo();
+
+	void updateEmployee(EmployeeDetails employee);
+
+
+
+
 
 
 	List<SoldBikeStock> getSoldBikeStock();
 	List<EmployeeDetails> getEmployeeListByDesignation(String employeeDesignation);
+
 
 
 
@@ -89,6 +102,8 @@ public interface IAdminService {
 	public long getBikeSaleForUserCount();
 
 	long getAccessoriesCount();
+
+	List<SoldBikeStock> getSoldNewBike();
 
 
 
