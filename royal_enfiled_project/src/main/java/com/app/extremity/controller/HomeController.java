@@ -29,7 +29,7 @@ import com.app.extremity.iservice.NotificationInterface;
 import com.app.extremity.iservice.ServiceManagerInterface;
 import com.app.extremity.model.EmployeeDetails;
 import com.app.extremity.model.Notfication;
-import com.app.extremity.serviceimpl.Account_ServiceImpl;
+import com.app.extremity.serviceimpl.AccountServiceImpl;
 
 
 
@@ -41,9 +41,11 @@ import com.app.extremity.serviceimpl.Account_ServiceImpl;
 public class HomeController {
 	@Autowired
 	IHomeService homeService;
-	
 	@Autowired
-	Account_ServiceImpl AService;
+	NotificationInterface notificationInterface;
+	HttpSession session;
+	@Autowired
+	AccountServiceImpl AService;
 	
 	static Logger logger = LogManager.getLogger(HomeController.class);
 	@Autowired
@@ -84,6 +86,8 @@ public class HomeController {
 		logger.info("In SignIn controller log");
 		int i=homeService.checkLoginCredentials(email,password,request);
 	
+		session = request.getSession();
+		
 		
 		switch (i) {
 		case 1:
@@ -121,6 +125,13 @@ public class HomeController {
 				e.printStackTrace();
 			}
 			
+			long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
+			model.addAttribute("inboxCount", inboxCount);
+			
+			List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
+			model.addAttribute("shortInboxList", shortInboxList);
+			
+			
 			long lg = AService.NewBikeCount(fd,ld);
 				System.out.println("Home Controll.. New Bike Count is.. "+lg);
 			model.addAttribute("lg", lg);			
@@ -129,6 +140,9 @@ public class HomeController {
 			model.addAttribute("lg1", lg1);
 			model.addAttribute("link", "accountsDashboard.jsp");
 			return "Accounts/accountsIndex";
+			
+			
+			
 		default:
 			model.addAttribute("msg", "Wrong Credentials");
 			return "login";

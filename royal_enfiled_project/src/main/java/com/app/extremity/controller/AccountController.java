@@ -6,9 +6,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
@@ -18,25 +16,34 @@ import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-
+import com.app.extremity.idao.AccountGetCartIDao;
 import com.app.extremity.iservice.Account_ServiceInterface;
 import com.app.extremity.iservice.IAdminService;
 import com.app.extremity.iservice.NotificationInterface;
 import com.app.extremity.model.Demo;
 import com.app.extremity.model.EmployeeDetails;
+import com.app.extremity.model.Login;
 import com.app.extremity.model.NewBikeStock;
 import com.app.extremity.model.Notfication;
+import com.app.extremity.model.Registration;
+import com.app.extremity.model.Role;
+import com.app.extremity.model.AccessoriesStock;
+import com.app.extremity.model.BikeModel;
+import com.app.extremity.model.BikeSaleForUser;
+import com.app.extremity.model.Cart;
 
 
 @Controller
 public class AccountController {
-	
+
 	@Autowired
 	NotificationInterface notificationInterface;
+	
 	@Autowired
 	IAdminService adminService;
 	
@@ -44,23 +51,54 @@ public class AccountController {
 	
 	@Autowired
 	Account_ServiceInterface Service;
+	
 
 	@RequestMapping(value="/Invoice")
 	public String Invoice(Model model)
 	{ 
-		System.out.println("In Invoice controller");
+			
+		System.out.println("In Invoice controller");		
 		LocalDate date = LocalDate.now();
 		model.addAttribute("link", "Invoice.jsp");
 		model.addAttribute("date",date);
 		
-		List<Demo> list = Service.getAllDemo();	
-		for(Demo d : list) {
-			System.out.println("in for loop");
-			System.out.println(d.getName());
-			//System.out.println("City--" + d.getAddress().getCity() + " State--" + d.getAddress().getState());
-			System.out.println(d.getId()+"   qty-"+d.getQty()+"  unitcost-"+d.getUnitCost()+"  total-"+d.getTotal());
-		}		
-		model.addAttribute("list", list);
+		//List<Usercart> list = Service.getAllByPurchaseStatusAndRegistration(purchaseStatus, registrationid);
+		
+		//List<Cart> list1 = Service.getAllCart();
+		String purchaseSatus = null;
+		int  qty = 0;
+		Registration regi = null;
+		BikeSaleForUser bikeSaleForUser = null;
+		AccessoriesStock accessoriesStock =  new AccessoriesStock();
+		
+		Registration reg = new Registration(); //-- TO_Do :- UserId fetch from Registration.. 
+		reg.setRegistrationId("1");
+		
+		List<Cart> cart = Service.getCartByRegistrationId(reg);
+			System.out.println("Controller.. GetCart By RegId..");
+			for(Cart c : cart) {
+				
+				
+				System.out.println(c.getAccessories().getPartName());
+				
+				regi=new Registration();
+				regi = c.getRegistration();
+				purchaseSatus = c.getPurchaseStatus();
+				qty = c.getQty();
+				bikeSaleForUser = new BikeSaleForUser();
+				bikeSaleForUser = c.getBikeSaleForUser();
+				accessoriesStock = c.getAccessories();
+			}
+			
+			model.addAttribute("accessoriesStock", accessoriesStock);
+			model.addAttribute("bikeSaleForUser", bikeSaleForUser);
+			model.addAttribute("qty", qty);
+			model.addAttribute("purchaseSatus", purchaseSatus);
+			model.addAttribute("regi", regi);
+			model.addAttribute("list", cart);
+		
+//		List<Demo> list = Service.getAllDemo();					
+//		model.addAttribute("list", list);
 		
 		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
 		model.addAttribute("inboxCount", inboxCount);
@@ -70,7 +108,9 @@ public class AccountController {
 	
 
 	@RequestMapping(value="/Dashboard")
-	public String Dashboard(Model model,HttpServletRequest request) {
+	public String Dashboard(Model model,HttpServletRequest request,@ModelAttribute Cart cart1) {
+		
+
 		
 		session = request.getSession();
 		System.out.println("name "+session.getAttribute("currentUserName"));
@@ -99,14 +139,13 @@ public class AccountController {
 			e.printStackTrace();
 		}
 		
-		long lg = Service.NewBikeCount(fd,ld);
-			System.out.println("Home Controll.. New Bike Count is.. "+lg);
+		long lg = Service.NewBikeCount(fd,ld);			
 		model.addAttribute("lg", lg);			
-		long lg1 = Service.SoldBikeCount(fds, lds);
-			System.out.println("Home Controll.. Sold Bike Count is.. " + lg1);
+		long lg1 = Service.SoldBikeCount(fds, lds);			
 		model.addAttribute("lg1", lg1);
 		model.addAttribute("link", "accountsDashboard.jsp");
 		return "Accounts/accountsIndex";
+	
 	}
 	
 	
@@ -219,8 +258,7 @@ public class AccountController {
 	}
 	
 	
-	
-	
+
 	@RequestMapping(value="newBikeList")
 	public String NewBikeList(Model model, HttpServletRequest request) {
 		session = request.getSession();

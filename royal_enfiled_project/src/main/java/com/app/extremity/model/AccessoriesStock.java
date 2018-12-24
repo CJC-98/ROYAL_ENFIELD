@@ -20,8 +20,17 @@ public class AccessoriesStock
 	private String partName;
 	private String partPrice;
 	private long partQuantity;
+	
+	
+	
+	
 	//@OneToOne(cascade=CascadeType.ALL)
 	//private Model model;
+	
+	
+	
+	
+	
 	public String getPartId() {
 		return partId;
 	}
