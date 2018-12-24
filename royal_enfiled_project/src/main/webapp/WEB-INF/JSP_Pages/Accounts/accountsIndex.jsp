@@ -31,12 +31,12 @@
                             </header>
                           	<div class=" list-group-alt animated fadeInRight"> 
                            
-                           	<a:forEach var="data" items="${shortInboxList}">                          
+                           	<a:forEach var="data" items="${shortInboxList}">
                             	<a href="MyNotificationsPageAccount" class="media list-group-item">
                                     <span class="pull-left thumb-sm"> 
-                                    	<img src="${pageContext.request.contextPath}/Resources/images/EmployeeProfilePicture/${data.senderImg}" alt="John said" class="img-circle"> 
+                                    	<img src="${pageContext.request.contextPath}/Resources/images/EmployeeProfilePicture/${data.senderImg}"  > 
                                     </span> 
-                                    <span class="media-body block m-b-none"><strong>${data.SenderName}</strong>&nbsp;&nbsp;${data.message}<br> 
+                                    <span class="media-body block m-b-none"><strong>${data.senderName}</strong>&nbsp;&nbsp;${data.message}<br> 
                                     	<small class="text-muted">${data.sendDate}</small> 
                                     </span>
                                 </a> 
@@ -45,6 +45,8 @@
                         </section>
                     </section>
                 </li>
+                
+                
                 
                 <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb-sm avatar pull-left">
                             <img src="${pageContext.request.contextPath}/Resources/images/EmployeeProfilePicture/${currentUserImg}"> 

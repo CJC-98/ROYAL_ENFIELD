@@ -85,34 +85,45 @@
                                 
                                 	<c:set var="SubTotal" value="${0}" />
                         			
-                              <!--   	<c:forEach var="l" items="${list}">  --> 
+                              		<c:forEach var="l" items="${list}"> 
+                              		 
                                 	 	<c:set var="BikeTotal" value="${0}"/>
-                                		<c:set var="qty" value="${qty}"/>
-                                		<c:set var="bikeOnRoadPrice" value="${bikeSaleForUser.bikeOnRoadPrice}"/>
-                                		<c:set var="BikeTotal" value="${qty * bikeSaleForUser.bikeOnRoadPrice}" />     
+                                	 	<c:set var="ATotal" value="${0}"/>
+                                	 	
+                                	 	
+                                		<c:set var="qty" value="${l.qty}"/>
+                                		<c:set var="bikeOnRoadPrice" value="${l.bikeSaleForUser.bikeOnRoadPrice}"/>
+                                		<c:set var="BikeTotal" value="${qty * l.bikeSaleForUser.bikeOnRoadPrice}" />                                     		                              	
+                                		          
+                                		<c:set var="Aqty" value="${qty}" /> 
+                                		<c:set var="ApartPrice" value="${l.accessories.partPrice}" />
+                                		<c:set var="ATotal" value="${qty * l.accessories.partPrice}" />
                                 		
-                                		<c:set var="Aqty" value="${qty}"/>
-                                		<c:set var="ATotal" value="${qty * accessoriesStock.partPrice}"/>
-                                		                       		
-                                		<c:set var="SubTotal" value="${ATotal + BikeTotal}" />   		
-                                		
-                                		
-                                		
-                                		
+                                		<c:set var="oldBikeqty" value="${qty}" /> 
+                                		<c:set var="oldBikePrice" value="${l.oldbike.newBikeStock.bikePrice}" />
+                                		<c:set var="OldBikeTotal" value="${qty * l.oldbike.newBikeStock.bikePrice}" />
+                                		                      		
+                                		<c:set var="SubTotal" value="${ATotal + BikeTotal + OldBikeTotal}" />   		  		
                                 		
                                 		<tr>				 
                                 			<td> <c:out value="${qty}"/> </td>
-                                			<td> <c:out value="${bikeSaleForUser.bikemodel.modelName}"/> </td>
+                                			<td> <c:out value="${l.bikeSaleForUser.bikemodel.modelName}"/> </td>
                                 			<td> <c:out value="${bikeOnRoadPrice}"/> </td>                    				
                                 			<td> <c:out value="${BikeTotal}"/> </td>              			
                                 		</tr>
                                 		<tr>				 
                                 			<td> <c:out value="${qty}"/> </td>
-                                			<td> <c:out value="${accessoriesStock.partName}"/> </td>
-                                			<td> <c:out value="${accessoriesStock.partPrice}"/> </td>                    				
+                                			<td> <c:out value="${l.accessories.partName}"/> </td>
+                                			<td> <c:out value="${l.accessories.partPrice}"/> </td>                    				
                                 			<td> <c:out value="${ATotal}"/> </td>              			
                                 		</tr>
-                                <!--  	</c:forEach>    --> 
+                                		<tr>				 
+                                			<td> <c:out value="${qty}"/> </td>
+                                			<td> <c:out value="${l.oldbike.newBikeStock.bikeModel.modelName}"/> </td>
+                                			<td> <c:out value="${l.oldbike.newBikeStock.bikePrice}"/> </td>                    				
+                                			<td> <c:out value="${OldBikeTotal}"/> </td>              			
+                                		</tr>
+                                  	</c:forEach>    
                                 	                                                               	
 	                                    <tr>
 	                                        <td colspan="3" class="text-right"><strong>Subtotal</strong></td>

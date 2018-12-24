@@ -38,6 +38,14 @@ public class OldBikeStock {
 	@JoinColumn(name="bikeId")
 	private NewBikeStock newBikeStock;
 
+	public NewBikeStock getNewBikeStock() {
+		return newBikeStock;
+	}
+
+	public void setNewBikeStock(NewBikeStock newBikeStock) {
+		this.newBikeStock = newBikeStock;
+	}
+
 	public String getOldBikeId() {
 		return oldBikeId;
 	}
