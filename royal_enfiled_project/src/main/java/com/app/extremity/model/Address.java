@@ -1,5 +1,6 @@
 package com.app.extremity.model;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -59,8 +60,4 @@ public class Address
 		this.pincode = pincode;
 	}
 	
-	
-	
-	
-
 }

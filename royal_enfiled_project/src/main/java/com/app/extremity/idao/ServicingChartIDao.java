@@ -9,5 +9,6 @@ import com.app.extremity.model.ServicingChart;
 @Repository
 public interface ServicingChartIDao extends CrudRepository<ServicingChart, Integer>{
 
+	public ServicingChart findByServicingChartId(int id);
 	
 }

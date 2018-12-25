@@ -9,5 +9,4 @@ import com.app.extremity.model.ServicingInvoice;
 @Repository
 public interface ServiceInvoiceIDao extends CrudRepository<ServicingInvoice, Integer>{
 
-	
 }

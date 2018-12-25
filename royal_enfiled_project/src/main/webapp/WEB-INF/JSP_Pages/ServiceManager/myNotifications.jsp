@@ -15,9 +15,9 @@
 </head>
 
 <body>
-
+  
 	<script>
-		
+
 		var reciverName;
 		var reciverPost;
 		var reciverImg;
@@ -28,11 +28,16 @@
 			req.open("GET","markIt?notficationId="+id,true);
 			req.send();
 			
+			req.onreadystatechange=function(){
+				if(req.readyState==4 && req.status==200){
+					location.reload();
+				}
+			}
+			
 		}
 		
-		
-	
-		function searchEmployee(){
+
+  		function searchEmployee(){
 			
 			var empName = document.getElementById("empName").value;
 			
@@ -40,8 +45,7 @@
 			if(empName==""){
 				alert("Please enter employee name!!!");
 			}
-			//TODO: get login user name from session
-			else if(empName == "pranay"){
+			else if(empName == '${currentUserName}'){
 				alert("You can't send notification to yourself!!!");
 			}
 			else{
@@ -78,8 +82,10 @@
 			
 			}
 			
-		}
+		} 
 		
+				
+			
 		function sendNotification(){
 			var msg = document.getElementById("message").value;
 
@@ -91,9 +97,12 @@
 											  "&&message="+msg, true);
 				req.send();
 				
-				alert("notification is send successfully");
-				document.getElementById("notificationBody").style.display = "none";
-				document.getElementById("empName").value = "";
+				req.onreadystatechange=function(){
+					if(req.readyState==4 && req.status==200){
+						location.reload();
+					}
+				}
+				
 			}
 			else{
 				alert("please write a message!!!");
@@ -108,7 +117,7 @@
 			document.getElementById("empName").value = "";
 		}
 
-
+		
 
 	</script>
 	
@@ -144,7 +153,7 @@
 								      		
 								      	<aside class="bg-light dk b-l" id="email-list">
                             			<section class="vbox">	
-								      		<section class="scrollable hover">
+								      		
 			                                    <ul class="list-group no-radius m-b-none m-t-n-xxs list-group-alt list-group-lg">
 			                                        
 			                                        
@@ -173,7 +182,7 @@
 			                                                		
 			                                               		<a:choose>
 																	  <a:when test="${data.markAsRead}">
-																	  	<a data-toggle="class" class="btn btn-default btn-xs active" disabled=true> 
+																	  	<a data-toggle="class" class="btn btn-default btn-xs active" disabled> 
 			                                                				<i class="fa fa-star-o text-muted text"></i>
 																	    		<i class="fa fa-star text-danger text-active"></i> Mark As Read
 																	    </a>		 
@@ -188,13 +197,6 @@
 																	</a:choose>
 			                         
 			                                                
-
-			                                                   <%--  <a data-toggle="modal" 
-			                                                       data-target="#myModal" 
-			                                                       class="btn btn-default btn-xs">
-			                                                        <i class="fa fa-mail-reply text-muted"></i> 
-			                                                        <span onclick="">Reply</span>
-			                                                    </a> --%>
 			                                                </div>
 			                                           </li>
 			          			                                                         
@@ -203,7 +205,7 @@
 			                                        
 			                                        
 												 </ul>
-                              			  </section>  
+                              			 
                               			  </section>
                               			  </aside>             
                               		  </div>
@@ -286,15 +288,11 @@
 	        </section>    	        
 	 	</section> 
 	 
-	        
-		
-		<script>
 
-			document.getElementById("notificationBody").style.display = "none";	
-
-		</script>
-					  		
-					                           
+	
+	<script>
+		document.getElementById("notificationBody").style.display = "none";	 
+	</script>
 
 </body>
 
