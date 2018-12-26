@@ -24,7 +24,7 @@
 
 <!--[if lt IE 9]> <script src="js/ie/html5shiv.js"></script> <script src="js/ie/respond.min.js"></script> <script src="js/ie/excanvas.js"></script> <![endif]-->
 <style type="text/css">
-.nil {
+.panel {
 	
 	overflow-x: auto;
 	white-space: nowrap;

@@ -103,7 +103,7 @@
                         <li> <a href="#"> <span class="badge bg-danger pull-right">3</span> Notifications </a> </li>
                         <li> <a href="docs.html">Help</a> </li>
                         <li class="divider"></li>
-                        <li> <a href="modal.lockme.html" data-toggle="ajaxModal">Logout</a> </li>
+                        <li> <a href="adminLogout" data-toggle="ajaxModal">Logout</a> </li>
                     </ul>
                 </li>
                 <!-- End Login_Profile Details -->
@@ -156,7 +156,9 @@
                                             </a>
                                             <ul class="nav lt">
                                              		<li> <a href="employeeList?designation=SalesManager">
-                                                       <span>SalesManager</span> </a>
+                                                       <span>SalesManager</span> </a> 
+                                                          
+                                                       
                                                     </li>
                                                     
                                                     <li> <a href="employeeList?designation=ServiceManager">
@@ -167,11 +169,11 @@
                                                          <span>Accountant</span> </a>
                                                      </li>
                                                      
-                                                    <li> <a href="employeeList">
+                                                    <li> <a href="employeeList?designation=DEALER">
                                                          <span>Dealer</span> </a>
                                                      </li>
                                                             
-                                                    <li> <a href="employeeList">
+                                                    <li> <a href="employeeList?designation=USER">
                                                    		<span>User</span> </a> 
                                                    	</li>
                                                    
@@ -183,7 +185,7 @@
                                         
                                         <!-- This for Stock -->
                                        <li>
-                                       		 <a href="#"> <i class="fa fa-flask icon"> <b class="bg-success"></b>
+                                       		 <a href="# "> <i class="fa fa-flask icon"> <b class="bg-success"></b>
                                             		</i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i
                                                     class="fa fa-angle-up text-active"></i> </span> <span>Stock</span>
                                        		 </a>
@@ -205,12 +207,12 @@
                                             		<li> 
                                             			<a href="accessoriesStock"> <b class="badge bg-info pull-right"></b>
                                                     	<i class="fa fa-angle-right"></i> 
-                                                    	<span>Accesories</span> 
+                                                    	<span>Accessories</span> 
                                                    		 </a> 
                                                    	</li>
                                             
- 
-                                            			<a href=""> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i>
+ 													<li>
+                                            			<a href="">  <i class="fa fa-angle-right"></i>
 
                                                    		 <span>Dead_stock</span> </a>
                                                 		<ul class="nav bg">
@@ -225,7 +227,7 @@
                                                			 </ul>
                                           		  </li>    
                                        		 </ul>
-                                       	</li>
+                                       
 										 <!-- End Stock -->
 										<!-- This for View -->
                                         <li> <a href="#v"> <i class="fa fa-user icon"> <b class="bg-warning"></b>

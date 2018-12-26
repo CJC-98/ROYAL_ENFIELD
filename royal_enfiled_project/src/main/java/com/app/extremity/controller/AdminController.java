@@ -5,6 +5,8 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -51,17 +54,20 @@ public class AdminController {
 
 	@Autowired
 	IAdminService adminService;
+	
+	HttpSession session;
 
-    /*
-	 * this method is for showing admin home page
-
-	 */
-
+    
+	 //this method is for showing admin home page
 	@RequestMapping(value = "/toAdminHomePage")
 	public String toadminDashboard(Model model) {
 		model.addAttribute("accessoriesCount", adminService.getAccessoriesCount());
 		model.addAttribute("bikeCount", adminService.getBikeSaleForUserCount());
-		model.addAttribute("registerUser", adminService.getRegistrationCount());
+		model.addAttribute("registrionCount", adminService.getRegistrationCount());
+		model.addAttribute("userCount", adminService.getUserOrDealerCount("USER"));
+		model.addAttribute("dealerCount", adminService.getUserOrDealerCount("DEALER"));
+		model.addAttribute("feedbackList", adminService.getFeedbackList());
+		
 		model.addAttribute("link", "adminDashboard.jsp");
 		return "Admin/adminIndex";
 
@@ -80,13 +86,9 @@ public class AdminController {
 	 * 
 	 * author: Nilesh Tammewar
 	 */
-
-	@RequestMapping(value = "/sendEmail", method = RequestMethod.POST)
+	@PostMapping("/sendEmail")
 	public String sendEmail(@ModelAttribute EmailMessage emailmessage, @RequestParam("attachment") MultipartFile file,
 			Model model,@RequestParam String designation) {
-		
-		System.out.println(emailmessage.getTo_address());
-		System.out.println(emailmessage.getSubject());
 		adminService.sendEmail(emailmessage, file,designation);
 		model.addAttribute("link", "adminDashboard.jsp");
 		return "Admin/adminIndex";
@@ -99,7 +101,6 @@ public class AdminController {
 	 */
 
 	@RequestMapping(value = "/employeeRegistration")
-
 	public String toEmployeeRegistrationPage(@RequestParam int designation,Model model) {
 		System.out.println(designation);
 		model.addAttribute("designation", designation);
@@ -113,7 +114,7 @@ public class AdminController {
 	 * author: Nilesh Tammewar
 	 */
 
-	@RequestMapping(value = "/saveEmployee", method = RequestMethod.POST)
+	@PostMapping("/saveEmployee")
 	public String createEmployee(@ModelAttribute EmployeeDetails employeeDetails,
 			@RequestParam("profilePic") MultipartFile profilePic, Model model) {
 
@@ -297,6 +298,13 @@ public class AdminController {
 		model.addAttribute("link", "soldOldBike.jsp");
 		return "Admin/adminIndex";
    }	
+   
+   @RequestMapping("/adminLogout")
+   public String logout(HttpServletRequest request) {
+	   session=request.getSession();
+	   session.invalidate();
+	   return "login";
+   }
   
 }
 

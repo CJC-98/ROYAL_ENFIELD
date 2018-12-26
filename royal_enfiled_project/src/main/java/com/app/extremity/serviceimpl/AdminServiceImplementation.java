@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.Properties;
 
@@ -40,9 +39,11 @@ import com.app.extremity.idao.BikeServicingIDao;
 import com.app.extremity.idao.CustomizationInvoiceIDao;
 import com.app.extremity.idao.DeadStockIDao;
 import com.app.extremity.idao.EmployeeDetailsIDao;
+import com.app.extremity.idao.FeedbackIDao;
 import com.app.extremity.idao.NewBikeStockIDao;
 import com.app.extremity.idao.OldBikeStockIDao;
 import com.app.extremity.idao.RegistrationIDao;
+import com.app.extremity.idao.RoleIDao;
 import com.app.extremity.idao.ServcingBikeInfoIDao;
 import com.app.extremity.idao.SoldAccessoriesIDao;
 import com.app.extremity.idao.SoldBikeStockIDao;
@@ -60,8 +61,11 @@ import com.app.extremity.model.CustomizationInvoice;
 import com.app.extremity.model.DeadStock;
 import com.app.extremity.model.EmailMessage;
 import com.app.extremity.model.EmployeeDetails;
+import com.app.extremity.model.Feedback;
 import com.app.extremity.model.NewBikeStock;
 import com.app.extremity.model.OldBikeStock;
+import com.app.extremity.model.Registration;
+import com.app.extremity.model.Role;
 import com.app.extremity.model.ServcingBikeInfo;
 import com.app.extremity.model.SoldAccessories;
 import com.app.extremity.model.SoldBikeStock;
@@ -105,14 +109,19 @@ public class AdminServiceImplementation implements IAdminService {
 	BikeCustomizationIDao bikeCustomizationIDao;
 	@Autowired
 	BikeServicingIDao bikeServicingIDao;
-    @Autowired
+	@Autowired
 	SoldBikeStockIDao soldBikeStockIDao;
-    @Autowired
-    SoldAccessoriesIDao soldAccessoriesIDao;
-    @Autowired
-    RegistrationIDao registrationIDao;
-    @Autowired
-    BikeSaleForUserIDao bikeSaleForUserIDao;
+	@Autowired
+	SoldAccessoriesIDao soldAccessoriesIDao;
+	@Autowired
+	RegistrationIDao registrationIDao;
+	@Autowired
+	BikeSaleForUserIDao bikeSaleForUserIDao;
+	@Autowired
+	RoleIDao roleIDao;
+	@Autowired
+	FeedbackIDao feedbackIDao;
+	
 	static Logger logger = LogManager.getLogger(AdminServiceImplementation.class);
 
 	/* this is path where profile picture will be stored */
@@ -155,16 +164,16 @@ public class AdminServiceImplementation implements IAdminService {
 			Path path = Paths.get(UPLOADED_FOLDER + profilePic.getOriginalFilename());
 			Files.write(path, bytes);
 			employeeDetails.setProfilePictureUrl(profilePic.getOriginalFilename());
-			
+
 		} catch (IOException e) {
 			logger.error("while saving profile picture", e);
-			
+
 		}
 		employeeDetails.setEmployeeId(getEmployeeCount());
 		employeeDetailsDao.save(employeeDetails);
 		logger.info("employee Saved");
 		logger.info(UPLOADED_FOLDER.toString());
-		
+
 	}
 
 	/*
@@ -212,7 +221,8 @@ public class AdminServiceImplementation implements IAdminService {
 				multipart.addBodyPart(attachPart);
 
 			}
-			String html = "<a href='http://localhost:8080/employeeRegistration?designation="+designation+"'>Register here</a>";
+			String html = "<a href='http://localhost:8080/employeeRegistration?designation=" + designation
+					+ "'>Register here</a>";
 			messageBodyPart.setText(html, "UTF-8", "html");
 
 			msg.setContent(multipart);
@@ -225,12 +235,11 @@ public class AdminServiceImplementation implements IAdminService {
 		} catch (MessagingException e) {
 
 			logger.error("exception While sending Email", e);
-			e.printStackTrace();
 
 		} catch (IOException e) {
 
 			logger.error("file not found exception", e);
-			e.printStackTrace();
+
 		}
 
 	}
@@ -244,8 +253,8 @@ public class AdminServiceImplementation implements IAdminService {
 		} catch (Exception e) {
 			logger.info("exception while getting user creadentials");
 			logger.error("admin Credentials", e);
-			logger.info(adminEmailPassword.toString());
-			logger.info(adminEmailUsername.toString());
+			logger.info(adminEmailPassword);
+			logger.info(adminEmailUsername);
 		}
 	}
 
@@ -256,112 +265,88 @@ public class AdminServiceImplementation implements IAdminService {
 
 	@Override
 	public List<NewBikeStock> getNewBikeStock() {
-
 		return (List<NewBikeStock>) newBikeStockIDao.findAll();
 	}
 
 	@Override
 	public List<OldBikeStock> getOldBikeStock() {
-
 		return (List<OldBikeStock>) oldBikeStockIDao.findAll();
 	}
 
 	@Override
 	public List<AccessoriesStock> getAccessoriesStock() {
-
 		return (List<AccessoriesStock>) accessoriesStockIDao.findAll();
 	}
 
 	@Override
 	public List<DeadStock> getDeadStock() {
-
 		return (List<DeadStock>) deadStockIDao.findAll();
 	}
 
 	@Override
 	public List<AccessoriesDeadStock> getAccessoriesDeadStock() {
-
 		return (List<AccessoriesDeadStock>) accessoriesDeadStockIDao.findAll();
 	}
 
-	
 	@Override
 	public List<BikeOffer> getBikeOffer() {
-
 		return (List<BikeOffer>) bikeOfferIDao.findAll();
 	}
 
 	@Override
 	public List<CustomizationInvoice> getCustomizationInvoice() {
-
 		return (List<CustomizationInvoice>) customizationInvoiceIDao.findAll();
 	}
 
 	@Override
 	public List<ServcingBikeInfo> getServcingBikeInfo() {
-
 		return (List<ServcingBikeInfo>) servcingBikeInfoIDao.findAll();
 	}
 
 	@Override
 	public List<TestDriveCustomer> getTestDriveCustomer() {
-
 		return (List<TestDriveCustomer>) testDriveCustomerIDao.findAll();
 	}
-	
+
 	public String getEmployeeCount() {
-	
-	int acount=(int)employeeDetailsDao.count();
-	String employeeId="Emp00";
-	acount++;
-    employeeId=employeeId+Integer.toString(acount);
-	
+
+		int acount = (int) employeeDetailsDao.count();
+		String employeeId = "Emp00";
+		acount++;
+		employeeId = employeeId + Integer.toString(acount);
+
 		return employeeId;
-	
 	}
 
 	@Override
-
 	public List<AvailableServicing> getAvaliableServicing() {
-		
 		return (List<AvailableServicing>) availableServicingIDao.findAll();
 	}
 
 	@Override
 	public List<BikeServicing> getBikeServicing() {
-		
 		return (List<BikeServicing>) bikeServicingIDao.findAll();
 	}
 
 	@Override
 	public List<BikeCustomization> getbikeCustomization() {
-		
 		return (List<BikeCustomization>) bikeCustomizationIDao.findAll();
 	}
 
 	@Override
 	public List<SoldBikeStock> getSoldNewBike() {
-
-	
 		return (List<SoldBikeStock>) soldNewBikeIDao.findAll();
 	}
 
 	@Override
 	public List<EmployeeDetails> getEmployeeListByDesignation(String employeeDesignation) {
-		
-		return (List<EmployeeDetails>) employeeDetailsDao.findAllByEmployeeDesignation(employeeDesignation);
+
+		return employeeDetailsDao.findAllByEmployeeDesignation(employeeDesignation);
 	}
-
-	
-
 
 	@Override
 	public List<SoldBikeStock> getNewBikeSaleByDate(Date date) {
-		
-		
-		return (List<SoldBikeStock>) soldNewBikeIDao.findAllBySoldbikedate(date);
-		
-		
+		return soldNewBikeIDao.findAllBySoldbikedate(date);
 	}
 
 	@Override
@@ -372,51 +357,52 @@ public class AdminServiceImplementation implements IAdminService {
 
 	@Override
 	public List<SoldOldBikeStock> getSoldOldBikeStock() {
-		
+
 		return (List<SoldOldBikeStock>) soldOldBikeStockDao.findAll();
 	}
 
 	@Override
 	public List<SoldAccessories> getSoldAccessories() {
-		
+
 		return (List<SoldAccessories>) soldAccessoriesIDao.findAll();
 	}
 
 	@Override
 	public List<EmployeeDetails> getEmployeeDetails() {
-		
+
 		return (List<EmployeeDetails>) employeeDetailsDao.findAll();
 	}
 
+	@Override
 	public long getRegistrationCount() {
-		
-		long regisrtationCount=registrationIDao.count();
-		
-		
-			return regisrtationCount;
-			
+		return registrationIDao.count();
 	}
 
 	@Override
 	public long getBikeSaleForUserCount() {
-		
-		long BikeSaleForUserCount=bikeSaleForUserIDao.count();
-		
-		return BikeSaleForUserCount ;
-	}
-	public long getAccessoriesCount()
-	{
-		long AccessoriesCount=accessoriesStockIDao.count();
-		
-		return AccessoriesCount;
+		return bikeSaleForUserIDao.count();
 	}
 
-	/*@Override
-	public EmployeeDetails findOneByEmployeeId(String employeeId) {
-		
-		return employeeDetailsDao.deleteAll(employeeId);
+	@Override
+	public long getAccessoriesCount() {
+		return accessoriesStockIDao.count();
 	}
-*/
+
+	@Override
+	public long getUserOrDealerCount(String roleName) {
+		Role role = roleIDao.findOneByRoleName(roleName);
+		if (role != null) {
+			List<Registration> roleList = registrationIDao.findOneByRole(roleName);
+			return roleList.size();
+		}
+		return 0;
+	}
+
+	@Override
+	public List<Feedback> getFeedbackList() {
+		
+		return (List<Feedback>) feedbackIDao.findAll();
+		}
+
+	
 }
-
-

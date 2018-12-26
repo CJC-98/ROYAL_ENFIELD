@@ -1,7 +1,6 @@
 
 package com.app.extremity.iservice;
 
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -19,6 +18,7 @@ import com.app.extremity.model.CustomizationInvoice;
 import com.app.extremity.model.DeadStock;
 import com.app.extremity.model.EmailMessage;
 import com.app.extremity.model.EmployeeDetails;
+import com.app.extremity.model.Feedback;
 import com.app.extremity.model.NewBikeStock;
 import com.app.extremity.model.OldBikeStock;
 import com.app.extremity.model.ServcingBikeInfo;
@@ -87,6 +87,10 @@ public interface IAdminService {
 	public long getBikeSaleForUserCount();
 
 	long getAccessoriesCount();
+
+	long getUserOrDealerCount(String roleName);
+
+	List<Feedback> getFeedbackList();
 
 
 
