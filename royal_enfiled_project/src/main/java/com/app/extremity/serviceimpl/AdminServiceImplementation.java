@@ -3,6 +3,9 @@ package com.app.extremity.serviceimpl;
 
 import java.io.IOException;
 
+
+
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -18,6 +21,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
+
 import javax.mail.internet.MimeMultipart;
 import java.io.File;
 
@@ -25,9 +29,11 @@ import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+
 
 import com.app.extremity.idao.AccessoriesDeadStockIDao;
 import com.app.extremity.idao.AccessoriesStockIDao;
@@ -88,6 +94,10 @@ public class AdminServiceImplementation implements IAdminService {
 	@Autowired
 	SoldOldBikeStockIDao soldOldBikeStockDao;
 	@Autowired
+	SoldBikeStockIDao  soldBikeStockDao;
+	@Autowired
+	SoldAccessoriesIDao soldAccessoriesDao;
+	@Autowired
 	AccessoriesStockIDao accessoriesStockIDao;
 	@Autowired
 	DeadStockIDao deadStockIDao;
@@ -142,7 +152,9 @@ public class AdminServiceImplementation implements IAdminService {
 				dir.mkdirs();
 			}
 			UPLOADED_FOLDER = UPLOADED_FOLDER + File.separatorChar + dir.getName() + File.separatorChar;
-		} catch (Exception e) {
+		} 
+		catch (Exception e) 
+		{
 			logger.error("error creating upload directory");
 		}
 
@@ -237,7 +249,7 @@ public class AdminServiceImplementation implements IAdminService {
 			logger.error("exception While sending Email", e);
 
 		} catch (IOException e) {
-
+				System.out.println();
 			logger.error("file not found exception", e);
 
 		}
@@ -250,6 +262,7 @@ public class AdminServiceImplementation implements IAdminService {
 			EmployeeDetails employeeDetails = employeeDetailsDao.findOneByEmployeeDesignation("Admin");
 			adminEmailUsername = employeeDetails.getEmployeeEmail();
 			adminEmailPassword = employeeDetails.getEmployeePassword();
+			
 		} catch (Exception e) {
 			logger.info("exception while getting user creadentials");
 			logger.error("admin Credentials", e);
@@ -308,16 +321,8 @@ public class AdminServiceImplementation implements IAdminService {
 		return (List<TestDriveCustomer>) testDriveCustomerIDao.findAll();
 	}
 
-	public String getEmployeeCount() {
 
-		int acount = (int) employeeDetailsDao.count();
-		String employeeId = "Emp00";
-		acount++;
-		employeeId = employeeId + Integer.toString(acount);
-
-		return employeeId;
-	}
-
+	
 	@Override
 	public List<AvailableServicing> getAvaliableServicing() {
 		return (List<AvailableServicing>) availableServicingIDao.findAll();
@@ -333,7 +338,30 @@ public class AdminServiceImplementation implements IAdminService {
 		return (List<BikeCustomization>) bikeCustomizationIDao.findAll();
 	}
 
+	
+
 	@Override
+	public List<SoldOldBikeStock> getSoldOldBike() {
+		
+		return (List<SoldOldBikeStock>) soldOldBikeStockDao.findAll();
+	}
+
+	@Override
+	public List<SoldBikeStock> getSoldBikeStockInfo() {
+	
+		return (List<SoldBikeStock>) soldBikeStockDao.findAll();
+	}
+
+	@Override
+	public List<SoldAccessories> getSoldAccessoriesInfo() {
+		
+		return (List<SoldAccessories>) soldAccessoriesDao.findAll();
+	}
+
+	@Override
+	public void updateEmployee(EmployeeDetails employee) {
+		employeeDetailsDao.save(employee);
+	}
 	public List<SoldBikeStock> getSoldNewBike() {
 		return (List<SoldBikeStock>) soldNewBikeIDao.findAll();
 	}
@@ -344,6 +372,59 @@ public class AdminServiceImplementation implements IAdminService {
 		return employeeDetailsDao.findAllByEmployeeDesignation(employeeDesignation);
 	}
 
+
+	@Override
+	public List<EmployeeDetails> getEmployeeDesignation(String employeeDesignation) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getEmployeeCount() {
+		// TODO Auto-generated method stub
+		int acount=(int)employeeDetailsDao.count();
+		System.out.println("count"+acount);
+		String employeeId="Emp00";
+		acount++;
+	    employeeId=employeeId+Integer.toString(acount);
+		
+			return employeeId;
+	}
+
+	@Override
+	public int getEmployeeEmail(String employeeEmail) {
+		System.out.println("service imple");
+		System.out.println(employeeEmail);
+		 EmployeeDetails employeeDetails=employeeDetailsDao.findOneByEmployeeEmail(employeeEmail);
+		
+		 try{
+			 if(employeeDetails.getEmployeeEmail()==null)
+			 {
+				 return 1;
+			 }
+		 }
+		 catch(NullPointerException e)
+		 {
+			 
+			 logger.error(e);
+			 return 1;
+		 }
+		 return 0;
+		 
+		
+		  
+	}
+
+	@Override
+	public List<SoldBikeStock> getSoldBikeStock() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	
+
+
 	@Override
 	public List<SoldBikeStock> getNewBikeSaleByDate(Date date) {
 		return soldNewBikeIDao.findAllBySoldbikedate(date);
@@ -351,7 +432,7 @@ public class AdminServiceImplementation implements IAdminService {
 
 	@Override
 	public List<EmployeeDetails> deleteById(String employeeId) {
-		employeeDetailsDao.deleteById(employeeId);
+		employeeDetailsDao.findOneByEmployeeId(employeeId);
 		return (List<EmployeeDetails>) employeeDetailsDao.findAll();
 	}
 

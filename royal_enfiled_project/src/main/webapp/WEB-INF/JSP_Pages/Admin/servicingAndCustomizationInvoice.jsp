@@ -88,13 +88,14 @@
                                   <tbody>
                                   <c:forEach items="${customizationInvoiceList}" var="customizationInvoice">
                                     <tr role="row" class="odd">
-                                    <td>${customizationInvoice.amount}</td>
+                                 <td>${customizationInvoice.amount}</td>
                                     <td>${customizationInvoice.totalAmount}</td>
                                     <td>${customizationInvoice.paymentStatus}</td>
                                     </tr>
                                   </c:forEach>
                                   </tbody>
                                   <tfoot>
+                                  
                                   <tr>
                                     <th rowspan="1" colspan="1">Amount</th>
                                     <th rowspan="1" colspan="1">Total_Amount</th>

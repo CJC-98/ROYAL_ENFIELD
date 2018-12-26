@@ -147,11 +147,14 @@ function sortTable(n) {
                                             
                                   <thead>
                                   <tr role="row">
-                                  <th class="sorting_asc" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" aria-sort="ascending" 
-                                            aria-label="Rendering engine: activate to sort column descending"
-                                            style="width: 125px;" onclick="sortTable(0)">Old_Bike_Id
-                                      </th>
+
+                                 	  <th class="sorting" tabindex="0" aria-controls="example1" 
+                                            rowspan="1" colspan="1" 
+                                            aria-label="CSS grade: activate to sort column ascending" 
+                                            style="width: 125px;">Bike_Image
+                                        </th>
+                                        
+
                                       <th class="sorting_asc" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-sort="ascending" 
                                             aria-label="Rendering engine: activate to sort column descending"
@@ -207,19 +210,18 @@ function sortTable(n) {
                                             aria-label="CSS grade: activate to sort column ascending" 
                                             style="width: 125px;"onclick="sortTable(11)">Bike_Mileage
                                         </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" 
-                                            aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;"onclick="sortTable(12)">Bike_Image
-                                        </th>
+
+                         
                                        
                                     </tr>
                                   </thead>
                                   <tbody>
                                   <c:forEach items="${oldBikeStockList}" var="oldBikeStock">
                                     <tr role="row" class="odd">
-                                    <!--  <td class="sorting"></td>  -->
-                                    <td>${oldBikeStock.oldBikeId}</td>
+
+
+                                    <td><img  src="${pageContext.request.contextPath}/Resources/images/img1.jpg"></td>
+
                                     <td>${oldBikeStock.totalKmRun}</td>
                                     <td>${oldBikeStock.bikeCondition}</td>
                                     <td>${oldBikeStock.bikeMfgYear}</td>
@@ -231,14 +233,14 @@ function sortTable(n) {
                                     <td>${oldBikeStock.taxRemaining}</td>
                                     <td>${oldBikeStock.sellerDetails}</td>
                                     <td>${oldBikeStock.bikeMileage}</td>
-                                    <td>${oldBikeStock.bikeImage}</td>
+                                    
                                     </tr>
                                   </c:forEach>
                                   </tbody>
                                   <tfoot>
                                   <tr>
-                                  <th rowspan="1" colspan="1">Old_Bike_Id</th>
-                                  <th rowspan="1" colspan="1">Total_Km_Run</th>
+                                  	<th rowspan="1" colspan="1">Bike_Image</th>
+                           			<th rowspan="1" colspan="1">Total_Km_Run</th>
                                     <th rowspan="1" colspan="1">Bike_Condition</th>
                                     <th rowspan="1" colspan="1">Bike_Mfg_Year</th>
                                     <th rowspan="1" colspan="1">Bike_Purchase_Year</th>
@@ -249,7 +251,7 @@ function sortTable(n) {
                                     <th rowspan="1" colspan="1">Tax_Remaining</th>
                                     <th rowspan="1" colspan="1">Seller_Details</th>
                                     <th rowspan="1" colspan="1">Bike_Mileage</th>
-                                      <th rowspan="1" colspan="1">Bike_Image</th>
+                                      
                                         
                                     </tr>
                                   </tfoot>

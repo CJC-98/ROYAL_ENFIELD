@@ -113,9 +113,8 @@
                                   <tbody>
                                     <c:forEach items="${deadStockList}" var="deadStock">
                                     <tr role="row" class="odd">
-                                    <td class="sorting"></td>
-                                 
-                                    <td>${deadStock.deadBikeStock.bikeModel.modelName}</td>
+                                    <td>${deadStock.deadStockId}</td>
+                                   <td>${deadStock.deadBikeStock.bikeModel.modelName}</td>
                                     <td>${deadStock.deadBikeStock.chasisNumber}</td>
                                     <td>${deadStock.deadBikeStock.wheelType}</td>
                                     <td>${deadStock.deadBikeStock.engineStartingType}</td>

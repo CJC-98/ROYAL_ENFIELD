@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -14,6 +16,30 @@
     <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/js/datatables/datatables.css"
 	type="text/css" />
+	
+	<script type="text/javascript">
+	/* function editEmployee() 
+	{
+		alert("edit");
+		document.myform.action="editEmployee";
+		document.myform.submit();
+		
+	} */
+	
+	function updateEmployee() 
+	{
+		alert("update");
+		document.myform.action="updateEmployee";
+		document.myform.submit();
+	}
+	function remove() 
+	{
+		alert("remove");
+		document.myform.action="removeEmployee";
+		document.myform.submit();
+	}
+	
+	</script>
     <!--[if lt IE 9]> <script src="js/ie/html5shiv.js"></script> <script src="js/ie/respond.min.js"></script> <script src="js/ie/excanvas.js"></script> <![endif]-->
 <script type="text/javascript">
 function sortTable(n) {
@@ -75,7 +101,9 @@ function sortTable(n) {
 	}
 </script>
 </head>
-<body class="">
+<body>
+<form action="" name="myform">
+	
     <section id="content" class="bg-light lter">
         <section class="vbox">
             
@@ -114,25 +142,38 @@ function sortTable(n) {
                                             role="grid" aria-describedby="example1_info">
                                   <thead>
                                   <tr role="row">
-                                      <th class="sorting_asc" tabindex="0" aria-controls="example1" 
-                                            rowspan="1" colspan="1" aria-sort="ascending" 
-                                            aria-label="Rendering engine: activate to sort column descending"
-                                            style="width: 125px;" onclick="sortTable(0)">Employee_id
-                                      </th>
+
+                                      
+
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-label="Browser: 
                                             activate to sort column ascending" 
-                                            style="width: 125px;"onclick="sortTable(1)">Name
+
+                                            style="width: 125px;">ProfilePicture
+
+                                          
+
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-label="Platform(s): 
                                             activate to sort column ascending" 
-                                            style="width: 125px;"onclick="sortTable(2)">City
+
+                                            style="width: 125px;"onclick="sortTable(1)">Name
+
+                                          
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                              rowspan="1" colspan="1" 
                                             aria-label="Engine version: activate to sort column ascending" 
-                                            style="width: 125px;"onclick="sortTable(3)">Contact
+
+                                            style="width: 125px;"onclick="sortTable(2)">MobileNumber
+                                        </th>
+                                        <th class="sorting" tabindex="0" aria-controls="example1" 
+                                            rowspan="1" colspan="1" 
+                                            aria-label="CSS grade: activate to sort column ascending" 
+                                            style="width: 125px;" onclick="sortTable(3)">DateOfBrith
+
+
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" 
@@ -142,30 +183,239 @@ function sortTable(n) {
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" 
                                             aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;"onclick="sortTable(5)">Password
+
+                                            style="width: 125px;" onclick="sortTable(5)">Joining_Date
+
+                                            
                                         </th>
+                                        <th class="sorting" tabindex="0" aria-controls="example1" 
+                                            rowspan="1" colspan="1" 
+                                            aria-label="CSS grade: activate to sort column ascending" 
+                                            style="width: 125px;">
+                                        </th>
+                                        
                                     </tr>
                                   </thead>
                                   <tbody>
-                                  <c:forEach items="${employeeList}" var="employeeList">
+
+                                  <c:forEach items="${employeeList}" var="employee">
+
                                     <tr role="row" class="odd">
-                                    <td>${employeeList.employeeId}</td>
-                                    <td>${employeeList.employeeName}</td>
-                                    <td>${employeeList.employeeCityName}</td>
-                                    <td>${employeeList.employeeMobileNumber}</td>
-                                    <td>${employeeList.employeeEmail}</td>
-                                    <td>${employeeList.employeePassword}</td>
-                                  </tr>
+
+                                    <td><img  src="${pageContext.request.contextPath}/Resources/images/EmployeeProfilePicture/person1.jpg" width="50"></td>
+                                    <td>${ employee.employeeName}</td>
+                                    <td>${ employee.employeeMobileNumber}</td>
+                                    <td>${ employee.employeeDateOfBirth}</td>
+                                    <td>${ employee.employeeEmail}</td>
+                                 	<td>${ employee.employeeJoiningDate}</td>
+                                    <td>
+                                     <div> 
+                                     	<!-- Button to Open the Popup -->
+                                   
+		                                   <button type="button" 
+		                                     class="btn btn-primary " 
+                                    		 data-toggle="modal"
+                                     		 data-target="#editdata" onclick="editEmployee()">Edit
+  										   </button>
+    								 		<button type="button" 
+    											 class="btn btn-danger" 
+    											 data-toggle="modal" 
+    											 data-target="" onclick="removeEmployee()">Remove
+ 									 		</button>
+    									
+                                    </td>
+                                    
+                                   
+										<!-- The Modal -->
+  						<div class="modal" id="editdata">
+    						<div class="modal-dialog">
+      						   <div class="modal-content">
+      
+       								 <!-- Modal Header -->
+        								<div class="modal-header">
+          								<h4 class="modal-title">Employee_Details</h4>
+         								 <button type="button" 
+         								 class="close" 
+         								 data-dismiss="modal">&times;</button>
+        								</div>
+        
+       								 <!-- Modal body -->
+        								<div class="modal-body">
+        								  <div class="form-group">
+        								  <input type="hidden" name="employeeId" value="${employee.employeeId}">
+        								  <input type="hidden" name="employeeGender" value="${employee.employeeGender}">
+        								  <input type="hidden" name="employeeDesignation" value="${employee.employeeDesignation}">
+        								  
+										    <label for="name">Name:</label>
+										 	<input type="text"
+											class="form-control" 
+											id="name" placeholder="Enter name"
+											name="employeeName" value="${employee.employeeName}" required>
+										   </div>
+        								
+          									<div class="form-group">
+												<label for="address">Address:</label>
+												<div class="row">
+												<div class="col-md-6">
+													<input type="text" 
+													class="form-control" 
+													id="employeeAreaName"
+													placeholder="Enter areaname"
+												 	name="employeeAreaName" value="${employee.employeeAreaName}" required>
+												</div>
+												<div class="col-md-6">
+													<input type="text" 
+													class="form-control" 
+													id="cityname"
+													placeholder="Enter cityname" 
+													name="employeeCityName" value="${employee.employeeCityName}" required>
+												</div>
+												</div>
+											</div>
+        								
+          								<div class="form-group">
+											<div class="row">
+												<div class="col-md-6">
+													<input type="text" 
+													class="form-control" 
+													id="employeeStateName"
+													placeholder="Enter statename" 
+													name="employeeStateName" value="${employee.employeeStateName}" required>
+												</div>
+												<div class="col-md-6">
+													<input type="text" 
+													class="form-control"
+													id="employeeCountryName" 
+													placeholder="Enter countryname"
+													name="employeeCountryName" value="${employee.employeeCountryName}" required>
+												</div>
+											</div>
+									</div>
+									<div class="form-group">
+											<div class="row">
+												<div class="col-md-6">
+													<input type="text" 
+													class="form-control" id="pincode"
+													placeholder="Enter pincode" 
+													name="employeePincode" value="${employee.employeePincode}" required>
+												</div>
+											</div>
+									</div>
+								<div class="row">
+										<div class="col-md-6">
+											<!-- mobile no -->
+												<div class="form-group">
+													<label>Mobile no:</label> 
+													<input type="text"
+													class="form-control" 
+													data-type="phone"
+													placeholder="(XXX) XXXX XXX" 
+													data-required="true" 
+													name="employeeMobileNumber" value="${employee.employeeMobileNumber}">
+												</div>
+										</div>
+										
+							<div class="col-md-6">
+							
+								<div class="form-group">
+									<label for="employeeDateOfBirth">Date Of Birth:</label> <input
+										class="form-control" type="date" name="employeeDateOfBirth" value="${employee.employeeDateOfBirth}" required>
+								</div>
+							</div>
+							</div>
+							<div class="row">
+								
+										<div class="col-md-6">
+											<label for="employeeDateOfJoining">Date Of Joining:</label> <input
+												class="form-control" type="date" name="employeeDateOfJoining" value="${employee.employeeJoiningDate}" required>
+											</div>
+								
+									 <div class="col-md-6">
+										<div class="form-group">
+											<label for="employeeEmail">Email:</label>
+												<div class="form-group">
+												<input id="email"
+													type="text" class="form-control" 
+													name="employeeEmail" 
+													placeholder="Email" data-type="email"
+													data-required="true" value="${employee.employeeEmail}">
+												</div>
+											<div class="emailMessage"></div>
+										</div>
+									</div>
+							</div>
+							<div class="row">
+							<div class="col-md-6">
+								<!-- password -->
+								<div class="form-group">
+
+									<label for="employeePassword">Password:</label>
+									<div class="form-group">
+										<input id="password"
+											type="password" class="form-control" 
+											name="employeePassword" 
+											placeholder="Password" value="${employee.employeePassword}">
+									</div>
+
+								</div>
+
+							</div>
+							<div class="col-md-6">
+								<!--Confirm password -->
+								<div class="form-group">
+
+									<label for="employeePassword">Confirm Password:</label>
+									<div class="form-group">
+										<input id="confirmPassword" type="password" class="form-control"
+											 placeholder="Password" value="${employee.employeePassword}"
+											onchange="checkPassword()">
+									</div>
+									<small id="passwordMessage" class="alert-danger"></small>
+								</div>
+							</div>
+						</div>
+							<!-- Model Footer -->
+							<div class="modal-footer">
+          								<div class="row">
+          								
+          									<div class="col-md-6">
+         								 		<button type="button" 
+         								 		class="btn btn-primary" 
+         								 		data-togal="modal" onclick="updateEmployee()">Update</button>
+         								 	</div>
+          									<div class="col-md-6">
+         								 		<button type="button" 
+         								 		class="btn btn-danger" 
+         								 		data-dismiss="modal">Close</button>
+         								 	</div>
+         								 	
+         								 	
+        								</div>
+        					</div>
+							
+							<!--End Footer  -->
+							</div>
+						</div>
+    				</div>
+  				</div>
+ 
+ 					
+                                   	</tr>
+
                                   </c:forEach>
                                   </tbody>
                                   <tfoot>
-                                  <tr><th rowspan="1" colspan="1">Employee_Id</th>
+                                  <tr><th rowspan="1" colspan="1">ProfilePicture</th>
                                     <th rowspan="1" colspan="1">Name</th>
-                                    <th rowspan="1" colspan="1">City</th>
-                                    <th rowspan="1" colspan="1">Contact</th>
+                                    <th rowspan="1" colspan="1">MobileNumber</th>
+                                    <th rowspan="1" colspan="1">DateOfBirth</th>
                                     <th rowspan="1" colspan="1">Email</th>
-                                    <th rowspan="1" colspan="1">Password</th></tr>
-                                  </tfoot>
+
+                                    <th rowspan="1" colspan="1">Joining_Date</th>
+                                    <th></th>
+                                    </tr>
+
+                                                                    </tfoot>
                                 </table>
                             </div>
                         </div>
@@ -203,6 +453,6 @@ function sortTable(n) {
                     </section>
                 </section>
             </section>
-
+</form>
 </body>
 </html>

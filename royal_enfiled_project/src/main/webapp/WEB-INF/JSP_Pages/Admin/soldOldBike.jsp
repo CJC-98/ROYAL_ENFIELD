@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -75,27 +77,21 @@ function sortTable(n) {
 </head>
 <body class="">
     
-                <section id="content" class="bg-light lter">
+                <section id="content">
                     <section class="vbox">
                         <section class="scrollable padder">
-
-                            <div class="content-header">
-                            <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
+                        <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
                                 <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                                <li><a href="#">Sales</a></li>
+								<li><a href="#">Bike</a></li>
+								<li><a href="#">SalesOldBike</a></li>
                             </ul>
                             <div class="m-b-md">
-                                <h3 class="m-b-none">Workset</h3> <small>Welcome back,Royal_Enfield</small>
-                            </div>
-                        </div>
-                        </section>
+								<h3 class="m-b-none">Sales_Old_Bike</h3>
+							</div>
                         <!-- Table  -->
-                        <div class="row text-center m-b-md">
-                                <section class="scrollable padder">
-                                <h3><b>Sold_Old_Bike_Stock</b></h3>
-                                </section>
-                        </div>
                         <div class="row ">
-                        <section class="scrollable padder">
+                        
                         <div class="container">
                                 <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
                                     <div class="row">
@@ -131,98 +127,126 @@ function sortTable(n) {
                                             
                                   <thead>
                                   <tr role="row">
+
                                   <th class="sorting_asc" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-sort="ascending" 
                                             aria-label="Rendering engine: activate to sort column descending"
                                             style="width: 125px;" onclick="sortTable(0)">Old_Bike_Id
                                       </th>
+
                                       <th class="sorting_asc" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-sort="ascending" 
                                             aria-label="Rendering engine: activate to sort column descending"
-                                            style="width: 125px;" onclick="sortTable(1)">Total_Km_Run
+                                      style="width: 125px;" onclick="sortTable(1)">Total_Km_Run
+
                                       </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-label="Browser: 
                                             activate to sort column ascending" 
+
                                             style="width: 125px;"onclick="sortTable(2)">Bike_Condition
+
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" aria-label="Platform(s): 
                                             activate to sort column ascending" 
+
                                             style="width: 125px;"onclick="sortTable(3)">Bike_Mfg_Year
+
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                              rowspan="1" colspan="1" 
                                             aria-label="Engine version: activate to sort column ascending" 
+
                                             style="width: 125px;"onclick="sortTable(4)">Bike_Purchase_Year
+
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" 
                                             aria-label="CSS grade: activate to sort column ascending" 
+
                                             style="width: 125px;"onclick="sortTable(5)">Bike_Service_Status
+
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" 
                                             aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;"onclick="sortTable(6)">Mobile_Number
+                                    style="width: 125px;"onclick="sortTable(6)">Mobile_Number
+
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" 
                                             aria-label="CSS grade: activate to sort column ascending" 
+
                                             style="width: 125px;"onclick="sortTable(7)">Registration_Number
+
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" 
                                             aria-label="CSS grade: activate to sort column ascending" 
+
                                             style="width: 125px;"onclick="sortTable(8)">Tax_Paid_Details
+
                                         </th>
                                          <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" 
                                             aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;"onclick="sortTable(9)">Tax_Remaining
+                              style="width: 125px;"onclick="sortTable(9)">Tax_Remaining
+
                                         </th>
                                          <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" 
                                             aria-label="CSS grade: activate to sort column ascending" 
+
                                             style="width: 125px;"onclick="sortTable(10)">Seller_Details
+
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" 
                                             aria-label="CSS grade: activate to sort column ascending" 
+
                                             style="width: 125px;"onclick="sortTable(11)">Bike_Mileage
+
                                         </th>
+
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" 
                                             aria-label="CSS grade: activate to sort column ascending" 
                                             style="width: 125px;"onclick="sortTable(12)">Bike_Image
                                         </th>
+
                                        
                                     </tr>
                                   </thead>
                                   <tbody>
-                                  <c:forEach items="${soldOldBikeStockList}" var="soldOldBikeStock">
+
+                                  <c:forEach items="${soldOldBikeInfoList}" var="soldOldBikeInfo">
+
                                     <tr role="row" class="odd">
-                                    <!-- <td class="sorting"></td> -->
-                                    <td>${soldOldBikeStock.oldBikeId}</td>
-                                    <td>${soldOldBikeStock.totalKmRun}</td>
-                                    <td>${soldOldBikeStock.bikeCondition}</td>
-                                    <td>${soldOldBikeStock.bikeMfgYear}</td>
-                                    <td>${soldOldBikeStock.bikePurchaseYear}</td>
-                                    <td>${soldOldBikeStock.bikeServiceStatus}</td>
-                                    <td>${soldOldBikeStock.mobileNumber}</td>
-                                    <td>${soldOldBikeStock.registrationNo}</td>
-                                    <td>${soldOldBikeStock.taxPaidDetails}</td>
-                                    <td>${soldOldBikeStock.taxRemaining}</td>
-                                    <td>${soldOldBikeStock.sellerDetails}</td>
-                                    <td>${soldOldBikeStock.bikeMileage}</td>
-                                    <td>${soldOldBikeStock.bikeImage}</td>
+
+                                    <td><img src="${pageContext.request.contextPath}/Resources/images/img1.jpg" width="90"></td>
+                                    <td >${soldOldBikeInfo.totalKmRun}</td>
+                                    <td>${soldOldBikeInfo. bikeCondition}</td>
+                                    <td>${soldOldBikeInfo.bikeMfgYear }</td>
+                                    <td>${soldOldBikeInfo.bikePurchaseYear }</td>
+                                    <td>${soldOldBikeInfo.bikeServiceStatus }</td>
+                                    <td>${soldOldBikeInfo.mobileNumber}</td>
+                                    <td>${soldOldBikeInfo.registrationNo }</td>
+                                    <td>${soldOldBikeInfo.taxPaidDetails }</td>
+                                    <td>${soldOldBikeInfo.taxRemaining }</td>
+                                    <td>${soldOldBikeInfo.sellerDetails }</td>
+                                    <td>${soldOldBikeInfo.bikeMileage }</td>
+
+
                                     
+
                                   </tr>
                                   </c:forEach>
+
                                   </tbody>
                                   <tfoot>
                                   <tr>
-                                  <th rowspan="1" colspan="1">Old_Bike_Id</th>
+                                  <th rowspan="1" colspan="1">Bike_Image</th>
                                   <th rowspan="1" colspan="1">Total_Km_Run</th>
                                     <th rowspan="1" colspan="1">Bike_Condition</th>
                                     <th rowspan="1" colspan="1">Bike_Mfg_Year</th>
@@ -234,7 +258,7 @@ function sortTable(n) {
                                     <th rowspan="1" colspan="1">Tax_Remaining</th>
                                     <th rowspan="1" colspan="1">Seller_Details</th>
                                     <th rowspan="1" colspan="1">Bike_Mileage</th>
-                                      <th rowspan="1" colspan="1">Bike_Image</th>
+                                      
                                         
                                     </tr>
                                   </tfoot>
@@ -277,5 +301,6 @@ function sortTable(n) {
                     </section>
                 </section>
             </section> 
+            
 </body>
 </html>
