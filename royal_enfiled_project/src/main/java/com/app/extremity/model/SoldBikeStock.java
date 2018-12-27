@@ -14,54 +14,21 @@ import javax.persistence.OneToOne;
 @Entity
 public class SoldBikeStock {
 	@Id
-<<<<<<< HEAD
 	// @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private String soldBikeStockId;
-=======
-	//@GeneratedValue(strategy=GenerationType.IDENTITY)
-private String stockId;
-@OneToOne(cascade=CascadeType.ALL)
-@JoinColumn(name="modelId")
-private BikeModel bikeModel; //model name (Classic, Electra, Thunderbird, Himalyan, Continental, Interceptor)
-@OneToOne(cascade=CascadeType.ALL)
-@JoinColumn(name="engineId")
-private EngineCapacity bikeEngineCapacity; //350cc or 500cc
-private String chasisNumber;
-private String bikewheel;//alloy wheel,spoke
-private String bikeOnRoadPrice;
-private Date soldbikedate;
+	private Date date;
 
-private String engineStartingType;//kick or Self Start
-private String invoice;//bill genertion
-//@ManyToOne(cascade=CascadeType.ALL)
-//private User user;
-public String getStockId() {
-	return stockId;
-}
-public void setStockId(String stockId) {
-	this.stockId = stockId;
-}
->>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
+	public Date getDate() {
+		return date;
+	}
 
-<<<<<<< HEAD
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
 	public String getSoldBikeStockId() {
 		return soldBikeStockId;
 	}
-=======
-public Date getSoldbikedate() {
-	return soldbikedate;
-}
-public void setSoldbikedate(Date soldbikedate) {
-	this.soldbikedate = soldbikedate;
-}
-
-public BikeModel getBikeModel() {
-	return bikeModel;
-}
-public void setBikeModel(BikeModel bikeModel) {
-	this.bikeModel = bikeModel;
-}
->>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 
 	public void setSoldBikeStockId(String soldBikeStockId) {
 		this.soldBikeStockId = soldBikeStockId;

@@ -22,4 +22,5 @@ public String getColorName() {
 public void setColorName(String colorName) {
 	this.colorName = colorName;
 }
+
 }

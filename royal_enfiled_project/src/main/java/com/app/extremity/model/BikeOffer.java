@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class BikeOffer
 {
 @Id
-//@GeneratedValue(strategy=GenerationType.IDENTITY)
+@GeneratedValue(strategy=GenerationType.IDENTITY)
 private int bikeOfferId;
 
 public int getBikeOfferId() {

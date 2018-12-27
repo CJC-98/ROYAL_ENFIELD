@@ -1,7 +1,5 @@
 package com.app.extremity.model;
 
-import java.util.Date;
-
 import javax.persistence.CascadeType;
 
 import javax.persistence.Entity;
@@ -23,32 +21,12 @@ public class NewBikeStock
 	private String chasisNumber;
 	private String wheelType;
 	private String engineStartingType;
-	private Double bikePrice;
+	private String bikePrice;
 	private String bikeMfgDate;
-<<<<<<< HEAD
 	private String arrivalDate;
 	
 	public String getNewBikeStock() {
 		return newBikeStockId;
-=======
-	
-	private Date arrivalDate;
-	
-	public Date getArrivalDate() {
-		return arrivalDate;
-	}
-	public void setArrivalDate(Date arrivalDate) {
-		this.arrivalDate = arrivalDate;
-	}
-	public Double getBikePrice() {
-		return bikePrice;
-	}
-	public void setBikePrice(Double bikePrice) {
-		this.bikePrice = bikePrice;
-	}
-	public String getBikeId() {
-		return bikeId;
->>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 	}
 	public void setNewBikeStock(String newBikeStock) {
 		this.newBikeStockId= newBikeStock;
@@ -77,11 +55,22 @@ public class NewBikeStock
 	public void setEngineStartingType(String engineStartingType) {
 		this.engineStartingType = engineStartingType;
 	}
-	
+	public String getBikePrice() {
+		return bikePrice;
+	}
+	public void setBikePrice(String bikePrice) {
+		this.bikePrice = bikePrice;
+	}
 	public String getBikeMfgDate() {
 		return bikeMfgDate;
 	}
 	public void setBikeMfgDate(String bikeMfgDate) {
 		this.bikeMfgDate = bikeMfgDate;
+	}
+	public String getArrivalDate() {
+		return arrivalDate;
+	}
+	public void setArrivalDate(String arrivalDate) {
+		this.arrivalDate = arrivalDate;
 	}
 }

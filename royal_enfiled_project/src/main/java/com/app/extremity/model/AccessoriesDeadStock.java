@@ -8,17 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
-<<<<<<< HEAD
 @Entity
 public class AccessoriesDeadStock {
-=======
-@Entity
-
-public class AccessoriesDeadStock
-{     
-
-
->>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 	@Id
 // @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private String accessoriesDeadStockId;
@@ -27,14 +18,9 @@ public class AccessoriesDeadStock
 	private AccessoriesStock acd;
 
 	public String getAccessoriesDeadStockID() {
-<<<<<<< HEAD
 		return accessoriesDeadStockId;
 	}
 
-=======
-		return accessoriesDeadStockID;
-	} 
->>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 	public void setAccessoriesDeadStockID(String accessoriesDeadStockID) {
 		this.accessoriesDeadStockId = accessoriesDeadStockID;
 	}

@@ -41,7 +41,7 @@
 					class="panel-body wrapper-lg">
 					<div class="form-group">
 						<label class="col-sm-3 control-label">BikeModel</label> <select
-							data-required="true" class="form-control m-t">
+						required="required"	data-required="true" class="form-control m-t">
 							<option value="">Please choose Bike Model</option>
 							<option value="foo">Foo</option>
 							<option value="bar">Bar</option>
@@ -49,7 +49,7 @@
 					</div>
 					<div class="form-group">
 						<label class="col-sm-3 control-label">BikeEngineType</label> <select
-							data-required="true" class="form-control m-t">
+						required="required"	data-required="true" class="form-control m-t">
 							<option value="">Please choose Bike Engine Type</option>
 							<option value="foo">350cc</option>
 							<option value="bar">500cc</option>
@@ -57,7 +57,7 @@
 					</div>
 					<div class="form-group">
 						<label class="col-sm-3 control-label">BikeColor</label> <select
-							data-required="true" class="form-control m-t">
+						required="required"	data-required="true" class="form-control m-t">
 							<option value="">Please choose Bike Color Type</option>
 							<option value="foo">Red</option>
 							<option value="foo">Blue</option>
@@ -67,24 +67,24 @@
 					</div>
 					<div class="form-group">
 						<label class="control-label">PartNames</label> <input type="text"
-							name="partNames" placeholder="Enter part Names"
+						required="required"	name="partNames" placeholder="Enter part Names"
 							class="form-control input-lg">
 					</div>
 					<div class="form-group">
 						<label class="control-label">PartPrices</label> <input
-							type="text" name="partPrices"
+						required="required"	type="text" name="partPrices"
 							placeholder="Enter ShowRoom PartPrices"
 							class="form-control input-lg">
 					</div>
 					<div class="form-group">
 						<label class="control-label">WithGstPartPrices</label> <input
-							type="text" name="partPrices"
+						required="required"	type="text" name="partPrices"
 							placeholder="Enter ShowRoom PartPrices"
 							class="form-control input-lg">
 					</div>
 					<div class="form-group">
 						<label class="col-sm-4 control-label">PartQuantitys</label> <input
-							type='text' name='partQuantitys' id='qty' /> <input type='button'
+						required="required"	type='text' name='partQuantitys' id='qty' /> <input type='button'
 							name='add'
 							onclick='javascript: document.getElementById("qty").value++;'
 							value='+' /> <input type='button' name='subtract'

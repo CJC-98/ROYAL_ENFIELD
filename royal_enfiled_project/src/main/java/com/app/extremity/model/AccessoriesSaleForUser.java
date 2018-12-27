@@ -20,21 +20,48 @@ public class AccessoriesSaleForUser {
 	@Id
 	// @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private String accessoriesSaleForUserId;
-	private Date addingDate;
-	public Date getAddingDate() {
-		return addingDate;
-	}
-
-	public void setAddingDate(Date addingDate) {
-		this.addingDate = addingDate;
-	}
-
+	private String date;
 	private String partNames;
 	private String partPrices;
-	private long partQuantitys;
+	private String partQuantitys;
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "bikeModelId")
 	private BikeModel bikeModel;
+	private String image;
+	private String deadStockStatus="new";//dead
+
+	public String getDeadStockStatus() {
+		return deadStockStatus;
+	}
+
+	public void setDeadStockStatus(String deadStockStatus) {
+		this.deadStockStatus = deadStockStatus;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+	private String withGstPartPrices;
+	
+	public String getWithGstPartPrices() {
+		return withGstPartPrices;
+	}
+
+	public void setWithGstPartPrices(String withGstPartPrices) {
+		this.withGstPartPrices = withGstPartPrices;
+	}
+	
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
 
 	public BikeModel getBikeModel() {
 		return bikeModel;
@@ -68,11 +95,11 @@ public class AccessoriesSaleForUser {
 		this.partPrices = partPrices;
 	}
 
-	public long getPartQuantitys() {
+	public String getPartQuantitys() {
 		return partQuantitys;
 	}
 
-	public void setPartQuantitys(long partQuantitys) {
+	public void setPartQuantitys(String partQuantitys) {
 		this.partQuantitys = partQuantitys;
 	}
 

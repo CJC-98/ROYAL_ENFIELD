@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="BikeCustomizationTable")
 public class BikeCustomization {
-	   
+	
 	@Id
 	private String bikeCustomizationId;
 	
@@ -23,29 +23,19 @@ public class BikeCustomization {
 	
 	private String bikeReleaseStatus = "on-hold";   //OR released
 	
-	private int customizationProgressPercent = 0;  // 0-100 %
-	
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne
 	private CustomizationBikeInfo customizationBikeInfo; 
 	
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<CustomizationChart> customizationChart = new ArrayList<CustomizationChart>();
 	
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne
 	private CustomizationInvoice customizationInvoice;
 	
-
+	//FK of customer @OneToOne
 	
 	
 	
-
-	public int getCustomizationProgressPercent() {
-		return customizationProgressPercent;
-	}
-
-	public void setCustomizationProgressPercent(int customizationProgressPercent) {
-		this.customizationProgressPercent = customizationProgressPercent;
-	}
 
 	public String getBikeCustomizationId() {
 		return bikeCustomizationId;
@@ -63,14 +53,15 @@ public class BikeCustomization {
 		this.customizationStatus = customizationStatus;
 	}
 
-
 	public String getAppointmentDate() {
 		return appointmentDate;
 	}
 
-	public void setAppointmentDate(String string) {
-		this.appointmentDate = string;
+	public void setAppointmentDate(String appointmentDate) {
+		this.appointmentDate = appointmentDate;
 	}
+
+	
 
 	public String getBikeReleaseStatus() {
 		return bikeReleaseStatus;

@@ -1,5 +1,7 @@
 package com.app.extremity.model;
 
+import java.util.Date;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,6 +19,24 @@ public class SoldAccessories {
 	//@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private String soldAccessoriesId;
 	private String partName;
+	private String withGstPartPrices;
+	private Date date;
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public String getWithGstPartPrices() {
+		return withGstPartPrices;
+	}
+
+	public void setWithGstPartPrices(String withGstPartPrices) {
+		this.withGstPartPrices = withGstPartPrices;
+	}
+
 	public String getSoldAccessoriesId() {
 		return soldAccessoriesId;
 	}

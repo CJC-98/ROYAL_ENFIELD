@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+		<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +20,15 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/Resources/notebook UI/css/app.v1.css"
 	type="text/css" />
+	
+	<style type="text/css">
+	.panel{
+	      overflow-x:auto;
+	
+	      }
+	</style>
+	
+	
 </head>
 <body>
 	<section id="content" class="bg-light lter">
@@ -41,15 +51,33 @@
 									<th style="text-align: center">Adding Date</th>
 									<th style="text-align: center">ModelName</th>
 									<th style="text-align: center">EngineType</th>
-									<th style="text-align: center">BikeColor</th>
+									<!-- <th style="text-align: center">BikeColor</th> -->
 									<th style="text-align: center">BikeWheel</th>
-									<th style="text-align: center">ShowroomPrice</th>
+									<!-- <th style="text-align: center">ShowroomPrice</th> -->
 									<th style="text-align: center">OnRoadPrice</th>
 									<th style="text-align: center">EngineStartingType</th>
 								</tr>
 							</thead>
+							  <tbody>
+                                  	<c:forEach items="${SoldBikeStocks}" var="sbs">
+								<tr>
+									<td>${sbs.soldBikeStockId}</td>
+									<td>${sbs.date}</td>
+									<td>${sbs.bikeModel.modelName}</td>
+									<td>${sbs.bikeEngineCapacity.engineType}</td>
+								<%-- 	 <td>${sa.bikeModel.color.colorName}</td> --%>
+									<td>${sbs.bikewheel}</td>
+									<%-- <td>${sbs. partPrice}</td> --%>
+									<td>${sbs.bikeOnRoadPrice}</td>
+									<td>${sbs.engineStartingType}</td>
+									</tr>
+								</c:forEach>
+                                  
+						
 
-							<tbody></table>
+							</tbody>
+
+							</table>
 					</section>
 				</div>
 			</section>

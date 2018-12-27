@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8" />
+<meta charset="utf-8"/>
 <title>Notebook | Web Application</title>
 <meta name="description"
 	content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
@@ -19,6 +19,14 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/Resources/notebook UI/css/app.v1.css"
 	type="text/css" />
+	
+	<style type="text/css">
+	.panel{
+	      overflow-x:auto;
+	
+	      }
+	</style>
+	
 </head>
 <body>
 	<section id="content" class="bg-light lter">
@@ -31,14 +39,14 @@
 						AccessoriesDeadStock</h3>
 				</div>
 
-				<!-- first table starts -->
+				<!--  first table starts  -->
 				<div class="col-sm-12">
 					<section class="panel panel-default">
 						<table class="table table-striped m-b-none b-a">
 							<thead>
 								<tr>
 									<th style="text-align: center">VADSId</th>
-									<th style="text-align: center">AddingDate</th>
+								    <th style="text-align: center">AddingDate</th>
 									<th style="text-align: center">BikeModel</th>
 									<th style="text-align: center">EngineType</th>
 									<th style="text-align: center">BikeColor</th>
@@ -53,7 +61,7 @@
 							<tbody>
 
 							</tbody>
-
+                           
 						</table>
 					</section>
 				</div>

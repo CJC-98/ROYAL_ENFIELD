@@ -19,6 +19,7 @@
 </head>
 
 <body class="">
+<div style="overflow: scroll; height : 100%; max-height:1200px">
 	<section id="content" class="m-t-lg wrapper-md animated fadeInDown">
 		<div class="container aside-xxl">
 			<a class="navbar-brand block" href="index.html">DeadBike Form</a>
@@ -108,6 +109,7 @@
 
 	<script src="js/datepicker/bootstrap-datepicker.js"></script>
 	<!-- slider -->
+	</div>
 </body>
 
 

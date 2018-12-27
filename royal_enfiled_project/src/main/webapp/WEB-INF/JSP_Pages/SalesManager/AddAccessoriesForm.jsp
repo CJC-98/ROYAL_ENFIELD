@@ -16,14 +16,15 @@
 </head>
 
 <body class="">
+<div style="overflow: scroll; height : 100%; max-height:1200px">
     <section id="content" class="m-t-lg wrapper-md animated fadeInDown">
         <div class="container aside-xxl"> <a class="navbar-brand block" href="index.html">Add Accessories Form</a>
             <section class="panel panel-default m-t-lg bg-white">
                 <header class="panel-heading text-center"> <strong>Add Accessories</strong> </header>
-                <form action="http://flatfull.com/themes/note/index.html" class="panel-body wrapper-lg">
-                    <div class="form-group"> <label class="control-label">Bike Model</label> <input type="text" name="bikeModel" placeholder="Enter Bike Model"
+                <form action="addaccessories" class="panel-body wrapper-lg">
+                    <div class="form-group"> <label class="control-label">Bike Model</label> <input required="required" type="text" name="bikeModel" placeholder="Enter Bike Model"
                             class="form-control input-lg"> </div>
-                    <div class="form-group"> <label class="control-label">Accessories type</label> <input type="text" name="accessoriesType" placeholder="Enter Accessories Type"
+                    <div class="form-group"> <label class="control-label">Accessories type</label> <input required="required" type="text" name="accessoriesType" placeholder="Enter Accessories Type"
                             class="form-control input-lg"> </div>
                    
                     <p class="text-muted text-center"></p> <button name="addAccessories" id="addAccessories"
@@ -40,7 +41,7 @@
     <!-- Bootstrap -->
     <!-- App -->
    <script src="js/app.v1.js"></script>
-    <script src="js/app.plugin.js"></script>
+    <script src="js/app.plugin.js"></script></div>
 </body>
 <!-- Mirrored from flatfull.com/themes/note/signup.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Oct 2018 11:17:05 GMT -->
 

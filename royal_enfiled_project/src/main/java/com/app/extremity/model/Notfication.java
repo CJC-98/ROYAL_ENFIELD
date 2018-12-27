@@ -7,32 +7,32 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="NotficationTable")
+@Table(name = "NotficationTable")
 public class Notfication {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int notficationId;
-	
+
 	private String senderName;
-	
+
 	private String senderImg;
-	
+
 	private String senderPost;
-	
+
 	private String reciverName;
-	
+
 	private String reciverImg;
-	
+
 	private String reciverPost;
-	
+
 	private String message;
-	
+
 	private String sendDate;
-	
+
 	private String sendTime;
-	
-	private boolean markAsRead = false;  //OR true
+
+	private boolean markAsRead = false; // OR true
 
 	public int getNotficationId() {
 		return notficationId;
@@ -122,15 +122,4 @@ public class Notfication {
 		this.markAsRead = markAsRead;
 	}
 
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
 }

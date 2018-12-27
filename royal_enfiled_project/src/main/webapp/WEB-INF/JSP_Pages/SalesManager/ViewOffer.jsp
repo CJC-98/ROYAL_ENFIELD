@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +21,15 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/Resources/notebook UI/css/app.v1.css"
 	type="text/css" />
+	
+	<style type="text/css">
+	.panel{
+	      overflow-x:auto;
+	
+	      }
+	</style>
+	
+	
 </head>
 <body>
 	<section id="content" class="bg-light lter">
@@ -26,15 +37,16 @@
 			<section class="scrollable padder">
 
 				<div class="m-b-md">
-					<h3 class="m-b-none" style="text-align: center; font-size: 30pxl; font-weight: bold;">View
+					<h3 class="m-b-none"
+						style="text-align: center; font-size: 30pxl; font-weight: bold;">View
 						Offers</h3>
 				</div>
 
 				<!-- first table starts -->
 				<div class="col-sm-12">
 					<section class="panel panel-default">
-						<table class="table table-striped m-b-none b-a">
-							<thead>
+						<table class="table table-striped m-b-none b-a" border="2">
+							
 								<tr>
 									<th style="text-align: center">OId</th>
 									<th style="text-align: center">OfferName</th>
@@ -42,17 +54,18 @@
 									<th style="text-align: center">StartDate</th>
 									<th style="text-align: center">EndDate</th>
 								</tr>
-							</thead>
+								
+								<c:forEach items="${bikeoffers}" var="offer">
+								<tr>
+									<td>${offer.bikeOfferId}</td>
+									<td>${offer.offerName}</td>
+									<td>${offer.discountInPercentage}</td>
+									<td>${offer.startDate}</td>
+									<td>${offer.endDate}</td>
+									</tr>
+								</c:forEach>
 
-							<tbody>
 
-								<tr style="text-align: center">
-									<td>O001</td>
-									<td style="color: #FF681B">DiwaliOffer</td>
-									<td style="color: #81EF19">10%</td>
-									<td style="color: #81EF19">10-10-10</td>
-									<td style="color: #81EF19">12-12-12</td>
-								</tr></tbody>
 
 						</table>
 					</section>

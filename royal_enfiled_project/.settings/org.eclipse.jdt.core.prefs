@@ -1,16 +1,9 @@
 =\=\=\=\=\=\=
 <<<<<<<=HEAD
-<<<<<<< HEAD
 >>>>>>>=branch 'master' of https\://github.com/CJC-98/ROYAL_ENFIELD.git
-=======
->>>>>>>=refs/heads/serviceManagerTeamBranch
->>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 eclipse.preferences.version=1
 org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
-<<<<<<< HEAD
 org.eclipse.jdt.core.compiler.codegen.methodParameters=generate
-=======
->>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.8
 org.eclipse.jdt.core.compiler.compliance=1.8
 org.eclipse.jdt.core.compiler.problem.assertIdentifier=error

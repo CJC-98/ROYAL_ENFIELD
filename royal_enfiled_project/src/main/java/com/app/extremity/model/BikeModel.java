@@ -1,6 +1,8 @@
 package com.app.extremity.model;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -29,20 +31,12 @@ public class BikeModel {
 	@JoinColumn(name = "engineCapacityId")
 	private EngineCapacity enginecapacity;
 
-
-	
-	@OneToMany(cascade=CascadeType.ALL)
-	private Set<Color>colors=new HashSet<Color>();
+	@OneToMany(cascade = CascadeType.ALL)
+	private Set<Color> color=new HashSet<Color>();
 
 	private String image;
-<<<<<<< HEAD
 
 	public String getImage() {
-=======
-	
-	
-	public String getImage(){
->>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 		return image;
 	}
 
@@ -66,8 +60,12 @@ public class BikeModel {
 		this.enginecapacity = enginecapacity;
 	}
 
-	public Set<Color> getColors() {
-		return getColors();
+	public Set<Color> getColor() {
+		return color;
+	}
+
+	public void setColor(Set<Color> color) {
+		this.color = color;
 	}
 
 }

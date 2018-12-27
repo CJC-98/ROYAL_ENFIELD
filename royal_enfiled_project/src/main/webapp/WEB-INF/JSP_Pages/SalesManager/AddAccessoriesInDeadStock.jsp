@@ -19,6 +19,7 @@
 </head>
 
 <body class="">
+<div style="overflow: scroll; height : 100%; max-height:1200px">
     <section id="content" class="m-t-lg wrapper-md animated fadeInDown">
         <div class="container aside-xxl"> <a class="navbar-brand block" href="index.html">Add Accessories DeadStock </a>
             <section class="panel panel-default m-t-lg bg-white">
@@ -55,6 +56,7 @@
     <!-- App -->
     <!-- <script src="js/app.v1.js"></script>-->
     <!--   <script src="js/app.plugin.js"></script>-->
+    </div>
 </body>
 <!-- Mirrored from flatfull.com/themes/note/signup.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Oct 2018 11:17:05 GMT -->
 

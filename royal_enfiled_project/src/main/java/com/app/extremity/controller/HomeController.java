@@ -1,15 +1,9 @@
- package com.app.extremity.controller;
+package com.app.extremity.controller;
 
-import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
-import java.util.List;
 
-import javax.management.Notification;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
@@ -20,60 +14,31 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.app.extremity.iservice.AService;
 import com.app.extremity.iservice.IAdminService;
 import com.app.extremity.iservice.IHomeService;
-
 import com.app.extremity.iservice.NotificationInterface;
-import com.app.extremity.iservice.ServiceManagerInterface;
-import com.app.extremity.model.EmployeeDetails;
-import com.app.extremity.model.Notfication;
-import com.app.extremity.serviceimpl.AccountServiceImpl;
+import com.app.extremity.serviceimpl.BikeSaleServiceImpl;
 
 @Controller
 @RequestMapping("/")
-
 public class HomeController {
-<<<<<<< HEAD
-
-=======
->>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
-	@Autowired
-	IHomeService homeService;
-<<<<<<< HEAD
-
-=======
-	
 	@Autowired
 	NotificationInterface notificationInterface;
-	
+
 	HttpSession session;
-	
+
 	@Autowired
-	AccountServiceImpl AService;
-	
->>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
+	IHomeService homeService;
+	@Autowired
+	BikeSaleServiceImpl bikeSaleServiceImpl;
 	static Logger logger = LogManager.getLogger(HomeController.class);
 	@Autowired
 	IAdminService adminService;
-<<<<<<< HEAD
+
 	@RequestMapping(value = "/")
 	public String homePage() {
-=======
-	
-	@Autowired
-	ServiceManagerInterface serviceManagerInterface;
-	
-
-	
-	
-	// All site actions are go through this method
-	    //This is our landing page
-	@RequestMapping(value="/")
-	public String homePage()
-	{ 
->>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 		logger.info("In home controller log");
 		return "home";
 	}
@@ -91,51 +56,66 @@ public class HomeController {
 	 * Author: Nilesh Tammewar
 	 */
 
-	@RequestMapping(value="/SignIn")
-	public String signIn(Model model, @RequestParam String email,@RequestParam String password,HttpServletRequest request)    
-	{ 
+	@RequestMapping(value = "/SignIn")
+	public String signIn(Model model, @RequestParam String email, @RequestParam String password,
+			HttpServletRequest request) {
 
-<<<<<<< HEAD
-		System.out.println("In SignIn controller");
-		  
-	//	model.addAttribute("link","salesManagerDashboard.jsp");
-		return "IndivisualUser/indivisualUserIndex";
-
-		
-		/*logger.info("In SignIn controller log");
-		int i=homeService.checkLoginCredentials(email,password);
-=======
 		logger.info("In SignIn controller log");
-		int i=homeService.checkLoginCredentials(email,password,request);
-
+		int i = homeService.checkLoginCredentials(email, password, request);
 		session = request.getSession();
 
-		
->>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 		switch (i) {
 		case 1:
-			model.addAttribute("link", "adminDashboard.jsp");			
-			return "Admin/adminIndex";			
+			model.addAttribute("link", "adminDashboard.jsp");
+			return "Admin/adminIndex";
 		case 2:
+			long tscount = bikeSaleServiceImpl.getAllBikeSaleForUserCount();
+
+			model.addAttribute("totalServiceCount", tscount);
+			long account = bikeSaleServiceImpl.getAllOldBikeStockCount();
+			model.addAttribute("approvedCustomizationCount", account);
+			long tccount = bikeSaleServiceImpl.getAllDeadStockCount();
+			model.addAttribute("totalCustomizationCount", tccount);
+
+			long tscount1 = bikeSaleServiceImpl.getAllSoldBikeSaleForUSerCount();
+			model.addAttribute("totalServiceCount1", tscount);
+			long account2 = bikeSaleServiceImpl.getAllSoldOldBikeCount();
+			model.addAttribute("approvedCustomizationCount2", account);
+			long tccount3 = bikeSaleServiceImpl.getAllCompanyOrderBikeCount();
+			model.addAttribute("totalCustomizationCount3", tccount);
+			
 			model.addAttribute("link", "salesManagerDashboard.jsp");
 			return "SalesManager/salesManagerIndex";
 		case 3:
-			//get service count
-			model.addAttribute("approvedServiceCount", serviceManagerInterface.getAllServiceCountByServiceStatus("waiting"));
-			model.addAttribute("inProgerssServices", serviceManagerInterface.getAllServiceCountByServiceStatus("in-progress"));
-			model.addAttribute("completedservices", serviceManagerInterface.getAllServiceCountByServiceStatus("done"));
-			model.addAttribute("totalServiceCount", serviceManagerInterface.getAllServiceCount());
+			// get service count
 			
-			//get customization count
-			model.addAttribute("approvedCustomizationCount", serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("waiting"));
-			model.addAttribute("inProgerssCustomization", serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("in-progress"));
-		    model.addAttribute("completedCustomization", serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("done"));
-		    model.addAttribute("totalCustomizationCount", serviceManagerInterface.getAllCustomizationCount());	
-		    
-		    //get short notification list
-			model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
-			model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
-			
+			/*
+			 * model.addAttribute("approvedServiceCount",
+			 * serviceManagerInterface.getAllServiceCountByServiceStatus(
+			 * "waiting")); model.addAttribute("inProgerssServices",
+			 * serviceManagerInterface.getAllServiceCountByServiceStatus(
+			 * "in-progress")); model.addAttribute("completedservices",
+			 * serviceManagerInterface.getAllServiceCountByServiceStatus("done")
+			 * ); model.addAttribute("totalServiceCount",
+			 * serviceManagerInterface.getAllServiceCount());
+			 * 
+			 * //get customization count
+			 * model.addAttribute("approvedCustomizationCount",
+			 * serviceManagerInterface.
+			 * getAllCustomizationCountByCustomizationStatus("waiting"));
+			 * model.addAttribute("inProgerssCustomization",
+			 * serviceManagerInterface.
+			 * getAllCustomizationCountByCustomizationStatus("in-progress"));
+			 * model.addAttribute("completedCustomization",
+			 * serviceManagerInterface.
+			 * getAllCustomizationCountByCustomizationStatus("done")); //get
+			 * short notification list model.addAttribute("inboxCount",
+			 * notificationInterface.getInboxCount(session.getAttribute(
+			 * "currentUserName").toString(), false));
+			 * model.addAttribute("shortInboxList",
+			 * notificationInterface.getMyNotReadedInboxNotfication(session.
+			 * getAttribute("currentUserName").toString(), false));
+			 */
 			model.addAttribute("link", "serviceManagerDashboard.jsp");
 			return "ServiceManager/serviceManagerIndex";
 		case 4:
@@ -152,68 +132,37 @@ public class HomeController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
-			long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
-			model.addAttribute("inboxCount", inboxCount);
-			
-			List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
-			model.addAttribute("shortInboxList", shortInboxList);
-			
-			
-			long lg = AService.NewBikeCount(fd,ld);
-				System.out.println("Home Controll.. New Bike Count is.. "+lg);
-			model.addAttribute("lg", lg);			
+
+			long lg = AService.NewBikeCount(fd, ld);
+			System.out.println("Home Controll.. New Bike Count is.. " + lg);
+			model.addAttribute("lg", lg);
 			long lg1 = AService.SoldBikeCount(fds, lds);
-				System.out.println("Home Controll.. Sold Bike Count is.. " + lg1);
+			System.out.println("Home Controll.. Sold Bike Count is.. " + lg1);
 			model.addAttribute("lg1", lg1);
 			model.addAttribute("link", "accountsDashboard.jsp");
 			return "Accounts/accountsIndex";
-			
-			
-			
 		default:
 			model.addAttribute("msg", "Wrong Credentials");
 			return "login";
 		}
-<<<<<<< HEAD
-*/
 
 	}
 
 	@RequestMapping(value = "/gotToColorOptionPage")
 	public String gotToColorOptionPage() {
 
-=======
-		
-	}  
-	
-	   
-	
-	@RequestMapping(value="/gotToColorOptionPage")
-	public String gotToColorOptionPage()    
-	{ 	
->>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 		System.out.println("In gotToColorOptionPage controller");
 		return "IndivisualUser/indivisualUserIndex";
 	}
-<<<<<<< HEAD
 
 	@RequestMapping(value = "/admin")
 	public String admin() {
 		System.out.println("In admin controller");
-		return "";
+		return "adminDashboard/adminIndex";
 	}
 
 	@RequestMapping(value = "/client")
 	public String client() {
-=======
-	
-	
-
-	@RequestMapping(value="/client")
-	public String client()
-	{  
->>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 		System.out.println("In client controller");
 		return "";
 	}
@@ -223,12 +172,25 @@ public class HomeController {
 		System.out.println("In dealer controller");
 		return "";
 	}
-
+	//Author:manoj joshi
 	@RequestMapping(value = "/sales")
 	public String sales(Model model) {
-		System.out.println("In sales controller");
+
+		long tscount = bikeSaleServiceImpl.getAllBikeSaleForUserCount();
+
+		model.addAttribute("totalServiceCount", tscount);
+		long account = bikeSaleServiceImpl.getAllOldBikeStockCount();
+		model.addAttribute("approvedCustomizationCount", account);
+		long tccount = bikeSaleServiceImpl.getAllDeadStockCount();
+		model.addAttribute("totalCustomizationCount", tccount);
+
+		long tscount1 = bikeSaleServiceImpl.getAllSoldBikeSaleForUSerCount();
+		model.addAttribute("totalServiceCount1", tscount);
+		long account2 = bikeSaleServiceImpl.getAllSoldOldBikeCount();
+		model.addAttribute("approvedCustomizationCount2", account);
+		long tccount3 = bikeSaleServiceImpl.getAllCompanyOrderBikeCount();
+		model.addAttribute("totalCustomizationCount3", tccount);
 		model.addAttribute("link", "salesManagerDashboard.jsp");
-		// model.addAttribute("link","newdash.jsp");
 		return "SalesManager/salesManagerIndex";
 
 	}
@@ -238,8 +200,4 @@ public class HomeController {
 		System.out.println("In service controller");
 		return "";
 	}
-	
-
-
-
 }

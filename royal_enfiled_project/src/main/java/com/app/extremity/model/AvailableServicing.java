@@ -19,6 +19,10 @@ public class AvailableServicing {
 	
 	private long cost;
 	
+	
+
+	
+
 	public int getAvailableServicingId() {
 		return availableServicingId;
 	}
@@ -42,5 +46,13 @@ public class AvailableServicing {
 	public void setCost(long cost) {
 		this.cost = cost;
 	}
-		
+	
+	
+	
+
+
+	
+	
+	
+	
 }

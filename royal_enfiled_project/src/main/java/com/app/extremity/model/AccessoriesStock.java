@@ -1,8 +1,5 @@
 package com.app.extremity.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,11 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
-<<<<<<< HEAD
 import javax.persistence.ManyToOne;
-=======
-import javax.persistence.OneToMany;
->>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 import javax.persistence.OneToOne;
 
 import org.springframework.ui.Model;
@@ -28,34 +21,16 @@ public class AccessoriesStock {
 	private String partName;
 	private String partPrice;
 	private long partQuantity;
-
-
 	//@OneToOne(cascade=CascadeType.ALL)
-<<<<<<< HEAD
 	//@JoinColumn(name="bikeModelId")
 	// private Model model;
 
 	public String getAccessoriesStockId() {
 		return accessoriesStockId;
-=======
-	//private Model model;
-	
-	
-
-	public String getPartId() {
-		return partId;
->>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 	}
-<<<<<<< HEAD
 
 	public void setAccessoriesStockId(String accessoriesStockId) {
 		this.accessoriesStockId = accessoriesStockId;
-=======
-	
-
-	public void setPartId(String partId) {
-		this.partId = partId;
->>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 	}
 
 	public String getPartName() {

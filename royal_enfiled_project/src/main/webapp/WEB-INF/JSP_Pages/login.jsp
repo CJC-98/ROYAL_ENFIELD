@@ -19,54 +19,10 @@
 </head>
 
 <body class="">
-<<<<<<< HEAD
-    <section id="content" class="m-t-lg wrapper-md animated fadeInUp">
-        <div class="container aside-xxl"> 
-        <a class="navbar-brand block" href="">
-        	Royal Enfield
-        </a>
-            <section class="panel panel-default bg-white m-t-lg">
-                <header class="panel-heading text-center"> <strong>Sign in</strong> </header>
-                <form action="http://flatfull.com/them	es/note/index.html" class="panel-body wrapper-lg">
-                    <div class="form-group"> <label class="control-label">Email</label> <input type="email" placeholder="test@example.com"
-                            class="form-control input-lg"> </div>
-                    <div class="form-group"> <label class="control-label">Password</label> <input type="password" id="inputPassword"
-                            placeholder="Password" class="form-control input-lg"> </div>
-                    <div class="checkbox"> 
-	                    <label> 
-	                    	<input type="checkbox"> Keep me logged in 
-	                    </label> 
-                    </div> 
-                    
-                    	<a href="#" class="pull-right m-t-xs">
-                    		<small>Forgot password?</small>
-                    	</a> 
-                    
-                        <a href="sales">
-                        	<button type="button" class="btn btn-primary">Sign in</button>
-                        </a>
-                    
-                    	<div class="line line-dashed"></div> 
-                    	
-                    	<a href="#" class="btn btn-facebook btn-block m-b-sm">
-                    		<i class="fa fa-facebook pull-left"></i>Sign in with Facebook
-                    	</a> 
-                    	
-                    	<a href="#" class="btn btn-twitter btn-block"><i class="fa fa-twitter pull-left"></i>Signin with Twitter</a>
-                    	<div class="line line-dashed"></div>
-                    	<p class="text-muted text-center">
-                    	<small>Do not have an account?</small></p> 
-                    	<a href="signup.html" class="btn btn-default btn-block">Create an account</a>
-                </form>
-            </section>
-        </div>
-    </section> 
-=======
 	<section id="content" class="m-t-lg wrapper-md animated fadeInUp">
 		<div class="container aside-xxl">
 			<a class="navbar-brand block" href=""> Royal Enfield </a>
 			<section class="panel panel-default bg-white m-t-lg">
->>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 
 				<header class="panel-heading text-center">
 					<strong>Sign in</strong>

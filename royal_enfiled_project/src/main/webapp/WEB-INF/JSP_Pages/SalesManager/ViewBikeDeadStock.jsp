@@ -19,6 +19,15 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/Resources/notebook UI/css/app.v1.css"
 	type="text/css" />
+	
+	
+	<style type="text/css">
+	.panel{
+	      overflow-x:auto;
+	
+	      }
+	</style>
+	
 </head>
 <body>
 	<section id="content" class="bg-light lter">
