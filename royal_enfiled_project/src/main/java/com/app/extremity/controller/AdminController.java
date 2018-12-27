@@ -13,17 +13,35 @@ import com.app.extremity.iservice.IAdminService;
 import com.app.extremity.model.EmailMessage;
 import com.app.extremity.model.EmployeeDetails;
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 @Controller
+<<<<<<< HEAD
 @RequestMapping(value = "/admin")
 
+=======
+/*@RequestMapping(value="/admin")*/
+>>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 public class AdminController {
 
 	@Autowired
 	IAdminService adminService;
 
+<<<<<<< HEAD
 	/*
 	 * this method is used to send Email to employee With Registration Link
+=======
+	@RequestMapping(value="/composeMail")
+	public String toComposeMailPage() {
+		return "Admin/composeMail";
+	}
+	/*this method is used to send Email to employee With Registration Link
+>>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 	 * 
+<<<<<<< HEAD
 	 * author: Nilesh Tammewar
 	 */
 
@@ -32,6 +50,18 @@ public class AdminController {
 
 		adminService.sendEmail(emailmessage, file);
 		return null;
+=======
+	 *  author: Nilesh Tammewar
+	 * */
+	
+	@RequestMapping(value="/sendEmail",method=RequestMethod.POST)
+	public String sendEmail(@ModelAttribute EmailMessage  emailmessage,@RequestParam("file") MultipartFile file) {
+		System.out.println(emailmessage.getTo_address());
+		System.out.println(emailmessage.getSubject());
+		System.out.println(emailmessage.getBody());
+		adminService.sendEmail(emailmessage,file);
+		return "Admin/adminIndex";
+>>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 	}
 
 	/*
@@ -48,6 +78,7 @@ public class AdminController {
 	/*
 	 * this method is used to save Employee Details
 	 * 
+<<<<<<< HEAD
 	 * author: Nilesh Tammewar
 	 */
 
@@ -57,6 +88,16 @@ public class AdminController {
 
 		adminService.saveEmployee(employeeDetails, profilePic);
 		return "redirect:/loginPage";
+=======
+	 *  author: Nilesh Tammewar
+	 * */
+	
+	@RequestMapping(value="/saveEmployee",method=RequestMethod.POST)
+	public String createEmployee(@ModelAttribute EmployeeDetails employeeDetails,@RequestParam("profilePic") MultipartFile profilePic,Model model) {
+		
+		adminService.saveEmployee(employeeDetails,profilePic);
+		return "login";
+>>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 	}
 
 }

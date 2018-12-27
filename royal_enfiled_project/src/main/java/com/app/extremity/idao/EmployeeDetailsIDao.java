@@ -8,4 +8,8 @@ public interface EmployeeDetailsIDao extends CrudRepository<EmployeeDetails	, St
 
 	EmployeeDetails findOneByEmployeeEmailAndEmployeePassword(String email, String password);
 
+	EmployeeDetails findOneByEmployeeDesignation(String employeeDesignation);
+	
+	EmployeeDetails findOneByEmployeeName(String employeeName);
+
 }

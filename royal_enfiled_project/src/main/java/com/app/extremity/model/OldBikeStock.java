@@ -38,8 +38,21 @@ public class OldBikeStock {
 	@JoinColumn(name = "newBikeStockId")
 	private NewBikeStock newBikeStock;
 
+<<<<<<< HEAD
 	public String getOldBikeStockId() {
 		return OldBikeStockId;
+=======
+	public NewBikeStock getNewBikeStock() {
+		return newBikeStock;
+	}
+
+	public void setNewBikeStock(NewBikeStock newBikeStock) {
+		this.newBikeStock = newBikeStock;
+	}
+
+	public String getOldBikeId() {
+		return oldBikeId;
+>>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 	}
 
 	public void setOldBikeStockId(String oldBikeStockId) {

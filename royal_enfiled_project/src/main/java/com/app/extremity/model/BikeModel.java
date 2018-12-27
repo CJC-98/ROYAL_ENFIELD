@@ -35,8 +35,14 @@ public class BikeModel {
 	private Set<Color>colors=new HashSet<Color>();
 
 	private String image;
+<<<<<<< HEAD
 
 	public String getImage() {
+=======
+	
+	
+	public String getImage(){
+>>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 		return image;
 	}
 

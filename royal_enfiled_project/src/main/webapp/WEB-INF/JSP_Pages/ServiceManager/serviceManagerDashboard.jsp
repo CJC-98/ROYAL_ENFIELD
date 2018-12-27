@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+ <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +12,9 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/css/font.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/js/calendar/bootstrap_calendar.css" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/notebook UI/css/app.v1.css" type="text/css" />
+
+
+
 </head>
 
 <body>
@@ -22,8 +26,157 @@
 	                    <h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Dashboard</h3>
 	                </div>
 	                
+<<<<<<< HEAD
 	               // Dashboard body here
 	                
+=======
+	               
+	               <div class="hbox b-a bg-light" style="border-radius: 3px">
+	               		
+	               		<h3 class="m-l-xs" style="text-align: center">Services Graph</h3>
+	               		
+	               		<a  href="ApprovedServicesPage">
+	               		<div class="col-lg-4">
+                                    <section class="panel panel-default">
+                                        <header class="panel-heading bg-danger lt" style="font-size: 15px">Pending Services</header>
+                                        <div class="panel-body text-center">
+                                            <h4>${approvedServiceCount} </h4>
+                                            <div class="inline">
+                                                <div class="easypiechart text-danger" data-percent="${approvedServiceCount *100/totalServiceCount }"
+                                                    data-line-width="5" data-track-Color="#f0f0f0" data-bar-color="#FF5F4A"
+                                                    data-rotate="0" data-scale-Color="false" data-size="150"
+                                                    data-animate="2000"> <span class="h2 step font-bold"></span>%
+                                                    <div class="easypie-text text-muted">Waiting</div>
+                                                </div>      
+                                            </div>
+                                        </div>
+
+                                        <div class="panel-footer bg-danger lt" style="font-size: 15px">Total Services ${totalServiceCount}</div>
+
+                                    </section>    
+                             </div>
+                    		</a>
+							
+						  <a  href="ServicesInprogressPage">	
+                           <div class="col-lg-4">
+                                    <section class="panel panel-default">
+                                        <header class="panel-heading bg-warning lt" style="font-size: 15px">In-Progress Services</header>
+                                        <div class="panel-body text-center">
+                                            <h4>${inProgerssServices}</h4>
+                                            <div class="inline">
+                                                <div class="easypiechart text-warning" data-percent="${inProgerssServices *100/totalServiceCount }"
+                                                    data-line-width="5" data-track-Color="#f0f0f0" data-bar-color="#FFD300"
+                                                    data-rotate="0" data-scale-Color="false" data-size="150"
+                                                    data-animate="2000"> <span class="h2 step font-bold">72</span>%
+                                                    <div class="easypie-text text-muted">In-progress</div>
+                                                </div>      
+                                            </div>
+                                        </div>
+
+                                        <div class="panel-footer bg-warning lt" style="font-size: 15px">Total Services ${totalServiceCount}</div>
+
+                                    </section>    
+                            </div>
+                            </a>
+                               
+                            <a href="BikeServicesRecordsPage">
+                            <div class="col-lg-4">
+                                    <section class="panel panel-default">
+                                        <header class="panel-heading bg-success lt" style="font-size: 15px">Completed Services</header>
+                                        <div class="panel-body text-center">
+                                            <h4>${completedservices}</h4>
+                                            <div class="inline">
+                                                <div class="easypiechart text-success" data-percent="${completedservices *100/totalServiceCount}"
+                                                    data-line-width="5" data-track-Color="#f0f0f0" data-bar-color="#8ec165"
+                                                    data-rotate="0" data-scale-Color="false" data-size="150"
+                                                    data-animate="2000"> <span class="h2 step font-bold">22.66</span>%
+                                                    <div class="easypie-text text-muted">Done</div>
+                                                </div>      
+                                            </div>
+                                        </div>
+
+                                        <div class="panel-footer bg-success lt" style="font-size: 15px">Total Services ${totalServiceCount}</div>
+
+                                    </section>    
+                           </div>
+						   </a>
+                    
+	               </div>
+	               
+	               
+	               <div class="hbox b-a bg-light" style="margin-top: 20px; margin-bottom: 20px; border-radius: 3px">
+	               
+	               		<h3 class="m-l-xs" style="text-align: center">Customization  Graph</h3>
+	               		
+	               		<a href="ApprovedCustomizationPage">
+	               			<div class="col-lg-4">
+                                    <section class="panel panel-default">
+                                        <header class="panel-heading bg-danger lt" style="font-size: 15px">Panding Customization</header>
+                                        <div class="panel-body text-center">
+                                            <h4>${approvedCustomizationCount}</h4>
+                                            <div class="inline">
+                                                <div class="easypiechart text-danger" data-percent="${approvedCustomizationCount *100/totalCustomizationCount}"
+                                                    data-line-width="5" data-track-Color="#f0f0f0" data-bar-color="#FF5F4A"
+                                                    data-rotate="0" data-scale-Color="false" data-size="150"
+                                                    data-animate="2000"> <span class="h2 step font-bold">5.3</span>%
+                                                    <div class="easypie-text text-muted">Waiting</div>
+                                                </div>      
+                                            </div>
+                                        </div>
+
+                                        <div class="panel-footer bg-danger lt" style="font-size: 15px">Total Customization ${totalCustomizationCount}</div>
+
+                                    </section>    
+                                </div>
+							</a>
+							
+							<a href="CustomizationInprogressPage">
+                                <div class="col-lg-4">
+                                    <section class="panel panel-default">
+                                        <header class="panel-heading bg-warning lt" style="font-size: 15px">InProgress Customization</header>
+                                        <div class="panel-body text-center">
+                                            <h4>${inProgerssCustomization}</h4>
+                                            <div class="inline">
+                                                <div class="easypiechart text-warning" data-percent="${inProgerssCustomization *100/totalCustomizationCount}"
+                                                    data-line-width="5" data-track-Color="#f0f0f0" data-bar-color="#FFD300"
+                                                    data-rotate="0" data-scale-Color="false" data-size="150"
+                                                    data-animate="2000"> <span class="h2 step font-bold">70</span>%
+                                                    <div class="easypie-text text-muted">Inprogress</div>
+                                                </div>      
+                                            </div>
+                                        </div>
+
+                                        <div class="panel-footer bg-warning lt" style="font-size: 15px">Total Customization ${totalCustomizationCount}</div>
+
+                                    </section>    
+                                </div>
+                              </a>
+                              
+                              <a href="BikeCustomizationRecordsPage">  
+                                <div class="col-lg-4">
+                                    <section class="panel panel-default">
+                                        <header class="panel-heading bg-success lt" style="font-size: 15px">Completed Customization</header>
+                                        <div class="panel-body text-center">
+                                            <h4>${completedCustomization}</h4>
+                                            <div class="inline">
+                                                <div class="easypiechart text-success" data-percent="${completedCustomization *100/totalCustomizationCount}"
+                                                    data-line-width="5" data-track-Color="#f0f0f0" data-bar-color="#8ec165"
+                                                    data-rotate="0" data-scale-Color="false" data-size="150"
+                                                    data-animate="2000"> <span class="h2 step font-bold">20</span>%
+                                                    <div class="easypie-text text-muted">Done</div>
+                                                </div>      
+                                            </div>
+                                        </div>
+
+                                        <div class="panel-footer bg-success lt" style="font-size: 15px">Total Customization ${totalCustomizationCount}</div>
+
+                                    </section>    
+                                </div>
+							</a>
+                                
+	               </div>
+	              
+>>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 	            </section>
 	        </section>
 	 </section>               

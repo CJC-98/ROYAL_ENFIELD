@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;  
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -19,21 +18,13 @@ public class CustomizationChart {
 	
 	private long cost;
 	
-	private String status = "pending";  //OR in-progress OR done
-	
-	@ManyToOne
-	private BikeCustomization bikeCustomization;
+	private String status = "pending";  //OR done
+
 	
 	
 	
 	
-	
-	public BikeCustomization getBikeCustomization() {
-		return bikeCustomization;
-	}
-	public void setBikeCustomization(BikeCustomization bikeCustomization) {
-		this.bikeCustomization = bikeCustomization;
-	}
+
 	
 	public int getCustomizationChartId() {
 		return customizationChartId;
@@ -58,6 +49,10 @@ public class CustomizationChart {
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	public void setBikeCustomization(BikeCustomization bc1) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

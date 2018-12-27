@@ -16,12 +16,63 @@
 
 <body>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<section id="content">
 =======
 	<%-- colorlist
 	<a:forEach items="${colors}" var="color">
 		<a:out value="${color}"></a:out><br>
 	</a:forEach> --%>
+=======
+	<script>
+		function getCustomizationDetails(custId){
+
+ 			var req = new XMLHttpRequest();		
+			req.open("GET","getCustomizationDetails?custId="+custId,true);
+			req.send(); 
+			
+			var table = document.getElementById("customizationTable");
+			
+			while(table.rows.length>1){
+				table.deleteRow(table.rows.length-1);
+			}
+			
+			req.onreadystatechange=function(){
+				if(req.readyState==4 && req.status==200){
+					
+					var list = JSON.parse(req.responseText);
+					
+					for(index = 0; index < list.length; index++){
+
+						
+						var row = table.insertRow(1);
+						
+						var cell1 = row.insertCell(0);
+						var cell2 = row.insertCell(1);
+						var cell3 = row.insertCell(2);
+						
+						cell1.innerHTML =  list[index].part;
+						cell2.innerHTML =  list[index].cost;
+						cell3.innerHTML =  list[index].status;
+						
+						cell1.style.textAlign = "center";
+						cell2.style.textAlign = "center";
+						cell3.style.textAlign = "center";
+						
+						if(list[index].status == 'done'){
+							cell3.style.color = "#81EF19";
+						}
+						else{
+							cell3.style.color = "#FF681B";
+						}
+						
+						
+					}
+				}
+			} 
+		}
+	</script>
+>>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
 	
 	<section id="content" class="bg-light lter">
 >>>>>>> branch 'master' of https://github.com/CJC-98/ROYAL_ENFIELD.git
@@ -49,93 +100,24 @@
                                             </thead>
                                             
                                             <tbody>
-                                            
-                                                <tr style="text-align: center">
-                                                    	 <td>1</td>
-                                                         <td>2500</td>
-                                                         <td>4</td>
-                                                         <td>4</td>
-                                                         <td>2700</td>
-                                                         <td style="color: #FF681B">unpaid</td>
-                                                         <td>
-                                                         	<a href="" class="btn btn-md btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
-                                                         		Amount Details
-                                                         	</a>
-                                                     </td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>2</td>
-                                                         <td>5421</td>
-                                                         <td>4</td>
-                                                         <td>4</td>
-                                                         <td>5642</td>
-                                                         <td style="color: #FF681B">unpaid</td>
-                                                         <td>
-                                                         	<a href="" class="btn btn-md btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
-                                                         		Amount Details
-                                                         	</a>
-                                                     </td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>3</td>
-                                                         <td>4784</td>
-                                                         <td>4</td>
-                                                         <td>4</td>
-                                                         <td>7524</td>
-                                                         <td style="color: #81EF19">paid</td>
-                                                         <td>
-                                                         	<a href="" class="btn btn-md btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
-                                                         		Amount Details
-                                                         	</a>
-                                                     </td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>4</td>
-                                                         <td>3544</td>
-                                                         <td>4</td>
-                                                         <td>4</td>
-                                                         <td>4513</td>
-                                                         <td style="color: #FF681B">unpaid</td>
-                                                         <td>
-                                                         	<a href="" class="btn btn-md btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
-                                                         		Amount Details
-                                                         	</a>
-                                                     </td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>5</td>
-                                                         <td>9784</td>
-                                                         <td>4</td>
-                                                         <td>4</td>
-                                                         <td>10325</td>
-                                                         <td style="color: #81EF19">paid</td>
-                                                         <td>
-                                                         	<a href="" class="btn btn-md btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
-                                                         		Amount Details
-                                                         	</a>
-                                                     </td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>6</td>
-                                                         <td>2500</td>
-                                                         <td>4</td>
-                                                         <td>4</td>
-                                                         <td>2700</td>
-                                                         <td style="color: #FF681B">unpaid</td>
-                                                         <td>
-                                                         	<a href="" class="btn btn-md btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
-                                                         		Amount Details
-                                                         	</a>
-                                                     </td>
-                                                </tr>
-    
-                                               
+
+   												<a:forEach var="data" items="${bikeCustomizationsList}">
+			                                         <tr style="text-align: center">
+		                                                    	 <td>${data.customizationInvoice.customizationInvoiceId}</td>
+		                                                         <td>${data.customizationInvoice.amount}</td>
+		                                                         <td>${data.customizationInvoice.customizationCGstPercent}</td>
+		                                                         <td>${data.customizationInvoice.customizationSGstPercent}</td>
+		                                                         <td>${data.customizationInvoice.totalAmount}</td>
+		                                                         <td style="color: #81EF19">${data.customizationInvoice.paymentStatus}</td>
+		                                                         <td>
+		                                                         	<span onclick="getCustomizationDetails('${data.bikeCustomizationId}')"><a class="btn btn-md btn-info btn-rounded" data-toggle="modal" data-target="#myModal">
+		                                                         		Amount Details
+		                                                         	</a></span>
+		                                                     </td>
+		                                              </tr>
+                                                 </a:forEach>
                                             </tbody>
+
                                             
                                         </table>
                                     </section>
@@ -157,7 +139,7 @@
 						        <div class="modal-body">
 						          		
                                     <section class="panel panel-default">
-                                        <table class="table table-striped m-b-none">
+                                        <table class="table table-striped m-b-none" id="customizationTable">
                                             <thead>
                                                 <tr>
                                                     <th style="text-align: center">Part</th>
@@ -167,24 +149,6 @@
                                             </thead>
                                             
                                             <tbody>
-                                            
-                                                <tr style="text-align: center">
-                                                    	 <td>brake change</td>
-                                                         <td>500</td>
-                                                         <td style="color: #81EF19">done</td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>silencer change</td>
-                                                         <td>350</td>
-                                                         <td style="color: #81EF19">done</td>
-                                                </tr>
-                                                
-                                                <tr style="text-align: center">
-                                                    	 <td>tail light change</td>
-                                                         <td>300</td>
-                                                         <td style="color: #81EF19">done</td>
-                                                </tr>
                     
                                             </tbody>
                                             

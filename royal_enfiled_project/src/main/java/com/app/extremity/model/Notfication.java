@@ -14,46 +14,80 @@ public class Notfication {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int notficationId;
 	
-	private String fromId;
+	private String senderName;
 	
-	private String toId;
+	private String senderImg;
+	
+	private String senderPost;
+	
+	private String reciverName;
+	
+	private String reciverImg;
+	
+	private String reciverPost;
 	
 	private String message;
 	
 	private String sendDate;
 	
 	private String sendTime;
-
 	
-	
-	public String getSendTime() {
-		return sendTime;
-	}
-
-	public void setSendTime(String sendTime) {
-		this.sendTime = sendTime;
-	}
-
-	public String getSendDate() {
-		return sendDate;
-	}
-
-	public void setSendDate(String sendDate) {
-		this.sendDate = sendDate;
-	}
-
 	private boolean markAsRead = false;  //OR true
-	
-	
-	
-	
 
-	public boolean isMarkAsRead() {
-		return markAsRead;
+	public int getNotficationId() {
+		return notficationId;
 	}
 
-	public void setMarkAsRead(boolean markAsRead) {
-		this.markAsRead = markAsRead;
+	public void setNotficationId(int notficationId) {
+		this.notficationId = notficationId;
+	}
+
+	public String getSenderName() {
+		return senderName;
+	}
+
+	public void setSenderName(String senderName) {
+		this.senderName = senderName;
+	}
+
+	public String getSenderImg() {
+		return senderImg;
+	}
+
+	public void setSenderImg(String senderImg) {
+		this.senderImg = senderImg;
+	}
+
+	public String getSenderPost() {
+		return senderPost;
+	}
+
+	public void setSenderPost(String senderPost) {
+		this.senderPost = senderPost;
+	}
+
+	public String getReciverName() {
+		return reciverName;
+	}
+
+	public void setReciverName(String reciverName) {
+		this.reciverName = reciverName;
+	}
+
+	public String getReciverImg() {
+		return reciverImg;
+	}
+
+	public void setReciverImg(String reciverImg) {
+		this.reciverImg = reciverImg;
+	}
+
+	public String getReciverPost() {
+		return reciverPost;
+	}
+
+	public void setReciverPost(String reciverPost) {
+		this.reciverPost = reciverPost;
 	}
 
 	public String getMessage() {
@@ -64,34 +98,39 @@ public class Notfication {
 		this.message = message;
 	}
 
-	public int getNotficationId() {
-		return notficationId;
+	public String getSendDate() {
+		return sendDate;
 	}
 
-	public void setNotficationId(int notficationId) {
-		this.notficationId = notficationId;
+	public void setSendDate(String sendDate) {
+		this.sendDate = sendDate;
 	}
 
-	public String getFromId() {
-		return fromId;
+	public String getSendTime() {
+		return sendTime;
 	}
 
-	public void setFromId(String fromId) {
-		this.fromId = fromId;
+	public void setSendTime(String sendTime) {
+		this.sendTime = sendTime;
 	}
 
-	public String getToId() {
-		return toId;
+	public boolean isMarkAsRead() {
+		return markAsRead;
 	}
 
-	public void setToId(String toId) {
-		this.toId = toId;
+	public void setMarkAsRead(boolean markAsRead) {
+		this.markAsRead = markAsRead;
 	}
+
+	
 	
 
 	
 	
-
+	
+	
+	
+	
 	
 	
 }
