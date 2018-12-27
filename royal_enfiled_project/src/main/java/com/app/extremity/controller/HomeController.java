@@ -1,7 +1,13 @@
 package com.app.extremity.controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
+import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,10 +17,13 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.app.extremity.iservice.IAdminService;
 import com.app.extremity.iservice.IDealerService;
+import com.app.extremity.iservice.IHomeService;
+import com.app.extremity.iservice.ServiceManagerInterface;
 import com.app.extremity.model.Country;
-import com.app.extremity.model.Login;
-
+import com.app.extremity.serviceimpl.DealerServiceImplementation;
+import com.app.extremity.serviceimpl.HomeServiceImplementation;
 
 
   //author: pranay kohad 
@@ -22,8 +31,12 @@ import com.app.extremity.model.Login;
 //controller
 @Controller    
 public class HomeController {
-	@Autowired IDealerService service;
+	@Autowired
+	IHomeService homeService;
+	@Autowired 
+	IDealerService dservice;
 	
+	HttpSession session;
 	static Logger logger = LogManager.getLogger(HomeController.class);
 	    
 	// All site actions are go through this method
@@ -46,52 +59,91 @@ public class HomeController {
 	public String reg(ModelMap map)
 	{
 		System.out.println("in registration");
-		List<Country>list= service.getAllcountry();
+		List<Country>list= dservice.getAllcountry();
 	    map.put("data", list);
 
 		return "signup";
 	}
 	
-	
-	
 	@RequestMapping(value="/SignIn")
-	public String signIn(Model model,@RequestParam String email,@RequestParam String password)    
+	public String signIn1(Model model, @RequestParam String email,@RequestParam String password,HttpServletRequest request)    
 	{ 
+			System.out.println("in si");
+		logger.info("In SignIn controller log");
+		int i=homeService.checkLoginCredentials(email,password,request);
+		session = request.getSession();
 		
-		System.out.println("1111111111");
-		System.out.println(email);
-		System.out.println(password);
-		System.out.println(email+" "+password);
-		Login l= service.getLogin(email,password);
-			System.out.println("login l"+l);
-		if(email.equals(l.getEmail()) && password.equals(l.getPassword()))
-		{
-			model.addAttribute("msg", "welcome..");
-				System.out.println("dashboard hits...........");
-		model.addAttribute("link","dealerDashboard.jsp");
-		
-		System.out.println("In SignIn controller");
-		return "Dealer/dealerIndex";
-		}
-		else
-		{
-			model.addAttribute("link","login.jsp");
+		switch (i) {
+		case 1:
+			model.addAttribute("link", "adminDashboard.jsp");			
+			return "Admin/adminIndex";			
+		case 2:
+			model.addAttribute("link", "salesManagerDashboard.jsp");
+			return "SalesManager/salesManagerIndex";
+		case 3:
+			/*//get service count
+			model.addAttribute("approvedServiceCount", serviceManagerInterface.getAllServiceCountByServiceStatus("waiting"));
+			model.addAttribute("inProgerssServices", serviceManagerInterface.getAllServiceCountByServiceStatus("in-progress"));
+			model.addAttribute("completedservices", serviceManagerInterface.getAllServiceCountByServiceStatus("done"));
+			model.addAttribute("totalServiceCount", serviceManagerInterface.getAllServiceCount());
 			
-			System.out.println("In SignIn controller");
+			//get customization count
+			model.addAttribute("approvedCustomizationCount", serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("waiting"));
+			model.addAttribute("inProgerssCustomization", serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("in-progress"));
+		    model.addAttribute("completedCustomization", serviceManagerInterface.getAllCustomizationCountByCustomizationStatus("done"));
+			//get short notification list
+			model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
+			model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
+			*/
+			/*model.addAttribute("link", "serviceManagerDashboard.jsp");
+			return "ServiceManager/serviceManagerIndex";
+		case 4:
+			Date fd = null;
+			Date ld = null;
+			Date fds = null;
+			Date lds = null;
+			try {
+				fd = new SimpleDateFormat("yyyy-MM-dd").parse("2018-01-01");
+				ld = new SimpleDateFormat("yyyy-MM-dd").parse("2018-12-31");
+				fds = new SimpleDateFormat("yyyy-MM-dd").parse("2018-01-01");
+				lds = new SimpleDateFormat("yyyy-MM-dd").parse("2018-12-31");
+			} catch (ParseException e) {
+				
+				e.printStackTrace();
+			}
+			
+			long lg = AService.NewBikeCount(fd,ld);
+				System.out.println("Home Controll.. New Bike Count is.. "+lg);
+			model.addAttribute("lg", lg);			
+			long lg1 = AService.SoldBikeCount(fds, lds);
+				System.out.println("Home Controll.. Sold Bike Count is.. " + lg1);
+			model.addAttribute("lg1", lg1);*/
+			model.addAttribute("link", "accountsDashboard.jsp");
+			return "Accounts/accountsIndex";
+			
+		case 5:
+			model.addAttribute("link", "dealerDashboard.jsp");
 			return "Dealer/dealerIndex";
-		}//by default go to client index.jsp  
-
+		case 6:
+			//return user home page here
+	
+		default:
+			model.addAttribute("msg", "Wrong Credentials");
+			return "login";
+		}
+		
 	}  
 	
-	
+	   
 	
 	@RequestMapping(value="/gotToColorOptionPage")
-	public String gotToColorOptionPage()    
-	{ 
-		
+	public String gotToColorOptionPage1()    
+	{ 	
 		System.out.println("In gotToColorOptionPage controller");
 		return "IndivisualUser/indivisualUserIndex";
 	}
+	
+	
 	
 	@RequestMapping(value="/admin")
 	public String admin()

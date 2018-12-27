@@ -23,10 +23,10 @@
 			<li class="span4">
 			  <div class="bg-dark">
 				
-				<h4><a class="zoomTool" href="quickview1?id=${bike.modelId}" title="View Bike"><span class="icon-search"></span> QUICK VIEW</a></h4>
-				<a href="quickview1?id=${bike.modelId}"><img src="${pageContext.request.contextPath}Resources/Royal Enfield images/gallary images/old.jpg" width="276px" height="376px" alt=""></a>
+				
+				<a href="viewList?name=${bike.modelName}"><img src="${pageContext.request.contextPath}/Resources/images/bikeImages/${bike.image}" width="126px" height="226px" alt=""></a>
 				<div class="caption cntr">
-					<h3><p><a:out value="${bike.modelName}"></a:out></p></h3>
+					<h3><p><a href="viewList?name=${bike.modelName}"><a:out value="${bike.modelName}"></a:out></a></p></h3>
 					
 					
 					<div class="actionList">			
@@ -62,4 +62,36 @@ Clients
 
 
 
-</body>
+</body> 
+</html>
+<%-- 
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<!-- author sonika 
+this form is designed to display old bikes 
+-->
+<body>
+
+<form name="myform" method="post">
+<table>
+ <tr><th>Modelname</th></tr>
+ <c:forEach items="${ list}" var="data">
+ <tr>
+ <td>${data.modelName}</td>
+ <td>
+ <a href="viewList?name=${data.modelName}">${data.modelName}</a>
+ </td>
+ </tr>
+ </c:forEach>
+ </table>
+ </form>
+ </body>
+ </html> --%>

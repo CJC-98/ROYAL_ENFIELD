@@ -1,6 +1,7 @@
 package com.app.extremity.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,56 +13,73 @@ public class Notfication {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int notficationId;
+private int notficationId;
 	
-	private String fromId;
+	private String senderName;
 	
-	private String toId;
+	private String senderImg;
+	
+	private String senderPost;
+	
+	private String reciverName;
+	
+	private String reciverImg;
+	
+	private String reciverPost;
 	
 	private String message;
 	
 	private String sendDate;
 	
 	private String sendTime;
-
-	
-	
-	public String getSendTime() {
-		return sendTime;
-	}
-
-	public void setSendTime(String sendTime) {
-		this.sendTime = sendTime;
-	}
-
-	public String getSendDate() {
-		return sendDate;
-	}
-
-	public void setSendDate(String sendDate) {
-		this.sendDate = sendDate;
-	}
-
 	private boolean markAsRead = false;  //OR true
-	
-	
-	
-	
 
-	public boolean isMarkAsRead() {
-		return markAsRead;
+	public String getSenderName() {
+		return senderName;
 	}
 
-	public void setMarkAsRead(boolean markAsRead) {
-		this.markAsRead = markAsRead;
+	public void setSenderName(String senderName) {
+		this.senderName = senderName;
 	}
 
-	public String getMessage() {
-		return message;
+	public String getSenderImg() {
+		return senderImg;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSenderImg(String senderImg) {
+		this.senderImg = senderImg;
+	}
+
+	public String getSenderPost() {
+		return senderPost;
+	}
+
+	public void setSenderPost(String senderPost) {
+		this.senderPost = senderPost;
+	}
+
+	public String getReciverName() {
+		return reciverName;
+	}
+
+	public void setReciverName(String reciverName) {
+		this.reciverName = reciverName;
+	}
+
+	public String getReciverImg() {
+		return reciverImg;
+	}
+
+	public void setReciverImg(String reciverImg) {
+		this.reciverImg = reciverImg;
+	}
+
+	public String getReciverPost() {
+		return reciverPost;
+	}
+
+	public void setReciverPost(String reciverPost) {
+		this.reciverPost = reciverPost;
 	}
 
 	public int getNotficationId() {
@@ -72,23 +90,39 @@ public class Notfication {
 		this.notficationId = notficationId;
 	}
 
-	public String getFromId() {
-		return fromId;
-	}
-
-	public void setFromId(String fromId) {
-		this.fromId = fromId;
-	}
-
-	public String getToId() {
-		return toId;
-	}
-
-	public void setToId(String toId) {
-		this.toId = toId;
-	}
 	
 
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getSendDate() {
+		return sendDate;
+	}
+
+	public void setSendDate(String sendDate) {
+		this.sendDate = sendDate;
+	}
+
+	public String getSendTime() {
+		return sendTime;
+	}
+
+	public void setSendTime(String sendTime) {
+		this.sendTime = sendTime;
+	}
+
+	public void setMarkAsRead(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+	
 	
 	
 

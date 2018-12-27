@@ -1,3 +1,4 @@
+<%@page import="javax.swing.text.Document"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="a" uri="http://java.sun.com/jsp/jstl/core" %> 
@@ -15,29 +16,52 @@ function getPrice(){
 	//alert("getPrice()")
 	var quantity=document.getElementById("qty").value;
 	//alert(quantity)	
+
 	var price=document.getElementById("sp").value;
 	//alert(sp)
 	var total=price*quantity;
 	//alert(total)
 	document.getElementById("totalprice").value=total;
-
-	
 }
 
+function getBikeAvailability() {
+	//alert("in bike availability")
+		//alert("alert1")
+	var quantityfrompage=document.getElementById("qty").value;
+		//alert(quantityfrompage)
+		
+	var quantityfromdatabase=document.getElementById("q2").value;
+		var modelId=document.getElementById("modelId").value;
+		//alert(modelId)
+		//alert(quantityfromdatabase)		
+		var req=new XMLHttpRequest();
+		var url = "quantity?qty=" + quantityfrompage+"&modelId="+modelId;
+		//alert(url);
+		req.open("GET", url, true);
+		req.send();
 
-
+		req.onreadystatechange = function() {
+			//alert("inready state")
+			if (req.readyState == 4 && req.status == 200) {
+				//alert("ok2")
+				alert(JSON.parse(req.responseText))
+				var bikestockmsg = JSON.parse(req.responseText);
+				req.onreadystatechange=getPrice();
+				}
+		};	
+}
 function saveCart(modelId){
-	//alert(modelId)
-	
-	
+	//alert(modelId)	
 	var qty=document.getElementById("qty").value;
 	//alert(qty)
 	var total=document.getElementById("totalprice").value;
-	//alert(total)
+	var modelId=document.getElementById("modelId").value;
+	//alert(modelId)
 	document.savecart.action="savecart?modelId="+modelId+"&qty="+qty+"&total="+total;
 	document.savecart.submit();
 	req.send();
-	
+	alert(req.responseText)
+	//var msg=
 	
 }
 
@@ -46,45 +70,41 @@ function saveCart(modelId){
 <h1>Cart Page</h1>
 <form name="savecart" method="POST">
 <body>	
-	
-	
-	
-	
-		
-		
-
-
 	<table class="table table-bordered">
 							<tbody>
 							<tr>
 								<th></th>
 								<th>Product Name</th>
 								<th>Image</th>	
-								<th>On Road Page Price</th>
+								<th>On Road Bike Price</th>
 								<th>Quantity</th>
-									<th>Total Price</th>
+								<th>Total Price</th>
 								</tr>
 								<tr>
 	
 	<td align="center">
 					<td>
 					<input type="hidden" id="modelId" value="${data.bikemodel.modelId}">
+					<input type="hidden" id="q2" value="${data.quantity}">
 					<a:out value="${data.bikemodel.modelName}"></a:out></td>
 					<td align="center"><img src="${pageContext.request.contextPath}/Resources/images/bikeImages/${data.bikemodel.image}" width="100px"></td>
 					<td align="center"><input readonly="readonly" type="text" id="sp" value="${data.bikeOnRoadPrice}"></td>		
-			<td> <input type='text'  id='qty' name="qty"  onkeyup="getPrice()" />
-			 
-			 </td>
+			<td> <input type='text'  id='qty'   name="qty" value="0" onchange=" getBikeAvailability()" />
+			<h1>${msg}</h1>
+		</td>
 			 <td><input type="text" id="totalprice" ></td>
 				</tr>
 		
-														</tbody>
+							</tbody>							
 							</table>
-<tr>
+
+				<tr>
 					<td> </td>
 					<input type="button"class="btn btn-s-md btn-primary btn-rounded"value="save To Cart" onclick="saveCart('${data.bikemodel.modelId}')">
+						<h3>${msg}</h3></td>
 					<%-- <td> <a href="addtocart?id=${data.bikemodel.modelId}">Buy Now</a></td>
- --%>					<a href="DealerDashboardPage"class="btn btn-s-md btn-success btn-rounded">Continue Shopping</a>
+ --%>				<a href="continueShopping"class="btn btn-s-md btn-success btn-rounded">Continue Shopping</a>
+
 
 					</tr>
 		

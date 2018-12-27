@@ -10,9 +10,10 @@ import javax.persistence.Id;
 @Entity
 public class OldBikeStock {
 	@Id
+
 	private String oldBikeStockId;
 	private String oldBikeModelName;
-	private Date date;
+	private String date;
 	private String totalKmRun;
 	private String bikeModelYear;
 	private String bikePurchaseDate;
@@ -27,12 +28,6 @@ public class OldBikeStock {
 	private String colors;
 	private long price;
 	private long newPrice;
-	public long getNewPrice() {
-		return newPrice;
-	}
-	public void setNewPrice(long newPrice) {
-		this.newPrice = newPrice;
-	}
 	public String getOldBikeStockId() {
 		return oldBikeStockId;
 	}
@@ -45,10 +40,11 @@ public class OldBikeStock {
 	public void setOldBikeModelName(String oldBikeModelName) {
 		this.oldBikeModelName = oldBikeModelName;
 	}
-	public Date getDate() {
+	
+	public String getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 	public String getTotalKmRun() {
@@ -111,5 +107,13 @@ public class OldBikeStock {
 	public void setPrice(long price) {
 		this.price = price;
 	}
-
+	public long getNewPrice() {
+		return newPrice;
+	}
+	public void setNewPrice(long newPrice) {
+		this.newPrice = newPrice;
+	}
+	
+	
+	
 }

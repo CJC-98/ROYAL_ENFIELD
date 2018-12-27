@@ -11,4 +11,9 @@ public interface IAdminService {
 
 	void sendEmail(EmailMessage emailmessage, MultipartFile file);
 
+	EmployeeDetails getEmployeeDetailsByName(String employeeName);
+
+	void sendEmail(EmailMessage emailmessage, MultipartFile file,
+			String designation);
+
 }

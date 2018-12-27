@@ -5,12 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="addtocart")
+@Table(name="mycart")
 public class Cart {
 
 	
@@ -21,6 +19,25 @@ private int qty;
 
 private double totalprice;
 
+/*@ManyToOne
+private OldBikeStock oldBike;*/
+@ManyToOne
+AccessoriesStock accessories;
+@ManyToOne
+private Registration registration;
+
+@ManyToOne
+BikeSaleForUser bikeSaleForUser;
+
+@ManyToOne
+OldBikeStock oldbike;
+
+public OldBikeStock getOldbike() {
+	return oldbike;
+}
+public void setOldbike(OldBikeStock oldbike) {
+	this.oldbike = oldbike;
+}
 public String getPurchaseStatus() {
 	return purchaseStatus;
 }
@@ -55,17 +72,18 @@ public void setTotalprice(double totalprice) {
 	this.totalprice = totalprice;
 }
 
-@ManyToOne
-BikeSaleForUser bikeSaleForUser;
-
-@ManyToOne
-AccessoriesStock accessories;
-
-
 public BikeSaleForUser getBikeSaleForUser() {
 	return bikeSaleForUser;
 }
 public void setBikeSaleForUser(BikeSaleForUser bikeSaleForUser) {
 	this.bikeSaleForUser = bikeSaleForUser;
 }
+public Registration getRegistration() {
+	return registration;
+}
+public void setRegistration(Registration registration) {
+	this.registration = registration;
+}
+
+
 }

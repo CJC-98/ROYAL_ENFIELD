@@ -34,8 +34,27 @@ public class BikeCustomization {
 	
 	//FK of customer @OneToOne
 	
+	@OneToOne
+	private BikeModel bikeModel;
+
+	@OneToMany(cascade=CascadeType.ALL)
+	private List<AccessoriesStock> listAccessoriesStock=new ArrayList<AccessoriesStock>();
 	
-	
+	public List<AccessoriesStock> getListAccessoriesStock() {
+		return listAccessoriesStock;
+	}
+
+	public void setListAccessoriesStock(List<AccessoriesStock> listAccessoriesStock) {
+		this.listAccessoriesStock = listAccessoriesStock;
+	}
+
+	public BikeModel getBikeModel() {
+		return bikeModel;
+	}
+
+	public void setBikeModel(BikeModel bikeModel) {
+		this.bikeModel = bikeModel;
+	}
 
 	public String getBikeCustomizationId() {
 		return bikeCustomizationId;
