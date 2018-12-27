@@ -34,7 +34,7 @@
 	               		<a  href="ApprovedServicesPage">
 	               		<div class="col-lg-4">
                                     <section class="panel panel-default">
-                                        <header class="panel-heading bg-danger lt" style="font-size: 15px">Approved Services</header>
+                                        <header class="panel-heading bg-danger lt" style="font-size: 15px">Pending Services</header>
                                         <div class="panel-body text-center">
                                             <h4>${approvedServiceCount} </h4>
                                             <div class="inline">
@@ -107,7 +107,7 @@
 	               		<a href="ApprovedCustomizationPage">
 	               			<div class="col-lg-4">
                                     <section class="panel panel-default">
-                                        <header class="panel-heading bg-danger lt" style="font-size: 15px">Approved Customization</header>
+                                        <header class="panel-heading bg-danger lt" style="font-size: 15px">Panding Customization</header>
                                         <div class="panel-body text-center">
                                             <h4>${approvedCustomizationCount}</h4>
                                             <div class="inline">

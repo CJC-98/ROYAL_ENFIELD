@@ -371,9 +371,10 @@ public class ServiceMangerController {
 									 HttpServletRequest request) {
 	
 		session = request.getSession();
-		
+
 		if(workStatusChange != null) {
 			for(int i : workStatusChange) {
+
 				ServicingChart chart = serviceManagerInterface.getServicingChart(i);
 				ServicingChart newChart = new ServicingChart();
 				
@@ -404,13 +405,14 @@ public class ServiceMangerController {
 	private void updateServicePercent() {
 		int totalCount = 0;
 		int doneCount = 0;
-		
 		List<BikeServicing>bikeServicingList = serviceManagerInterface.getAllBikeServicingByServcingStatus("in-progress");
 		
-		for(BikeServicing service : bikeServicingList) {		
+		
+		
+		for(BikeServicing service : bikeServicingList) {
 			List<ServicingChart> chartList = service.getServicingChart();
 			
-			for(ServicingChart work : chartList) {				
+			for(ServicingChart work : chartList) {		
 				totalCount++;
 				
 				if(work.getStatus().equals("done"))
@@ -418,12 +420,14 @@ public class ServiceMangerController {
 			
 			}
 			service.setServiceProgressPercent((doneCount*100)/totalCount);
-			
-			if(service.getServiceProgressPercent()==100) {
-				service.setServcingStatus("done");
+			System.out.println(doneCount+" "+totalCount+" "+service.getServiceProgressPercent());
+			if(service.getServiceProgressPercent()==100) {		
+				service.setServcingStatus("done");			
 				updateServiceCount(service.getServcingBikeInfo().getChasisNumber());
 			}
 			
+			
+	
 			serviceManagerInterface.saveBikeServicing(service);
 		}
 		
