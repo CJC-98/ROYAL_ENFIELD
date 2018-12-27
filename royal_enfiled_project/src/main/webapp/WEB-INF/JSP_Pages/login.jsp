@@ -59,7 +59,7 @@
                     	<div class="line line-dashed"></div>
                     	<p class="text-muted text-center">
                     	<small>Do not have an account?</small></p> 
-                    	<a href="signup.html" class="btn btn-default btn-block">Create an account</a>
+                    	<a href="signup" class="btn btn-default btn-block">Create an account</a>
                 </form>
                
             </section>

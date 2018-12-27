@@ -17,52 +17,11 @@
 	<link href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/font-awesome.css" rel="stylesheet">
 </head>
 <body>
-<section id="content">
-                    <section class="vbox">
-                        <section class="scrollable padder">
-                        <h1>Old Bike</h1>
-<div class="navbar">
-<ul class="thumbnails">
-			<li class="span3">
-			  <div class="thumbnail">
-				<a href="product_details.html" class="overlay"></a>
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.html"><img src="${pageContext.request.contextPath}/Resources/images/interceptor.jpg" width="276px" height="376px" alt=""></a>
-				<div class="caption cntr">
-					<p>Bike name</p>
-					<p><strong> $30.00</strong></p>
-					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
-					<div class="actionList">
-						
-					</div> 
-					<br class="clr">
-				</div>
-			  </div>
-			</li>
-			
-			
-			<li class="span3">
-			  <div class="thumbnail">
-				<a href="product_details.html" class="overlay"></a>
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.html"><img src="${pageContext.request.contextPath}/Resources/images/interceptor.jpg" width="276px" height="376px" alt=""></a>
-				<div class="caption cntr">
-					<p>Bike name</p>
-					<p><strong> $30.00</strong></p>
-					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
-					<div class="actionList">
-						
-					</div> 
-					<br class="clr">
-				</div>
-			  </div>
-			</li>
-			</ul>
-</div>
-</section>
-</section>
-</section>
-
+<h3>PartId</h3><input type="text" name="partId"><br>
+<h3>PartName</h3><input type="text" name="partName"><br>
+<h3>PartPrice</h3><input type="text" name="partPrice"><br>
+<h3>PartQuantity</h3><input type="text" name="partQuantity"><br>
+<input type="submit" value="save">
 
 </body>
 </html>
