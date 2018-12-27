@@ -24,6 +24,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+
 import com.app.extremity.idao.EmployeeDetailsIDao;
 import com.app.extremity.iservice.IAdminService;
 import com.app.extremity.model.EmailMessage;
@@ -133,5 +134,17 @@ public class AdminServiceImplementation implements IAdminService {
 			e.printStackTrace();
 		}
 
+	}
+
+	@Override
+	public EmployeeDetails getEmployeeDetailsByName(String employeeName) {
+		return employeeDetailsDao.findOneByEmployeeName(employeeName);
+	}
+
+	@Override
+	public void sendEmail(EmailMessage emailmessage, MultipartFile file,
+			String designation) {
+		// TODO Auto-generated method stub
+		
 	}
 }

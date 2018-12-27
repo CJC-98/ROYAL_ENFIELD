@@ -9,7 +9,15 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Properties;
 
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -38,6 +46,7 @@ import com.app.extremity.model.Contact;
 import com.app.extremity.model.CustomizationBikeInfo;
 import com.app.extremity.model.CustomizationChart;
 import com.app.extremity.model.CustomizationInvoice;
+import com.app.extremity.model.EmailMessage;
 import com.app.extremity.model.EmployeeDetails;
 import com.app.extremity.model.Notfication;
 import com.app.extremity.model.OldBikeStock;
@@ -450,14 +459,16 @@ public class DealerController {
 		return "signup";
 	}
 
+	
 	// @author Akshta yevatkar <!-- this method to save form data to db 
 	@RequestMapping("/save")
-	public String saveData(@RequestParam String rolename,
+	public String saveData(@RequestParam String rolename,@ModelAttribute EmailMessage emailmessage,
 			@RequestParam String email, @ModelAttribute Registration r,
 			@ModelAttribute Contact c, @ModelAttribute Role ro,
 			@ModelAttribute Address a, Model model, HttpServletRequest request)
-			throws IOException {
+			throws IOException, AddressException, MessagingException {
 		Date dt = new Date();
+		System.out.println("email="+email);
 		int d = dt.getDate();
 		int m = dt.getMonth() + 1;
 		int y = dt.getYear() + 1900;
@@ -515,9 +526,16 @@ public class DealerController {
 			System.out.println("fetching mob--" + r.getContact().getMobile());
 			r.setContact(c);
 
-			service.saveData(r, request);
+			Registration regi=service.saveData(r, request);
 			String msg = "data saved successfully";
 			model.addAttribute("msg", msg);
+			
+			
+				service.sendEmail(email);
+				//System.out.println(emailmessage.getTo_address());
+				//System.out.println(emailmessage.getSubject());
+				
+			 
 			return "login";
 		}
 		return "home";
@@ -918,8 +936,8 @@ public class DealerController {
 		return "login";
 	}
 	@RequestMapping(value="/savecustomize")
-	public String customizeBike(@ModelAttribute BikeCustomization bikecust, @ModelAttribute AccessoriesStock as, @ModelAttribute CustomizationBikeInfo cbi,@RequestParam String modelName,
-		@ModelAttribute CustomizationInvoice cstinvc  , @ModelAttribute CustomizationChart cc,Model model, HttpServletRequest req)
+	public String customizeBike(@RequestParam String modelName,@ModelAttribute BikeCustomization bikecust, @ModelAttribute AccessoriesStock as,
+		@ModelAttribute CustomizationInvoice cstinvc  , @ModelAttribute CustomizationChart cc,Model model,  HttpServletRequest req)
 	{	session=req.getSession();
 	System.out.println("ModelName111"+modelName);
 	Registration reg = (Registration) session.getAttribute("reg");
@@ -943,9 +961,17 @@ public class DealerController {
 		//bc.setAccessoriesStock(accessoriesStock);
 		System.out.println(appointmentDate);
 		String chasisNumber=req.getParameter("chasisNumber");
+		System.out.println("chasisNumber"+chasisNumber);
 		String plateNumber=req.getParameter("plateNumber");
+		CustomizationBikeInfo cbi=new CustomizationBikeInfo();
 		cbi.setChasisNumber(chasisNumber);
 		cbi.setPlateNumber(plateNumber);
+		/*List<CustomizationBikeInfo>infolist=service.getAllCustomizationtInfo();
+		for(CustomizationBikeInfo info:infolist){
+			if(info.getPlateNumber().equals( plateNumber)&&info.getChasisNumber().equals(chasisNumber)){
+		    bikecust.setCustomizationBikeInfo(info);
+			}
+		}*/
 		//bc.setCustomizationInvoice(cstinvc);
 		//to get partname and partprice from accessoriesstock table as per selected checkbox
 		String id1;
@@ -976,9 +1002,9 @@ public class DealerController {
 					
 					bikecust.getCustomizationChart().add(c1);
 					
+					bikecust.setCustomizationChart(list);
 					
-
-					
+					c1.setBikeCustomization(bikecust);
 					System.out.println("data saved........");
 					
 				}	
@@ -988,7 +1014,15 @@ public class DealerController {
 			System.out.println(bccount);
 			//bc.setAccessoriesStock(as);
 			bikecust.setBikeCustomizationId(bccount);
-		
+			List<AccessoriesStock> accessStocKlist=service.getAllAccessories();
+			for(AccessoriesStock accessories:accessStocKlist){
+				if(accessories.getPartId().equals(id))
+					bikecust.getListAccessoriesStock().add(accessories);
+					
+				
+			}
+			
+		 //bikecust.setCustomizationInvoice(cstinvc);
 			//String bikemodelcount=service.getAllBikeModelCount();
 			//System.out.println(bikemodelcount);
 			//bm.setModelId(bikemodelcount);
@@ -1004,4 +1038,30 @@ public class DealerController {
 		return "Dealer/dealerIndex";	
 		
 	}
+	
+	/*@RequestMapping(value = "/composeMail")
+	public String toComposeMailPage(Model model,@RequestParam int designation) {
+		model.addAttribute("designationId", designation);
+		model.addAttribute("link", "composeMail.jsp");
+		
+		System.out.println(designation);
+		return "Admin/adminIndex";
+	}*/
+	/*
+	 * this method is used to send Email to employee With Registration Link
+	 * 
+	 * author: Nilesh Tammewar
+	 */
+
+	/*@RequestMapping(value = "/sendEmail", method = RequestMethod.POST)
+	public String sendEmail(@ModelAttribute EmailMessage emailmessage, @RequestParam("attachment") MultipartFile file,
+			Model model,@RequestParam String designation) {
+		
+		System.out.println(emailmessage.getTo_address());
+		System.out.println(emailmessage.getSubject());
+		adminService.sendEmail(emailmessage, file,designation);
+		model.addAttribute("link", "adminDashboard.jsp");
+		return "Admin/adminIndex";
+	}
+*/
 }

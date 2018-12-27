@@ -37,6 +37,17 @@ public class BikeCustomization {
 	@OneToOne
 	private BikeModel bikeModel;
 
+	@OneToMany(cascade=CascadeType.ALL)
+	private List<AccessoriesStock> listAccessoriesStock=new ArrayList<AccessoriesStock>();
+	
+	public List<AccessoriesStock> getListAccessoriesStock() {
+		return listAccessoriesStock;
+	}
+
+	public void setListAccessoriesStock(List<AccessoriesStock> listAccessoriesStock) {
+		this.listAccessoriesStock = listAccessoriesStock;
+	}
+
 	public BikeModel getBikeModel() {
 		return bikeModel;
 	}

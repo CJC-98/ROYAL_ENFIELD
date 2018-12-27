@@ -1,12 +1,26 @@
 package com.app.extremity.serviceimpl;
 
+import java.util.Date;
 import java.util.List;
+import java.util.Properties;
 
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.app.extremity.idao.AccessoriesStockIDao;
 import com.app.extremity.idao.BikeCustomizationIDao;
@@ -16,6 +30,7 @@ import com.app.extremity.idao.BikeSaleForUserIDaoI;
 import com.app.extremity.idao.CartIDaoi;
 import com.app.extremity.idao.CityIdao;
 import com.app.extremity.idao.CountryIdao;
+import com.app.extremity.idao.CustomizationBikeInfoIDao;
 import com.app.extremity.idao.EmployeeDetailsIDao;
 import com.app.extremity.idao.OldBikeStockIDao;
 import com.app.extremity.idao.RegistrationIdao;
@@ -29,6 +44,8 @@ import com.app.extremity.model.BikeSaleForUser;
 import com.app.extremity.model.Cart;
 import com.app.extremity.model.City;
 import com.app.extremity.model.Country;
+import com.app.extremity.model.CustomizationBikeInfo;
+import com.app.extremity.model.EmailMessage;
 import com.app.extremity.model.OldBikeStock;
 import com.app.extremity.model.Registration;
 import com.app.extremity.model.State;
@@ -36,6 +53,7 @@ import com.app.extremity.model.State;
 
 @Service
 public class DealerServiceImplementation implements IDealerService{
+	
 @Autowired
 RegistrationIdao registrationIdao;
 @Autowired
@@ -61,6 +79,9 @@ OldBikeStockIDao oldBikeStockIdao;
 @Autowired
 BikeCustomizationIDao bkcidao;
 
+@Autowired
+CustomizationBikeInfoIDao infoIDao;
+HttpSession session;
 //this method to save user/dealer
 //@Author Akshata Yevatkar 
 @Override
@@ -399,7 +420,66 @@ public String getAllBikeCustomizationCount() {
 
 
 
+private static final String host="smtp.gmail.com";
+private static final String port="587";
+private static final String user="belokarshital@gmail.com";
+private static final String pass="gajananbaba";
+
+public  void sendEmail(String email) {
+
+	//req.getSession();
+	
+	//session.getAttribute(email);
+	Properties props = new Properties();
+		props.put("mail.smtp.auth", "true");
+		props.put("mail.smtp.starttls.enable", "true");
+		props.put("mail.smtp.host", "smtp.gmail.com");
+		props.put("mail.smtp.port", "587");
+
+		Session session = Session.getInstance(props, new javax.mail.Authenticator() {
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(user, pass);
+			}
+		});
+
+
+		Message msg = new MimeMessage(session);
+		try {
+			msg.setFrom(new InternetAddress(user, false));
+	
+			
+			
+			msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
+
+			msg.setSubject("confirmation message");
+			msg.setContent(email,  "text/html");
+			msg.setSentDate(new Date());
+			MimeBodyPart messageBodyPart = new MimeBodyPart();
+			//String text="you age registered successfully";
+			messageBodyPart.setContent("Your successfully Registred",  "text/html");
+			// sends the e-mail
+			Transport.send(msg);
+           } 
+		catch (MessagingException e) {
+			
+			System.out.println("exception While sending Email"+e);
+			e.printStackTrace();
+		} 
+
+
 
 
 }
+
+
+@Override
+public List<CustomizationBikeInfo> getAllCustomizationtInfo() {
+	// TODO Auto-generated method stub
+	System.out.println("in serviceimpl getallcustomizationinfo");
+	List<CustomizationBikeInfo> infolist=(List<CustomizationBikeInfo>) infoIDao.findAll();
+	return infolist;
+}
+
+}
+
 

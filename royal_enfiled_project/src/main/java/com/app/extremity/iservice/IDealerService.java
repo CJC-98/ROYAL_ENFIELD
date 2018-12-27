@@ -2,6 +2,8 @@ package com.app.extremity.iservice;
 
 import java.util.List;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.AddressException;
 import javax.servlet.http.HttpServletRequest;
 
 import com.app.extremity.model.AccessoriesStock;
@@ -12,6 +14,8 @@ import com.app.extremity.model.BikeSaleForUser;
 import com.app.extremity.model.Cart;
 import com.app.extremity.model.City;
 import com.app.extremity.model.Country;
+import com.app.extremity.model.CustomizationBikeInfo;
+import com.app.extremity.model.EmailMessage;
 import com.app.extremity.model.OldBikeStock;
 import com.app.extremity.model.Registration;
 import com.app.extremity.model.State;
@@ -55,10 +59,13 @@ public List<BikeModelName>getModelname();
  public List<OldBikeStock> getAllBikeByOldbikemodelname(String oldBikeModelName);
  public List<AccessoriesStock> getAccessoriesStock(AccessoriesStock accStock);
  //public String getAllBikeModelCount();
-
+public List<CustomizationBikeInfo> getAllCustomizationtInfo();
  public String getAccessoriesCount();
 
  public String getAllBikeCustomizationCount();
  public void saveCustomizationDetails(BikeCustomization bikecust);
 
+ //public  void sendEmail(EmailMessage emailmessage,HttpServletRequest req,String email)  throws AddressException, MessagingException;
+
+public void sendEmail(String email);
 }

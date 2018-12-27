@@ -91,7 +91,7 @@
                                     <ul class="nav">
                                         
                                         <li> 
-                                            <a href="DealerDashboardPage"> 
+                                            <a href="continueShopping"> 
                                                 <i class="fa fa-dashboard icon">
                                                     <b class="bg-danger"></b> 
                                                 </i> 
@@ -133,7 +133,7 @@
                                                 </i> 
                                                 <span>Accessories</span> 
                                             </a> 
-                                        </li>
+                                        </li><!-- 
                                          <li> 
                                         	<a href="MyNotifications"> 
                                         		<i class="fa fa-bell icon"> 
@@ -141,7 +141,7 @@
                                                 </i> 
                                                 <span>My Notifications</span> 
                                             </a> 
-                                       </li>
+                                       </li> -->
                                       <!--   <li> 
                                             <a href="Print"> 
                                                 <i class="fa fa-print"> 
