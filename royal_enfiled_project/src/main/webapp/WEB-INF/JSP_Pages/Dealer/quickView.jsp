@@ -4,7 +4,7 @@
 this form is designed to display new bikes specification 
 -->
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="a"%>
-<html>
+<html>   
 <head>
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/Resources/DashbordResources/notebook UI/css/font.css" type="text/css" />
