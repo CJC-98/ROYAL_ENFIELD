@@ -213,7 +213,6 @@ public class AdminServiceImplementation implements IAdminService {
 		try {
 			getAdminCredentials();
 			msg.setFrom(new InternetAddress(adminEmailUsername, false));
-
 			msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(emailmessage.getTo_address()));
 
 			msg.setSubject(emailmessage.getSubject());
@@ -249,7 +248,7 @@ public class AdminServiceImplementation implements IAdminService {
 			logger.error("exception While sending Email", e);
 
 		} catch (IOException e) {
-				System.out.println();
+				
 			logger.error("file not found exception", e);
 
 		}
@@ -398,7 +397,7 @@ public class AdminServiceImplementation implements IAdminService {
 		 EmployeeDetails employeeDetails=employeeDetailsDao.findOneByEmployeeEmail(employeeEmail);
 		
 		 try{
-			 if(employeeDetails.getEmployeeEmail()==null)
+			 if(employeeDetails==null)
 			 {
 				 return 1;
 			 }

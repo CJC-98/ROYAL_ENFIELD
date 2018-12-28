@@ -71,7 +71,12 @@ public class AdminController {
 	 */
 
 	@RequestMapping(value = "/toAdminHomePage")
-	public String toadminDashboard(Model model) {
+	public String toadminDashboard(Model model,HttpServletRequest request) {
+		session=request.getSession();
+		if(session==null) {
+			
+			return "login";
+		}
 		model.addAttribute("accessoriesCount", adminService.getAccessoriesCount());
 		model.addAttribute("bikeCount", adminService.getBikeSaleForUserCount());
 		model.addAttribute("registrionCount", adminService.getRegistrationCount());
@@ -114,7 +119,7 @@ public class AdminController {
 	@RequestMapping(value = "/employeeRegistration")
 
 	public String toEmployeeRegistrationPage(@RequestParam int designation, Model model) {
-		System.out.println(designation);
+		
 		model.addAttribute("designation", designation);
 		return "Admin/employeeRegistration";
 	}
@@ -168,6 +173,10 @@ public class AdminController {
 	public String getNewBikeStock(Model model,HttpServletRequest request) {
 		
 		session = request.getSession();
+		session=request.getSession();
+		if(session==null) {
+			return "login";
+		}
 		//get short notification list
 		model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
 		model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
@@ -182,8 +191,12 @@ public class AdminController {
 	
 
 	@RequestMapping(value ="/oldBikeStock")
-	public String getOldBikeStock(Model model)
+	public String getOldBikeStock(Model model,HttpServletRequest request)
 	{
+		session=request.getSession();
+		if(session==null) {
+			return "login";
+		}
 		List<OldBikeStock> oldBikeStockList = adminService.getOldBikeStock();
 		model.addAttribute("oldBikeStockList", oldBikeStockList);
 		model.addAttribute("link", "oldBikeStock.jsp");
@@ -191,8 +204,11 @@ public class AdminController {
 	}
 
 	@RequestMapping(value = "/deadBikeStock")
-	public String getDeadStock(Model model) {
-
+	public String getDeadStock(Model model,HttpServletRequest request) {
+		session=request.getSession();
+		if(session==null) {
+			return "login";
+		}
 		List<DeadStock> deadStockList = adminService.getDeadStock();
 
 		model.addAttribute("deadStockList", deadStockList);
@@ -201,7 +217,12 @@ public class AdminController {
 	}
 
 	@RequestMapping(value = "/accessoriesStock")
-	public String getAccessoriesStock(Model model) {
+	public String getAccessoriesStock(Model model,HttpServletRequest request) {
+		session=request.getSession();
+		if(session==null) {
+			return "login";
+		}
+		
 		List<AccessoriesStock> accessoriesStockList = adminService.getAccessoriesStock();
 		model.addAttribute("accessoriesStockList", accessoriesStockList);
 		model.addAttribute("link", "accessoriesStock.jsp");
@@ -210,7 +231,12 @@ public class AdminController {
 	}
 
 	@RequestMapping(value = "/accessoriesDeadStock")
-	public String getAccessoriesDeadStock(Model model) {
+	public String getAccessoriesDeadStock(Model model,HttpServletRequest request) {
+		session=request.getSession();
+		if(session==null) {
+			return "login";
+		}
+		
 		//get short notification list
 		model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
 		model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
@@ -226,7 +252,12 @@ public class AdminController {
 
 	@RequestMapping(value = "/employeeList")
 	public String getEmployeeListByDesignation(@RequestParam(name = "designation") String employeeDesignation,
-			Model model) {
+			Model model,HttpServletRequest request) {
+		session=request.getSession();
+		if(session==null) {
+			return "login";
+		}
+		
 		List<EmployeeDetails> employeeList = adminService.getEmployeeListByDesignation(employeeDesignation);
 
 		model.addAttribute("employeeList", employeeList);
@@ -239,6 +270,11 @@ public class AdminController {
 
 	public String getbikeOffer(Model model, HttpServletRequest request ) {
 		session = request.getSession();
+		
+		session=request.getSession();
+		if(session==null) {
+			return "login";
+		}
 		//get short notification list
 		//System.out.println(session.getAttribute("currentUserName").toString());
 		model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
@@ -256,6 +292,10 @@ public class AdminController {
 	public String getCustomizationInvoice(Model model,HttpServletRequest request)
 	{
 		session = request.getSession();
+		session=request.getSession();
+		if(session==null) {
+			return "login";
+		}
 		
 		//get short notification list
 		model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
@@ -273,6 +313,10 @@ public class AdminController {
 	public String getServcingBikeInfo(Model model, HttpServletRequest request) 
 	{
 		session=request.getSession();
+		session=request.getSession();
+		if(session==null) {
+			return "login";
+		}
 		//get short notification list
 		model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
 		model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
@@ -290,7 +334,12 @@ public class AdminController {
 		
 	
 	session = request.getSession();
-		//get short notification list
+		
+	session=request.getSession();
+	if(session==null) {
+		return "login";
+	}
+	//get short notification list
 		model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
 		model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
 		
@@ -305,7 +354,11 @@ public class AdminController {
   {
 	  
 	  session = request.getSession();
-		//get short notification list
+	  session=request.getSession();
+		if(session==null) {
+			return "login";
+		}
+	  //get short notification list
 		model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
 		model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
 		LocalDate now = LocalDate.now();
@@ -324,8 +377,13 @@ public class AdminController {
 	
   
 	@RequestMapping(value = "/soldNewBike")
-	public String getSoldNewBikeInfo(Model model) 
+	public String getSoldNewBikeInfo(Model model,HttpServletRequest request) 
 	{
+		session=request.getSession();
+		if(session==null) {
+			return "login";
+		}
+		
 		//get short notification list
 		model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
 		model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
@@ -343,6 +401,10 @@ public class AdminController {
 	@RequestMapping(value = "/avaliableServicing")
 	public String getAvaliableServicingInfo(Model model, HttpServletRequest request)
 	{
+		session=request.getSession();
+		if(session==null) {
+			return "login";
+		}
 		//get short notification list
 		model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
 		model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
@@ -357,7 +419,11 @@ public class AdminController {
 	}
 
 	@RequestMapping(value = "/bikeCustomization")
-	public String getBikeCustomizationInfo(Model model) {
+	public String getBikeCustomizationInfo(Model model,HttpServletRequest request) {
+		session=request.getSession();
+		if(session==null) {
+			return "login";
+		}
 		List<BikeCustomization> bikeCustomizationInfoList = adminService.getbikeCustomization();
 		model.addAttribute("bikeCustomizationInfoList", bikeCustomizationInfoList);
 		model.addAttribute("link", "bikeCustomization.jsp");
@@ -366,7 +432,11 @@ public class AdminController {
 	}
 
 	@RequestMapping(value = "/bikeServicing")
-	public String getBikeServicingInfo(Model model) {
+	public String getBikeServicingInfo(Model model,HttpServletRequest request) {
+		session=request.getSession();
+		if(session==null) {
+			return "login";
+		}
 		List<BikeServicing> bikeServicingInfoList = adminService.getBikeServicing();
 		model.addAttribute("bikeServicingInfoList", bikeServicingInfoList);
 		model.addAttribute("link", "bikeServicing.jsp");
@@ -375,7 +445,12 @@ public class AdminController {
 	}
 
 	@RequestMapping(value = "/updateEmployee")
-	public String getUpdateEmployeeInfo(@ModelAttribute EmployeeDetails employee, Model model) {
+	public String getUpdateEmployeeInfo(@ModelAttribute EmployeeDetails employee, Model model,HttpServletRequest request) {
+	
+		session=request.getSession();
+		if(session==null) {
+			return "login";
+		}
 		adminService.updateEmployee(employee);
 		List<EmployeeDetails> employeeList = adminService.getEmployeeListByDesignation(employee.getEmployeeDesignation());
 		model.addAttribute("employeeList", employeeList);
@@ -384,9 +459,14 @@ public class AdminController {
 	}
 
 	@RequestMapping(value = "/soldAccessories")
-	public String getSoldAccessories(Model model) {
-		List<SoldAccessories> SoldAccessoriesList = adminService.getSoldAccessories();
-		model.addAttribute("SoldAccessoriesList", SoldAccessoriesList);
+	public String getSoldAccessories(Model model,HttpServletRequest request) {
+		
+		session=request.getSession();
+		if(session==null) {
+			return "login";
+		}
+		List<SoldAccessories>soldAccessoriesList = adminService.getSoldAccessories();
+		model.addAttribute("soldAccessoriesList", soldAccessoriesList);
 		model.addAttribute("link", "soldAccessories.jsp");
 		return "Admin/adminIndex";
 
@@ -427,41 +507,9 @@ public class AdminController {
 	}
 	
 	
-	@RequestMapping(value="/adminDashboard")
-	public String adminDashboardPage(Model model){
-
-
-		//test data for notification
-		Notfication notify = new Notfication();
-
-		notify.setSenderName("samir");
-		notify.setSenderImg("person2.png");
-		notify.setSenderPost("accounts manager");
-
-		notify.setReciverName("pranay");
-		notify.setReciverImg("person1.png");
-		notify.setReciverPost("service manger");
-
-		notify.setMessage("I am leaving");
-
-		DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy"); 
-		DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("hh:mm:ss a"); 
-
-		notify.setSendDate(LocalDateTime.now().format(dateFormat));
-		notify.setSendTime(LocalDateTime.now().format(timeFormat));
-		 
-	    //get short notification list
-		model.addAttribute("inboxCount", notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
-		model.addAttribute("shortInboxList", notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false));
-	    
-		model.addAttribute("link","adminDashboard.jsp");
-	
-		return "Admin/adminIndex";
-	}
-	
-	
+		
 	@RequestMapping(value="/myNotifications")
-	public String MyNotificationsPage(Model model,HttpServletRequest request){
+	public String myNotificationsPage(Model model,HttpServletRequest request){
 		
 		session = request.getSession();
 		
@@ -483,8 +531,12 @@ public class AdminController {
 	}
 
    @RequestMapping(value="/soldOldBike")
-   public String getSoldOldBikeStock(Model model)
+   public String getSoldOldBikeStock(Model model,HttpServletRequest request)
    {
+	   session=request.getSession();
+		if(session==null) {
+			return "login";
+		}
 	   List<SoldOldBikeStock> soldOldBikeStockList=adminService.getSoldOldBikeStock();
 	    model.addAttribute("soldOldBikeStockList", soldOldBikeStockList);
 		model.addAttribute("link", "soldOldBike.jsp");
@@ -495,7 +547,8 @@ public class AdminController {
    public String logout(HttpServletRequest request) {
 	   session=request.getSession();
 	   session.invalidate();
-	   return "login";
+	   return "home";
    }
+  
   
 }

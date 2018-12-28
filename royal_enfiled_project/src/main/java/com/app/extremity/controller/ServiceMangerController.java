@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -329,8 +329,11 @@ public class ServiceMangerController {
 	
 	@RequestMapping(value="/sendNotification")    
 	public @ResponseBody String sendNotification(@RequestParam String reciverName, @RequestParam String reciverPost,
-												 @RequestParam String reciverImg, @RequestParam String message) {
-
+												 @RequestParam String reciverImg, @RequestParam String message,HttpServletRequest request) {
+		session = request.getSession();
+		if(session==null) {
+			return "login";
+		}
 		
 		Notfication notify = new Notfication();
 	

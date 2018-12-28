@@ -32,7 +32,7 @@
 		document.myform.action="updateEmployee";
 		document.myform.submit();
 	}
-	function remove() 
+	function removeEmployee()
 	{
 		alert("remove");
 		document.myform.action="removeEmployee";
@@ -102,7 +102,7 @@ function sortTable(n) {
 </script>
 </head>
 <body>
-<form action="" name="myform">
+
 	
     <section id="content" class="bg-light lter">
         <section class="vbox">
@@ -191,7 +191,10 @@ function sortTable(n) {
                                         <th class="sorting" tabindex="0" aria-controls="example1" 
                                             rowspan="1" colspan="1" 
                                             aria-label="CSS grade: activate to sort column ascending" 
-                                            style="width: 125px;">
+
+                                            style="width: 125px;" onclick="sortTable(6)">Gender
+
+                                            
                                         </th>
                                         
                                     </tr>
@@ -208,196 +211,8 @@ function sortTable(n) {
                                     <td>${ employee.employeeDateOfBirth}</td>
                                     <td>${ employee.employeeEmail}</td>
                                  	<td>${ employee.employeeJoiningDate}</td>
-                                    <td>
-                                     <div> 
-                                     	<!-- Button to Open the Popup -->
-                                   
-		                                   <button type="button" 
-		                                     class="btn btn-primary " 
-                                    		 data-toggle="modal"
-                                     		 data-target="#editdata" onclick="editEmployee()">Edit
-  										   </button>
-    								 		<button type="button" 
-    											 class="btn btn-danger" 
-    											 data-toggle="modal" 
-    											 data-target="" onclick="removeEmployee()">Remove
- 									 		</button>
-    									
-                                    </td>
-                                    
-                                   
-										<!-- The Modal -->
-  						<div class="modal" id="editdata">
-    						<div class="modal-dialog">
-      						   <div class="modal-content">
-      
-       								 <!-- Modal Header -->
-        								<div class="modal-header">
-          								<h4 class="modal-title">Employee_Details</h4>
-         								 <button type="button" 
-         								 class="close" 
-         								 data-dismiss="modal">&times;</button>
-        								</div>
-        
-       								 <!-- Modal body -->
-        								<div class="modal-body">
-        								  <div class="form-group">
-        								  <input type="hidden" name="employeeId" value="${employee.employeeId}">
-        								  <input type="hidden" name="employeeGender" value="${employee.employeeGender}">
-        								  <input type="hidden" name="employeeDesignation" value="${employee.employeeDesignation}">
-        								  
-										    <label for="name">Name:</label>
-										 	<input type="text"
-											class="form-control" 
-											id="name" placeholder="Enter name"
-											name="employeeName" value="${employee.employeeName}" required>
-										   </div>
-        								
-          									<div class="form-group">
-												<label for="address">Address:</label>
-												<div class="row">
-												<div class="col-md-6">
-													<input type="text" 
-													class="form-control" 
-													id="employeeAreaName"
-													placeholder="Enter areaname"
-												 	name="employeeAreaName" value="${employee.employeeAreaName}" required>
-												</div>
-												<div class="col-md-6">
-													<input type="text" 
-													class="form-control" 
-													id="cityname"
-													placeholder="Enter cityname" 
-													name="employeeCityName" value="${employee.employeeCityName}" required>
-												</div>
-												</div>
-											</div>
-        								
-          								<div class="form-group">
-											<div class="row">
-												<div class="col-md-6">
-													<input type="text" 
-													class="form-control" 
-													id="employeeStateName"
-													placeholder="Enter statename" 
-													name="employeeStateName" value="${employee.employeeStateName}" required>
-												</div>
-												<div class="col-md-6">
-													<input type="text" 
-													class="form-control"
-													id="employeeCountryName" 
-													placeholder="Enter countryname"
-													name="employeeCountryName" value="${employee.employeeCountryName}" required>
-												</div>
-											</div>
-									</div>
-									<div class="form-group">
-											<div class="row">
-												<div class="col-md-6">
-													<input type="text" 
-													class="form-control" id="pincode"
-													placeholder="Enter pincode" 
-													name="employeePincode" value="${employee.employeePincode}" required>
-												</div>
-											</div>
-									</div>
-								<div class="row">
-										<div class="col-md-6">
-											<!-- mobile no -->
-												<div class="form-group">
-													<label>Mobile no:</label> 
-													<input type="text"
-													class="form-control" 
-													data-type="phone"
-													placeholder="(XXX) XXXX XXX" 
-													data-required="true" 
-													name="employeeMobileNumber" value="${employee.employeeMobileNumber}">
-												</div>
-										</div>
-										
-							<div class="col-md-6">
-							
-								<div class="form-group">
-									<label for="employeeDateOfBirth">Date Of Birth:</label> <input
-										class="form-control" type="date" name="employeeDateOfBirth" value="${employee.employeeDateOfBirth}" required>
-								</div>
-							</div>
-							</div>
-							<div class="row">
-								
-										<div class="col-md-6">
-											<label for="employeeDateOfJoining">Date Of Joining:</label> <input
-												class="form-control" type="date" name="employeeDateOfJoining" value="${employee.employeeJoiningDate}" required>
-											</div>
-								
-									 <div class="col-md-6">
-										<div class="form-group">
-											<label for="employeeEmail">Email:</label>
-												<div class="form-group">
-												<input id="email"
-													type="text" class="form-control" 
-													name="employeeEmail" 
-													placeholder="Email" data-type="email"
-													data-required="true" value="${employee.employeeEmail}">
-												</div>
-											<div class="emailMessage"></div>
-										</div>
-									</div>
-							</div>
-							<div class="row">
-							<div class="col-md-6">
-								<!-- password -->
-								<div class="form-group">
+                                   <td>${employee.employeeGender }</td>
 
-									<label for="employeePassword">Password:</label>
-									<div class="form-group">
-										<input id="password"
-											type="password" class="form-control" 
-											name="employeePassword" 
-											placeholder="Password" value="${employee.employeePassword}">
-									</div>
-
-								</div>
-
-							</div>
-							<div class="col-md-6">
-								<!--Confirm password -->
-								<div class="form-group">
-
-									<label for="employeePassword">Confirm Password:</label>
-									<div class="form-group">
-										<input id="confirmPassword" type="password" class="form-control"
-											 placeholder="Password" value="${employee.employeePassword}"
-											onchange="checkPassword()">
-									</div>
-									<small id="passwordMessage" class="alert-danger"></small>
-								</div>
-							</div>
-						</div>
-							<!-- Model Footer -->
-							<div class="modal-footer">
-          								<div class="row">
-          								
-          									<div class="col-md-6">
-         								 		<button type="button" 
-         								 		class="btn btn-primary" 
-         								 		data-togal="modal" onclick="updateEmployee()">Update</button>
-         								 	</div>
-          									<div class="col-md-6">
-         								 		<button type="button" 
-         								 		class="btn btn-danger" 
-         								 		data-dismiss="modal">Close</button>
-         								 	</div>
-         								 	
-         								 	
-        								</div>
-        					</div>
-							
-							<!--End Footer  -->
-							</div>
-						</div>
-    				</div>
-  				</div>
  
  					
                                    	</tr>
@@ -412,7 +227,8 @@ function sortTable(n) {
                                     <th rowspan="1" colspan="1">Email</th>
 
                                     <th rowspan="1" colspan="1">Joining_Date</th>
-                                    <th></th>
+                                    <th rowspan="1" colspan="1">Gender</th>
+                               
                                     </tr>
 
                                                                     </tfoot>
@@ -453,6 +269,5 @@ function sortTable(n) {
                     </section>
                 </section>
             </section>
-</form>
 </body>
 </html>

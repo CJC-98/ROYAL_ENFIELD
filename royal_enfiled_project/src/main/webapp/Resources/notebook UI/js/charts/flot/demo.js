@@ -223,7 +223,7 @@ $(function(){
 
   var data1 = [
     {
-        label: "Product 1",
+        label: "Accessories",
         data: d1_1,
         bars: {
             show: true,
@@ -235,7 +235,7 @@ $(function(){
         color: "#6783b7"
     },
     {
-        label: "Product 2",
+        label: "NewBikes",
         data: d1_2,
         bars: {
             show: true,
@@ -247,7 +247,7 @@ $(function(){
         color: "#4fcdb7"
     },
     {
-        label: "Product 3",
+        label: "OldBikes",
         data: d1_3,
         bars: {
             show: true,
