@@ -422,8 +422,8 @@ public String getAllBikeCustomizationCount() {
 
 private static final String host="smtp.gmail.com";
 private static final String port="587";
-private static final String user="belokarshital@gmail.com";
-private static final String pass="gajananbaba";
+private static final String user="Write here YourEmail";
+private static final String pass=" Your Password";
 
 public  void sendEmail(String email) {
 
