@@ -39,6 +39,11 @@
                             <c:set var="per" value="${100}" />
                             <c:set var="Avg" value="${(lg1/lg)*per}" />
                             
+                            <c:set var="oldbikecnt" value="${oldBikecnt}" />
+                            <c:set var="oldsoldbikecnt" value="${oldSoldBikecnt}" />
+                            <c:set var="oldAvg" value="${(oldSoldBikecnt/oldBikecnt)*per}" />
+                            
+                            
                             <div class="row">
                                 <div class="col-lg-4">
                                     <section class="panel panel-default">
@@ -68,7 +73,7 @@
                                                 <div class="easypiechart text-danger"  data-percent="${lg1}" data-line-width="6"
                                                 	data-animate="2000"  data-bar-color="#4cc0c1"
                                                     data-loop="false" data-size="188"> <span class="h2 step">25</span>
-                                                    <div class="easypie-text">Today</div>
+                                                    <div class="easypie-text">Solded</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -86,7 +91,7 @@
                                                 	data-animate="2000" 
                                                     data-scale-color="false"
                                                     data-size="188" data-line-cap='butt'> <span class="h2 step">60</span>%
-                                                    <div class="easypie-text">new visits</div>
+                                                    <div class="easypie-text">Average</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -105,11 +110,11 @@
                                             <h4><small>Old Bike</small></h4> 
                                             <small class="text-muted block">   </small>
                                             <div class="inline">
-                                                <div class="easypiechart text-info" data-percent=${lg} data-line-width="16"
+                                                <div class="easypiechart text-info" data-percent="${oldBikecnt}" data-line-width="16"
 	                                                 data-rotate="0" 
 	                                                 data-scale-Color="false" data-animate="2000"
                                                      data-loop="false" data-size="188"> <span class="h2 step"></span>
-                                                    <div class="easypie-text">New</div>
+                                                    <div class="easypie-text">Old</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -123,10 +128,10 @@
                                             <h4><small>Solded Bikes</small></h4> 
                                             <small class="text-muted block">   </small>
                                             <div class="inline">
-                                                <div class="easypiechart text-info" data-percent="${lg1}" data-line-width="6"
+                                                <div class="easypiechart text-info" data-percent="${oldSoldBikecnt}" data-line-width="6"
                                                 	data-animate="2000"
                                                     data-loop="false" data-size="188"> <span class="h2 step">25</span>
-                                                    <div class="easypie-text">Today</div>
+                                                    <div class="easypie-text">Solded</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -140,11 +145,11 @@
                                             <h4><small>Average</small></h4> 
                                             <small class="text-muted block">     </small>
                                             <div class="inline">
-                                                <div class="easypiechart text-info" data-percent="${Avg}" data-line-width="16"
+                                                <div class="easypiechart text-info" data-percent="${oldAvg}" data-line-width="16"
                                                 	data-animate="2000"
                                                     data-scale-color="false"
                                                     data-size="188" data-line-cap='butt'> <span class="h2 step">60</span>%
-                                                    <div class="easypie-text">new visits</div>
+                                                    <div class="easypie-text">Average</div>
                                                 </div>
                                             </div>
                                         </div>

@@ -1,73 +1,60 @@
 package com.app.extremity.model;
 
+import java.time.LocalDate;
+import java.util.Date;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 public class CartInvoice {
 
 	@Id
-	private String cartInvoiceId;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int cartInvoiceId;
 	
-	private double amount;
+	private String totalAmount;
 	
-	private double cGstPercent;
-	
-	private double sGstPercent;
-	
-	private double gstPercent;
-	
-	private double totalAmount;
+	private LocalDate date;
 	
 	private String paymentStatus = "unpaid";  //OR paid
 
+	@OneToOne(cascade=CascadeType.ALL)
+	private Registration registration;
+
 	
 	
-	public String getCartInvoiceId() {
+	
+	
+	
+	
+
+	public LocalDate getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDate date) {
+		this.date = date;
+	}
+
+	public int getCartInvoiceId() {
 		return cartInvoiceId;
 	}
 
-	public void setCartInvoiceId(String cartInvoiceId) {
+	public void setCartInvoiceId(int cartInvoiceId) {
 		this.cartInvoiceId = cartInvoiceId;
 	}
-
-	public double getAmount() {
-		return amount;
-	}
-
-	public void setAmount(double amount) {
-		this.amount = amount;
-	}
-
-	public double getcGstPercent() {
-		return cGstPercent;
-	}
-
-	public void setcGstPercent(double cGstPercent) {
-		this.cGstPercent = cGstPercent;
-	}
-
-	public double getsGstPercent() {
-		return sGstPercent;
-	}
-
-	public void setsGstPercent(double sGstPercent) {
-		this.sGstPercent = sGstPercent;
-	}
-
-	public double getGstPercent() {
-		return gstPercent;
-	}
-
-	public void setGstPercent(double gstPercent) {
-		this.gstPercent = gstPercent;
-	}
-
-	public double getTotalAmount() {
+	
+	public String getTotalAmount() {
 		return totalAmount;
 	}
 
-	public void setTotalAmount(double totalAmount) {
+	public void setTotalAmount(String totalAmount) {
 		this.totalAmount = totalAmount;
 	}
 
@@ -78,6 +65,20 @@ public class CartInvoice {
 	public void setPaymentStatus(String paymentStatus) {
 		this.paymentStatus = paymentStatus;
 	}
+
+	public Registration getRegistration() {
+		return registration;
+	}
+
+	public void setRegistration(Registration registration) {
+		this.registration = registration;
+	}
+	
+	
+	
+	
+	
+
 	
 	
 	

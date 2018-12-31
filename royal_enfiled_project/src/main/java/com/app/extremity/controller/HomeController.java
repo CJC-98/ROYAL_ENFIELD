@@ -133,10 +133,14 @@ public class HomeController {
 			
 			
 			long lg = AService.NewBikeCount(fd,ld);
-				System.out.println("Home Controll.. New Bike Count is.. "+lg);
 			model.addAttribute("lg", lg);			
 			long lg1 = AService.SoldBikeCount(fds, lds);
-				System.out.println("Home Controll.. Sold Bike Count is.. " + lg1);
+			
+			long oldBikecnt = AService.OldBikeCount(fds, lds);
+			model.addAttribute("oldBikecnt", oldBikecnt);
+			long oldSoldBikecnt = AService.OldSoldBikeCount(fds, lds);
+			model.addAttribute("oldSoldBikecnt", oldSoldBikecnt);
+			
 			model.addAttribute("lg1", lg1);
 			model.addAttribute("link", "accountsDashboard.jsp");
 			return "Accounts/accountsIndex";
