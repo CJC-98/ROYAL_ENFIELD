@@ -375,13 +375,14 @@ public class BikeSaleServiceImpl implements BikeSaleServiceI {
 			byte[] bytes = profilePic.getBytes();
 			Path path = Paths.get(UPLOADED_FOLDER + profilePic.getOriginalFilename());
 			Files.write(path, bytes);
-			//bikesaleuser.setImage(UPLOADED_FOLDER + profilePic.getOriginalFilename());
+			bikesaleuser.setImage(UPLOADED_FOLDER + profilePic.getOriginalFilename());
 		} catch (IOException e) {
 			logger.error("while saving profile picture", e);
 			e.printStackTrace();
 		}
 		return bikeSaleForUserdaoI.save(bikesaleuser);
-		  
+		
+
 	}
 
 	@Override

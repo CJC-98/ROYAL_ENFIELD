@@ -1,7 +1,5 @@
 package com.app.extremity.iservice;
 
-import java.util.List;
-
 import org.springframework.web.multipart.MultipartFile;
 
 import com.app.extremity.model.EmailMessage;
@@ -14,6 +12,6 @@ public interface IAdminService {
 	void sendEmail(EmailMessage emailmessage, MultipartFile file);
 
 	EmployeeDetails getEmployeeDetailsByName(String employeeName);
-	
+
 
 }

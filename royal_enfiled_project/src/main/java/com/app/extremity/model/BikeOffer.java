@@ -9,18 +9,20 @@ import javax.persistence.Id;
 public class BikeOffer
 {
 @Id
-//@GeneratedValue(strategy=GenerationType.IDENTITY)
-private String offerId;
+@GeneratedValue(strategy=GenerationType.IDENTITY)
+private int bikeOfferId;
+
+public int getBikeOfferId() {
+	return bikeOfferId;
+}
+public void setBikeOfferId(int bikeOfferId) {
+	this.bikeOfferId = bikeOfferId;
+}
 private String offerName;
 private String startDate;
 private String endDate;
 private float discountInPercentage;
-public String getOfferId() {
-	return offerId;
-}
-public void setOfferId(String offerId) {
-	this.offerId = offerId;
-}
+
 public String getOfferName() {
 	return offerName;
 }

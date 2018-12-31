@@ -1,7 +1,5 @@
 package com.app.extremity.model;
 
-import java.util.Date;
-
 import javax.persistence.CascadeType;
 
 import javax.persistence.Entity;
@@ -16,35 +14,22 @@ public class NewBikeStock
 {
 	@Id
 	//@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private String bikeId;
+	private String newBikeStockId;
 	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="modelId")
+	@JoinColumn(name="bikeModelId")
 	private BikeModel bikeModel;
 	private String chasisNumber;
 	private String wheelType;
 	private String engineStartingType;
-	private Double bikePrice;
+	private String bikePrice;
 	private String bikeMfgDate;
+	private String arrivalDate;
 	
-	private Date arrivalDate;
-	
-	public Date getArrivalDate() {
-		return arrivalDate;
+	public String getNewBikeStock() {
+		return newBikeStockId;
 	}
-	public void setArrivalDate(Date arrivalDate) {
-		this.arrivalDate = arrivalDate;
-	}
-	public Double getBikePrice() {
-		return bikePrice;
-	}
-	public void setBikePrice(Double bikePrice) {
-		this.bikePrice = bikePrice;
-	}
-	public String getBikeId() {
-		return bikeId;
-	}
-	public void setBikeId(String bikeId) {
-		this.bikeId = bikeId;
+	public void setNewBikeStock(String newBikeStock) {
+		this.newBikeStockId= newBikeStock;
 	}
 	public BikeModel getBikeModel() {
 		return bikeModel;
@@ -70,11 +55,22 @@ public class NewBikeStock
 	public void setEngineStartingType(String engineStartingType) {
 		this.engineStartingType = engineStartingType;
 	}
-	
+	public String getBikePrice() {
+		return bikePrice;
+	}
+	public void setBikePrice(String bikePrice) {
+		this.bikePrice = bikePrice;
+	}
 	public String getBikeMfgDate() {
 		return bikeMfgDate;
 	}
 	public void setBikeMfgDate(String bikeMfgDate) {
 		this.bikeMfgDate = bikeMfgDate;
+	}
+	public String getArrivalDate() {
+		return arrivalDate;
+	}
+	public void setArrivalDate(String arrivalDate) {
+		this.arrivalDate = arrivalDate;
 	}
 }

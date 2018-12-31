@@ -23,34 +23,23 @@ public class BikeServicing {
 	
 	private String bikeReleaseStatus = "on-hold";  //OR released
 	
-	private int serviceProgressPercent = 0;  // 0-100 %  
-	
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne
 	private ServcingBikeInfo servcingBikeInfo; 
+	
 
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="bikeServicing")
+	private List<ServicingChart> servicingChart = new ArrayList<ServicingChart>();
+
+	
+	@OneToOne
 	private ServicingInvoice servicingInvoice;
 	
-	@OneToMany(cascade=CascadeType.ALL)
-	private List<ServicingChart> servicingChart = new ArrayList();
+	
+	//FK of customer @OneToOne
 
 
 
-	public String getBikeServicingId() {
-		return bikeServicingId;
-	}
 
-
-
-	public int getServiceProgressPercent() {
-		return serviceProgressPercent;
-	}
-
-
-
-	public void setServiceProgressPercent(int serviceProgressPercent) {
-		this.serviceProgressPercent = serviceProgressPercent;
-	}
 
 
 
@@ -60,10 +49,15 @@ public class BikeServicing {
 
 
 
+	public String getBikeServicingId() {
+		return bikeServicingId;
+	}
+
+
+
 	public String getServcingStatus() {
 		return servcingStatus;
 	}
-
 
 
 	public void setServcingStatus(String servcingStatus) {
@@ -76,13 +70,11 @@ public class BikeServicing {
 		return appointmentDate;
 	}
 
-
-
 	public void setAppointmentDate(String appointmentDate) {
 		this.appointmentDate = appointmentDate;
 	}
 
-
+	
 
 	public String getBikeReleaseStatus() {
 		return bikeReleaseStatus;
@@ -100,10 +92,16 @@ public class BikeServicing {
 		return servcingBikeInfo;
 	}
 
-
-
 	public void setServcingBikeInfo(ServcingBikeInfo servcingBikeInfo) {
 		this.servcingBikeInfo = servcingBikeInfo;
+	}
+
+	public List<ServicingChart> getServicingChart() {
+		return servicingChart;
+	}
+
+	public void setServicingChart(List<ServicingChart> servicingChart) {
+		this.servicingChart = servicingChart;
 	}
 
 
@@ -118,25 +116,9 @@ public class BikeServicing {
 		this.servicingInvoice = servicingInvoice;
 	}
 
-
-
-	public List<ServicingChart> getServicingChart() {
-		return servicingChart;
-	}
-
-
-
-	public void setServicingChart(List<ServicingChart> servicingChart) {
-		this.servicingChart = servicingChart;
-	}
-
-
-
 	
 
-
-
-
-
-
+	
+	
+	
 }

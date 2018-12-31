@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-  
+
 @Entity
 @Table(name="ServcingBikeInfoTable")
 public class ServcingBikeInfo {
@@ -14,21 +14,12 @@ public class ServcingBikeInfo {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int ServcingBikeInfoId;
 	
-	private String modelName;
 	private String chasisNumber;
 	private String plateNumber;
 	
 	
 	
 	
-	
-	
-	public String getModelName() {
-		return modelName;
-	}
-	public void setModelName(String modelName) {
-		this.modelName = modelName;
-	}
 	public int getServcingBikeInfoId() {
 		return ServcingBikeInfoId;
 	}

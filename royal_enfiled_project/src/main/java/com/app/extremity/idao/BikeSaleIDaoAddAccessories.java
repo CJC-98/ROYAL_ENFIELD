@@ -7,6 +7,8 @@ import com.app.extremity.model.AddAccessories;
 public interface BikeSaleIDaoAddAccessories extends CrudRepository<AddAccessories, String>
 {
 
+
 	AddAccessories findOne(String accid);
+
 
 }

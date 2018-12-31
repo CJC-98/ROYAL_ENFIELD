@@ -12,5 +12,7 @@ public interface BikeSaleIDao extends CrudRepository<BikeModel, String>
 	@Query("select COUNT(bm) from BikeModel bm")
 	public int getBikeModelCount();
 
+
 	public BikeModel findOne(String bid);
+
 }

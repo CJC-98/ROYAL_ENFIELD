@@ -1,6 +1,8 @@
 package com.app.extremity.model;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -11,50 +13,59 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
-public class BikeModel
-{
+public class BikeModel {
 	@Id
-	//@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private String modelId;
+	// @GeneratedValue(strategy=GenerationType.IDENTITY)
+	private String bikeModelId;
+
+	public String getBikeModelId() {
+		return bikeModelId;
+	}
+
+	public void setBikeModelId(String bikeModelId) {
+		this.bikeModelId = bikeModelId;
+	}
+
 	private String modelName;
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="engineid")
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "engineCapacityId")
 	private EngineCapacity enginecapacity;
-	@OneToMany(cascade=CascadeType.ALL)
-	private Set<Color>colors=new HashSet<Color>();
+
+	@OneToMany(cascade = CascadeType.ALL)
+	private Set<Color> color=new HashSet<Color>();
+
 	private String image;
-	
-	
-	public String getImage(){
+
+	public String getImage() {
 		return image;
 	}
+
 	public void setImage(String image) {
 		this.image = image;
 	}
-	public String getModelId() {
-		return modelId;
-	}
-	public void setModelId(String modelId) {
-		this.modelId = modelId;
-	}
+
 	public String getModelName() {
 		return modelName;
 	}
+
 	public void setModelName(String modelName) {
 		this.modelName = modelName;
 	}
+
 	public EngineCapacity getEnginecapacity() {
 		return enginecapacity;
 	}
+
 	public void setEnginecapacity(EngineCapacity enginecapacity) {
 		this.enginecapacity = enginecapacity;
 	}
-	public Set<Color> getColors() {
-		return colors;
+
+	public Set<Color> getColor() {
+		return color;
 	}
-	public void setColors(Set<Color> colors) {
-		this.colors = colors;
+
+	public void setColor(Set<Color> color) {
+		this.color = color;
 	}
-	
-	
+
 }

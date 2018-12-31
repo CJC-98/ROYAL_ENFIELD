@@ -256,9 +256,6 @@ public class AccountController {
 		model.addAttribute("link", "NewBikeStock.jsp");
 		
 		List<NewBikeStock> list = Service.getAllNewBikeStock();
-		for(NewBikeStock n : list) {
-			System.out.println("New Bike List.."+ n.getArrivalDate() + n.getBikeId() + "  "+ n.getBikePrice());
-		}
 		model.addAttribute("list", list);
 		
 		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);

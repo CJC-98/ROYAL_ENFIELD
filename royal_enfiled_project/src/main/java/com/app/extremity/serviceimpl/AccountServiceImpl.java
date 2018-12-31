@@ -62,9 +62,6 @@ public class AccountServiceImpl implements Account_ServiceInterface {
 	public List<NewBikeStock> getAllNewBikeStock() {
 		List<NewBikeStock> list = (List<NewBikeStock>)newBikeCountDao.findAll();
 		System.out.println("List of new bike.." + list);
-		for(NewBikeStock n : list) {
-			System.out.println("BikeId.." + n.getBikeId() +" "+ "mfgDate" + n.getBikeMfgDate() );
-		}
 		return list;
 	}
 

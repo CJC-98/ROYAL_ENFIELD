@@ -14,18 +14,19 @@ public class CompanyOrder
 {
 	@Id
 	//@GeneratedValue(strategy=GenerationType.IDENTITY)
-private String orderId;
+private String companyOrderId;
 private String orderDate;
 @OneToOne(cascade=CascadeType.ALL)
-@JoinColumn(name="modelId")
+@JoinColumn(name="bikeModelId")
 private BikeModel bikemodel;
 private String quantity;
 private String totalPrice;
-public String getOrderId() {
-	return orderId;
+
+public String getCompanyOrderId() {
+	return companyOrderId;
 }
-public void setOrderId(String orderId) {
-	this.orderId = orderId;
+public void setCompanyOrderId(String companyOrderId) {
+	this.companyOrderId = companyOrderId;
 }
 public String getOrderDate() {
 	return orderDate;

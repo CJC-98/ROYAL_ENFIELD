@@ -6,4 +6,6 @@ public interface IHomeService {
 
 	int checkLoginCredentials(String email, String password, HttpServletRequest request);
 
+	
+
 }

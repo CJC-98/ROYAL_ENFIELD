@@ -13,57 +13,50 @@ import com.app.extremity.iservice.IAdminService;
 import com.app.extremity.model.EmailMessage;
 import com.app.extremity.model.EmployeeDetails;
 
-
-
 @Controller
-/*@RequestMapping(value="/admin")*/
+@RequestMapping(value = "/admin")
+
 public class AdminController {
-	
+
 	@Autowired
 	IAdminService adminService;
-	
 
-	@RequestMapping(value="/composeMail")
-	public String toComposeMailPage() {
-		return "Admin/composeMail";
-	}
-	/*this method is used to send Email to employee With Registration Link
+	/*
+	 * this method is used to send Email to employee With Registration Link
 	 * 
-	 *  author: Nilesh Tammewar
-	 * */
-	
-	@RequestMapping(value="/sendEmail",method=RequestMethod.POST)
-	public String sendEmail(@ModelAttribute EmailMessage  emailmessage,@RequestParam("file") MultipartFile file) {
-		System.out.println(emailmessage.getTo_address());
-		System.out.println(emailmessage.getSubject());
-		System.out.println(emailmessage.getBody());
-		adminService.sendEmail(emailmessage,file);
-		return "Admin/adminIndex";
+	 * author: Nilesh Tammewar
+	 */
+
+	@RequestMapping(value = "/sendEmail", method = RequestMethod.POST)
+	public String sendEmail(@ModelAttribute EmailMessage emailmessage, @RequestParam("file") MultipartFile file) {
+
+		adminService.sendEmail(emailmessage, file);
+		return null;
 	}
-	
-	/*this method is used for Employee Registration Page
+
+	/*
+	 * this method is used for Employee Registration Page
 	 * 
-	 *  author: Nilesh Tammewar
-	 * */
-	
-	@RequestMapping(value="/employeeRegistration")
+	 * author: Nilesh Tammewar
+	 */
+
+	@RequestMapping(value = "/employeeRegistration")
 	public String toEmployeeRegistrationPage() {
 		return "Admin/employeeRegistration";
 	}
-	
-	/*this method is used to save Employee Details
+
+	/*
+	 * this method is used to save Employee Details
 	 * 
-	 *  author: Nilesh Tammewar
-	 * */
-	
-	@RequestMapping(value="/saveEmployee",method=RequestMethod.POST)
-	public String createEmployee(@ModelAttribute EmployeeDetails employeeDetails,@RequestParam("profilePic") MultipartFile profilePic,Model model) {
-		
-		adminService.saveEmployee(employeeDetails,profilePic);
-		return "login";
+	 * author: Nilesh Tammewar
+	 */
+
+	@RequestMapping(value = "/saveEmployee", method = RequestMethod.POST)
+	public String createEmployee(@ModelAttribute EmployeeDetails employeeDetails,
+			@RequestParam("profilePic") MultipartFile profilePic, Model model) {
+
+		adminService.saveEmployee(employeeDetails, profilePic);
+		return "redirect:/loginPage";
 	}
-	
-	
-	
-	
+
 }

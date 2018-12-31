@@ -1,6 +1,5 @@
 package com.app.extremity.model;
 
-
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -12,41 +11,39 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+
 @Entity
-@Table(name="mycart")
+@Table(name = "mycart")
 public class Cart {
 
-	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int productId;
-	private int qty;	
+	private int qty;
 	private double totalprice;
 	private Date orderDate;
-	
-	/*@ManyToOne
-	private OldBikeStock oldBike;*/
-	
-	@OneToOne(cascade=CascadeType.ALL)
-	private CartInvoice cartInvoice;
-	
-	@ManyToOne(cascade=CascadeType.ALL)
-	private AccessoriesStock accessories;
-	
-	@ManyToOne(cascade=CascadeType.ALL)
-	private Registration registration;
-	
-	@ManyToOne(cascade=CascadeType.ALL)
-	private BikeSaleForUser bikeSaleForUser;
-	
-	@ManyToOne(cascade=CascadeType.ALL)
-	private OldBikeStock oldbike;
-	
-	private String purchaseStatus="unsold";//buy now and sold
 
-	
-	
-	
+	/*
+	 * @ManyToOne private OldBikeStock oldBike;
+	 */
+
+	@OneToOne(cascade = CascadeType.ALL)
+	private CartInvoice cartInvoice;
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	private AccessoriesStock accessories;
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Registration registration;
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	private BikeSaleForUser bikeSaleForUser;
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	private OldBikeStock oldbike;
+
+	private String purchaseStatus = "unsold";// buy now and sold
+
 	public int getProductId() {
 		return productId;
 	}
@@ -126,12 +123,5 @@ public class Cart {
 	public void setPurchaseStatus(String purchaseStatus) {
 		this.purchaseStatus = purchaseStatus;
 	}
-
-
-
-
-
-
-
 
 }
