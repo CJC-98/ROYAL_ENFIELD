@@ -436,12 +436,16 @@ public class ServiceMangerController {
 	private void updateServiceCount(String chassisNumber) {
 		
 		FreeServicingCount bike = serviceManagerInterface.getFreeServicingCountByChassisNumber(chassisNumber);
-		int cnt = bike.getFreeServicingCount();
 		
-		if(cnt<3) {
-			bike.setFreeServicingCount(++cnt);
-			serviceManagerInterface.updateFreeServicingCount(bike);
+		if(bike != null) {
+			int cnt = bike.getFreeServicingCount();
+			
+			if(cnt<3) {
+				bike.setFreeServicingCount(++cnt);
+				serviceManagerInterface.updateFreeServicingCount(bike);
+			}
 		}
+		
 		
 	}
 

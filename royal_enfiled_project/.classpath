@@ -28,5 +28,6 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/pranaykohad/Desktop/checksum_2.0.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
