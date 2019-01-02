@@ -55,22 +55,29 @@ public class AccountController {
 	
 	
 	@RequestMapping(value="/Invoice")
-	public String Invoice(Model model)
+	public String Invoice(Model model, HttpServletRequest request)
 	{ 			
-			System.out.println("In Invoice controller");
+		System.out.println("In Invoice controller");
 		model.addAttribute("link", "Invoice.jsp");
 		
 		LocalDate date = LocalDate.now();		
 		model.addAttribute("date",date);
 		
-
+		// get registration id by session code starts here -----		
+			session = request.getSession();	
+			Registration reg = (Registration) session.getAttribute("reg");
+			session.getAttribute("email");
+			System.out.println("session id" + reg);
+		// end here -----
+		
 		Registration regi = null;
 		String purchaseSatus = null;
 		String purchaseStatus = "buynow";
 		
-		Registration reg = new Registration(); //-- TO_Do :- UserId fetch from Registration.. 
-		reg.setRegistrationId("1");
-		
+
+		//Registration reg = new Registration(); //-- TO_Do :- UserId fetch from Registration.. 
+		//reg.setRegistrationId("1");
+
 
 		List<Cart> cart = Service.getCartByRegistrationAndPurchaseStatus(reg, purchaseStatus);			
 			for(Cart c : cart) {			
