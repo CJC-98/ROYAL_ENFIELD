@@ -1,5 +1,7 @@
 package com.app.extremity.model;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,12 +26,19 @@ public class SoldOldBikeStock
 	private String sellerDetails;
 	private String bikeMileage;
 	private String bikeImage;
-//	@OneToOne(cascade=CascadeType.ALL)
-	//private User bikeUser;
-	//@OneToOne(cascade=CascadeType.ALL)
-	//private Invoice invoicePaid;
-	//@OneToOne(cascade=CascadeType.ALL)
-	//private NewBikeStock newBikeStock;
+	private Date soldbikedate;
+	
+
+	
+	
+	
+	
+	public Date getSoldbikedate() {
+		return soldbikedate;
+	}
+	public void setSoldbikedate(Date soldbikedate) {
+		this.soldbikedate = soldbikedate;
+	}
 	public String getOldBikeId() {
 		return oldBikeId;
 	}

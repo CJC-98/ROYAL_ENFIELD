@@ -16,19 +16,20 @@
 </head>
 
 <body class="">
+
+
     <section class="vbox">
       
       
-        
+       <c:set var="id" value="${0}" /> 
+       <c:set var="SubTotal" value="${0}"/>
         
         <section>
             <section class="hbox stretch">               
                 <section id="content">
-                    <section class="vbox bg-white">
-                        <header class="header b-b b-light hidden-print"> 
-                        	<button href="#" class="btn btn-s-md btn-danger pull-right" onClick="window.print();">Print</button>                         	
-                            <p>Invoice</p> 
-                            <button href="#" class="btn btn-s-md btn-primary pull-right">Pay</button>
+                    <section class="vbox bg-white">                   
+                        <header class="header b-b b-light hidden-print">						
+                            <p>Invoice</p>                          
                         </header>
                         
                         <section class="scrollable wrapper">                        	
@@ -83,9 +84,13 @@
                                 </thead>
                                 <tbody>
                                 
-                                	<c:set var="SubTotal" value="${0}" />
+                                	
                         			
                               		<c:forEach var="l" items="${list}"> 
+                              		 
+                              		 	<c:set var="id" value="${l.registration.registrationId}" /> 
+                              		 	
+                              		 	
                               		 
                                 	 	<c:set var="BikeTotal" value="${0}"/>
                                 	 	<c:set var="ATotal" value="${0}"/>
@@ -136,14 +141,24 @@
 	                                    </tr>
 	                                </tbody>
 	                            </table>
-                            
-                            
-                            
-                            
-                            
-                         
+	                            
+	                            <div>
+	                            	<form action="aa">
+	                            	<input type="hidden" name="customerId" value="${id}">
+	                            	<input type="hidden" name="ammount" value="${SubTotal}">
+	                            	
+	                            	<button type="submit" class="btn btn-s-md btn-primary pull-left" >Pay</button>
+	                            	<button href="#" class="btn btn-s-md btn-danger pull-right" onClick="window.print();">Print</button>
+	                            	</form>
+	                            </div>
+                      
                         </section>
-                    </section> <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen, open"
+                        
+                       		 
+                                
+                    </section> 
+                                   
+                    <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen, open"
                         data-target="#nav,html"></a>
                 </section>
                 <aside class="bg-light lter b-l aside-md hide" id="notes">
@@ -155,6 +170,17 @@
     <!-- App -->
     <script src="js/app.v1.js"></script>
     <script src="js/app.plugin.js"></script>
+        
+        
+    <!--  <script>
+	  function pay(sub, id){
+		  var req = new XMLHttpRequest();		
+			req.open("GET","aa?ammount="+sub+"&&customerId="+id,true);
+			req.send();
+			
+	  }
+	</script> -->
+	
 </body>
 
 
