@@ -19,7 +19,7 @@ public class AccessoriesStock {
 	// @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private String accessoriesStockId;
 	private String partName;
-	private String partPrice;
+	private String partPrice; 
 	private long partQuantity;
 	//@OneToOne(cascade=CascadeType.ALL)
 	//@JoinColumn(name="bikeModelId")

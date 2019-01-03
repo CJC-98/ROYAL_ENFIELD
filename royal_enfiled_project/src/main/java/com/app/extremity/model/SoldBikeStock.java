@@ -1,108 +1,185 @@
 package com.app.extremity.model;
 
+
+
 import java.util.Date;
 
+
+
 import javax.persistence.CascadeType;
+
 import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
+
 import javax.persistence.GenerationType;
+
 import javax.persistence.Id;
+
 import javax.persistence.JoinColumn;
+
 import javax.persistence.ManyToOne;
+
 import javax.persistence.OneToOne;
 
+
+
 @Entity
-public class SoldBikeStock {
+
+public class SoldBikeStock
+
+ {
+
 	@Id
-	// @GeneratedValue(strategy=GenerationType.IDENTITY)
-	private String soldBikeStockId;
-	private Date date;
 
-	public Date getDate() {
-		return date;
-	}
+	//@GeneratedValue(strategy=GenerationType.IDENTITY)
 
-	public void setDate(Date date) {
-		this.date = date;
-	}
+private String stockId;
 
-	public String getSoldBikeStockId() {
-		return soldBikeStockId;
-	}
+@OneToOne(cascade=CascadeType.ALL)
 
-	public void setSoldBikeStockId(String soldBikeStockId) {
-		this.soldBikeStockId = soldBikeStockId;
-	}
+@JoinColumn(name="modelId")
 
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "bikeModelId")
-	private BikeModel bikeModel; // model name (Classic, Electra, Thunderbird,
-									// Himalyan, Continental, Interceptor)
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "engineId")
-	private EngineCapacity bikeEngineCapacity; // 350cc or 500cc
-	private String chasisNumber;
-	private String bikewheel;// alloy wheel,spoke
-	private String bikeOnRoadPrice;
-	private String engineStartingType;// kick or Self Start
-	private String invoice;// bill genertion
-	// @ManyToOne(cascade=CascadeType.ALL)
-	// private User user;
+private BikeModel bikeModel; //model name (Classic, Electra, Thunderbird, Himalyan, Continental, Interceptor)
 
-	public BikeModel getBikeModel() {
-		return bikeModel;
-	}
+@OneToOne(cascade=CascadeType.ALL)
 
-	public void setBikeModel(BikeModel bikeModel) {
-		this.bikeModel = bikeModel;
-	}
+@JoinColumn(name="engineId")
 
-	public EngineCapacity getBikeEngineCapacity() {
-		return bikeEngineCapacity;
-	}
+private EngineCapacity bikeEngineCapacity; //350cc or 500cc
 
-	public void setBikeEngineCapacity(EngineCapacity bikeEngineCapacity) {
-		this.bikeEngineCapacity = bikeEngineCapacity;
-	}
+private String chasisNumber;
 
-	public String getChasisNumber() {
-		return chasisNumber;
-	}
+private String bikewheel;//alloy wheel,spoke
 
-	public void setChasisNumber(String chasisNumber) {
-		this.chasisNumber = chasisNumber;
-	}
+private String bikeOnRoadPrice;
 
-	public String getBikewheel() {
-		return bikewheel;
-	}
+private Date soldbikedate;
 
-	public void setBikewheel(String bikewheel) {
-		this.bikewheel = bikewheel;
-	}
 
-	public String getBikeOnRoadPrice() {
-		return bikeOnRoadPrice;
-	}
 
-	public void setBikeOnRoadPrice(String bikeOnRoadPrice) {
-		this.bikeOnRoadPrice = bikeOnRoadPrice;
-	}
+private String engineStartingType;//kick or Self Start
 
-	public String getEngineStartingType() {
-		return engineStartingType;
-	}
+private String invoice;//bill genertion
 
-	public void setEngineStartingType(String engineStartingType) {
-		this.engineStartingType = engineStartingType;
-	}
+//@ManyToOne(cascade=CascadeType.ALL)
 
-	public String getInvoice() {
-		return invoice;
-	}
+//private User user;
 
-	public void setInvoice(String invoice) {
-		this.invoice = invoice;
-	}
+public String getStockId() {
+
+	return stockId;
+
+}
+
+public void setStockId(String stockId) {
+
+	this.stockId = stockId;
+
+}
+
+
+
+public Date getSoldbikedate() {
+
+	return soldbikedate;
+
+}
+
+public void setSoldbikedate(Date soldbikedate) {
+
+	this.soldbikedate = soldbikedate;
+
+}
+
+
+
+public BikeModel getBikeModel() {
+
+	return bikeModel;
+
+}
+
+public void setBikeModel(BikeModel bikeModel) {
+
+	this.bikeModel = bikeModel;
+
+}
+
+
+
+public EngineCapacity getBikeEngineCapacity() {
+
+	return bikeEngineCapacity;
+
+}
+
+public void setBikeEngineCapacity(EngineCapacity bikeEngineCapacity) {
+
+	this.bikeEngineCapacity = bikeEngineCapacity;
+
+}
+
+public String getChasisNumber() {
+
+	return chasisNumber;
+
+}
+
+public void setChasisNumber(String chasisNumber) {
+
+	this.chasisNumber = chasisNumber;
+
+}
+
+public String getBikewheel() {
+
+	return bikewheel;
+
+}
+
+public void setBikewheel(String bikewheel) {
+
+	this.bikewheel = bikewheel;
+
+}
+
+public String getBikeOnRoadPrice() {
+
+	return bikeOnRoadPrice;
+
+}
+
+public void setBikeOnRoadPrice(String bikeOnRoadPrice) {
+
+	this.bikeOnRoadPrice = bikeOnRoadPrice;
+
+}
+
+public String getEngineStartingType() {
+
+	return engineStartingType;
+
+}
+
+public void setEngineStartingType(String engineStartingType) {
+
+	this.engineStartingType = engineStartingType;
+
+}
+
+public String getInvoice() {
+
+	return invoice;
+
+}
+
+public void setInvoice(String invoice) {
+
+	this.invoice = invoice;
+
+}
+
+
 
 }

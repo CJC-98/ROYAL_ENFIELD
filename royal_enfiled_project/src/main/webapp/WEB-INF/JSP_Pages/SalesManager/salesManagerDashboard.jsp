@@ -26,7 +26,7 @@
 	<section id="content" class="bg-light lter">
 		<section class="vbox">
 			<section class="scrollable padder">
-			
+
 				<div class="m-b-md">
 					<h3 class="m-b-none" style="font-size: 30pxl; font-weight: bold;">Dashboard</h3>
 				</div>
@@ -167,7 +167,7 @@
 								</div>
 
 								<div class="panel-footer bg-warning lt" style="font-size: 15px">
-									SoldOldBike ${approvedCustomizationCount2} </div>
+									SoldOldBike ${approvedCustomizationCount2}</div>
 
 							</section>
 						</div>
@@ -192,7 +192,7 @@
 								</div>
 
 								<div class="panel-footer bg-success lt" style="font-size: 15px">
-									CompanyOrderBike ${totalCustomizationCount3} </div>
+									CompanyOrderBike ${totalCustomizationCount3}</div>
 
 							</section>
 						</div>
@@ -282,9 +282,7 @@
 		<a href="#" class="hide nav-off-screen-block"
 			data-toggle="class:nav-off-screen, open" data-target="#nav,html"></a>
 	</section>
-	</section>
-	</section>
-	</section>
+
 	<script src="${pageContext.request.contextPath}/js/app.v1.js"></script>
 	<script
 		src="${pageContext.request.contextPath}/js/charts/easypiechart/jquery.easy-pie-chart.js"></script>

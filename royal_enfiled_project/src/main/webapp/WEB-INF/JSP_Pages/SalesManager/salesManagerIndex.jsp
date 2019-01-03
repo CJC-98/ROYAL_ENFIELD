@@ -40,7 +40,6 @@
 						data-target=".nav-user"> <i class="fa fa-cog"></i>
 					</a>
 				</div>
-
 				<ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user">
 					<li class="hidden-xs"><a href="#" class="dropdown-toggle dk"
 						data-toggle="dropdown"> <i class="fa fa-bell"></i> <span
@@ -54,7 +53,6 @@
 									</strong>
 								</header>
 								<div class=" list-group-alt animated fadeInRight">
-
 									<a:forEach var="data" items="${shortInboxList}">
 										<a href="MyNotificationsPages" class="media list-group-item">
 											<span class="pull-left thumb-sm"> <img
@@ -73,7 +71,6 @@
                          </footer> --%>
 							</section>
 						</section></li>
-
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown"> <span
 							class="thumb-sm avatar pull-left"> <img
@@ -100,7 +97,6 @@
 					<aside class="bg-dark lter aside-md hidden-print hidden-xs"
 						id="nav">
 						<section class="vbox">
-
 							<section class="w-f scrollable">
 								<div class="slim-scroll" data-height="auto"
 									data-disable-fade-out="true" data-distance="0" data-size="5px"
@@ -108,12 +104,10 @@
 									<!-- nav -->
 									<nav class="nav-primary hidden-xs">
 										<ul class="nav">
-
 											<li><a href="toSalesManagerHomePage"> <i
 													class="fa fa-dashboard icon"> <b class="bg-danger"></b>
 												</i> <span>Dashboard</span>
 											</a></li>
-
 											<li><a href="#uikit"> <i class="fa fa-flask icon">
 														<b class="bg-success"></b>
 												</i> <span class="pull-right"> <i
@@ -125,15 +119,12 @@
 													<li><a href="AddnewBike"> <i
 															class="fa fa-angle-right"></i> <span>Bike</span>
 													</a></li>
-
 													<li><a href="AddAccessories"> <i
 															class="fa fa-angle-right"></i> <span>Accessories</span>
 													</a></li>
-
 													<li><a href="Offers"> <i class="fa fa-angle-right"></i>
 															<span>Offer</span>
 													</a></li>
-
 													<%-- <li><a href="#table"> <i
 															class="fa fa-angle-down text"></i> <i
 															class="fa fa-angle-up text-active"></i> <span>Dead
@@ -146,12 +137,9 @@
 															<li><a href="DeadBike"> <i
 																	class="fa fa-angle-right"></i> <span>DeadBike</span>
 															</a></li>
-
 														</ul></li>
  --%>
 												</ul></li>
-
-
 											<li><a href="#uikit"> <i class="fa fa-flask icon">
 														<b class="bg-success"></b>
 												</i> <span class="pull-right"> <i
@@ -165,17 +153,13 @@
 																Bike</span>
 													</a></li>
 												</ul>
-
 												<ul class="nav lt">
 													<li><a href="OrderToCompanyForNewAccessories"> <i
 															class="fa fa-angle-right"></i> <span>Order For
 																Accessories</span>
 													</a></li>
 												</ul></li>
-
-
 											</li>
-
 											<li><a href="#uikit"> <i class="fa fa-flask icon">
 														<b class="bg-success"></b>
 												</i> <span class="pull-right"> <i
@@ -188,15 +172,12 @@
 															class="fa fa-angle-right"></i> <span>BikesaleForUser</span>
 													</a></li>
 												</ul>
-
 												<ul class="nav lt">
 													<li><a href="AccessoriesSaleForUser"> <i
 															class="fa fa-angle-right"></i> <span>AccessoriesSaleForUser</span>
 													</a></li>
 												</ul></li>
 											</li>
-
-
 											<li><a href="#uikit"> <i class="fa fa-flask icon">
 														<b class="bg-success"></b>
 												</i> <span class="pull-right"> <i
@@ -205,7 +186,6 @@
 												</span> <span>VIEW</span>
 											</a>
 												<ul class="nav lt">
-
 													<li><a href="#table"> <i
 															class="fa fa-angle-down text"></i> <i
 															class="fa fa-angle-up text-active"></i> <span>View
@@ -218,16 +198,13 @@
 															<li><a href="ViewOrderAccessories"> <i
 																	class="fa fa-angle-right"></i> <span>Accessories</span>
 															</a></li>
-
 														</ul></li>
 													<li><a href="ViewOldBike"> <i
 															class="fa fa-angle-right"></i> <span> ViewOldBike</span>
 													</a></li>
-
-													<li><a href="ViewInvoice"> <i
+													<%-- <li><a href="ViewInvoice"> <i
 															class="fa fa-angle-right"></i> <span>View Invoice</span>
-													</a></li>
-
+													</a></li> --%>
 													<li><a href="ViewOffer"> <i
 															class="fa fa-angle-right"></i> <span>View Offer</span>
 													</a></li>
@@ -252,9 +229,8 @@
 															<li><a href="ViewSoldNewBike"> <i
 																	class="fa fa-angle-right"></i> <span>New Bike</span>
 															</a></li>
-
 														</ul></li>
-														
+
 													<%-- <li><a href="#table"> <i
 															class="fa fa-angle-down text"></i> <i
 															class="fa fa-angle-up text-active"></i> <span>View
@@ -267,10 +243,7 @@
 															<li><a href="ViewDeadStockBike"> <i
 																	class="fa fa-angle-right"></i> <span>Bike</span>
 															</a></li>
-
-
 														</ul></li> --%>
-
 												</ul></li>
 									</nav>
 									<!-- / nav -->
@@ -328,12 +301,9 @@
 						</section>
 					</aside>
 					<!-- /.aside -->
-
 					<!-- dashboard starts -->
 					<jsp:include page="${link}" />
 					<!-- dashboard ends -->
-
-
 					<aside class="bg-light lter b-l aside-md hide" id="notes">
 						<div class="wrapper">Notification</div>
 					</aside>
@@ -369,5 +339,4 @@
 	</div>
 </body>
 <!-- Mirrored from flatfull.com/themes/note/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Oct 2018 11:16:42 GMT -->
-
 </html>
