@@ -6,8 +6,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -382,6 +382,7 @@ public class BikeSaleServiceImpl implements BikeSaleServiceI {
 		}
 		return bikeSaleForUserdaoI.save(bikesaleuser);
 		
+
 	}
 
 	@Override

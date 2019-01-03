@@ -55,32 +55,37 @@ public class AccountController {
 	
 	
 	@RequestMapping(value="/Invoice")
-	public String Invoice(Model model)
+	public String Invoice(Model model, HttpServletRequest request)
 	{ 			
-			System.out.println("In Invoice controller");
+		System.out.println("In Invoice controller");
 		model.addAttribute("link", "Invoice.jsp");
 		
 		LocalDate date = LocalDate.now();		
 		model.addAttribute("date",date);
 		
-
+		// get registration id by session code starts here -----		
+			session = request.getSession();	
+			Registration reg = (Registration) session.getAttribute("reg");
+			session.getAttribute("email");
+			System.out.println("session id" + reg);
+		// end here -----
+		
 		Registration regi = null;
 		String purchaseSatus = null;
+		String purchaseStatus = "buynow";
 		
-		Registration reg = new Registration(); //-- TO_Do :- UserId fetch from Registration.. 
-		reg.setRegistrationId("1");
-		
-		List<Cart> cart = Service.getCartByRegistrationId(reg);
-			System.out.println("Controller.. GetCart By RegId..");
 
-			for(Cart c : cart) {
+		//Registration reg = new Registration(); //-- TO_Do :- UserId fetch from Registration.. 
+		//reg.setRegistrationId("1");
 
+
+		List<Cart> cart = Service.getCartByRegistrationAndPurchaseStatus(reg, purchaseStatus);			
+			for(Cart c : cart) {			
 				System.out.println(c.getAccessories().getPartName());
 				System.out.println(c.getOldbike().getNewBikeStock().getBikePrice());
 				regi=new Registration();
 				regi = c.getRegistration();
 				purchaseSatus = c.getPurchaseStatus();
-
 			}
 			
 			model.addAttribute("purchaseSatus", purchaseSatus);
@@ -95,7 +100,9 @@ public class AccountController {
 	
 
 	@RequestMapping(value="/Dashboard")
-	public String Dashboard(Model model,HttpServletRequest request,@ModelAttribute Cart cart1) {
+	public String Dashboard(Model model ,HttpServletRequest request,@ModelAttribute Cart cart1) {
+		
+		System.out.println("in dashboard controll.. Subtotal..");
 		
 		session = request.getSession();
 		System.out.println("name "+session.getAttribute("currentUserName"));
@@ -111,7 +118,7 @@ public class AccountController {
 		
 		System.out.println("In Dashboard Controll..");
 		Date fd = null;
-		Date ld = null;
+		Date ld = null;  
 		Date fds = null;
 		Date lds = null;
 		try {
@@ -128,6 +135,12 @@ public class AccountController {
 		model.addAttribute("lg", lg);			
 		long lg1 = Service.SoldBikeCount(fds, lds);			
 		model.addAttribute("lg1", lg1);
+		
+		long oldBikecnt = Service.OldBikeCount(fds, lds);
+		model.addAttribute("oldBikecnt", oldBikecnt);
+		long oldSoldBikecnt = Service.OldSoldBikeCount(fds, lds);
+		model.addAttribute("oldSoldBikecnt", oldSoldBikecnt);
+		
 		model.addAttribute("link", "accountsDashboard.jsp");
 		return "Accounts/accountsIndex";
 	
@@ -250,9 +263,6 @@ public class AccountController {
 		model.addAttribute("link", "NewBikeStock.jsp");
 		
 		List<NewBikeStock> list = Service.getAllNewBikeStock();
-		for(NewBikeStock n : list) {
-			System.out.println("New Bike List.."+ n.getArrivalDate() + n.getBikeId() + "  "+ n.getBikePrice());
-		}
 		model.addAttribute("list", list);
 		
 		long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);

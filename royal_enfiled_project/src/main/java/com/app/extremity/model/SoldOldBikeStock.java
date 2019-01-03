@@ -23,9 +23,20 @@ public class SoldOldBikeStock {
 	private String sellerName;
 	private String bikeMileage;
 	private String bikeImage;
+
+	private Date soldbikedate;
+
 	private String colors;
 	private long price;
 	private long newPrice;
+
+	public String getSoldOldBikeStockId() {
+		return soldOldBikeStockId;
+	}
+
+	public void setSoldOldBikeStockId(String soldOldBikeStockId) {
+		this.soldOldBikeStockId = soldOldBikeStockId;
+	}
 
 	public String getOldBikeModelName() {
 		return oldBikeModelName;
@@ -107,6 +118,14 @@ public class SoldOldBikeStock {
 		this.bikeImage = bikeImage;
 	}
 
+	public Date getSoldbikedate() {
+		return soldbikedate;
+	}
+
+	public void setSoldbikedate(Date soldbikedate) {
+		this.soldbikedate = soldbikedate;
+	}
+
 	public String getColors() {
 		return colors;
 	}
@@ -129,14 +148,6 @@ public class SoldOldBikeStock {
 
 	public void setNewPrice(long newPrice) {
 		this.newPrice = newPrice;
-	}
-
-	public String getSoldOldBikeStockId() {
-		return soldOldBikeStockId;
-	}
-
-	public void setSoldOldBikeStockId(String sldOldBikeStockId) {
-		this.soldOldBikeStockId = sldOldBikeStockId;
 	}
 
 }

@@ -8,10 +8,14 @@ import org.springframework.stereotype.Service;
 
 import com.app.extremity.idao.AccountGetCartIDao;
 import com.app.extremity.idao.AccountNewBikeCount;
+import com.app.extremity.idao.AccountOldBikeCount;
+import com.app.extremity.idao.AccountOldSoldBikeCount;
 import com.app.extremity.idao.AccountSoldBikeStockInterface;
 import com.app.extremity.idao.Account_Invoice_DaoInterface;
+import com.app.extremity.idao.CartInvoiceIDao;
 import com.app.extremity.iservice.Account_ServiceInterface;
 import com.app.extremity.model.Cart;
+import com.app.extremity.model.CartInvoice;
 import com.app.extremity.model.Demo;
 import com.app.extremity.model.NewBikeStock;
 import com.app.extremity.model.Registration;
@@ -24,9 +28,15 @@ public class AccountServiceImpl implements Account_ServiceInterface {
 	@Autowired
 	AccountNewBikeCount newBikeCountDao;
 	@Autowired
+	AccountOldBikeCount oldBikeCountDao;
+	@Autowired
 	AccountSoldBikeStockInterface soldBikeDao;
 	@Autowired
+	AccountOldSoldBikeCount oldSoldBikeCountDao;
+	@Autowired
 	AccountGetCartIDao cartDao;
+	@Autowired
+	CartInvoiceIDao cartInvoicDao;
 	
 	@Override
 	public List<Demo> getAllDemo() {
@@ -67,11 +77,36 @@ public class AccountServiceImpl implements Account_ServiceInterface {
 		return list;
 	}
 
+
 	@Override
-	public List<Cart> getCartByRegistrationId(Registration reg) {
-		System.out.println("in getCartBy Reg Id..");
-		List<Cart> cart = (List<Cart>)cartDao.findAllByRegistration(reg);
+	public List<Cart> getCartByRegistrationAndPurchaseStatus(Registration reg, String purchaseStatus) {
+		System.out.println("In getCartByRegistrationAndPurchaseStatus..");
+		List<Cart> cart = (List<Cart>)cartDao.findAllByRegistrationAndPurchaseStatus(reg, purchaseStatus);		
 		return cart;
+	}
+
+	@Override
+	public Cart UpdatePurchaseStatus(Cart cart) {
+		Cart c = cartDao.save(cart);
+		return c;
+	}
+
+	@Override
+	public CartInvoice SaveCartInvoice(CartInvoice cartInvoice) {
+		CartInvoice ci = cartInvoicDao.save(cartInvoice);
+		return ci;
+	}
+
+	@Override
+	public Long OldBikeCount(Date fd, Date ld) {
+		long cnt = oldBikeCountDao.countByArrivalDateBetween(fd, ld);
+		return cnt;
+	}
+
+	@Override
+	public Long OldSoldBikeCount(Date fds, Date lds) {
+		long cnt = oldSoldBikeCountDao.countBySoldbikedateBetween(fds, lds);
+		return cnt;
 	}
 
 

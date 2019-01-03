@@ -11,4 +11,8 @@ public interface BikeSaleIDao extends CrudRepository<BikeModel, String>
 	//query for autogenerate string id
 	@Query("select COUNT(bm) from BikeModel bm")
 	public int getBikeModelCount();
+
+
+	public BikeModel findOne(String bid);
+
 }

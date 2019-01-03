@@ -9,8 +9,9 @@ import com.app.extremity.model.Registration;
 
 public interface AccountGetCartIDao extends CrudRepository<Cart, Integer> {
 
-//	public List<UserCart> findAllByPurchaseStatusAndRegistration(String purchaseStatus, String registrationid);
-//	
-    public List<Cart> findAllByRegistration(Registration reg);
+	
+    //public List<Cart> findAllByRegistration(Registration reg);
+    
+    public List<Cart> findAllByRegistrationAndPurchaseStatus(Registration reg, String purchaseStatus);
 	
 }

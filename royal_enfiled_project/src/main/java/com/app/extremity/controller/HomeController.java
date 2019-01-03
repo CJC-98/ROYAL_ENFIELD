@@ -3,6 +3,7 @@ package com.app.extremity.controller;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -19,6 +20,7 @@ import com.app.extremity.iservice.AService;
 import com.app.extremity.iservice.IAdminService;
 import com.app.extremity.iservice.IHomeService;
 import com.app.extremity.iservice.NotificationInterface;
+import com.app.extremity.model.Notfication;
 import com.app.extremity.serviceimpl.BikeSaleServiceImpl;
 
 @Controller
@@ -132,13 +134,23 @@ public class HomeController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
+			long inboxCount = notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false);
+			model.addAttribute("inboxCount", inboxCount);
+			
+			List<Notfication> shortInboxList = notificationInterface.getMyNotReadedInboxNotfication(session.getAttribute("currentUserName").toString(), false);
+			model.addAttribute("shortInboxList", shortInboxList);
+			
 
 			long lg = AService.NewBikeCount(fd, ld);
-			System.out.println("Home Controll.. New Bike Count is.. " + lg);
 			model.addAttribute("lg", lg);
+
 			long lg1 = AService.SoldBikeCount(fds, lds);
-			System.out.println("Home Controll.. Sold Bike Count is.. " + lg1);
 			model.addAttribute("lg1", lg1);
+			
+		
+
+			
 			model.addAttribute("link", "accountsDashboard.jsp");
 			return "Accounts/accountsIndex";
 		default:
