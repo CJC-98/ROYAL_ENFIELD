@@ -27,11 +27,14 @@ private String chasisNumber;
 private String bikewheel;//alloy wheel,spoke
 private String bikeOnRoadPrice;
 private Date soldbikedate;
-
 private String engineStartingType;//kick or Self Start
 private String invoice;//bill genertion
 //@ManyToOne(cascade=CascadeType.ALL)
 //private User user;
+
+
+
+
 public String getStockId() {
 	return stockId;
 }
