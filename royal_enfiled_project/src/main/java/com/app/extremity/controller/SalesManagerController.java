@@ -58,23 +58,17 @@ public class SalesManagerController {
 	BikeSaleServiceImpl bikeSaleServiceImpl;
 	HttpSession session;
 	@Autowired
-	NotificationImpl notificationInterface;
+	NotificationInterface notificationInterface;
 	
 	static Logger logger = LogManager.getLogger(SalesManagerController.class);
 
-	/*
-	 * @RequestMapping(value = "/MyNotificationsPages") public String
-	 * MyNotificationsPages(Model model) {
-	 * 
-	 * model.addAttribute("link", "myNotifications.jsp"); return
-	 * "SalesManager/salesManagerIndex"; }
-	 */
+	
 	@RequestMapping(value = "/MyNotificationsPages")
 	public String MyNotificationsPages(Model model, HttpServletRequest request) {
 
 		session = request.getSession();
 
-		// get short notification list
+		/*// get short notification list
 		model.addAttribute("inboxCount",
 				notificationInterface.getInboxCount(session.getAttribute("currentUserName").toString(), false));
 		model.addAttribute("shortInboxList", notificationInterface
@@ -90,7 +84,7 @@ public class SalesManagerController {
 		// get inbox notification list
 		model.addAttribute("inboxList",
 				notificationInterface.getMyInboxNotfication(session.getAttribute("currentUserName").toString()));
-
+*/
 		model.addAttribute("link", "myNotifications.jsp");
 		return "SalesManager/salesManagerIndex";
 	}
