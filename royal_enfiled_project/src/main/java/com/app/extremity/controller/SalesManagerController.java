@@ -176,7 +176,7 @@ public class SalesManagerController {
 		notify.setReciverName(reciverName);
 		notify.setReciverPost(reciverPost);
 		notify.setReciverImg(reciverImg);
-		
+	 	
 		DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy"); 
 		DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("hh:mm:ss a"); 
 		
