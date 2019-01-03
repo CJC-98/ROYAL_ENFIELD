@@ -69,7 +69,7 @@ public class AccountController {
 			session = request.getSession();	
 			Registration reg = (Registration) session.getAttribute("reg");
 			session.getAttribute("email");
-			System.out.println("session id" + reg);
+			System.out.println("session id.. " + reg);
 		// end here -----
 		
 		Registration regi = null;
